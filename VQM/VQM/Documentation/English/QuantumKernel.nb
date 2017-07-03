@@ -1,0 +1,656 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     15135,        343]*)
+(*NotebookOutlinePosition[     21320,        526]*)
+(*  CellTagsIndexPosition[     20619,        501]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["QNewFunction", "Section",
+  CellTags->"QNewFunction"],
+
+Cell["\<\
+QNewFunction[A,..] generates a function-object (of type 'TFunction') for QuantumKernel from a list of arrays of real numbers. The function object contains the numerical data representing the numerical discretization of vector-valued functions. The idea is that these data are changed by some numerical computations performed by QuantumKernel. You can read the changed values of arrays by QGetArray[f]. Here f is the expression returned by QNewFunction[arrays]. This expression is something like 'QFunctionObject[number]' and it refers to the corresponding data structure in the program 'QuantumKernel' (an object of type 'TFunction'). The dimensions of the arrays in the argument of QNewFunction depend on the dimension of the numerical domain. The number of arrays depends on the dimension of the data. Usually, real- and imaginary parts of each component are expected. Hence a complex-valued function is represented by QNewFunction[Re[complexarray],Im[complexarray]] and a real-valued function is obtained by QNewFunction[realarray, nullarray] (nullarray has the same dimensions as realarray and has all elements 0.). All elements of the arrays should be real numbers (integer values are converted to floats). Combining arrays with different dimensions or with non-numerical elements produces the error message 'QuantumKernel::err: out of sequence.'. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QNewFunction"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QNewFunction"],
+
+Cell["QDisposeFunction", "Section",
+  CellTags->"QDisposeFunction"],
+
+Cell["\<\
+QDisposeFunction[f] deletes the numerical data representing the function f from QuantumKernel. Here 'function' refers to a function-object of type TFunction (a data structure of QuantumKernel). An expression suitable as argument for QDisposeFunction is returned by QNewFunction. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QDisposeFunction"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QDisposeFunction"],
+
+Cell["QGetArray", "Section",
+  CellTags->"QGetArray"],
+
+Cell["\<\
+QGetArray[f] returns the numerical values contained in the function object f. ('function object' is obtained when calling QNewFunction). Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QGetArray"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetArray"],
+
+Cell["QGetFunctionInfo", "Section",
+  CellTags->"QGetFunctionInfo"],
+
+Cell["\<\
+QGetFunctionInfo[f] gives some information about the function object refered to by f. This reference is obtained from 'QNewFunction'. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QGetFunctionInfo"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetFunctionInfo"],
+
+Cell["QGetColorArray", "Section",
+  CellTags->"QGetColorArray"],
+
+Cell["\<\
+QGetColorArray[f]. This returns an array of RGBcolor-values. These RGB values are obtained from the function-object  f. Here 'f' refers to the data structure holding an array of complex values. These values are transformed to colors via a colormap like the one defined in VQM`ColorMaps`.  An expression suitable as an argument for QGetColorArray is returned by QNewFunction. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QGetColorArray"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetColorArray"],
+
+Cell["QGetGrayArray", "Section",
+  CellTags->"QGetGrayArray"],
+
+Cell["QGetGrayArray[f]. Package: VQM`QuantumKernel`.", "Usage",
+  CellTags->"QGetGrayArray"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetGrayArray"],
+
+Cell["QGetRedBlueArray", "Section",
+  CellTags->"QGetRedBlueArray"],
+
+Cell["QGetRedBlueArray[f]. Package: VQM`QuantumKernel`.", "Usage",
+  CellTags->"QGetRedBlueArray"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetRedBlueArray"],
+
+Cell["QGetBlackWhiteArray", "Section",
+  CellTags->"QGetBlackWhiteArray"],
+
+Cell["QGetBlackWhiteArray[f]. Package: VQM`QuantumKernel`.", "Usage",
+  CellTags->"QGetBlackWhiteArray"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetBlackWhiteArray"],
+
+Cell["QGetAbsArray", "Section",
+  CellTags->"QGetAbsArray"],
+
+Cell["QGetAbsArray[f]. Package: VQM`QuantumKernel`.", "Usage",
+  CellTags->"QGetAbsArray"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetAbsArray"],
+
+Cell["QInfo", "Section",
+  CellTags->"QInfo"],
+
+Cell["\<\
+QInfo[] returns informations about the state of QuantumKernel. It lists informations about all TFunction and TOperator objects. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QInfo"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QInfo"],
+
+Cell["QSchroedinger1D", "Section",
+  CellTags->"QSchroedinger1D"],
+
+Cell["\<\
+QSchroedinger1D[V, m, dx] generates a data structure for QuantumKernel (of type 'TOperator'). It needs a scalar potential V (a complex function object). The reference 'V' is obtained by executing the command QNewFunction[Re[list],Im[list]]. The real number 'm' defines the mass of the particle used in the Schroedinger operator. 'dx' is the size of the space grid (only uniform grids are supported). QSchroedinger1D returns a reference to the 'operator-object'. This is needed to specify the time evolution, see QTimeEvolution. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QSchroedinger1D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSchroedinger1D"],
+
+Cell["QSchroedinger2D", "Section",
+  CellTags->"QSchroedinger2D"],
+
+Cell["\<\
+QSchroedinger2D[V, A, Dom, mass, charge, dx] generates a data structure for QuantumKernel (a 'TOperator'-object) that represents a Schroedinger operator in two dimensions. 'V' refers to a complex function object (complex scalar potential), 'A' is a vectorfield with two components (vector potential), 'Dom' is a real scalar field whose positive values describe the domain of the simulation. 'dx' is the step-size of the spatial grid. 'mass' and 'charge' are real-valued parameters. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QSchroedinger2D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSchroedinger2D"],
+
+Cell["QSchroedinger3D", "Section",
+  CellTags->"QSchroedinger3D"],
+
+Cell["\<\
+QSchroedinger3D[V, A, Dom, mass, charge, dx] generates a data structure for QuantumKernel (a 'TOperator'-object) that represents a Schroedinger operator in three dimensions. 'V' refers to a complex function object (complex scalar potential), 'A' is a vectorfield with three components (vector potential), 'Dom' is a real scalar field whose positive values describe the domain of the simulation. 'dx' is the step-size of the spatial grid. 'mass' and 'charge' are real-valued parameters. The fields are generated with QNewFunction. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QSchroedinger3D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSchroedinger3D"],
+
+Cell["QPauli2D", "Section",
+  CellTags->"QPauli2D"],
+
+Cell["\<\
+QPauli2D[V, A, Dom, mass, charge, dx] generates a data structure for QuantumKernel (a 'TOperator'-object) that represents a Pauli operator in two dimensions. 'V' refers to a complex function object (complex scalar potential), 'A' is a vectorfield with two components (vector potential), 'Dom' is a real scalar field whose positive values describe the domain of the simulation. 'dx' is the step-size of the spatial grid. 'mass' and 'charge' are real-valued parameters. The fields are generated with QNewFunction. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QPauli2D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QPauli2D"],
+
+Cell["QPauli3D", "Section",
+  CellTags->"QPauli3D"],
+
+Cell["\<\
+QPauli3D[V, A, Dom, mass, charge, dx] generates a data structure for QuantumKernel (a 'TOperator'-object) that represents a Pauli operator in three dimensions. 'V' refers to a complex function object (complex scalar potential), 'A' is a vectorfield with three components (vector potential), 'Dom' is a real scalar field whose positive values describe the domain of the simulation. 'dx' is the step-size of the spatial grid. 'mass' and 'charge' are real-valued parameters. The fields are generated with QNewFunction. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QPauli3D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QPauli3D"],
+
+Cell["QDirac2D", "Section",
+  CellTags->"QDirac2D"],
+
+Cell["\<\
+QDirac2D[V, A, Dom, mass, charge, dx] generates a data structure for QuantumKernel (a 'TOperator'-object) that represents a Dirac operator in two dimensions. 'V' refers to a complex function object (complex Lorentz-scalar potential), 'A' is a vectorfield with three components (electromagnetic vector potential), 'Dom' is a real scalar field whose positive values describe the domain of the simulation. 'dx' is the step-size of the spatial grid. 'mass' and 'charge' are real-valued parameters. The fields are generated with QNewFunction. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QDirac2D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QDirac2D"],
+
+Cell["QDirac3D", "Section",
+  CellTags->"QDirac3D"],
+
+Cell["\<\
+QDirac3D[V, A, Dom, mass, charge, dx] generates a data structure for QuantumKernel (a 'TOperator'-object) that represents a Dirac operator in three dimensions. 'V' refers to a complex function object (complex Lorentz scalar potential), 'A' is a vectorfield with four components (vector potential), 'Dom' is a real scalar field whose positive values describe the domain of the simulation. 'dx' is the step-size of the spatial grid. 'mass' and 'charge' are real-valued parameters. The fields are generated with QNewFunction. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QDirac3D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QDirac3D"],
+
+Cell["QDisposeOperator", "Section",
+  CellTags->"QDisposeOperator"],
+
+Cell["\<\
+QDisposeOperator[operator] deletes the data describing the TOperator object 'operator'. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QDisposeOperator"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QDisposeOperator"],
+
+Cell["QGetOperatorInfo", "Section",
+  CellTags->"QGetOperatorInfo"],
+
+Cell["\<\
+QGetOperatorInfo[operator] gives information about the TOperator object 'operator'. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QGetOperatorInfo"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetOperatorInfo"],
+
+Cell["QTimeEvolution", "Section",
+  CellTags->"QTimeEvolution"],
+
+Cell["\<\
+QTimeEvolution[operator, function, timestep, order, steps] computes the time evolution generated by 'operator' (which refers to a TOperator-object) for the initial function 'function' (which refers to a TFunction-object). You can use any of the operators defined by the QuantumKernel package with the corresponding compatible wave function. (For example, 'function' must have two complex components or four real components in case of QPauli3D or QDirac2D.) The real number 'timestep' is the length of one time step. The integer 'order' describes the order of the method (a Trotter-Suzuki decomposition of the exponential operator, see M.Suzuki, J.Math.Phys.32 (1991), 410). The integer 'step' describes the number of time steps to be performed. Package: VQM`QuantumKernel`.\
+\>", "Usage",
+  CellTags->"QTimeEvolution"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QTimeEvolution"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "QNewFunction"->{
+    Cell[1754, 51, 59, 1, 70, "Section",
+      CellTags->"QNewFunction"],
+    Cell[1816, 54, 1434, 3, 70, "Usage",
+      CellTags->"QNewFunction"],
+    Cell[3253, 59, 167, 5, 70, "Text",
+      CellTags->"QNewFunction"]},
+  "QDisposeFunction"->{
+    Cell[3423, 66, 67, 1, 70, "Section",
+      CellTags->"QDisposeFunction"],
+    Cell[3493, 69, 364, 3, 70, "Usage",
+      CellTags->"QDisposeFunction"],
+    Cell[3860, 74, 171, 5, 70, "Text",
+      CellTags->"QDisposeFunction"]},
+  "QGetArray"->{
+    Cell[4034, 81, 53, 1, 70, "Section",
+      CellTags->"QGetArray"],
+    Cell[4090, 84, 215, 3, 70, "Usage",
+      CellTags->"QGetArray"],
+    Cell[4308, 89, 164, 5, 70, "Text",
+      CellTags->"QGetArray"]},
+  "QGetFunctionInfo"->{
+    Cell[4475, 96, 67, 1, 70, "Section",
+      CellTags->"QGetFunctionInfo"],
+    Cell[4545, 99, 219, 3, 70, "Usage",
+      CellTags->"QGetFunctionInfo"],
+    Cell[4767, 104, 171, 5, 70, "Text",
+      CellTags->"QGetFunctionInfo"]},
+  "QGetColorArray"->{
+    Cell[4941, 111, 63, 1, 70, "Section",
+      CellTags->"QGetColorArray"],
+    Cell[5007, 114, 458, 3, 70, "Usage",
+      CellTags->"QGetColorArray"],
+    Cell[5468, 119, 169, 5, 70, "Text",
+      CellTags->"QGetColorArray"]},
+  "QGetGrayArray"->{
+    Cell[5640, 126, 61, 1, 70, "Section",
+      CellTags->"QGetGrayArray"],
+    Cell[5704, 129, 92, 1, 70, "Usage",
+      CellTags->"QGetGrayArray"],
+    Cell[5799, 132, 168, 5, 70, "Text",
+      CellTags->"QGetGrayArray"]},
+  "QGetRedBlueArray"->{
+    Cell[5970, 139, 67, 1, 70, "Section",
+      CellTags->"QGetRedBlueArray"],
+    Cell[6040, 142, 98, 1, 70, "Usage",
+      CellTags->"QGetRedBlueArray"],
+    Cell[6141, 145, 171, 5, 70, "Text",
+      CellTags->"QGetRedBlueArray"]},
+  "QGetBlackWhiteArray"->{
+    Cell[6315, 152, 73, 1, 70, "Section",
+      CellTags->"QGetBlackWhiteArray"],
+    Cell[6391, 155, 104, 1, 70, "Usage",
+      CellTags->"QGetBlackWhiteArray"],
+    Cell[6498, 158, 174, 5, 70, "Text",
+      CellTags->"QGetBlackWhiteArray"]},
+  "QGetAbsArray"->{
+    Cell[6675, 165, 59, 1, 70, "Section",
+      CellTags->"QGetAbsArray"],
+    Cell[6737, 168, 90, 1, 70, "Usage",
+      CellTags->"QGetAbsArray"],
+    Cell[6830, 171, 167, 5, 70, "Text",
+      CellTags->"QGetAbsArray"]},
+  "QInfo"->{
+    Cell[7000, 178, 45, 1, 70, "Section",
+      CellTags->"QInfo"],
+    Cell[7048, 181, 202, 3, 70, "Usage",
+      CellTags->"QInfo"],
+    Cell[7253, 186, 160, 5, 70, "Text",
+      CellTags->"QInfo"]},
+  "QSchroedinger1D"->{
+    Cell[7416, 193, 65, 1, 70, "Section",
+      CellTags->"QSchroedinger1D"],
+    Cell[7484, 196, 612, 3, 70, "Usage",
+      CellTags->"QSchroedinger1D"],
+    Cell[8099, 201, 170, 5, 70, "Text",
+      CellTags->"QSchroedinger1D"]},
+  "QSchroedinger2D"->{
+    Cell[8272, 208, 65, 1, 70, "Section",
+      CellTags->"QSchroedinger2D"],
+    Cell[8340, 211, 566, 3, 70, "Usage",
+      CellTags->"QSchroedinger2D"],
+    Cell[8909, 216, 170, 5, 70, "Text",
+      CellTags->"QSchroedinger2D"]},
+  "QSchroedinger3D"->{
+    Cell[9082, 223, 65, 1, 70, "Section",
+      CellTags->"QSchroedinger3D"],
+    Cell[9150, 226, 614, 3, 70, "Usage",
+      CellTags->"QSchroedinger3D"],
+    Cell[9767, 231, 170, 5, 70, "Text",
+      CellTags->"QSchroedinger3D"]},
+  "QPauli2D"->{
+    Cell[9940, 238, 51, 1, 70, "Section",
+      CellTags->"QPauli2D"],
+    Cell[9994, 241, 589, 3, 70, "Usage",
+      CellTags->"QPauli2D"],
+    Cell[10586, 246, 163, 5, 70, "Text",
+      CellTags->"QPauli2D"]},
+  "QPauli3D"->{
+    Cell[10752, 253, 51, 1, 70, "Section",
+      CellTags->"QPauli3D"],
+    Cell[10806, 256, 593, 3, 70, "Usage",
+      CellTags->"QPauli3D"],
+    Cell[11402, 261, 163, 5, 70, "Text",
+      CellTags->"QPauli3D"]},
+  "QDirac2D"->{
+    Cell[11568, 268, 51, 1, 70, "Section",
+      CellTags->"QDirac2D"],
+    Cell[11622, 271, 615, 3, 70, "Usage",
+      CellTags->"QDirac2D"],
+    Cell[12240, 276, 163, 5, 70, "Text",
+      CellTags->"QDirac2D"]},
+  "QDirac3D"->{
+    Cell[12406, 283, 51, 1, 70, "Section",
+      CellTags->"QDirac3D"],
+    Cell[12460, 286, 600, 3, 70, "Usage",
+      CellTags->"QDirac3D"],
+    Cell[13063, 291, 163, 5, 70, "Text",
+      CellTags->"QDirac3D"]},
+  "QDisposeOperator"->{
+    Cell[13229, 298, 67, 1, 70, "Section",
+      CellTags->"QDisposeOperator"],
+    Cell[13299, 301, 173, 3, 70, "Usage",
+      CellTags->"QDisposeOperator"],
+    Cell[13475, 306, 171, 5, 70, "Text",
+      CellTags->"QDisposeOperator"]},
+  "QGetOperatorInfo"->{
+    Cell[13649, 313, 67, 1, 70, "Section",
+      CellTags->"QGetOperatorInfo"],
+    Cell[13719, 316, 169, 3, 70, "Usage",
+      CellTags->"QGetOperatorInfo"],
+    Cell[13891, 321, 171, 5, 70, "Text",
+      CellTags->"QGetOperatorInfo"]},
+  "QTimeEvolution"->{
+    Cell[14065, 328, 63, 1, 70, "Section",
+      CellTags->"QTimeEvolution"],
+    Cell[14131, 331, 828, 3, 70, "Usage",
+      CellTags->"QTimeEvolution"],
+    Cell[14962, 336, 169, 5, 70, "Text",
+      CellTags->"QTimeEvolution"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"QNewFunction", 15688, 357},
+  {"QDisposeFunction", 15933, 364},
+  {"QGetArray", 16182, 371},
+  {"QGetFunctionInfo", 16417, 378},
+  {"QGetColorArray", 16672, 385},
+  {"QGetGrayArray", 16922, 392},
+  {"QGetRedBlueArray", 17171, 399},
+  {"QGetBlackWhiteArray", 17432, 406},
+  {"QGetAbsArray", 17696, 413},
+  {"QInfo", 17931, 420},
+  {"QSchroedinger1D", 18156, 427},
+  {"QSchroedinger2D", 18411, 434},
+  {"QSchroedinger3D", 18666, 441},
+  {"QPauli2D", 18914, 448},
+  {"QPauli3D", 19142, 455},
+  {"QDirac2D", 19372, 462},
+  {"QDirac3D", 19602, 469},
+  {"QDisposeOperator", 19840, 476},
+  {"QGetOperatorInfo", 20102, 483},
+  {"QTimeEvolution", 20362, 490}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 59, 1, 70, "Section",
+  CellTags->"QNewFunction"],
+Cell[1816, 54, 1434, 3, 70, "Usage",
+  CellTags->"QNewFunction"],
+Cell[3253, 59, 167, 5, 70, "Text",
+  CellTags->"QNewFunction"],
+Cell[3423, 66, 67, 1, 70, "Section",
+  CellTags->"QDisposeFunction"],
+Cell[3493, 69, 364, 3, 70, "Usage",
+  CellTags->"QDisposeFunction"],
+Cell[3860, 74, 171, 5, 70, "Text",
+  CellTags->"QDisposeFunction"],
+Cell[4034, 81, 53, 1, 70, "Section",
+  CellTags->"QGetArray"],
+Cell[4090, 84, 215, 3, 70, "Usage",
+  CellTags->"QGetArray"],
+Cell[4308, 89, 164, 5, 70, "Text",
+  CellTags->"QGetArray"],
+Cell[4475, 96, 67, 1, 70, "Section",
+  CellTags->"QGetFunctionInfo"],
+Cell[4545, 99, 219, 3, 70, "Usage",
+  CellTags->"QGetFunctionInfo"],
+Cell[4767, 104, 171, 5, 70, "Text",
+  CellTags->"QGetFunctionInfo"],
+Cell[4941, 111, 63, 1, 70, "Section",
+  CellTags->"QGetColorArray"],
+Cell[5007, 114, 458, 3, 70, "Usage",
+  CellTags->"QGetColorArray"],
+Cell[5468, 119, 169, 5, 70, "Text",
+  CellTags->"QGetColorArray"],
+Cell[5640, 126, 61, 1, 70, "Section",
+  CellTags->"QGetGrayArray"],
+Cell[5704, 129, 92, 1, 70, "Usage",
+  CellTags->"QGetGrayArray"],
+Cell[5799, 132, 168, 5, 70, "Text",
+  CellTags->"QGetGrayArray"],
+Cell[5970, 139, 67, 1, 70, "Section",
+  CellTags->"QGetRedBlueArray"],
+Cell[6040, 142, 98, 1, 70, "Usage",
+  CellTags->"QGetRedBlueArray"],
+Cell[6141, 145, 171, 5, 70, "Text",
+  CellTags->"QGetRedBlueArray"],
+Cell[6315, 152, 73, 1, 70, "Section",
+  CellTags->"QGetBlackWhiteArray"],
+Cell[6391, 155, 104, 1, 70, "Usage",
+  CellTags->"QGetBlackWhiteArray"],
+Cell[6498, 158, 174, 5, 70, "Text",
+  CellTags->"QGetBlackWhiteArray"],
+Cell[6675, 165, 59, 1, 70, "Section",
+  CellTags->"QGetAbsArray"],
+Cell[6737, 168, 90, 1, 70, "Usage",
+  CellTags->"QGetAbsArray"],
+Cell[6830, 171, 167, 5, 70, "Text",
+  CellTags->"QGetAbsArray"],
+Cell[7000, 178, 45, 1, 70, "Section",
+  CellTags->"QInfo"],
+Cell[7048, 181, 202, 3, 70, "Usage",
+  CellTags->"QInfo"],
+Cell[7253, 186, 160, 5, 70, "Text",
+  CellTags->"QInfo"],
+Cell[7416, 193, 65, 1, 70, "Section",
+  CellTags->"QSchroedinger1D"],
+Cell[7484, 196, 612, 3, 70, "Usage",
+  CellTags->"QSchroedinger1D"],
+Cell[8099, 201, 170, 5, 70, "Text",
+  CellTags->"QSchroedinger1D"],
+Cell[8272, 208, 65, 1, 70, "Section",
+  CellTags->"QSchroedinger2D"],
+Cell[8340, 211, 566, 3, 70, "Usage",
+  CellTags->"QSchroedinger2D"],
+Cell[8909, 216, 170, 5, 70, "Text",
+  CellTags->"QSchroedinger2D"],
+Cell[9082, 223, 65, 1, 70, "Section",
+  CellTags->"QSchroedinger3D"],
+Cell[9150, 226, 614, 3, 70, "Usage",
+  CellTags->"QSchroedinger3D"],
+Cell[9767, 231, 170, 5, 70, "Text",
+  CellTags->"QSchroedinger3D"],
+Cell[9940, 238, 51, 1, 70, "Section",
+  CellTags->"QPauli2D"],
+Cell[9994, 241, 589, 3, 70, "Usage",
+  CellTags->"QPauli2D"],
+Cell[10586, 246, 163, 5, 70, "Text",
+  CellTags->"QPauli2D"],
+Cell[10752, 253, 51, 1, 70, "Section",
+  CellTags->"QPauli3D"],
+Cell[10806, 256, 593, 3, 70, "Usage",
+  CellTags->"QPauli3D"],
+Cell[11402, 261, 163, 5, 70, "Text",
+  CellTags->"QPauli3D"],
+Cell[11568, 268, 51, 1, 70, "Section",
+  CellTags->"QDirac2D"],
+Cell[11622, 271, 615, 3, 70, "Usage",
+  CellTags->"QDirac2D"],
+Cell[12240, 276, 163, 5, 70, "Text",
+  CellTags->"QDirac2D"],
+Cell[12406, 283, 51, 1, 70, "Section",
+  CellTags->"QDirac3D"],
+Cell[12460, 286, 600, 3, 70, "Usage",
+  CellTags->"QDirac3D"],
+Cell[13063, 291, 163, 5, 70, "Text",
+  CellTags->"QDirac3D"],
+Cell[13229, 298, 67, 1, 70, "Section",
+  CellTags->"QDisposeOperator"],
+Cell[13299, 301, 173, 3, 70, "Usage",
+  CellTags->"QDisposeOperator"],
+Cell[13475, 306, 171, 5, 70, "Text",
+  CellTags->"QDisposeOperator"],
+Cell[13649, 313, 67, 1, 70, "Section",
+  CellTags->"QGetOperatorInfo"],
+Cell[13719, 316, 169, 3, 70, "Usage",
+  CellTags->"QGetOperatorInfo"],
+Cell[13891, 321, 171, 5, 70, "Text",
+  CellTags->"QGetOperatorInfo"],
+Cell[14065, 328, 63, 1, 70, "Section",
+  CellTags->"QTimeEvolution"],
+Cell[14131, 331, 828, 3, 70, "Usage",
+  CellTags->"QTimeEvolution"],
+Cell[14962, 336, 169, 5, 70, "Text",
+  CellTags->"QTimeEvolution"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

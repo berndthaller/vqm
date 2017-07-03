@@ -1,0 +1,546 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     17632,        536]
+NotebookOptionsPosition[     11059,        338]
+NotebookOutlinePosition[     14843,        447]
+CellTagsIndexPosition[     14368,        432]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QPrincipalQuantumNumber", "Section",
+ CellTags->"QPrincipalQuantumNumber"],
+
+Cell["\<\
+QPrincipalQuantumNumber[nrad,ell] gives the principal quantum number in terms \
+of the radial quantum number and the angular momentum. Package: VQM`Coulomb`.\
+\
+\>", "Usage",
+ CellTags->"QPrincipalQuantumNumber"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPrincipalQuantumNumber"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QRadialQuantumNumber", "Section",
+ CellTags->"QRadialQuantumNumber"],
+
+Cell["\<\
+QRadialQuantumNumber[n,ell] is the radial quantum number n - ell - 1. It \
+counts the number of radial zeros of the wave function. Package: \
+VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"QRadialQuantumNumber"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QRadialQuantumNumber"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QCoulombEnergy", "Section",
+ CellTags->"QCoulombEnergy"],
+
+Cell["\<\
+QCoulombEnergy[n, options] gives the energy of a particle in the Coulomb \
+field g/r (here n=nrad+ell+1 is the principal quantum number). QCoulombEnergy \
+is an eigenfunction of the differential operator -1/2 Delta + g/r. The \
+Coulomb coupling constant g can be specified by giving the option \
+QCoulombCoupling->g. Default is g=$QCoulombCoupling. The constant \
+$QCoulombCoupling is initially set to 1, but can be redefined by the user. \
+The energy depends on the space dimension. Default space dimension is 3; you \
+can change this by the option QCoulombSpaceDimension->dim, or by redefining \
+the constant $QCoulombSpaceDimension. Package: VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"QCoulombEnergy"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QCoulombEnergy"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QCoulombTimePeriod", "Section",
+ CellTags->"QCoulombTimePeriod"],
+
+Cell["\<\
+QCoulombTimePeriod[n1,n2,..] gives the time period of a superposition of \
+Coulomb eigenstates with principal quantum numbers n1,n2, etc. Package: \
+VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"QCoulombTimePeriod"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QCoulombTimePeriod"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QCoulombFunction", "Section",
+ CellTags->"QCoulombFunction"],
+
+Cell["\<\
+QCoulombFunction[n,ell,m,{x,y,z},options] gives the energy eigenfunction of a \
+particle in the three-dimensional attractive Coulomb field -g/r. n is the \
+principal quantum number, ell orbital angular momentum, m is the magnetic \
+quantum number. The function is an eigenfunction of (-1/2 Delta - g/r) Psi = \
+QCoulombEnergy Psi. The Coulomb coupling constant g can be specified by \
+giving the option QCoulombCoupling->g. Default is g=$QCoulombCoupling \
+(attractive for positive values of g). The constant $QCoulombCoupling is \
+initially set to 1, but can be redefined by the user. The energy depends on \
+the space dimension. Default space dimension is 3; you can change this by the \
+option QCoulombSpaceDimension->dim, or by redefining the constant \
+$QCoulombSpaceDimension. The default coordinate system is Cartesian, as set \
+by the package Calculus`VectorAnalysis`. The coordinatesystem can be changed \
+by the command SetCoordinates[Spherical]. In this case, the function has to \
+be used in the form QCoulombFunction[n,ell,m,{r,theta,phi}]. \
+QCoulombFunction[n,m,{x,y},options] resp. \
+QCoulombFunction[n,m,{r,phi},options] give the eigenfunction for the \
+two-dimensional Coulomb problem in Cartesian resp. Spherical coordinates. \
+Package: VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"QCoulombFunction"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QCoulombFunction"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QEffectiveCoulombPotential", "Section",
+ CellTags->"QEffectiveCoulombPotential"],
+
+Cell["\<\
+QEffectiveCoulombPotential[ell, r] is the effective potential for the radial \
+Coulomb equation. Consists of the Coulomb potential and the repulsive angular \
+momentum barrier, which depends on the space dimension. Package: \
+VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"QEffectiveCoulombPotential"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QEffectiveCoulombPotential"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QCoulombHamiltonian", "Section",
+ CellTags->"QCoulombHamiltonian"],
+
+Cell["\<\
+QCoulombHamiltonian[psi[x,y,z],{x,y,z}] or \
+QCoulombHamiltonian[psi[x,y],{x,y}] evaluates the action of the Hamiltonian \
+operator -1/2 Delta - g/r on the wave function psi. Package: VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"QCoulombHamiltonian"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QCoulombHamiltonian"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QRadialCoulombFunction", "Section",
+ CellTags->"QRadialCoulombFunction"],
+
+Cell["\<\
+QRadialCoulombFunction[n,ell,r] is the radial part of the eigenfunction of \
+the Schroedinger equation in the angular momentum subspace described by ell. \
+Here n is the principal quantum number. n - ell - 1 (=the radial quantum \
+number) is the number of zeros of the radial Coulomb eigenfunction. Package: \
+VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"QRadialCoulombFunction"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QRadialCoulombFunction"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QRadialPositionAmplitude", "Section",
+ CellTags->"QRadialPositionAmplitude"],
+
+Cell["\<\
+QRadialPositionAmplitude[n,ell,r] describes the amplitude of the radial \
+position density. The square of the radial position amplitude gives the \
+probability density for having a position at the distance r from the \
+coordinate origin. Here n is the principal quantum number, ell is the orbital \
+angular momentum quantum number. Package: VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"QRadialPositionAmplitude"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QRadialPositionAmplitude"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["$QCoulombSpaceDimension", "Section",
+ CellTags->"$QCoulombSpaceDimension"],
+
+Cell["\<\
+Constant describing the default value of the space dimension in the package \
+VQM`Coulomb`. Initially set to 3. Package: VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"$QCoulombSpaceDimension"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QCoulombSpaceDimension", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"QCoulombSpaceDimension", "->", 
+           RowBox[{
+           "dim", " ", "is", " ", "an", " ", "option", " ", "used", " ", "in",
+             " ", "the", " ", "package", " ", 
+            RowBox[{"VQM`Coulomb`", ".", " ", "The"}], " ", "formulas", " ", 
+            "for", " ", "eigenfunctions", " ", "and", " ", "energies", " ", 
+            "depend", " ", "on", " ", "the", " ", "space", " ", 
+            RowBox[{"dimension", ".", " ", "Default"}], " ", "value", " ", 
+            "is", " ", "$QCoulombSpaceDimension"}]}], " ", "=", " ", "3"}], 
+         ",", " ", 
+         RowBox[{
+         "but", " ", "this", " ", "constant", " ", "can", " ", "be", " ", 
+          "redefined", " ", "by", " ", "the", " ", 
+          RowBox[{"user", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"$QCoulombSpaceDimension"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"$QCoulombSpaceDimension"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["$QCoulombCoupling", "Section",
+ CellTags->"$QCoulombCoupling"],
+
+Cell["\<\
+Constant describing the default value of the strength of the Coulomb \
+potential g/r for the package VQM`Coulomb`. Initial value is g=1, which \
+describes an attractive Coulomb potential. Package: VQM`Coulomb`.\
+\>", "Usage",
+ CellTags->"$QCoulombCoupling"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QCoulombCoupling", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"QCoulombCoupling", "->", 
+           RowBox[{
+            RowBox[{
+            "g", " ", "is", " ", "an", " ", "option", " ", "used", " ", "in", 
+             " ", "the", " ", "package", " ", 
+             RowBox[{"VQM`Coulomb`", ".", " ", "It"}], " ", "describes", " ", 
+             "the", " ", "strength", " ", "of", " ", "the", " ", "Coulomb", 
+             " ", "potential"}], " ", "-", 
+            RowBox[{
+             RowBox[{"g", "/", "r"}], " ", "in", " ", "the", " ", 
+             "Schroedinger", " ", 
+             RowBox[{"equation", ".", " ", "Default"}], " ", "value", " ", 
+             "is", " ", "$QCoulombCoupling"}]}]}], " ", "=", " ", "1"}], ",", 
+         " ", 
+         RowBox[{
+         "but", " ", "this", " ", "constant", " ", "can", " ", "be", " ", 
+          "redefined", " ", "by", " ", "the", " ", 
+          RowBox[{"user", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"$QCoulombCoupling"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Coulomb`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"$QCoulombCoupling"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "QPrincipalQuantumNumber"->{
+  Cell[590, 23, 80, 1, 63, "Section",
+   CellTags->"QPrincipalQuantumNumber"],
+  Cell[673, 26, 222, 5, 47, "Usage",
+   CellTags->"QPrincipalQuantumNumber"],
+  Cell[898, 33, 165, 5, 23, "Text",
+   CellTags->"QPrincipalQuantumNumber"]},
+ "QRadialQuantumNumber"->{
+  Cell[1100, 43, 74, 1, 63, "Section",
+   CellTags->"QRadialQuantumNumber"],
+  Cell[1177, 46, 215, 5, 47, "Usage",
+   CellTags->"QRadialQuantumNumber"],
+  Cell[1395, 53, 162, 5, 23, "Text",
+   CellTags->"QRadialQuantumNumber"]},
+ "QCoulombEnergy"->{
+  Cell[1594, 63, 62, 1, 63, "Section",
+   CellTags->"QCoulombEnergy"],
+  Cell[1659, 66, 712, 11, 127, "Usage",
+   CellTags->"QCoulombEnergy"],
+  Cell[2374, 79, 156, 5, 23, "Text",
+   CellTags->"QCoulombEnergy"]},
+ "QCoulombTimePeriod"->{
+  Cell[2567, 89, 70, 1, 63, "Section",
+   CellTags->"QCoulombTimePeriod"],
+  Cell[2640, 92, 220, 5, 47, "Usage",
+   CellTags->"QCoulombTimePeriod"],
+  Cell[2863, 99, 160, 5, 23, "Text",
+   CellTags->"QCoulombTimePeriod"]},
+ "QCoulombFunction"->{
+  Cell[3060, 109, 66, 1, 63, "Section",
+   CellTags->"QCoulombFunction"],
+  Cell[3129, 112, 1325, 20, 207, "Usage",
+   CellTags->"QCoulombFunction"],
+  Cell[4457, 134, 158, 5, 70, "Text",
+   CellTags->"QCoulombFunction"]},
+ "QEffectiveCoulombPotential"->{
+  Cell[4652, 144, 86, 1, 70, "Section",
+   CellTags->"QEffectiveCoulombPotential"],
+  Cell[4741, 147, 305, 6, 70, "Usage",
+   CellTags->"QEffectiveCoulombPotential"],
+  Cell[5049, 155, 168, 5, 70, "Text",
+   CellTags->"QEffectiveCoulombPotential"]},
+ "QCoulombHamiltonian"->{
+  Cell[5254, 165, 72, 1, 70, "Section",
+   CellTags->"QCoulombHamiltonian"],
+  Cell[5329, 168, 256, 5, 70, "Usage",
+   CellTags->"QCoulombHamiltonian"],
+  Cell[5588, 175, 161, 5, 70, "Text",
+   CellTags->"QCoulombHamiltonian"]},
+ "QRadialCoulombFunction"->{
+  Cell[5786, 185, 78, 1, 70, "Section",
+   CellTags->"QRadialCoulombFunction"],
+  Cell[5867, 188, 385, 7, 70, "Usage",
+   CellTags->"QRadialCoulombFunction"],
+  Cell[6255, 197, 164, 5, 70, "Text",
+   CellTags->"QRadialCoulombFunction"]},
+ "QRadialPositionAmplitude"->{
+  Cell[6456, 207, 82, 1, 70, "Section",
+   CellTags->"QRadialPositionAmplitude"],
+  Cell[6541, 210, 418, 7, 70, "Usage",
+   CellTags->"QRadialPositionAmplitude"],
+  Cell[6962, 219, 166, 5, 70, "Text",
+   CellTags->"QRadialPositionAmplitude"]},
+ "$QCoulombSpaceDimension"->{
+  Cell[7165, 229, 80, 1, 70, "Section",
+   CellTags->"$QCoulombSpaceDimension"],
+  Cell[7248, 232, 197, 4, 70, "Usage",
+   CellTags->"$QCoulombSpaceDimension"],
+  Cell[7448, 238, 1392, 32, 70, "Text",
+   CellTags->"$QCoulombSpaceDimension"],
+  Cell[8843, 272, 165, 5, 70, "Text",
+   CellTags->"$QCoulombSpaceDimension"]},
+ "$QCoulombCoupling"->{
+  Cell[9045, 282, 68, 1, 70, "Section",
+   CellTags->"$QCoulombCoupling"],
+  Cell[9116, 285, 267, 5, 70, "Usage",
+   CellTags->"$QCoulombCoupling"],
+  Cell[9386, 292, 1495, 36, 70, "Text",
+   CellTags->"$QCoulombCoupling"],
+  Cell[10884, 330, 159, 5, 70, "Text",
+   CellTags->"$QCoulombCoupling"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"QPrincipalQuantumNumber", 11371, 348},
+ {"QRadialQuantumNumber", 11633, 355},
+ {"QCoulombEnergy", 11883, 362},
+ {"QCoulombTimePeriod", 12121, 369},
+ {"QCoulombFunction", 12367, 376},
+ {"QEffectiveCoulombPotential", 12623, 383},
+ {"QCoulombHamiltonian", 12899, 390},
+ {"QRadialCoulombFunction", 13157, 397},
+ {"QRadialPositionAmplitude", 13426, 404},
+ {"$QCoulombSpaceDimension", 13700, 411},
+ {"$QCoulombCoupling", 14046, 420}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 80, 1, 63, "Section",
+ CellTags->"QPrincipalQuantumNumber"],
+Cell[673, 26, 222, 5, 47, "Usage",
+ CellTags->"QPrincipalQuantumNumber"],
+Cell[898, 33, 165, 5, 23, "Text",
+ CellTags->"QPrincipalQuantumNumber"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1100, 43, 74, 1, 63, "Section",
+ CellTags->"QRadialQuantumNumber"],
+Cell[1177, 46, 215, 5, 47, "Usage",
+ CellTags->"QRadialQuantumNumber"],
+Cell[1395, 53, 162, 5, 23, "Text",
+ CellTags->"QRadialQuantumNumber"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1594, 63, 62, 1, 63, "Section",
+ CellTags->"QCoulombEnergy"],
+Cell[1659, 66, 712, 11, 127, "Usage",
+ CellTags->"QCoulombEnergy"],
+Cell[2374, 79, 156, 5, 23, "Text",
+ CellTags->"QCoulombEnergy"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2567, 89, 70, 1, 63, "Section",
+ CellTags->"QCoulombTimePeriod"],
+Cell[2640, 92, 220, 5, 47, "Usage",
+ CellTags->"QCoulombTimePeriod"],
+Cell[2863, 99, 160, 5, 23, "Text",
+ CellTags->"QCoulombTimePeriod"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3060, 109, 66, 1, 63, "Section",
+ CellTags->"QCoulombFunction"],
+Cell[3129, 112, 1325, 20, 207, "Usage",
+ CellTags->"QCoulombFunction"],
+Cell[4457, 134, 158, 5, 70, "Text",
+ CellTags->"QCoulombFunction"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4652, 144, 86, 1, 70, "Section",
+ CellTags->"QEffectiveCoulombPotential"],
+Cell[4741, 147, 305, 6, 70, "Usage",
+ CellTags->"QEffectiveCoulombPotential"],
+Cell[5049, 155, 168, 5, 70, "Text",
+ CellTags->"QEffectiveCoulombPotential"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5254, 165, 72, 1, 70, "Section",
+ CellTags->"QCoulombHamiltonian"],
+Cell[5329, 168, 256, 5, 70, "Usage",
+ CellTags->"QCoulombHamiltonian"],
+Cell[5588, 175, 161, 5, 70, "Text",
+ CellTags->"QCoulombHamiltonian"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5786, 185, 78, 1, 70, "Section",
+ CellTags->"QRadialCoulombFunction"],
+Cell[5867, 188, 385, 7, 70, "Usage",
+ CellTags->"QRadialCoulombFunction"],
+Cell[6255, 197, 164, 5, 70, "Text",
+ CellTags->"QRadialCoulombFunction"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6456, 207, 82, 1, 70, "Section",
+ CellTags->"QRadialPositionAmplitude"],
+Cell[6541, 210, 418, 7, 70, "Usage",
+ CellTags->"QRadialPositionAmplitude"],
+Cell[6962, 219, 166, 5, 70, "Text",
+ CellTags->"QRadialPositionAmplitude"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7165, 229, 80, 1, 70, "Section",
+ CellTags->"$QCoulombSpaceDimension"],
+Cell[7248, 232, 197, 4, 70, "Usage",
+ CellTags->"$QCoulombSpaceDimension"],
+Cell[7448, 238, 1392, 32, 70, "Text",
+ CellTags->"$QCoulombSpaceDimension"],
+Cell[8843, 272, 165, 5, 70, "Text",
+ CellTags->"$QCoulombSpaceDimension"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9045, 282, 68, 1, 70, "Section",
+ CellTags->"$QCoulombCoupling"],
+Cell[9116, 285, 267, 5, 70, "Usage",
+ CellTags->"$QCoulombCoupling"],
+Cell[9386, 292, 1495, 36, 70, "Text",
+ CellTags->"$QCoulombCoupling"],
+Cell[10884, 330, 159, 5, 70, "Text",
+ CellTags->"$QCoulombCoupling"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

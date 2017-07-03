@@ -1,0 +1,1135 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     43108,       1126]
+NotebookOptionsPosition[     42394,       1096]
+NotebookOutlinePosition[     43005,       1121]
+CellTagsIndexPosition[     42929,       1116]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Dirac1D ", "Subsection",
+ CellTags->"VQM`Dirac1D`"],
+
+Cell["\<\
+This package provides code for solving the Dirac equation in one dimension (a \
+two-by-two matrix-differential equation). For the free Dirac equation we use \
+a fast Fourier transform. For the Dirac equation with an external field we \
+use the Crank-Nicolson formula. \
+\>", "Text",
+ CellTags->"VQM`Dirac1D`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QRelativisticEnergy", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"is", " ", "the", " ", "relativistic", " ", "energy"}], "-",
+           " ", 
+          RowBox[{"momentum", " ", 
+           RowBox[{"relation", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QRelativisticVelocity", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "gives", " ", "the", " ", "velocity", " ", "as", " ", "a", " ", 
+          "function", " ", "of", " ", "the", " ", "momentum", " ", 
+          "according", " ", "to", " ", "relativistic", " ", 
+          RowBox[{"kinematics", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSignedEnergy", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"=", 
+         RowBox[{
+          RowBox[{"Sign", "[", "k", "]"}], "*", 
+          RowBox[{
+           RowBox[{"QRelativisticEnergy", "[", "k", "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSignedMomentum", "[", "en", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "relativistic", " ", "relation", " ", "between", " ", "momentum", 
+          " ", "and", " ", 
+          RowBox[{"energy", ".", " ", "Contains"}], " ", "the", " ", "factor",
+           " ", 
+          RowBox[{
+           RowBox[{"Sign", "[", "en", "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"aplus", "[", "en", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{".", " ", "Auxiliary"}], " ", 
+          RowBox[{"function", ".", " ", "Part"}], " ", "of", " ", "the", " ", 
+          "Foldy"}], "-", 
+         RowBox[{"Wouthuysen", " ", 
+          RowBox[{"matrix", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"aminus", "[", "en", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{".", " ", "Auxiliary"}], " ", 
+          RowBox[{"function", ".", " ", "Part"}], " ", "of", " ", "the", " ", 
+          "Foldy"}], "-", 
+         RowBox[{"Wouthuysen", " ", 
+          RowBox[{"matrix", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDiracMatrix1D", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"is", " ", "the", " ", "one"}], "-", 
+          RowBox[{
+          "dimensional", " ", "Dirac", " ", "operator", " ", "in", " ", 
+           "momentum", " ", 
+           RowBox[{"space", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QProjectPositiveEnergy", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "the", " ", "projection", " ", "onto", " ", "the", " ", 
+          "eigenspace", " ", "of", " ", 
+          RowBox[{"QDiracMatrix1D", "[", "k", "]"}], " ", "belonging", " ", 
+          "to", " ", "the", " ", "positive", " ", 
+          RowBox[{"eigenvalue", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QProjectNegativeEnergy", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "the", " ", "projection", " ", "onto", " ", "the", " ", 
+          "eigenspace", " ", "of", " ", 
+          RowBox[{"QDiracMatrix1D", "[", "k", "]"}], " ", "belonging", " ", 
+          "to", " ", "the", " ", "negative", " ", 
+          RowBox[{"eigenvalue", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpacePropagator", "[", 
+         RowBox[{"k", ",", "t"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "the", " ", "matrix", " ", "giving", " ", "the", " ", 
+           "momentum"}], "-", 
+          RowBox[{
+          "space", " ", "representation", " ", "of", " ", "the", " ", 
+           "unitary", " ", "time", " ", "evolution", " ", "according", " ", 
+           "to", " ", "the", " ", "free", " ", "Dirac", " ", "equation", " ", 
+           "in", " ", "one", " ", "space"}], "-", 
+          RowBox[{"dimensions", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QBaseSpinorRight", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"is", " ", 
+           RowBox[{"the", " ", "'"}], "spinor"}], "-", 
+          RowBox[{
+           RowBox[{"amplitude", "'"}], " ", "of", " ", "a", " ", "right"}], 
+          "-", 
+          RowBox[{
+          "moving", " ", "plane", " ", "wave", " ", "of", " ", "the", " ", 
+           "Dirac", " ", "equation", " ", "in", " ", "one", " ", 
+           RowBox[{"dimension", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QBaseSpinorLeft", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"is", " ", 
+           RowBox[{"the", " ", "'"}], "spinor"}], "-", 
+          RowBox[{
+           RowBox[{"amplitude", "'"}], " ", "of", " ", "a", " ", "left"}], 
+          "-", 
+          RowBox[{
+          "moving", " ", "plane", " ", "wave", " ", "of", " ", "the", " ", 
+           "Dirac", " ", "equation", " ", "in", " ", "one", " ", 
+           RowBox[{"dimension", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QBaseSpinorPos", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"is", " ", 
+           RowBox[{"the", " ", "'"}], "spinor"}], "-", 
+          RowBox[{
+           RowBox[{"amplitude", "'"}], " ", "of", " ", "a", " ", "positive"}],
+           "-", 
+          RowBox[{
+          "energy", " ", "plane", " ", "wave", " ", "of", " ", "the", " ", 
+           "Dirac", " ", "equation", " ", "in", " ", "one", " ", 
+           RowBox[{"dimension", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QBaseSpinorNeg", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"is", " ", 
+           RowBox[{"the", " ", "'"}], "spinor"}], "-", 
+          RowBox[{
+           RowBox[{"amplitude", "'"}], " ", "of", " ", "a", " ", "negative"}],
+           "-", 
+          RowBox[{
+          "energy", " ", "plane", " ", "wave", " ", "of", " ", "the", " ", 
+           "Dirac", " ", "equation", " ", "in", " ", "one", " ", 
+           RowBox[{"dimension", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDiracPlaneWaveRight", "[", 
+         RowBox[{"k", ",", "x"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"or", " ", 
+            RowBox[{"QDiracPlaneWaveRight", "[", 
+             RowBox[{"k", ",", "x", ",", "t"}], "]"}], " ", "gives", " ", "a",
+             " ", "plane"}], "-", 
+           RowBox[{
+           "wave", " ", "solution", " ", "of", " ", "the", " ", "one"}], "-", 
+           
+           RowBox[{"dimensional", " ", "Dirac", " ", "equation"}]}], ",", " ",
+           
+          RowBox[{
+          "corresponding", " ", "to", " ", "a", " ", "beam", " ", "of", " ", 
+           "particles", " ", "with", " ", "positive", " ", 
+           RowBox[{"velocity", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDiracPlaneWaveLeft", "[", 
+         RowBox[{"k", ",", "x"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"or", " ", 
+            RowBox[{"QDiracPlaneWaveLeft", "[", 
+             RowBox[{"k", ",", "x", ",", "t"}], "]"}], " ", "gives", " ", "a",
+             " ", "plane"}], "-", 
+           RowBox[{
+           "wave", " ", "solution", " ", "of", " ", "the", " ", "one"}], "-", 
+           
+           RowBox[{"dimensional", " ", "Dirac", " ", "equation"}]}], ",", " ",
+           
+          RowBox[{
+          "corresponding", " ", "to", " ", "a", " ", "beam", " ", "of", " ", 
+           "particles", " ", "with", " ", "negative", " ", 
+           RowBox[{"velocity", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDiracPlaneWavePos", "[", 
+         RowBox[{"k", ",", "x"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"or", " ", 
+            RowBox[{"QDiracPlaneWavePos", "[", 
+             RowBox[{"k", ",", "x", ",", "t"}], "]"}], " ", "gives", " ", "a",
+             " ", "plane"}], "-", 
+           RowBox[{
+           "wave", " ", "solution", " ", "of", " ", "the", " ", "one"}], "-", 
+           
+           RowBox[{"dimensional", " ", "Dirac", " ", "equation"}]}], ",", " ",
+           
+          RowBox[{
+          "corresponding", " ", "to", " ", "particles", " ", "with", " ", 
+           "momentum", " ", "k", " ", "and", " ", "positive", " ", 
+           RowBox[{"energy", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDiracPlaneWaveNeg", "[", 
+         RowBox[{"k", ",", "x"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"or", " ", 
+            RowBox[{"QDiracPlaneWaveNeg", "[", 
+             RowBox[{"k", ",", "x", ",", "t"}], "]"}], " ", "gives", " ", "a",
+             " ", "plane"}], "-", 
+           RowBox[{
+           "wave", " ", "solution", " ", "of", " ", "the", " ", "one"}], "-", 
+           
+           RowBox[{"dimensional", " ", "Dirac", " ", "equation"}]}], ",", " ",
+           
+          RowBox[{
+          "corresponding", " ", "to", " ", "particles", " ", "with", " ", 
+           "momentum", " ", "k", " ", "and", " ", "negative", " ", 
+           RowBox[{"energy", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFWMatrix", "[", "k", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{"and", " ", 
+          RowBox[{"QInverseFWMatrix", "[", "k", "]"}], " ", "is", " ", "the", 
+          " ", "unitary", " ", "matrix", "  ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"resp", ".", " ", "its"}], " ", "inverse"}], ")"}], " ", 
+          "transforming", " ", 
+          RowBox[{"QDiracMatrix1D", "[", "k", "]"}], " ", "to", " ", "a", " ",
+           "diagonal", " ", 
+          RowBox[{"form", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox["Constant",
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "representing", " ", "the", " ", "velocity", " ", "of", " ", 
+          RowBox[{"light", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox["Constant",
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "representing", " ", "the", " ", "mass", " ", "of", " ", "the", " ", 
+          
+          RowBox[{"particle", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDiracEquation1D", "[", 
+         RowBox[{
+          RowBox[{"psi", "[", 
+           RowBox[{"x", ",", "t"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "t"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"==", 
+         RowBox[{
+          RowBox[{"0", " ", "is", " ", "the", " ", "one"}], "-", 
+          RowBox[{
+          "dimensional", " ", "Dirac", " ", "equation", " ", "for", " ", 
+           "the", " ", "two"}], "-", 
+          RowBox[{"component", " ", "spinor", " ", "function", " ", 
+           RowBox[{
+            RowBox[{"psi", "[", 
+             RowBox[{"x", ",", "t"}], "]"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDiracOperator1D", "[", 
+         RowBox[{
+          RowBox[{"psi", "[", "x", "]"}], ",", "x"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"==", 
+         RowBox[{
+          RowBox[{"0", " ", "gives", " ", "the", " ", "action", " ", "one"}], 
+          "-", 
+          RowBox[{
+          "dimensional", " ", "Dirac", " ", "operator", " ", "on", " ", "the",
+            " ", "two"}], "-", 
+          RowBox[{"component", " ", "spinor", " ", "function", " ", 
+           RowBox[{
+            RowBox[{"psi", "[", "x", "]"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QTridiagonalBlockSolve", "[", 
+         RowBox[{
+         "a_List", ",", " ", "b_List", ",", " ", "c_List", ",", " ", 
+          "r_List"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "variant", " ", "of", " ", "TridiagonalSolve", 
+           " ", "in", " ", "the", " ", "standard", " ", "package", " ", 
+           RowBox[{"LinearAlgebra`Tridiagonal`", ".", " ", "a"}]}], ",", "b", 
+          ",", 
+          RowBox[{
+          "c", " ", "are", " ", "lists", " ", "of", " ", "2", " ", "by", " ", 
+           "2", " ", "matrices"}], ",", " ", 
+          RowBox[{
+           RowBox[{"Length", "[", "b", "]"}], "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Length", "[", "c", "]"}], "+", "1"}], "=", 
+            RowBox[{
+             RowBox[{"Length", "[", "a", "]"}], "+", "1"}]}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "and", " ", "r", " ", "is", " ", "a", " ", "list", " ", "of", " ", 
+            "two"}], "-", 
+           RowBox[{"dimensional", " ", "vectors"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"Length", "[", "r", "]"}], "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"Length", "[", "b", "]"}], ".", " ", "If"}], " ", 
+             RowBox[{"M", "[", 
+              RowBox[{"a", ",", "b", ",", "c"}], "]"}], " ", "is", " ", "the",
+              " ", "block"}], "-", 
+            RowBox[{
+            "tridiagonal", " ", "matrix", " ", "with", " ", "b", " ", "as", 
+             " ", "the", " ", "diagonal"}]}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "then", " ", "QTridiagonalBlockSolve", " ", "gives", " ", "the", 
+            " ", "solution", " ", "of", " ", 
+            RowBox[{"M", ".", "x"}]}], "=", 
+           RowBox[{
+            RowBox[{
+            "r", " ", "as", " ", "a", " ", "list", " ", "x", " ", "of", " ", 
+             "two"}], "-", 
+            RowBox[{"dimensional", " ", 
+             RowBox[{"vectors", ".", " ", 
+              RowBox[{"Package", ":", " ", 
+               RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDiracTimeStep1D", "[", 
+         RowBox[{
+         "psi_List", ",", " ", "pot_List", ",", " ", "dt", ",", " ", "dx"}], 
+         "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"performs", " ", "a", " ", "time"}], "-", 
+           RowBox[{"step", " ", "dt", " ", "of", " ", "the", " ", "time"}], 
+           "-", 
+           RowBox[{
+           "evolution", " ", "defined", " ", "by", " ", "the", " ", 
+            "free"}]}], ",", " ", 
+          RowBox[{"one", "-", 
+           RowBox[{
+           "dimensional", " ", "Dirac", " ", "equation", " ", "with", " ", 
+            "potential"}], "-", 
+           RowBox[{"matrix", " ", 
+            RowBox[{"pot", ".", " ", "psi"}], " ", "is", " ", "given", " ", 
+            "as", " ", "a", " ", "list", " ", "of", " ", "two"}], "-", 
+           RowBox[{
+           "dimensional", " ", "vectors", " ", "that", " ", "represent", " ", 
+            "the", " ", "values", " ", "of", " ", "the", " ", "initial", " ", 
+            "spinor", " ", "on", " ", "the", " ", "points", " ", "of", " ", 
+            "a", " ", "regular", " ", "grid", " ", "with", " ", "grid"}], "-",
+            
+           RowBox[{"distance", " ", 
+            RowBox[{"dx", ".", " ", "pot"}], " ", "is", " ", "a", " ", "list",
+             " ", "of", " ", "2", " ", "by", " ", "2", " ", "matrices", " ", 
+            "representing", " ", "the", " ", "values", " ", "of", " ", "a", 
+            " ", "potential", " ", "matrix", " ", "on", " ", "the", " ", 
+            "grid", " ", 
+            RowBox[{"points", ".", " ", "The"}], " ", "algorithm", " ", 
+            "uses", " ", "a", " ", "Crank"}], "-", 
+           RowBox[{"Nicolson", " ", 
+            RowBox[{"formula", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QInitializeDirac1D", "[", "Kpoints", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "must", " ", "be", " ", "called", " ", "before", " ", "executing", 
+            " ", "any", " ", "of", " ", "the", " ", "QMomentumSpaceSpinor"}], 
+           "-", " ", 
+           RowBox[{"or", " ", "QPositionSpaceSpinor"}], "-", " ", 
+           RowBox[{
+            RowBox[{"commands", ".", " ", "It"}], " ", "produces", " ", 
+            "some", " ", "lists", " ", 
+            RowBox[{"(", 
+             RowBox[{"global", " ", "variables"}], ")"}], " ", "which", " ", 
+            "are", " ", "needed", " ", "by", " ", "all", " ", "of", " ", 
+            "these", " ", "commands", " ", "and", " ", "which", " ", "are", 
+            " ", "pre"}], "-", 
+           RowBox[{
+           "calculated", " ", "once", " ", "and", " ", "for", " ", "all", " ",
+             "for", " ", "better", " ", 
+            RowBox[{"performance", ".", " ", "Kpoints"}], " ", "is", " ", 
+            "the", " ", "grid", " ", "of", " ", "points", " ", "in", " ", 
+            "momentum", " ", "space"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "where", " ", "the", " ", "initial", " ", "spinor", " ", "is", " ",
+             "given", " ", "as", " ", "a", " ", "list", " ", "of", " ", 
+            "spinor"}], "-", 
+           RowBox[{"values", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinorPos", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"computes", " ", "the", " ", "positive"}], "-", 
+          RowBox[{"energy", " ", "part", " ", "of", " ", 
+           RowBox[{
+            RowBox[{"QMomentumSpaceSpinor", "[", 
+             RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinorNeg", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"computes", " ", "the", " ", "negative"}], "-", 
+          RowBox[{"energy", " ", "part", " ", "of", " ", 
+           RowBox[{
+            RowBox[{"QMomentumSpaceSpinor", "[", 
+             RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinorRight", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "positive", 
+          " ", "velocity", " ", "of", " ", 
+          RowBox[{
+           RowBox[{"QMomentumSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinorLeft", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "negative", 
+          " ", "velocity", " ", "of", " ", 
+          RowBox[{
+           RowBox[{"QMomentumSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinorPosRight", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "positive", 
+          " ", "energy", " ", "and", " ", "positive", " ", "velocity", " ", 
+          "of", " ", 
+          RowBox[{
+           RowBox[{"QMomentumSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinorPosLeft", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "positive", 
+          " ", "energy", " ", "and", " ", "negative", " ", "velocity", " ", 
+          "of", " ", 
+          RowBox[{
+           RowBox[{"QMomentumSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinorNegRight", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "negative", 
+          " ", "energy", " ", "and", " ", "positive", " ", "velocity", " ", 
+          "of", " ", 
+          RowBox[{
+           RowBox[{"QMomentumSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinorNegLeft", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "negative", 
+          " ", "energy", " ", "and", " ", "negative", " ", "velocity", " ", 
+          "of", " ", 
+          RowBox[{
+           RowBox[{"QMomentumSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMomentumSpaceSpinor", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "computes", " ", "the", " ", "solution", " ", "of", " ", "the", 
+            " ", "one"}], "-", 
+           RowBox[{
+           "dimensional", " ", "Dirac", " ", "equation", " ", "in", " ", 
+            "momentum", " ", "space", " ", "at", " ", "time", " ", "t"}]}], 
+          ",", " ", 
+          RowBox[{
+          "given", " ", "an", " ", "initial", " ", "spinor", " ", "Kvalues", 
+           " ", "on", " ", "a", " ", "grid", " ", "Kpoints", " ", "in", " ", 
+           "momentum", " ", 
+           RowBox[{"space", ".", " ", "The"}], " ", "result", " ", "is", " ", 
+           "given", " ", "as", " ", "a", " ", "list", " ", "of", " ", 
+           "spinor", " ", "values", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"that", " ", "is"}], ",", " ", 
+              RowBox[{
+               RowBox[{"a", " ", "list", " ", "of", " ", "two"}], "-", 
+               RowBox[{"dimensional", " ", "complex", " ", "vectors"}]}]}], 
+             ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinor", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "gives", " ", "the", " ", "solution", " ", "of", " ", "the", " ", 
+            "one"}], "-", 
+           RowBox[{
+           "dimensional", " ", "Dirac", " ", "equation", " ", "in", " ", 
+            "position", " ", "space", " ", "at", " ", "time", " ", "t"}]}], 
+          ",", " ", 
+          RowBox[{
+          "given", " ", "an", " ", "initial", " ", "spinor", " ", "Kvalues", 
+           " ", "on", " ", "a", " ", "grid", " ", "Kpoints", " ", "in", " ", 
+           "momentum", " ", 
+           RowBox[{"space", ".", " ", "The"}], " ", "result", " ", "is", " ", 
+           "given", " ", "as", " ", "a", " ", "list", " ", "of", " ", 
+           "spinor", " ", "values", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"that", " ", "is"}], ",", " ", 
+              RowBox[{
+               RowBox[{"a", " ", "list", " ", "of", " ", "two"}], "-", 
+               RowBox[{"dimensional", " ", "complex", " ", "vectors"}]}]}], 
+             ")"}], ".", " ", "These"}], " ", "values", " ", "give", " ", 
+           "the", " ", "solution", " ", "on", " ", "the", " ", "set", " ", 
+           "of", " ", "points", " ", "described", " ", "by", " ", 
+           RowBox[{
+            RowBox[{"QPositionSpaceGrid", "[", "Kpoints", "]"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinorPos", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"computes", " ", "the", " ", "positive"}], "-", 
+          RowBox[{"energy", " ", "part", " ", "of", " ", 
+           RowBox[{
+            RowBox[{"QPositionSpaceSpinor", "[", 
+             RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinorNeg", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"computes", " ", "the", " ", "negative"}], "-", 
+          RowBox[{"energy", " ", "part", " ", "of", " ", 
+           RowBox[{
+            RowBox[{"QPositionSpaceSpinor", "[", 
+             RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinorRight", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "positive", 
+          " ", "velocity", " ", "of", " ", 
+          RowBox[{
+           RowBox[{"QPositionSpaceSpinorPos", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinorLeft", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "negative", 
+          " ", "velocity", " ", "of", " ", 
+          RowBox[{
+           RowBox[{"QPositionSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinorPosRight", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "positive", 
+          " ", "energy", " ", "and", " ", "positive", " ", "velocity", " ", 
+          "of", " ", 
+          RowBox[{
+           RowBox[{"QPositionSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinorPosLeft", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "positive", 
+          " ", "energy", " ", "and", " ", "negative", " ", "velocity", " ", 
+          "of", " ", 
+          RowBox[{
+           RowBox[{"QPositionSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinorNegRight", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "negative", 
+          " ", "energy", " ", "and", " ", "positive", " ", "velocity", " ", 
+          "of", " ", 
+          RowBox[{
+           RowBox[{"QPositionSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceSpinorNegLeft", "[", 
+         RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "part", " ", "with", " ", "negative", 
+          " ", "energy", " ", "and", " ", "negative", " ", "velocity", " ", 
+          "of", " ", 
+          RowBox[{
+           RowBox[{"QPositionSpaceSpinor", "[", 
+            RowBox[{"t", ",", "Kvalues", ",", "Kpoints"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceGrid", "[", "Kpoints", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "gives", " ", "the", " ", "grid", " ", "of", " ", "points", " ", 
+           "in", " ", "position", " ", "space"}], ",", " ", 
+          RowBox[{
+          "where", " ", "the", " ", "solution", " ", "is", " ", "determined", 
+           " ", "by", " ", 
+           RowBox[{"QPositionSpaceSpinor", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceInterval", "[", "Kpoints", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "gives", " ", "the", " ", "interval", " ", "in", " ", "position", 
+           " ", "space"}], ",", " ", 
+          RowBox[{
+          "where", " ", "the", " ", "solution", " ", "is", " ", "determined", 
+           " ", "by", " ", 
+           RowBox[{"QPositionSpaceSpinor", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPositionSpaceStep", "[", "Kpoints", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "gives", " ", "the", " ", "step", " ", "size", " ", "of", " ", 
+           "the", " ", "grid", " ", "in", " ", "position", " ", "space"}], 
+          ",", " ", 
+          RowBox[{
+          "where", " ", "the", " ", "solution", " ", "is", " ", "determined", 
+           " ", "by", " ", 
+           RowBox[{"QPositionSpaceSpinor", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QComputeMeanPosition", "[", 
+         RowBox[{"Xvalues", ",", "Xpoints"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "computes", " ", "the", " ", "mean", " ", "position", " ", "of", 
+           " ", "a", " ", "spinor", " ", "that", " ", "is", " ", "given", " ",
+            "by", " ", "a", " ", "list", " ", "of", " ", "spinor"}], "-", 
+          RowBox[{
+          "values", " ", "on", " ", "points", " ", "Xpoints", " ", "of", " ", 
+           "the", " ", "one"}], "-", 
+          RowBox[{"dimensional", " ", "position", " ", 
+           RowBox[{"space", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QInnerProductList", "[", 
+         RowBox[{"spinorlist1", ",", "spinorlist2"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox["",
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSpinorFT", "[", 
+         RowBox[{"spinorlist", ",", 
+          RowBox[{"{", 
+           RowBox[{"x1", ",", "x2"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"computes", " ", "the", " ", "component"}], "-", 
+           RowBox[{
+           "wise", " ", "Fourier", " ", "transform", " ", "of", " ", "the", 
+            " ", "spinorlist"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "assuming", " ", "that", " ", "spinorlist", " ", "are", " ", 
+            RowBox[{"C", "^", "2"}]}], "-", 
+           RowBox[{
+           "values", " ", "given", " ", "on", " ", "a", " ", "uniform", " ", 
+            "grid", " ", "of", " ", "points", " ", "in", " ", "the", " ", 
+            "interval", " ", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x1", ",", "x2"}], "}"}], ".", " ", "For"}], " ", 
+            "example"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "spinorlist", " ", "could", " ", "be", " ", "the", " ", 
+            "numerical", " ", "approximation", " ", "of", " ", "a", " ", 
+            "spinor"}], "-", 
+           RowBox[{"wave", " ", 
+            RowBox[{"function", ".", " ", "The"}], " ", "Fourier"}], "-", 
+           RowBox[{
+           "transform", " ", "is", " ", "computed", " ", "via", " ", "a", " ",
+             "fast", " ", "Fourier", " ", "transform", " ", "method", " ", 
+            "provided", " ", "by", " ", "the", " ", "package", " ", 
+            RowBox[{"FastFourier", ".", "m", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QInverseSpinorFT", "[", 
+         RowBox[{"spinorlist", ",", 
+          RowBox[{"{", 
+           RowBox[{"k1", ",", "k2"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"computes", " ", "the", " ", "component"}], "-", 
+           RowBox[{
+           "wise", " ", "inverse", " ", "Fourier", " ", "transform", " ", 
+            "of", " ", "the", " ", "spinorlist"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "assuming", " ", "that", " ", "spinorlist", " ", "are", " ", 
+            RowBox[{"C", "^", "2"}]}], "-", 
+           RowBox[{
+           "values", " ", "given", " ", "on", " ", "a", " ", "uniform", " ", 
+            "grid", " ", "of", " ", "points", " ", "in", " ", "the", " ", 
+            "interval", " ", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"k1", ",", "k2"}], "}"}], ".", " ", "For"}], " ", 
+            "example"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "spinorlist", " ", "could", " ", "be", " ", "the", " ", 
+            "numerical", " ", "approximation", " ", "of", " ", "a", " ", 
+            "spinor"}], "-", 
+           RowBox[{"wave", " ", "function", " ", "in", " ", "momentum", " ", 
+            RowBox[{"space", ".", " ", "The"}], " ", "inverse", " ", 
+            "Fourier"}], "-", 
+           RowBox[{
+           "transform", " ", "is", " ", "computed", " ", "via", " ", "a", " ",
+             "fast", " ", "Fourier", " ", "transform", " ", "method", " ", 
+            "provided", " ", "by", " ", "the", " ", "package", " ", 
+            RowBox[{"FastFourier", ".", "m", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`Dirac1D`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`Dirac1D`"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`Dirac1D`"->{
+  Cell[590, 23, 57, 1, 56, "Subsection",
+   CellTags->"VQM`Dirac1D`"],
+  Cell[650, 26, 319, 6, 97, "Text",
+   CellTags->"VQM`Dirac1D`"],
+  Cell[972, 34, 41406, 1059, 5957, "Text",
+   CellTags->"VQM`Dirac1D`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`Dirac1D`", 42695, 1106}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 57, 1, 56, "Subsection",
+ CellTags->"VQM`Dirac1D`"],
+Cell[650, 26, 319, 6, 97, "Text",
+ CellTags->"VQM`Dirac1D`"],
+Cell[972, 34, 41406, 1059, 5957, "Text",
+ CellTags->"VQM`Dirac1D`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

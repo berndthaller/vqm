@@ -1,0 +1,250 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      7366,        241]
+NotebookOptionsPosition[      6628,        211]
+NotebookOutlinePosition[      7254,        236]
+CellTagsIndexPosition[      7176,        231]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Rectangular potentials ", "Subsection",
+ CellTags->"VQM`Rectangular`"],
+
+Cell["\<\
+This package defines the solutions of the one-dimensional Schroedinger \
+equation in the presence of rectangular potentials (steps, wells, barriers). \
+\
+\>", "Text",
+ CellTags->"VQM`Rectangular`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QPlaneWaveToRight", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPlaneWaveToLeft", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QReflectionCoefficientJump", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QTransmissionCoefficientJump", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QReflectionCoefficientWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QTransmissionCoefficientWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QTransitionMatrix", "[", 
+         RowBox[{"En", ",", "V1", ",", "V2", ",", "s"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "is", " ", "the", " ", "transition", " ", "matrix", " ", "as", " ",
+             "a", " ", "function", " ", "of", " ", "the", " ", "energy", " ", 
+            "for", " ", "a", " ", "potential"}], "-", 
+           RowBox[{"jump", " ", "from", " ", 
+            RowBox[{"V", "[", "x", "]"}]}]}], "=", 
+          RowBox[{
+           RowBox[{"V1", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"for", " ", "x"}], "<", "s"}], ")"}], " ", "to", " ", 
+            RowBox[{"V", "[", "x", "]"}]}], "=", 
+           RowBox[{"V2", " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"for", " ", "x"}], ">", "s"}], ")"}], ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`Rectangular`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSolutionWellToRight", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPsiEvenWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPsiOddWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDetEvenWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDetOddWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCriticalRadiusEvenWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCriticalRadiusOddWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCriticalDepthEvenWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCriticalDepthOddWell", "[", "...", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{"...", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`Rectangular`", "."}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`Rectangular`"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`Rectangular`"->{
+  Cell[590, 23, 76, 1, 37, "Subsection",
+   CellTags->"VQM`Rectangular`"],
+  Cell[669, 26, 207, 5, 39, "Text",
+   CellTags->"VQM`Rectangular`"],
+  Cell[879, 33, 5733, 175, 521, "Text",
+   CellTags->"VQM`Rectangular`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`Rectangular`", 6933, 221}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 76, 1, 37, "Subsection",
+ CellTags->"VQM`Rectangular`"],
+Cell[669, 26, 207, 5, 39, "Text",
+ CellTags->"VQM`Rectangular`"],
+Cell[879, 33, 5733, 175, 521, "Text",
+ CellTags->"VQM`Rectangular`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

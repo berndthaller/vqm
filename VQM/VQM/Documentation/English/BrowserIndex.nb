@@ -1,0 +1,4387 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     74934,       2979]*)
+(*NotebookOutlinePosition[    108704,       3918]*)
+(*  CellTagsIndexPosition[    100007,       3684]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Visual Quantum Mechanics (VQM) packages", "IndexSection",
+  CellTags->"MasterIndexHeading"],
+
+Cell[TextData[{
+  StyleBox["ArgColorPlot", "MR"],
+  " package, ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`ArgColorPlot`"],
+
+Cell[TextData[{
+  StyleBox["QArgColorPlot", "MR"],
+  ", ",
+  ButtonBox["QArgColorPlot",
+    ButtonData:>"QArgColorPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QArgColorPlot"],
+
+Cell[TextData[{
+  StyleBox["QListArgColorPlot", "MR"],
+  ", ",
+  ButtonBox["QListArgColorPlot",
+    ButtonData:>"QListArgColorPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QListArgColorPlot"],
+
+Cell[TextData[{
+  StyleBox["QCombinedPlot", "MR"],
+  ", ",
+  ButtonBox["QCombinedPlot",
+    ButtonData:>"QCombinedPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCombinedPlot"],
+
+Cell[TextData[{
+  StyleBox["QListCombinedPlot", "MR"],
+  ", ",
+  ButtonBox["QListCombinedPlot",
+    ButtonData:>"QListCombinedPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QListCombinedPlot"],
+
+Cell[TextData[{
+  StyleBox["QSpinorPlot", "MR"],
+  ", ",
+  ButtonBox["QSpinorPlot",
+    ButtonData:>"QSpinorPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorPlot"],
+
+Cell[TextData[{
+  StyleBox["QListSpinorPlot", "MR"],
+  ", ",
+  ButtonBox["QListSpinorPlot",
+    ButtonData:>"QListSpinorPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QListSpinorPlot"],
+
+Cell[TextData[{
+  StyleBox["QSpinorCombinedPlot", "MR"],
+  ", ",
+  ButtonBox["QSpinorCombinedPlot",
+    ButtonData:>"QSpinorCombinedPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorCombinedPlot"],
+
+Cell[TextData[{
+  StyleBox["QListSpinorCombinedPlot", "MR"],
+  ", ",
+  ButtonBox["QListSpinorCombinedPlot",
+    ButtonData:>"QListSpinorCombinedPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QListSpinorCombinedPlot"],
+
+Cell[TextData[{
+  StyleBox["QNiceTicks", "MR"],
+  ", ",
+  ButtonBox["QNiceTicks",
+    ButtonData:>"QNiceTicks",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonData:>"VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QNiceTicks"],
+
+Cell[TextData[{
+  StyleBox["ColorMaps", "MR"],
+  " package, ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`ColorMaps`"],
+
+Cell[TextData[{
+  StyleBox["QComplexToColor", "MR"],
+  ", ",
+  ButtonBox["QComplexToColor",
+    ButtonData:>"QComplexToColor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QComplexToColor"],
+
+Cell[TextData[{
+  StyleBox["QRGBValues", "MR"],
+  ", ",
+  ButtonBox["QRGBValues",
+    ButtonData:>"QRGBValues",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRGBValues"],
+
+Cell[TextData[{
+  StyleBox["QComplexToRGBColor", "MR"],
+  ", ",
+  ButtonBox["QComplexToRGBColor",
+    ButtonData:>"QComplexToRGBColor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QComplexToRGBColor"],
+
+Cell[TextData[{
+  StyleBox["$QComplexToColorMap", "MR"],
+  ", ",
+  ButtonBox["$QComplexToColorMap",
+    ButtonData:>"$QComplexToColorMap",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$QComplexToColorMap"],
+
+Cell[TextData[{
+  StyleBox["QSaturationFromLightness", "MR"],
+  ", ",
+  ButtonBox["QSaturationFromLightness",
+    ButtonData:>"QSaturationFromLightness",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSaturationFromLightness"],
+
+Cell[TextData[{
+  StyleBox["QBrightnessFromLightness", "MR"],
+  ", ",
+  ButtonBox["QBrightnessFromLightness",
+    ButtonData:>"QBrightnessFromLightness",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QBrightnessFromLightness"],
+
+Cell[TextData[{
+  StyleBox["QHueFromArgument", "MR"],
+  ", ",
+  ButtonBox["QHueFromArgument",
+    ButtonData:>"QHueFromArgument",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QHueFromArgument"],
+
+Cell[TextData[{
+  StyleBox["QLightnessFromModulus", "MR"],
+  ", ",
+  ButtonBox["QLightnessFromModulus",
+    ButtonData:>"QLightnessFromModulus",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QLightnessFromModulus"],
+
+Cell[TextData[{
+  StyleBox["QProcessColorMapOptions", "MR"],
+  ", ",
+  ButtonBox["QProcessColorMapOptions",
+    ButtonData:>"QProcessColorMapOptions",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QProcessColorMapOptions"],
+
+Cell[TextData[{
+  StyleBox["QVectorToColor", "MR"],
+  ", ",
+  ButtonBox["QVectorToColor",
+    ButtonData:>"QVectorToColor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QVectorToColor"],
+
+Cell[TextData[{
+  StyleBox["QSpinorToColor", "MR"],
+  ", ",
+  ButtonBox["QSpinorToColor",
+    ButtonData:>"QSpinorToColor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonData:>"VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorToColor"],
+
+Cell[TextData[{
+  StyleBox["ComplexPlot", "MR"],
+  " package, ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`ComplexPlot`"],
+
+Cell[TextData[{
+  StyleBox["QComplexPlot3D", "MR"],
+  ", ",
+  ButtonBox["QComplexPlot3D",
+    ButtonData:>"QComplexPlot3D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QComplexPlot3D"],
+
+Cell[TextData[{
+  StyleBox["QListComplexPlot3D", "MR"],
+  ", ",
+  ButtonBox["QListComplexPlot3D",
+    ButtonData:>"QListComplexPlot3D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QListComplexPlot3D"],
+
+Cell[TextData[{
+  StyleBox["QComplexSurfacePlot", "MR"],
+  ", ",
+  ButtonBox["QComplexSurfacePlot",
+    ButtonData:>"QComplexSurfacePlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QComplexSurfacePlot"],
+
+Cell[TextData[{
+  StyleBox["QListComplexSurfacePlot", "MR"],
+  ", ",
+  ButtonBox["QListComplexSurfacePlot",
+    ButtonData:>"QListComplexSurfacePlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QListComplexSurfacePlot"],
+
+Cell[TextData[{
+  StyleBox["QComplexDensityPlot", "MR"],
+  ", ",
+  ButtonBox["QComplexDensityPlot",
+    ButtonData:>"QComplexDensityPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QComplexDensityPlot"],
+
+Cell[TextData[{
+  StyleBox["QSpinorDensityPlot", "MR"],
+  ", ",
+  ButtonBox["QSpinorDensityPlot",
+    ButtonData:>"QSpinorDensityPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorDensityPlot"],
+
+Cell[TextData[{
+  StyleBox["QListComplexDensityPlot", "MR"],
+  ", ",
+  ButtonBox["QListComplexDensityPlot",
+    ButtonData:>"QListComplexDensityPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QListComplexDensityPlot"],
+
+Cell[TextData[{
+  StyleBox["QComplexContourPlot", "MR"],
+  ", ",
+  ButtonBox["QComplexContourPlot",
+    ButtonData:>"QComplexContourPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QComplexContourPlot"],
+
+Cell[TextData[{
+  StyleBox["QListComplexContourPlot", "MR"],
+  ", ",
+  ButtonBox["QListComplexContourPlot",
+    ButtonData:>"QListComplexContourPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QListComplexContourPlot"],
+
+Cell[TextData[{
+  StyleBox["QColorArrayPlot", "MR"],
+  ", ",
+  ButtonBox["QColorArrayPlot",
+    ButtonData:>"QColorArrayPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QColorArrayPlot"],
+
+Cell[TextData[{
+  StyleBox["QColorDensityGraphics", "MR"],
+  ", ",
+  ButtonBox["QColorDensityGraphics",
+    ButtonData:>"QColorDensityGraphics",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonData:>"VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QColorDensityGraphics"],
+
+Cell[TextData[{
+  StyleBox["Coulomb", "MR"],
+  " package, ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`Coulomb`"],
+
+Cell[TextData[{
+  StyleBox["QPrincipalQuantumNumber", "MR"],
+  ", ",
+  ButtonBox["QPrincipalQuantumNumber",
+    ButtonData:>"QPrincipalQuantumNumber",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPrincipalQuantumNumber"],
+
+Cell[TextData[{
+  StyleBox["QRadialQuantumNumber", "MR"],
+  ", ",
+  ButtonBox["QRadialQuantumNumber",
+    ButtonData:>"QRadialQuantumNumber",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRadialQuantumNumber"],
+
+Cell[TextData[{
+  StyleBox["QCoulombEnergy", "MR"],
+  ", ",
+  ButtonBox["QCoulombEnergy",
+    ButtonData:>"QCoulombEnergy",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCoulombEnergy"],
+
+Cell[TextData[{
+  StyleBox["QCoulombTimePeriod", "MR"],
+  ", ",
+  ButtonBox["QCoulombTimePeriod",
+    ButtonData:>"QCoulombTimePeriod",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCoulombTimePeriod"],
+
+Cell[TextData[{
+  StyleBox["QCoulombFunction", "MR"],
+  ", ",
+  ButtonBox["QCoulombFunction",
+    ButtonData:>"QCoulombFunction",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCoulombFunction"],
+
+Cell[TextData[{
+  StyleBox["QEffectiveCoulombPotential", "MR"],
+  ", ",
+  ButtonBox["QEffectiveCoulombPotential",
+    ButtonData:>"QEffectiveCoulombPotential",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QEffectiveCoulombPotential"],
+
+Cell[TextData[{
+  StyleBox["QCoulombHamiltonian", "MR"],
+  ", ",
+  ButtonBox["QCoulombHamiltonian",
+    ButtonData:>"QCoulombHamiltonian",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCoulombHamiltonian"],
+
+Cell[TextData[{
+  StyleBox["QRadialCoulombFunction", "MR"],
+  ", ",
+  ButtonBox["QRadialCoulombFunction",
+    ButtonData:>"QRadialCoulombFunction",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRadialCoulombFunction"],
+
+Cell[TextData[{
+  StyleBox["QRadialPositionAmplitude", "MR"],
+  ", ",
+  ButtonBox["QRadialPositionAmplitude",
+    ButtonData:>"QRadialPositionAmplitude",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRadialPositionAmplitude"],
+
+Cell[TextData[{
+  StyleBox["$QCoulombSpaceDimension", "MR"],
+  ", ",
+  ButtonBox["$QCoulombSpaceDimension",
+    ButtonData:>"$QCoulombSpaceDimension",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$QCoulombSpaceDimension"],
+
+Cell[TextData[{
+  StyleBox["$QCoulombCoupling", "MR"],
+  ", ",
+  ButtonBox["$QCoulombCoupling",
+    ButtonData:>"$QCoulombCoupling",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Coulomb`",
+    ButtonData:>"VQM`Coulomb`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$QCoulombCoupling"],
+
+Cell[TextData[{
+  StyleBox["Dirac1D", "MR"],
+  " package, ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`Dirac1D`"],
+
+Cell[TextData[{
+  StyleBox["QRelativisticEnergy", "MR"],
+  ", ",
+  ButtonBox["QRelativisticEnergy",
+    ButtonData:>"QRelativisticEnergy",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRelativisticEnergy"],
+
+Cell[TextData[{
+  StyleBox["QRelativisticVelocity", "MR"],
+  ", ",
+  ButtonBox["QRelativisticVelocity",
+    ButtonData:>"QRelativisticVelocity",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRelativisticVelocity"],
+
+Cell[TextData[{
+  StyleBox["QSignedEnergy", "MR"],
+  ", ",
+  ButtonBox["QSignedEnergy",
+    ButtonData:>"QSignedEnergy",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSignedEnergy"],
+
+Cell[TextData[{
+  StyleBox["QSignedMomentum", "MR"],
+  ", ",
+  ButtonBox["QSignedMomentum",
+    ButtonData:>"QSignedMomentum",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSignedMomentum"],
+
+Cell[TextData[{
+  StyleBox["aplus", "MR"],
+  ", ",
+  ButtonBox["aplus",
+    ButtonData:>"aplus",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aplus"],
+
+Cell[TextData[{
+  StyleBox["aminus", "MR"],
+  ", ",
+  ButtonBox["aminus",
+    ButtonData:>"aminus",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"aminus"],
+
+Cell[TextData[{
+  StyleBox["QDiracMatrix1D", "MR"],
+  ", ",
+  ButtonBox["QDiracMatrix1D",
+    ButtonData:>"QDiracMatrix1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDiracMatrix1D"],
+
+Cell[TextData[{
+  StyleBox["QProjectPositiveEnergy", "MR"],
+  ", ",
+  ButtonBox["QProjectPositiveEnergy",
+    ButtonData:>"QProjectPositiveEnergy",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QProjectPositiveEnergy"],
+
+Cell[TextData[{
+  StyleBox["QProjectNegativeEnergy", "MR"],
+  ", ",
+  ButtonBox["QProjectNegativeEnergy",
+    ButtonData:>"QProjectNegativeEnergy",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QProjectNegativeEnergy"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpacePropagator", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpacePropagator",
+    ButtonData:>"QMomentumSpacePropagator",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpacePropagator"],
+
+Cell[TextData[{
+  StyleBox["QBaseSpinorRight", "MR"],
+  ", ",
+  ButtonBox["QBaseSpinorRight",
+    ButtonData:>"QBaseSpinorRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QBaseSpinorRight"],
+
+Cell[TextData[{
+  StyleBox["QBaseSpinorLeft", "MR"],
+  ", ",
+  ButtonBox["QBaseSpinorLeft",
+    ButtonData:>"QBaseSpinorLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QBaseSpinorLeft"],
+
+Cell[TextData[{
+  StyleBox["QBaseSpinorPos", "MR"],
+  ", ",
+  ButtonBox["QBaseSpinorPos",
+    ButtonData:>"QBaseSpinorPos",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QBaseSpinorPos"],
+
+Cell[TextData[{
+  StyleBox["QBaseSpinorNeg", "MR"],
+  ", ",
+  ButtonBox["QBaseSpinorNeg",
+    ButtonData:>"QBaseSpinorNeg",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QBaseSpinorNeg"],
+
+Cell[TextData[{
+  StyleBox["QDiracPlaneWaveRight", "MR"],
+  ", ",
+  ButtonBox["QDiracPlaneWaveRight",
+    ButtonData:>"QDiracPlaneWaveRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDiracPlaneWaveRight"],
+
+Cell[TextData[{
+  StyleBox["QDiracPlaneWaveLeft", "MR"],
+  ", ",
+  ButtonBox["QDiracPlaneWaveLeft",
+    ButtonData:>"QDiracPlaneWaveLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDiracPlaneWaveLeft"],
+
+Cell[TextData[{
+  StyleBox["QDiracPlaneWavePos", "MR"],
+  ", ",
+  ButtonBox["QDiracPlaneWavePos",
+    ButtonData:>"QDiracPlaneWavePos",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDiracPlaneWavePos"],
+
+Cell[TextData[{
+  StyleBox["QDiracPlaneWaveNeg", "MR"],
+  ", ",
+  ButtonBox["QDiracPlaneWaveNeg",
+    ButtonData:>"QDiracPlaneWaveNeg",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDiracPlaneWaveNeg"],
+
+Cell[TextData[{
+  StyleBox["QFWMatrix", "MR"],
+  ", ",
+  ButtonBox["QFWMatrix",
+    ButtonData:>"QFWMatrix",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFWMatrix"],
+
+Cell[TextData[{
+  StyleBox["$c", "MR"],
+  ", ",
+  ButtonBox["$c",
+    ButtonData:>"$c",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$c"],
+
+Cell[TextData[{
+  StyleBox["$m", "MR"],
+  ", ",
+  ButtonBox["$m",
+    ButtonData:>"$m",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$m"],
+
+Cell[TextData[{
+  StyleBox["QDiracEquation1D", "MR"],
+  ", ",
+  ButtonBox["QDiracEquation1D",
+    ButtonData:>"QDiracEquation1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDiracEquation1D"],
+
+Cell[TextData[{
+  StyleBox["QDiracOperator1D", "MR"],
+  ", ",
+  ButtonBox["QDiracOperator1D",
+    ButtonData:>"QDiracOperator1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDiracOperator1D"],
+
+Cell[TextData[{
+  StyleBox["QTridiagonalBlockSolve", "MR"],
+  ", ",
+  ButtonBox["QTridiagonalBlockSolve",
+    ButtonData:>"QTridiagonalBlockSolve",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QTridiagonalBlockSolve"],
+
+Cell[TextData[{
+  StyleBox["QDiracTimeStep1D", "MR"],
+  ", ",
+  ButtonBox["QDiracTimeStep1D",
+    ButtonData:>"QDiracTimeStep1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDiracTimeStep1D"],
+
+Cell[TextData[{
+  StyleBox["QInitializeDirac1D", "MR"],
+  ", ",
+  ButtonBox["QInitializeDirac1D",
+    ButtonData:>"QInitializeDirac1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QInitializeDirac1D"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinorPos", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinorPos",
+    ButtonData:>"QMomentumSpaceSpinorPos",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinorPos"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinorNeg", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinorNeg",
+    ButtonData:>"QMomentumSpaceSpinorNeg",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinorNeg"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinorRight", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinorRight",
+    ButtonData:>"QMomentumSpaceSpinorRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinorRight"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinorLeft", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinorLeft",
+    ButtonData:>"QMomentumSpaceSpinorLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinorLeft"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinorPosRight", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinorPosRight",
+    ButtonData:>"QMomentumSpaceSpinorPosRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinorPosRight"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinorPosLeft", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinorPosLeft",
+    ButtonData:>"QMomentumSpaceSpinorPosLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinorPosLeft"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinorNegRight", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinorNegRight",
+    ButtonData:>"QMomentumSpaceSpinorNegRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinorNegRight"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinorNegLeft", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinorNegLeft",
+    ButtonData:>"QMomentumSpaceSpinorNegLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinorNegLeft"],
+
+Cell[TextData[{
+  StyleBox["QMomentumSpaceSpinor", "MR"],
+  ", ",
+  ButtonBox["QMomentumSpaceSpinor",
+    ButtonData:>"QMomentumSpaceSpinor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMomentumSpaceSpinor"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinor", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinor",
+    ButtonData:>"QPositionSpaceSpinor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinor"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinorPos", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinorPos",
+    ButtonData:>"QPositionSpaceSpinorPos",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinorPos"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinorNeg", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinorNeg",
+    ButtonData:>"QPositionSpaceSpinorNeg",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinorNeg"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinorRight", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinorRight",
+    ButtonData:>"QPositionSpaceSpinorRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinorRight"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinorLeft", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinorLeft",
+    ButtonData:>"QPositionSpaceSpinorLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinorLeft"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinorPosRight", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinorPosRight",
+    ButtonData:>"QPositionSpaceSpinorPosRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinorPosRight"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinorPosLeft", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinorPosLeft",
+    ButtonData:>"QPositionSpaceSpinorPosLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinorPosLeft"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinorNegRight", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinorNegRight",
+    ButtonData:>"QPositionSpaceSpinorNegRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinorNegRight"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceSpinorNegLeft", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceSpinorNegLeft",
+    ButtonData:>"QPositionSpaceSpinorNegLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceSpinorNegLeft"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceGrid", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceGrid",
+    ButtonData:>"QPositionSpaceGrid",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceGrid"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceInterval", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceInterval",
+    ButtonData:>"QPositionSpaceInterval",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceInterval"],
+
+Cell[TextData[{
+  StyleBox["QPositionSpaceStep", "MR"],
+  ", ",
+  ButtonBox["QPositionSpaceStep",
+    ButtonData:>"QPositionSpaceStep",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPositionSpaceStep"],
+
+Cell[TextData[{
+  StyleBox["QComputeMeanPosition", "MR"],
+  ", ",
+  ButtonBox["QComputeMeanPosition",
+    ButtonData:>"QComputeMeanPosition",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QComputeMeanPosition"],
+
+Cell[TextData[{
+  StyleBox["QInnerProductList", "MR"],
+  ", ",
+  ButtonBox["QInnerProductList",
+    ButtonData:>"QInnerProductList",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QInnerProductList"],
+
+Cell[TextData[{
+  StyleBox["QSpinorFT", "MR"],
+  ", ",
+  ButtonBox["QSpinorFT",
+    ButtonData:>"QSpinorFT",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorFT"],
+
+Cell[TextData[{
+  StyleBox["QInverseSpinorFT", "MR"],
+  ", ",
+  ButtonBox["QInverseSpinorFT",
+    ButtonData:>"QInverseSpinorFT",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Dirac1D`",
+    ButtonData:>"VQM`Dirac1D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QInverseSpinorFT"],
+
+Cell[TextData[{
+  StyleBox["FastFourier", "MR"],
+  " package, ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`FastFourier`"],
+
+Cell[TextData[{
+  StyleBox["QFourierList", "MR"],
+  ", ",
+  ButtonBox["QFourierList",
+    ButtonData:>"QFourierList",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFourierList"],
+
+Cell[TextData[{
+  StyleBox["QInverseFourierList", "MR"],
+  ", ",
+  ButtonBox["QInverseFourierList",
+    ButtonData:>"QInverseFourierList",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QInverseFourierList"],
+
+Cell[TextData[{
+  StyleBox["QFourierListArgColorPlot", "MR"],
+  ", ",
+  ButtonBox["QFourierListArgColorPlot",
+    ButtonData:>"QFourierListArgColorPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFourierListArgColorPlot"],
+
+Cell[TextData[{
+  StyleBox["QInverseFourierListArgColorPlot", "MR"],
+  ", ",
+  ButtonBox["QInverseFourierListArgColorPlot",
+    ButtonData:>"QInverseFourierListArgColorPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QInverseFourierListArgColorPlot"],
+
+Cell[TextData[{
+  StyleBox["QStepSize", "MR"],
+  ", ",
+  ButtonBox["QStepSize",
+    ButtonData:>"QStepSize",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QStepSize"],
+
+Cell[TextData[{
+  StyleBox["QGrid", "MR"],
+  ", ",
+  ButtonBox["QGrid",
+    ButtonData:>"QGrid",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGrid"],
+
+Cell[TextData[{
+  StyleBox["QLeftBorder", "MR"],
+  ", ",
+  ButtonBox["QLeftBorder",
+    ButtonData:>"QLeftBorder",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QLeftBorder"],
+
+Cell[TextData[{
+  StyleBox["QSpaceStep", "MR"],
+  ", ",
+  ButtonBox["QSpaceStep",
+    ButtonData:>"QSpaceStep",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpaceStep"],
+
+Cell[TextData[{
+  StyleBox["QSpaceInterval", "MR"],
+  ", ",
+  ButtonBox["QSpaceInterval",
+    ButtonData:>"QSpaceInterval",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpaceInterval"],
+
+Cell[TextData[{
+  StyleBox["QIndexPosition", "MR"],
+  ", ",
+  ButtonBox["QIndexPosition",
+    ButtonData:>"QIndexPosition",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QIndexPosition"],
+
+Cell[TextData[{
+  StyleBox["QFourierGrid", "MR"],
+  ", ",
+  ButtonBox["QFourierGrid",
+    ButtonData:>"QFourierGrid",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFourierGrid"],
+
+Cell[TextData[{
+  StyleBox["QFourierLeftBorder", "MR"],
+  ", ",
+  ButtonBox["QFourierLeftBorder",
+    ButtonData:>"QFourierLeftBorder",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFourierLeftBorder"],
+
+Cell[TextData[{
+  StyleBox["QFourierRightBorder", "MR"],
+  ", ",
+  ButtonBox["QFourierRightBorder",
+    ButtonData:>"QFourierRightBorder",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFourierRightBorder"],
+
+Cell[TextData[{
+  StyleBox["QFourierStep", "MR"],
+  ", ",
+  ButtonBox["QFourierStep",
+    ButtonData:>"QFourierStep",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFourierStep"],
+
+Cell[TextData[{
+  StyleBox["QFourierInterval", "MR"],
+  ", ",
+  ButtonBox["QFourierInterval",
+    ButtonData:>"QFourierInterval",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonData:>"VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFourierInterval"],
+
+Cell[TextData[{
+  StyleBox["Free", "MR"],
+  " package, ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`Free`"],
+
+Cell[TextData[{
+  StyleBox["QFreeHamiltonian1D", "MR"],
+  ", ",
+  ButtonBox["QFreeHamiltonian1D",
+    ButtonData:>"QFreeHamiltonian1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFreeHamiltonian1D"],
+
+Cell[TextData[{
+  StyleBox["QFreeGaussian", "MR"],
+  ", ",
+  ButtonBox["QFreeGaussian",
+    ButtonData:>"QFreeGaussian",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFreeGaussian"],
+
+Cell[TextData[{
+  StyleBox["QFreeGaussian1D", "MR"],
+  ", ",
+  ButtonBox["QFreeGaussian1D",
+    ButtonData:>"QFreeGaussian1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFreeGaussian1D"],
+
+Cell[TextData[{
+  StyleBox["QFreeGaussian2D", "MR"],
+  ", ",
+  ButtonBox["QFreeGaussian2D",
+    ButtonData:>"QFreeGaussian2D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFreeGaussian2D"],
+
+Cell[TextData[{
+  StyleBox["QFreeGaussian3D", "MR"],
+  ", ",
+  ButtonBox["QFreeGaussian3D",
+    ButtonData:>"QFreeGaussian3D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFreeGaussian3D"],
+
+Cell[TextData[{
+  StyleBox["QGaussian1D", "MR"],
+  ", ",
+  ButtonBox["QGaussian1D",
+    ButtonData:>"QGaussian1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGaussian1D"],
+
+Cell[TextData[{
+  StyleBox["QGaussian2D", "MR"],
+  ", ",
+  ButtonBox["QGaussian2D",
+    ButtonData:>"QGaussian2D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGaussian2D"],
+
+Cell[TextData[{
+  StyleBox["QGaussian3D", "MR"],
+  ", ",
+  ButtonBox["QGaussian3D",
+    ButtonData:>"QGaussian3D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGaussian3D"],
+
+Cell[TextData[{
+  StyleBox["QFreeFourierGaussian1D", "MR"],
+  ", ",
+  ButtonBox["QFreeFourierGaussian1D",
+    ButtonData:>"QFreeFourierGaussian1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFreeFourierGaussian1D"],
+
+Cell[TextData[{
+  StyleBox["QFourierGaussian1D", "MR"],
+  ", ",
+  ButtonBox["QFourierGaussian1D",
+    ButtonData:>"QFourierGaussian1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QFourierGaussian1D"],
+
+Cell[TextData[{
+  StyleBox["QEnergyGaussian1D", "MR"],
+  ", ",
+  ButtonBox["QEnergyGaussian1D",
+    ButtonData:>"QEnergyGaussian1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QEnergyGaussian1D"],
+
+Cell[TextData[{
+  StyleBox["$QFreeMass", "MR"],
+  ", ",
+  ButtonBox["$QFreeMass",
+    ButtonData:>"$QFreeMass",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$QFreeMass"],
+
+Cell[TextData[{
+  StyleBox["$QFreeSpaceDimension", "MR"],
+  ", ",
+  ButtonBox["$QFreeSpaceDimension",
+    ButtonData:>"$QFreeSpaceDimension",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Free`",
+    ButtonData:>"VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$QFreeSpaceDimension"],
+
+Cell[TextData[{
+  StyleBox["Oscillator", "MR"],
+  " package, ",
+  ButtonBox["VQM`Oscillator`",
+    ButtonData:>"VQM`Oscillator`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`Oscillator`"],
+
+Cell[TextData[{
+  StyleBox["QOscillatorEnergy", "MR"],
+  ", ",
+  ButtonBox["QOscillatorEnergy",
+    ButtonData:>"QOscillatorEnergy",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Oscillator`",
+    ButtonData:>"VQM`Oscillator`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QOscillatorEnergy"],
+
+Cell[TextData[{
+  StyleBox["QOscillatorFunction", "MR"],
+  ", ",
+  ButtonBox["QOscillatorFunction",
+    ButtonData:>"QOscillatorFunction",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Oscillator`",
+    ButtonData:>"VQM`Oscillator`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QOscillatorFunction"],
+
+Cell[TextData[{
+  StyleBox["QOscillatorGaussian", "MR"],
+  ", ",
+  ButtonBox["QOscillatorGaussian",
+    ButtonData:>"QOscillatorGaussian",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Oscillator`",
+    ButtonData:>"VQM`Oscillator`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QOscillatorGaussian"],
+
+Cell[TextData[{
+  StyleBox["QOscillatorBarDiagram", "MR"],
+  ", ",
+  ButtonBox["QOscillatorBarDiagram",
+    ButtonData:>"QOscillatorBarDiagram",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Oscillator`",
+    ButtonData:>"VQM`Oscillator`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QOscillatorBarDiagram"],
+
+Cell[TextData[{
+  StyleBox["$QOscillatorFrequency", "MR"],
+  ", ",
+  ButtonBox["$QOscillatorFrequency",
+    ButtonData:>"$QOscillatorFrequency",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Oscillator`",
+    ButtonData:>"VQM`Oscillator`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$QOscillatorFrequency"],
+
+Cell[TextData[{
+  StyleBox["$QOscillatorMass", "MR"],
+  ", ",
+  ButtonBox["$QOscillatorMass",
+    ButtonData:>"$QOscillatorMass",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Oscillator`",
+    ButtonData:>"VQM`Oscillator`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$QOscillatorMass"],
+
+Cell[TextData[{
+  StyleBox["QGraphics2D", "MR"],
+  " package, ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`QGraphics2D`"],
+
+Cell[TextData[{
+  StyleBox["QPrepareOptions", "MR"],
+  ", ",
+  ButtonBox["QPrepareOptions",
+    ButtonData:>"QPrepareOptions",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPrepareOptions"],
+
+Cell[TextData[{
+  StyleBox["QExtractPart", "MR"],
+  ", ",
+  ButtonBox["QExtractPart",
+    ButtonData:>"QExtractPart",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QExtractPart"],
+
+Cell[TextData[{
+  StyleBox["QGetAndDensityPlot", "MR"],
+  ", ",
+  ButtonBox["QGetAndDensityPlot",
+    ButtonData:>"QGetAndDensityPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetAndDensityPlot"],
+
+Cell[TextData[{
+  StyleBox["QGetAndComplexDensityPlot", "MR"],
+  ", ",
+  ButtonBox["QGetAndComplexDensityPlot",
+    ButtonData:>"QGetAndComplexDensityPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetAndComplexDensityPlot"],
+
+Cell[TextData[{
+  StyleBox["QGetSpinorAndDensityPlot", "MR"],
+  ", ",
+  ButtonBox["QGetSpinorAndDensityPlot",
+    ButtonData:>"QGetSpinorAndDensityPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetSpinorAndDensityPlot"],
+
+Cell[TextData[{
+  StyleBox["QMakeTable", "MR"],
+  ", ",
+  ButtonBox["QMakeTable",
+    ButtonData:>"QMakeTable",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QMakeTable"],
+
+Cell[TextData[{
+  StyleBox["QZeroTable", "MR"],
+  ", ",
+  ButtonBox["QZeroTable",
+    ButtonData:>"QZeroTable",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QZeroTable"],
+
+Cell[TextData[{
+  StyleBox["QGetSpinorAndDensityPlotTwo", "MR"],
+  ", ",
+  ButtonBox["QGetSpinorAndDensityPlotTwo",
+    ButtonData:>"QGetSpinorAndDensityPlotTwo",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetSpinorAndDensityPlotTwo"],
+
+Cell[TextData[{
+  StyleBox["QGetAndSpinorToColorPlot", "MR"],
+  ", ",
+  ButtonBox["QGetAndSpinorToColorPlot",
+    ButtonData:>"QGetAndSpinorToColorPlot",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetAndSpinorToColorPlot"],
+
+Cell[TextData[{
+  StyleBox["QGetAndSpinorToColorPlotTwo", "MR"],
+  ", ",
+  ButtonBox["QGetAndSpinorToColorPlotTwo",
+    ButtonData:>"QGetAndSpinorToColorPlotTwo",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonData:>"VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetAndSpinorToColorPlotTwo"],
+
+Cell[TextData[{
+  StyleBox["QuantumKernel", "MR"],
+  " package, ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`QuantumKernel`"],
+
+Cell[TextData[{
+  StyleBox["QNewFunction", "MR"],
+  ", ",
+  ButtonBox["QNewFunction",
+    ButtonData:>"QNewFunction",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QNewFunction"],
+
+Cell[TextData[{
+  StyleBox["QDisposeFunction", "MR"],
+  ", ",
+  ButtonBox["QDisposeFunction",
+    ButtonData:>"QDisposeFunction",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDisposeFunction"],
+
+Cell[TextData[{
+  StyleBox["QGetArray", "MR"],
+  ", ",
+  ButtonBox["QGetArray",
+    ButtonData:>"QGetArray",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetArray"],
+
+Cell[TextData[{
+  StyleBox["QGetFunctionInfo", "MR"],
+  ", ",
+  ButtonBox["QGetFunctionInfo",
+    ButtonData:>"QGetFunctionInfo",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetFunctionInfo"],
+
+Cell[TextData[{
+  StyleBox["QGetColorArray", "MR"],
+  ", ",
+  ButtonBox["QGetColorArray",
+    ButtonData:>"QGetColorArray",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetColorArray"],
+
+Cell[TextData[{
+  StyleBox["QGetGrayArray", "MR"],
+  ", ",
+  ButtonBox["QGetGrayArray",
+    ButtonData:>"QGetGrayArray",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetGrayArray"],
+
+Cell[TextData[{
+  StyleBox["QGetRedBlueArray", "MR"],
+  ", ",
+  ButtonBox["QGetRedBlueArray",
+    ButtonData:>"QGetRedBlueArray",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetRedBlueArray"],
+
+Cell[TextData[{
+  StyleBox["QGetBlackWhiteArray", "MR"],
+  ", ",
+  ButtonBox["QGetBlackWhiteArray",
+    ButtonData:>"QGetBlackWhiteArray",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetBlackWhiteArray"],
+
+Cell[TextData[{
+  StyleBox["QGetAbsArray", "MR"],
+  ", ",
+  ButtonBox["QGetAbsArray",
+    ButtonData:>"QGetAbsArray",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetAbsArray"],
+
+Cell[TextData[{
+  StyleBox["QInfo", "MR"],
+  ", ",
+  ButtonBox["QInfo",
+    ButtonData:>"QInfo",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QInfo"],
+
+Cell[TextData[{
+  StyleBox["QSchroedinger1D", "MR"],
+  ", ",
+  ButtonBox["QSchroedinger1D",
+    ButtonData:>"QSchroedinger1D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSchroedinger1D"],
+
+Cell[TextData[{
+  StyleBox["QSchroedinger2D", "MR"],
+  ", ",
+  ButtonBox["QSchroedinger2D",
+    ButtonData:>"QSchroedinger2D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSchroedinger2D"],
+
+Cell[TextData[{
+  StyleBox["QSchroedinger3D", "MR"],
+  ", ",
+  ButtonBox["QSchroedinger3D",
+    ButtonData:>"QSchroedinger3D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSchroedinger3D"],
+
+Cell[TextData[{
+  StyleBox["QPauli2D", "MR"],
+  ", ",
+  ButtonBox["QPauli2D",
+    ButtonData:>"QPauli2D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPauli2D"],
+
+Cell[TextData[{
+  StyleBox["QPauli3D", "MR"],
+  ", ",
+  ButtonBox["QPauli3D",
+    ButtonData:>"QPauli3D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPauli3D"],
+
+Cell[TextData[{
+  StyleBox["QDirac2D", "MR"],
+  ", ",
+  ButtonBox["QDirac2D",
+    ButtonData:>"QDirac2D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDirac2D"],
+
+Cell[TextData[{
+  StyleBox["QDirac3D", "MR"],
+  ", ",
+  ButtonBox["QDirac3D",
+    ButtonData:>"QDirac3D",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDirac3D"],
+
+Cell[TextData[{
+  StyleBox["QDisposeOperator", "MR"],
+  ", ",
+  ButtonBox["QDisposeOperator",
+    ButtonData:>"QDisposeOperator",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDisposeOperator"],
+
+Cell[TextData[{
+  StyleBox["QGetOperatorInfo", "MR"],
+  ", ",
+  ButtonBox["QGetOperatorInfo",
+    ButtonData:>"QGetOperatorInfo",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QGetOperatorInfo"],
+
+Cell[TextData[{
+  StyleBox["QTimeEvolution", "MR"],
+  ", ",
+  ButtonBox["QTimeEvolution",
+    ButtonData:>"QTimeEvolution",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`QuantumKernel`",
+    ButtonData:>"VQM`QuantumKernel`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QTimeEvolution"],
+
+Cell[TextData[{
+  StyleBox["Rectangular", "MR"],
+  " package, ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`Rectangular`"],
+
+Cell[TextData[{
+  StyleBox["QPlaneWaveToRight", "MR"],
+  ", ",
+  ButtonBox["QPlaneWaveToRight",
+    ButtonData:>"QPlaneWaveToRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPlaneWaveToRight"],
+
+Cell[TextData[{
+  StyleBox["QPlaneWaveToLeft", "MR"],
+  ", ",
+  ButtonBox["QPlaneWaveToLeft",
+    ButtonData:>"QPlaneWaveToLeft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPlaneWaveToLeft"],
+
+Cell[TextData[{
+  StyleBox["QReflectionCoefficientJump", "MR"],
+  ", ",
+  ButtonBox["QReflectionCoefficientJump",
+    ButtonData:>"QReflectionCoefficientJump",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QReflectionCoefficientJump"],
+
+Cell[TextData[{
+  StyleBox["QTransmissionCoefficientJump", "MR"],
+  ", ",
+  ButtonBox["QTransmissionCoefficientJump",
+    ButtonData:>"QTransmissionCoefficientJump",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QTransmissionCoefficientJump"],
+
+Cell[TextData[{
+  StyleBox["QReflectionCoefficientWell", "MR"],
+  ", ",
+  ButtonBox["QReflectionCoefficientWell",
+    ButtonData:>"QReflectionCoefficientWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QReflectionCoefficientWell"],
+
+Cell[TextData[{
+  StyleBox["QTransmissionCoefficientWell", "MR"],
+  ", ",
+  ButtonBox["QTransmissionCoefficientWell",
+    ButtonData:>"QTransmissionCoefficientWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QTransmissionCoefficientWell"],
+
+Cell[TextData[{
+  StyleBox["QTransitionMatrix", "MR"],
+  ", ",
+  ButtonBox["QTransitionMatrix",
+    ButtonData:>"QTransitionMatrix",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QTransitionMatrix"],
+
+Cell[TextData[{
+  StyleBox["QSolutionWellToRight", "MR"],
+  ", ",
+  ButtonBox["QSolutionWellToRight",
+    ButtonData:>"QSolutionWellToRight",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSolutionWellToRight"],
+
+Cell[TextData[{
+  StyleBox["QPsiEvenWell", "MR"],
+  ", ",
+  ButtonBox["QPsiEvenWell",
+    ButtonData:>"QPsiEvenWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPsiEvenWell"],
+
+Cell[TextData[{
+  StyleBox["QPsiOddWell", "MR"],
+  ", ",
+  ButtonBox["QPsiOddWell",
+    ButtonData:>"QPsiOddWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QPsiOddWell"],
+
+Cell[TextData[{
+  StyleBox["QDetEvenWell", "MR"],
+  ", ",
+  ButtonBox["QDetEvenWell",
+    ButtonData:>"QDetEvenWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDetEvenWell"],
+
+Cell[TextData[{
+  StyleBox["QDetOddWell", "MR"],
+  ", ",
+  ButtonBox["QDetOddWell",
+    ButtonData:>"QDetOddWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDetOddWell"],
+
+Cell[TextData[{
+  StyleBox["QCriticalRadiusEvenWell", "MR"],
+  ", ",
+  ButtonBox["QCriticalRadiusEvenWell",
+    ButtonData:>"QCriticalRadiusEvenWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCriticalRadiusEvenWell"],
+
+Cell[TextData[{
+  StyleBox["QCriticalRadiusOddWell", "MR"],
+  ", ",
+  ButtonBox["QCriticalRadiusOddWell",
+    ButtonData:>"QCriticalRadiusOddWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCriticalRadiusOddWell"],
+
+Cell[TextData[{
+  StyleBox["QCriticalDepthEvenWell", "MR"],
+  ", ",
+  ButtonBox["QCriticalDepthEvenWell",
+    ButtonData:>"QCriticalDepthEvenWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCriticalDepthEvenWell"],
+
+Cell[TextData[{
+  StyleBox["QCriticalDepthOddWell", "MR"],
+  ", ",
+  ButtonBox["QCriticalDepthOddWell",
+    ButtonData:>"QCriticalDepthOddWell",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Rectangular`",
+    ButtonData:>"VQM`Rectangular`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QCriticalDepthOddWell"],
+
+Cell[TextData[{
+  StyleBox["Spinors", "MR"],
+  " package, ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`Spinors`"],
+
+Cell[TextData[{
+  StyleBox["QNorm", "MR"],
+  ", ",
+  ButtonBox["QNorm",
+    ButtonData:>"QNorm",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QNorm"],
+
+Cell[TextData[{
+  StyleBox["QNormalize", "MR"],
+  ", ",
+  ButtonBox["QNormalize",
+    ButtonData:>"QNormalize",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QNormalize"],
+
+Cell[TextData[{
+  StyleBox["$QSpinBasis", "MR"],
+  ", ",
+  ButtonBox["$QSpinBasis",
+    ButtonData:>"$QSpinBasis",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"$QSpinBasis"],
+
+Cell[TextData[{
+  StyleBox["QSetSpinBasis", "MR"],
+  ", ",
+  ButtonBox["QSetSpinBasis",
+    ButtonData:>"QSetSpinBasis",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSetSpinBasis"],
+
+Cell[TextData[{
+  StyleBox["QSpinorToComponents", "MR"],
+  ", ",
+  ButtonBox["QSpinorToComponents",
+    ButtonData:>"QSpinorToComponents",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorToComponents"],
+
+Cell[TextData[{
+  StyleBox["QComponentsToSpinor", "MR"],
+  ", ",
+  ButtonBox["QComponentsToSpinor",
+    ButtonData:>"QComponentsToSpinor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QComponentsToSpinor"],
+
+Cell[TextData[{
+  StyleBox["QProjectUp", "MR"],
+  ", ",
+  ButtonBox["QProjectUp",
+    ButtonData:>"QProjectUp",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QProjectUp"],
+
+Cell[TextData[{
+  StyleBox["QProjectDown", "MR"],
+  ", ",
+  ButtonBox["QProjectDown",
+    ButtonData:>"QProjectDown",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QProjectDown"],
+
+Cell[TextData[{
+  StyleBox["QProbabilityUp", "MR"],
+  ", ",
+  ButtonBox["QProbabilityUp",
+    ButtonData:>"QProbabilityUp",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QProbabilityUp"],
+
+Cell[TextData[{
+  StyleBox["QSpinorBarDiagram", "MR"],
+  ", ",
+  ButtonBox["QSpinorBarDiagram",
+    ButtonData:>"QSpinorBarDiagram",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorBarDiagram"],
+
+Cell[TextData[{
+  StyleBox["QVectorToHermitianMatrix", "MR"],
+  ", ",
+  ButtonBox["QVectorToHermitianMatrix",
+    ButtonData:>"QVectorToHermitianMatrix",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QVectorToHermitianMatrix"],
+
+Cell[TextData[{
+  StyleBox["QVectorToDensityMatrix", "MR"],
+  ", ",
+  ButtonBox["QVectorToDensityMatrix",
+    ButtonData:>"QVectorToDensityMatrix",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QVectorToDensityMatrix"],
+
+Cell[TextData[{
+  StyleBox["QSpinHamiltonian", "MR"],
+  ", ",
+  ButtonBox["QSpinHamiltonian",
+    ButtonData:>"QSpinHamiltonian",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinHamiltonian"],
+
+Cell[TextData[{
+  StyleBox["QSpinorUp", "MR"],
+  ", ",
+  ButtonBox["QSpinorUp",
+    ButtonData:>"QSpinorUp",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorUp"],
+
+Cell[TextData[{
+  StyleBox["QSpinorDown", "MR"],
+  ", ",
+  ButtonBox["QSpinorDown",
+    ButtonData:>"QSpinorDown",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorDown"],
+
+Cell[TextData[{
+  StyleBox["QConjSpinorUp", "MR"],
+  ", ",
+  ButtonBox["QConjSpinorUp",
+    ButtonData:>"QConjSpinorUp",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QConjSpinorUp"],
+
+Cell[TextData[{
+  StyleBox["QConjSpinorDown", "MR"],
+  ", ",
+  ButtonBox["QConjSpinorDown",
+    ButtonData:>"QConjSpinorDown",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QConjSpinorDown"],
+
+Cell[TextData[{
+  StyleBox["QSpinorHarmonicUp", "MR"],
+  ", ",
+  ButtonBox["QSpinorHarmonicUp",
+    ButtonData:>"QSpinorHarmonicUp",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorHarmonicUp"],
+
+Cell[TextData[{
+  StyleBox["QSpinorHarmonicDown", "MR"],
+  ", ",
+  ButtonBox["QSpinorHarmonicDown",
+    ButtonData:>"QSpinorHarmonicDown",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorHarmonicDown"],
+
+Cell[TextData[{
+  StyleBox["QSpinorToVector", "MR"],
+  ", ",
+  ButtonBox["QSpinorToVector",
+    ButtonData:>"QSpinorToVector",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorToVector"],
+
+Cell[TextData[{
+  StyleBox["QVectorToSpinor", "MR"],
+  ", ",
+  ButtonBox["QVectorToSpinor",
+    ButtonData:>"QVectorToSpinor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QVectorToSpinor"],
+
+Cell[TextData[{
+  StyleBox["QExtractPhase", "MR"],
+  ", ",
+  ButtonBox["QExtractPhase",
+    ButtonData:>"QExtractPhase",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QExtractPhase"],
+
+Cell[TextData[{
+  StyleBox["QHermitianMatrixToVector", "MR"],
+  ", ",
+  ButtonBox["QHermitianMatrixToVector",
+    ButtonData:>"QHermitianMatrixToVector",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QHermitianMatrixToVector"],
+
+Cell[TextData[{
+  StyleBox["QDensityMatrixToVector", "MR"],
+  ", ",
+  ButtonBox["QDensityMatrixToVector",
+    ButtonData:>"QDensityMatrixToVector",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QDensityMatrixToVector"],
+
+Cell[TextData[{
+  StyleBox["QSpinorToArrow", "MR"],
+  ", ",
+  ButtonBox["QSpinorToArrow",
+    ButtonData:>"QSpinorToArrow",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QSpinorToArrow"],
+
+Cell[TextData[{
+  StyleBox["QRotationSO3", "MR"],
+  ", ",
+  ButtonBox["QRotationSO3",
+    ButtonData:>"QRotationSO3",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRotationSO3"],
+
+Cell[TextData[{
+  StyleBox["QRotationSU2", "MR"],
+  ", ",
+  ButtonBox["QRotationSU2",
+    ButtonData:>"QRotationSU2",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRotationSU2"],
+
+Cell[TextData[{
+  StyleBox["QVisualizeSpinor", "MR"],
+  ", ",
+  ButtonBox["QVisualizeSpinor",
+    ButtonData:>"QVisualizeSpinor",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QVisualizeSpinor"],
+
+Cell[TextData[{
+  StyleBox["QVisualizeDensityMatrix", "MR"],
+  ", ",
+  ButtonBox["QVisualizeDensityMatrix",
+    ButtonData:>"QVisualizeDensityMatrix",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`Spinors`",
+    ButtonData:>"VQM`Spinors`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QVisualizeDensityMatrix"],
+
+Cell[TextData[{
+  StyleBox["VisualizeVector", "MR"],
+  " package, ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"],
+  " "
+}], "Index",
+  CellTags->"VQM`VisualizeVector`"],
+
+Cell[TextData[{
+  StyleBox["QVectorToArrow", "MR"],
+  ", ",
+  ButtonBox["QVectorToArrow",
+    ButtonData:>"QVectorToArrow",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QVectorToArrow"],
+
+Cell[TextData[{
+  StyleBox["QVisualizeVector", "MR"],
+  ", ",
+  ButtonBox["QVisualizeVector",
+    ButtonData:>"QVisualizeVector",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QVisualizeVector"],
+
+Cell[TextData[{
+  StyleBox["polyDisk", "MR"],
+  ", ",
+  ButtonBox["polyDisk",
+    ButtonData:>"polyDisk",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"polyDisk"],
+
+Cell[TextData[{
+  StyleBox["polyCone", "MR"],
+  ", ",
+  ButtonBox["polyCone",
+    ButtonData:>"polyCone",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"polyCone"],
+
+Cell[TextData[{
+  StyleBox["polyCylinder", "MR"],
+  ", ",
+  ButtonBox["polyCylinder",
+    ButtonData:>"polyCylinder",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"polyCylinder"],
+
+Cell[TextData[{
+  StyleBox["arrowCone", "MR"],
+  ", ",
+  ButtonBox["arrowCone",
+    ButtonData:>"arrowCone",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"arrowCone"],
+
+Cell[TextData[{
+  StyleBox["arrowWithShaft", "MR"],
+  ", ",
+  ButtonBox["arrowWithShaft",
+    ButtonData:>"arrowWithShaft",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"arrowWithShaft"],
+
+Cell[TextData[{
+  StyleBox["doubleHead", "MR"],
+  ", ",
+  ButtonBox["doubleHead",
+    ButtonData:>"doubleHead",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"doubleHead"],
+
+Cell[TextData[{
+  StyleBox["unitSphere", "MR"],
+  ", ",
+  ButtonBox["unitSphere",
+    ButtonData:>"unitSphere",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"unitSphere"],
+
+Cell[TextData[{
+  StyleBox["QRoundSphere", "MR"],
+  ", ",
+  ButtonBox["QRoundSphere",
+    ButtonData:>"QRoundSphere",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"QRoundSphere"],
+
+Cell[TextData[{
+  StyleBox["coordinateCube", "MR"],
+  ", ",
+  ButtonBox["coordinateCube",
+    ButtonData:>"coordinateCube",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"coordinateCube"],
+
+Cell[TextData[{
+  StyleBox["coordinateCircles", "MR"],
+  ", ",
+  ButtonBox["coordinateCircles",
+    ButtonData:>"coordinateCircles",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"coordinateCircles"],
+
+Cell[TextData[{
+  StyleBox["graphicElements", "MR"],
+  ", ",
+  ButtonBox["graphicElements",
+    ButtonData:>"graphicElements",
+    ButtonStyle->"AddOnsLink"],
+  ", in package ",
+  ButtonBox["VQM`VisualizeVector`",
+    ButtonData:>"VQM`VisualizeVector`",
+    ButtonStyle->"AddOnsLink"]
+}], "Index",
+  CellTags->"graphicElements"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "MasterIndexHeading"->{
+    Cell[1754, 51, 97, 1, 41, "IndexSection",
+      CellTags->"MasterIndexHeading"]},
+  "VQM`ArgColorPlot`"->{
+    Cell[1854, 54, 219, 8, 70, "Index",
+      CellTags->"VQM`ArgColorPlot`"]},
+  "QArgColorPlot"->{
+    Cell[2076, 64, 314, 11, 70, "Index",
+      CellTags->"QArgColorPlot"]},
+  "QListArgColorPlot"->{
+    Cell[2393, 77, 330, 11, 70, "Index",
+      CellTags->"QListArgColorPlot"]},
+  "QCombinedPlot"->{
+    Cell[2726, 90, 314, 11, 70, "Index",
+      CellTags->"QCombinedPlot"]},
+  "QListCombinedPlot"->{
+    Cell[3043, 103, 330, 11, 70, "Index",
+      CellTags->"QListCombinedPlot"]},
+  "QSpinorPlot"->{
+    Cell[3376, 116, 306, 11, 70, "Index",
+      CellTags->"QSpinorPlot"]},
+  "QListSpinorPlot"->{
+    Cell[3685, 129, 322, 11, 70, "Index",
+      CellTags->"QListSpinorPlot"]},
+  "QSpinorCombinedPlot"->{
+    Cell[4010, 142, 338, 11, 70, "Index",
+      CellTags->"QSpinorCombinedPlot"]},
+  "QListSpinorCombinedPlot"->{
+    Cell[4351, 155, 354, 11, 70, "Index",
+      CellTags->"QListSpinorCombinedPlot"]},
+  "QNiceTicks"->{
+    Cell[4708, 168, 302, 11, 70, "Index",
+      CellTags->"QNiceTicks"]},
+  "VQM`ColorMaps`"->{
+    Cell[5013, 181, 207, 8, 70, "Index",
+      CellTags->"VQM`ColorMaps`"]},
+  "QComplexToColor"->{
+    Cell[5223, 191, 316, 11, 70, "Index",
+      CellTags->"QComplexToColor"]},
+  "QRGBValues"->{
+    Cell[5542, 204, 296, 11, 70, "Index",
+      CellTags->"QRGBValues"]},
+  "QComplexToRGBColor"->{
+    Cell[5841, 217, 328, 11, 70, "Index",
+      CellTags->"QComplexToRGBColor"]},
+  "$QComplexToColorMap"->{
+    Cell[6172, 230, 332, 11, 70, "Index",
+      CellTags->"$QComplexToColorMap"]},
+  "QSaturationFromLightness"->{
+    Cell[6507, 243, 352, 11, 70, "Index",
+      CellTags->"QSaturationFromLightness"]},
+  "QBrightnessFromLightness"->{
+    Cell[6862, 256, 352, 11, 70, "Index",
+      CellTags->"QBrightnessFromLightness"]},
+  "QHueFromArgument"->{
+    Cell[7217, 269, 320, 11, 70, "Index",
+      CellTags->"QHueFromArgument"]},
+  "QLightnessFromModulus"->{
+    Cell[7540, 282, 340, 11, 70, "Index",
+      CellTags->"QLightnessFromModulus"]},
+  "QProcessColorMapOptions"->{
+    Cell[7883, 295, 348, 11, 70, "Index",
+      CellTags->"QProcessColorMapOptions"]},
+  "QVectorToColor"->{
+    Cell[8234, 308, 312, 11, 70, "Index",
+      CellTags->"QVectorToColor"]},
+  "QSpinorToColor"->{
+    Cell[8549, 321, 312, 11, 70, "Index",
+      CellTags->"QSpinorToColor"]},
+  "VQM`ComplexPlot`"->{
+    Cell[8864, 334, 215, 8, 70, "Index",
+      CellTags->"VQM`ComplexPlot`"]},
+  "QComplexPlot3D"->{
+    Cell[9082, 344, 316, 11, 70, "Index",
+      CellTags->"QComplexPlot3D"]},
+  "QListComplexPlot3D"->{
+    Cell[9401, 357, 332, 11, 70, "Index",
+      CellTags->"QListComplexPlot3D"]},
+  "QComplexSurfacePlot"->{
+    Cell[9736, 370, 336, 11, 70, "Index",
+      CellTags->"QComplexSurfacePlot"]},
+  "QListComplexSurfacePlot"->{
+    Cell[10075, 383, 352, 11, 70, "Index",
+      CellTags->"QListComplexSurfacePlot"]},
+  "QComplexDensityPlot"->{
+    Cell[10430, 396, 336, 11, 70, "Index",
+      CellTags->"QComplexDensityPlot"]},
+  "QSpinorDensityPlot"->{
+    Cell[10769, 409, 332, 11, 70, "Index",
+      CellTags->"QSpinorDensityPlot"]},
+  "QListComplexDensityPlot"->{
+    Cell[11104, 422, 352, 11, 70, "Index",
+      CellTags->"QListComplexDensityPlot"]},
+  "QComplexContourPlot"->{
+    Cell[11459, 435, 336, 11, 70, "Index",
+      CellTags->"QComplexContourPlot"]},
+  "QListComplexContourPlot"->{
+    Cell[11798, 448, 352, 11, 70, "Index",
+      CellTags->"QListComplexContourPlot"]},
+  "QColorArrayPlot"->{
+    Cell[12153, 461, 320, 11, 70, "Index",
+      CellTags->"QColorArrayPlot"]},
+  "QColorDensityGraphics"->{
+    Cell[12476, 474, 344, 11, 70, "Index",
+      CellTags->"QColorDensityGraphics"]},
+  "VQM`Coulomb`"->{
+    Cell[12823, 487, 199, 8, 70, "Index",
+      CellTags->"VQM`Coulomb`"]},
+  "QPrincipalQuantumNumber"->{
+    Cell[13025, 497, 344, 11, 70, "Index",
+      CellTags->"QPrincipalQuantumNumber"]},
+  "QRadialQuantumNumber"->{
+    Cell[13372, 510, 332, 11, 70, "Index",
+      CellTags->"QRadialQuantumNumber"]},
+  "QCoulombEnergy"->{
+    Cell[13707, 523, 308, 11, 70, "Index",
+      CellTags->"QCoulombEnergy"]},
+  "QCoulombTimePeriod"->{
+    Cell[14018, 536, 324, 11, 70, "Index",
+      CellTags->"QCoulombTimePeriod"]},
+  "QCoulombFunction"->{
+    Cell[14345, 549, 316, 11, 70, "Index",
+      CellTags->"QCoulombFunction"]},
+  "QEffectiveCoulombPotential"->{
+    Cell[14664, 562, 356, 11, 70, "Index",
+      CellTags->"QEffectiveCoulombPotential"]},
+  "QCoulombHamiltonian"->{
+    Cell[15023, 575, 328, 11, 70, "Index",
+      CellTags->"QCoulombHamiltonian"]},
+  "QRadialCoulombFunction"->{
+    Cell[15354, 588, 340, 11, 70, "Index",
+      CellTags->"QRadialCoulombFunction"]},
+  "QRadialPositionAmplitude"->{
+    Cell[15697, 601, 348, 11, 70, "Index",
+      CellTags->"QRadialPositionAmplitude"]},
+  "$QCoulombSpaceDimension"->{
+    Cell[16048, 614, 344, 11, 70, "Index",
+      CellTags->"$QCoulombSpaceDimension"]},
+  "$QCoulombCoupling"->{
+    Cell[16395, 627, 320, 11, 70, "Index",
+      CellTags->"$QCoulombCoupling"]},
+  "VQM`Dirac1D`"->{
+    Cell[16718, 640, 199, 8, 70, "Index",
+      CellTags->"VQM`Dirac1D`"]},
+  "QRelativisticEnergy"->{
+    Cell[16920, 650, 328, 11, 70, "Index",
+      CellTags->"QRelativisticEnergy"]},
+  "QRelativisticVelocity"->{
+    Cell[17251, 663, 336, 11, 70, "Index",
+      CellTags->"QRelativisticVelocity"]},
+  "QSignedEnergy"->{
+    Cell[17590, 676, 304, 11, 70, "Index",
+      CellTags->"QSignedEnergy"]},
+  "QSignedMomentum"->{
+    Cell[17897, 689, 312, 11, 70, "Index",
+      CellTags->"QSignedMomentum"]},
+  "aplus"->{
+    Cell[18212, 702, 272, 11, 70, "Index",
+      CellTags->"aplus"]},
+  "aminus"->{
+    Cell[18487, 715, 276, 11, 70, "Index",
+      CellTags->"aminus"]},
+  "QDiracMatrix1D"->{
+    Cell[18766, 728, 308, 11, 70, "Index",
+      CellTags->"QDiracMatrix1D"]},
+  "QProjectPositiveEnergy"->{
+    Cell[19077, 741, 340, 11, 70, "Index",
+      CellTags->"QProjectPositiveEnergy"]},
+  "QProjectNegativeEnergy"->{
+    Cell[19420, 754, 340, 11, 70, "Index",
+      CellTags->"QProjectNegativeEnergy"]},
+  "QMomentumSpacePropagator"->{
+    Cell[19763, 767, 348, 11, 70, "Index",
+      CellTags->"QMomentumSpacePropagator"]},
+  "QBaseSpinorRight"->{
+    Cell[20114, 780, 316, 11, 70, "Index",
+      CellTags->"QBaseSpinorRight"]},
+  "QBaseSpinorLeft"->{
+    Cell[20433, 793, 312, 11, 70, "Index",
+      CellTags->"QBaseSpinorLeft"]},
+  "QBaseSpinorPos"->{
+    Cell[20748, 806, 308, 11, 70, "Index",
+      CellTags->"QBaseSpinorPos"]},
+  "QBaseSpinorNeg"->{
+    Cell[21059, 819, 308, 11, 70, "Index",
+      CellTags->"QBaseSpinorNeg"]},
+  "QDiracPlaneWaveRight"->{
+    Cell[21370, 832, 332, 11, 70, "Index",
+      CellTags->"QDiracPlaneWaveRight"]},
+  "QDiracPlaneWaveLeft"->{
+    Cell[21705, 845, 328, 11, 70, "Index",
+      CellTags->"QDiracPlaneWaveLeft"]},
+  "QDiracPlaneWavePos"->{
+    Cell[22036, 858, 324, 11, 70, "Index",
+      CellTags->"QDiracPlaneWavePos"]},
+  "QDiracPlaneWaveNeg"->{
+    Cell[22363, 871, 324, 11, 70, "Index",
+      CellTags->"QDiracPlaneWaveNeg"]},
+  "QFWMatrix"->{
+    Cell[22690, 884, 288, 11, 70, "Index",
+      CellTags->"QFWMatrix"]},
+  "$c"->{
+    Cell[22981, 897, 260, 11, 70, "Index",
+      CellTags->"$c"]},
+  "$m"->{
+    Cell[23244, 910, 260, 11, 70, "Index",
+      CellTags->"$m"]},
+  "QDiracEquation1D"->{
+    Cell[23507, 923, 316, 11, 70, "Index",
+      CellTags->"QDiracEquation1D"]},
+  "QDiracOperator1D"->{
+    Cell[23826, 936, 316, 11, 70, "Index",
+      CellTags->"QDiracOperator1D"]},
+  "QTridiagonalBlockSolve"->{
+    Cell[24145, 949, 340, 11, 70, "Index",
+      CellTags->"QTridiagonalBlockSolve"]},
+  "QDiracTimeStep1D"->{
+    Cell[24488, 962, 316, 11, 70, "Index",
+      CellTags->"QDiracTimeStep1D"]},
+  "QInitializeDirac1D"->{
+    Cell[24807, 975, 324, 11, 70, "Index",
+      CellTags->"QInitializeDirac1D"]},
+  "QMomentumSpaceSpinorPos"->{
+    Cell[25134, 988, 344, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinorPos"]},
+  "QMomentumSpaceSpinorNeg"->{
+    Cell[25481, 1001, 344, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinorNeg"]},
+  "QMomentumSpaceSpinorRight"->{
+    Cell[25828, 1014, 352, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinorRight"]},
+  "QMomentumSpaceSpinorLeft"->{
+    Cell[26183, 1027, 348, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinorLeft"]},
+  "QMomentumSpaceSpinorPosRight"->{
+    Cell[26534, 1040, 364, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinorPosRight"]},
+  "QMomentumSpaceSpinorPosLeft"->{
+    Cell[26901, 1053, 360, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinorPosLeft"]},
+  "QMomentumSpaceSpinorNegRight"->{
+    Cell[27264, 1066, 364, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinorNegRight"]},
+  "QMomentumSpaceSpinorNegLeft"->{
+    Cell[27631, 1079, 360, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinorNegLeft"]},
+  "QMomentumSpaceSpinor"->{
+    Cell[27994, 1092, 332, 11, 70, "Index",
+      CellTags->"QMomentumSpaceSpinor"]},
+  "QPositionSpaceSpinor"->{
+    Cell[28329, 1105, 332, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinor"]},
+  "QPositionSpaceSpinorPos"->{
+    Cell[28664, 1118, 344, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinorPos"]},
+  "QPositionSpaceSpinorNeg"->{
+    Cell[29011, 1131, 344, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinorNeg"]},
+  "QPositionSpaceSpinorRight"->{
+    Cell[29358, 1144, 352, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinorRight"]},
+  "QPositionSpaceSpinorLeft"->{
+    Cell[29713, 1157, 348, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinorLeft"]},
+  "QPositionSpaceSpinorPosRight"->{
+    Cell[30064, 1170, 364, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinorPosRight"]},
+  "QPositionSpaceSpinorPosLeft"->{
+    Cell[30431, 1183, 360, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinorPosLeft"]},
+  "QPositionSpaceSpinorNegRight"->{
+    Cell[30794, 1196, 364, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinorNegRight"]},
+  "QPositionSpaceSpinorNegLeft"->{
+    Cell[31161, 1209, 360, 11, 70, "Index",
+      CellTags->"QPositionSpaceSpinorNegLeft"]},
+  "QPositionSpaceGrid"->{
+    Cell[31524, 1222, 324, 11, 70, "Index",
+      CellTags->"QPositionSpaceGrid"]},
+  "QPositionSpaceInterval"->{
+    Cell[31851, 1235, 340, 11, 70, "Index",
+      CellTags->"QPositionSpaceInterval"]},
+  "QPositionSpaceStep"->{
+    Cell[32194, 1248, 324, 11, 70, "Index",
+      CellTags->"QPositionSpaceStep"]},
+  "QComputeMeanPosition"->{
+    Cell[32521, 1261, 332, 11, 70, "Index",
+      CellTags->"QComputeMeanPosition"]},
+  "QInnerProductList"->{
+    Cell[32856, 1274, 320, 11, 70, "Index",
+      CellTags->"QInnerProductList"]},
+  "QSpinorFT"->{
+    Cell[33179, 1287, 288, 11, 70, "Index",
+      CellTags->"QSpinorFT"]},
+  "QInverseSpinorFT"->{
+    Cell[33470, 1300, 316, 11, 70, "Index",
+      CellTags->"QInverseSpinorFT"]},
+  "VQM`FastFourier`"->{
+    Cell[33789, 1313, 215, 8, 70, "Index",
+      CellTags->"VQM`FastFourier`"]},
+  "QFourierList"->{
+    Cell[34007, 1323, 308, 11, 70, "Index",
+      CellTags->"QFourierList"]},
+  "QInverseFourierList"->{
+    Cell[34318, 1336, 336, 11, 70, "Index",
+      CellTags->"QInverseFourierList"]},
+  "QFourierListArgColorPlot"->{
+    Cell[34657, 1349, 356, 11, 70, "Index",
+      CellTags->"QFourierListArgColorPlot"]},
+  "QInverseFourierListArgColorPlot"->{
+    Cell[35016, 1362, 384, 11, 70, "Index",
+      CellTags->"QInverseFourierListArgColorPlot"]},
+  "QStepSize"->{
+    Cell[35403, 1375, 296, 11, 70, "Index",
+      CellTags->"QStepSize"]},
+  "QGrid"->{
+    Cell[35702, 1388, 280, 11, 70, "Index",
+      CellTags->"QGrid"]},
+  "QLeftBorder"->{
+    Cell[35985, 1401, 304, 11, 70, "Index",
+      CellTags->"QLeftBorder"]},
+  "QSpaceStep"->{
+    Cell[36292, 1414, 300, 11, 70, "Index",
+      CellTags->"QSpaceStep"]},
+  "QSpaceInterval"->{
+    Cell[36595, 1427, 316, 11, 70, "Index",
+      CellTags->"QSpaceInterval"]},
+  "QIndexPosition"->{
+    Cell[36914, 1440, 316, 11, 70, "Index",
+      CellTags->"QIndexPosition"]},
+  "QFourierGrid"->{
+    Cell[37233, 1453, 308, 11, 70, "Index",
+      CellTags->"QFourierGrid"]},
+  "QFourierLeftBorder"->{
+    Cell[37544, 1466, 332, 11, 70, "Index",
+      CellTags->"QFourierLeftBorder"]},
+  "QFourierRightBorder"->{
+    Cell[37879, 1479, 336, 11, 70, "Index",
+      CellTags->"QFourierRightBorder"]},
+  "QFourierStep"->{
+    Cell[38218, 1492, 308, 11, 70, "Index",
+      CellTags->"QFourierStep"]},
+  "QFourierInterval"->{
+    Cell[38529, 1505, 324, 11, 70, "Index",
+      CellTags->"QFourierInterval"]},
+  "VQM`Free`"->{
+    Cell[38856, 1518, 187, 8, 70, "Index",
+      CellTags->"VQM`Free`"]},
+  "QFreeHamiltonian1D"->{
+    Cell[39046, 1528, 318, 11, 70, "Index",
+      CellTags->"QFreeHamiltonian1D"]},
+  "QFreeGaussian"->{
+    Cell[39367, 1541, 298, 11, 70, "Index",
+      CellTags->"QFreeGaussian"]},
+  "QFreeGaussian1D"->{
+    Cell[39668, 1554, 306, 11, 70, "Index",
+      CellTags->"QFreeGaussian1D"]},
+  "QFreeGaussian2D"->{
+    Cell[39977, 1567, 306, 11, 70, "Index",
+      CellTags->"QFreeGaussian2D"]},
+  "QFreeGaussian3D"->{
+    Cell[40286, 1580, 306, 11, 70, "Index",
+      CellTags->"QFreeGaussian3D"]},
+  "QGaussian1D"->{
+    Cell[40595, 1593, 290, 11, 70, "Index",
+      CellTags->"QGaussian1D"]},
+  "QGaussian2D"->{
+    Cell[40888, 1606, 290, 11, 70, "Index",
+      CellTags->"QGaussian2D"]},
+  "QGaussian3D"->{
+    Cell[41181, 1619, 290, 11, 70, "Index",
+      CellTags->"QGaussian3D"]},
+  "QFreeFourierGaussian1D"->{
+    Cell[41474, 1632, 334, 11, 70, "Index",
+      CellTags->"QFreeFourierGaussian1D"]},
+  "QFourierGaussian1D"->{
+    Cell[41811, 1645, 318, 11, 70, "Index",
+      CellTags->"QFourierGaussian1D"]},
+  "QEnergyGaussian1D"->{
+    Cell[42132, 1658, 314, 11, 70, "Index",
+      CellTags->"QEnergyGaussian1D"]},
+  "$QFreeMass"->{
+    Cell[42449, 1671, 286, 11, 70, "Index",
+      CellTags->"$QFreeMass"]},
+  "$QFreeSpaceDimension"->{
+    Cell[42738, 1684, 326, 11, 70, "Index",
+      CellTags->"$QFreeSpaceDimension"]},
+  "VQM`Oscillator`"->{
+    Cell[43067, 1697, 211, 8, 70, "Index",
+      CellTags->"VQM`Oscillator`"]},
+  "QOscillatorEnergy"->{
+    Cell[43281, 1707, 326, 11, 70, "Index",
+      CellTags->"QOscillatorEnergy"]},
+  "QOscillatorFunction"->{
+    Cell[43610, 1720, 334, 11, 70, "Index",
+      CellTags->"QOscillatorFunction"]},
+  "QOscillatorGaussian"->{
+    Cell[43947, 1733, 334, 11, 70, "Index",
+      CellTags->"QOscillatorGaussian"]},
+  "QOscillatorBarDiagram"->{
+    Cell[44284, 1746, 342, 11, 70, "Index",
+      CellTags->"QOscillatorBarDiagram"]},
+  "$QOscillatorFrequency"->{
+    Cell[44629, 1759, 342, 11, 70, "Index",
+      CellTags->"$QOscillatorFrequency"]},
+  "$QOscillatorMass"->{
+    Cell[44974, 1772, 322, 11, 70, "Index",
+      CellTags->"$QOscillatorMass"]},
+  "VQM`QGraphics2D`"->{
+    Cell[45299, 1785, 215, 8, 70, "Index",
+      CellTags->"VQM`QGraphics2D`"]},
+  "QPrepareOptions"->{
+    Cell[45517, 1795, 320, 11, 70, "Index",
+      CellTags->"QPrepareOptions"]},
+  "QExtractPart"->{
+    Cell[45840, 1808, 308, 11, 70, "Index",
+      CellTags->"QExtractPart"]},
+  "QGetAndDensityPlot"->{
+    Cell[46151, 1821, 332, 11, 70, "Index",
+      CellTags->"QGetAndDensityPlot"]},
+  "QGetAndComplexDensityPlot"->{
+    Cell[46486, 1834, 360, 11, 70, "Index",
+      CellTags->"QGetAndComplexDensityPlot"]},
+  "QGetSpinorAndDensityPlot"->{
+    Cell[46849, 1847, 356, 11, 70, "Index",
+      CellTags->"QGetSpinorAndDensityPlot"]},
+  "QMakeTable"->{
+    Cell[47208, 1860, 300, 11, 70, "Index",
+      CellTags->"QMakeTable"]},
+  "QZeroTable"->{
+    Cell[47511, 1873, 300, 11, 70, "Index",
+      CellTags->"QZeroTable"]},
+  "QGetSpinorAndDensityPlotTwo"->{
+    Cell[47814, 1886, 368, 11, 70, "Index",
+      CellTags->"QGetSpinorAndDensityPlotTwo"]},
+  "QGetAndSpinorToColorPlot"->{
+    Cell[48185, 1899, 356, 11, 70, "Index",
+      CellTags->"QGetAndSpinorToColorPlot"]},
+  "QGetAndSpinorToColorPlotTwo"->{
+    Cell[48544, 1912, 368, 11, 70, "Index",
+      CellTags->"QGetAndSpinorToColorPlotTwo"]},
+  "VQM`QuantumKernel`"->{
+    Cell[48915, 1925, 223, 8, 70, "Index",
+      CellTags->"VQM`QuantumKernel`"]},
+  "QNewFunction"->{
+    Cell[49141, 1935, 312, 11, 70, "Index",
+      CellTags->"QNewFunction"]},
+  "QDisposeFunction"->{
+    Cell[49456, 1948, 328, 11, 70, "Index",
+      CellTags->"QDisposeFunction"]},
+  "QGetArray"->{
+    Cell[49787, 1961, 300, 11, 70, "Index",
+      CellTags->"QGetArray"]},
+  "QGetFunctionInfo"->{
+    Cell[50090, 1974, 328, 11, 70, "Index",
+      CellTags->"QGetFunctionInfo"]},
+  "QGetColorArray"->{
+    Cell[50421, 1987, 320, 11, 70, "Index",
+      CellTags->"QGetColorArray"]},
+  "QGetGrayArray"->{
+    Cell[50744, 2000, 316, 11, 70, "Index",
+      CellTags->"QGetGrayArray"]},
+  "QGetRedBlueArray"->{
+    Cell[51063, 2013, 328, 11, 70, "Index",
+      CellTags->"QGetRedBlueArray"]},
+  "QGetBlackWhiteArray"->{
+    Cell[51394, 2026, 340, 11, 70, "Index",
+      CellTags->"QGetBlackWhiteArray"]},
+  "QGetAbsArray"->{
+    Cell[51737, 2039, 312, 11, 70, "Index",
+      CellTags->"QGetAbsArray"]},
+  "QInfo"->{
+    Cell[52052, 2052, 284, 11, 70, "Index",
+      CellTags->"QInfo"]},
+  "QSchroedinger1D"->{
+    Cell[52339, 2065, 324, 11, 70, "Index",
+      CellTags->"QSchroedinger1D"]},
+  "QSchroedinger2D"->{
+    Cell[52666, 2078, 324, 11, 70, "Index",
+      CellTags->"QSchroedinger2D"]},
+  "QSchroedinger3D"->{
+    Cell[52993, 2091, 324, 11, 70, "Index",
+      CellTags->"QSchroedinger3D"]},
+  "QPauli2D"->{
+    Cell[53320, 2104, 296, 11, 70, "Index",
+      CellTags->"QPauli2D"]},
+  "QPauli3D"->{
+    Cell[53619, 2117, 296, 11, 70, "Index",
+      CellTags->"QPauli3D"]},
+  "QDirac2D"->{
+    Cell[53918, 2130, 296, 11, 70, "Index",
+      CellTags->"QDirac2D"]},
+  "QDirac3D"->{
+    Cell[54217, 2143, 296, 11, 70, "Index",
+      CellTags->"QDirac3D"]},
+  "QDisposeOperator"->{
+    Cell[54516, 2156, 328, 11, 70, "Index",
+      CellTags->"QDisposeOperator"]},
+  "QGetOperatorInfo"->{
+    Cell[54847, 2169, 328, 11, 70, "Index",
+      CellTags->"QGetOperatorInfo"]},
+  "QTimeEvolution"->{
+    Cell[55178, 2182, 320, 11, 70, "Index",
+      CellTags->"QTimeEvolution"]},
+  "VQM`Rectangular`"->{
+    Cell[55501, 2195, 215, 8, 70, "Index",
+      CellTags->"VQM`Rectangular`"]},
+  "QPlaneWaveToRight"->{
+    Cell[55719, 2205, 328, 11, 70, "Index",
+      CellTags->"QPlaneWaveToRight"]},
+  "QPlaneWaveToLeft"->{
+    Cell[56050, 2218, 324, 11, 70, "Index",
+      CellTags->"QPlaneWaveToLeft"]},
+  "QReflectionCoefficientJump"->{
+    Cell[56377, 2231, 364, 11, 70, "Index",
+      CellTags->"QReflectionCoefficientJump"]},
+  "QTransmissionCoefficientJump"->{
+    Cell[56744, 2244, 372, 11, 70, "Index",
+      CellTags->"QTransmissionCoefficientJump"]},
+  "QReflectionCoefficientWell"->{
+    Cell[57119, 2257, 364, 11, 70, "Index",
+      CellTags->"QReflectionCoefficientWell"]},
+  "QTransmissionCoefficientWell"->{
+    Cell[57486, 2270, 372, 11, 70, "Index",
+      CellTags->"QTransmissionCoefficientWell"]},
+  "QTransitionMatrix"->{
+    Cell[57861, 2283, 328, 11, 70, "Index",
+      CellTags->"QTransitionMatrix"]},
+  "QSolutionWellToRight"->{
+    Cell[58192, 2296, 340, 11, 70, "Index",
+      CellTags->"QSolutionWellToRight"]},
+  "QPsiEvenWell"->{
+    Cell[58535, 2309, 308, 11, 70, "Index",
+      CellTags->"QPsiEvenWell"]},
+  "QPsiOddWell"->{
+    Cell[58846, 2322, 304, 11, 70, "Index",
+      CellTags->"QPsiOddWell"]},
+  "QDetEvenWell"->{
+    Cell[59153, 2335, 308, 11, 70, "Index",
+      CellTags->"QDetEvenWell"]},
+  "QDetOddWell"->{
+    Cell[59464, 2348, 304, 11, 70, "Index",
+      CellTags->"QDetOddWell"]},
+  "QCriticalRadiusEvenWell"->{
+    Cell[59771, 2361, 352, 11, 70, "Index",
+      CellTags->"QCriticalRadiusEvenWell"]},
+  "QCriticalRadiusOddWell"->{
+    Cell[60126, 2374, 348, 11, 70, "Index",
+      CellTags->"QCriticalRadiusOddWell"]},
+  "QCriticalDepthEvenWell"->{
+    Cell[60477, 2387, 348, 11, 70, "Index",
+      CellTags->"QCriticalDepthEvenWell"]},
+  "QCriticalDepthOddWell"->{
+    Cell[60828, 2400, 344, 11, 70, "Index",
+      CellTags->"QCriticalDepthOddWell"]},
+  "VQM`Spinors`"->{
+    Cell[61175, 2413, 199, 8, 70, "Index",
+      CellTags->"VQM`Spinors`"]},
+  "QNorm"->{
+    Cell[61377, 2423, 272, 11, 70, "Index",
+      CellTags->"QNorm"]},
+  "QNormalize"->{
+    Cell[61652, 2436, 292, 11, 70, "Index",
+      CellTags->"QNormalize"]},
+  "$QSpinBasis"->{
+    Cell[61947, 2449, 296, 11, 70, "Index",
+      CellTags->"$QSpinBasis"]},
+  "QSetSpinBasis"->{
+    Cell[62246, 2462, 304, 11, 70, "Index",
+      CellTags->"QSetSpinBasis"]},
+  "QSpinorToComponents"->{
+    Cell[62553, 2475, 328, 11, 70, "Index",
+      CellTags->"QSpinorToComponents"]},
+  "QComponentsToSpinor"->{
+    Cell[62884, 2488, 328, 11, 70, "Index",
+      CellTags->"QComponentsToSpinor"]},
+  "QProjectUp"->{
+    Cell[63215, 2501, 292, 11, 70, "Index",
+      CellTags->"QProjectUp"]},
+  "QProjectDown"->{
+    Cell[63510, 2514, 300, 11, 70, "Index",
+      CellTags->"QProjectDown"]},
+  "QProbabilityUp"->{
+    Cell[63813, 2527, 308, 11, 70, "Index",
+      CellTags->"QProbabilityUp"]},
+  "QSpinorBarDiagram"->{
+    Cell[64124, 2540, 320, 11, 70, "Index",
+      CellTags->"QSpinorBarDiagram"]},
+  "QVectorToHermitianMatrix"->{
+    Cell[64447, 2553, 348, 11, 70, "Index",
+      CellTags->"QVectorToHermitianMatrix"]},
+  "QVectorToDensityMatrix"->{
+    Cell[64798, 2566, 340, 11, 70, "Index",
+      CellTags->"QVectorToDensityMatrix"]},
+  "QSpinHamiltonian"->{
+    Cell[65141, 2579, 316, 11, 70, "Index",
+      CellTags->"QSpinHamiltonian"]},
+  "QSpinorUp"->{
+    Cell[65460, 2592, 288, 11, 70, "Index",
+      CellTags->"QSpinorUp"]},
+  "QSpinorDown"->{
+    Cell[65751, 2605, 296, 11, 70, "Index",
+      CellTags->"QSpinorDown"]},
+  "QConjSpinorUp"->{
+    Cell[66050, 2618, 304, 11, 70, "Index",
+      CellTags->"QConjSpinorUp"]},
+  "QConjSpinorDown"->{
+    Cell[66357, 2631, 312, 11, 70, "Index",
+      CellTags->"QConjSpinorDown"]},
+  "QSpinorHarmonicUp"->{
+    Cell[66672, 2644, 320, 11, 70, "Index",
+      CellTags->"QSpinorHarmonicUp"]},
+  "QSpinorHarmonicDown"->{
+    Cell[66995, 2657, 328, 11, 70, "Index",
+      CellTags->"QSpinorHarmonicDown"]},
+  "QSpinorToVector"->{
+    Cell[67326, 2670, 312, 11, 70, "Index",
+      CellTags->"QSpinorToVector"]},
+  "QVectorToSpinor"->{
+    Cell[67641, 2683, 312, 11, 70, "Index",
+      CellTags->"QVectorToSpinor"]},
+  "QExtractPhase"->{
+    Cell[67956, 2696, 304, 11, 70, "Index",
+      CellTags->"QExtractPhase"]},
+  "QHermitianMatrixToVector"->{
+    Cell[68263, 2709, 348, 11, 70, "Index",
+      CellTags->"QHermitianMatrixToVector"]},
+  "QDensityMatrixToVector"->{
+    Cell[68614, 2722, 340, 11, 70, "Index",
+      CellTags->"QDensityMatrixToVector"]},
+  "QSpinorToArrow"->{
+    Cell[68957, 2735, 308, 11, 70, "Index",
+      CellTags->"QSpinorToArrow"]},
+  "QRotationSO3"->{
+    Cell[69268, 2748, 300, 11, 70, "Index",
+      CellTags->"QRotationSO3"]},
+  "QRotationSU2"->{
+    Cell[69571, 2761, 300, 11, 70, "Index",
+      CellTags->"QRotationSU2"]},
+  "QVisualizeSpinor"->{
+    Cell[69874, 2774, 316, 11, 70, "Index",
+      CellTags->"QVisualizeSpinor"]},
+  "QVisualizeDensityMatrix"->{
+    Cell[70193, 2787, 344, 11, 70, "Index",
+      CellTags->"QVisualizeDensityMatrix"]},
+  "VQM`VisualizeVector`"->{
+    Cell[70540, 2800, 231, 8, 70, "Index",
+      CellTags->"VQM`VisualizeVector`"]},
+  "QVectorToArrow"->{
+    Cell[70774, 2810, 324, 11, 70, "Index",
+      CellTags->"QVectorToArrow"]},
+  "QVisualizeVector"->{
+    Cell[71101, 2823, 332, 11, 70, "Index",
+      CellTags->"QVisualizeVector"]},
+  "polyDisk"->{
+    Cell[71436, 2836, 300, 11, 70, "Index",
+      CellTags->"polyDisk"]},
+  "polyCone"->{
+    Cell[71739, 2849, 300, 11, 70, "Index",
+      CellTags->"polyCone"]},
+  "polyCylinder"->{
+    Cell[72042, 2862, 316, 11, 70, "Index",
+      CellTags->"polyCylinder"]},
+  "arrowCone"->{
+    Cell[72361, 2875, 304, 11, 70, "Index",
+      CellTags->"arrowCone"]},
+  "arrowWithShaft"->{
+    Cell[72668, 2888, 324, 11, 70, "Index",
+      CellTags->"arrowWithShaft"]},
+  "doubleHead"->{
+    Cell[72995, 2901, 308, 11, 70, "Index",
+      CellTags->"doubleHead"]},
+  "unitSphere"->{
+    Cell[73306, 2914, 308, 11, 70, "Index",
+      CellTags->"unitSphere"]},
+  "QRoundSphere"->{
+    Cell[73617, 2927, 316, 11, 70, "Index",
+      CellTags->"QRoundSphere"]},
+  "coordinateCube"->{
+    Cell[73936, 2940, 324, 11, 70, "Index",
+      CellTags->"coordinateCube"]},
+  "coordinateCircles"->{
+    Cell[74263, 2953, 336, 11, 70, "Index",
+      CellTags->"coordinateCircles"]},
+  "graphicElements"->{
+    Cell[74602, 2966, 328, 11, 70, "Index",
+      CellTags->"graphicElements"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"MasterIndexHeading", 75493, 2993},
+  {"VQM`ArgColorPlot`", 75604, 2996},
+  {"QArgColorPlot", 75704, 2999},
+  {"QListArgColorPlot", 75805, 3002},
+  {"QCombinedPlot", 75906, 3005},
+  {"QListCombinedPlot", 76007, 3008},
+  {"QSpinorPlot", 76107, 3011},
+  {"QListSpinorPlot", 76205, 3014},
+  {"QSpinorCombinedPlot", 76311, 3017},
+  {"QListSpinorCombinedPlot", 76425, 3020},
+  {"QNiceTicks", 76530, 3023},
+  {"VQM`ColorMaps`", 76626, 3026},
+  {"QComplexToColor", 76726, 3029},
+  {"QRGBValues", 76823, 3032},
+  {"QComplexToRGBColor", 76923, 3035},
+  {"$QComplexToColorMap", 77032, 3038},
+  {"QSaturationFromLightness", 77147, 3041},
+  {"QBrightnessFromLightness", 77267, 3044},
+  {"QHueFromArgument", 77379, 3047},
+  {"QLightnessFromModulus", 77488, 3050},
+  {"QProcessColorMapOptions", 77604, 3053},
+  {"QVectorToColor", 77713, 3056},
+  {"QSpinorToColor", 77813, 3059},
+  {"VQM`ComplexPlot`", 77915, 3062},
+  {"QComplexPlot3D", 78016, 3065},
+  {"QListComplexPlot3D", 78120, 3068},
+  {"QComplexSurfacePlot", 78229, 3071},
+  {"QListComplexSurfacePlot", 78343, 3074},
+  {"QComplexDensityPlot", 78458, 3077},
+  {"QSpinorDensityPlot", 78568, 3080},
+  {"QListComplexDensityPlot", 78682, 3083},
+  {"QComplexContourPlot", 78797, 3086},
+  {"QListComplexContourPlot", 78912, 3089},
+  {"QColorArrayPlot", 79023, 3092},
+  {"QColorDensityGraphics", 79132, 3095},
+  {"VQM`Coulomb`", 79238, 3098},
+  {"QPrincipalQuantumNumber", 79345, 3101},
+  {"QRadialQuantumNumber", 79461, 3104},
+  {"QCoulombEnergy", 79568, 3107},
+  {"QCoulombTimePeriod", 79673, 3110},
+  {"QCoulombFunction", 79780, 3113},
+  {"QEffectiveCoulombPotential", 79895, 3116},
+  {"QCoulombHamiltonian", 80013, 3119},
+  {"QRadialCoulombFunction", 80127, 3122},
+  {"QRadialPositionAmplitude", 80246, 3125},
+  {"$QCoulombSpaceDimension", 80366, 3128},
+  {"$QCoulombCoupling", 80479, 3131},
+  {"VQM`Dirac1D`", 80581, 3134},
+  {"QRelativisticEnergy", 80684, 3137},
+  {"QRelativisticVelocity", 80797, 3140},
+  {"QSignedEnergy", 80904, 3143},
+  {"QSignedMomentum", 81005, 3146},
+  {"aplus", 81098, 3149},
+  {"aminus", 81182, 3152},
+  {"QDiracMatrix1D", 81275, 3155},
+  {"QProjectPositiveEnergy", 81384, 3158},
+  {"QProjectNegativeEnergy", 81501, 3161},
+  {"QMomentumSpacePropagator", 81620, 3164},
+  {"QBaseSpinorRight", 81733, 3167},
+  {"QBaseSpinorLeft", 81837, 3170},
+  {"QBaseSpinorPos", 81939, 3173},
+  {"QBaseSpinorNeg", 82040, 3176},
+  {"QDiracPlaneWaveRight", 82147, 3179},
+  {"QDiracPlaneWaveLeft", 82259, 3182},
+  {"QDiracPlaneWavePos", 82369, 3185},
+  {"QDiracPlaneWaveNeg", 82478, 3188},
+  {"QFWMatrix", 82578, 3191},
+  {"$c", 82662, 3194},
+  {"$m", 82739, 3197},
+  {"QDiracEquation1D", 82830, 3200},
+  {"QDiracOperator1D", 82935, 3203},
+  {"QTridiagonalBlockSolve", 83046, 3206},
+  {"QDiracTimeStep1D", 83157, 3209},
+  {"QInitializeDirac1D", 83264, 3212},
+  {"QMomentumSpaceSpinorPos", 83378, 3215},
+  {"QMomentumSpaceSpinorNeg", 83497, 3218},
+  {"QMomentumSpaceSpinorRight", 83619, 3221},
+  {"QMomentumSpaceSpinorLeft", 83742, 3224},
+  {"QMomentumSpaceSpinorPosRight", 83868, 3227},
+  {"QMomentumSpaceSpinorPosLeft", 83997, 3230},
+  {"QMomentumSpaceSpinorNegRight", 84126, 3233},
+  {"QMomentumSpaceSpinorNegLeft", 84255, 3236},
+  {"QMomentumSpaceSpinor", 84376, 3239},
+  {"QPositionSpaceSpinor", 84490, 3242},
+  {"QPositionSpaceSpinorPos", 84607, 3245},
+  {"QPositionSpaceSpinorNeg", 84727, 3248},
+  {"QPositionSpaceSpinorRight", 84849, 3251},
+  {"QPositionSpaceSpinorLeft", 84972, 3254},
+  {"QPositionSpaceSpinorPosRight", 85098, 3257},
+  {"QPositionSpaceSpinorPosLeft", 85227, 3260},
+  {"QPositionSpaceSpinorNegRight", 85356, 3263},
+  {"QPositionSpaceSpinorNegLeft", 85485, 3266},
+  {"QPositionSpaceGrid", 85604, 3269},
+  {"QPositionSpaceInterval", 85718, 3272},
+  {"QPositionSpaceStep", 85832, 3275},
+  {"QComputeMeanPosition", 85944, 3278},
+  {"QInnerProductList", 86055, 3281},
+  {"QSpinorFT", 86155, 3284},
+  {"QInverseSpinorFT", 86254, 3287},
+  {"VQM`FastFourier`", 86360, 3290},
+  {"QFourierList", 86461, 3293},
+  {"QInverseFourierList", 86566, 3296},
+  {"QFourierListArgColorPlot", 86683, 3299},
+  {"QInverseFourierListArgColorPlot", 86812, 3302},
+  {"QStepSize", 86926, 3305},
+  {"QGrid", 87014, 3308},
+  {"QLeftBorder", 87104, 3311},
+  {"QSpaceStep", 87199, 3314},
+  {"QSpaceInterval", 87297, 3317},
+  {"QIndexPosition", 87399, 3320},
+  {"QFourierGrid", 87499, 3323},
+  {"QFourierLeftBorder", 87603, 3326},
+  {"QFourierRightBorder", 87714, 3329},
+  {"QFourierStep", 87819, 3332},
+  {"QFourierInterval", 87921, 3335},
+  {"VQM`Free`", 88020, 3338},
+  {"QFreeHamiltonian1D", 88120, 3341},
+  {"QFreeGaussian", 88225, 3344},
+  {"QFreeGaussian1D", 88327, 3347},
+  {"QFreeGaussian2D", 88431, 3350},
+  {"QFreeGaussian3D", 88535, 3353},
+  {"QGaussian1D", 88635, 3356},
+  {"QGaussian2D", 88731, 3359},
+  {"QGaussian3D", 88827, 3362},
+  {"QFreeFourierGaussian1D", 88934, 3365},
+  {"QFourierGaussian1D", 89048, 3368},
+  {"QEnergyGaussian1D", 89157, 3371},
+  {"$QFreeMass", 89258, 3374},
+  {"$QFreeSpaceDimension", 89362, 3377},
+  {"VQM`Oscillator`", 89471, 3380},
+  {"QOscillatorEnergy", 89576, 3383},
+  {"QOscillatorFunction", 89686, 3386},
+  {"QOscillatorGaussian", 89798, 3389},
+  {"QOscillatorBarDiagram", 89912, 3392},
+  {"$QOscillatorFrequency", 90028, 3395},
+  {"$QOscillatorMass", 90139, 3398},
+  {"VQM`QGraphics2D`", 90245, 3401},
+  {"QPrepareOptions", 90349, 3404},
+  {"QExtractPart", 90450, 3407},
+  {"QGetAndDensityPlot", 90554, 3410},
+  {"QGetAndComplexDensityPlot", 90671, 3413},
+  {"QGetSpinorAndDensityPlot", 90794, 3416},
+  {"QMakeTable", 90902, 3419},
+  {"QZeroTable", 90996, 3422},
+  {"QGetSpinorAndDensityPlotTwo", 91107, 3425},
+  {"QGetAndSpinorToColorPlot", 91232, 3428},
+  {"QGetAndSpinorToColorPlotTwo", 91357, 3431},
+  {"VQM`QuantumKernel`", 91476, 3434},
+  {"QNewFunction", 91579, 3437},
+  {"QDisposeFunction", 91681, 3440},
+  {"QGetArray", 91780, 3443},
+  {"QGetFunctionInfo", 91879, 3446},
+  {"QGetColorArray", 91983, 3449},
+  {"QGetGrayArray", 92084, 3452},
+  {"QGetRedBlueArray", 92187, 3455},
+  {"QGetBlackWhiteArray", 92296, 3458},
+  {"QGetAbsArray", 92401, 3461},
+  {"QInfo", 92492, 3464},
+  {"QSchroedinger1D", 92586, 3467},
+  {"QSchroedinger2D", 92690, 3470},
+  {"QSchroedinger3D", 92794, 3473},
+  {"QPauli2D", 92891, 3476},
+  {"QPauli3D", 92981, 3479},
+  {"QDirac2D", 93071, 3482},
+  {"QDirac3D", 93161, 3485},
+  {"QDisposeOperator", 93259, 3488},
+  {"QGetOperatorInfo", 93365, 3491},
+  {"QTimeEvolution", 93469, 3494},
+  {"VQM`Rectangular`", 93573, 3497},
+  {"QPlaneWaveToRight", 93679, 3500},
+  {"QPlaneWaveToLeft", 93786, 3503},
+  {"QReflectionCoefficientJump", 93902, 3506},
+  {"QTransmissionCoefficientJump", 94030, 3509},
+  {"QReflectionCoefficientWell", 94158, 3512},
+  {"QTransmissionCoefficientWell", 94286, 3515},
+  {"QTransitionMatrix", 94405, 3518},
+  {"QSolutionWellToRight", 94516, 3521},
+  {"QPsiEvenWell", 94622, 3524},
+  {"QPsiOddWell", 94719, 3527},
+  {"QDetEvenWell", 94816, 3530},
+  {"QDetOddWell", 94913, 3533},
+  {"QCriticalRadiusEvenWell", 95021, 3536},
+  {"QCriticalRadiusOddWell", 95140, 3539},
+  {"QCriticalDepthEvenWell", 95258, 3542},
+  {"QCriticalDepthOddWell", 95375, 3545},
+  {"VQM`Spinors`", 95482, 3548},
+  {"QNorm", 95572, 3551},
+  {"QNormalize", 95661, 3554},
+  {"$QSpinBasis", 95756, 3557},
+  {"QSetSpinBasis", 95854, 3560},
+  {"QSpinorToComponents", 95960, 3563},
+  {"QComponentsToSpinor", 96072, 3566},
+  {"QProjectUp", 96175, 3569},
+  {"QProjectDown", 96271, 3572},
+  {"QProbabilityUp", 96371, 3575},
+  {"QSpinorBarDiagram", 96476, 3578},
+  {"QVectorToHermitianMatrix", 96591, 3581},
+  {"QVectorToDensityMatrix", 96711, 3584},
+  {"QSpinHamiltonian", 96823, 3587},
+  {"QSpinorUp", 96922, 3590},
+  {"QSpinorDown", 97016, 3593},
+  {"QConjSpinorUp", 97114, 3596},
+  {"QConjSpinorDown", 97216, 3599},
+  {"QSpinorHarmonicUp", 97322, 3602},
+  {"QSpinorHarmonicDown", 97432, 3605},
+  {"QSpinorToVector", 97540, 3608},
+  {"QVectorToSpinor", 97644, 3611},
+  {"QExtractPhase", 97746, 3614},
+  {"QHermitianMatrixToVector", 97857, 3617},
+  {"QDensityMatrixToVector", 97977, 3620},
+  {"QSpinorToArrow", 98087, 3623},
+  {"QRotationSO3", 98187, 3626},
+  {"QRotationSU2", 98285, 3629},
+  {"QVisualizeSpinor", 98387, 3632},
+  {"QVisualizeDensityMatrix", 98500, 3635},
+  {"VQM`VisualizeVector`", 98617, 3638},
+  {"QVectorToArrow", 98724, 3641},
+  {"QVisualizeVector", 98828, 3644},
+  {"polyDisk", 98926, 3647},
+  {"polyCone", 99016, 3650},
+  {"polyCylinder", 99110, 3653},
+  {"arrowCone", 99205, 3656},
+  {"arrowWithShaft", 99302, 3659},
+  {"doubleHead", 99400, 3662},
+  {"unitSphere", 99494, 3665},
+  {"QRoundSphere", 99590, 3668},
+  {"coordinateCube", 99690, 3671},
+  {"coordinateCircles", 99795, 3674},
+  {"graphicElements", 99901, 3677}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 97, 1, 41, "IndexSection",
+  CellTags->"MasterIndexHeading"],
+Cell[1854, 54, 219, 8, 70, "Index",
+  CellTags->"VQM`ArgColorPlot`"],
+Cell[2076, 64, 314, 11, 70, "Index",
+  CellTags->"QArgColorPlot"],
+Cell[2393, 77, 330, 11, 70, "Index",
+  CellTags->"QListArgColorPlot"],
+Cell[2726, 90, 314, 11, 70, "Index",
+  CellTags->"QCombinedPlot"],
+Cell[3043, 103, 330, 11, 70, "Index",
+  CellTags->"QListCombinedPlot"],
+Cell[3376, 116, 306, 11, 70, "Index",
+  CellTags->"QSpinorPlot"],
+Cell[3685, 129, 322, 11, 70, "Index",
+  CellTags->"QListSpinorPlot"],
+Cell[4010, 142, 338, 11, 70, "Index",
+  CellTags->"QSpinorCombinedPlot"],
+Cell[4351, 155, 354, 11, 70, "Index",
+  CellTags->"QListSpinorCombinedPlot"],
+Cell[4708, 168, 302, 11, 70, "Index",
+  CellTags->"QNiceTicks"],
+Cell[5013, 181, 207, 8, 70, "Index",
+  CellTags->"VQM`ColorMaps`"],
+Cell[5223, 191, 316, 11, 70, "Index",
+  CellTags->"QComplexToColor"],
+Cell[5542, 204, 296, 11, 70, "Index",
+  CellTags->"QRGBValues"],
+Cell[5841, 217, 328, 11, 70, "Index",
+  CellTags->"QComplexToRGBColor"],
+Cell[6172, 230, 332, 11, 70, "Index",
+  CellTags->"$QComplexToColorMap"],
+Cell[6507, 243, 352, 11, 70, "Index",
+  CellTags->"QSaturationFromLightness"],
+Cell[6862, 256, 352, 11, 70, "Index",
+  CellTags->"QBrightnessFromLightness"],
+Cell[7217, 269, 320, 11, 70, "Index",
+  CellTags->"QHueFromArgument"],
+Cell[7540, 282, 340, 11, 70, "Index",
+  CellTags->"QLightnessFromModulus"],
+Cell[7883, 295, 348, 11, 70, "Index",
+  CellTags->"QProcessColorMapOptions"],
+Cell[8234, 308, 312, 11, 70, "Index",
+  CellTags->"QVectorToColor"],
+Cell[8549, 321, 312, 11, 70, "Index",
+  CellTags->"QSpinorToColor"],
+Cell[8864, 334, 215, 8, 70, "Index",
+  CellTags->"VQM`ComplexPlot`"],
+Cell[9082, 344, 316, 11, 70, "Index",
+  CellTags->"QComplexPlot3D"],
+Cell[9401, 357, 332, 11, 70, "Index",
+  CellTags->"QListComplexPlot3D"],
+Cell[9736, 370, 336, 11, 70, "Index",
+  CellTags->"QComplexSurfacePlot"],
+Cell[10075, 383, 352, 11, 70, "Index",
+  CellTags->"QListComplexSurfacePlot"],
+Cell[10430, 396, 336, 11, 70, "Index",
+  CellTags->"QComplexDensityPlot"],
+Cell[10769, 409, 332, 11, 70, "Index",
+  CellTags->"QSpinorDensityPlot"],
+Cell[11104, 422, 352, 11, 70, "Index",
+  CellTags->"QListComplexDensityPlot"],
+Cell[11459, 435, 336, 11, 70, "Index",
+  CellTags->"QComplexContourPlot"],
+Cell[11798, 448, 352, 11, 70, "Index",
+  CellTags->"QListComplexContourPlot"],
+Cell[12153, 461, 320, 11, 70, "Index",
+  CellTags->"QColorArrayPlot"],
+Cell[12476, 474, 344, 11, 70, "Index",
+  CellTags->"QColorDensityGraphics"],
+Cell[12823, 487, 199, 8, 70, "Index",
+  CellTags->"VQM`Coulomb`"],
+Cell[13025, 497, 344, 11, 70, "Index",
+  CellTags->"QPrincipalQuantumNumber"],
+Cell[13372, 510, 332, 11, 70, "Index",
+  CellTags->"QRadialQuantumNumber"],
+Cell[13707, 523, 308, 11, 70, "Index",
+  CellTags->"QCoulombEnergy"],
+Cell[14018, 536, 324, 11, 70, "Index",
+  CellTags->"QCoulombTimePeriod"],
+Cell[14345, 549, 316, 11, 70, "Index",
+  CellTags->"QCoulombFunction"],
+Cell[14664, 562, 356, 11, 70, "Index",
+  CellTags->"QEffectiveCoulombPotential"],
+Cell[15023, 575, 328, 11, 70, "Index",
+  CellTags->"QCoulombHamiltonian"],
+Cell[15354, 588, 340, 11, 70, "Index",
+  CellTags->"QRadialCoulombFunction"],
+Cell[15697, 601, 348, 11, 70, "Index",
+  CellTags->"QRadialPositionAmplitude"],
+Cell[16048, 614, 344, 11, 70, "Index",
+  CellTags->"$QCoulombSpaceDimension"],
+Cell[16395, 627, 320, 11, 70, "Index",
+  CellTags->"$QCoulombCoupling"],
+Cell[16718, 640, 199, 8, 70, "Index",
+  CellTags->"VQM`Dirac1D`"],
+Cell[16920, 650, 328, 11, 70, "Index",
+  CellTags->"QRelativisticEnergy"],
+Cell[17251, 663, 336, 11, 70, "Index",
+  CellTags->"QRelativisticVelocity"],
+Cell[17590, 676, 304, 11, 70, "Index",
+  CellTags->"QSignedEnergy"],
+Cell[17897, 689, 312, 11, 70, "Index",
+  CellTags->"QSignedMomentum"],
+Cell[18212, 702, 272, 11, 70, "Index",
+  CellTags->"aplus"],
+Cell[18487, 715, 276, 11, 70, "Index",
+  CellTags->"aminus"],
+Cell[18766, 728, 308, 11, 70, "Index",
+  CellTags->"QDiracMatrix1D"],
+Cell[19077, 741, 340, 11, 70, "Index",
+  CellTags->"QProjectPositiveEnergy"],
+Cell[19420, 754, 340, 11, 70, "Index",
+  CellTags->"QProjectNegativeEnergy"],
+Cell[19763, 767, 348, 11, 70, "Index",
+  CellTags->"QMomentumSpacePropagator"],
+Cell[20114, 780, 316, 11, 70, "Index",
+  CellTags->"QBaseSpinorRight"],
+Cell[20433, 793, 312, 11, 70, "Index",
+  CellTags->"QBaseSpinorLeft"],
+Cell[20748, 806, 308, 11, 70, "Index",
+  CellTags->"QBaseSpinorPos"],
+Cell[21059, 819, 308, 11, 70, "Index",
+  CellTags->"QBaseSpinorNeg"],
+Cell[21370, 832, 332, 11, 70, "Index",
+  CellTags->"QDiracPlaneWaveRight"],
+Cell[21705, 845, 328, 11, 70, "Index",
+  CellTags->"QDiracPlaneWaveLeft"],
+Cell[22036, 858, 324, 11, 70, "Index",
+  CellTags->"QDiracPlaneWavePos"],
+Cell[22363, 871, 324, 11, 70, "Index",
+  CellTags->"QDiracPlaneWaveNeg"],
+Cell[22690, 884, 288, 11, 70, "Index",
+  CellTags->"QFWMatrix"],
+Cell[22981, 897, 260, 11, 70, "Index",
+  CellTags->"$c"],
+Cell[23244, 910, 260, 11, 70, "Index",
+  CellTags->"$m"],
+Cell[23507, 923, 316, 11, 70, "Index",
+  CellTags->"QDiracEquation1D"],
+Cell[23826, 936, 316, 11, 70, "Index",
+  CellTags->"QDiracOperator1D"],
+Cell[24145, 949, 340, 11, 70, "Index",
+  CellTags->"QTridiagonalBlockSolve"],
+Cell[24488, 962, 316, 11, 70, "Index",
+  CellTags->"QDiracTimeStep1D"],
+Cell[24807, 975, 324, 11, 70, "Index",
+  CellTags->"QInitializeDirac1D"],
+Cell[25134, 988, 344, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinorPos"],
+Cell[25481, 1001, 344, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinorNeg"],
+Cell[25828, 1014, 352, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinorRight"],
+Cell[26183, 1027, 348, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinorLeft"],
+Cell[26534, 1040, 364, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinorPosRight"],
+Cell[26901, 1053, 360, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinorPosLeft"],
+Cell[27264, 1066, 364, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinorNegRight"],
+Cell[27631, 1079, 360, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinorNegLeft"],
+Cell[27994, 1092, 332, 11, 70, "Index",
+  CellTags->"QMomentumSpaceSpinor"],
+Cell[28329, 1105, 332, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinor"],
+Cell[28664, 1118, 344, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinorPos"],
+Cell[29011, 1131, 344, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinorNeg"],
+Cell[29358, 1144, 352, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinorRight"],
+Cell[29713, 1157, 348, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinorLeft"],
+Cell[30064, 1170, 364, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinorPosRight"],
+Cell[30431, 1183, 360, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinorPosLeft"],
+Cell[30794, 1196, 364, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinorNegRight"],
+Cell[31161, 1209, 360, 11, 70, "Index",
+  CellTags->"QPositionSpaceSpinorNegLeft"],
+Cell[31524, 1222, 324, 11, 70, "Index",
+  CellTags->"QPositionSpaceGrid"],
+Cell[31851, 1235, 340, 11, 70, "Index",
+  CellTags->"QPositionSpaceInterval"],
+Cell[32194, 1248, 324, 11, 70, "Index",
+  CellTags->"QPositionSpaceStep"],
+Cell[32521, 1261, 332, 11, 70, "Index",
+  CellTags->"QComputeMeanPosition"],
+Cell[32856, 1274, 320, 11, 70, "Index",
+  CellTags->"QInnerProductList"],
+Cell[33179, 1287, 288, 11, 70, "Index",
+  CellTags->"QSpinorFT"],
+Cell[33470, 1300, 316, 11, 70, "Index",
+  CellTags->"QInverseSpinorFT"],
+Cell[33789, 1313, 215, 8, 70, "Index",
+  CellTags->"VQM`FastFourier`"],
+Cell[34007, 1323, 308, 11, 70, "Index",
+  CellTags->"QFourierList"],
+Cell[34318, 1336, 336, 11, 70, "Index",
+  CellTags->"QInverseFourierList"],
+Cell[34657, 1349, 356, 11, 70, "Index",
+  CellTags->"QFourierListArgColorPlot"],
+Cell[35016, 1362, 384, 11, 70, "Index",
+  CellTags->"QInverseFourierListArgColorPlot"],
+Cell[35403, 1375, 296, 11, 70, "Index",
+  CellTags->"QStepSize"],
+Cell[35702, 1388, 280, 11, 70, "Index",
+  CellTags->"QGrid"],
+Cell[35985, 1401, 304, 11, 70, "Index",
+  CellTags->"QLeftBorder"],
+Cell[36292, 1414, 300, 11, 70, "Index",
+  CellTags->"QSpaceStep"],
+Cell[36595, 1427, 316, 11, 70, "Index",
+  CellTags->"QSpaceInterval"],
+Cell[36914, 1440, 316, 11, 70, "Index",
+  CellTags->"QIndexPosition"],
+Cell[37233, 1453, 308, 11, 70, "Index",
+  CellTags->"QFourierGrid"],
+Cell[37544, 1466, 332, 11, 70, "Index",
+  CellTags->"QFourierLeftBorder"],
+Cell[37879, 1479, 336, 11, 70, "Index",
+  CellTags->"QFourierRightBorder"],
+Cell[38218, 1492, 308, 11, 70, "Index",
+  CellTags->"QFourierStep"],
+Cell[38529, 1505, 324, 11, 70, "Index",
+  CellTags->"QFourierInterval"],
+Cell[38856, 1518, 187, 8, 70, "Index",
+  CellTags->"VQM`Free`"],
+Cell[39046, 1528, 318, 11, 70, "Index",
+  CellTags->"QFreeHamiltonian1D"],
+Cell[39367, 1541, 298, 11, 70, "Index",
+  CellTags->"QFreeGaussian"],
+Cell[39668, 1554, 306, 11, 70, "Index",
+  CellTags->"QFreeGaussian1D"],
+Cell[39977, 1567, 306, 11, 70, "Index",
+  CellTags->"QFreeGaussian2D"],
+Cell[40286, 1580, 306, 11, 70, "Index",
+  CellTags->"QFreeGaussian3D"],
+Cell[40595, 1593, 290, 11, 70, "Index",
+  CellTags->"QGaussian1D"],
+Cell[40888, 1606, 290, 11, 70, "Index",
+  CellTags->"QGaussian2D"],
+Cell[41181, 1619, 290, 11, 70, "Index",
+  CellTags->"QGaussian3D"],
+Cell[41474, 1632, 334, 11, 70, "Index",
+  CellTags->"QFreeFourierGaussian1D"],
+Cell[41811, 1645, 318, 11, 70, "Index",
+  CellTags->"QFourierGaussian1D"],
+Cell[42132, 1658, 314, 11, 70, "Index",
+  CellTags->"QEnergyGaussian1D"],
+Cell[42449, 1671, 286, 11, 70, "Index",
+  CellTags->"$QFreeMass"],
+Cell[42738, 1684, 326, 11, 70, "Index",
+  CellTags->"$QFreeSpaceDimension"],
+Cell[43067, 1697, 211, 8, 70, "Index",
+  CellTags->"VQM`Oscillator`"],
+Cell[43281, 1707, 326, 11, 70, "Index",
+  CellTags->"QOscillatorEnergy"],
+Cell[43610, 1720, 334, 11, 70, "Index",
+  CellTags->"QOscillatorFunction"],
+Cell[43947, 1733, 334, 11, 70, "Index",
+  CellTags->"QOscillatorGaussian"],
+Cell[44284, 1746, 342, 11, 70, "Index",
+  CellTags->"QOscillatorBarDiagram"],
+Cell[44629, 1759, 342, 11, 70, "Index",
+  CellTags->"$QOscillatorFrequency"],
+Cell[44974, 1772, 322, 11, 70, "Index",
+  CellTags->"$QOscillatorMass"],
+Cell[45299, 1785, 215, 8, 70, "Index",
+  CellTags->"VQM`QGraphics2D`"],
+Cell[45517, 1795, 320, 11, 70, "Index",
+  CellTags->"QPrepareOptions"],
+Cell[45840, 1808, 308, 11, 70, "Index",
+  CellTags->"QExtractPart"],
+Cell[46151, 1821, 332, 11, 70, "Index",
+  CellTags->"QGetAndDensityPlot"],
+Cell[46486, 1834, 360, 11, 70, "Index",
+  CellTags->"QGetAndComplexDensityPlot"],
+Cell[46849, 1847, 356, 11, 70, "Index",
+  CellTags->"QGetSpinorAndDensityPlot"],
+Cell[47208, 1860, 300, 11, 70, "Index",
+  CellTags->"QMakeTable"],
+Cell[47511, 1873, 300, 11, 70, "Index",
+  CellTags->"QZeroTable"],
+Cell[47814, 1886, 368, 11, 70, "Index",
+  CellTags->"QGetSpinorAndDensityPlotTwo"],
+Cell[48185, 1899, 356, 11, 70, "Index",
+  CellTags->"QGetAndSpinorToColorPlot"],
+Cell[48544, 1912, 368, 11, 70, "Index",
+  CellTags->"QGetAndSpinorToColorPlotTwo"],
+Cell[48915, 1925, 223, 8, 70, "Index",
+  CellTags->"VQM`QuantumKernel`"],
+Cell[49141, 1935, 312, 11, 70, "Index",
+  CellTags->"QNewFunction"],
+Cell[49456, 1948, 328, 11, 70, "Index",
+  CellTags->"QDisposeFunction"],
+Cell[49787, 1961, 300, 11, 70, "Index",
+  CellTags->"QGetArray"],
+Cell[50090, 1974, 328, 11, 70, "Index",
+  CellTags->"QGetFunctionInfo"],
+Cell[50421, 1987, 320, 11, 70, "Index",
+  CellTags->"QGetColorArray"],
+Cell[50744, 2000, 316, 11, 70, "Index",
+  CellTags->"QGetGrayArray"],
+Cell[51063, 2013, 328, 11, 70, "Index",
+  CellTags->"QGetRedBlueArray"],
+Cell[51394, 2026, 340, 11, 70, "Index",
+  CellTags->"QGetBlackWhiteArray"],
+Cell[51737, 2039, 312, 11, 70, "Index",
+  CellTags->"QGetAbsArray"],
+Cell[52052, 2052, 284, 11, 70, "Index",
+  CellTags->"QInfo"],
+Cell[52339, 2065, 324, 11, 70, "Index",
+  CellTags->"QSchroedinger1D"],
+Cell[52666, 2078, 324, 11, 70, "Index",
+  CellTags->"QSchroedinger2D"],
+Cell[52993, 2091, 324, 11, 70, "Index",
+  CellTags->"QSchroedinger3D"],
+Cell[53320, 2104, 296, 11, 70, "Index",
+  CellTags->"QPauli2D"],
+Cell[53619, 2117, 296, 11, 70, "Index",
+  CellTags->"QPauli3D"],
+Cell[53918, 2130, 296, 11, 70, "Index",
+  CellTags->"QDirac2D"],
+Cell[54217, 2143, 296, 11, 70, "Index",
+  CellTags->"QDirac3D"],
+Cell[54516, 2156, 328, 11, 70, "Index",
+  CellTags->"QDisposeOperator"],
+Cell[54847, 2169, 328, 11, 70, "Index",
+  CellTags->"QGetOperatorInfo"],
+Cell[55178, 2182, 320, 11, 70, "Index",
+  CellTags->"QTimeEvolution"],
+Cell[55501, 2195, 215, 8, 70, "Index",
+  CellTags->"VQM`Rectangular`"],
+Cell[55719, 2205, 328, 11, 70, "Index",
+  CellTags->"QPlaneWaveToRight"],
+Cell[56050, 2218, 324, 11, 70, "Index",
+  CellTags->"QPlaneWaveToLeft"],
+Cell[56377, 2231, 364, 11, 70, "Index",
+  CellTags->"QReflectionCoefficientJump"],
+Cell[56744, 2244, 372, 11, 70, "Index",
+  CellTags->"QTransmissionCoefficientJump"],
+Cell[57119, 2257, 364, 11, 70, "Index",
+  CellTags->"QReflectionCoefficientWell"],
+Cell[57486, 2270, 372, 11, 70, "Index",
+  CellTags->"QTransmissionCoefficientWell"],
+Cell[57861, 2283, 328, 11, 70, "Index",
+  CellTags->"QTransitionMatrix"],
+Cell[58192, 2296, 340, 11, 70, "Index",
+  CellTags->"QSolutionWellToRight"],
+Cell[58535, 2309, 308, 11, 70, "Index",
+  CellTags->"QPsiEvenWell"],
+Cell[58846, 2322, 304, 11, 70, "Index",
+  CellTags->"QPsiOddWell"],
+Cell[59153, 2335, 308, 11, 70, "Index",
+  CellTags->"QDetEvenWell"],
+Cell[59464, 2348, 304, 11, 70, "Index",
+  CellTags->"QDetOddWell"],
+Cell[59771, 2361, 352, 11, 70, "Index",
+  CellTags->"QCriticalRadiusEvenWell"],
+Cell[60126, 2374, 348, 11, 70, "Index",
+  CellTags->"QCriticalRadiusOddWell"],
+Cell[60477, 2387, 348, 11, 70, "Index",
+  CellTags->"QCriticalDepthEvenWell"],
+Cell[60828, 2400, 344, 11, 70, "Index",
+  CellTags->"QCriticalDepthOddWell"],
+Cell[61175, 2413, 199, 8, 70, "Index",
+  CellTags->"VQM`Spinors`"],
+Cell[61377, 2423, 272, 11, 70, "Index",
+  CellTags->"QNorm"],
+Cell[61652, 2436, 292, 11, 70, "Index",
+  CellTags->"QNormalize"],
+Cell[61947, 2449, 296, 11, 70, "Index",
+  CellTags->"$QSpinBasis"],
+Cell[62246, 2462, 304, 11, 70, "Index",
+  CellTags->"QSetSpinBasis"],
+Cell[62553, 2475, 328, 11, 70, "Index",
+  CellTags->"QSpinorToComponents"],
+Cell[62884, 2488, 328, 11, 70, "Index",
+  CellTags->"QComponentsToSpinor"],
+Cell[63215, 2501, 292, 11, 70, "Index",
+  CellTags->"QProjectUp"],
+Cell[63510, 2514, 300, 11, 70, "Index",
+  CellTags->"QProjectDown"],
+Cell[63813, 2527, 308, 11, 70, "Index",
+  CellTags->"QProbabilityUp"],
+Cell[64124, 2540, 320, 11, 70, "Index",
+  CellTags->"QSpinorBarDiagram"],
+Cell[64447, 2553, 348, 11, 70, "Index",
+  CellTags->"QVectorToHermitianMatrix"],
+Cell[64798, 2566, 340, 11, 70, "Index",
+  CellTags->"QVectorToDensityMatrix"],
+Cell[65141, 2579, 316, 11, 70, "Index",
+  CellTags->"QSpinHamiltonian"],
+Cell[65460, 2592, 288, 11, 70, "Index",
+  CellTags->"QSpinorUp"],
+Cell[65751, 2605, 296, 11, 70, "Index",
+  CellTags->"QSpinorDown"],
+Cell[66050, 2618, 304, 11, 70, "Index",
+  CellTags->"QConjSpinorUp"],
+Cell[66357, 2631, 312, 11, 70, "Index",
+  CellTags->"QConjSpinorDown"],
+Cell[66672, 2644, 320, 11, 70, "Index",
+  CellTags->"QSpinorHarmonicUp"],
+Cell[66995, 2657, 328, 11, 70, "Index",
+  CellTags->"QSpinorHarmonicDown"],
+Cell[67326, 2670, 312, 11, 70, "Index",
+  CellTags->"QSpinorToVector"],
+Cell[67641, 2683, 312, 11, 70, "Index",
+  CellTags->"QVectorToSpinor"],
+Cell[67956, 2696, 304, 11, 70, "Index",
+  CellTags->"QExtractPhase"],
+Cell[68263, 2709, 348, 11, 70, "Index",
+  CellTags->"QHermitianMatrixToVector"],
+Cell[68614, 2722, 340, 11, 70, "Index",
+  CellTags->"QDensityMatrixToVector"],
+Cell[68957, 2735, 308, 11, 70, "Index",
+  CellTags->"QSpinorToArrow"],
+Cell[69268, 2748, 300, 11, 70, "Index",
+  CellTags->"QRotationSO3"],
+Cell[69571, 2761, 300, 11, 70, "Index",
+  CellTags->"QRotationSU2"],
+Cell[69874, 2774, 316, 11, 70, "Index",
+  CellTags->"QVisualizeSpinor"],
+Cell[70193, 2787, 344, 11, 70, "Index",
+  CellTags->"QVisualizeDensityMatrix"],
+Cell[70540, 2800, 231, 8, 70, "Index",
+  CellTags->"VQM`VisualizeVector`"],
+Cell[70774, 2810, 324, 11, 70, "Index",
+  CellTags->"QVectorToArrow"],
+Cell[71101, 2823, 332, 11, 70, "Index",
+  CellTags->"QVisualizeVector"],
+Cell[71436, 2836, 300, 11, 70, "Index",
+  CellTags->"polyDisk"],
+Cell[71739, 2849, 300, 11, 70, "Index",
+  CellTags->"polyCone"],
+Cell[72042, 2862, 316, 11, 70, "Index",
+  CellTags->"polyCylinder"],
+Cell[72361, 2875, 304, 11, 70, "Index",
+  CellTags->"arrowCone"],
+Cell[72668, 2888, 324, 11, 70, "Index",
+  CellTags->"arrowWithShaft"],
+Cell[72995, 2901, 308, 11, 70, "Index",
+  CellTags->"doubleHead"],
+Cell[73306, 2914, 308, 11, 70, "Index",
+  CellTags->"unitSphere"],
+Cell[73617, 2927, 316, 11, 70, "Index",
+  CellTags->"QRoundSphere"],
+Cell[73936, 2940, 324, 11, 70, "Index",
+  CellTags->"coordinateCube"],
+Cell[74263, 2953, 336, 11, 70, "Index",
+  CellTags->"coordinateCircles"],
+Cell[74602, 2966, 328, 11, 70, "Index",
+  CellTags->"graphicElements"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

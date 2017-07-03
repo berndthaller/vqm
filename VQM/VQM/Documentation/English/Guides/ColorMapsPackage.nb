@@ -1,0 +1,1065 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     44398,       1056]
+NotebookOptionsPosition[     42870,       1000]
+NotebookOutlinePosition[     43509,       1026]
+CellTagsIndexPosition[     43431,       1021]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["ColorMaps ", "Subsection",
+ CellTags->"VQM`ColorMaps`"],
+
+Cell["\<\
+This package defines color maps that associate color values with complex \
+numbers.     These color maps are used to visualize complex-valued functions. \
+\
+\>", "Text",
+ CellTags->"VQM`ColorMaps`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QComplexToColor", "[", 
+         RowBox[{"z", ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "associates", " ", "a", " ", "color", " ", "to", " ", "a", " ", 
+          "complex", " ", "number", " ", 
+          RowBox[{"z", ".", " ", "The"}], " ", "color", " ", "map", " ", "is",
+           " ", "given", " ", "by", " ", "the", " ", "option", " ", 
+          RowBox[{"QComplexToColorMap", ".", " ", 
+           RowBox[{"QComplexToColor", "[", "z", "]"}]}], " ", "returns", " ", 
+          "the", " ", "result", " ", "in", " ", "the", " ", "form", " ", 
+          RowBox[{"Hue", "[", 
+           RowBox[{"h", ",", "s", ",", "b"}], "]"}], " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"in", " ", "the", " ", "HSB", " ", "system"}], ")"}], ".",
+            " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QRGBValues", "[", 
+         RowBox[{"hue", ",", "lightness"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "converts", " ", "color", " ", "coordinates", " ", "from", " ", 
+           "the", " ", "HLS", " ", "system", " ", "to", " ", "color", " ", 
+           "coordinates", " ", "in", " ", "the", " ", "RGB", " ", 
+           RowBox[{"system", ".", " ", "It"}], " ", "associates", " ", "the", 
+           " ", "RGB", " ", "color", " ", "values", " ", 
+           RowBox[{"{", 
+            RowBox[{"r", ",", "g", ",", "b"}], "}"}], " ", "to", " ", "the", 
+           " ", "given", " ", "values", " ", "of", " ", "hue", " ", "and", 
+           " ", "lightness"}], ",", " ", 
+          RowBox[{
+          "assuming", " ", "that", " ", "the", " ", "saturation", " ", "is", 
+           " ", "equal", " ", "to", " ", "1", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+             "maximal", " ", "saturation", " ", "at", " ", "the", " ", 
+              "given", " ", "lightness"}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QComplexToRGBColor", "[", "z", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{"returns", " ", "the", " ", "color", " ", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"r", ",", "g", ",", "b"}], "]"}], " ", "of", " ", "the", 
+          " ", "complex", " ", "number", " ", "z", " ", "according", " ", 
+          "to", " ", "the", " ", "standard", " ", "color", " ", 
+          RowBox[{"map", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"$QComplexToColorMap", "[", 
+         RowBox[{"r", ",", "phi", ",", 
+          RowBox[{"{", "parameters", "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "associates", " ", "a", " ", "color", " ", "to", " ", "a", " ", 
+           "complex", " ", 
+           RowBox[{"number", ".", " ", "Default"}], " ", "for", " ", 
+           RowBox[{"QComplexToColor", ".", " ", "The"}], " ", "complex", " ", 
+           "number", " ", "is", " ", "given", " ", "in", " ", "polar", " ", 
+           "form"}], ",", " ", 
+          RowBox[{"r", "=", 
+           RowBox[{"Abs", "[", "z", "]"}]}], ",", " ", 
+          RowBox[{"phi", "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"Arg", "[", "z", "]"}], ".", " ", "The"}], " ", 
+             "result", " ", "is", " ", "returned", " ", "as", " ", 
+             RowBox[{"$QComplexToColorMap", "[", 
+              RowBox[{"r", ",", "phi", ",", 
+               RowBox[{"{", "}"}]}], "]"}]}], " ", "=", " ", 
+            RowBox[{"Hue", "[", 
+             RowBox[{"h", ",", "s", ",", "b"}], "]"}]}]}], ",", " ", 
+          RowBox[{"in", " ", "the", " ", "HSB", " ", "color", " ", 
+           RowBox[{"system", ".", " ", "The"}], " ", "Hue", " ", "h", " ", 
+           "of", " ", "the", " ", "color", " ", "is", " ", "given", " ", "by",
+            " ", 
+           RowBox[{
+            RowBox[{"phi", "/", "2"}], "/", "Pi"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "the", " ", "lightness", " ", "is", " ", "determined", " ", "from",
+             " ", 
+            RowBox[{"r", ".", " ", "The"}], " ", "color", " ", "map", " ", 
+            "can", " ", "be", " ", "described", " ", "as", " ", "a", " ", 
+            "stereographic", " ", "projection", " ", "from", " ", "the", " ", 
+            "complex", " ", "plane", " ", "onto", " ", "the", " ", "surface", 
+            " ", "of", " ", "the", " ", "color", " ", "manifold", " ", "in", 
+            " ", "the", " ", "Hue"}], "-", "Lightness", "-", 
+           RowBox[{"Saturation", " ", 
+            RowBox[{"system", ".", " ", "The"}], " ", "optional", " ", 
+            "parameters", " ", "are", " ", 
+            RowBox[{"{", 
+             RowBox[{
+             "R", ",", "bmin", ",", "bmax", ",", "lmin", ",", "lmax"}], "}"}],
+             " ", "specifying", " ", "the", " ", "radius", " ", "R", " ", 
+            "of", " ", "the", " ", "sphere"}]}], ",", " ", 
+          RowBox[{
+          "the", " ", "value", " ", "bmin", " ", "and", " ", "bmax", " ", 
+           "are", " ", "those", " ", "values", " ", "of", " ", "r", " ", 
+           "which", " ", "belong", " ", "to", " ", "the", " ", "minimal", " ",
+            "and", " ", "maximal", " ", "lightness", " ", "lmin", " ", "and", 
+           " ", 
+           RowBox[{"lmax", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSaturationFromLightness", "[", "x", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "is", " ", "an", " ", "auxiliary", " ", "function", " ", 
+            "provided", " ", "by", " ", "the", " ", "package", " ", 
+            RowBox[{"ColorMaps", ".", " ", "ComputesComputes"}], " ", "the", 
+            " ", "value", " ", "of", " ", "the", " ", "saturation", " ", "in",
+             " ", "the", " ", "HSB"}], "-", 
+           RowBox[{
+           "system", " ", "from", " ", "the", " ", "lighness", " ", "x", " ", 
+            
+            RowBox[{"(", 
+             RowBox[{"0", " ", "<=", " ", "x", " ", "<=", " ", "1"}], ")"}], 
+            " ", "of", " ", "the", " ", "color", " ", "in", " ", "the", " ", 
+            "HLS"}], "-", "system"}], ",", " ", 
+          RowBox[{
+           RowBox[{"assuming", " ", "maximal", " ", "HLS"}], "-", 
+           RowBox[{
+            RowBox[{"saturation", ".", " ", "Compiled"}], " ", "for", " ", 
+            "faster", " ", 
+            RowBox[{"execution", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QBrightnessFromLightness", "[", "x", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "is", " ", "an", " ", "auxiliary", " ", "function", " ", 
+            "provided", " ", "by", " ", "the", " ", "package", " ", 
+            RowBox[{"ColorMaps", ".", " ", "Computes"}], " ", "the", " ", 
+            "value", " ", "of", " ", "the", " ", "brightness", " ", "in", " ",
+             "the", " ", "HSB"}], "-", 
+           RowBox[{
+           "system", " ", "from", " ", "the", " ", "lighness", " ", "x", " ", 
+            
+            RowBox[{"(", 
+             RowBox[{"0", " ", "<=", " ", "x", " ", "<=", " ", "1"}], ")"}], 
+            " ", "of", " ", "the", " ", "color", " ", "in", " ", "the", " ", 
+            "HLS"}], "-", "system"}], ",", " ", 
+          RowBox[{
+           RowBox[{"assuming", " ", "maximal", " ", "HLS"}], "-", 
+           RowBox[{
+            RowBox[{"saturation", ".", " ", "Compiled"}], " ", "for", " ", 
+            "faster", " ", 
+            RowBox[{"execution", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QHueFromArgument", "[", "arg", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "a", " ", "compiled", " ", "auxiliary", " ", "function", 
+          " ", "provided", " ", "by", " ", "the", " ", "package", " ", 
+          RowBox[{"ColorMaps", ".", " ", "Computes"}], " ", "the", " ", "Hue",
+           " ", "from", " ", "the", " ", "argument", " ", "arg", " ", "of", 
+          " ", "a", " ", "complex", " ", 
+          RowBox[{"number", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QLightnessFromModulus", "[", "parameters", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "defines", " ", "a", " ", "compiled", " ", "auxiliary", " ", 
+          "function", " ", "that", " ", "depends", " ", "on", " ", "certain", 
+          " ", 
+          RowBox[{"parameters", ".", "  ", "The"}], " ", "parameters", " ", 
+          "are", " ", "given", " ", "as", " ", "a", " ", "list", " ", "of", 
+          " ", "the", " ", "form", " ", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"R", ",", "bmin", ",", "bmax", ",", "lmin", ",", "lmax"}],
+             "}"}], ".", " ", "See"}], " ", "the", " ", "description", " ", 
+          "of", " ", "$QComplexToColorMap", " ", "for", " ", "an", " ", 
+          RowBox[{"explanation", ".", " ", 
+           RowBox[{"[", "r", "]"}]}], " ", "computes", " ", "the", " ", 
+          "Lightness", " ", "from", " ", "the", " ", "modulus", " ", "r", " ",
+           "of", " ", "a", " ", "complex", " ", 
+          RowBox[{"number", ".", " ", "QLightnessFromModulus"}], " ", "is", 
+          " ", "provided", " ", "by", " ", "the", " ", "package", " ", 
+          RowBox[{"ColorMaps", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QProcessColorMapOptions", "[", "opts", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "an", " ", "auxiliary", " ", "function", " ", "provided",
+            " ", "by", " ", "the", " ", "package", " ", 
+           RowBox[{"ColorMaps", ".", " ", "Converts"}], " ", "a", " ", "list",
+            " ", "of", " ", "options", " ", "into", " ", "a", " ", "valid", 
+           " ", "list", " ", "of", " ", "parameters", " ", "for", " ", "the", 
+           " ", "following", " ", "color", " ", "map", " ", 
+           RowBox[{"functions", ":", " ", "QLightnessFromModulus"}]}], ",", 
+          " ", 
+          RowBox[{"$QComplexToColorMap", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QVectorToColor", "[", 
+         RowBox[{"{", 
+          RowBox[{"u", ",", "v", ",", "w"}], "}"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"maps", " ", "a", " ", "three"}], "-", 
+          RowBox[{
+          "dimensional", " ", "real", " ", "vector", " ", "to", " ", "a", " ",
+            "unique", " ", 
+           RowBox[{"color", ".", " ", "The"}], " ", "color", " ", "is", " ", 
+           "given", " ", "as", " ", "a", " ", "list", " ", "of", " ", "three",
+            " ", "real", " ", "numbers", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+             "the", " ", "RGB", " ", "values", " ", "of", " ", "the", " ", 
+              "color"}], ")"}], ".", " ", "The"}], " ", "saturation", " ", 
+           "depends", " ", "on", " ", "the", " ", "length", " ", "of", " ", 
+           "the", " ", "vector", " ", "and", " ", "the", " ", "hue", " ", 
+           "is", " ", "defined", " ", "by", " ", "the", " ", 
+           RowBox[{"direction", ".", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"red", " ", "=", " ", 
+               RowBox[{
+                RowBox[{"positive", " ", "x"}], "-", "direction"}]}], ",", 
+              " ", 
+              RowBox[{"etc", "."}], ",", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                "the", " ", "standard", " ", "color", " ", "circle", " ", 
+                 "in", " ", "the", " ", "xy"}], "-", 
+                RowBox[{"plane", ".", " ", "White"}]}], " ", "=", " ", 
+               RowBox[{
+                RowBox[{"positive", " ", "z"}], "-", "direction"}]}], ",", 
+              " ", 
+              RowBox[{"black", " ", "=", " ", 
+               RowBox[{
+                RowBox[{"negative", " ", "z"}], "-", "direction"}]}], ",", 
+              " ", 
+              RowBox[{
+               RowBox[{"50", "%", " ", "gray"}], " ", "=", " ", 
+               RowBox[{"zero", " ", "vector"}]}]}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSpinorToColor", "[", 
+         RowBox[{"{", 
+          RowBox[{"u", ",", "v"}], "}"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{"maps", " ", "a", " ", "spinor", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"i", ".", "e", "."}], ",", " ", 
+            RowBox[{
+             RowBox[{"a", " ", 
+              RowBox[{"C", "^", "2"}]}], "-", "vector"}]}], ")"}], " ", "to", 
+          " ", "a", " ", "unique", " ", 
+          RowBox[{"color", ".", " ", "The"}], " ", "color", " ", "is", " ", 
+          "given", " ", "as", " ", "a", " ", "list", " ", "of", " ", "three", 
+          " ", "real", " ", "numbers", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+            "the", " ", "RGB", " ", "values", " ", "of", " ", "the", " ", 
+             "color"}], ")"}], ".", " ", "This"}], " ", "is", " ", "done", 
+          " ", "by", " ", "first", " ", "converting", " ", "the", " ", 
+          "spinor", " ", "to", " ", "a", " ", "vector", " ", 
+          RowBox[{"(", 
+           RowBox[{
+           "using", " ", "QSpinorToVector", " ", "from", " ", "the", " ", 
+            "package", " ", "VQM`Spinors`"}], ")"}], " ", "and", " ", "then", 
+          " ", "applying", " ", 
+          RowBox[{"QVectorToColor", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`ColorMaps`", "."}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`ColorMaps`"],
+
+Cell["This loads the package", "MathCaption"],
+
+Cell["Needs[\"VQM`ColorMaps`\"]", "Input",
+ CellChangeTimes->{{3.391857708140625*^9, 3.391857711921875*^9}},
+ CellLabel->"In[62]:="],
+
+Cell["This is an example", "MathCaption"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QComplexToColor", "[", 
+  RowBox[{
+   RowBox[{"3.", "\[InvisibleSpace]"}], "+", 
+   RowBox[{"2.", " ", "\[ImaginaryI]"}]}], "]"}]], "Input",
+ CellLabel->"In[63]:="],
+
+Cell[BoxData[
+ RowBox[{"Hue", "[", 
+  RowBox[{"0.0935835209054994`", ",", "0.34447465704304436`", ",", "1"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{3.391857720625*^9},
+ CellLabel->"Out[63]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QComplexToRGBColor", "[", 
+  RowBox[{
+   RowBox[{"3.", "\[InvisibleSpace]"}], "+", 
+   RowBox[{"2.", " ", "\[ImaginaryI]"}]}], "]"}]], "Input",
+ CellLabel->"In[64]:="],
+
+Cell[BoxData[
+ RowBox[{"RGBColor", "[", 
+  RowBox[{"1", ",", "0.8489482505697705`", ",", "0.6555253429569556`"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{3.391857722390625*^9},
+ CellLabel->"Out[64]="]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<VQM`ComplexPlot`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.391857745421875*^9, 3.391857752109375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QColorArrayPlot", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"QComplexToColor", "[", 
+     RowBox[{"x", "+", 
+      RowBox[{"\[ImaginaryI]", " ", "y"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"y", ",", 
+      RowBox[{"-", "3"}], ",", "3", ",", "0.5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"-", "3"}], ",", "3", ",", "0.5"}], "}"}]}], "]"}], 
+  "]"}]], "Input",
+ CellLabel->"In[65]:="],
+
+Cell[BoxData[
+ StyleBox[
+  GraphicsBox[{RasterBox[CompressedData["
+1:eJyFV39MlGUcf0FpbsBYI02cEuAfUeGaUVkb8AQtaYuc3bKtRY6wpB+KWGas
+6KegNslVJDFHM0HZiuxGmKJgvdItNZC9ncgdePy44+7k4OWHdRd1DYvu8bnb
+fT/3rNvY8T58+T6fz+f7+X6f500t3mZ4YYGiKPE3fv77nX+cLGXp3UqXzcz4
+8wzLdlvPZO50svS8Ikvl1t7gul51PvXZKBfbm1NTOhzbF1w/lFtQ+G6jiz2Z
+8mhNWb0luF70Q2vje4VuVne2smKVzxpcv/j30/5j6VdZhmGZ1uLoD67z7zGm
+J5lMvjUDwfXMhU0xBssYxPN9PZD/ucC+44DnljfXDDVcHwf8nUm353V/OAF8
++bcO+vD4UUm8k7XtWxCXvDOU//7CrMfWfjy/fqj1jQ+aQzh32F6JLWEuVtis
+aoN6iG9KgvGAK8HNyn15NSv9NoLfzaqr/tla+/oQ6OaNTzjaFDVM6uWB+OGZ
+9S8vm/FA/uqVn3nr1HHA80vjT8dPbZsA/EIfyjcn4B8d9OH4HaA/zz8qye9k
+GX8aHs9tuRLSv6IkP+qUE/gKHypfXYjbkGYnvNzs09L6O77f7ADdFv3+xYoY
+p4PUxQPxwlc0f86uurbraycAj9CH4ud+0IEvr9ck6MP3dYCfOS8H1IvjGZXg
+cbKsArWo5Tc72dfFnn8w2/RigxP61xsX/3ma3w26NWjt15b4rkI/0njRdzS/
+0Ifi4fXVAT+vyyTw5ftOgj583Q7zgfvfDv4XOtP6Ct9Gxj/vw9zmb4yJHvCh
+/9gW94b2SdAt/Dnkq8jxOuQXPqF4hA4Uf2pgnkxJ+E6BPnzejsC8nQjsa4d5
+wutih34R+lM/CJ0j8w3x8YXxDukW3q86xAsdaH7Bl+LhfTQF+Hndp4AvP7+m
+JefXCJxfYj1yP47A/BHrtL/Eevgzrofn+7+PLJ7mV5TIeBQlMn5Ficx3vmJE
+n4Ozrd5nnhgCPe/0lnY8MjcI+i/NT/esfn8Q6sXnhg3qy+fhFYnfQr4P95sm
+0VOFeP737yD/dIDn14An+9yZE2V/NAL+9o17l5sXfwl8i3arxx8aPwj6CL60
+f/OSN97VdZsN+l3oQOeDNfaTh09HD0jmmxXmD9+3V6KnRp5nWMVNq7fPffSz
+JF6F/NxnJwGP0Jni5z4zAl+hP9VH6EDPi7E2y5KedwbgfKn6q2d/9Kv9kv61
+wvmVHvDtZcDPAvtekpynGvQ73/cCxBtvTduzI8YkqZcKeLgOpwF/8fLDR84t
+PAF8hc5UH+ETej/Z0lZeW53SL7m/WeH+w/3QB3iEr2h9eV3MkvubBvPznv3r
+zZuiuyBe+JDm5//fKamvCvgNySuaLr7dDnyFb6k+Fd0tb5XoVsn7ghXuzwfy
+97z02nAf5Odz7zLU60f74d57Ry6B/3m9zJL3BQ34GsYGy/f5uyB+V1bHU7Xs
+POTXthtX1c+ZAI+l7FpGUm6nxA8q8E3seeDm4nUdUn3o+9fuzHWVdYkWiBd9
+B+93N3xF/Sz6kc6HzYsKYo98+6vkfNfgfL9vusRzsqEb4kX/0vzChxSP6GuK
+f7Zu02yP9axEHxX0+RdeDoui
+     "], {{0, 0}, {13, 13}},
+     ColorFunction->Hue], 
+    {GrayLevel[0], LineBox[{{0, 0}, {0, 13}}], LineBox[{{1, 0}, {1, 13}}], 
+     LineBox[{{2, 0}, {2, 13}}], LineBox[{{3, 0}, {3, 13}}], 
+     LineBox[{{4, 0}, {4, 13}}], LineBox[{{5, 0}, {5, 13}}], 
+     LineBox[{{6, 0}, {6, 13}}], LineBox[{{7, 0}, {7, 13}}], 
+     LineBox[{{8, 0}, {8, 13}}], LineBox[{{9, 0}, {9, 13}}], 
+     LineBox[{{10, 0}, {10, 13}}], LineBox[{{11, 0}, {11, 13}}], 
+     LineBox[{{12, 0}, {12, 13}}], LineBox[{{13, 0}, {13, 13}}], 
+     LineBox[{{0, 0}, {13, 0}}], LineBox[{{0, 1}, {13, 1}}], 
+     LineBox[{{0, 2}, {13, 2}}], LineBox[{{0, 3}, {13, 3}}], 
+     LineBox[{{0, 4}, {13, 4}}], LineBox[{{0, 5}, {13, 5}}], 
+     LineBox[{{0, 6}, {13, 6}}], LineBox[{{0, 7}, {13, 7}}], 
+     LineBox[{{0, 8}, {13, 8}}], LineBox[{{0, 9}, {13, 9}}], 
+     LineBox[{{0, 10}, {13, 10}}], LineBox[{{0, 11}, {13, 11}}], 
+     LineBox[{{0, 12}, {13, 12}}], LineBox[{{0, 13}, {13, 13}}]}},
+   AlignmentPoint->Center,
+   AspectRatio->1,
+   Axes->False,
+   AxesLabel->None,
+   AxesOrigin->Automatic,
+   AxesStyle->{},
+   Background->None,
+   BaseStyle->{},
+   BaselinePosition->Automatic,
+   ColorOutput->Automatic,
+   ContentSelectable->Automatic,
+   DisplayFunction:>$DisplayFunction,
+   Epilog->{},
+   FormatType:>TraditionalForm,
+   Frame->True,
+   FrameLabel->None,
+   FrameStyle->{},
+   FrameTicks->Automatic,
+   FrameTicksStyle->{},
+   GridLines->None,
+   GridLinesStyle->{},
+   ImageMargins->0.,
+   ImagePadding->All,
+   ImageSize->Automatic,
+   LabelStyle->{},
+   Method->Automatic,
+   PlotLabel->None,
+   PlotRange->Automatic,
+   PlotRangeClipping->True,
+   PlotRangePadding->Automatic,
+   PlotRegion->Automatic,
+   PreserveImageOptions->Automatic,
+   Prolog->{},
+   RotateLabel->True,
+   Ticks->Automatic,
+   TicksStyle->{}],
+  StripOnInput->False,
+  Antialiasing->False]], "Output",
+ CellChangeTimes->{3.391857724953125*^9},
+ CellLabel->"Out[65]=",
+ ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJzt3c1rXNcZx/GxRnLz0mShbtpFFVPaZtdFFnWpHVndtILQf8A7EwwyUalI
+gzeBxDCglSDYEZYhFkQErIBtZWGRQORShyxsIxJcSoIiJouANwaF2AKD0cJP
+n985d87Y0p2582ZZlr8mz+Or3xzdO/M5945euDn++5G3xo7+48hbx14/su9v
+bx6ZGDv2+r/2/fWfb3pU3lMq7bnh9b99JW1bqVRr5v/Zf9WUdL79K/1V1i6H
+tTWgrZHwUAjDlupgGncobR1IW/1pa3/aKqf9/T4e6pfhr4GHdhse8D+vNnks
+7+kc6HBfB3L21ddk/P42x7fwUodzdvmXHfYSyznZy8Uv7VCjE2evkoOP8QX1
+52QtzFUvT73N814n6e6lDeRkv+vspR3MrB7Maq+qT1t9OZ/0akOjx/K68i6l
+zcz1qep/KCttPYV7NUt7c7Lf9u7V5L2pDD/ia6rDl9TsGjmUzrS8t5Jmn/nn
+9Jn9TUb9saVR2RtD/Utj/Ute3nwMp50Op3F5p0w5Pfqnpo9mb7S9+go/qL/C
+K/tPfHmD8XiWM5cPZS/mZC90Ma6bz92OY+z05/e4jhHOjT2P5twZegKNev2c
+d9L+OpnrQy1mwz0e93LBcw196YFBz2o7vMXmvYwtw58Jcf6XiIGdsYMBq22F
+9IJaf3qg/WfwgIstXjVVaSj0mC0smcoz9ZjNXzSVZ+oxOzdnKs/UY/bJWVOV
+fh16zJbOmMrHqcdsecZUnqnHrOrjqmFcNY1b8/2thf2tpf1t+HE3wnE30nFt
+fkPlmXqWLayrlHnPssUfVcq8N74sMMUUU0wx7Y1p86/KCBYLFnyjhhtuuOGG
+G2644YYbbrg97W7hYbTytfqTEGcZVyduuOGGG2644YYbbrjhhhtuuOGGWxtu
+/dqu37B3MX3Y3xruwnVTCfJ6QrtsKqFdrmWz503lmXrMpk+byjP1mH0wZSrH
+UI/ZhUlT+Tj1mH1RMZVn6jFb9XGrYdxqGnfb93c77O922p9N31cJyHuWzd5R
+KfOeZeduqZR5r4HfVAXwm12clLjhhhtuuOGGG2644YYbbrjhhhtuu9ItPIxW
+vlY7t3jhxtWJG2644YYbbrjhhhtuuOGG2851C8u1hNVaihZnQbCJYIcL3mCa
+b/psNCo1cMOyDcvncizrK+OF3/GFs/Vi+jBbGe/5nE/sL5iE+a9N5U9KPQO/
+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
+ih/s+T+8b6Ul\
+\>"]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QColorArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"RGBColor", "@@", 
+      RowBox[{"QVectorToColor", "[", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "0"}], "}"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+       FractionBox["\[Pi]", "5"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+       FractionBox["\[Pi]", "5"]}], "}"}]}], "]"}], ",", 
+   RowBox[{"MeshRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}]}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[66]:="],
+
+Cell[BoxData[
+ StyleBox[
+  GraphicsBox[{RasterBox[CompressedData["
+1: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
+SXgkvBI+CY+EV8In4ZHwyr8BlTOhsw==
+     "], {{-Pi, -Pi}, {Pi, Pi}},
+     ColorFunction->RGBColor], 
+    {GrayLevel[0], 
+     LineBox[NCache[{{-Pi, -Pi}, {-Pi, 
+         Pi}}, {{-3.141592653589793, -3.141592653589793}, {-3.141592653589793,
+        3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-9, 11] Pi, -Pi}, {
+        Rational[-9, 11] Pi, 
+         Pi}}, {{-2.57039398930074, -3.141592653589793}, {-2.57039398930074, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-7, 11] Pi, -Pi}, {
+        Rational[-7, 11] Pi, 
+         Pi}}, {{-1.9991953250116865`, -3.141592653589793}, \
+{-1.9991953250116865`, 3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-5, 11] Pi, -Pi}, {
+        Rational[-5, 11] Pi, 
+         Pi}}, {{-1.427996660722633, -3.141592653589793}, {-1.427996660722633,
+        3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-3, 11] Pi, -Pi}, {
+        Rational[-3, 11] Pi, 
+         Pi}}, {{-0.8567979964335799, -3.141592653589793}, \
+{-0.8567979964335799, 3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-1, 11] Pi, -Pi}, {
+        Rational[-1, 11] Pi, 
+         Pi}}, {{-0.28559933214452665`, -3.141592653589793}, \
+{-0.28559933214452665`, 3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[1, 11] Pi, -Pi}, {Rational[1, 11] Pi, Pi}}, {{
+       0.28559933214452665`, -3.141592653589793}, {0.28559933214452665`, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[3, 11] Pi, -Pi}, {Rational[3, 11] Pi, Pi}}, {{
+       0.8567979964335799, -3.141592653589793}, {0.8567979964335799, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[5, 11] Pi, -Pi}, {Rational[5, 11] Pi, Pi}}, {{
+       1.427996660722633, -3.141592653589793}, {1.427996660722633, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[7, 11] Pi, -Pi}, {Rational[7, 11] Pi, Pi}}, {{
+       1.9991953250116865`, -3.141592653589793}, {1.9991953250116865`, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[9, 11] Pi, -Pi}, {Rational[9, 11] Pi, Pi}}, {{
+       2.57039398930074, -3.141592653589793}, {2.57039398930074, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Pi, -Pi}, {Pi, Pi}}, {{
+       3.141592653589793, -3.141592653589793}, {3.141592653589793, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{-Pi, -Pi}, {
+        Pi, -Pi}}, {{-3.141592653589793, -3.141592653589793}, {
+       3.141592653589793, -3.141592653589793}}]], 
+     LineBox[NCache[{{-Pi, Rational[-9, 11] Pi}, {
+        Pi, Rational[-9, 11] Pi}}, {{-3.141592653589793, -2.57039398930074}, {
+       3.141592653589793, -2.57039398930074}}]], 
+     LineBox[NCache[{{-Pi, Rational[-7, 11] Pi}, {
+        Pi, Rational[-7, 11] 
+         Pi}}, {{-3.141592653589793, -1.9991953250116865`}, {
+       3.141592653589793, -1.9991953250116865`}}]], 
+     LineBox[NCache[{{-Pi, Rational[-5, 11] Pi}, {
+        Pi, Rational[-5, 11] 
+         Pi}}, {{-3.141592653589793, -1.427996660722633}, {
+       3.141592653589793, -1.427996660722633}}]], 
+     LineBox[NCache[{{-Pi, Rational[-3, 11] Pi}, {
+        Pi, Rational[-3, 11] 
+         Pi}}, {{-3.141592653589793, -0.8567979964335799}, {
+       3.141592653589793, -0.8567979964335799}}]], 
+     LineBox[NCache[{{-Pi, Rational[-1, 11] Pi}, {
+        Pi, Rational[-1, 11] 
+         Pi}}, {{-3.141592653589793, -0.28559933214452665`}, {
+       3.141592653589793, -0.28559933214452665`}}]], 
+     LineBox[NCache[{{-Pi, Rational[1, 11] Pi}, {
+        Pi, Rational[1, 11] Pi}}, {{-3.141592653589793, 
+       0.28559933214452665`}, {3.141592653589793, 0.28559933214452665`}}]], 
+     LineBox[NCache[{{-Pi, Rational[3, 11] Pi}, {
+        Pi, Rational[3, 11] Pi}}, {{-3.141592653589793, 0.8567979964335799}, {
+       3.141592653589793, 0.8567979964335799}}]], 
+     LineBox[NCache[{{-Pi, Rational[5, 11] Pi}, {
+        Pi, Rational[5, 11] Pi}}, {{-3.141592653589793, 1.427996660722633}, {
+       3.141592653589793, 1.427996660722633}}]], 
+     LineBox[
+      NCache[{{-Pi, Rational[7, 11] Pi}, {
+        Pi, Rational[7, 11] Pi}}, {{-3.141592653589793, 
+       1.9991953250116865`}, {3.141592653589793, 1.9991953250116865`}}]], 
+     LineBox[NCache[{{-Pi, Rational[9, 11] Pi}, {
+        Pi, Rational[9, 11] Pi}}, {{-3.141592653589793, 2.57039398930074}, {
+       3.141592653589793, 2.57039398930074}}]], 
+     LineBox[NCache[{{-Pi, Pi}, {Pi, Pi}}, {{-3.141592653589793, 
+       3.141592653589793}, {3.141592653589793, 3.141592653589793}}]]}},
+   AlignmentPoint->Center,
+   AspectRatio->1,
+   Axes->False,
+   AxesLabel->None,
+   AxesOrigin->Automatic,
+   AxesStyle->{},
+   Background->None,
+   BaseStyle->{},
+   BaselinePosition->Automatic,
+   ColorOutput->Automatic,
+   ContentSelectable->Automatic,
+   DisplayFunction:>$DisplayFunction,
+   Epilog->{},
+   FormatType:>TraditionalForm,
+   Frame->True,
+   FrameLabel->None,
+   FrameStyle->{},
+   FrameTicks->Automatic,
+   FrameTicksStyle->{},
+   GridLines->None,
+   GridLinesStyle->{},
+   ImageMargins->0.,
+   ImagePadding->All,
+   ImageSize->Automatic,
+   LabelStyle->{},
+   Method->Automatic,
+   PlotLabel->None,
+   PlotRange->Automatic,
+   PlotRangeClipping->True,
+   PlotRangePadding->Automatic,
+   PlotRegion->Automatic,
+   PreserveImageOptions->Automatic,
+   Prolog->{},
+   RotateLabel->True,
+   Ticks->Automatic,
+   TicksStyle->{}],
+  StripOnInput->False,
+  Antialiasing->False]], "Output",
+ CellChangeTimes->{3.3918577584375*^9},
+ CellLabel->"Out[66]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QColorArrayPlot", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"RGBColor", "@@", 
+      RowBox[{"QVectorToColor", "[", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "z"}], "}"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+       FractionBox["\[Pi]", "5"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "\[Pi]"}], ",", "\[Pi]", ",", 
+       FractionBox["\[Pi]", "5"]}], "}"}]}], "]"}], ",", 
+   RowBox[{"MeshRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}]}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[67]:="],
+
+Cell[BoxData[
+ StyleBox[
+  GraphicsBox[{RasterBox[CompressedData["
+1:eJxl1H8w1GkcB/ANObTM3ekuP1ZT9Fs5jnGuXM+euaMcktBIpR+4jmtKrsaP
+OuuEurQ6aSjCIo7CxekoaUsO47cItbE/Ldl87dJeSnXd9f18/rBmzGtnnnme
+z/N5nvf3WbrvkE+INoPBWED///ebc9vCIeBZKKmeZSr/tBKgDO2Sr58rwknJ
+64J246RBlJF/41Vg12GSE7zQKM7iIcrxTQ0OrIgkEqbDmjux3Sh7vs3qzImj
+hMtL4M3kNqIMVhq3rO2Yhie9TLqtnJpxHlj/9wW2w7d9hE/XAZMjjVWKXAFh
+0/sCp6Iuufr7iQhH630foLv2lNF3AgmBvkHol5kcUltSOoTyJ05u1n8cQfws
+8vU7VwhQjvn7/TIZLN2ilgGUvbrL9mL4cVJlxqmQM3tRodeo9pYyDjGYtmzh
+VbegHIP1VslV8Rpm5+9NIWHthE/PA3/lLTNXWb+7B7oOmJpYuP9snlDjPEvF
+u9S2g+/6pfsA/bV2fq6IHtE4Hzi/xVaxDToDQhTWi4gJzD4SNIzyEwJOnE2O
+I1HBI40R6wQo366wz6wqkSh3WKTvjulHl7iGLdbRSyGb4lLauKWdaJ61rdda
+w1QNJ2+ZOxZW9OA8MHw0oti/eQjrgKeyTNdzeyS4L3DqrWQmwFFO+PS9gXuy
+xpUc8ZhGfiDP3txHVGW5GIX7vdzvGK1dLUKhvizRyv+ppxA9d4JxOCn0NxKr
+FZAxTgQoo2Pvvc5NWWRG6exhndyLMs47dbB68zSsDHG72BkxSCbb388DE18X
+HVjIl2Ad0OiKOJyXOEqE9L5AT1mct8nUuEZ+WFOtfeyTE9g3Sn9/tmpB4qsX
+UhTyeK010qjGR4rC/eh8FK361FeCQr/nV5SbphSIUL3HAZX30iuIa4fv0J1M
+AerBfKatYNVpeNPu6lL29xKcB35g1FDVGzWucT6j/knUcCpF9twybRr0yUPv
+755scL9NkcmgggJ1bA2qLijrtOylSOi8ppu6VXwU8iI9GOFjPyZH4XsdP1Or
+zBTIUQ6d35Lc/cWyu3IU7vPABq5pULQchf6cP7tL7DaOoIz//4QaHtv9S9y+
+4wpymneCcznhAdp1jGVfr5ogtqclbV8bdqM+pMmrNYEi5Xyn6w7Hu9CHiyIl
+drUUWTOawupw7UKbH4sLQ3so8sUyi8CL67pQeI+LiNfWjQ/GUXjftNLPWMdP
+KlDIg3swd3/PywlU2jRlW8a6R84pFfG1yyk0JbukLs5ukHjve9RbpTuBQr9z
+hfEnmX0f5lWJUFhvsLKgTV4jQCEPL54YmvdsH0Qb6TwUHzCRpO7oR5/TeeAZ
+u07rGT1E2R3sAtWtYrJd5LiZN0ChbWGM+hx7PikPymlf1UShzeFHvWPG2onT
+oZJ0+xIKVetU2vTHDZCFs3FtrT9R6ErPnfYmbhKN84H7nSuM6ySLAsLqZCis
+1/DzNgcDoQj9kq7vOF2zzTp4GIX9NnqnGc5cEKDQX5DEfcml/EcoJ22r0+zR
+ZlKXprcpaIhCzRhOTI/z3ZgjcLK57YxkxwB54TFfNsmn0NYFbtd6s4S4L1DP
+UiVd9/sI3hsIeZ4rjNsIBR47PxlFYb1TPsrqLhcpCvXvtzMt3MZEKO7bpee6
+q7cQhf7u1+pHq7cMob6v3LJWMh+QN/71BsZSCr26/hvjHM8BYqX+8dlmAYWK
+p284yeqHNM5nQ8VBlW6YRCM/ARly1uEro5hTEL7fucL79sblr7MZaWMorFek
+IqtSZmRoC13/5Vvl7NosCWpJ79dPaRObqRChr+n+Ypw9ra6WCtHwGVPxD24D
+xEXcWvTxGIWaGbUe2eb3RON8vnJVJ+n/IdLID49VPRyyS0b86dyBQYraBf8o
+x/CdBueeIwjj2YtyM+ZlPkUhz9wZWdgSFzkK9a+3P49iK6Uo9Gs9z8ZU7SxB
+ob+i+Ojk5RMi9F+Kjc2Y
+     "], {{-Pi, -Pi}, {Pi, Pi}},
+     ColorFunction->RGBColor], 
+    {GrayLevel[0], 
+     LineBox[NCache[{{-Pi, -Pi}, {-Pi, 
+         Pi}}, {{-3.141592653589793, -3.141592653589793}, {-3.141592653589793,
+        3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-9, 11] Pi, -Pi}, {
+        Rational[-9, 11] Pi, 
+         Pi}}, {{-2.57039398930074, -3.141592653589793}, {-2.57039398930074, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-7, 11] Pi, -Pi}, {
+        Rational[-7, 11] Pi, 
+         Pi}}, {{-1.9991953250116865`, -3.141592653589793}, \
+{-1.9991953250116865`, 3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-5, 11] Pi, -Pi}, {
+        Rational[-5, 11] Pi, 
+         Pi}}, {{-1.427996660722633, -3.141592653589793}, {-1.427996660722633,
+        3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-3, 11] Pi, -Pi}, {
+        Rational[-3, 11] Pi, 
+         Pi}}, {{-0.8567979964335799, -3.141592653589793}, \
+{-0.8567979964335799, 3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[-1, 11] Pi, -Pi}, {
+        Rational[-1, 11] Pi, 
+         Pi}}, {{-0.28559933214452665`, -3.141592653589793}, \
+{-0.28559933214452665`, 3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[1, 11] Pi, -Pi}, {Rational[1, 11] Pi, Pi}}, {{
+       0.28559933214452665`, -3.141592653589793}, {0.28559933214452665`, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[3, 11] Pi, -Pi}, {Rational[3, 11] Pi, Pi}}, {{
+       0.8567979964335799, -3.141592653589793}, {0.8567979964335799, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[5, 11] Pi, -Pi}, {Rational[5, 11] Pi, Pi}}, {{
+       1.427996660722633, -3.141592653589793}, {1.427996660722633, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[7, 11] Pi, -Pi}, {Rational[7, 11] Pi, Pi}}, {{
+       1.9991953250116865`, -3.141592653589793}, {1.9991953250116865`, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Rational[9, 11] Pi, -Pi}, {Rational[9, 11] Pi, Pi}}, {{
+       2.57039398930074, -3.141592653589793}, {2.57039398930074, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{Pi, -Pi}, {Pi, Pi}}, {{
+       3.141592653589793, -3.141592653589793}, {3.141592653589793, 
+       3.141592653589793}}]], 
+     LineBox[NCache[{{-Pi, -Pi}, {
+        Pi, -Pi}}, {{-3.141592653589793, -3.141592653589793}, {
+       3.141592653589793, -3.141592653589793}}]], 
+     LineBox[NCache[{{-Pi, Rational[-9, 11] Pi}, {
+        Pi, Rational[-9, 11] Pi}}, {{-3.141592653589793, -2.57039398930074}, {
+       3.141592653589793, -2.57039398930074}}]], 
+     LineBox[NCache[{{-Pi, Rational[-7, 11] Pi}, {
+        Pi, Rational[-7, 11] 
+         Pi}}, {{-3.141592653589793, -1.9991953250116865`}, {
+       3.141592653589793, -1.9991953250116865`}}]], 
+     LineBox[NCache[{{-Pi, Rational[-5, 11] Pi}, {
+        Pi, Rational[-5, 11] 
+         Pi}}, {{-3.141592653589793, -1.427996660722633}, {
+       3.141592653589793, -1.427996660722633}}]], 
+     LineBox[NCache[{{-Pi, Rational[-3, 11] Pi}, {
+        Pi, Rational[-3, 11] 
+         Pi}}, {{-3.141592653589793, -0.8567979964335799}, {
+       3.141592653589793, -0.8567979964335799}}]], 
+     LineBox[NCache[{{-Pi, Rational[-1, 11] Pi}, {
+        Pi, Rational[-1, 11] 
+         Pi}}, {{-3.141592653589793, -0.28559933214452665`}, {
+       3.141592653589793, -0.28559933214452665`}}]], 
+     LineBox[NCache[{{-Pi, Rational[1, 11] Pi}, {
+        Pi, Rational[1, 11] Pi}}, {{-3.141592653589793, 
+       0.28559933214452665`}, {3.141592653589793, 0.28559933214452665`}}]], 
+     LineBox[NCache[{{-Pi, Rational[3, 11] Pi}, {
+        Pi, Rational[3, 11] Pi}}, {{-3.141592653589793, 0.8567979964335799}, {
+       3.141592653589793, 0.8567979964335799}}]], 
+     LineBox[NCache[{{-Pi, Rational[5, 11] Pi}, {
+        Pi, Rational[5, 11] Pi}}, {{-3.141592653589793, 1.427996660722633}, {
+       3.141592653589793, 1.427996660722633}}]], 
+     LineBox[NCache[{{-Pi, Rational[7, 11] Pi}, {
+        Pi, Rational[7, 11] Pi}}, {{-3.141592653589793, 
+       1.9991953250116865`}, {3.141592653589793, 1.9991953250116865`}}]], 
+     LineBox[NCache[{{-Pi, Rational[9, 11] Pi}, {
+        Pi, Rational[9, 11] Pi}}, {{-3.141592653589793, 2.57039398930074}, {
+       3.141592653589793, 2.57039398930074}}]], 
+     LineBox[NCache[{{-Pi, Pi}, {Pi, Pi}}, {{-3.141592653589793, 
+       3.141592653589793}, {3.141592653589793, 3.141592653589793}}]]}},
+   AlignmentPoint->Center,
+   AspectRatio->1,
+   Axes->False,
+   AxesLabel->None,
+   AxesOrigin->Automatic,
+   AxesStyle->{},
+   Background->None,
+   BaseStyle->{},
+   BaselinePosition->Automatic,
+   ColorOutput->Automatic,
+   ContentSelectable->Automatic,
+   DisplayFunction:>$DisplayFunction,
+   Epilog->{},
+   FormatType:>TraditionalForm,
+   Frame->True,
+   FrameLabel->None,
+   FrameStyle->{},
+   FrameTicks->Automatic,
+   FrameTicksStyle->{},
+   GridLines->None,
+   GridLinesStyle->{},
+   ImageMargins->0.,
+   ImagePadding->All,
+   ImageSize->Automatic,
+   LabelStyle->{},
+   Method->Automatic,
+   PlotLabel->None,
+   PlotRange->Automatic,
+   PlotRangeClipping->True,
+   PlotRangePadding->Automatic,
+   PlotRegion->Automatic,
+   PreserveImageOptions->Automatic,
+   Prolog->{},
+   RotateLabel->True,
+   Ticks->Automatic,
+   TicksStyle->{}],
+  StripOnInput->False,
+  Antialiasing->False]], "Output",
+ CellChangeTimes->{3.391857760828125*^9},
+ CellLabel->"Out[67]="]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+Magnification->1.,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`ColorMaps`"->{
+  Cell[590, 23, 61, 1, 37, "Subsection",
+   CellTags->"VQM`ColorMaps`"],
+  Cell[654, 26, 208, 5, 50, "Text",
+   CellTags->"VQM`ColorMaps`"],
+  Cell[865, 33, 15599, 352, 1575, "Text",
+   CellTags->"VQM`ColorMaps`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`ColorMaps`", 43192, 1011}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 61, 1, 37, "Subsection",
+ CellTags->"VQM`ColorMaps`"],
+Cell[654, 26, 208, 5, 50, "Text",
+ CellTags->"VQM`ColorMaps`"],
+Cell[865, 33, 15599, 352, 1575, "Text",
+ CellTags->"VQM`ColorMaps`"],
+Cell[16467, 387, 45, 0, 37, "MathCaption"],
+Cell[16515, 389, 132, 2, 25, "Input"],
+Cell[16650, 393, 41, 0, 37, "MathCaption"],
+Cell[CellGroupData[{
+Cell[16716, 397, 188, 5, 25, "Input"],
+Cell[16907, 404, 193, 5, 23, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17137, 414, 191, 5, 25, "Input"],
+Cell[17331, 421, 200, 5, 23, "Output"]
+}, Open  ]],
+Cell[17546, 429, 147, 2, 25, "Input"],
+Cell[CellGroupData[{
+Cell[17718, 435, 460, 14, 61, "Input"],
+Cell[18181, 451, 7822, 156, 321, 3537, 83, "CachedBoxData", "BoxData", \
+"Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26040, 612, 863, 27, 66, "Input"],
+Cell[26906, 641, 7647, 163, 370, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34590, 809, 863, 27, 66, "Input"],
+Cell[35456, 838, 7386, 158, 370, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

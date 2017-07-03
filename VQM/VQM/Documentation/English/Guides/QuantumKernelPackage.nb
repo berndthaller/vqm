@@ -1,0 +1,804 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     34237,        795]
+NotebookOptionsPosition[     33472,        765]
+NotebookOutlinePosition[     34114,        790]
+CellTagsIndexPosition[     34033,        785]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QuantumKernel ", "Subsection",
+ CellTags->"VQM`QuantumKernel`"],
+
+Cell["\<\
+This package starts the auxiliary C++ program \"QuantumKernel\". \
+QuantumKernel implements an algorithm by M. Suzuki (J. Math. Phys. 32 (1991), \
+p. 400) for computing numerical solutions of the Schroedinger and Dirac \
+equation. This algorithm uses an operator splitting method based on a variant \
+of the Trotter product formula. The communication between QuantumKernel and \
+Mathematica is done via the MathLink protocol. QuantumKernel receives \
+numerical data describing the initial function, the scalar and magnetic \
+vector potentials, etc., from Mathematica and returns the data describing the \
+solution at a certain time (after a prescribed number of time steps). \
+\>", "Text",
+ CellTags->"VQM`QuantumKernel`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QNewFunction", "[", 
+         RowBox[{"A", ",", ".."}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"generates", " ", "a", " ", "function"}], "-", 
+           RowBox[{"object", " ", 
+            RowBox[{"(", 
+             RowBox[{"of", " ", 
+              RowBox[{"type", " ", "'"}], 
+              RowBox[{"TFunction", "'"}]}], ")"}], " ", "for", " ", 
+            "QuantumKernel", " ", "from", " ", "a", " ", "list", " ", "of", 
+            " ", "arrays", " ", "of", " ", "real", " ", 
+            RowBox[{"numbers", ".", " ", "The"}], " ", "function", " ", 
+            "object", " ", "contains", " ", "the", " ", "numerical", " ", 
+            "data", " ", "representing", " ", "the", " ", "numerical", " ", 
+            "discretization", " ", "of", " ", "vector"}], "-", 
+           RowBox[{"valued", " ", 
+            RowBox[{"functions", ".", " ", "The"}], " ", "idea", " ", "is", 
+            " ", "that", " ", "these", " ", "data", " ", "are", " ", 
+            "changed", " ", "by", " ", "some", " ", "numerical", " ", 
+            "computations", " ", "performed", " ", "by", " ", 
+            RowBox[{"QuantumKernel", ".", " ", "You"}], " ", "can", " ", 
+            "read", " ", "the", " ", "changed", " ", "values", " ", "of", " ",
+             "arrays", " ", "by", " ", 
+            RowBox[{
+             RowBox[{"QGetArray", "[", "f", "]"}], ".", " ", "Here"}], " ", 
+            "f", " ", "is", " ", "the", " ", "expression", " ", "returned", 
+            " ", "by", " ", 
+            RowBox[{
+             RowBox[{"QNewFunction", "[", "arrays", "]"}], ".", " ", "This"}],
+             " ", "expression", " ", "is", " ", "something", " ", 
+            RowBox[{"like", " ", "'"}], 
+            RowBox[{
+             RowBox[{"QFunctionObject", "[", "number", "]"}], "'"}], " ", 
+            "and", " ", "it", " ", "refers", " ", "to", " ", "the", " ", 
+            "corresponding", " ", "data", " ", "structure", " ", "in", " ", 
+            "the", " ", 
+            RowBox[{"program", " ", "'"}], 
+            RowBox[{"QuantumKernel", "'"}], " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"an", " ", "object", " ", "of", " ", 
+               RowBox[{"type", " ", "'"}], 
+               RowBox[{"TFunction", "'"}]}], ")"}], ".", " ", "The"}], " ", 
+            "dimensions", " ", "of", " ", "the", " ", "arrays", " ", "in", 
+            " ", "the", " ", "argument", " ", "of", " ", "QNewFunction", " ", 
+            "depend", " ", "on", " ", "the", " ", "dimension", " ", "of", " ",
+             "the", " ", "numerical", " ", 
+            RowBox[{"domain", ".", " ", "The"}], " ", "number", " ", "of", 
+            " ", "arrays", " ", "depends", " ", "on", " ", "the", " ", 
+            "dimension", " ", "of", " ", "the", " ", 
+            RowBox[{"data", ".", " ", "Usually"}]}]}], ",", " ", 
+          RowBox[{"real", "-", " ", 
+           RowBox[{
+           "and", " ", "imaginary", " ", "parts", " ", "of", " ", "each", " ",
+             "component", " ", "are", " ", 
+            RowBox[{"expected", ".", " ", "Hence"}], " ", "a", " ", 
+            "complex"}], "-", 
+           RowBox[{
+           "valued", " ", "function", " ", "is", " ", "represented", " ", 
+            "by", " ", 
+            RowBox[{"QNewFunction", "[", 
+             RowBox[{
+              RowBox[{"Re", "[", "complexarray", "]"}], ",", 
+              RowBox[{"Im", "[", "complexarray", "]"}]}], "]"}], " ", "and", 
+            " ", "a", " ", "real"}], "-", 
+           RowBox[{
+           "valued", " ", "function", " ", "is", " ", "obtained", " ", "by", 
+            " ", 
+            RowBox[{"QNewFunction", "[", 
+             RowBox[{"realarray", ",", " ", "nullarray"}], "]"}], " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+              "nullarray", " ", "has", " ", "the", " ", "same", " ", 
+               "dimensions", " ", "as", " ", "realarray", " ", "and", " ", 
+               "has", " ", "all", " ", "elements", " ", "0."}], ")"}], ".", 
+             " ", "All"}], " ", "elements", " ", "of", " ", "the", " ", 
+            "arrays", " ", "should", " ", "be", " ", "real", " ", "numbers", 
+            " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+              "integer", " ", "values", " ", "are", " ", "converted", " ", 
+               "to", " ", "floats"}], ")"}], ".", " ", "Combining"}], " ", 
+            "arrays", " ", "with", " ", "different", " ", "dimensions", " ", 
+            "or", " ", "with", " ", "non"}], "-", 
+           RowBox[{
+           "numerical", " ", "elements", " ", "produces", " ", "the", " ", 
+            "error", " ", 
+            RowBox[{"message", " ", "'"}], 
+            RowBox[{"QuantumKernel", "::", 
+             RowBox[{"err", ":", " ", 
+              RowBox[{"out", " ", "of", " ", 
+               RowBox[{"sequence", ".", "'", ".", " ", 
+                RowBox[{"Package", ":", " ", 
+                 RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDisposeFunction", "[", "f", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "deletes", " ", "the", " ", "numerical", " ", "data", " ", 
+           "representing", " ", "the", " ", "function", " ", "f", " ", "from",
+            " ", 
+           RowBox[{"QuantumKernel", ".", " ", 
+            RowBox[{"Here", " ", "'"}]}], 
+           RowBox[{"function", "'"}], " ", "refers", " ", "to", " ", "a", " ",
+            "function"}], "-", 
+          RowBox[{"object", " ", "of", " ", "type", " ", "TFunction", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+             "a", " ", "data", " ", "structure", " ", "of", " ", 
+              "QuantumKernel"}], ")"}], ".", " ", "An"}], " ", "expression", 
+           " ", "suitable", " ", "as", " ", "argument", " ", "for", " ", 
+           "QDisposeFunction", " ", "is", " ", "returned", " ", "by", " ", 
+           RowBox[{"QNewFunction", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetArray", "[", "f", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "returns", " ", "the", " ", "numerical", " ", "values", " ", 
+          "contained", " ", "in", " ", "the", " ", "function", " ", "object", 
+          " ", 
+          RowBox[{"f", ".", " ", 
+           RowBox[{"(", 
+            RowBox[{"'", "function", " ", 
+             RowBox[{"object", "'"}], " ", "is", " ", "obtained", " ", "when",
+              " ", "calling", " ", "QNewFunction"}], ")"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetFunctionInfo", "[", "f", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "gives", " ", "some", " ", "information", " ", "about", " ", "the", 
+          " ", "function", " ", "object", " ", "refered", " ", "to", " ", 
+          "by", " ", 
+          RowBox[{"f", ".", " ", "This"}], " ", "reference", " ", "is", " ", 
+          "obtained", " ", 
+          RowBox[{"from", " ", "'"}], 
+          RowBox[{
+           RowBox[{"QNewFunction", "'"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetColorArray", "[", "f", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{".", " ", "This"}], " ", "returns", " ", "an", " ", "array",
+           " ", "of", " ", "RGBcolor"}], "-", 
+         RowBox[{
+          RowBox[{"values", ".", " ", "These"}], " ", "RGB", " ", "values", 
+          " ", "are", " ", "obtained", " ", "from", " ", "the", " ", 
+          "function"}], "-", 
+         RowBox[{"object", "  ", 
+          RowBox[{"f", ".", " ", 
+           RowBox[{"Here", " ", "'"}]}], 
+          RowBox[{"f", "'"}], " ", "refers", " ", "to", " ", "the", " ", 
+          "data", " ", "structure", " ", "holding", " ", "an", " ", "array", 
+          " ", "of", " ", "complex", " ", 
+          RowBox[{"values", ".", " ", "These"}], " ", "values", " ", "are", 
+          " ", "transformed", " ", "to", " ", "colors", " ", "via", " ", "a", 
+          " ", "colormap", " ", "like", " ", "the", " ", "one", " ", 
+          "defined", " ", "in", " ", 
+          RowBox[{"VQM`ColorMaps`", ".", "  ", "An"}], " ", "expression", " ",
+           "suitable", " ", "as", " ", "an", " ", "argument", " ", "for", " ",
+           "QGetColorArray", " ", "is", " ", "returned", " ", "by", " ", 
+          RowBox[{"QNewFunction", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetGrayArray", "[", "f", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{".", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`QuantumKernel`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetRedBlueArray", "[", "f", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{".", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`QuantumKernel`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetBlackWhiteArray", "[", "f", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{".", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`QuantumKernel`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetAbsArray", "[", "f", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{".", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`QuantumKernel`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QInfo", "[", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "returns", " ", "informations", " ", "about", " ", "the", " ", 
+          "state", " ", "of", " ", 
+          RowBox[{"QuantumKernel", ".", " ", "It"}], " ", "lists", " ", 
+          "informations", " ", "about", " ", "all", " ", "TFunction", " ", 
+          "and", " ", "TOperator", " ", 
+          RowBox[{"objects", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSchroedinger1D", "[", 
+         RowBox[{"V", ",", " ", "m", ",", " ", "dx"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "generates", " ", "a", " ", "data", " ", "structure", " ", "for", 
+            " ", "QuantumKernel", " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"of", " ", 
+               RowBox[{"type", " ", "'"}], 
+               RowBox[{"TOperator", "'"}]}], ")"}], ".", " ", "It"}], " ", 
+            "needs", " ", "a", " ", "scalar", " ", "potential", " ", "V", " ",
+             
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"a", " ", "complex", " ", "function", " ", "object"}], 
+              ")"}], ".", " ", "The"}], " ", 
+            RowBox[{"reference", " ", "'"}], 
+            RowBox[{"V", "'"}], " ", "is", " ", "obtained", " ", "by", " ", 
+            "executing", " ", "the", " ", "command", " ", 
+            RowBox[{
+             RowBox[{"QNewFunction", "[", 
+              RowBox[{
+               RowBox[{"Re", "[", "list", "]"}], ",", 
+               RowBox[{"Im", "[", "list", "]"}]}], "]"}], ".", " ", "The"}], 
+            " ", "real", " ", 
+            RowBox[{"number", " ", "'"}], 
+            RowBox[{"m", "'"}], " ", "defines", " ", "the", " ", "mass", " ", 
+            "of", " ", "the", " ", "particle", " ", "used", " ", "in", " ", 
+            "the", " ", "Schroedinger", " ", 
+            RowBox[{"operator", ".", " ", "'"}], 
+            RowBox[{"dx", "'"}], " ", "is", " ", "the", " ", "size", " ", 
+            "of", " ", "the", " ", "space", " ", "grid", " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+              "only", " ", "uniform", " ", "grids", " ", "are", " ", 
+               "supported"}], ")"}], ".", " ", "QSchroedinger1D"}], " ", 
+            "returns", " ", "a", " ", "reference", " ", "to", " ", 
+            RowBox[{"the", " ", "'"}], "operator"}], "-", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"object", "'"}], ".", " ", "This"}], " ", "is", " ", 
+            "needed", " ", "to", " ", "specify", " ", "the", " ", "time", " ",
+             "evolution"}]}], ",", " ", 
+          RowBox[{"see", " ", 
+           RowBox[{"QTimeEvolution", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSchroedinger2D", "[", 
+         RowBox[{
+         "V", ",", " ", "A", ",", " ", "Dom", ",", " ", "mass", ",", " ", 
+          "charge", ",", " ", "dx"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "generates", " ", "a", " ", "data", " ", "structure", " ", "for", 
+           " ", "QuantumKernel", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"a", " ", "'"}], 
+              RowBox[{"TOperator", "'"}]}], "-", "object"}], ")"}], " ", 
+           "that", " ", "represents", " ", "a", " ", "Schroedinger", " ", 
+           "operator", " ", "in", " ", "two", " ", 
+           RowBox[{"dimensions", ".", " ", "'"}], 
+           RowBox[{"V", "'"}], " ", "refers", " ", "to", " ", "a", " ", 
+           "complex", " ", "function", " ", "object", " ", 
+           RowBox[{"(", 
+            RowBox[{"complex", " ", "scalar", " ", "potential"}], ")"}]}], 
+          ",", " ", 
+          RowBox[{"'", 
+           RowBox[{"A", "'"}], " ", "is", " ", "a", " ", "vectorfield", " ", 
+           "with", " ", "two", " ", "components", " ", 
+           RowBox[{"(", 
+            RowBox[{"vector", " ", "potential"}], ")"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"'", 
+            RowBox[{"Dom", "'"}], " ", "is", " ", "a", " ", "real", " ", 
+            "scalar", " ", "field", " ", "whose", " ", "positive", " ", 
+            "values", " ", "describe", " ", "the", " ", "domain", " ", "of", 
+            " ", "the", " ", 
+            RowBox[{"simulation", ".", " ", "'"}], 
+            RowBox[{"dx", "'"}], " ", "is", " ", "the", " ", "step"}], "-", 
+           RowBox[{"size", " ", "of", " ", "the", " ", "spatial", " ", 
+            RowBox[{"grid", ".", " ", "'"}], 
+            RowBox[{"mass", "'"}], " ", 
+            RowBox[{"and", " ", "'"}], 
+            RowBox[{"charge", "'"}], " ", "are", " ", "real"}], "-", 
+           RowBox[{"valued", " ", 
+            RowBox[{"parameters", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSchroedinger3D", "[", 
+         RowBox[{
+         "V", ",", " ", "A", ",", " ", "Dom", ",", " ", "mass", ",", " ", 
+          "charge", ",", " ", "dx"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "generates", " ", "a", " ", "data", " ", "structure", " ", "for", 
+           " ", "QuantumKernel", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"a", " ", "'"}], 
+              RowBox[{"TOperator", "'"}]}], "-", "object"}], ")"}], " ", 
+           "that", " ", "represents", " ", "a", " ", "Schroedinger", " ", 
+           "operator", " ", "in", " ", "three", " ", 
+           RowBox[{"dimensions", ".", " ", "'"}], 
+           RowBox[{"V", "'"}], " ", "refers", " ", "to", " ", "a", " ", 
+           "complex", " ", "function", " ", "object", " ", 
+           RowBox[{"(", 
+            RowBox[{"complex", " ", "scalar", " ", "potential"}], ")"}]}], 
+          ",", " ", 
+          RowBox[{"'", 
+           RowBox[{"A", "'"}], " ", "is", " ", "a", " ", "vectorfield", " ", 
+           "with", " ", "three", " ", "components", " ", 
+           RowBox[{"(", 
+            RowBox[{"vector", " ", "potential"}], ")"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"'", 
+            RowBox[{"Dom", "'"}], " ", "is", " ", "a", " ", "real", " ", 
+            "scalar", " ", "field", " ", "whose", " ", "positive", " ", 
+            "values", " ", "describe", " ", "the", " ", "domain", " ", "of", 
+            " ", "the", " ", 
+            RowBox[{"simulation", ".", " ", "'"}], 
+            RowBox[{"dx", "'"}], " ", "is", " ", "the", " ", "step"}], "-", 
+           RowBox[{"size", " ", "of", " ", "the", " ", "spatial", " ", 
+            RowBox[{"grid", ".", " ", "'"}], 
+            RowBox[{"mass", "'"}], " ", 
+            RowBox[{"and", " ", "'"}], 
+            RowBox[{"charge", "'"}], " ", "are", " ", "real"}], "-", 
+           RowBox[{"valued", " ", 
+            RowBox[{"parameters", ".", " ", "The"}], " ", "fields", " ", 
+            "are", " ", "generated", " ", "with", " ", 
+            RowBox[{"QNewFunction", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPauli2D", "[", 
+         RowBox[{
+         "V", ",", " ", "A", ",", " ", "Dom", ",", " ", "mass", ",", " ", 
+          "charge", ",", " ", "dx"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "generates", " ", "a", " ", "data", " ", "structure", " ", "for", 
+           " ", "QuantumKernel", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"a", " ", "'"}], 
+              RowBox[{"TOperator", "'"}]}], "-", "object"}], ")"}], " ", 
+           "that", " ", "represents", " ", "a", " ", "Pauli", " ", "operator",
+            " ", "in", " ", "two", " ", 
+           RowBox[{"dimensions", ".", " ", "'"}], 
+           RowBox[{"V", "'"}], " ", "refers", " ", "to", " ", "a", " ", 
+           "complex", " ", "function", " ", "object", " ", 
+           RowBox[{"(", 
+            RowBox[{"complex", " ", "scalar", " ", "potential"}], ")"}]}], 
+          ",", " ", 
+          RowBox[{"'", 
+           RowBox[{"A", "'"}], " ", "is", " ", "a", " ", "vectorfield", " ", 
+           "with", " ", "two", " ", "components", " ", 
+           RowBox[{"(", 
+            RowBox[{"vector", " ", "potential"}], ")"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"'", 
+            RowBox[{"Dom", "'"}], " ", "is", " ", "a", " ", "real", " ", 
+            "scalar", " ", "field", " ", "whose", " ", "positive", " ", 
+            "values", " ", "describe", " ", "the", " ", "domain", " ", "of", 
+            " ", "the", " ", 
+            RowBox[{"simulation", ".", " ", "'"}], 
+            RowBox[{"dx", "'"}], " ", "is", " ", "the", " ", "step"}], "-", 
+           RowBox[{"size", " ", "of", " ", "the", " ", "spatial", " ", 
+            RowBox[{"grid", ".", " ", "'"}], 
+            RowBox[{"mass", "'"}], " ", 
+            RowBox[{"and", " ", "'"}], 
+            RowBox[{"charge", "'"}], " ", "are", " ", "real"}], "-", 
+           RowBox[{"valued", " ", 
+            RowBox[{"parameters", ".", " ", "The"}], " ", "fields", " ", 
+            "are", " ", "generated", " ", "with", " ", 
+            RowBox[{"QNewFunction", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QPauli3D", "[", 
+         RowBox[{
+         "V", ",", " ", "A", ",", " ", "Dom", ",", " ", "mass", ",", " ", 
+          "charge", ",", " ", "dx"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "generates", " ", "a", " ", "data", " ", "structure", " ", "for", 
+           " ", "QuantumKernel", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"a", " ", "'"}], 
+              RowBox[{"TOperator", "'"}]}], "-", "object"}], ")"}], " ", 
+           "that", " ", "represents", " ", "a", " ", "Pauli", " ", "operator",
+            " ", "in", " ", "three", " ", 
+           RowBox[{"dimensions", ".", " ", "'"}], 
+           RowBox[{"V", "'"}], " ", "refers", " ", "to", " ", "a", " ", 
+           "complex", " ", "function", " ", "object", " ", 
+           RowBox[{"(", 
+            RowBox[{"complex", " ", "scalar", " ", "potential"}], ")"}]}], 
+          ",", " ", 
+          RowBox[{"'", 
+           RowBox[{"A", "'"}], " ", "is", " ", "a", " ", "vectorfield", " ", 
+           "with", " ", "three", " ", "components", " ", 
+           RowBox[{"(", 
+            RowBox[{"vector", " ", "potential"}], ")"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"'", 
+            RowBox[{"Dom", "'"}], " ", "is", " ", "a", " ", "real", " ", 
+            "scalar", " ", "field", " ", "whose", " ", "positive", " ", 
+            "values", " ", "describe", " ", "the", " ", "domain", " ", "of", 
+            " ", "the", " ", 
+            RowBox[{"simulation", ".", " ", "'"}], 
+            RowBox[{"dx", "'"}], " ", "is", " ", "the", " ", "step"}], "-", 
+           RowBox[{"size", " ", "of", " ", "the", " ", "spatial", " ", 
+            RowBox[{"grid", ".", " ", "'"}], 
+            RowBox[{"mass", "'"}], " ", 
+            RowBox[{"and", " ", "'"}], 
+            RowBox[{"charge", "'"}], " ", "are", " ", "real"}], "-", 
+           RowBox[{"valued", " ", 
+            RowBox[{"parameters", ".", " ", "The"}], " ", "fields", " ", 
+            "are", " ", "generated", " ", "with", " ", 
+            RowBox[{"QNewFunction", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDirac2D", "[", 
+         RowBox[{
+         "V", ",", " ", "A", ",", " ", "Dom", ",", " ", "mass", ",", " ", 
+          "charge", ",", " ", "dx"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "generates", " ", "a", " ", "data", " ", "structure", " ", "for", 
+           " ", "QuantumKernel", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"a", " ", "'"}], 
+              RowBox[{"TOperator", "'"}]}], "-", "object"}], ")"}], " ", 
+           "that", " ", "represents", " ", "a", " ", "Dirac", " ", "operator",
+            " ", "in", " ", "two", " ", 
+           RowBox[{"dimensions", ".", " ", "'"}], 
+           RowBox[{"V", "'"}], " ", "refers", " ", "to", " ", "a", " ", 
+           "complex", " ", "function", " ", "object", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"complex", " ", "Lorentz"}], "-", 
+             RowBox[{"scalar", " ", "potential"}]}], ")"}]}], ",", " ", 
+          RowBox[{"'", 
+           RowBox[{"A", "'"}], " ", "is", " ", "a", " ", "vectorfield", " ", 
+           "with", " ", "three", " ", "components", " ", 
+           RowBox[{"(", 
+            RowBox[{"electromagnetic", " ", "vector", " ", "potential"}], 
+            ")"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"'", 
+            RowBox[{"Dom", "'"}], " ", "is", " ", "a", " ", "real", " ", 
+            "scalar", " ", "field", " ", "whose", " ", "positive", " ", 
+            "values", " ", "describe", " ", "the", " ", "domain", " ", "of", 
+            " ", "the", " ", 
+            RowBox[{"simulation", ".", " ", "'"}], 
+            RowBox[{"dx", "'"}], " ", "is", " ", "the", " ", "step"}], "-", 
+           RowBox[{"size", " ", "of", " ", "the", " ", "spatial", " ", 
+            RowBox[{"grid", ".", " ", "'"}], 
+            RowBox[{"mass", "'"}], " ", 
+            RowBox[{"and", " ", "'"}], 
+            RowBox[{"charge", "'"}], " ", "are", " ", "real"}], "-", 
+           RowBox[{"valued", " ", 
+            RowBox[{"parameters", ".", " ", "The"}], " ", "fields", " ", 
+            "are", " ", "generated", " ", "with", " ", 
+            RowBox[{"QNewFunction", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDirac3D", "[", 
+         RowBox[{
+         "V", ",", " ", "A", ",", " ", "Dom", ",", " ", "mass", ",", " ", 
+          "charge", ",", " ", "dx"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "generates", " ", "a", " ", "data", " ", "structure", " ", "for", 
+           " ", "QuantumKernel", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"a", " ", "'"}], 
+              RowBox[{"TOperator", "'"}]}], "-", "object"}], ")"}], " ", 
+           "that", " ", "represents", " ", "a", " ", "Dirac", " ", "operator",
+            " ", "in", " ", "three", " ", 
+           RowBox[{"dimensions", ".", " ", "'"}], 
+           RowBox[{"V", "'"}], " ", "refers", " ", "to", " ", "a", " ", 
+           "complex", " ", "function", " ", "object", " ", 
+           RowBox[{"(", 
+            RowBox[{
+            "complex", " ", "Lorentz", " ", "scalar", " ", "potential"}], 
+            ")"}]}], ",", " ", 
+          RowBox[{"'", 
+           RowBox[{"A", "'"}], " ", "is", " ", "a", " ", "vectorfield", " ", 
+           "with", " ", "four", " ", "components", " ", 
+           RowBox[{"(", 
+            RowBox[{"vector", " ", "potential"}], ")"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"'", 
+            RowBox[{"Dom", "'"}], " ", "is", " ", "a", " ", "real", " ", 
+            "scalar", " ", "field", " ", "whose", " ", "positive", " ", 
+            "values", " ", "describe", " ", "the", " ", "domain", " ", "of", 
+            " ", "the", " ", 
+            RowBox[{"simulation", ".", " ", "'"}], 
+            RowBox[{"dx", "'"}], " ", "is", " ", "the", " ", "step"}], "-", 
+           RowBox[{"size", " ", "of", " ", "the", " ", "spatial", " ", 
+            RowBox[{"grid", ".", " ", "'"}], 
+            RowBox[{"mass", "'"}], " ", 
+            RowBox[{"and", " ", "'"}], 
+            RowBox[{"charge", "'"}], " ", "are", " ", "real"}], "-", 
+           RowBox[{"valued", " ", 
+            RowBox[{"parameters", ".", " ", "The"}], " ", "fields", " ", 
+            "are", " ", "generated", " ", "with", " ", 
+            RowBox[{"QNewFunction", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QDisposeOperator", "[", "operator", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "deletes", " ", "the", " ", "data", " ", "describing", " ", "the", 
+          " ", "TOperator", " ", 
+          RowBox[{"object", " ", "'"}], 
+          RowBox[{
+           RowBox[{"operator", "'"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetOperatorInfo", "[", "operator", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "gives", " ", "information", " ", "about", " ", "the", " ", 
+          "TOperator", " ", 
+          RowBox[{"object", " ", "'"}], 
+          RowBox[{
+           RowBox[{"operator", "'"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QTimeEvolution", "[", 
+         RowBox[{
+         "operator", ",", " ", "function", ",", " ", "timestep", ",", " ", 
+          "order", ",", " ", "steps"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "computes", " ", "the", " ", "time", " ", "evolution", " ", 
+          "generated", " ", 
+          RowBox[{"by", " ", "'"}], 
+          RowBox[{"operator", "'"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+            "which", " ", "refers", " ", "to", " ", "a", " ", "TOperator"}], 
+            "-", "object"}], ")"}], " ", "for", " ", "the", " ", "initial", 
+          " ", 
+          RowBox[{"function", " ", "'"}], 
+          RowBox[{"function", "'"}], " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "which", " ", "refers", " ", "to", " ", "a", " ", "TFunction"}], 
+             "-", "object"}], ")"}], ".", " ", "You"}], " ", "can", " ", 
+          "use", " ", "any", " ", "of", " ", "the", " ", "operators", " ", 
+          "defined", " ", "by", " ", "the", " ", "QuantumKernel", " ", 
+          "package", " ", "with", " ", "the", " ", "corresponding", " ", 
+          "compatible", " ", "wave", " ", 
+          RowBox[{"function", ".", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"For", " ", "example"}], ",", " ", 
+             RowBox[{"'", 
+              RowBox[{"function", "'"}], " ", "must", " ", "have", " ", "two",
+               " ", "complex", " ", "components", " ", "or", " ", "four", " ",
+               "real", " ", "components", " ", "in", " ", "case", " ", "of", 
+              " ", "QPauli3D", " ", "or", " ", 
+              RowBox[{"QDirac2D", "."}]}]}], ")"}]}], " ", "The", " ", "real",
+           " ", 
+          RowBox[{"number", " ", "'"}], 
+          RowBox[{"timestep", "'"}], " ", "is", " ", "the", " ", "length", 
+          " ", "of", " ", "one", " ", "time", " ", 
+          RowBox[{"step", ".", " ", "The"}], " ", 
+          RowBox[{"integer", " ", "'"}], 
+          RowBox[{"order", "'"}], " ", "describes", " ", "the", " ", "order", 
+          " ", "of", " ", "the", " ", "method", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"a", " ", "Trotter"}], "-", 
+              RowBox[{
+              "Suzuki", " ", "decomposition", " ", "of", " ", "the", " ", 
+               "exponential", " ", "operator"}]}], ",", " ", 
+             RowBox[{"see", " ", 
+              RowBox[{"M", ".", "Suzuki"}]}], ",", " ", 
+             RowBox[{
+              RowBox[{"J", ".", "Math", ".", "Phys"}], ".32", " ", 
+              RowBox[{"(", "1991", ")"}]}], ",", " ", "410"}], ")"}], ".", 
+           " ", "The"}], " ", 
+          RowBox[{"integer", " ", "'"}], 
+          RowBox[{"step", "'"}], " ", "describes", " ", "the", " ", "number", 
+          " ", "of", " ", "time", " ", "steps", " ", "to", " ", "be", " ", 
+          RowBox[{"performed", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QuantumKernel`", "."}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`QuantumKernel`"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`QuantumKernel`"->{
+  Cell[590, 23, 69, 1, 37, "Subsection",
+   CellTags->"VQM`QuantumKernel`"],
+  Cell[662, 26, 732, 11, 119, "Text",
+   CellTags->"VQM`QuantumKernel`"],
+  Cell[1397, 39, 32059, 723, 2449, "Text",
+   CellTags->"VQM`QuantumKernel`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`QuantumKernel`", 33779, 775}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 69, 1, 37, "Subsection",
+ CellTags->"VQM`QuantumKernel`"],
+Cell[662, 26, 732, 11, 119, "Text",
+ CellTags->"VQM`QuantumKernel`"],
+Cell[1397, 39, 32059, 723, 2449, "Text",
+ CellTags->"VQM`QuantumKernel`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,316 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     11875,        269]*)
+(*NotebookOutlinePosition[     12740,        300]*)
+(*  CellTagsIndexPosition[     12665,        294]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Free Time Evolution ", "Subsection",
+  CellTags->"VQM`Free`"],
+
+Cell["Defines free Gaussian wave packets ", "Text",
+  CellTags->"VQM`Free`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QFreeHamiltonian1D[f[x], x, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(applies\ the\ one - 
+                      dimensional\ free\ Hamiltonian\ operator\ to\ \
+the\ function\ f[x] . \ The\ option\ QFreeMass -> 
+                    m\ \((default\ $QFreeMass = 
+                          1)\)\ defines\ the\ mass\ of\ the\ particle\
+\ \((we\ use\ units\ with\ hbar\  = \ 
+                            1)\) . \ \(Package : \ \(\(VQM`Free`\)\(.\
+\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFreeGaussian[x, t, x0, p0, a, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ solution\ of\ the\ free\ \
+Schroedinger\ equation\ for\ a\ particle\ with\ mass\ m\ moving\ in\ \
+n\ dimensions . \ In\ one\ dimension, \ 
+                  the\ Schroedinger\ equation\ reads\ I\ D[psi[x, t], 
+                            t]\  == \ \(-1\)/\((2\ m)\)\ D[
+                              psi[x, t], {x, 2}] . \ 
+                            The\ mass\ can\ be\ defined\ by\ setting\ \
+the\ option\ QFreeMass -> \(m\ \((default\ value\ is\ $QFreeMass\  = \
+\ 1)\) . \ 
+                            The\ space\ dimension\ n\ \((the\ \
+dimension\ of\ x)\)\ may\ be\ specified\ by\ the\ option\ \
+QFreeSpaceDimension -> n . \ It\ can\ be\ n\)\  = \ 1, \ 2, \ 
+                  or\ 3\ \((default\ value\ is\ $QFreeSpaceDimension \
+= 1)\) . \ The\ arguments\ x0, p0, \ 
+                  and\ a\ must\ have\ the\ same\ dimension . \ 
+                      The\ initial\ wave\ packet\ has\ a\ width\ \
+determined\ by\ a, \ 
+                  an\ average\ initial\ position\ given\ by\ x0\ and\ \
+an\ average\ momentum\ given\ by\ p0 . \ \(Package : \ \
+\(\(VQM`Free`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFreeGaussian1D[x, t, x0, p0, a, m]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ solution\ of\ the\ one\ \
+dimensional\ free\ Schroedinger\ equation\ for\ a\ particle\ with\ \
+mass\ m . \ 
+                      The\ particle\ has\ a\ Gaussian\ position\ and\ \
+momentum\ distribution . \ 
+                      The\ parameter\ a\ characterizes\ the\ width\ \
+of\ the\ distribution, \ x0\ is\ the\ average\ initial\ position, \ 
+                  p0\ is\ the\ average\ momentum . \ 
+                      The\ arguments\ x0, p0, a, 
+                  m\ may\ be\ omitted . \ Default\ values\ are\ x0 = 
+                    0, \ p0 = 0, \ a = 1, \ 
+                  m = 1. \ The\ initial\ condition\ is\ \
+QFreeGaussian1D[x, 0, x0, p0, a, m] == 
+                      QGaussian1D[x, x0, p0, 
+                          a] . \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\
+\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFreeGaussian2D[x, y, t, x0, p0, a, m]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ solution\ of\ the\ two\ \
+dimensional\ free\ Schroedinger\ equation\ for\ a\ particle\ with\ \
+mass\ m . \ Here\ x0, p0, 
+                  a\ are\ two\ dimensional\ lists . \ 
+                        The\ particle\ has\ Gaussian\ position\ and\ \
+momentum\ distributions . \ The\ parameter\ a = {a1, 
+                        a2}\ characterizes\ the\ width\ of\ the\ \
+distribution\ in\ the\ x\ and\ y\ direction, \ 
+                  x0 = {x01, 
+                        x02}\ is\ the\ average\ initial\ position, \ 
+                  p0 = {p01, p02}\ is\ the\ average\ momentum . \ 
+                        Only\ the\ argument\ m\ is\ optional, \ 
+                  default\ value\ is\ m = 
+                    1. \ The\ initial\ condition\ is\ QFreeGaussian2D[
+                          x, y, 0, x0, p0, a, m] == 
+                      QGaussian2D[x, y, x0, p0, 
+                          a] . \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\
+\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QFreeGaussian3D[x, y, z, t, x0, p0, a, 
+                    m]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ solution\ of\ the\ three\ \
+dimensional\ free\ Schroedinger\ equation\ for\ a\ particle\ with\ \
+mass\ m . \ The\ arguments\ x0, p0, 
+                  a\ are\ three\ dimensional\ lists . \ 
+                        The\ particle\ has\ Gaussian\ position\ and\ \
+momentum\ distributions . \ The\ parameter\ a = {a1, a2, 
+                        a3}\ characterizes\ the\ width\ of\ the\ \
+distribution\ in\ the\ x, \ y, \ and\ z\ direction, \ 
+                  x0 = {x01, x02, 
+                        x03}\ is\ the\ average\ initial\ position, \ 
+                  p0 = {p01, p02, 
+                        p03}\ is\ the\ average\ momentum . \ 
+                        Only\ the\ argument\ m\ is\ optional, \ 
+                  default\ value\ is\ m = 
+                    1. \ The\ initial\ condition\ is\ QFreeGaussian3D[
+                          x, y, z, 0, x0, p0, a, m] == 
+                      QGaussian3D[x, y, z, x0, p0, 
+                          a] . \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\
+\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGaussian1D[x, x0, p0, a]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ normalized\ Gaussian\ \
+function\ in\ one\ dimension, \ 
+                  centered\ at\ x0\ in\ position\ space\ and\ at\ p0\ \
+in\ momentum\ space . \ 
+                      The\ parameter\ a\ describes\ the\ width\ in\ \
+position\ space . \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGaussian2D[x, y, x0, p0, a]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ normalized\ Gaussian\ \
+function\ in\ two\ dimensions, \ 
+                  centered\ at\ x0 = \({x01, 
+                          x02}\ in\ position\ space\ and\ at\ p0 = \
+\({p01, p02}\ in\ momentum\ space . \ The\ parameter\ a\  = \ {a1, 
+                            a2}\ describes\ the\ width\ in\ position\ \
+space . \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGaussian3D[x, y, z, x0, p0, a]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ normalized\ Gaussian\ \
+function\ in\ three\ dimensions, \ 
+                  centered\ at\ x0 = \({x01, x02, 
+                          x03}\ in\ position\ space\ and\ at\ p0 = \
+\({p01, p02, p03}\ in\ momentum\ space . \ 
+                            The\ parameter\ a\  = \ {a1, a2, 
+                            a3}\ describes\ the\ width\ in\ position\ \
+space . \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QFreeFourierGaussian1D[p, t, x0, p0, a, 
+                    m]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ Fourier\ transform\ of\ \
+the\ function\ QFreeGaussian1D[x, t, x0, p0, a, m] . \ 
+                      The\ arguments\ x0, p0, a, 
+                  m\ are\ optional . \ Default\ values\ are\ x0 = 
+                    0, \ p0 = 0, \ a = 1, \ 
+                  m = 1. \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)\),
+                  
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFourierGaussian1D[p, x0, p0, a]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ Fourier\ transform\ of\ \
+the\ function\ QGaussian1D[x, x0, p0, a, m] . \ 
+                      The\ parameter\ a\ describes\ the\ width\ in\ \
+position\ space, \ that\ is, \ 
+                  1/a\ describes\ the\ width\ in\ Fourier\ space . \ \
+\(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QEnergyGaussian1D[En, x0, p0, a]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ normalized\ free\ Gaussian\ \
+function\ in\ the\ energy\ representation . \ 
+                        The\ mass\ of\ the\ particle\ is\ m = 
+                    1\ and\ the\ space\ dimension\ is\ 1. \ x0\ is\ \
+the\ average\ initial\ position\ and\ p0\ is\ the\ average\ momentum\ \
+of\ the\ Gaussian . \ 
+                        The\ parameter\ a\ describes\ the\ width\ of\ \
+the\ Gaussian\ in\ position\ space . \ \(Package : \ \
+\(\(VQM`Free`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["$QFreeMass",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ default\ value\ for\ the\ \
+mass\ \((\ \(=\)\(\ \)\(1\))\)\ in\ the\ package\ Free . 
+                      m . \ \(Package : \ \
+\(\(VQM`Free`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["$QFreeSpaceDimension",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ default\ value\ for\ the\ \
+option\ QFreeSpaceDimension . \ 
+                      This\ is\ the\ space\ dimension\ used\ for\ the\
+\ solution\ QFreeGaussian\ of\ the\ free\ Schroedinger\ equation . \ \
+\(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`Free`"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`Free`"->{
+    Cell[1754, 51, 67, 1, 70, "Subsection",
+      CellTags->"VQM`Free`"],
+    Cell[1824, 54, 76, 1, 70, "Text",
+      CellTags->"VQM`Free`"],
+    Cell[1903, 57, 9968, 210, 70, "Text",
+      CellTags->"VQM`Free`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`Free`", 12425, 283}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 67, 1, 70, "Subsection",
+  CellTags->"VQM`Free`"],
+Cell[1824, 54, 76, 1, 70, "Text",
+  CellTags->"VQM`Free`"],
+Cell[1903, 57, 9968, 210, 70, "Text",
+  CellTags->"VQM`Free`"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

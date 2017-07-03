@@ -1,0 +1,233 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6806,        186]*)
+(*NotebookOutlinePosition[      7706,        217]*)
+(*  CellTagsIndexPosition[      7625,        211]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Rectangular potentials ", "Subsection",
+  CellTags->"VQM`Rectangular`"],
+
+Cell["\<\
+This package defines the solutions of the one-dimensional Schroedinger equation in the presence of rectangular potentials (steps, wells, barriers). \
+\>", "Text",
+  CellTags->"VQM`Rectangular`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QPlaneWaveToRight[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\) \(Package : \ \(\(VQM`Rectangular`\
+\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QPlaneWaveToLeft[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QReflectionCoefficientJump[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QTransmissionCoefficientJump[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QReflectionCoefficientWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QTransmissionCoefficientWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QTransitionMatrix[En, V1, V2, s]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ transition\ matrix\ as\ a\
+\ function\ of\ the\ energy\ for\ a\ potential - 
+                      jump\ from\ V[
+                          x] = \(V1\ \((for\ x < s)\)\ to\ V[x] = 
+                      V2\ \((for\ x > 
+                              s)\) . \ \(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSolutionWellToRight[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QPsiEvenWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QPsiOddWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDetEvenWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDetOddWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QCriticalRadiusEvenWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QCriticalRadiusOddWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QCriticalDepthEvenWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QCriticalDepthOddWell[ ... ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(...\)\(\ \)\(Package : \ \
+\(\(VQM`Rectangular`\)\(.\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`Rectangular`"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`Rectangular`"->{
+    Cell[1754, 51, 77, 1, 70, "Subsection",
+      CellTags->"VQM`Rectangular`"],
+    Cell[1834, 54, 204, 3, 70, "Text",
+      CellTags->"VQM`Rectangular`"],
+    Cell[2041, 59, 4761, 125, 70, "Text",
+      CellTags->"VQM`Rectangular`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`Rectangular`", 7363, 200}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 77, 1, 70, "Subsection",
+  CellTags->"VQM`Rectangular`"],
+Cell[1834, 54, 204, 3, 70, "Text",
+  CellTags->"VQM`Rectangular`"],
+Cell[2041, 59, 4761, 125, 70, "Text",
+  CellTags->"VQM`Rectangular`"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

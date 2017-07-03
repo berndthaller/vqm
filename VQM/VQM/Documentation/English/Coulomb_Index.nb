@@ -1,0 +1,283 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     10334,        236]*)
+(*NotebookOutlinePosition[     11215,        267]*)
+(*  CellTagsIndexPosition[     11137,        261]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Coulomb ", "Subsection",
+  CellTags->"VQM`Coulomb`"],
+
+Cell["\<\
+This package provides definitions for the quantum mechanical Coulomb system. It gives the solutions in cartesian as well as polar coordinates in two and three dimensions. \
+\>", "Text",
+  CellTags->"VQM`Coulomb`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QPrincipalQuantumNumber[nrad, ell]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ principal\ quantum\ \
+number\ in\ terms\ of\ the\ radial\ quantum\ number\ and\ the\ \
+angular\ momentum . \ \(Package : \ \(\(VQM`Coulomb`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QRadialQuantumNumber[n, ell]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ radial\ quantum\ number\ \
+n\  - \ ell\  - \ 
+                    1. \ It\ counts\ the\ number\ of\ radial\ zeros\ \
+of\ the\ wave\ function . \ \(Package : \ \(\(VQM`Coulomb`\)\(.\)\)\)\
+\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QCoulombEnergy[n, \ options]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ energy\ of\ a\ \
+particle\ in\ the\ Coulomb\ field\ g/
+                            r\ \((here\ n = 
+                                nrad + ell + 
+                                  1\ is\ the\ principal\ quantum\ \
+number)\) . \ 
+                            QCoulombEnergy\ is\ an\ eigenfunction\ of\
+\ the\ differential\ operator\  - 1/2\ Delta\  + \ 
+                        g/r . \ 
+                              The\ Coulomb\ coupling\ constant\ g\ \
+can\ be\ specified\ by\ giving\ the\ option\ QCoulombCoupling -> 
+                      g . \ Default\ is\ g = $QCoulombCoupling . \ 
+                        The\ constant\ $QCoulombCoupling\ is\ \
+initially\ set\ to\ 1, \ 
+                  but\ can\ be\ redefined\ by\ the\ user . \ 
+                      The\ energy\ depends\ on\ the\ space\ dimension \
+. \ Default\ space\ dimension\ is\ 3; \ 
+                  you\ can\ change\ this\ by\ the\ option\ \
+QCoulombSpaceDimension -> dim, \ 
+                  or\ by\ redefining\ the\ constant\ \
+$QCoulombSpaceDimension . \ \(Package : \ \(\(VQM`Coulomb`\)\(.\)\)\)\
+\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QCoulombTimePeriod[n1, n2,  .. ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ time\ period\ of\ a\ \
+superposition\ of\ Coulomb\ eigenstates\ with\ principal\ quantum\ \
+numbers\ n1, n2, \ 
+                  etc . \ \(Package : \ \(\(VQM`Coulomb`\)\(.\)\)\)\)\
+\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QCoulombFunction[n, ell, m, {x, y, z}, 
+                    options]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ energy\ eigenfunction\ \
+of\ a\ particle\ in\ the\ three - 
+                    dimensional\ attractive\ Coulomb\ field\  - 
+                    g/r . \ n\ is\ the\ principal\ quantum\ number, \ 
+                  ell\ orbital\ angular\ momentum, \ 
+                  m\ is\ the\ magnetic\ quantum\ number . \ 
+                        The\ function\ is\ an\ eigenfunction\ of\ \((\
+\(-1\)/2\ Delta\  - \ g/r)\)\ Psi\  = \ \(QCoulombEnergy\ Psi . \ 
+                            The\ Coulomb\ coupling\ constant\ g\ can\ \
+be\ specified\ by\ giving\ the\ option\ QCoulombCoupling -> 
+                        g . \ 
+                            Default\ is\ g = $QCoulombCoupling\ \
+\((attractive\ for\ positive\ values\ of\ g)\) . \ 
+                          The\ constant\ $QCoulombCoupling\ is\ \
+initially\ set\ to\ 1\), \ 
+                  but\ can\ be\ redefined\ by\ the\ user . \ 
+                      The\ energy\ depends\ on\ the\ space\ dimension \
+. \ Default\ space\ dimension\ is\ 3; \ 
+                  you\ can\ change\ this\ by\ the\ option\ \
+QCoulombSpaceDimension -> dim, \ 
+                  or\ by\ redefining\ the\ constant\ \
+$QCoulombSpaceDimension . \ 
+                      The\ default\ coordinate\ system\ is\ \
+Cartesian, \ as\ set\ by\ the\ package\ Calculus`VectorAnalysis` . \ 
+                      The\ coordinatesystem\ can\ be\ changed\ by\ \
+the\ command\ SetCoordinates[Spherical] . \ In\ this\ case, \ 
+                  the\ function\ has\ to\ be\ used\ in\ the\ form\ \
+QCoulombFunction[n, ell, m, {r, theta, phi}] . \ 
+                        QCoulombFunction[n, m, {x, y}, 
+                          options]\ resp . \ 
+                        QCoulombFunction[n, m, {r, phi}, 
+                          options]\ give\ the\ eigenfunction\ for\ \
+the\ two - dimensional\ Coulomb\ problem\ in\ Cartesian\ resp . \ 
+                        Spherical\ coordinates . \ \(Package : \ \
+\(\(VQM`Coulomb`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QEffectiveCoulombPotential[ell, \ r]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ effective\ potential\ for\
+\ the\ radial\ Coulomb\ equation . \ 
+                      Consists\ of\ the\ Coulomb\ potential\ and\ the\
+\ repulsive\ angular\ momentum\ barrier, \ 
+                  which\ depends\ on\ the\ space\ dimension . \ \
+\(Package : \ \(\(VQM`Coulomb`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QCoulombHamiltonian[
+                    psi[x, y, z], {x, y, z}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(or\ QCoulombHamiltonian[
+                        psi[x, y], {x, 
+                          y}]\ evaluates\ the\ action\ of\ the\ \
+Hamiltonian\ operator\  - 1/2\ Delta\  - \ 
+                    g/r\ on\ the\ wave\ function\ psi . \ \(Package : \
+\ \(\(VQM`Coulomb`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QRadialCoulombFunction[n, ell, r]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ radial\ part\ of\ the\ \
+eigenfunction\ of\ the\ Schroedinger\ equation\ in\ the\ angular\ \
+momentum\ subspace\ described\ by\ ell . \ 
+                        Here\ n\ is\ the\ principal\ quantum\ number \
+. \ n\  - \ ell\  - \ 
+                    1\ \((\(=\)\(the\ radial\ quantum\ number\))\)\ \
+is\ the\ number\ of\ zeros\ of\ the\ radial\ Coulomb\ eigenfunction . \
+\ \(Package : \ \(\(VQM`Coulomb`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QRadialPositionAmplitude[n, ell, r]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(describes\ the\ amplitude\ of\ the\
+\ radial\ position\ density . \ 
+                      The\ square\ of\ the\ radial\ position\ \
+amplitude\ gives\ the\ probability\ density\ for\ having\ a\ position\
+\ at\ the\ distance\ r\ from\ the\ coordinate\ origin . \ 
+                      Here\ n\ is\ the\ principal\ quantum\ number, \ 
+                  ell\ is\ the\ orbital\ angular\ momentum\ quantum\ \
+number . \ \(Package : \ \(\(VQM`Coulomb`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["Constant",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(describing\ the\ default\ value\ \
+of\ the\ space\ dimension\ in\ the\ package\ VQM`Coulomb` . \ 
+                      Initially\ set\ to\ 3. \ \(Package : \ \
+\(\(VQM`Coulomb`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["Constant",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(describing\ the\ default\ value\ \
+of\ the\ strength\ of\ the\ Coulomb\ potential\ g/
+                        r\ for\ the\ package\ VQM`Coulomb` . \ 
+                        Initial\ value\ is\ g = 1, \ 
+                  which\ describes\ an\ attractive\ Coulomb\ \
+potential . \ \(Package : \ \(\(VQM`Coulomb`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`Coulomb`"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`Coulomb`"->{
+    Cell[1754, 51, 58, 1, 70, "Subsection",
+      CellTags->"VQM`Coulomb`"],
+    Cell[1815, 54, 223, 3, 70, "Text",
+      CellTags->"VQM`Coulomb`"],
+    Cell[2041, 59, 8289, 175, 70, "Text",
+      CellTags->"VQM`Coulomb`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`Coulomb`", 10887, 250}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 58, 1, 70, "Subsection",
+  CellTags->"VQM`Coulomb`"],
+Cell[1815, 54, 223, 3, 70, "Text",
+  CellTags->"VQM`Coulomb`"],
+Cell[2041, 59, 8289, 175, 70, "Text",
+  CellTags->"VQM`Coulomb`"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

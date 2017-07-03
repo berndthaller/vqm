@@ -1,0 +1,564 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     22346,        555]
+NotebookOptionsPosition[     21642,        524]
+NotebookOutlinePosition[     22254,        550]
+CellTagsIndexPosition[     22182,        545]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Free Time Evolution ", "Subsection",
+ CellTags->"VQM`Free`"],
+
+Cell["Defines free Gaussian wave packets ", "Text",
+ CellTags->"VQM`Free`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QFreeHamiltonian1D", "[", 
+         RowBox[{
+          RowBox[{"f", "[", "x", "]"}], ",", "x", ",", " ", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"applies", " ", "the", " ", "one"}], "-", 
+           RowBox[{
+           "dimensional", " ", "free", " ", "Hamiltonian", " ", "operator", 
+            " ", "to", " ", "the", " ", "function", " ", 
+            RowBox[{
+             RowBox[{"f", "[", "x", "]"}], ".", " ", "The"}], " ", "option", 
+            " ", "QFreeMass"}]}], "->", 
+          RowBox[{"m", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"default", " ", "$QFreeMass"}], "=", "1"}], ")"}], " ", 
+           "defines", " ", "the", " ", "mass", " ", "of", " ", "the", " ", 
+           "particle", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+              "we", " ", "use", " ", "units", " ", "with", " ", "hbar"}], " ",
+               "=", " ", "1"}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Free`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFreeGaussian", "[", 
+         RowBox[{"x", ",", "t", ",", "x0", ",", "p0", ",", "a", ",", "opts"}],
+          "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "solution", " ", "of", " ", "the", " ", "free",
+            " ", "Schroedinger", " ", "equation", " ", "for", " ", "a", " ", 
+           "particle", " ", "with", " ", "mass", " ", "m", " ", "moving", " ",
+            "in", " ", "n", " ", 
+           RowBox[{"dimensions", ".", " ", "In"}], " ", "one", " ", 
+           "dimension"}], ",", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+             "the", " ", "Schroedinger", " ", "equation", " ", "reads", " ", 
+              "I", " ", 
+              RowBox[{"D", "[", 
+               RowBox[{
+                RowBox[{"psi", "[", 
+                 RowBox[{"x", ",", "t"}], "]"}], ",", "t"}], "]"}]}], " ", "==",
+              " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "1"}], "/", 
+               RowBox[{"(", 
+                RowBox[{"2", " ", "m"}], ")"}]}], " ", 
+              RowBox[{
+               RowBox[{"D", "[", 
+                RowBox[{
+                 RowBox[{"psi", "[", 
+                  RowBox[{"x", ",", "t"}], "]"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"x", ",", "2"}], "}"}]}], "]"}], ".", " ", "The"}], 
+              " ", "mass", " ", "can", " ", "be", " ", "defined", " ", "by", 
+              " ", "setting", " ", "the", " ", "option", " ", "QFreeMass"}]}],
+             "->", 
+            RowBox[{
+             RowBox[{"m", " ", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                 "default", " ", "value", " ", "is", " ", "$QFreeMass"}], " ",
+                  "=", " ", "1"}], ")"}], ".", " ", "The"}], " ", "space", 
+              " ", "dimension", " ", "n", " ", 
+              RowBox[{"(", 
+               RowBox[{"the", " ", "dimension", " ", "of", " ", "x"}], ")"}], 
+              " ", "may", " ", "be", " ", "specified", " ", "by", " ", "the", 
+              " ", "option", " ", "QFreeSpaceDimension"}], "->", 
+             RowBox[{
+              RowBox[{"n", ".", " ", "It"}], " ", "can", " ", "be", " ", 
+              "n"}]}]}], " ", "=", " ", "1"}], ",", " ", "2", ",", " ", 
+          RowBox[{"or", " ", "3", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+              "default", " ", "value", " ", "is", " ", 
+               "$QFreeSpaceDimension"}], "=", "1"}], ")"}], ".", " ", "The"}],
+            " ", "arguments", " ", "x0"}], ",", "p0", ",", " ", 
+          RowBox[{
+          "and", " ", "a", " ", "must", " ", "have", " ", "the", " ", "same", 
+           " ", 
+           RowBox[{"dimension", ".", " ", "The"}], " ", "initial", " ", 
+           "wave", " ", "packet", " ", "has", " ", "a", " ", "width", " ", 
+           "determined", " ", "by", " ", "a"}], ",", " ", 
+          RowBox[{
+          "an", " ", "average", " ", "initial", " ", "position", " ", "given",
+            " ", "by", " ", "x0", " ", "and", " ", "an", " ", "average", " ", 
+           "momentum", " ", "given", " ", "by", " ", 
+           RowBox[{"p0", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Free`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFreeGaussian1D", "[", 
+         RowBox[{"x", ",", "t", ",", "x0", ",", "p0", ",", "a", ",", "m"}], 
+         "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "solution", " ", "of", " ", "the", " ", "one", 
+           " ", "dimensional", " ", "free", " ", "Schroedinger", " ", 
+           "equation", " ", "for", " ", "a", " ", "particle", " ", "with", 
+           " ", "mass", " ", 
+           RowBox[{"m", ".", " ", "The"}], " ", "particle", " ", "has", " ", 
+           "a", " ", "Gaussian", " ", "position", " ", "and", " ", "momentum",
+            " ", 
+           RowBox[{"distribution", ".", " ", "The"}], " ", "parameter", " ", 
+           "a", " ", "characterizes", " ", "the", " ", "width", " ", "of", 
+           " ", "the", " ", "distribution"}], ",", " ", 
+          RowBox[{
+          "x0", " ", "is", " ", "the", " ", "average", " ", "initial", " ", 
+           "position"}], ",", " ", 
+          RowBox[{"p0", " ", "is", " ", "the", " ", "average", " ", 
+           RowBox[{"momentum", ".", " ", "The"}], " ", "arguments", " ", 
+           "x0"}], ",", "p0", ",", "a", ",", 
+          RowBox[{
+           RowBox[{"m", " ", "may", " ", "be", " ", 
+            RowBox[{"omitted", ".", " ", "Default"}], " ", "values", " ", 
+            "are", " ", "x0"}], "=", "0"}], ",", " ", 
+          RowBox[{"p0", "=", "0"}], ",", " ", 
+          RowBox[{"a", "=", "1"}], ",", " ", 
+          RowBox[{"m", "=", 
+           RowBox[{
+            RowBox[{
+            "1.", " ", "The", " ", "initial", " ", "condition", " ", "is", 
+             " ", 
+             RowBox[{"QFreeGaussian1D", "[", 
+              RowBox[{
+              "x", ",", "0", ",", "x0", ",", "p0", ",", "a", ",", "m"}], 
+              "]"}]}], "==", 
+            RowBox[{
+             RowBox[{"QGaussian1D", "[", 
+              RowBox[{"x", ",", "x0", ",", "p0", ",", "a"}], "]"}], ".", " ", 
+             
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`Free`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFreeGaussian2D", "[", 
+         RowBox[{
+         "x", ",", "y", ",", "t", ",", "x0", ",", "p0", ",", "a", ",", "m"}], 
+         "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "solution", " ", "of", " ", "the", " ", "two", 
+           " ", "dimensional", " ", "free", " ", "Schroedinger", " ", 
+           "equation", " ", "for", " ", "a", " ", "particle", " ", "with", 
+           " ", "mass", " ", 
+           RowBox[{"m", ".", " ", "Here"}], " ", "x0"}], ",", "p0", ",", 
+          RowBox[{
+           RowBox[{"a", " ", "are", " ", "two", " ", "dimensional", " ", 
+            RowBox[{"lists", ".", " ", "The"}], " ", "particle", " ", "has", 
+            " ", "Gaussian", " ", "position", " ", "and", " ", "momentum", 
+            " ", 
+            RowBox[{"distributions", ".", " ", "The"}], " ", "parameter", " ",
+             "a"}], "=", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"a1", ",", "a2"}], "}"}], " ", "characterizes", " ", 
+            "the", " ", "width", " ", "of", " ", "the", " ", "distribution", 
+            " ", "in", " ", "the", " ", "x", " ", "and", " ", "y", " ", 
+            "direction"}]}], ",", " ", 
+          RowBox[{"x0", "=", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"x01", ",", "x02"}], "}"}], " ", "is", " ", "the", " ", 
+            "average", " ", "initial", " ", "position"}]}], ",", " ", 
+          RowBox[{"p0", "=", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"p01", ",", "p02"}], "}"}], " ", "is", " ", "the", " ", 
+            "average", " ", 
+            RowBox[{"momentum", ".", " ", "Only"}], " ", "the", " ", 
+            "argument", " ", "m", " ", "is", " ", "optional"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"default", " ", "value", " ", "is", " ", "m"}], "=", 
+           RowBox[{
+            RowBox[{
+            "1.", " ", "The", " ", "initial", " ", "condition", " ", "is", 
+             " ", 
+             RowBox[{"QFreeGaussian2D", "[", 
+              RowBox[{
+              "x", ",", "y", ",", "0", ",", "x0", ",", "p0", ",", "a", ",", 
+               "m"}], "]"}]}], "==", 
+            RowBox[{
+             RowBox[{"QGaussian2D", "[", 
+              RowBox[{"x", ",", "y", ",", "x0", ",", "p0", ",", "a"}], "]"}], 
+             ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`Free`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFreeGaussian3D", "[", 
+         RowBox[{
+         "x", ",", "y", ",", "z", ",", "t", ",", "x0", ",", "p0", ",", "a", 
+          ",", "m"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "solution", " ", "of", " ", "the", " ", 
+           "three", " ", "dimensional", " ", "free", " ", "Schroedinger", " ",
+            "equation", " ", "for", " ", "a", " ", "particle", " ", "with", 
+           " ", "mass", " ", 
+           RowBox[{"m", ".", " ", "The"}], " ", "arguments", " ", "x0"}], ",",
+           "p0", ",", 
+          RowBox[{
+           RowBox[{"a", " ", "are", " ", "three", " ", "dimensional", " ", 
+            RowBox[{"lists", ".", " ", "The"}], " ", "particle", " ", "has", 
+            " ", "Gaussian", " ", "position", " ", "and", " ", "momentum", 
+            " ", 
+            RowBox[{"distributions", ".", " ", "The"}], " ", "parameter", " ",
+             "a"}], "=", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"a1", ",", "a2", ",", "a3"}], "}"}], " ", 
+            "characterizes", " ", "the", " ", "width", " ", "of", " ", "the", 
+            " ", "distribution", " ", "in", " ", "the", " ", "x"}]}], ",", 
+          " ", "y", ",", " ", 
+          RowBox[{"and", " ", "z", " ", "direction"}], ",", " ", 
+          RowBox[{"x0", "=", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"x01", ",", "x02", ",", "x03"}], "}"}], " ", "is", " ", 
+            "the", " ", "average", " ", "initial", " ", "position"}]}], ",", 
+          " ", 
+          RowBox[{"p0", "=", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"p01", ",", "p02", ",", "p03"}], "}"}], " ", "is", " ", 
+            "the", " ", "average", " ", 
+            RowBox[{"momentum", ".", " ", "Only"}], " ", "the", " ", 
+            "argument", " ", "m", " ", "is", " ", "optional"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"default", " ", "value", " ", "is", " ", "m"}], "=", 
+           RowBox[{
+            RowBox[{
+            "1.", " ", "The", " ", "initial", " ", "condition", " ", "is", 
+             " ", 
+             RowBox[{"QFreeGaussian3D", "[", 
+              RowBox[{
+              "x", ",", "y", ",", "z", ",", "0", ",", "x0", ",", "p0", ",", 
+               "a", ",", "m"}], "]"}]}], "==", 
+            RowBox[{
+             RowBox[{"QGaussian3D", "[", 
+              RowBox[{
+              "x", ",", "y", ",", "z", ",", "x0", ",", "p0", ",", "a"}], 
+              "]"}], ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`Free`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGaussian1D", "[", 
+         RowBox[{"x", ",", "x0", ",", "p0", ",", "a"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "normalized", " ", "Gaussian", " ", "function",
+            " ", "in", " ", "one", " ", "dimension"}], ",", " ", 
+          RowBox[{
+          "centered", " ", "at", " ", "x0", " ", "in", " ", "position", " ", 
+           "space", " ", "and", " ", "at", " ", "p0", " ", "in", " ", 
+           "momentum", " ", 
+           RowBox[{"space", ".", " ", "The"}], " ", "parameter", " ", "a", 
+           " ", "describes", " ", "the", " ", "width", " ", "in", " ", 
+           "position", " ", 
+           RowBox[{"space", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Free`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGaussian2D", "[", 
+         RowBox[{"x", ",", "y", ",", "x0", ",", "p0", ",", "a"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "normalized", " ", "Gaussian", " ", "function",
+            " ", "in", " ", "two", " ", "dimensions"}], ",", " ", 
+          RowBox[{
+           RowBox[{"centered", " ", "at", " ", "x0"}], "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x01", ",", "x02"}], "}"}], " ", "in", " ", "position", 
+             " ", "space", " ", "and", " ", "at", " ", "p0"}], "=", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"p01", ",", "p02"}], "}"}], " ", "in", " ", "momentum",
+               " ", 
+              RowBox[{"space", ".", " ", "The"}], " ", "parameter", " ", 
+              "a"}], " ", "=", " ", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"a1", ",", "a2"}], "}"}], " ", "describes", " ", "the",
+               " ", "width", " ", "in", " ", "position", " ", 
+              RowBox[{"space", ".", " ", 
+               RowBox[{"Package", ":", " ", 
+                RowBox[{"VQM`Free`", "."}]}]}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGaussian3D", "[", 
+         RowBox[{"x", ",", "y", ",", "z", ",", "x0", ",", "p0", ",", "a"}], 
+         "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "normalized", " ", "Gaussian", " ", "function",
+            " ", "in", " ", "three", " ", "dimensions"}], ",", " ", 
+          RowBox[{
+           RowBox[{"centered", " ", "at", " ", "x0"}], "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x01", ",", "x02", ",", "x03"}], "}"}], " ", "in", " ", 
+             "position", " ", "space", " ", "and", " ", "at", " ", "p0"}], 
+            "=", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"p01", ",", "p02", ",", "p03"}], "}"}], " ", "in", " ",
+               "momentum", " ", 
+              RowBox[{"space", ".", " ", "The"}], " ", "parameter", " ", 
+              "a"}], " ", "=", " ", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"a1", ",", "a2", ",", "a3"}], "}"}], " ", "describes", 
+              " ", "the", " ", "width", " ", "in", " ", "position", " ", 
+              RowBox[{"space", ".", " ", 
+               RowBox[{"Package", ":", " ", 
+                RowBox[{"VQM`Free`", "."}]}]}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFreeFourierGaussian1D", "[", 
+         RowBox[{"p", ",", "t", ",", "x0", ",", "p0", ",", "a", ",", "m"}], 
+         "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "the", " ", "Fourier", " ", "transform", " ", "of", " ", 
+           "the", " ", "function", " ", 
+           RowBox[{
+            RowBox[{"QFreeGaussian1D", "[", 
+             RowBox[{
+             "x", ",", "t", ",", "x0", ",", "p0", ",", "a", ",", "m"}], "]"}],
+             ".", " ", "The"}], " ", "arguments", " ", "x0"}], ",", "p0", ",",
+           "a", ",", 
+          RowBox[{
+           RowBox[{"m", " ", "are", " ", 
+            RowBox[{"optional", ".", " ", "Default"}], " ", "values", " ", 
+            "are", " ", "x0"}], "=", "0"}], ",", " ", 
+          RowBox[{"p0", "=", "0"}], ",", " ", 
+          RowBox[{"a", "=", "1"}], ",", " ", 
+          RowBox[{"m", "=", 
+           RowBox[{"1.", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Free`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFourierGaussian1D", "[", 
+         RowBox[{"p", ",", "x0", ",", "p0", ",", "a"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "the", " ", "Fourier", " ", "transform", " ", "of", " ", 
+           "the", " ", "function", " ", 
+           RowBox[{
+            RowBox[{"QGaussian1D", "[", 
+             RowBox[{"x", ",", "x0", ",", "p0", ",", "a", ",", "m"}], "]"}], 
+            ".", " ", "The"}], " ", "parameter", " ", "a", " ", "describes", 
+           " ", "the", " ", "width", " ", "in", " ", "position", " ", 
+           "space"}], ",", " ", 
+          RowBox[{"that", " ", "is"}], ",", " ", 
+          RowBox[{
+           RowBox[{"1", "/", "a"}], " ", "describes", " ", "the", " ", 
+           "width", " ", "in", " ", "Fourier", " ", 
+           RowBox[{"space", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Free`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QEnergyGaussian1D", "[", 
+         RowBox[{"En", ",", "x0", ",", "p0", ",", "a"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "normalized", " ", "free", " ", "Gaussian", 
+           " ", "function", " ", "in", " ", "the", " ", "energy", " ", 
+           RowBox[{"representation", ".", " ", "The"}], " ", "mass", " ", 
+           "of", " ", "the", " ", "particle", " ", "is", " ", "m"}], "=", 
+          RowBox[{
+          "1", " ", "and", " ", "the", " ", "space", " ", "dimension", " ", 
+           "is", " ", "1.", " ", "x0", " ", "is", " ", "the", " ", "average", 
+           " ", "initial", " ", "position", " ", "and", " ", "p0", " ", "is", 
+           " ", "the", " ", "average", " ", "momentum", " ", "of", " ", "the",
+            " ", 
+           RowBox[{"Gaussian", ".", " ", "The"}], " ", "parameter", " ", "a", 
+           " ", "describes", " ", "the", " ", "width", " ", "of", " ", "the", 
+           " ", "Gaussian", " ", "in", " ", "position", " ", 
+           RowBox[{"space", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Free`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox["$QFreeMass",
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "the", " ", "default", " ", "value", " ", "for", " ", 
+          "the", " ", "mass", " ", 
+          RowBox[{"(", " ", 
+           RowBox[{"=", " ", "1"}], ")"}], " ", "in", " ", "the", " ", 
+          "package", " ", 
+          RowBox[{"Free", ".", "m", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Free`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox["$QFreeSpaceDimension",
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "the", " ", "default", " ", "value", " ", "for", " ", 
+          "the", " ", "option", " ", 
+          RowBox[{"QFreeSpaceDimension", ".", " ", "This"}], " ", "is", " ", 
+          "the", " ", "space", " ", "dimension", " ", "used", " ", "for", " ",
+           "the", " ", "solution", " ", "QFreeGaussian", " ", "of", " ", 
+          "the", " ", "free", " ", "Schroedinger", " ", 
+          RowBox[{"equation", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Free`", "."}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`Free`"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+Magnification->1.,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`Free`"->{
+  Cell[590, 23, 66, 1, 37, "Subsection",
+   CellTags->"VQM`Free`"],
+  Cell[659, 26, 75, 1, 23, "Text",
+   CellTags->"VQM`Free`"],
+  Cell[737, 29, 20889, 492, 1429, "Text",
+   CellTags->"VQM`Free`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`Free`", 21959, 535}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 66, 1, 37, "Subsection",
+ CellTags->"VQM`Free`"],
+Cell[659, 26, 75, 1, 23, "Text",
+ CellTags->"VQM`Free`"],
+Cell[737, 29, 20889, 492, 1429, "Text",
+ CellTags->"VQM`Free`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

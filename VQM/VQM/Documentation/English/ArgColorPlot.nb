@@ -1,0 +1,345 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      7318,        186]*)
+(*NotebookOutlinePosition[     10527,        281]*)
+(*  CellTagsIndexPosition[     10172,        267]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["QArgColorPlot", "Section",
+  CellTags->"QArgColorPlot"],
+
+Cell["\<\
+QArgColorPlot[f[x],{x,x0,x1},opts] is used like the usual Plot command. It gives a two-dimensional plot of a complex-valued function f of a single real variable x in the range {x0,x1}. The plot shows the curve Abs[f] with area between the curve and the x-axis colored by Hue[Arg[f[x]]/(2 Pi)]. The default options of Plot are changed to Axes->{True,None}, Fame->True. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QArgColorPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QArgColorPlot"],
+
+Cell["QListArgColorPlot", "Section",
+  CellTags->"QListArgColorPlot"],
+
+Cell["\<\
+QListArgColorPlot[f,{x,x0,x1},opts] plots a Abs[f], where f is a list of complex numbers. The  points of the list Abs[f] are joined by a line. The area between the curve and the x-axis is colored at each point by Hue[Arg[f]/(2 Pi)]. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QListArgColorPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QListArgColorPlot"],
+
+Cell["QCombinedPlot", "Section",
+  CellTags->"QCombinedPlot"],
+
+Cell["\<\
+QCombinedPlot[{f[x],g[x]},{x,x0,x1},opts] works like QArgColorPlot with respect to f. The curve g is drawn in front of the QArgColorPlot of f. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QCombinedPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QCombinedPlot"],
+
+Cell["QListCombinedPlot", "Section",
+  CellTags->"QListCombinedPlot"],
+
+Cell["\<\
+QListCombinedPlot[{list,f[x]},{x,x0,x1},opts] works like QListArgColorPlot with respect to list. It is assumed that list represents the discretized values of a function defined on the interval [x0,x1]. The color list plot is then combined with an ordinary plot of f on the same scale and with the Ticks automatically adjusted. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QListCombinedPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QListCombinedPlot"],
+
+Cell["QSpinorPlot", "Section",
+  CellTags->"QSpinorPlot"],
+
+Cell["\<\
+QSpinorPlot[{func1,func2},{x,x0,x1},opts] provides a method to visualize C^2-valued functions (for example, spinor wavefunctions in quantum mechanics). The QSpinorPlot combines a QArgColorPlot of func1 with a QArgColorPlot of func2 (upside down, with less saturation) Both curves are plotted with the option QSquared->True (that is, a plot of the curve Abs[func]^2 is filled with a color describing the phase). In the background, a filled plot of Abs[func1]^2 + Abs[func2]^2 displays the corresponding density. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QSpinorPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSpinorPlot"],
+
+Cell["QListSpinorPlot", "Section",
+  CellTags->"QListSpinorPlot"],
+
+Cell["\<\
+QListSpinorPlot[list,opts] visualizes a spinor-valued list of complex numbers. Each element of list is a C^-vector, that is, list = {{z11,z12},{z21,z22},...}. Alternatively, list = {list1,list2} with two lists of complex numbers, list1 giving the upper component of the spinor-valued wave function, and list2 giving the lower component. The lower component is plotted upside down with less saturation. See also the description of QSpinorPlot. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QListSpinorPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QListSpinorPlot"],
+
+Cell["QSpinorCombinedPlot", "Section",
+  CellTags->"QSpinorCombinedPlot"],
+
+Cell["\<\
+QSpinorCombinedPlot[{func1,func2},{x,x0,x1},opts] combines a QSpinorPlot of func1 with an ordinary Plot of a real-valued function func2. See the description of QCombinedPlot and of QSpinorPlot. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QSpinorCombinedPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSpinorCombinedPlot"],
+
+Cell["QListSpinorCombinedPlot", "Section",
+  CellTags->"QListSpinorCombinedPlot"],
+
+Cell["\<\
+QListSpinorCombinedPlot[{list,f[x]},{x,x0,x1},opts] combines a QListSpinorPlot of list1 with an ordinary Plot  of a real-valued function f. See the description of QListCombinedPlot and of QListSpinorPlot. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QListSpinorCombinedPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QListSpinorCombinedPlot"],
+
+Cell["QNiceTicks", "Section",
+  CellTags->"QNiceTicks"],
+
+Cell["\<\
+QNiceTicks[xmin,xmax,dx] provides a list of nice positions for use in the Ticks or FrameTicks option in a ListPlot, where it is assumed that the list of values ranges between xmin and xmax in steps dx. Package: VQM`ArgColorPlot`\
+\>", "Usage",
+  CellTags->"QNiceTicks"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ArgColorPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QNiceTicks"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "QArgColorPlot"->{
+    Cell[1754, 51, 61, 1, 70, "Section",
+      CellTags->"QArgColorPlot"],
+    Cell[1818, 54, 448, 3, 70, "Usage",
+      CellTags->"QArgColorPlot"],
+    Cell[2269, 59, 167, 5, 70, "Text",
+      CellTags->"QArgColorPlot"]},
+  "QListArgColorPlot"->{
+    Cell[2439, 66, 69, 1, 70, "Section",
+      CellTags->"QListArgColorPlot"],
+    Cell[2511, 69, 317, 3, 70, "Usage",
+      CellTags->"QListArgColorPlot"],
+    Cell[2831, 74, 171, 5, 70, "Text",
+      CellTags->"QListArgColorPlot"]},
+  "QCombinedPlot"->{
+    Cell[3005, 81, 61, 1, 70, "Section",
+      CellTags->"QCombinedPlot"],
+    Cell[3069, 84, 223, 3, 70, "Usage",
+      CellTags->"QCombinedPlot"],
+    Cell[3295, 89, 167, 5, 70, "Text",
+      CellTags->"QCombinedPlot"]},
+  "QListCombinedPlot"->{
+    Cell[3465, 96, 69, 1, 70, "Section",
+      CellTags->"QListCombinedPlot"],
+    Cell[3537, 99, 411, 3, 70, "Usage",
+      CellTags->"QListCombinedPlot"],
+    Cell[3951, 104, 171, 5, 70, "Text",
+      CellTags->"QListCombinedPlot"]},
+  "QSpinorPlot"->{
+    Cell[4125, 111, 57, 1, 70, "Section",
+      CellTags->"QSpinorPlot"],
+    Cell[4185, 114, 589, 3, 70, "Usage",
+      CellTags->"QSpinorPlot"],
+    Cell[4777, 119, 165, 5, 70, "Text",
+      CellTags->"QSpinorPlot"]},
+  "QListSpinorPlot"->{
+    Cell[4945, 126, 65, 1, 70, "Section",
+      CellTags->"QListSpinorPlot"],
+    Cell[5013, 129, 525, 3, 70, "Usage",
+      CellTags->"QListSpinorPlot"],
+    Cell[5541, 134, 169, 5, 70, "Text",
+      CellTags->"QListSpinorPlot"]},
+  "QSpinorCombinedPlot"->{
+    Cell[5713, 141, 73, 1, 70, "Section",
+      CellTags->"QSpinorCombinedPlot"],
+    Cell[5789, 144, 280, 3, 70, "Usage",
+      CellTags->"QSpinorCombinedPlot"],
+    Cell[6072, 149, 173, 5, 70, "Text",
+      CellTags->"QSpinorCombinedPlot"]},
+  "QListSpinorCombinedPlot"->{
+    Cell[6248, 156, 81, 1, 70, "Section",
+      CellTags->"QListSpinorCombinedPlot"],
+    Cell[6332, 159, 295, 3, 70, "Usage",
+      CellTags->"QListSpinorCombinedPlot"],
+    Cell[6630, 164, 177, 5, 70, "Text",
+      CellTags->"QListSpinorCombinedPlot"]},
+  "QNiceTicks"->{
+    Cell[6810, 171, 55, 1, 70, "Section",
+      CellTags->"QNiceTicks"],
+    Cell[6868, 174, 279, 3, 70, "Usage",
+      CellTags->"QNiceTicks"],
+    Cell[7150, 179, 164, 5, 70, "Text",
+      CellTags->"QNiceTicks"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"QArgColorPlot", 7872, 200},
+  {"QListArgColorPlot", 8120, 207},
+  {"QCombinedPlot", 8376, 214},
+  {"QListCombinedPlot", 8624, 221},
+  {"QSpinorPlot", 8879, 228},
+  {"QListSpinorPlot", 9122, 235},
+  {"QSpinorCombinedPlot", 9381, 242},
+  {"QListSpinorCombinedPlot", 9656, 249},
+  {"QNiceTicks", 9930, 256}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 61, 1, 70, "Section",
+  CellTags->"QArgColorPlot"],
+Cell[1818, 54, 448, 3, 70, "Usage",
+  CellTags->"QArgColorPlot"],
+Cell[2269, 59, 167, 5, 70, "Text",
+  CellTags->"QArgColorPlot"],
+Cell[2439, 66, 69, 1, 70, "Section",
+  CellTags->"QListArgColorPlot"],
+Cell[2511, 69, 317, 3, 70, "Usage",
+  CellTags->"QListArgColorPlot"],
+Cell[2831, 74, 171, 5, 70, "Text",
+  CellTags->"QListArgColorPlot"],
+Cell[3005, 81, 61, 1, 70, "Section",
+  CellTags->"QCombinedPlot"],
+Cell[3069, 84, 223, 3, 70, "Usage",
+  CellTags->"QCombinedPlot"],
+Cell[3295, 89, 167, 5, 70, "Text",
+  CellTags->"QCombinedPlot"],
+Cell[3465, 96, 69, 1, 70, "Section",
+  CellTags->"QListCombinedPlot"],
+Cell[3537, 99, 411, 3, 70, "Usage",
+  CellTags->"QListCombinedPlot"],
+Cell[3951, 104, 171, 5, 70, "Text",
+  CellTags->"QListCombinedPlot"],
+Cell[4125, 111, 57, 1, 70, "Section",
+  CellTags->"QSpinorPlot"],
+Cell[4185, 114, 589, 3, 70, "Usage",
+  CellTags->"QSpinorPlot"],
+Cell[4777, 119, 165, 5, 70, "Text",
+  CellTags->"QSpinorPlot"],
+Cell[4945, 126, 65, 1, 70, "Section",
+  CellTags->"QListSpinorPlot"],
+Cell[5013, 129, 525, 3, 70, "Usage",
+  CellTags->"QListSpinorPlot"],
+Cell[5541, 134, 169, 5, 70, "Text",
+  CellTags->"QListSpinorPlot"],
+Cell[5713, 141, 73, 1, 70, "Section",
+  CellTags->"QSpinorCombinedPlot"],
+Cell[5789, 144, 280, 3, 70, "Usage",
+  CellTags->"QSpinorCombinedPlot"],
+Cell[6072, 149, 173, 5, 70, "Text",
+  CellTags->"QSpinorCombinedPlot"],
+Cell[6248, 156, 81, 1, 70, "Section",
+  CellTags->"QListSpinorCombinedPlot"],
+Cell[6332, 159, 295, 3, 70, "Usage",
+  CellTags->"QListSpinorCombinedPlot"],
+Cell[6630, 164, 177, 5, 70, "Text",
+  CellTags->"QListSpinorCombinedPlot"],
+Cell[6810, 171, 55, 1, 70, "Section",
+  CellTags->"QNiceTicks"],
+Cell[6868, 174, 279, 3, 70, "Usage",
+  CellTags->"QNiceTicks"],
+Cell[7150, 179, 164, 5, 70, "Text",
+  CellTags->"QNiceTicks"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

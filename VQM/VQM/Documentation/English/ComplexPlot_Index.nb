@@ -1,0 +1,399 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     13308,        331]*)
+(*NotebookOutlinePosition[     14209,        362]*)
+(*  CellTagsIndexPosition[     14127,        356]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["ComplexPlot ", "Subsection",
+  CellTags->"VQM`ComplexPlot`"],
+
+Cell["\<\
+This package provides commands for visualizing complex-valued functions by generating two-dimensional QColorDensityGraphics, ContourGraphics and three dimensional SurfaceGraphics of complex-valued functions with a color code for complex numbers.\
+\>", "Text",
+  CellTags->"VQM`ComplexPlot`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                
+                StyleBox[\(QComplexPlot3D[
+                    f[x, y], {x, xmin, xmax}, {y, ymin, ymax}, 
+                    opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(generates\ a\ surface\ plot\ of\ a\ \
+complex - valued\ function\ f\ of\ two\ variables . \ 
+                        The\ height\ of\ the\ surface\ is\ given\ by\ \
+the\ absolute\ value, \ 
+                  the\ color\ is\ determined\ by\ the\ complex\ value\
+\ of\ f\ according\ to\ the\ option\ QComplexToColorMap . \ \(Package \
+: \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QListComplexPlot3D[array, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ SurfaceGraphics\ \
+from\ a\ two - dimensional\ array\ of\ complex\ numbers . \ 
+                        The\ height\ of\ the\ surface\ is\ given\ by\ \
+the\ absolute\ value, \ 
+                  the\ color\ is\ determined\ by\ the\ complex\ value\
+\ of\ f\ according\ to\ the\ option\ QComplexToColorMap . \ \(Package \
+: \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QComplexSurfacePlot[
+                    f[x, y], {x, xmin, xmax}, {y, ymin, ymax}, 
+                    opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ similar\ to\ \
+QListComplexPlot3D, \ 
+                  but\ with\ a\ ' 
+                      real\ surface\ look' . \ 
+                        The\ option\ QHighlights -> 
+                    On\ \((default)\)\ lets\ the\ surface\ appear\ \
+glossy . \ \(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QListComplexSurfacePlot[array, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ similar\ to\ \
+QListComplexPlot3D, \ 
+                  but\ with\ a\ ' 
+                      real\ surface\ look' . \ 
+                        The\ option\ QHighlights -> 
+                    On\ \((default)\)\ lets\ the\ surface\ appear\ \
+glossy . \ \(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QComplexDensityPlot[
+                    f[x, y], {x, xmin, xmax}, {y, ymin, ymax}, 
+                    opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ \
+QColorDensityGraphics\ of\ a\ complex - 
+                    valued\ function\ f\ of\ two\ variables\ x\ and\ \
+y . \ It\ is\ similar\ to\ DensityPlot . \ The\ complex\ value\ f[x, 
+                        y]\ is\ mapped\ one - to - 
+                    one\ to\ a\ color . \ 
+                        The\ color\ map\ is\ given\ by\ the\ option\ \
+QComplexToColorMap . \ 
+                        The\ default\ $QComplexToColorMap\ determines\
+\ the\ hue\ of\ the\ color\ from\ Arg[z], \ 
+                  and\ the\ lightness\ from\ Abs[
+                        z] . \ \(Package : \ \
+\(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QSpinorDensityPlot[{f, g}, \ {x, xmin, 
+                      xmax}, \ {y, ymin, ymax}, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(visualizes\ a\ C^2 - 
+                    valued\ function\ in\ two\ dimensions\ by\ \
+interlacing\ colored\ density\ plots\ of\ the\ components\ f\ and\ g \
+. \ Each\ ' 
+                      pixel'\ thus\ has\ an\ upper\ part\ with\ a\ \
+color\ corresponding\ to\ the\ complex\ value\ of\ the\ upper\ \
+component\ f, \ 
+                  and\ a\ lower\ part\ with\ a\ color\ corresponding\ \
+to\ the\ lower\ component\ g . \ \(Package : \ \(\(VQM`ComplexPlot`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QListComplexDensityPlot[array, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ a\ QColorDensityGraphics\ \
+of\ a\ two - dimensional\ array\ of\ complex\ numbers . \ 
+                        It\ is\ similar\ to\ ListDensityPlot . \ 
+                        Each\ complex\ number\ is\ mapped\ one - to - 
+                    one\ to\ a\ color . \ 
+                        The\ color\ map\ is\ determinded\ by\ the\ \
+option\ QComplexToColorMap . \ 
+                        
+                        The\ default\ $QComplexToColorMap\ determines\
+\ the\ hue\ of\ the\ color\ from\ Arg[z], \ 
+                  and\ the\ lightness\ from\ Abs[
+                        z] . \ \(Package : \ \
+\(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QComplexContourPlot[
+                    f[x, y], {x, xmin, xmax}, {y, ymin, ymax}, 
+                    opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(visualizes\ a\ complex - 
+                    valued\ function\ f\ of\ two\ variables\ x\ and\ \
+y . \ QComplexContourPlot\ combines\ a\ QColorDensityGraphics\ with\ \
+a\ ContourGraphics\ of\ the\ absolute\ value\ of\ f . \ \(Package : \ \
+\(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QListComplexContourPlot[array, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ \
+QColorDensityGraphics\ of\ a\ two - 
+                    dimensional\ array\ of\ complex\ numbers\ and\ \
+combines\ it\ with\ a\ ContourGraphics\ of\ Abs[
+                          array] . \ \(Package : \ \
+\(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QColorArrayPlot[list, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(makes\ a\ 2  
+                      D\ raster\ plot\ with\ colors\ given\ by\ list \
+. \ Here\ list\ is\ a\ two - 
+                    dimensional\ array\ of\ color\ directives . \ \
+\(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QColorDensityGraphics[absarray, 
+                    colorarray, {opts}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ representation\ of\ a\ two \
+- dimensional\ plot\ of\ an\ array\ of\ complex\ numbers . \ 
+                        It\ can\ be\ converted\ to\ SurfaceGraphics, \
+\ ContourGraphics, \ 
+                  DensityGraphics\ and\ Graphics\ objects . \ \
+\(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`ComplexPlot`"],
+
+Cell["This loads the package", "MathCaption"],
+
+Cell["<<VQM`ComplexPlot`", "Input"],
+
+Cell["This is an example", "MathCaption"],
+
+Cell[BoxData[{
+    \(msgonindet = Head[General::"\<indet\>"] =!= $Off; \), "\n", 
+    \(Off[Arg::"\<indet\>"]; \)}], "Input"],
+
+Cell[BoxData[
+    \(QComplexDensityPlot[
+      x + \[ImaginaryI]\ y, {x, \(-4\), 4}, {y, \(-4\), 4}]\)], "Input"],
+
+Cell[BoxData[
+    \(gr1 = 
+      QComplexDensityPlot[
+        Sin[x + \[ImaginaryI]\ y], {x, \(-\[Pi]\), \[Pi]}, {y, \
+\(-1\), 2.5}, Mesh \[Rule] False, PlotPoints \[Rule] 30]; \)], "Input"],
+
+Cell[BoxData[
+    \(Show[SurfaceGraphics[gr1], AspectRatio \[Rule] Automatic, 
+      Axes \[Rule] True, Mesh \[Rule] True]\)], "Input"],
+
+Cell[BoxData[
+    \(QComplexContourPlot[
+      x + \[ImaginaryI]\ y, {x, \(-4\), 4}, {y, \(-4\), 4}, 
+      QValueRange \[Rule] {2, 5}, PlotRange \[Rule] {0, 3}, 
+      Contours \[Rule] 5, ContourStyle \[Rule] GrayLevel[0.5]]\)], "Input"],
+
+Cell[BoxData[
+    \(QComplexContourPlot[
+      Zeta[x + \[ImaginaryI]\ y], {x, \(-0.7\), 2.5}, {y, \(-2\), 
+        42}, PlotPoints \[Rule] {10, 50}, 
+      PlotRange \[Rule] {\(-1.5\), 8}, Contours \[Rule] 8, 
+      AspectRatio \[Rule] 5]\)], "Input"],
+
+Cell[BoxData[{
+    \(myfunc[{y_, m_, c_}] := Hue[\(-2\)\ y, 1 - m, c]; \), "\n", 
+    \(collist = 
+      Table[myfunc[Mod[{x, x + y, x - y}, 1]], {y, 0, 1, 
+          1\/20. }, {x, 0, 1, 1\/20. }]; \), "\n", 
+    \(QColorArrayPlot[collist, Mesh \[Rule] False]\)}], "Input"],
+
+Cell[BoxData[{
+    \(lis = 
+      Table[N[Tan[x + \[ImaginaryI]\ y]], {y, \(-1. \), 1, 
+          0.1}, {x, \(-N[\[Pi]]\), \[Pi], N[\[Pi]]\/10}]; \), "\n", 
+    \(QListComplexDensityPlot[lis, 
+      MeshRange \[Rule] {{\(-\[Pi]\), \[Pi]}, {\(-1\), 1}}]\)}], "Input"],
+
+Cell[BoxData[
+    \(QComplexPlot3D[
+      2\ \[ExponentialE]\^\(\(-x\^2\) - y\^2 - 3\ \[ImaginaryI]\ x\)\ \
+Sin[x + \[ImaginaryI]\ y], {x, \(-1\), 1}, {y, \(-1\), 1}]\)], "Input"],
+
+Cell[BoxData[
+    \(f[x_, y_] := 
+      Which[Abs[x + \[ImaginaryI]\ y] > 1.1, Indeterminate, 
+        Abs[x + \[ImaginaryI]\ y] > 0.8, 0, 
+        Abs[x + \[ImaginaryI]\ y] > 0.5, ComplexInfinity, True, 
+        DirectedInfinity[x + \[ImaginaryI]\ y]]; \)], "Input"],
+
+Cell[BoxData[{
+    \(msgoncfsa = 
+      Head[CompiledFunction::"\<cfsa\>"] =!= $Off; \), "\n", 
+    \(msgonrealu = Head[Graphics::"\<realu\>"] =!= $Off; \), "\n", 
+    \(Off[CompiledFunction::"\<cfsa\>", Graphics::"\<realu\>"]; \)}], "Input"],
+
+Cell[BoxData[
+    \(QComplexDensityPlot[f[x, y], {x, \(-1\), 1}, {y, \(-1\), 1}, 
+      Compiled \[Rule] False, QLightnessRange \[Rule] {0.2, 0.8}]; \)], "Input"],
+
+Cell[BoxData[
+    \(QComplexDensityPlot[f[x, y], {x, \(-1\), 1}, {y, \(-1\), 1}, 
+      QValueChecking \[Rule] Off, Compiled \[Rule] False, 
+      QLightnessRange \[Rule] {0.2, 0.8}]; \)], "Input"],
+
+Cell[BoxData[{
+    \(If[msgoncfsa, On[CompiledFunction::"\<cfsa\>"]]; \), "\n", 
+    \(If[msgonrealu, On[Graphics::"\<realu\>"]]; \)}], "Input"],
+
+Cell[BoxData[{
+    \(arr = 
+      Table[\[ExponentialE]\^\(\[ImaginaryI]\ 3\ \((x + y)\) - x\^2 - \
+y\^2\) + \[ExponentialE]\^\(\(-\[ImaginaryI]\)\ 2\ \((x + y)\) - \((x \
+- 0.5)\)\^2 - \((y - 0.5)\)\^2\), {y, \(-3\), 3, 0.1}, {x, \(-3\), 3, 
+          0.1}]; \), "\n", 
+    \(QListComplexSurfacePlot[arr, PlotRange \[Rule] All, 
+      QSphereRadius \[Rule] 0.5, 
+      QLightnessRange \[Rule] {0.2, 1. }]; \)}], "Input"],
+
+Cell[BoxData[
+    \(QColorArrayPlot[
+      Table[QComplexToRGBColor[x + \[ImaginaryI]\ y], {y, \(-2. \), 
+          2, 0.2}, {x, \(-2. \), 2, 0.2}], Mesh \[Rule] False]\)], "Input"],
+
+Cell[BoxData[
+    \(QSpinorDensityPlot[{\[ExponentialE]\^\(\[ImaginaryI]\ x\), \
+\[ExponentialE]\^\(\[ImaginaryI]\ y\)}, {x, \(-\[Pi]\), \[Pi]}, {y, \
+\(-\[Pi]\), \[Pi]}, PlotPoints \[Rule] 20]\)], "Input"],
+
+Cell[BoxData[
+    \(If[msgonindet, On[Arg::"\<indet\>"]]; \)], "Input"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`ComplexPlot`"->{
+    Cell[1754, 51, 66, 1, 70, "Subsection",
+      CellTags->"VQM`ComplexPlot`"],
+    Cell[1823, 54, 301, 3, 70, "Text",
+      CellTags->"VQM`ComplexPlot`"],
+    Cell[2127, 59, 7331, 165, 70, "Text",
+      CellTags->"VQM`ComplexPlot`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`ComplexPlot`", 13865, 345}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 66, 1, 70, "Subsection",
+  CellTags->"VQM`ComplexPlot`"],
+Cell[1823, 54, 301, 3, 70, "Text",
+  CellTags->"VQM`ComplexPlot`"],
+Cell[2127, 59, 7331, 165, 70, "Text",
+  CellTags->"VQM`ComplexPlot`"],
+Cell[9461, 226, 45, 0, 70, "MathCaption"],
+Cell[9509, 228, 35, 0, 70, "Input"],
+Cell[9547, 230, 41, 0, 70, "MathCaption"],
+Cell[9591, 232, 125, 2, 70, "Input"],
+Cell[9719, 236, 113, 2, 70, "Input"],
+Cell[9835, 240, 190, 4, 70, "Input"],
+Cell[10028, 246, 135, 2, 70, "Input"],
+Cell[10166, 250, 238, 4, 70, "Input"],
+Cell[10407, 256, 252, 5, 70, "Input"],
+Cell[10662, 263, 273, 5, 70, "Input"],
+Cell[10938, 270, 266, 5, 70, "Input"],
+Cell[11207, 277, 179, 3, 70, "Input"],
+Cell[11389, 282, 267, 5, 70, "Input"],
+Cell[11659, 289, 242, 4, 70, "Input"],
+Cell[11904, 295, 162, 2, 70, "Input"],
+Cell[12069, 299, 197, 3, 70, "Input"],
+Cell[12269, 304, 144, 2, 70, "Input"],
+Cell[12416, 308, 421, 8, 70, "Input"],
+Cell[12840, 318, 181, 3, 70, "Input"],
+Cell[13024, 323, 206, 3, 70, "Input"],
+Cell[13233, 328, 71, 1, 70, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

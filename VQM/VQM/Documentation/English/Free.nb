@@ -1,0 +1,538 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12266,        311]*)
+(*NotebookOutlinePosition[     16886,        444]*)
+(*  CellTagsIndexPosition[     16384,        426]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["QFreeHamiltonian1D", "Section",
+  CellTags->"QFreeHamiltonian1D"],
+
+Cell["\<\
+QFreeHamiltonian1D[f[x],x, opts] applies the one-dimensional free Hamiltonian operator to the function f[x]. The option QFreeMass->m (default $QFreeMass=1) defines the mass of the particle (we use units with hbar = 1). Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QFreeHamiltonian1D"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QFreeMass",
+                    
+                    "InputForm"], \(QFreeMass\ is\ an\ option\ for\ \
+QFreeGaussian, \ QFreeHamiltonian1D . \ QFreeMass -> 
+                    m\ sets\ the\ mass\ of\ the\ particle\ to\ m . \ \
+\(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QFreeHamiltonian1D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFreeHamiltonian1D"],
+
+Cell["QFreeGaussian", "Section",
+  CellTags->"QFreeGaussian"],
+
+Cell["\<\
+QFreeGaussian[x,t,x0,p0,a,opts] is a solution of the free Schroedinger equation for a particle with mass m moving in n dimensions. In one dimension, the Schroedinger equation reads I D[psi[x,t],t] == -1/(2 m) D[psi[x,t],{x,2}]. The mass can be defined by setting the option QFreeMass->m (default value is $QFreeMass = 1). The space dimension n (the dimension of x) may be specified by the option QFreeSpaceDimension->n. It can be n = 1, 2, or 3 (default value is $QFreeSpaceDimension=1). The arguments x0,p0, and a must have the same dimension. The initial wave packet has a width determined by a, an average initial position given by x0 and an average momentum given by p0. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QFreeGaussian"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QFreeMass",
+                    
+                    "InputForm"], \(QFreeMass\ is\ an\ option\ for\ \
+QFreeGaussian, \ QFreeHamiltonian1D . \ QFreeMass -> 
+                    m\ sets\ the\ mass\ of\ the\ particle\ to\ m . \ \
+\(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)},
+                {
+                  FormBox["QFreeSpaceDimension",
+                    
+                    "InputForm"], \(QFreeSpaceDimension\ is\ an\ \
+option\ for\ QFreeGaussian . \ QFreeSpaceDimension -> 
+                      n\ \((n = 1, 2, 
+                          3)\)\ sets\ the\ space\ dimension\ to\ n . \
+\ Default\ is\ $QFreeSpaceDimension = 
+                    1. \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QFreeGaussian"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFreeGaussian"],
+
+Cell["QFreeGaussian1D", "Section",
+  CellTags->"QFreeGaussian1D"],
+
+Cell["\<\
+QFreeGaussian1D[x,t,x0,p0,a,m] is a solution of the one dimensional free Schroedinger equation for a particle with mass m. The particle has a Gaussian position and momentum distribution. The parameter a characterizes the width of the distribution, x0 is the average initial position, p0 is the average momentum. The arguments x0,p0,a,m may be omitted. Default values are x0=0, p0=0, a=1, m=1. The initial condition is QFreeGaussian1D[x,0,x0,p0,a,m]==QGaussian1D[x,x0,p0,a]. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QFreeGaussian1D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFreeGaussian1D"],
+
+Cell["QFreeGaussian2D", "Section",
+  CellTags->"QFreeGaussian2D"],
+
+Cell["\<\
+QFreeGaussian2D[x,y,t,x0,p0,a,m] is a solution of the two dimensional free Schroedinger equation for a particle with mass m. Here x0,p0,a are two dimensional lists. The particle has Gaussian position and momentum distributions. The parameter a={a1,a2} characterizes the width of the distribution in the x and y direction, x0={x01,x02} is the average initial position, p0={p01,p02} is the average momentum. Only the argument m is optional, default value is m=1. The initial condition is QFreeGaussian2D[x,y,0,x0,p0,a,m]==QGaussian2D[x,y,x0,p0,a]. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QFreeGaussian2D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFreeGaussian2D"],
+
+Cell["QFreeGaussian3D", "Section",
+  CellTags->"QFreeGaussian3D"],
+
+Cell["\<\
+QFreeGaussian3D[x,y,z,t,x0,p0,a,m] is a solution of the three dimensional free Schroedinger equation for a particle with mass m. The arguments x0,p0,a are three dimensional lists. The particle has Gaussian position and momentum distributions. The parameter a={a1,a2,a3} characterizes the width of the distribution in the x, y, and z direction, x0={x01,x02,x03} is the average initial position, p0={p01,p02,p03} is the average momentum. Only the argument m is optional, default value is m=1. The initial condition is QFreeGaussian3D[x,y,z,0,x0,p0,a,m]==QGaussian3D[x,y,z,x0,p0,a]. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QFreeGaussian3D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFreeGaussian3D"],
+
+Cell["QGaussian1D", "Section",
+  CellTags->"QGaussian1D"],
+
+Cell["\<\
+QGaussian1D[x,x0,p0,a] is a normalized Gaussian function in one dimension, centered at x0 in position space and at p0 in momentum space. The parameter a describes the width in position space. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QGaussian1D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGaussian1D"],
+
+Cell["QGaussian2D", "Section",
+  CellTags->"QGaussian2D"],
+
+Cell["\<\
+QGaussian2D[x,y,x0,p0,a] is a normalized Gaussian function in two dimensions, centered at x0={x01,x02} in position space and at p0={p01,p02} in momentum space. The parameter a = {a1,a2} describes the width in position space. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QGaussian2D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGaussian2D"],
+
+Cell["QGaussian3D", "Section",
+  CellTags->"QGaussian3D"],
+
+Cell["\<\
+QGaussian3D[x,y,z,x0,p0,a] is a normalized Gaussian function in three dimensions, centered at x0={x01,x02,x03} in position space and at p0={p01,p02,p03} in momentum space. The parameter a = {a1,a2,a3} describes the width in position space. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QGaussian3D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGaussian3D"],
+
+Cell["QFreeFourierGaussian1D", "Section",
+  CellTags->"QFreeFourierGaussian1D"],
+
+Cell["\<\
+QFreeFourierGaussian1D[p,t,x0,p0,a,m] is the Fourier transform of the function QFreeGaussian1D[x,t,x0,p0,a,m]. The arguments x0,p0,a,m are optional. Default values are x0=0, p0=0, a=1, m=1. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QFreeFourierGaussian1D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFreeFourierGaussian1D"],
+
+Cell["QFourierGaussian1D", "Section",
+  CellTags->"QFourierGaussian1D"],
+
+Cell["\<\
+QFourierGaussian1D[p,x0,p0,a] is the Fourier transform of the function QGaussian1D[x,x0,p0,a,m]. The parameter a describes the width in position space, that is, 1/a describes the width in Fourier space. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QFourierGaussian1D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFourierGaussian1D"],
+
+Cell["QEnergyGaussian1D", "Section",
+  CellTags->"QEnergyGaussian1D"],
+
+Cell["\<\
+QEnergyGaussian1D[En,x0,p0,a] is a normalized free Gaussian function in the energy representation. The mass of the particle is m=1 and the space dimension is 1. x0 is the average initial position and p0 is the average momentum of the Gaussian. The parameter a describes the width of the Gaussian in position space. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"QEnergyGaussian1D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QEnergyGaussian1D"],
+
+Cell["$QFreeMass", "Section",
+  CellTags->"$QFreeMass"],
+
+Cell["\<\
+$QFreeMass is the default value for the mass ($QFreeMass = 1) in the package Free.m. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"$QFreeMass"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"$QFreeMass"],
+
+Cell["$QFreeSpaceDimension", "Section",
+  CellTags->"$QFreeSpaceDimension"],
+
+Cell["\<\
+$QFreeSpaceDimension is the default value for the option QFreeSpaceDimension. This is the space dimension used for the solution QFreeGaussian of the free Schroedinger equation. Package: VQM`Free`.\
+\>", "Usage",
+  CellTags->"$QFreeSpaceDimension"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QFreeSpaceDimension",
+                    
+                    "InputForm"], \(QFreeSpaceDimension\ is\ an\ \
+option\ for\ QFreeGaussian . \ QFreeSpaceDimension -> 
+                      n\ \((n = 1, 2, 
+                          3)\)\ sets\ the\ space\ dimension\ to\ n . \
+\ Default\ is\ $QFreeSpaceDimension = 
+                    1. \ \(Package : \ \(\(VQM`Free`\)\(.\)\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"$QFreeSpaceDimension"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`Free`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"$QFreeSpaceDimension"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "QFreeHamiltonian1D"->{
+    Cell[1754, 51, 71, 1, 70, "Section",
+      CellTags->"QFreeHamiltonian1D"],
+    Cell[1828, 54, 297, 3, 70, "Usage",
+      CellTags->"QFreeHamiltonian1D"],
+    Cell[2128, 59, 604, 16, 70, "Text",
+      CellTags->"QFreeHamiltonian1D"],
+    Cell[2735, 77, 164, 5, 70, "Text",
+      CellTags->"QFreeHamiltonian1D"]},
+  "QFreeGaussian"->{
+    Cell[2902, 84, 61, 1, 70, "Section",
+      CellTags->"QFreeGaussian"],
+    Cell[2966, 87, 748, 3, 70, "Usage",
+      CellTags->"QFreeGaussian"],
+    Cell[3717, 92, 1026, 25, 70, "Text",
+      CellTags->"QFreeGaussian"],
+    Cell[4746, 119, 159, 5, 70, "Text",
+      CellTags->"QFreeGaussian"]},
+  "QFreeGaussian1D"->{
+    Cell[4908, 126, 65, 1, 70, "Section",
+      CellTags->"QFreeGaussian1D"],
+    Cell[4976, 129, 549, 3, 70, "Usage",
+      CellTags->"QFreeGaussian1D"],
+    Cell[5528, 134, 161, 5, 70, "Text",
+      CellTags->"QFreeGaussian1D"]},
+  "QFreeGaussian2D"->{
+    Cell[5692, 141, 65, 1, 70, "Section",
+      CellTags->"QFreeGaussian2D"],
+    Cell[5760, 144, 621, 3, 70, "Usage",
+      CellTags->"QFreeGaussian2D"],
+    Cell[6384, 149, 161, 5, 70, "Text",
+      CellTags->"QFreeGaussian2D"]},
+  "QFreeGaussian3D"->{
+    Cell[6548, 156, 65, 1, 70, "Section",
+      CellTags->"QFreeGaussian3D"],
+    Cell[6616, 159, 655, 3, 70, "Usage",
+      CellTags->"QFreeGaussian3D"],
+    Cell[7274, 164, 161, 5, 70, "Text",
+      CellTags->"QFreeGaussian3D"]},
+  "QGaussian1D"->{
+    Cell[7438, 171, 57, 1, 70, "Section",
+      CellTags->"QGaussian1D"],
+    Cell[7498, 174, 263, 3, 70, "Usage",
+      CellTags->"QGaussian1D"],
+    Cell[7764, 179, 157, 5, 70, "Text",
+      CellTags->"QGaussian1D"]},
+  "QGaussian2D"->{
+    Cell[7924, 186, 57, 1, 70, "Section",
+      CellTags->"QGaussian2D"],
+    Cell[7984, 189, 296, 3, 70, "Usage",
+      CellTags->"QGaussian2D"],
+    Cell[8283, 194, 157, 5, 70, "Text",
+      CellTags->"QGaussian2D"]},
+  "QGaussian3D"->{
+    Cell[8443, 201, 57, 1, 70, "Section",
+      CellTags->"QGaussian3D"],
+    Cell[8503, 204, 311, 3, 70, "Usage",
+      CellTags->"QGaussian3D"],
+    Cell[8817, 209, 157, 5, 70, "Text",
+      CellTags->"QGaussian3D"]},
+  "QFreeFourierGaussian1D"->{
+    Cell[8977, 216, 79, 1, 70, "Section",
+      CellTags->"QFreeFourierGaussian1D"],
+    Cell[9059, 219, 272, 3, 70, "Usage",
+      CellTags->"QFreeFourierGaussian1D"],
+    Cell[9334, 224, 168, 5, 70, "Text",
+      CellTags->"QFreeFourierGaussian1D"]},
+  "QFourierGaussian1D"->{
+    Cell[9505, 231, 71, 1, 70, "Section",
+      CellTags->"QFourierGaussian1D"],
+    Cell[9579, 234, 281, 3, 70, "Usage",
+      CellTags->"QFourierGaussian1D"],
+    Cell[9863, 239, 164, 5, 70, "Text",
+      CellTags->"QFourierGaussian1D"]},
+  "QEnergyGaussian1D"->{
+    Cell[10030, 246, 69, 1, 70, "Section",
+      CellTags->"QEnergyGaussian1D"],
+    Cell[10102, 249, 392, 3, 70, "Usage",
+      CellTags->"QEnergyGaussian1D"],
+    Cell[10497, 254, 163, 5, 70, "Text",
+      CellTags->"QEnergyGaussian1D"]},
+  "$QFreeMass"->{
+    Cell[10663, 261, 55, 1, 70, "Section",
+      CellTags->"$QFreeMass"],
+    Cell[10721, 264, 155, 3, 70, "Usage",
+      CellTags->"$QFreeMass"],
+    Cell[10879, 269, 156, 5, 70, "Text",
+      CellTags->"$QFreeMass"]},
+  "$QFreeSpaceDimension"->{
+    Cell[11038, 276, 75, 1, 70, "Section",
+      CellTags->"$QFreeSpaceDimension"],
+    Cell[11116, 279, 257, 3, 70, "Usage",
+      CellTags->"$QFreeSpaceDimension"],
+    Cell[11376, 284, 717, 18, 70, "Text",
+      CellTags->"$QFreeSpaceDimension"],
+    Cell[12096, 304, 166, 5, 70, "Text",
+      CellTags->"$QFreeSpaceDimension"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"QFreeHamiltonian1D", 12825, 325},
+  {"QFreeGaussian", 13163, 334},
+  {"QFreeGaussian1D", 13485, 343},
+  {"QFreeGaussian2D", 13740, 350},
+  {"QFreeGaussian3D", 13995, 357},
+  {"QGaussian1D", 14246, 364},
+  {"QGaussian2D", 14485, 371},
+  {"QGaussian3D", 14724, 378},
+  {"QFreeFourierGaussian1D", 14974, 385},
+  {"QFourierGaussian1D", 15253, 392},
+  {"QEnergyGaussian1D", 15519, 399},
+  {"$QFreeMass", 15778, 406},
+  {"$QFreeSpaceDimension", 16026, 413}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 71, 1, 70, "Section",
+  CellTags->"QFreeHamiltonian1D"],
+Cell[1828, 54, 297, 3, 70, "Usage",
+  CellTags->"QFreeHamiltonian1D"],
+Cell[2128, 59, 604, 16, 70, "Text",
+  CellTags->"QFreeHamiltonian1D"],
+Cell[2735, 77, 164, 5, 70, "Text",
+  CellTags->"QFreeHamiltonian1D"],
+Cell[2902, 84, 61, 1, 70, "Section",
+  CellTags->"QFreeGaussian"],
+Cell[2966, 87, 748, 3, 70, "Usage",
+  CellTags->"QFreeGaussian"],
+Cell[3717, 92, 1026, 25, 70, "Text",
+  CellTags->"QFreeGaussian"],
+Cell[4746, 119, 159, 5, 70, "Text",
+  CellTags->"QFreeGaussian"],
+Cell[4908, 126, 65, 1, 70, "Section",
+  CellTags->"QFreeGaussian1D"],
+Cell[4976, 129, 549, 3, 70, "Usage",
+  CellTags->"QFreeGaussian1D"],
+Cell[5528, 134, 161, 5, 70, "Text",
+  CellTags->"QFreeGaussian1D"],
+Cell[5692, 141, 65, 1, 70, "Section",
+  CellTags->"QFreeGaussian2D"],
+Cell[5760, 144, 621, 3, 70, "Usage",
+  CellTags->"QFreeGaussian2D"],
+Cell[6384, 149, 161, 5, 70, "Text",
+  CellTags->"QFreeGaussian2D"],
+Cell[6548, 156, 65, 1, 70, "Section",
+  CellTags->"QFreeGaussian3D"],
+Cell[6616, 159, 655, 3, 70, "Usage",
+  CellTags->"QFreeGaussian3D"],
+Cell[7274, 164, 161, 5, 70, "Text",
+  CellTags->"QFreeGaussian3D"],
+Cell[7438, 171, 57, 1, 70, "Section",
+  CellTags->"QGaussian1D"],
+Cell[7498, 174, 263, 3, 70, "Usage",
+  CellTags->"QGaussian1D"],
+Cell[7764, 179, 157, 5, 70, "Text",
+  CellTags->"QGaussian1D"],
+Cell[7924, 186, 57, 1, 70, "Section",
+  CellTags->"QGaussian2D"],
+Cell[7984, 189, 296, 3, 70, "Usage",
+  CellTags->"QGaussian2D"],
+Cell[8283, 194, 157, 5, 70, "Text",
+  CellTags->"QGaussian2D"],
+Cell[8443, 201, 57, 1, 70, "Section",
+  CellTags->"QGaussian3D"],
+Cell[8503, 204, 311, 3, 70, "Usage",
+  CellTags->"QGaussian3D"],
+Cell[8817, 209, 157, 5, 70, "Text",
+  CellTags->"QGaussian3D"],
+Cell[8977, 216, 79, 1, 70, "Section",
+  CellTags->"QFreeFourierGaussian1D"],
+Cell[9059, 219, 272, 3, 70, "Usage",
+  CellTags->"QFreeFourierGaussian1D"],
+Cell[9334, 224, 168, 5, 70, "Text",
+  CellTags->"QFreeFourierGaussian1D"],
+Cell[9505, 231, 71, 1, 70, "Section",
+  CellTags->"QFourierGaussian1D"],
+Cell[9579, 234, 281, 3, 70, "Usage",
+  CellTags->"QFourierGaussian1D"],
+Cell[9863, 239, 164, 5, 70, "Text",
+  CellTags->"QFourierGaussian1D"],
+Cell[10030, 246, 69, 1, 70, "Section",
+  CellTags->"QEnergyGaussian1D"],
+Cell[10102, 249, 392, 3, 70, "Usage",
+  CellTags->"QEnergyGaussian1D"],
+Cell[10497, 254, 163, 5, 70, "Text",
+  CellTags->"QEnergyGaussian1D"],
+Cell[10663, 261, 55, 1, 70, "Section",
+  CellTags->"$QFreeMass"],
+Cell[10721, 264, 155, 3, 70, "Usage",
+  CellTags->"$QFreeMass"],
+Cell[10879, 269, 156, 5, 70, "Text",
+  CellTags->"$QFreeMass"],
+Cell[11038, 276, 75, 1, 70, "Section",
+  CellTags->"$QFreeSpaceDimension"],
+Cell[11116, 279, 257, 3, 70, "Usage",
+  CellTags->"$QFreeSpaceDimension"],
+Cell[11376, 284, 717, 18, 70, "Text",
+  CellTags->"$QFreeSpaceDimension"],
+Cell[12096, 304, 166, 5, 70, "Text",
+  CellTags->"$QFreeSpaceDimension"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

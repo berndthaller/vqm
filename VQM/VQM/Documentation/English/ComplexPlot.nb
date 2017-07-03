@@ -1,0 +1,535 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     13211,        332]*)
+(*NotebookOutlinePosition[     17571,        451]*)
+(*  CellTagsIndexPosition[     17093,        435]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["QComplexPlot3D", "Section",
+  CellTags->"QComplexPlot3D"],
+
+Cell["\<\
+QComplexPlot3D[f[x,y],{x,xmin,xmax},{y,ymin,ymax},opts]generates a surface plot of a complex-valued function f of two variables. The height of the surface is given by the absolute value, the color is determined by the complex value of f according to the option QComplexToColorMap. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QComplexPlot3D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QComplexPlot3D"],
+
+Cell["QListComplexPlot3D", "Section",
+  CellTags->"QListComplexPlot3D"],
+
+Cell["\<\
+QListComplexPlot3D[array,opts] generates a SurfaceGraphics from a two-dimensional array of complex numbers. The height of the surface is given by the absolute value, the color is determined by the complex value of f according to the option QComplexToColorMap. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QListComplexPlot3D"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QListComplexPlot3D"],
+
+Cell["QComplexSurfacePlot", "Section",
+  CellTags->"QComplexSurfacePlot"],
+
+Cell["\<\
+QComplexSurfacePlot[f[x,y],{x,xmin,xmax},{y,ymin,ymax},opts] is similar to QListComplexPlot3D, but with a 'real surface look'. The option QHighlights->On (default) lets the surface appear glossy. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QComplexSurfacePlot"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QHighlights",
+                    
+                    "InputForm"], \(QHighlights\ is\ an\ option\ for\ \
+QComplexSurfacePlot\ and\ QListComplexSurfacePlot . \ QHighlights -> 
+                    On\ \((default)\)\ lets\ the\ surface\ appear\ \
+glossy . \ \(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QComplexSurfacePlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QComplexSurfacePlot"],
+
+Cell["QListComplexSurfacePlot", "Section",
+  CellTags->"QListComplexSurfacePlot"],
+
+Cell["\<\
+QListComplexSurfacePlot[array,opts] is similar to QListComplexPlot3D, but with a 'real surface look'. The option QHighlights->On (default) lets the surface appear glossy. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QListComplexSurfacePlot"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QHighlights",
+                    
+                    "InputForm"], \(QHighlights\ is\ an\ option\ for\ \
+QComplexSurfacePlot\ and\ QListComplexSurfacePlot . \ QHighlights -> 
+                    On\ \((default)\)\ lets\ the\ surface\ appear\ \
+glossy . \ \(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QListComplexSurfacePlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QListComplexSurfacePlot"],
+
+Cell["QComplexDensityPlot", "Section",
+  CellTags->"QComplexDensityPlot"],
+
+Cell["\<\
+QComplexDensityPlot[f[x,y],{x,xmin,xmax},{y,ymin,ymax},opts] generates a QColorDensityGraphics of a complex-valued function f of two variables x and y. It is similar to DensityPlot. The complex value f[x,y] is mapped one-to-one to a color. The color map is given by the option QComplexToColorMap. The default $QComplexToColorMap determines the hue of the color from Arg[z], and the lightness from Abs[z]. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QComplexDensityPlot"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QScaledValues",
+                    
+                    "InputForm"], \(QScaledValues\ is\ an\ option\ \
+for\ QComplexDensityPlot\ and\ QComplexContourPlot . \ 
+                      It\ has\ no\ effect\ on\ the\ Plot3D\ commands \
+. \ If\ QScaledValues\ is\ set\ to\ True, \ 
+                  then\ all\ values\ are\ scaled\ so\ that\ the\ \
+maximal\ absolute\ value\ is\ $MaxAbsValue\ \((\(=\)\(1\ by\ \
+default\))\) . \ \(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)},
+                {
+                  FormBox["QValueChecking",
+                    
+                    "InputForm"], \(QValueChecking\ is\ an\ option\ \
+for\ QComplexDensityPlot\ and\ QComplexContourPlot . \ 
+                      It\ has\ no\ effect\ on\ the\ Plot3D\ commands \
+. \ The\ complex\ values\ 0\ and\ ComplexInfinity\ have\ no\ well\ \
+defined\ color, \ in\ particular\ when\ QLightnessRange\ is\ {lmin, 
+                        lmax}\ instead\ of\ {0, 1} . \ 
+                        The\ default\ QValueChecking -> 
+                    On\ plots\ 0\ as\ GrayLevel[lmin], \ 
+                  ComplexInfinity\ as\ GrayLevel[
+                      lmax]\ and\ Indeterminate\ values\ in\ an\ \
+intermediate\ gray\ level . \ 
+                      For\ slightly\ better\ performance\ in\ the\ \
+case\ that\ there\ are\ no\ exceptional\ points, \ 
+                  use\ the\ setting\ QValueChecking -> 
+                    Off . \ \(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\
+\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QComplexDensityPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QComplexDensityPlot"],
+
+Cell["QSpinorDensityPlot", "Section",
+  CellTags->"QSpinorDensityPlot"],
+
+Cell["\<\
+QSpinorDensityPlot[{f,g}, {x,xmin,xmax}, {y,ymin,ymax}, opts] visualizes a C^2-valued function in two dimensions by interlacing colored density plots of the components f and g. Each 'pixel' thus has an upper part with a color corresponding to the complex value of the upper component f, and a lower part with a color corresponding to the lower component g. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QSpinorDensityPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSpinorDensityPlot"],
+
+Cell["QListComplexDensityPlot", "Section",
+  CellTags->"QListComplexDensityPlot"],
+
+Cell["\<\
+QListComplexDensityPlot[array,opts] gives a QColorDensityGraphics of a two-dimensional array of complex numbers. It is similar to ListDensityPlot. Each complex number is mapped one-to-one to a color. The color map is determinded by the option QComplexToColorMap. The default $QComplexToColorMap determines the hue of the color from Arg[z], and the lightness from Abs[z]. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QListComplexDensityPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QListComplexDensityPlot"],
+
+Cell["QComplexContourPlot", "Section",
+  CellTags->"QComplexContourPlot"],
+
+Cell["\<\
+QComplexContourPlot[f[x,y],{x,xmin,xmax},{y,ymin,ymax},opts] visualizes a complex-valued function f of two variables x and y. QComplexContourPlot combines a QColorDensityGraphics with a ContourGraphics of the absolute value of f. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QComplexContourPlot"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QScaledValues",
+                    
+                    "InputForm"], \(QScaledValues\ is\ an\ option\ \
+for\ QComplexDensityPlot\ and\ QComplexContourPlot . \ 
+                      It\ has\ no\ effect\ on\ the\ Plot3D\ commands \
+. \ If\ QScaledValues\ is\ set\ to\ True, \ 
+                  then\ all\ values\ are\ scaled\ so\ that\ the\ \
+maximal\ absolute\ value\ is\ $MaxAbsValue\ \((\(=\)\(1\ by\ \
+default\))\) . \ \(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\)\)\)},
+                {
+                  FormBox["QValueChecking",
+                    
+                    "InputForm"], \(QValueChecking\ is\ an\ option\ \
+for\ QComplexDensityPlot\ and\ QComplexContourPlot . \ 
+                      It\ has\ no\ effect\ on\ the\ Plot3D\ commands \
+. \ The\ complex\ values\ 0\ and\ ComplexInfinity\ have\ no\ well\ \
+defined\ color, \ in\ particular\ when\ QLightnessRange\ is\ {lmin, 
+                        lmax}\ instead\ of\ {0, 1} . \ 
+                        The\ default\ QValueChecking -> 
+                    On\ plots\ 0\ as\ GrayLevel[lmin], \ 
+                  ComplexInfinity\ as\ GrayLevel[
+                      lmax]\ and\ Indeterminate\ values\ in\ an\ \
+intermediate\ gray\ level . \ 
+                      For\ slightly\ better\ performance\ in\ the\ \
+case\ that\ there\ are\ no\ exceptional\ points, \ 
+                  use\ the\ setting\ QValueChecking -> 
+                    Off . \ \(Package : \ \(\(VQM`ComplexPlot`\)\(.\)\
+\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QComplexContourPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QComplexContourPlot"],
+
+Cell["QListComplexContourPlot", "Section",
+  CellTags->"QListComplexContourPlot"],
+
+Cell["\<\
+QListComplexContourPlot[array,opts] generates a QColorDensityGraphics of a two-dimensional array of complex numbers and combines it with a ContourGraphics of Abs[array]. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QListComplexContourPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QListComplexContourPlot"],
+
+Cell["QColorArrayPlot", "Section",
+  CellTags->"QColorArrayPlot"],
+
+Cell["\<\
+QColorArrayPlot[list, opts] makes a 2D raster plot with colors given by list. Here list is a two-dimensional array of color directives. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QColorArrayPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QColorArrayPlot"],
+
+Cell["QColorDensityGraphics", "Section",
+  CellTags->"QColorDensityGraphics"],
+
+Cell["\<\
+QColorDensityGraphics[absarray,colorarray,{opts}] is a representation of a two-dimensional plot of an array of complex numbers. It can be converted to SurfaceGraphics, ContourGraphics, DensityGraphics and Graphics objects. Package: VQM`ComplexPlot`.\
+\>", "Usage",
+  CellTags->"QColorDensityGraphics"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ComplexPlot`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QColorDensityGraphics"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "QComplexPlot3D"->{
+    Cell[1754, 51, 63, 1, 70, "Section",
+      CellTags->"QComplexPlot3D"],
+    Cell[1820, 54, 362, 3, 70, "Usage",
+      CellTags->"QComplexPlot3D"],
+    Cell[2185, 59, 167, 5, 70, "Text",
+      CellTags->"QComplexPlot3D"]},
+  "QListComplexPlot3D"->{
+    Cell[2355, 66, 71, 1, 70, "Section",
+      CellTags->"QListComplexPlot3D"],
+    Cell[2429, 69, 345, 3, 70, "Usage",
+      CellTags->"QListComplexPlot3D"],
+    Cell[2777, 74, 171, 5, 70, "Text",
+      CellTags->"QListComplexPlot3D"]},
+  "QComplexSurfacePlot"->{
+    Cell[2951, 81, 73, 1, 70, "Section",
+      CellTags->"QComplexSurfacePlot"],
+    Cell[3027, 84, 282, 3, 70, "Usage",
+      CellTags->"QComplexSurfacePlot"],
+    Cell[3312, 89, 641, 16, 70, "Text",
+      CellTags->"QComplexSurfacePlot"],
+    Cell[3956, 107, 172, 5, 70, "Text",
+      CellTags->"QComplexSurfacePlot"]},
+  "QListComplexSurfacePlot"->{
+    Cell[4131, 114, 81, 1, 70, "Section",
+      CellTags->"QListComplexSurfacePlot"],
+    Cell[4215, 117, 261, 3, 70, "Usage",
+      CellTags->"QListComplexSurfacePlot"],
+    Cell[4479, 122, 645, 16, 70, "Text",
+      CellTags->"QListComplexSurfacePlot"],
+    Cell[5127, 140, 176, 5, 70, "Text",
+      CellTags->"QListComplexSurfacePlot"]},
+  "QComplexDensityPlot"->{
+    Cell[5306, 147, 73, 1, 70, "Section",
+      CellTags->"QComplexDensityPlot"],
+    Cell[5382, 150, 491, 3, 70, "Usage",
+      CellTags->"QComplexDensityPlot"],
+    Cell[5876, 155, 1803, 38, 70, "Text",
+      CellTags->"QComplexDensityPlot"],
+    Cell[7682, 195, 172, 5, 70, "Text",
+      CellTags->"QComplexDensityPlot"]},
+  "QSpinorDensityPlot"->{
+    Cell[7857, 202, 71, 1, 70, "Section",
+      CellTags->"QSpinorDensityPlot"],
+    Cell[7931, 205, 442, 3, 70, "Usage",
+      CellTags->"QSpinorDensityPlot"],
+    Cell[8376, 210, 171, 5, 70, "Text",
+      CellTags->"QSpinorDensityPlot"]},
+  "QListComplexDensityPlot"->{
+    Cell[8550, 217, 81, 1, 70, "Section",
+      CellTags->"QListComplexDensityPlot"],
+    Cell[8634, 220, 461, 3, 70, "Usage",
+      CellTags->"QListComplexDensityPlot"],
+    Cell[9098, 225, 176, 5, 70, "Text",
+      CellTags->"QListComplexDensityPlot"]},
+  "QComplexContourPlot"->{
+    Cell[9277, 232, 73, 1, 70, "Section",
+      CellTags->"QComplexContourPlot"],
+    Cell[9353, 235, 316, 3, 70, "Usage",
+      CellTags->"QComplexContourPlot"],
+    Cell[9672, 240, 1803, 38, 70, "Text",
+      CellTags->"QComplexContourPlot"],
+    Cell[11478, 280, 172, 5, 70, "Text",
+      CellTags->"QComplexContourPlot"]},
+  "QListComplexContourPlot"->{
+    Cell[11653, 287, 81, 1, 70, "Section",
+      CellTags->"QListComplexContourPlot"],
+    Cell[11737, 290, 260, 3, 70, "Usage",
+      CellTags->"QListComplexContourPlot"],
+    Cell[12000, 295, 176, 5, 70, "Text",
+      CellTags->"QListComplexContourPlot"]},
+  "QColorArrayPlot"->{
+    Cell[12179, 302, 65, 1, 70, "Section",
+      CellTags->"QColorArrayPlot"],
+    Cell[12247, 305, 218, 3, 70, "Usage",
+      CellTags->"QColorArrayPlot"],
+    Cell[12468, 310, 168, 5, 70, "Text",
+      CellTags->"QColorArrayPlot"]},
+  "QColorDensityGraphics"->{
+    Cell[12639, 317, 77, 1, 70, "Section",
+      CellTags->"QColorDensityGraphics"],
+    Cell[12719, 320, 311, 3, 70, "Usage",
+      CellTags->"QColorDensityGraphics"],
+    Cell[13033, 325, 174, 5, 70, "Text",
+      CellTags->"QColorDensityGraphics"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"QComplexPlot3D", 13766, 346},
+  {"QListComplexPlot3D", 14018, 353},
+  {"QComplexSurfacePlot", 14283, 360},
+  {"QListComplexSurfacePlot", 14636, 369},
+  {"QComplexDensityPlot", 15004, 378},
+  {"QSpinorDensityPlot", 15356, 387},
+  {"QListComplexDensityPlot", 15628, 394},
+  {"QComplexContourPlot", 15911, 401},
+  {"QListComplexContourPlot", 16269, 410},
+  {"QColorArrayPlot", 16551, 417},
+  {"QColorDensityGraphics", 16815, 424}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 63, 1, 70, "Section",
+  CellTags->"QComplexPlot3D"],
+Cell[1820, 54, 362, 3, 70, "Usage",
+  CellTags->"QComplexPlot3D"],
+Cell[2185, 59, 167, 5, 70, "Text",
+  CellTags->"QComplexPlot3D"],
+Cell[2355, 66, 71, 1, 70, "Section",
+  CellTags->"QListComplexPlot3D"],
+Cell[2429, 69, 345, 3, 70, "Usage",
+  CellTags->"QListComplexPlot3D"],
+Cell[2777, 74, 171, 5, 70, "Text",
+  CellTags->"QListComplexPlot3D"],
+Cell[2951, 81, 73, 1, 70, "Section",
+  CellTags->"QComplexSurfacePlot"],
+Cell[3027, 84, 282, 3, 70, "Usage",
+  CellTags->"QComplexSurfacePlot"],
+Cell[3312, 89, 641, 16, 70, "Text",
+  CellTags->"QComplexSurfacePlot"],
+Cell[3956, 107, 172, 5, 70, "Text",
+  CellTags->"QComplexSurfacePlot"],
+Cell[4131, 114, 81, 1, 70, "Section",
+  CellTags->"QListComplexSurfacePlot"],
+Cell[4215, 117, 261, 3, 70, "Usage",
+  CellTags->"QListComplexSurfacePlot"],
+Cell[4479, 122, 645, 16, 70, "Text",
+  CellTags->"QListComplexSurfacePlot"],
+Cell[5127, 140, 176, 5, 70, "Text",
+  CellTags->"QListComplexSurfacePlot"],
+Cell[5306, 147, 73, 1, 70, "Section",
+  CellTags->"QComplexDensityPlot"],
+Cell[5382, 150, 491, 3, 70, "Usage",
+  CellTags->"QComplexDensityPlot"],
+Cell[5876, 155, 1803, 38, 70, "Text",
+  CellTags->"QComplexDensityPlot"],
+Cell[7682, 195, 172, 5, 70, "Text",
+  CellTags->"QComplexDensityPlot"],
+Cell[7857, 202, 71, 1, 70, "Section",
+  CellTags->"QSpinorDensityPlot"],
+Cell[7931, 205, 442, 3, 70, "Usage",
+  CellTags->"QSpinorDensityPlot"],
+Cell[8376, 210, 171, 5, 70, "Text",
+  CellTags->"QSpinorDensityPlot"],
+Cell[8550, 217, 81, 1, 70, "Section",
+  CellTags->"QListComplexDensityPlot"],
+Cell[8634, 220, 461, 3, 70, "Usage",
+  CellTags->"QListComplexDensityPlot"],
+Cell[9098, 225, 176, 5, 70, "Text",
+  CellTags->"QListComplexDensityPlot"],
+Cell[9277, 232, 73, 1, 70, "Section",
+  CellTags->"QComplexContourPlot"],
+Cell[9353, 235, 316, 3, 70, "Usage",
+  CellTags->"QComplexContourPlot"],
+Cell[9672, 240, 1803, 38, 70, "Text",
+  CellTags->"QComplexContourPlot"],
+Cell[11478, 280, 172, 5, 70, "Text",
+  CellTags->"QComplexContourPlot"],
+Cell[11653, 287, 81, 1, 70, "Section",
+  CellTags->"QListComplexContourPlot"],
+Cell[11737, 290, 260, 3, 70, "Usage",
+  CellTags->"QListComplexContourPlot"],
+Cell[12000, 295, 176, 5, 70, "Text",
+  CellTags->"QListComplexContourPlot"],
+Cell[12179, 302, 65, 1, 70, "Section",
+  CellTags->"QColorArrayPlot"],
+Cell[12247, 305, 218, 3, 70, "Usage",
+  CellTags->"QColorArrayPlot"],
+Cell[12468, 310, 168, 5, 70, "Text",
+  CellTags->"QColorArrayPlot"],
+Cell[12639, 317, 77, 1, 70, "Section",
+  CellTags->"QColorDensityGraphics"],
+Cell[12719, 320, 311, 3, 70, "Usage",
+  CellTags->"QColorDensityGraphics"],
+Cell[13033, 325, 174, 5, 70, "Text",
+  CellTags->"QColorDensityGraphics"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

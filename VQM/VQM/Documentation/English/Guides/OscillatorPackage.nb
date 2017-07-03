@@ -1,0 +1,256 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      9575,        247]
+NotebookOptionsPosition[      8843,        217]
+NotebookOutlinePosition[      9465,        242]
+CellTagsIndexPosition[      9388,        237]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Harmonic Oscillator ", "Subsection",
+ CellTags->"VQM`Oscillator`"],
+
+Cell["\<\
+Defines eigenfunctions and squeezed states for the one dimensional harmonic \
+oscillator in quantum mechanics. The time-dependent functions are solutions \
+of the Schroedinger equation I D[Psi,t] = (1/2m) D[Psi,{x,2}] + (m w^2/2) x^2 \
+Psi. That is, we use units where hbar is scaled to 1. The value of m is given \
+by the constant $QOscillatorMass, w is given by $QOscillatorFrequency \
+(defaults 1). \
+\>", "Text",
+ CellTags->"VQM`Oscillator`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QOscillatorEnergy", "[", 
+         RowBox[{"n", ",", " ", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "gives", " ", "the", " ", "energy", " ", "of", " ", "the", " ", 
+            "n"}], "-", 
+           RowBox[{
+           "th", " ", "eigenfunction", " ", "of", " ", "the", " ", "harmonic",
+             " ", "oscillator", " ", "in", " ", "one", " ", 
+            RowBox[{"dimension", ".", " ", "The"}], " ", "option", " ", 
+            "QOscillatorFrequency"}]}], "->", 
+          RowBox[{
+          "w", " ", "defines", " ", "the", " ", "frequency", " ", "of", " ", 
+           "the", " ", "harmonic", " ", 
+           RowBox[{"oscillator", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QOscillatorFunction", "[", 
+         RowBox[{"n", ",", "x", ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"is", " ", "the", " ", "n"}], "-", 
+          RowBox[{
+          "th", " ", "eigenfunction", " ", "of", " ", "the", " ", "harmonic", 
+           " ", "oscillator", " ", "in", " ", "one", " ", 
+           RowBox[{"dimension", ".", " ", "Possible"}], " ", "options", " ", 
+           "are", " ", "QOscillatorMass", " ", "and", " ", 
+           RowBox[{"QOscillatorFrequency", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QOscillatorGaussian", "[", 
+         RowBox[{"x", ",", "t", ",", "x0", ",", "p0", ",", "a", ",", "opts"}],
+          "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "describes", " ", "the", " ", "time", " ", "evolution", " ", "of", 
+            " ", "a", " ", "Gaussian", " ", "initial", " ", "function", " ", 
+            "in", " ", "the", " ", "field", " ", "of", " ", "a", " ", 
+            "harmonic", " ", "oscillator", " ", 
+            RowBox[{"potential", ".", " ", "The"}], " ", "harmonic", " ", 
+            "oscillator", " ", "is", " ", "characterized", " ", "by", " ", 
+            "the", " ", "options", " ", "QOscillatorFrequency"}], "->", 
+           RowBox[{
+            RowBox[{"w", " ", 
+             RowBox[{"(", 
+              RowBox[{"default", " ", "1"}], ")"}], " ", "and", " ", 
+             "QOscillatorMass"}], "->", 
+            RowBox[{"m", " ", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"default", " ", "1"}], ")"}], ".", " ", "The"}], " ", 
+             "arguments", " ", "x0"}]}]}], ",", " ", "p0", ",", " ", 
+          RowBox[{"a", " ", "are", " ", "also", " ", "optional", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"defaults", " ", "x0"}], "=", "0"}], ",", " ", 
+              RowBox[{"p0", "=", "1"}], ",", " ", 
+              RowBox[{"a", "=", "1"}]}], ")"}], ".", " ", "x0"}], " ", "is", 
+           " ", "the", " ", "average", " ", "initial", " ", "position"}], ",",
+           " ", 
+          RowBox[{
+          "p0", " ", "is", " ", "the", " ", "average", " ", "initial", " ", 
+           RowBox[{"momentum", ".", " ", "a"}], " ", "describes", " ", "the", 
+           " ", "width", " ", "of", " ", "the", " ", "initial", " ", 
+           "position", " ", 
+           RowBox[{"distribution", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", ".", " "}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QOscillatorBarDiagram", "[", 
+         RowBox[{
+          RowBox[{"f", "[", "x", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "a", ",", "b"}], "}"}], ",", "n1", ",", "n2", 
+          ",", " ", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "plots", " ", "the", " ", "energy", " ", "representation", " ", 
+            "of", " ", "a", " ", "given", " ", "function", " ", "in", " ", 
+            "the", " ", "basis", " ", "of", " ", "harmonic", " ", 
+            "oscillator", " ", 
+            RowBox[{"eigenfunctions", ".", " ", "Numerical"}], " ", "region", 
+            " ", "for", " ", "the", " ", "determination", " ", "of", " ", 
+            "the", " ", "expansion", " ", "coefficients", " ", "is", " ", 
+            "the", " ", "interval", " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"a", ",", "b"}], ")"}], ".", " ", "The"}], " ", "graph",
+             " ", "shows", " ", "the", " ", "expansion", " ", "coefficients", 
+            " ", "c_n", " ", "for", " ", "n", " ", "between", " ", "n1", " ", 
+            "and", " ", 
+            RowBox[{"n2", ".", " ", "The"}], " ", "interval", " ", 
+            RowBox[{"(", 
+             RowBox[{"a", ",", "b"}], ")"}], " ", "should", " ", "be", " ", 
+            "large", " ", "enough", " ", "so", " ", "that", " ", "all", " ", 
+            "eigenfunctions", " ", "with", " ", "quantum", " ", "numbers", 
+            " ", "larger", " ", "than", " ", "n2", " ", "are", " ", 
+            "essentially", " ", "zero", " ", "outside", " ", "that", " ", 
+            RowBox[{"interval", ".", " ", "The"}], " ", "short", " ", 
+            "version", " ", 
+            RowBox[{"QOscillatorBarDiagram", "[", 
+             RowBox[{
+              RowBox[{"f", "[", "x", "]"}], ",", 
+              RowBox[{"{", "x", "}"}]}], "]"}], " ", "uses", " ", "the", " ", 
+            "Default", " ", "values", " ", "a"}], "=", 
+           RowBox[{"-", "Infinity"}]}], ",", " ", 
+          RowBox[{"b", "=", "Infinity"}], ",", " ", 
+          RowBox[{"n1", "=", "0"}], ",", " ", 
+          RowBox[{"n2", "=", 
+           RowBox[{"10.", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox["$QOscillatorFrequency",
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "the", " ", "default", " ", "value", " ", "for", " ", 
+          "the", " ", "option", " ", 
+          RowBox[{"QOscillatorFrequency", ".", " ", "Can"}], " ", "be", " ", 
+          "redefined", " ", "by", " ", "the", " ", 
+          RowBox[{"user", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Oscillator`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox["$QOscillatorMass",
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "the", " ", "default", " ", "value", " ", "for", " ", 
+          "the", " ", "option", " ", 
+          RowBox[{"QOscillatorMass", ".", " ", "Can"}], " ", "be", " ", 
+          "redefined", " ", "by", " ", "the", " ", 
+          RowBox[{"user", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Oscillator`", "."}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`Oscillator`"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`Oscillator`"->{
+  Cell[590, 23, 72, 1, 37, "Subsection",
+   CellTags->"VQM`Oscillator`"],
+  Cell[665, 26, 456, 8, 71, "Text",
+   CellTags->"VQM`Oscillator`"],
+  Cell[1124, 36, 7703, 178, 509, "Text",
+   CellTags->"VQM`Oscillator`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`Oscillator`", 9147, 227}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 72, 1, 37, "Subsection",
+ CellTags->"VQM`Oscillator`"],
+Cell[665, 26, 456, 8, 71, "Text",
+ CellTags->"VQM`Oscillator`"],
+Cell[1124, 36, 7703, 178, 509, "Text",
+ CellTags->"VQM`Oscillator`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

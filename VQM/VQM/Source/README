@@ -1,0 +1,56 @@
+=============================================================================================================
+Copyright 1998 - 2007  Bernd Thaller, Manfred Liebmann, Wolfgang Thaller, Rolf Mertig
+
+Licence: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported, see creativecommons.org
+
+Author:  Bernd Thaller,
+                        Institute of Mathematics,
+                        University of Graz,
+                        A-8010 Graz
+                        bernd.thaller@uni-graz.at
+
+Mathematica 6 porting and Makefiles:
+Rolf Mertig
+GluonVision.com
+rolfm@gluonvision.com
+
+=============================================================================================================
+Notes:
+
+MacOS X: 
+  The provided universal binary QuantumKernelX (the MathLink executable) has been compiled on 
+  32 bit - Mathematica 6 MacOS X 10.4 PowerPC G5 and
+  runs on 64 and 32 bit PowerPC and 32 bit Intel archtiectures. For 64bit Intel please compile again.
+
+Linux:
+  The provided Makefiles have been tested on Ubuntu Linux (feisty) 32 bit and 64 bit.
+
+Windows: 
+  tested on Windows XP, should run on Windows 2000 and Windows Vista.
+  For compiling you need to install a GNU compiler and tools, e.g., cygwin from http://www.cygwin.com , 
+  including g++ and  make .
+  It is recommended to install cygwin to C:\cygwin
+
+=============================================================================================================
+
+Building the executables on Mathematica 6 from this directory:
+
+Run from a terminal (shell):
+
+MacOS X univerisal binary :
+make -f Makefile.macosx clean;  make -f Makefile.macosx
+
+Linux 32 bit:
+make -f Makefile.linux32 clean;  make -f Makefile.linux32
+
+Linux 64 bit:
+make -f Makefile.linux64 clean;  make -f Makefile.linux64
+
+Windows 32 bit:
+make -f Makefile.windows clean; make -f Makefile.windows
+
+================================================================================================================
+Then copy the resulting Mathlink executable, i.e., QuantumKernel, QuantumKernelX, QuantumKernel32 or QuantumKernel64
+to the VQM package directory, i.e., to the parent directory of this Source directory.
+
+

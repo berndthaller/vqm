@@ -1,0 +1,579 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12226,        328]*)
+(*NotebookOutlinePosition[     17354,        475]*)
+(*  CellTagsIndexPosition[     16782,        455]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["QFourierList", "Section",
+  CellTags->"QFourierList"],
+
+Cell["\<\
+QFourierList[xlist,{left,right}] returns the Fourier transform of the function f[x] represented by xlist. The result is given in the form {klist, {kmin, kmax}}. xlist is a list of complex numbers that can be interpreted as the discretization of a complex-valued function f[x] defined in the interval [left,right]. xlist should consist of an even number of values. Use f /@ QGrid[a,b,n] to generate the values, and left=QLeftBorder[a,b,n], right = QRightBorder[a,b,n]. klist=QFourierList[xlist,{left,right}][[1]] is a list of complex values in k-space. It can be interpreted as the discretization of the Fourier transform of f, defined on an appropriate interval in Fourier space (k-space). The corresponding interval in k-space is {kmin, kmax} == {-Pi/dx,Pi/dx}, and the step size in k-space is given by dk = QFourierStep[left,right,n] == 2 Pi / (right-left). Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QFourierList"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QFourierRange",
+                    
+                    "InputForm"], \(QFourierRange -> \(Automatic\ is\ \
+an\ option\ for\ QFourierListArgColorPlot . \ 
+                          Setting\ QFourierRange -> {kmin, 
+                            kmax}\ restricts\ the\ k - 
+                        space\ interval\ for\ the\ plot\ to\ [kmin, 
+                              kmax] . \ 
+                            The\ maximal\ value\ of\ the\ k - 
+                        space\ interval\ is\ determined\ from\ the\ \
+step - size\ dx\ in\ x - 
+                        space\ as\ [\(-Pi\)/dx, 
+                              Pi/dx] . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QFourierList"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFourierList"],
+
+Cell["QInverseFourierList", "Section",
+  CellTags->"QInverseFourierList"],
+
+Cell["\<\
+QInverseFourierList[klist,{left,right}] returns the inverse Fourier transform of the function f[k] represented by klist. See QFourierList. We have QInverseFourierList[QFourierList[xlist,{left,right}]]=={xlist,{left,right}}. The size of the interval in Fourier space is related to the step size in x-space by dx = 2 Pi / (right-left). The step size dk in k-space determines the size of the x-interval according to {xleft, xright} == QInverseFourierList[klist,{left,right}][[2]] == {-Pi/dk, Pi/dk}. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QInverseFourierList"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QInverseFourierList"],
+
+Cell["QFourierListArgColorPlot", "Section",
+  CellTags->"QFourierListArgColorPlot"],
+
+Cell["\<\
+QFourierListArgColorPlot[xlist,{left,right}] produces a QArgColorPlot of the QFourierList obtained from xlist and {left,right}. xlist can be interpreted as a discretization of a complex-valued function f[x] on a uniform grid of x-values in the interval [left,right]. The QFourierList is a discretization of the FourierTransform of the function f[x]. The option QFourierRange->{kmin,kmax} can be used to restrict the plot region in k-space. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QFourierListArgColorPlot"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QFourierRange",
+                    
+                    "InputForm"], \(QFourierRange -> \(Automatic\ is\ \
+an\ option\ for\ QFourierListArgColorPlot . \ 
+                          Setting\ QFourierRange -> {kmin, 
+                            kmax}\ restricts\ the\ k - 
+                        space\ interval\ for\ the\ plot\ to\ [kmin, 
+                              kmax] . \ 
+                            The\ maximal\ value\ of\ the\ k - 
+                        space\ interval\ is\ determined\ from\ the\ \
+step - size\ dx\ in\ x - 
+                        space\ as\ [\(-Pi\)/dx, 
+                              Pi/dx] . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QFourierListArgColorPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFourierListArgColorPlot"],
+
+Cell["QInverseFourierListArgColorPlot", "Section",
+  CellTags->"QInverseFourierListArgColorPlot"],
+
+Cell["\<\
+QInverseFourierListArgColorPlot[klist,{left,right}] produces a QArgColorPlot of the QInverseFourierList obtained from klist and {left,right}. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QInverseFourierListArgColorPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QInverseFourierListArgColorPlot"],
+
+Cell["QStepSize", "Section",
+  CellTags->"QStepSize"],
+
+Cell["\<\
+QStepSize[list,{left,right}] returns (right-left)/(Length[list]-1), that is, the distance between the x-values if list represents values of a function f[x] on a uniformly spaced grid of x-values. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QStepSize"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QStepSize"],
+
+Cell["QGrid", "Section",
+  CellTags->"QGrid"],
+
+Cell["\<\
+QGrid[a,b,n] generates a list of n points within the interval [a,b]. Defines a space discretization that is useful for a fast Fourier transform. The distance between two adjacent points is dx = (b-a)/n = QSpaceStep[a,b,n]. n has to be an even number. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QGrid"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGrid"],
+
+Cell["QLeftBorder", "Section",
+  CellTags->"QLeftBorder"],
+
+Cell["\<\
+QLeftBorder[a,b,n] is the first element of QGrid[a,b,n]. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QLeftBorder"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QLeftBorder"],
+
+Cell["QSpaceStep", "Section",
+  CellTags->"QSpaceStep"],
+
+Cell["\<\
+QSpaceStep[a,b,n] gives the step size in the list QGrid[a,b,n]. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QSpaceStep"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSpaceStep"],
+
+Cell["QSpaceInterval", "Section",
+  CellTags->"QSpaceInterval"],
+
+Cell["\<\
+QSpaceInterval[a,b,n] gives the interval {QGrid[a,b,n][[1]],QGrid[a,b,n]][[n]]}. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QSpaceInterval"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSpaceInterval"],
+
+Cell["QIndexPosition", "Section",
+  CellTags->"QIndexPosition"],
+
+Cell["\<\
+QIndexPosition[x,a,b,n] gives the position of x in the list QGrid[a,b,n]. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QIndexPosition"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QIndexPosition"],
+
+Cell["QFourierGrid", "Section",
+  CellTags->"QFourierGrid"],
+
+Cell["\<\
+QFourierGrid[a,b,n] generates a list of n points in Fourier space. Defines the domain in Fourier space that corresponds to QGrid[a,b,n] in position space. QFourierGrid[a,b,n] are the points where the values of QFourierList are defined. Also works for QInverseFourierList. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QFourierGrid"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFourierGrid"],
+
+Cell["QFourierLeftBorder", "Section",
+  CellTags->"QFourierLeftBorder"],
+
+Cell["\<\
+QFourierLeftBorder[a,b,n] determines the left border of the interval where the values of QFourierList are defined. This is the first element of QFourierGrid[a,b,n]. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QFourierLeftBorder"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFourierLeftBorder"],
+
+Cell["QFourierRightBorder", "Section",
+  CellTags->"QFourierRightBorder"],
+
+Cell["\<\
+QFourierRightBorder[a,b,n] determines the right border of the interval where the values of QFourierList are defined. This is the last element of QFourierGrid[a,b,n]. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QFourierRightBorder"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFourierRightBorder"],
+
+Cell["QFourierStep", "Section",
+  CellTags->"QFourierStep"],
+
+Cell["\<\
+QFourierStep[a,b,n] is the distance between adjacent values of QFourierGrid[a,b,n]. This is the step size in Fourier space. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QFourierStep"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFourierStep"],
+
+Cell["QFourierInterval", "Section",
+  CellTags->"QFourierInterval"],
+
+Cell["\<\
+QFourierInterval[a,b,n] determines the interval in Fourier space in which the values of QFourierList are defined. QFourierInterval == {QFourierLeftBorder,QFourierRightBorder}. Package: VQM`FastFourier`.\
+\>", "Usage",
+  CellTags->"QFourierInterval"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`FastFourier`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QFourierInterval"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "QFourierList"->{
+    Cell[1754, 51, 59, 1, 70, "Section",
+      CellTags->"QFourierList"],
+    Cell[1816, 54, 939, 3, 70, "Usage",
+      CellTags->"QFourierList"],
+    Cell[2758, 59, 1012, 24, 70, "Text",
+      CellTags->"QFourierList"],
+    Cell[3773, 85, 165, 5, 70, "Text",
+      CellTags->"QFourierList"]},
+  "QInverseFourierList"->{
+    Cell[3941, 92, 73, 1, 70, "Section",
+      CellTags->"QInverseFourierList"],
+    Cell[4017, 95, 583, 3, 70, "Usage",
+      CellTags->"QInverseFourierList"],
+    Cell[4603, 100, 172, 5, 70, "Text",
+      CellTags->"QInverseFourierList"]},
+  "QFourierListArgColorPlot"->{
+    Cell[4778, 107, 83, 1, 70, "Section",
+      CellTags->"QFourierListArgColorPlot"],
+    Cell[4864, 110, 531, 3, 70, "Usage",
+      CellTags->"QFourierListArgColorPlot"],
+    Cell[5398, 115, 1024, 24, 70, "Text",
+      CellTags->"QFourierListArgColorPlot"],
+    Cell[6425, 141, 177, 5, 70, "Text",
+      CellTags->"QFourierListArgColorPlot"]},
+  "QInverseFourierListArgColorPlot"->{
+    Cell[6605, 148, 97, 1, 70, "Section",
+      CellTags->"QInverseFourierListArgColorPlot"],
+    Cell[6705, 151, 240, 3, 70, "Usage",
+      CellTags->"QInverseFourierListArgColorPlot"],
+    Cell[6948, 156, 184, 5, 70, "Text",
+      CellTags->"QInverseFourierListArgColorPlot"]},
+  "QStepSize"->{
+    Cell[7135, 163, 53, 1, 70, "Section",
+      CellTags->"QStepSize"],
+    Cell[7191, 166, 272, 3, 70, "Usage",
+      CellTags->"QStepSize"],
+    Cell[7466, 171, 162, 5, 70, "Text",
+      CellTags->"QStepSize"]},
+  "QGrid"->{
+    Cell[7631, 178, 45, 1, 70, "Section",
+      CellTags->"QGrid"],
+    Cell[7679, 181, 323, 3, 70, "Usage",
+      CellTags->"QGrid"],
+    Cell[8005, 186, 158, 5, 70, "Text",
+      CellTags->"QGrid"]},
+  "QLeftBorder"->{
+    Cell[8166, 193, 57, 1, 70, "Section",
+      CellTags->"QLeftBorder"],
+    Cell[8226, 196, 135, 3, 70, "Usage",
+      CellTags->"QLeftBorder"],
+    Cell[8364, 201, 164, 5, 70, "Text",
+      CellTags->"QLeftBorder"]},
+  "QSpaceStep"->{
+    Cell[8531, 208, 55, 1, 70, "Section",
+      CellTags->"QSpaceStep"],
+    Cell[8589, 211, 141, 3, 70, "Usage",
+      CellTags->"QSpaceStep"],
+    Cell[8733, 216, 163, 5, 70, "Text",
+      CellTags->"QSpaceStep"]},
+  "QSpaceInterval"->{
+    Cell[8899, 223, 63, 1, 70, "Section",
+      CellTags->"QSpaceInterval"],
+    Cell[8965, 226, 162, 3, 70, "Usage",
+      CellTags->"QSpaceInterval"],
+    Cell[9130, 231, 167, 5, 70, "Text",
+      CellTags->"QSpaceInterval"]},
+  "QIndexPosition"->{
+    Cell[9300, 238, 63, 1, 70, "Section",
+      CellTags->"QIndexPosition"],
+    Cell[9366, 241, 155, 3, 70, "Usage",
+      CellTags->"QIndexPosition"],
+    Cell[9524, 246, 167, 5, 70, "Text",
+      CellTags->"QIndexPosition"]},
+  "QFourierGrid"->{
+    Cell[9694, 253, 59, 1, 70, "Section",
+      CellTags->"QFourierGrid"],
+    Cell[9756, 256, 351, 3, 70, "Usage",
+      CellTags->"QFourierGrid"],
+    Cell[10110, 261, 165, 5, 70, "Text",
+      CellTags->"QFourierGrid"]},
+  "QFourierLeftBorder"->{
+    Cell[10278, 268, 71, 1, 70, "Section",
+      CellTags->"QFourierLeftBorder"],
+    Cell[10352, 271, 250, 3, 70, "Usage",
+      CellTags->"QFourierLeftBorder"],
+    Cell[10605, 276, 171, 5, 70, "Text",
+      CellTags->"QFourierLeftBorder"]},
+  "QFourierRightBorder"->{
+    Cell[10779, 283, 73, 1, 70, "Section",
+      CellTags->"QFourierRightBorder"],
+    Cell[10855, 286, 252, 3, 70, "Usage",
+      CellTags->"QFourierRightBorder"],
+    Cell[11110, 291, 172, 5, 70, "Text",
+      CellTags->"QFourierRightBorder"]},
+  "QFourierStep"->{
+    Cell[11285, 298, 59, 1, 70, "Section",
+      CellTags->"QFourierStep"],
+    Cell[11347, 301, 203, 3, 70, "Usage",
+      CellTags->"QFourierStep"],
+    Cell[11553, 306, 165, 5, 70, "Text",
+      CellTags->"QFourierStep"]},
+  "QFourierInterval"->{
+    Cell[11721, 313, 67, 1, 70, "Section",
+      CellTags->"QFourierInterval"],
+    Cell[11791, 316, 259, 3, 70, "Usage",
+      CellTags->"QFourierInterval"],
+    Cell[12053, 321, 169, 5, 70, "Text",
+      CellTags->"QFourierInterval"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"QFourierList", 12779, 342},
+  {"QInverseFourierList", 13100, 351},
+  {"QFourierListArgColorPlot", 13374, 358},
+  {"QInverseFourierListArgColorPlot", 13759, 367},
+  {"QStepSize", 14056, 374},
+  {"QGrid", 14283, 381},
+  {"QLeftBorder", 14504, 388},
+  {"QSpaceStep", 14742, 395},
+  {"QSpaceInterval", 14981, 402},
+  {"QIndexPosition", 15232, 409},
+  {"QFourierGrid", 15481, 416},
+  {"QFourierLeftBorder", 15731, 423},
+  {"QFourierRightBorder", 16002, 430},
+  {"QFourierStep", 16269, 437},
+  {"QFourierInterval", 16519, 444}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 59, 1, 70, "Section",
+  CellTags->"QFourierList"],
+Cell[1816, 54, 939, 3, 70, "Usage",
+  CellTags->"QFourierList"],
+Cell[2758, 59, 1012, 24, 70, "Text",
+  CellTags->"QFourierList"],
+Cell[3773, 85, 165, 5, 70, "Text",
+  CellTags->"QFourierList"],
+Cell[3941, 92, 73, 1, 70, "Section",
+  CellTags->"QInverseFourierList"],
+Cell[4017, 95, 583, 3, 70, "Usage",
+  CellTags->"QInverseFourierList"],
+Cell[4603, 100, 172, 5, 70, "Text",
+  CellTags->"QInverseFourierList"],
+Cell[4778, 107, 83, 1, 70, "Section",
+  CellTags->"QFourierListArgColorPlot"],
+Cell[4864, 110, 531, 3, 70, "Usage",
+  CellTags->"QFourierListArgColorPlot"],
+Cell[5398, 115, 1024, 24, 70, "Text",
+  CellTags->"QFourierListArgColorPlot"],
+Cell[6425, 141, 177, 5, 70, "Text",
+  CellTags->"QFourierListArgColorPlot"],
+Cell[6605, 148, 97, 1, 70, "Section",
+  CellTags->"QInverseFourierListArgColorPlot"],
+Cell[6705, 151, 240, 3, 70, "Usage",
+  CellTags->"QInverseFourierListArgColorPlot"],
+Cell[6948, 156, 184, 5, 70, "Text",
+  CellTags->"QInverseFourierListArgColorPlot"],
+Cell[7135, 163, 53, 1, 70, "Section",
+  CellTags->"QStepSize"],
+Cell[7191, 166, 272, 3, 70, "Usage",
+  CellTags->"QStepSize"],
+Cell[7466, 171, 162, 5, 70, "Text",
+  CellTags->"QStepSize"],
+Cell[7631, 178, 45, 1, 70, "Section",
+  CellTags->"QGrid"],
+Cell[7679, 181, 323, 3, 70, "Usage",
+  CellTags->"QGrid"],
+Cell[8005, 186, 158, 5, 70, "Text",
+  CellTags->"QGrid"],
+Cell[8166, 193, 57, 1, 70, "Section",
+  CellTags->"QLeftBorder"],
+Cell[8226, 196, 135, 3, 70, "Usage",
+  CellTags->"QLeftBorder"],
+Cell[8364, 201, 164, 5, 70, "Text",
+  CellTags->"QLeftBorder"],
+Cell[8531, 208, 55, 1, 70, "Section",
+  CellTags->"QSpaceStep"],
+Cell[8589, 211, 141, 3, 70, "Usage",
+  CellTags->"QSpaceStep"],
+Cell[8733, 216, 163, 5, 70, "Text",
+  CellTags->"QSpaceStep"],
+Cell[8899, 223, 63, 1, 70, "Section",
+  CellTags->"QSpaceInterval"],
+Cell[8965, 226, 162, 3, 70, "Usage",
+  CellTags->"QSpaceInterval"],
+Cell[9130, 231, 167, 5, 70, "Text",
+  CellTags->"QSpaceInterval"],
+Cell[9300, 238, 63, 1, 70, "Section",
+  CellTags->"QIndexPosition"],
+Cell[9366, 241, 155, 3, 70, "Usage",
+  CellTags->"QIndexPosition"],
+Cell[9524, 246, 167, 5, 70, "Text",
+  CellTags->"QIndexPosition"],
+Cell[9694, 253, 59, 1, 70, "Section",
+  CellTags->"QFourierGrid"],
+Cell[9756, 256, 351, 3, 70, "Usage",
+  CellTags->"QFourierGrid"],
+Cell[10110, 261, 165, 5, 70, "Text",
+  CellTags->"QFourierGrid"],
+Cell[10278, 268, 71, 1, 70, "Section",
+  CellTags->"QFourierLeftBorder"],
+Cell[10352, 271, 250, 3, 70, "Usage",
+  CellTags->"QFourierLeftBorder"],
+Cell[10605, 276, 171, 5, 70, "Text",
+  CellTags->"QFourierLeftBorder"],
+Cell[10779, 283, 73, 1, 70, "Section",
+  CellTags->"QFourierRightBorder"],
+Cell[10855, 286, 252, 3, 70, "Usage",
+  CellTags->"QFourierRightBorder"],
+Cell[11110, 291, 172, 5, 70, "Text",
+  CellTags->"QFourierRightBorder"],
+Cell[11285, 298, 59, 1, 70, "Section",
+  CellTags->"QFourierStep"],
+Cell[11347, 301, 203, 3, 70, "Usage",
+  CellTags->"QFourierStep"],
+Cell[11553, 306, 165, 5, 70, "Text",
+  CellTags->"QFourierStep"],
+Cell[11721, 313, 67, 1, 70, "Section",
+  CellTags->"QFourierInterval"],
+Cell[11791, 316, 259, 3, 70, "Usage",
+  CellTags->"QFourierInterval"],
+Cell[12053, 321, 169, 5, 70, "Text",
+  CellTags->"QFourierInterval"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

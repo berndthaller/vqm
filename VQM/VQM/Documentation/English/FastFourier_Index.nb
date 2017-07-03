@@ -1,0 +1,324 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12205,        277]*)
+(*NotebookOutlinePosition[     13106,        308]*)
+(*  CellTagsIndexPosition[     13024,        302]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["FastFourier ", "Subsection",
+  CellTags->"VQM`FastFourier`"],
+
+Cell["\<\
+This package allows computes the one-dimensional Fourier transform of a complex-valued function f[x] via a fast Fourier transform of a list representing the function values on a suitable space grid. The package provides methods to determine the domains of definition and the discretization in Fourier space from the discretization in position space and vice versa. This package can be used, e.g., to compute the Fourier transform of a numerical solution of the Schroedinger equation. \
+\>", "Text",
+  CellTags->"VQM`FastFourier`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QFourierList[xlist, {left, right}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ the\ Fourier\ transform\ \
+of\ the\ function\ f[x]\ represented\ by\ xlist . \ 
+                        The\ result\ is\ given\ in\ the\ form\ \
+{klist, \ {kmin, \ kmax}} . \ 
+                        xlist\ is\ a\ list\ of\ complex\ numbers\ \
+that\ can\ be\ interpreted\ as\ the\ discretization\ of\ a\ complex - 
+                    valued\ function\ f[
+                        x]\ defined\ in\ the\ interval\ [left, 
+                          right] . \ 
+                        xlist\ should\ consist\ of\ an\ even\ number\ \
+of\ values . \ Use\ f\  /@ \ 
+                        QGrid[a, b, n]\ to\ generate\ the\ values, \ 
+                  and\ left = QLeftBorder[a, b, n], \ 
+                  right\  = \ \(QRightBorder[a, b, n] . \ 
+                        klist = \([\([1]\)]\)\ is\ a\ list\ of\ \
+complex\ values\ in\ k - 
+                        space . \ 
+                            It\ can\ be\ interpreted\ as\ the\ \
+discretization\ of\ the\ Fourier\ transform\ of\ f\), \ 
+                  defined\ on\ an\ appropriate\ interval\ in\ Fourier\
+\ space\ \((k - space)\) . \ The\ corresponding\ interval\ in\ k - 
+                      space\ is\ {kmin, \ kmax}\  == \ {\(-Pi\)/dx, 
+                      Pi/dx}, \ 
+                  and\ the\ step\ size\ in\ k - 
+                      space\ is\ given\ by\ dk\  = \ 
+                    QFourierStep[left, right, n]\  == \ 
+                      2\ Pi\ /\ \((right - 
+                                left)\) . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QInverseFourierList[
+                    klist, {left, right}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ the\ inverse\ Fourier\ \
+transform\ of\ the\ function\ f[k]\ represented\ by\ klist . \ 
+                          See\ QFourierList . \ 
+                          We\ have\ QInverseFourierList[
+                          QFourierList[
+                            xlist, {left, 
+                              right}]] == {xlist, {left, right}} . \ 
+                            The\ size\ of\ the\ interval\ in\ Fourier\
+\ space\ is\ related\ to\ the\ step\ size\ in\ x - 
+                        space\ by\ dx\  = \ 
+                    2\ Pi\ /\ \((right - left)\) . \ 
+                              The\ step\ size\ dk\ in\ k - 
+                        space\ determines\ the\ size\ of\ the\ x - 
+                        interval\ according\ to\ {xleft, \ 
+                            xright}\  == \ \([\([2]\)]\)\  == \ \
+{\(-Pi\)/dk, \ 
+                          Pi/dk} . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QFourierListArgColorPlot[
+                    xlist, {left, right}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(produces\ a\ QArgColorPlot\ of\ \
+the\ QFourierList\ obtained\ from\ xlist\ and\ {left, right} . \ 
+                          xlist\ can\ be\ interpreted\ as\ a\ \
+discretization\ of\ a\ complex - 
+                      valued\ function\ f[
+                          x]\ on\ a\ uniform\ grid\ of\ x - 
+                      values\ in\ the\ interval\ [left, right] . \ 
+                          The\ QFourierList\ is\ a\ discretization\ \
+of\ the\ FourierTransform\ of\ the\ function\ f[x] . \ 
+                          The\ option\ QFourierRange -> {kmin, 
+                          kmax}\ can\ be\ used\ to\ restrict\ the\ \
+plot\ region\ in\ k - 
+                      space . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QInverseFourierListArgColorPlot[
+                    klist, {left, right}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(produces\ a\ QArgColorPlot\ of\ \
+the\ QInverseFourierList\ obtained\ from\ klist\ and\ {left, 
+                        right} . \ \(Package : \ \(\(VQM`FastFourier`\
+\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QStepSize[list, {left, right}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ \((right - 
+                          left)\)/\((Length[list] - 1)\), \ 
+                  that\ is, \ 
+                  the\ distance\ between\ the\ x - 
+                    values\ if\ list\ represents\ values\ of\ a\ \
+function\ f[x]\ on\ a\ uniformly\ spaced\ grid\ of\ x - 
+                    values . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGrid[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ list\ of\ n\ points\ \
+within\ the\ interval\ [a, b] . \ 
+                        Defines\ a\ space\ discretization\ that\ is\ \
+useful\ for\ a\ fast\ Fourier\ transform . \ 
+                        The\ distance\ between\ two\ adjacent\ points\
+\ is\ dx\  = \ \(\((b - a)\)/n\  = \ 
+                      QSpaceStep[a, b, n] . \ 
+                          n\ has\ to\ be\ an\ even\ number . \ \
+\(Package : \ \(\(VQM`FastFourier`\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QLeftBorder[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ first\ element\ of\ QGrid[
+                        a, b, 
+                        n] . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpaceStep[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ step\ size\ in\ the\ \
+list\ QGrid[a, b, 
+                        n] . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpaceInterval[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\(\(\(\ \)\(gives\ the\ interval\ \
+{\(QGrid[a, b, n]\)[\([1]\)], 
+                              QGrid[a, b, 
+                                n]\)\(]\)\)[\([n]\)]\)\(}\)\) . \ \
+\(Package : \ \(\(VQM`FastFourier`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QIndexPosition[x, a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ position\ of\ x\ in\ \
+the\ list\ QGrid[a, b, 
+                        n] . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFourierGrid[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ list\ of\ n\ points\ \
+in\ Fourier\ space . \ 
+                      Defines\ the\ domain\ in\ Fourier\ space\ that\ \
+corresponds\ to\ QGrid[a, b, 
+                      n]\ in\ position\ space . \ \ are\ the\ points\ \
+where\ the\ values\ of\ QFourierList\ are\ defined . \ 
+                      Also\ works\ for\ QInverseFourierList . \ \
+\(Package : \ \(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFourierLeftBorder[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(determines\ the\ left\ border\ of\ \
+the\ interval\ where\ the\ values\ of\ QFourierList\ are\ defined . \ 
+                      This\ is\ the\ first\ element\ of\ QFourierGrid[
+                        a, b, 
+                        n] . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFourierRightBorder[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(determines\ the\ right\ border\ of\
+\ the\ interval\ where\ the\ values\ of\ QFourierList\ are\ defined . \
+\ This\ is\ the\ last\ element\ of\ QFourierGrid[a, b, 
+                        n] . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFourierStep[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ distance\ between\ \
+adjacent\ values\ of\ QFourierGrid[a, b, n] . \ 
+                      This\ is\ the\ step\ size\ in\ Fourier\ space . \
+\ \(Package : \ \(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFourierInterval[a, b, n]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(determines\ the\ interval\ in\ \
+Fourier\ space\ in\ which\ the\ values\ of\ QFourierList\ are\ \
+defined . \ QFourierInterval\  == \ {QFourierLeftBorder, 
+                        QFourierRightBorder} . \ \(Package : \ \
+\(\(VQM`FastFourier`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`FastFourier`"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`FastFourier`"->{
+    Cell[1754, 51, 66, 1, 70, "Subsection",
+      CellTags->"VQM`FastFourier`"],
+    Cell[1823, 54, 540, 3, 70, "Text",
+      CellTags->"VQM`FastFourier`"],
+    Cell[2366, 59, 9835, 216, 70, "Text",
+      CellTags->"VQM`FastFourier`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`FastFourier`", 12762, 291}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 66, 1, 70, "Subsection",
+  CellTags->"VQM`FastFourier`"],
+Cell[1823, 54, 540, 3, 70, "Text",
+  CellTags->"VQM`FastFourier`"],
+Cell[2366, 59, 9835, 216, 70, "Text",
+  CellTags->"VQM`FastFourier`"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

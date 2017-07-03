@@ -1,0 +1,464 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     20009,        417]*)
+(*NotebookOutlinePosition[     20921,        448]*)
+(*  CellTagsIndexPosition[     20837,        442]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["QuantumKernel ", "Subsection",
+  CellTags->"VQM`QuantumKernel`"],
+
+Cell["\<\
+This package starts the auxiliary C++ program \"QuantumKernel\". QuantumKernel implements an algorithm by M. Suzuki (J. Math. Phys. 32 (1991), p. 400) for computing numerical solutions of the Schroedinger and Dirac equation. This algorithm uses an operator splitting method based on a variant of the Trotter product formula. The communication between QuantumKernel and Mathematica is done via the MathLink protocol. QuantumKernel receives numerical data describing the initial function, the scalar and magnetic vector potentials, etc., from Mathematica and returns the data describing the solution at a certain time (after a prescribed number of time steps). \
+\>", "Text",
+  CellTags->"VQM`QuantumKernel`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QNewFunction[A,  .. ]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ function - 
+                    object\ \((of\ type\ ' 
+                          TFunction')\)\ for\ QuantumKernel\ from\ a\ \
+list\ of\ arrays\ of\ real\ numbers . \ 
+                        The\ function\ object\ contains\ the\ \
+numerical\ data\ representing\ the\ numerical\ discretization\ of\ \
+vector - valued\ functions . \ 
+                        The\ idea\ is\ that\ these\ data\ are\ \
+changed\ by\ some\ numerical\ computations\ performed\ by\ \
+QuantumKernel . \ 
+                        You\ can\ read\ the\ changed\ values\ of\ \
+arrays\ by\ QGetArray[f] . \ 
+                        Here\ f\ is\ the\ expression\ returned\ by\ \
+QNewFunction[arrays] . \ This\ expression\ is\ something\ like\ ' 
+                      QFunctionObject[
+                          number]'\ and\ it\ refers\ to\ the\ \
+corresponding\ data\ structure\ in\ the\ program\ ' 
+                      QuantumKernel'\ \((an\ object\ of\ type\ ' 
+                            TFunction')\) . \ 
+                        The\ dimensions\ of\ the\ arrays\ in\ the\ \
+argument\ of\ QNewFunction\ depend\ on\ the\ dimension\ of\ the\ \
+numerical\ domain . \ 
+                        The\ number\ of\ arrays\ depends\ on\ the\ \
+dimension\ of\ the\ data . \ Usually, \ 
+                  real - \ 
+                    and\ imaginary\ parts\ of\ each\ component\ are\ \
+expected . \ Hence\ a\ complex - 
+                    valued\ function\ is\ represented\ by\ \
+QNewFunction[Re[complexarray], Im[complexarray]]\ and\ a\ real - 
+                    valued\ function\ is\ obtained\ by\ QNewFunction[
+                        realarray, \ 
+                        nullarray]\ \((nullarray\ has\ the\ same\ \
+dimensions\ as\ realarray\ and\ has\ all\ elements\ 0. )\) . \ 
+                        All\ elements\ of\ the\ arrays\ should\ be\ \
+real\ numbers\ \((integer\ values\ are\ converted\ to\ floats)\) . \ 
+                        Combining\ arrays\ with\ different\ \
+dimensions\ or\ with\ non - 
+                    numerical\ elements\ produces\ the\ error\ \
+message\ ' QuantumKernel::\(err : \ 
+                          out\ of\ sequence . ' . \ \(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDisposeFunction[f]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(deletes\ the\ numerical\ data\ \
+representing\ the\ function\ f\ from\ QuantumKernel . \ Here\ ' 
+                      function'\ refers\ to\ a\ function - 
+                    object\ of\ type\ TFunction\ \((a\ data\ \
+structure\ of\ QuantumKernel)\) . \ 
+                        An\ expression\ suitable\ as\ argument\ for\ \
+QDisposeFunction\ is\ returned\ by\ QNewFunction . \ \(Package : \ \(\
+\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGetArray[f]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ the\ numerical\ values\ \
+contained\ in\ the\ function\ object\ f . \ \((\('\) \(function\)\(\ \
+\)\(object'\)\(\ \)\(is\)\(\ \)\(obtained\)\(\ \)\(when\)\(\ \
+\)\(calling\)\(\ \)\(QNewFunction\))\) . \ \(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGetFunctionInfo[f]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ some\ information\ about\ \
+the\ function\ object\ refered\ to\ by\ f . \ 
+                      This\ reference\ is\ obtained\ from\ ' 
+                    QNewFunction' . \ \(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGetColorArray[f]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\(.\)\(\ \)\(This\)\)\ returns\ an\ \
+array\ of\ RGBcolor - 
+                    values . \ 
+                        These\ RGB\ values\ are\ obtained\ from\ the\ \
+function - object\ \ f . \ Here\ ' 
+                      f'\ refers\ to\ the\ data\ structure\ holding\ \
+an\ array\ of\ complex\ values . \ 
+                        These\ values\ are\ transformed\ to\ colors\ \
+via\ a\ colormap\ like\ the\ one\ defined\ in\ VQM`ColorMaps` . \ \ \
+An\ expression\ suitable\ as\ an\ argument\ for\ QGetColorArray\ is\ \
+returned\ by\ QNewFunction . \ \(Package : \ \(\(VQM`QuantumKernel`\)\
+\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGetGrayArray[f]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(.\)\(\ \)\(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGetRedBlueArray[f]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(.\)\(\ \)\(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGetBlackWhiteArray[f]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(.\)\(\ \)\(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGetAbsArray[f]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(.\)\(\ \)\(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QInfo[]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ informations\ about\ the\ \
+state\ of\ QuantumKernel . \ 
+                      It\ lists\ informations\ about\ all\ TFunction\ \
+and\ TOperator\ objects . \ \(Package : \ \(\(VQM`QuantumKernel`\)\(.\
+\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSchroedinger1D[V, \ m, \ dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ data\ structure\ for\
+\ QuantumKernel\ \((of\ type\ ' TOperator')\) . \ 
+                        It\ needs\ a\ scalar\ potential\ V\ \((a\ \
+complex\ function\ object)\) . \ The\ reference\ ' 
+                      V'\ is\ obtained\ by\ executing\ the\ command\ \
+QNewFunction[Re[list], Im[list]] . \ The\ real\ number\ ' 
+                      m'\ defines\ the\ mass\ of\ the\ particle\ used\
+\ in\ the\ Schroedinger\ operator . \ ' 
+                      dx'\ is\ the\ size\ of\ the\ space\ grid\ \
+\((only\ uniform\ grids\ are\ supported)\) . \ 
+                        QSchroedinger1D\ returns\ a\ reference\ to\ \
+the\ ' operator - object' . \ 
+                        This\ is\ needed\ to\ specify\ the\ time\ \
+evolution, \ 
+                  see\ QTimeEvolution . \ \(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QSchroedinger2D[V, \ A, \ Dom, \ mass, \ 
+                    charge, \ dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ data\ structure\ for\
+\ QuantumKernel\ \((a\ ' TOperator' - 
+                        object)\)\ that\ represents\ a\ Schroedinger\ \
+operator\ in\ two\ dimensions . \ ' 
+                    V'\ refers\ to\ a\ complex\ function\ object\ \
+\((complex\ scalar\ potential)\), \ \(\('\) \(A'\)\(\ \)\(is\)\(\ \
+\)\(a\)\(\ \)\(vectorfield\)\(\ \)\(with\)\(\ \)\(two\)\(\ \
+\)\(components\)\(\ \)\((vector\ potential)\)\), \ \(\('\) \(Dom'\)\(\
+\ \)\(is\)\(\ \)\(a\)\(\ \)\(real\)\(\ \)\(scalar\)\(\ \)\(field\)\(\ \
+\)\(whose\)\(\ \)\(positive\)\(\ \)\(values\)\(\ \)\(describe\)\(\ \)\
+\(the\)\(\ \)\(domain\)\(\ \)\(of\)\(\ \)\(the\)\(\ \)\(simulation . \
+\ '\) \(dx'\)\(\ \)\(is\)\(\ \)\(the\)\(\ \)\(step\)\) - 
+                    size\ of\ the\ spatial\ grid . \ ' mass'\ and\ ' 
+                      charge'\ are\ real - 
+                    valued\ parameters . \ \(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QSchroedinger3D[V, \ A, \ Dom, \ mass, \ 
+                    charge, \ dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ data\ structure\ for\
+\ QuantumKernel\ \((a\ ' TOperator' - 
+                        object)\)\ that\ represents\ a\ Schroedinger\ \
+operator\ in\ three\ dimensions . \ ' 
+                    V'\ refers\ to\ a\ complex\ function\ object\ \
+\((complex\ scalar\ potential)\), \ \(\('\) \(A'\)\(\ \)\(is\)\(\ \
+\)\(a\)\(\ \)\(vectorfield\)\(\ \)\(with\)\(\ \)\(three\)\(\ \
+\)\(components\)\(\ \)\((vector\ potential)\)\), \ \(\('\) \(Dom'\)\(\
+\ \)\(is\)\(\ \)\(a\)\(\ \)\(real\)\(\ \)\(scalar\)\(\ \)\(field\)\(\ \
+\)\(whose\)\(\ \)\(positive\)\(\ \)\(values\)\(\ \)\(describe\)\(\ \)\
+\(the\)\(\ \)\(domain\)\(\ \)\(of\)\(\ \)\(the\)\(\ \)\(simulation . \
+\ '\) \(dx'\)\(\ \)\(is\)\(\ \)\(the\)\(\ \)\(step\)\) - 
+                    size\ of\ the\ spatial\ grid . \ ' mass'\ and\ ' 
+                      charge'\ are\ real - 
+                    valued\ parameters . \ 
+                        The\ fields\ are\ generated\ with\ \
+QNewFunction . \ \(Package : \ \(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPauli2D[V, \ A, \ Dom, \ mass, \ 
+                    charge, \ dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ data\ structure\ for\
+\ QuantumKernel\ \((a\ ' TOperator' - 
+                        object)\)\ that\ represents\ a\ Pauli\ \
+operator\ in\ two\ dimensions . \ ' 
+                    V'\ refers\ to\ a\ complex\ function\ object\ \
+\((complex\ scalar\ potential)\), \ \(\('\) \(A'\)\(\ \)\(is\)\(\ \
+\)\(a\)\(\ \)\(vectorfield\)\(\ \)\(with\)\(\ \)\(two\)\(\ \
+\)\(components\)\(\ \)\((vector\ potential)\)\), \ \(\('\) \(Dom'\)\(\
+\ \)\(is\)\(\ \)\(a\)\(\ \)\(real\)\(\ \)\(scalar\)\(\ \)\(field\)\(\ \
+\)\(whose\)\(\ \)\(positive\)\(\ \)\(values\)\(\ \)\(describe\)\(\ \)\
+\(the\)\(\ \)\(domain\)\(\ \)\(of\)\(\ \)\(the\)\(\ \)\(simulation . \
+\ '\) \(dx'\)\(\ \)\(is\)\(\ \)\(the\)\(\ \)\(step\)\) - 
+                    size\ of\ the\ spatial\ grid . \ ' mass'\ and\ ' 
+                      charge'\ are\ real - 
+                    valued\ parameters . \ 
+                        The\ fields\ are\ generated\ with\ \
+QNewFunction . \ \(Package : \ \(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPauli3D[V, \ A, \ Dom, \ mass, \ 
+                    charge, \ dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ data\ structure\ for\
+\ QuantumKernel\ \((a\ ' TOperator' - 
+                        
+                        object)\)\ that\ represents\ a\ Pauli\ \
+operator\ in\ three\ dimensions . \ ' 
+                    V'\ refers\ to\ a\ complex\ function\ object\ \
+\((complex\ scalar\ potential)\), \ \(\('\) \(A'\)\(\ \)\(is\)\(\ \
+\)\(a\)\(\ \)\(vectorfield\)\(\ \)\(with\)\(\ \)\(three\)\(\ \
+\)\(components\)\(\ \)\((vector\ potential)\)\), \ \(\('\) \(Dom'\)\(\
+\ \)\(is\)\(\ \)\(a\)\(\ \)\(real\)\(\ \)\(scalar\)\(\ \)\(field\)\(\ \
+\)\(whose\)\(\ \)\(positive\)\(\ \)\(values\)\(\ \)\(describe\)\(\ \)\
+\(the\)\(\ \)\(domain\)\(\ \)\(of\)\(\ \)\(the\)\(\ \)\(simulation . \
+\ '\) \(dx'\)\(\ \)\(is\)\(\ \)\(the\)\(\ \)\(step\)\) - 
+                    size\ of\ the\ spatial\ grid . \ ' mass'\ and\ ' 
+                      charge'\ are\ real - 
+                    valued\ parameters . \ 
+                        The\ fields\ are\ generated\ with\ \
+QNewFunction . \ \(Package : \ \(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QDirac2D[V, \ A, \ Dom, \ mass, \ 
+                    charge, \ dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ data\ structure\ for\
+\ QuantumKernel\ \((a\ ' TOperator' - 
+                        object)\)\ that\ represents\ a\ Dirac\ \
+operator\ in\ two\ dimensions . \ ' 
+                    V'\ refers\ to\ a\ complex\ function\ object\ \
+\((complex\ Lorentz - 
+                        scalar\ potential)\), \ \(\('\) \(A'\)\(\ \
+\)\(is\)\(\ \)\(a\)\(\ \)\(vectorfield\)\(\ \)\(with\)\(\ \)\(three\)\
+\(\ \)\(components\)\(\ \)\((electromagnetic\ vector\ potential)\)\), \
+\ \(\('\) \(Dom'\)\(\ \)\(is\)\(\ \)\(a\)\(\ \)\(real\)\(\ \)\(scalar\
+\)\(\ \)\(field\)\(\ \)\(whose\)\(\ \)\(positive\)\(\ \)\(values\)\(\ \
+\)\(describe\)\(\ \)\(the\)\(\ \)\(domain\)\(\ \)\(of\)\(\ \
+\)\(the\)\(\ \)\(simulation . \ '\) \(dx'\)\(\ \)\(is\)\(\ \
+\)\(the\)\(\ \)\(step\)\) - 
+                    size\ of\ the\ spatial\ grid . \ ' mass'\ and\ ' 
+                      charge'\ are\ real - 
+                    valued\ parameters . \ 
+                        The\ fields\ are\ generated\ with\ \
+QNewFunction . \ \(Package : \ \(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QDirac3D[V, \ A, \ Dom, \ mass, \ 
+                    charge, \ dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(generates\ a\ data\ structure\ for\
+\ QuantumKernel\ \((a\ ' TOperator' - 
+                        object)\)\ that\ represents\ a\ Dirac\ \
+operator\ in\ three\ dimensions . \ ' 
+                    V'\ refers\ to\ a\ complex\ function\ object\ \
+\((complex\ Lorentz\ scalar\ potential)\), \ \(\('\) \(A'\)\(\ \)\(is\
+\)\(\ \)\(a\)\(\ \)\(vectorfield\)\(\ \)\(with\)\(\ \)\(four\)\(\ \
+\)\(components\)\(\ \)\((vector\ potential)\)\), \ \(\('\) \(Dom'\)\(\
+\ \)\(is\)\(\ \)\(a\)\(\ \)\(real\)\(\ \)\(scalar\)\(\ \)\(field\)\(\ \
+\)\(whose\)\(\ \)\(positive\)\(\ \)\(values\)\(\ \)\(describe\)\(\ \)\
+\(the\)\(\ \)\(domain\)\(\ \)\(of\)\(\ \)\(the\)\(\ \)\(simulation . \
+\ '\) \(dx'\)\(\ \)\(is\)\(\ \)\(the\)\(\ \)\(step\)\) - 
+                    size\ of\ the\ spatial\ grid . \ ' mass'\ and\ ' 
+                      charge'\ are\ real - 
+                    valued\ parameters . \ 
+                        The\ fields\ are\ generated\ with\ \
+QNewFunction . \ \(Package : \ \(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDisposeOperator[operator]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(deletes\ the\ data\ describing\ \
+the\ TOperator\ object\ ' 
+                    operator' . \ \(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QGetOperatorInfo[operator]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ information\ about\ the\ \
+TOperator\ object\ ' 
+                    operator' . \ \(Package : \ \
+\(\(VQM`QuantumKernel`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QTimeEvolution[operator, \ function, \ 
+                    timestep, \ order, \ steps]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ time\ evolution\ \
+generated\ by\ ' operator'\ \((which\ refers\ to\ a\ TOperator - 
+                        object)\)\ for\ the\ initial\ function\ ' 
+                    function'\ \((which\ refers\ to\ a\ TFunction - 
+                          object)\) . \ 
+                      You\ can\ use\ any\ of\ the\ operators\ defined\
+\ by\ the\ QuantumKernel\ package\ with\ the\ corresponding\ \
+compatible\ wave\ function . \ \((For\ example, \ \(\('\) \(function'\
+\)\(\ \)\(must\)\(\ \)\(have\)\(\ \)\(two\)\(\ \)\(complex\)\(\ \
+\)\(components\)\(\ \)\(or\)\(\ \)\(four\)\(\ \)\(real\)\(\ \
+\)\(components\)\(\ \)\(in\)\(\ \)\(case\)\(\ \)\(of\)\(\ \
+\)\(QPauli3D\)\(\ \)\(or\)\(\ \)\(\(QDirac2D\)\(.\)\)\))\)\ The\ real\
+\ number\ ' timestep'\ is\ the\ length\ of\ one\ time\ step . \ 
+                      The\ integer\ ' 
+                    order'\ describes\ the\ order\ of\ the\ method\ \
+\((a\ Trotter - 
+                          Suzuki\ decomposition\ of\ the\ exponential\
+\ operator, \ see\ M . Suzuki, \ J . Math . Phys  .32\ \((1991)\), \ 
+                        410)\) . \ The\ integer\ ' 
+                    step'\ describes\ the\ number\ of\ time\ steps\ \
+to\ be\ performed . \ \(Package : \ \(\(VQM`QuantumKernel`\)\(.\)\)\)\
+\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`QuantumKernel`"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`QuantumKernel`"->{
+    Cell[1754, 51, 70, 1, 70, "Subsection",
+      CellTags->"VQM`QuantumKernel`"],
+    Cell[1827, 54, 717, 3, 70, "Text",
+      CellTags->"VQM`QuantumKernel`"],
+    Cell[2547, 59, 17458, 356, 70, "Text",
+      CellTags->"VQM`QuantumKernel`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`QuantumKernel`", 20568, 431}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 70, 1, 70, "Subsection",
+  CellTags->"VQM`QuantumKernel`"],
+Cell[1827, 54, 717, 3, 70, "Text",
+  CellTags->"VQM`QuantumKernel`"],
+Cell[2547, 59, 17458, 356, 70, "Text",
+  CellTags->"VQM`QuantumKernel`"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

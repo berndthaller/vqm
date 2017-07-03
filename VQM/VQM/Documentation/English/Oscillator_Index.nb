@@ -1,0 +1,198 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6435,        151]*)
+(*NotebookOutlinePosition[      7329,        182]*)
+(*  CellTagsIndexPosition[      7249,        176]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Harmonic Oscillator ", "Subsection",
+  CellTags->"VQM`Oscillator`"],
+
+Cell["\<\
+Defines eigenfunctions and squeezed states for the one dimensional harmonic oscillator in quantum mechanics. The time-dependent functions are solutions of the Schroedinger equation I D[Psi,t] = (1/2m) D[Psi,{x,2}] + (m w^2/2) x^2 Psi. That is, we use units where hbar is scaled to 1. The value of m is given by the constant $QOscillatorMass, w is given by $QOscillatorFrequency (defaults 1). \
+\>", "Text",
+  CellTags->"VQM`Oscillator`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QOscillatorEnergy[n, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ energy\ of\ the\ n - 
+                      th\ eigenfunction\ of\ the\ harmonic\ \
+oscillator\ in\ one\ dimension . \ The\ option\ QOscillatorFrequency -> 
+                    w\ defines\ the\ frequency\ of\ the\ harmonic\ \
+oscillator . \ \(Package : \ \(\(VQM`Oscillator`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QOscillatorFunction[n, x, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ n - 
+                    th\ eigenfunction\ of\ the\ harmonic\ oscillator\ \
+in\ one\ dimension . \ 
+                        Possible\ options\ are\ QOscillatorMass\ and\ \
+QOscillatorFrequency . \ \(Package : \ \(\(VQM`Oscillator`\)\(.\)\)\)\
+\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QOscillatorGaussian[x, t, x0, p0, a, 
+                    opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(describes\ the\ time\ evolution\ \
+of\ a\ Gaussian\ initial\ function\ in\ the\ field\ of\ a\ harmonic\ \
+oscillator\ potential . \ 
+                        The\ harmonic\ oscillator\ is\ characterized\ \
+by\ the\ options\ QOscillatorFrequency -> \(w\ \((default\ 1)\)\ and\ \
+QOscillatorMass -> m\ \((default\ 1)\) . \ The\ arguments\ x0\), \ 
+                  p0, \ a\ are\ also\ optional\ \((defaults\ x0 = 
+                          0, \ p0 = 1, \ a = 1)\) . \ 
+                      x0\ is\ the\ average\ initial\ position, \ 
+                  p0\ is\ the\ average\ initial\ momentum . \ 
+                      a\ describes\ the\ width\ of\ the\ initial\ \
+position\ distribution . \ \(Package : \ \(\(VQM`Oscillator`\)\(.\)\(\
+\ \)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QOscillatorBarDiagram[f[x], {x, a, b}, n1, 
+                    n2, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(plots\ the\ energy\ representation\
+\ of\ a\ given\ function\ in\ the\ basis\ of\ harmonic\ oscillator\ \
+eigenfunctions . \ 
+                        Numerical\ region\ for\ the\ determination\ \
+of\ the\ expansion\ coefficients\ is\ the\ interval\ \((a, b)\) . \ 
+                        The\ graph\ shows\ the\ expansion\ \
+coefficients\ c_n\ for\ n\ between\ n1\ and\ n2 . \ 
+                        The\ interval\ \((a, 
+                        b)\)\ should\ be\ large\ enough\ so\ that\ \
+all\ eigenfunctions\ with\ quantum\ numbers\ larger\ than\ n2\ are\ \
+essentially\ zero\ outside\ that\ interval . \ 
+                        The\ short\ version\ QOscillatorBarDiagram[
+                        f[x], {x}]\ uses\ the\ Default\ values\ a = \
+\(-Infinity\), \ b = Infinity, \ n1 = 0, \ 
+                  n2 = 10. \ \(Package : \ \(\(VQM`Oscillator`\)\(.\)\
+\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["$QOscillatorFrequency",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ default\ value\ for\ the\ \
+option\ QOscillatorFrequency . \ 
+                      Can\ be\ redefined\ by\ the\ user . \ \(Package \
+: \ \(\(VQM`Oscillator`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["$QOscillatorMass",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ default\ value\ for\ the\ \
+option\ QOscillatorMass . \ 
+                      Can\ be\ redefined\ by\ the\ user . \ \(Package \
+: \ \(\(VQM`Oscillator`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`Oscillator`"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`Oscillator`"->{
+    Cell[1754, 51, 73, 1, 70, "Subsection",
+      CellTags->"VQM`Oscillator`"],
+    Cell[1830, 54, 447, 3, 70, "Text",
+      CellTags->"VQM`Oscillator`"],
+    Cell[2280, 59, 4151, 90, 70, "Text",
+      CellTags->"VQM`Oscillator`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`Oscillator`", 6991, 165}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 73, 1, 70, "Subsection",
+  CellTags->"VQM`Oscillator`"],
+Cell[1830, 54, 447, 3, 70, "Text",
+  CellTags->"VQM`Oscillator`"],
+Cell[2280, 59, 4151, 90, 70, "Text",
+  CellTags->"VQM`Oscillator`"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

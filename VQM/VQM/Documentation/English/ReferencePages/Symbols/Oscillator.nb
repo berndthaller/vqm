@@ -1,0 +1,590 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     20922,        580]
+NotebookOptionsPosition[     16553,        446]
+NotebookOutlinePosition[     19119,        523]
+CellTagsIndexPosition[     18848,        513]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QOscillatorEnergy", "Section",
+ CellTags->"QOscillatorEnergy"],
+
+Cell["\<\
+QOscillatorEnergy[n, opts] gives the energy of the n-th eigenfunction of the \
+harmonic oscillator in one dimension. The option QOscillatorFrequency->w \
+defines the frequency of the harmonic oscillator. Package: VQM`Oscillator`.\
+\>", "Usage",
+ CellTags->"QOscillatorEnergy"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QOscillatorFrequency", 
+        RowBox[{
+         RowBox[{
+         "QOscillatorFrequency", " ", "is", " ", "an", " ", "option", " ", 
+          "for", " ", "QOscillatorHamiltonian"}], ",", " ", 
+         "QOscillatorEnergy", ",", " ", "QOscillatorFunction", ",", " ", 
+         "QOscillatorFunctionT", ",", " ", "QOscillatorGaussian", ",", 
+         RowBox[{
+          RowBox[{"QOscillatorBarDiagram", ".", " ", "QOscillatorFrequency"}],
+           "->", 
+          RowBox[{
+          "w", " ", "sets", " ", "the", " ", "frequency", " ", "of", " ", 
+           "the", " ", "harmonic", " ", "oscillator", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+             "the", " ", "coupling", " ", "constant", " ", "of", " ", "the", 
+              " ", "oscillator", " ", "potential", " ", "is", " ", "m", " ", 
+              RowBox[{
+               RowBox[{"w", "^", "2"}], "/", "2"}]}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"QOscillatorEnergy"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Oscillator`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QOscillatorEnergy"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QOscillatorFunction", "Section",
+ CellTags->"QOscillatorFunction"],
+
+Cell["\<\
+QOscillatorFunction[n,x,opts] is the n-th eigenfunction of the harmonic \
+oscillator in one dimension. Possible options are QOscillatorMass and \
+QOscillatorFrequency. Package: VQM`Oscillator`.\
+\>", "Usage",
+ CellTags->"QOscillatorFunction"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QOscillatorFrequency", 
+        RowBox[{
+         RowBox[{
+         "QOscillatorFrequency", " ", "is", " ", "an", " ", "option", " ", 
+          "for", " ", "QOscillatorHamiltonian"}], ",", " ", 
+         "QOscillatorEnergy", ",", " ", "QOscillatorFunction", ",", " ", 
+         "QOscillatorFunctionT", ",", " ", "QOscillatorGaussian", ",", 
+         RowBox[{
+          RowBox[{"QOscillatorBarDiagram", ".", " ", "QOscillatorFrequency"}],
+           "->", 
+          RowBox[{
+          "w", " ", "sets", " ", "the", " ", "frequency", " ", "of", " ", 
+           "the", " ", "harmonic", " ", "oscillator", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+             "the", " ", "coupling", " ", "constant", " ", "of", " ", "the", 
+              " ", "oscillator", " ", "potential", " ", "is", " ", "m", " ", 
+              RowBox[{
+               RowBox[{"w", "^", "2"}], "/", "2"}]}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]},
+       {"QOscillatorMass", 
+        RowBox[{
+         RowBox[{
+         "QOscillatorMass", " ", "is", " ", "an", " ", "option", " ", "for", 
+          " ", "QOscillatorHamiltonian"}], ",", " ", "QOscillatorFunction", 
+         ",", " ", "QOscillatorFunctionT", ",", " ", "QOscillatorGaussian", 
+         ",", 
+         RowBox[{
+          RowBox[{"QOscillatorBarDiagram", ".", " ", "QOscillatorMass"}], "->",
+           
+          RowBox[{
+          "m", " ", "sets", " ", "the", " ", "mass", " ", "of", " ", "the", 
+           " ", "harmonic", " ", 
+           RowBox[{"oscillator", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"QOscillatorFunction"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Oscillator`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QOscillatorFunction"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QOscillatorGaussian", "Section",
+ CellTags->"QOscillatorGaussian"],
+
+Cell["\<\
+QOscillatorGaussian[x,t,x0,p0,a,opts] describes the time evolution of a \
+Gaussian initial function in the field of a harmonic oscillator potential. \
+The harmonic oscillator is characterized by the options \
+QOscillatorFrequency->w (default 1) and QOscillatorMass->m (default 1). The \
+arguments x0, p0, a are also optional (defaults x0=0, p0=1, a=1). x0 is the \
+average initial position, p0 is the average initial momentum. a describes the \
+width of the initial position distribution. Package: VQM`Oscillator`. \
+\>", "Usage",
+ CellTags->"QOscillatorGaussian"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QOscillatorFrequency", 
+        RowBox[{
+         RowBox[{
+         "QOscillatorFrequency", " ", "is", " ", "an", " ", "option", " ", 
+          "for", " ", "QOscillatorHamiltonian"}], ",", " ", 
+         "QOscillatorEnergy", ",", " ", "QOscillatorFunction", ",", " ", 
+         "QOscillatorFunctionT", ",", " ", "QOscillatorGaussian", ",", 
+         RowBox[{
+          RowBox[{"QOscillatorBarDiagram", ".", " ", "QOscillatorFrequency"}],
+           "->", 
+          RowBox[{
+          "w", " ", "sets", " ", "the", " ", "frequency", " ", "of", " ", 
+           "the", " ", "harmonic", " ", "oscillator", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+             "the", " ", "coupling", " ", "constant", " ", "of", " ", "the", 
+              " ", "oscillator", " ", "potential", " ", "is", " ", "m", " ", 
+              RowBox[{
+               RowBox[{"w", "^", "2"}], "/", "2"}]}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]},
+       {"QOscillatorMass", 
+        RowBox[{
+         RowBox[{
+         "QOscillatorMass", " ", "is", " ", "an", " ", "option", " ", "for", 
+          " ", "QOscillatorHamiltonian"}], ",", " ", "QOscillatorFunction", 
+         ",", " ", "QOscillatorFunctionT", ",", " ", "QOscillatorGaussian", 
+         ",", 
+         RowBox[{
+          RowBox[{"QOscillatorBarDiagram", ".", " ", "QOscillatorMass"}], "->",
+           
+          RowBox[{
+          "m", " ", "sets", " ", "the", " ", "mass", " ", "of", " ", "the", 
+           " ", "harmonic", " ", 
+           RowBox[{"oscillator", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"QOscillatorGaussian"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Oscillator`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QOscillatorGaussian"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QOscillatorBarDiagram", "Section",
+ CellTags->"QOscillatorBarDiagram"],
+
+Cell["\<\
+QOscillatorBarDiagram[f[x],{x,a,b},n1,n2, opts] plots the energy \
+representation of a given function in the basis of harmonic oscillator \
+eigenfunctions. Numerical region for the determination of the expansion \
+coefficients is the interval (a,b). The graph shows the expansion \
+coefficients c_n for n between n1 and n2. The interval (a,b) should be large \
+enough so that all eigenfunctions with quantum numbers larger than n2 are \
+essentially zero outside that interval. The short version \
+QOscillatorBarDiagram[f[x],{x}] uses the Default values a=-Infinity, \
+b=Infinity, n1=0, n2=10. Package: VQM`Oscillator`.\
+\>", "Usage",
+ CellTags->"QOscillatorBarDiagram"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QOscillatorFrequency", 
+        RowBox[{
+         RowBox[{
+         "QOscillatorFrequency", " ", "is", " ", "an", " ", "option", " ", 
+          "for", " ", "QOscillatorHamiltonian"}], ",", " ", 
+         "QOscillatorEnergy", ",", " ", "QOscillatorFunction", ",", " ", 
+         "QOscillatorFunctionT", ",", " ", "QOscillatorGaussian", ",", 
+         RowBox[{
+          RowBox[{"QOscillatorBarDiagram", ".", " ", "QOscillatorFrequency"}],
+           "->", 
+          RowBox[{
+          "w", " ", "sets", " ", "the", " ", "frequency", " ", "of", " ", 
+           "the", " ", "harmonic", " ", "oscillator", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+             "the", " ", "coupling", " ", "constant", " ", "of", " ", "the", 
+              " ", "oscillator", " ", "potential", " ", "is", " ", "m", " ", 
+              RowBox[{
+               RowBox[{"w", "^", "2"}], "/", "2"}]}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]},
+       {"QOscillatorMass", 
+        RowBox[{
+         RowBox[{
+         "QOscillatorMass", " ", "is", " ", "an", " ", "option", " ", "for", 
+          " ", "QOscillatorHamiltonian"}], ",", " ", "QOscillatorFunction", 
+         ",", " ", "QOscillatorFunctionT", ",", " ", "QOscillatorGaussian", 
+         ",", 
+         RowBox[{
+          RowBox[{"QOscillatorBarDiagram", ".", " ", "QOscillatorMass"}], "->",
+           
+          RowBox[{
+          "m", " ", "sets", " ", "the", " ", "mass", " ", "of", " ", "the", 
+           " ", "harmonic", " ", 
+           RowBox[{"oscillator", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"QOscillatorBarDiagram"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Oscillator`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QOscillatorBarDiagram"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["$QOscillatorFrequency", "Section",
+ CellTags->"$QOscillatorFrequency"],
+
+Cell["\<\
+$QOscillatorFrequency is the default value for the option \
+QOscillatorFrequency. Can be redefined by the user. Package: VQM`Oscillator`.\
+\
+\>", "Usage",
+ CellTags->"$QOscillatorFrequency"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QOscillatorHamiltonian", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"QOscillatorHamiltonian1D", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", "x", ",", " ", "opts"}], "]"}],
+           " ", "applies", " ", "the", " ", "Hamiltonian", " ", "of", " ", 
+          "the", " ", "one", " ", "dimensional", " ", "harmonic", " ", 
+          "oscillator", " ", "to", " ", "the", " ", "function", " ", 
+          RowBox[{
+           RowBox[{"f", "[", "x", "]"}], ".", " ", "The"}], " ", "option", 
+          " ", "QOscillatorFrequency"}], "->", 
+         RowBox[{
+          RowBox[{"w", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"default", " ", "$QOscillatorFrequency"}], "=", "1"}], 
+            ")"}], " ", "defines", " ", "the", " ", "frequency", " ", "of", 
+           " ", "the", " ", "harmonic", " ", 
+           RowBox[{"oscillator", ".", " ", "The"}], " ", "option", " ", 
+           "QOscillatorMass"}], "->", 
+          RowBox[{"m", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"default", " ", "$QOscillatorMass"}], " ", "=", " ", 
+             "1"}], ")"}], " ", "defines", " ", "the", " ", "mass", " ", "of",
+            " ", "the", " ", "particle", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+              "we", " ", "use", " ", "units", " ", "with", " ", "hbar"}], " ",
+               "=", " ", "1"}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"$QOscillatorFrequency"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Oscillator`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"$QOscillatorFrequency"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["$QOscillatorMass", "Section",
+ CellTags->"$QOscillatorMass"],
+
+Cell["\<\
+$QOscillatorMass is the default value for the option QOscillatorMass. Can be \
+redefined by the user. Package: VQM`Oscillator`.\
+\>", "Usage",
+ CellTags->"$QOscillatorMass"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QOscillatorHamiltonian", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"QOscillatorHamiltonian1D", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", "x", ",", " ", "opts"}], "]"}],
+           " ", "applies", " ", "the", " ", "Hamiltonian", " ", "of", " ", 
+          "the", " ", "one", " ", "dimensional", " ", "harmonic", " ", 
+          "oscillator", " ", "to", " ", "the", " ", "function", " ", 
+          RowBox[{
+           RowBox[{"f", "[", "x", "]"}], ".", " ", "The"}], " ", "option", 
+          " ", "QOscillatorFrequency"}], "->", 
+         RowBox[{
+          RowBox[{"w", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"default", " ", "$QOscillatorFrequency"}], "=", "1"}], 
+            ")"}], " ", "defines", " ", "the", " ", "frequency", " ", "of", 
+           " ", "the", " ", "harmonic", " ", 
+           RowBox[{"oscillator", ".", " ", "The"}], " ", "option", " ", 
+           "QOscillatorMass"}], "->", 
+          RowBox[{"m", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"default", " ", "$QOscillatorMass"}], " ", "=", " ", 
+             "1"}], ")"}], " ", "defines", " ", "the", " ", "mass", " ", "of",
+            " ", "the", " ", "particle", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+              "we", " ", "use", " ", "units", " ", "with", " ", "hbar"}], " ",
+               "=", " ", "1"}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Oscillator`", "."}]}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"$QOscillatorMass"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Oscillator`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"$QOscillatorMass"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "QOscillatorEnergy"->{
+  Cell[590, 23, 68, 1, 63, "Section",
+   CellTags->"QOscillatorEnergy"],
+  Cell[661, 26, 286, 5, 63, "Usage",
+   CellTags->"QOscillatorEnergy"],
+  Cell[950, 33, 1490, 35, 125, "Text",
+   CellTags->"QOscillatorEnergy"],
+  Cell[2443, 70, 162, 5, 23, "Text",
+   CellTags->"QOscillatorEnergy"]},
+ "QOscillatorFunction"->{
+  Cell[2642, 80, 72, 1, 63, "Section",
+   CellTags->"QOscillatorFunction"],
+  Cell[2717, 83, 252, 5, 47, "Usage",
+   CellTags->"QOscillatorFunction"],
+  Cell[2972, 90, 2186, 51, 201, "Text",
+   CellTags->"QOscillatorFunction"],
+  Cell[5161, 143, 164, 5, 23, "Text",
+   CellTags->"QOscillatorFunction"]},
+ "QOscillatorGaussian"->{
+  Cell[5362, 153, 72, 1, 63, "Section",
+   CellTags->"QOscillatorGaussian"],
+  Cell[5437, 156, 574, 9, 95, "Usage",
+   CellTags->"QOscillatorGaussian"],
+  Cell[6014, 167, 2186, 51, 201, "Text",
+   CellTags->"QOscillatorGaussian"],
+  Cell[8203, 220, 164, 5, 70, "Text",
+   CellTags->"QOscillatorGaussian"]},
+ "QOscillatorBarDiagram"->{
+  Cell[8404, 230, 76, 1, 70, "Section",
+   CellTags->"QOscillatorBarDiagram"],
+  Cell[8483, 233, 679, 11, 70, "Usage",
+   CellTags->"QOscillatorBarDiagram"],
+  Cell[9165, 246, 2188, 51, 70, "Text",
+   CellTags->"QOscillatorBarDiagram"],
+  Cell[11356, 299, 166, 5, 70, "Text",
+   CellTags->"QOscillatorBarDiagram"]},
+ "$QOscillatorFrequency"->{
+  Cell[11559, 309, 76, 1, 70, "Section",
+   CellTags->"$QOscillatorFrequency"],
+  Cell[11638, 312, 200, 5, 70, "Usage",
+   CellTags->"$QOscillatorFrequency"],
+  Cell[11841, 319, 2038, 48, 70, "Text",
+   CellTags->"$QOscillatorFrequency"],
+  Cell[13882, 369, 166, 5, 70, "Text",
+   CellTags->"$QOscillatorFrequency"]},
+ "$QOscillatorMass"->{
+  Cell[14085, 379, 66, 1, 70, "Section",
+   CellTags->"$QOscillatorMass"],
+  Cell[14154, 382, 183, 4, 70, "Usage",
+   CellTags->"$QOscillatorMass"],
+  Cell[14340, 388, 2033, 48, 70, "Text",
+   CellTags->"$QOscillatorMass"],
+  Cell[16376, 438, 161, 5, 70, "Text",
+   CellTags->"$QOscillatorMass"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"QOscillatorEnergy", 16859, 456},
+ {"QOscillatorFunction", 17177, 465},
+ {"QOscillatorGaussian", 17507, 474},
+ {"QOscillatorBarDiagram", 17842, 483},
+ {"$QOscillatorFrequency", 18186, 492},
+ {"$QOscillatorMass", 18527, 501}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 68, 1, 63, "Section",
+ CellTags->"QOscillatorEnergy"],
+Cell[661, 26, 286, 5, 63, "Usage",
+ CellTags->"QOscillatorEnergy"],
+Cell[950, 33, 1490, 35, 125, "Text",
+ CellTags->"QOscillatorEnergy"],
+Cell[2443, 70, 162, 5, 23, "Text",
+ CellTags->"QOscillatorEnergy"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2642, 80, 72, 1, 63, "Section",
+ CellTags->"QOscillatorFunction"],
+Cell[2717, 83, 252, 5, 47, "Usage",
+ CellTags->"QOscillatorFunction"],
+Cell[2972, 90, 2186, 51, 201, "Text",
+ CellTags->"QOscillatorFunction"],
+Cell[5161, 143, 164, 5, 23, "Text",
+ CellTags->"QOscillatorFunction"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5362, 153, 72, 1, 63, "Section",
+ CellTags->"QOscillatorGaussian"],
+Cell[5437, 156, 574, 9, 95, "Usage",
+ CellTags->"QOscillatorGaussian"],
+Cell[6014, 167, 2186, 51, 201, "Text",
+ CellTags->"QOscillatorGaussian"],
+Cell[8203, 220, 164, 5, 70, "Text",
+ CellTags->"QOscillatorGaussian"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8404, 230, 76, 1, 70, "Section",
+ CellTags->"QOscillatorBarDiagram"],
+Cell[8483, 233, 679, 11, 70, "Usage",
+ CellTags->"QOscillatorBarDiagram"],
+Cell[9165, 246, 2188, 51, 70, "Text",
+ CellTags->"QOscillatorBarDiagram"],
+Cell[11356, 299, 166, 5, 70, "Text",
+ CellTags->"QOscillatorBarDiagram"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11559, 309, 76, 1, 70, "Section",
+ CellTags->"$QOscillatorFrequency"],
+Cell[11638, 312, 200, 5, 70, "Usage",
+ CellTags->"$QOscillatorFrequency"],
+Cell[11841, 319, 2038, 48, 70, "Text",
+ CellTags->"$QOscillatorFrequency"],
+Cell[13882, 369, 166, 5, 70, "Text",
+ CellTags->"$QOscillatorFrequency"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14085, 379, 66, 1, 70, "Section",
+ CellTags->"$QOscillatorMass"],
+Cell[14154, 382, 183, 4, 70, "Usage",
+ CellTags->"$QOscillatorMass"],
+Cell[14340, 388, 2033, 48, 70, "Text",
+ CellTags->"$QOscillatorMass"],
+Cell[16376, 438, 161, 5, 70, "Text",
+ CellTags->"$QOscillatorMass"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

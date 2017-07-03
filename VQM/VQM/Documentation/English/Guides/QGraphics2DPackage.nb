@@ -1,0 +1,538 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     24169,        529]
+NotebookOptionsPosition[     23426,        499]
+NotebookOutlinePosition[     24055,        524]
+CellTagsIndexPosition[     23976,        519]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Quantum Kernel Plot ", "Subsection",
+ CellTags->"VQM`QGraphics2D`"],
+
+Cell["\<\
+This package provides some plot commands for use together with the \
+QuantumKernel application. \
+\>", "Text",
+ CellTags->"VQM`QGraphics2D`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QPrepareOptions", "[", 
+         RowBox[{"{", 
+          RowBox[{
+          "dx", ",", "numLeft", ",", "numRight", ",", "plotLeft", ",", 
+           "plotRight", ",", "skipFac"}], "}"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "turns", " ", "a", " ", "list", " ", "of", " ", "parameters", " ", 
+          "into", " ", "a", " ", "list", " ", "of", " ", "Options", " ", 
+          "for", " ", "QGraphics2D", " ", 
+          RowBox[{"commands", ".", " ", "Auxiliary"}], " ", 
+          RowBox[{"function", ".", " ", "See"}], " ", "description", " ", 
+          "of", " ", 
+          RowBox[{"QParameters", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QExtractPart", "[", "qparams", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"generates", " ", "part", " ", 
+            RowBox[{"specifications", ".", " ", "It"}], " ", "returns", " ", 
+            "lists", " ", "of", " ", "indices", " ", "suitable", " ", "for", 
+            " ", "use", " ", "with", " ", "the", " ", "Part", " ", 
+            RowBox[{"function", ".", " ", "Here"}], " ", "qparams"}], " ", 
+           "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+               "dx", ",", "numLeft", ",", "numRight", ",", "plotLeft", ",", 
+                "plotRight", ",", "skipFac"}], "}"}], ".", " ", 
+              "QExtractPart"}], " ", "is", " ", "useful", " ", "for", " ", 
+             "extracting", " ", "a", " ", "part", " ", "of", " ", "a", " ", 
+             "large", " ", "two"}], "-", 
+            RowBox[{
+            "dimensional", " ", "numerical", " ", "array", " ", "of", " ", 
+             RowBox[{"numbers", ".", " ", "Assume"}], " ", "that", " ", "the",
+              " ", "array", " ", "describes", " ", "function", " ", "values", 
+             " ", "on", " ", "a", " ", "fine", " ", "grid", " ", "of", " ", 
+             "space", " ", "points", " ", "in", " ", "the", " ", "region", 
+             " ", "defined", " ", "by", " ", "numLeft", " ", "and", " ", 
+             "numRight", " ", "and", " ", "grid", " ", "constant", " ", 
+             RowBox[{"dx", ".", " ", "But"}], " ", "you", " ", "want", " ", 
+             "to", " ", "plot", " ", "only", " ", "the", " ", "values", " ", 
+             "in", " ", "region", " ", "defined", " ", "by", " ", "plotLeft", 
+             " ", "and", " ", 
+             RowBox[{"plotRight", ".", " ", "If"}], " ", "you", " ", "want", 
+             " ", "to", " ", "plot", " ", "at", " ", "a", " ", "lower", " ", 
+             "resolution"}]}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+            "you", " ", "may", " ", "want", " ", "to", " ", "keep", " ", 
+             "only", " ", "every", " ", "n"}], "-", 
+            RowBox[{"th", " ", "value", " ", "in", " ", "the", " ", "x"}], 
+            "-", 
+            RowBox[{
+            "direction", " ", "and", " ", "only", " ", "every", " ", "m"}], 
+            "-", 
+            RowBox[{"th", " ", "value", " ", "in", " ", "the", " ", "y"}], 
+            "-", 
+            RowBox[{
+             RowBox[{"direction", ".", " ", "Then"}], " ", "choose", " ", 
+             "skipfac"}]}], " ", "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"n", ",", "m"}], "}"}], ".", " ", "The"}], " ", 
+            "smaller", " ", "array", " ", "of", " ", "numbers", " ", 
+            "containing", " ", "only", " ", "the", " ", "values", " ", "to", 
+            " ", "be", " ", "plotted", " ", "is", " ", "then", " ", 
+            "obtained", " ", "by", " ", 
+            RowBox[{
+             RowBox[{"Part", "[", 
+              RowBox[{"array", ","}], " ", "]"}], ".", " ", "See"}], " ", 
+            "also", " ", "the", " ", "description", " ", "of", " ", 
+            RowBox[{"QParameters", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetAndDensityPlot", "[", 
+         RowBox[{"psi", ",", "T", ",", 
+          RowBox[{"QParameters", "->", "qparams"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "utility", " ", "function", " ", "for", " ", 
+           "visualizing", " ", "a", " ", "numerically", " ", "determined", 
+           " ", "function", " ", 
+           RowBox[{"psi", ".", " ", "It"}], " ", "is", " ", "assumed", " ", 
+           "that", " ", "psi", " ", "is", " ", "a", " ", "function", " ", 
+           "object", " ", "defined", " ", "in", " ", "QuantumKernel", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"see", " ", "VQM`QuantumKernel`"}], ")"}], ".", " ", 
+            "Via"}], " ", "MathLink"}], ",", " ", 
+          RowBox[{
+          "QGetAndDensityPlot", " ", "gets", " ", "the", " ", "numerical", 
+           " ", "array", " ", "of", " ", "complex", " ", "numbers", " ", 
+           "representing", " ", "psi", " ", "from", " ", 
+           RowBox[{"QuantumKernel", ".", " ", "Then"}], " ", "it", " ", 
+           "extracts", " ", "the", " ", "part", " ", "of", " ", "psi", " ", 
+           "that", " ", "is", " ", "needed", " ", "for", " ", "the", " ", 
+           "visualization"}], ",", " ", 
+          RowBox[{
+           RowBox[{"as", " ", "specified", " ", "by", " ", "qparams"}], " ", 
+           "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+              "dx", ",", "numLeft", ",", "numRight", ",", "plotLeft", ",", 
+               "plotRight", ",", "skipFac"}], "}"}], ".", " ", "See"}], " ", 
+            "the", " ", "description", " ", "of", " ", 
+            RowBox[{"QParameters", ".", " ", "The"}], " ", "option", " ", 
+            "QParameters", " ", "must", " ", "be", " ", 
+            RowBox[{"given", ".", " ", "Finally"}]}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "QGetAndDensityPlot", " ", "produces", " ", "a", " ", "density", 
+            " ", "plot", " ", "of", " ", 
+            RowBox[{"Abs", "[", "psi", "]"}], " ", "with", " ", "PlotLabel", 
+            " ", "t"}], "=", 
+           RowBox[{"T", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetAndComplexDensityPlot", "[", 
+         RowBox[{"psi", ",", "T", ",", 
+          RowBox[{"QParameters", "->", "qparams"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "utility", " ", "function", " ", "for", " ", 
+           "visualizing", " ", "a", " ", "numerically", " ", "determined", 
+           " ", "function", " ", 
+           RowBox[{"psi", ".", " ", "It"}], " ", "is", " ", "assumed", " ", 
+           "that", " ", "psi", " ", "is", " ", "a", " ", "function", " ", 
+           "object", " ", "defined", " ", "in", " ", "QuantumKernel", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"see", " ", "VQM`QuantumKernel`"}], ")"}], ".", " ", 
+            "Via"}], " ", "MathLink"}], ",", " ", 
+          RowBox[{
+          "QGetAndComplexDensityPlot", " ", "gets", " ", "the", " ", 
+           "numerical", " ", "array", " ", "of", " ", "complex", " ", 
+           "numbers", " ", "representing", " ", "psi", " ", "from", " ", 
+           RowBox[{"QuantumKernel", ".", " ", "Then"}], " ", "it", " ", 
+           "extracts", " ", "the", " ", "part", " ", "of", " ", "psi", " ", 
+           "that", " ", "is", " ", "needed", " ", "for", " ", "the", " ", 
+           "visualization"}], ",", " ", 
+          RowBox[{
+           RowBox[{"as", " ", "specified", " ", "by", " ", "qparams"}], " ", 
+           "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+              "dx", ",", "numLeft", ",", "numRight", ",", "plotLeft", ",", 
+               "plotRight", ",", "skipFac"}], "}"}], ".", " ", "See"}], " ", 
+            "the", " ", "description", " ", "of", " ", 
+            RowBox[{"QParameters", ".", " ", "The"}], " ", "option", " ", 
+            "QParameters", " ", "must", " ", "be", " ", 
+            RowBox[{"given", ".", " ", "Finally"}]}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "QGetAndComplexDensityPlot", " ", "produces", " ", "a", " ", 
+            "colored", " ", "density", " ", "plot", " ", "of", " ", "psi", 
+            " ", "with", " ", "PlotLabel", " ", "t"}], "=", 
+           RowBox[{"T", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetSpinorAndDensityPlot", "[", 
+         RowBox[{"psi", ",", "T", ",", 
+          RowBox[{"QParameters", "->", "qparams"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "a", " ", "utility", " ", "function", " ", "for", " ", 
+          "visualizing", " ", "a", " ", "numerically", " ", "determined", " ",
+           "spinor", " ", 
+          RowBox[{"psi", ".", " ", "It"}], " ", "is", " ", "assumed", " ", 
+          "that", " ", "QuantumKernel", " ", "computes", " ", "a", " ", 
+          "spinor", " ", "psi", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"given", " ", "by", " ", "a", " ", "two"}], "-", 
+             RowBox[{
+             "dimensional", " ", "array", " ", "of", " ", "4", " ", "real", 
+              " ", "numbers", " ", "representing", " ", "real", " ", "and", 
+              " ", "imaginary", " ", "parts", " ", "of", " ", "upper", " ", 
+              "and", " ", "lower", " ", "components"}]}], ")"}], ".", " ", 
+           "QGetSpinorAndDensityPlot"}], " ", "extracts", " ", 
+          RowBox[{"(", 
+           RowBox[{"via", " ", "MathLink"}], ")"}], " ", "the", " ", "array", 
+          " ", "psi", " ", "of", " ", "spinors", " ", "from", " ", 
+          "QuantumKernel", " ", "and", " ", "visualizes", " ", "the", " ", 
+          "absolute", " ", "value", " ", "with", " ", "a", " ", "density", 
+          " ", "plot", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"grayscale", " ", "image"}], ")"}], ".", " ", "psi"}], 
+          " ", "is", " ", "the", " ", "name", " ", "of", " ", "the", " ", 
+          "function", " ", "object", " ", "defined", " ", "in", " ", 
+          RowBox[{"QuantumKernel", ".", " ", "T"}], " ", "is", " ", "the", 
+          " ", "time", " ", "variable", " ", "for", " ", "the", " ", 
+          RowBox[{"PlotLabel", ".", " ", "The"}], " ", "required", " ", 
+          "option", " ", "QParameters", " ", "specifies", " ", "the", " ", 
+          "parameters", " ", "for", " ", "extracting", " ", "from", " ", 
+          "psi", " ", "the", " ", "values", " ", "that", " ", "are", " ", 
+          "needed", " ", "for", " ", "the", " ", 
+          RowBox[{"visualization", ".", " ", "See"}], " ", "also", " ", "the",
+           " ", "description", " ", "of", " ", 
+          RowBox[{"QParameters", ".", "  ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QMakeTable", "[", 
+         RowBox[{"f", ",", 
+          RowBox[{"QParameters", "->", "qparams"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "turns", " ", "a", " ", "function", " ", "f", " ", "into", " ", 
+            "an", " ", "array", " ", "of", " ", "numerical", " ", "values", 
+            " ", "by", " ", "computing", " ", "the", " ", "values", " ", "of",
+             " ", "f", " ", "on", " ", "a", " ", "two"}], "-", 
+           RowBox[{
+           "dimensional", " ", "grid", " ", "of", " ", "points", " ", "as", 
+            " ", "specified", " ", "by", " ", 
+            RowBox[{"qparams", ".", " ", "The"}], " ", "option", " ", 
+            "QParameters", " ", "must", " ", "be", " ", 
+            RowBox[{"given", ".", " ", "Here"}], " ", "qparams"}]}], " ", "=",
+           " ", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "dx", ",", " ", "numleft", ",", " ", "numright", ",", " ", 
+             "..."}], "}"}], " ", "describes", " ", "the", " ", "numerical", 
+           " ", "region", " ", "and", " ", "the", " ", "spacing", " ", "of", 
+           " ", "grid", " ", 
+           RowBox[{"points", ".", " ", "See"}], " ", "also", " ", "the", " ", 
+           "description", " ", "of", " ", 
+           RowBox[{"QParameters", ".", " ", "The"}], " ", "numerical", " ", 
+           "array", " ", "can", " ", "then", " ", "be", " ", "passed", " ", 
+           "to", " ", 
+           RowBox[{"QuantumKernel", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QZeroTable", "[", 
+         RowBox[{"QParameters", "->", "qparams"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "generates", " ", "a", " ", "table", " ", "of", " ", "zero", " ", 
+            "values", " ", "matching", " ", "the", " ", "two"}], "-", 
+           RowBox[{
+           "dimensional", " ", "grid", " ", "defined", " ", "by", " ", 
+            "qparams"}]}], " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+             "dx", ",", " ", "numleft", ",", " ", "numright", ",", " ", 
+              "..."}], "}"}], ".", " ", "See"}], " ", "also", " ", "the", " ",
+            "description", " ", "of", " ", 
+           RowBox[{"QParameters", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetSpinorAndDensityPlotTwo", "[", 
+         RowBox[{"psiUp", ",", "psiDown", ",", "T", ",", 
+          RowBox[{"QParameters", "->", "qparams"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "utility", " ", "function", " ", "for", " ", 
+           "visualizing", " ", "a", " ", "numerically", " ", "determined", 
+           " ", 
+           RowBox[{"spinor", ".", " ", "It"}], " ", "is", " ", "assumed", " ",
+            "that", " ", "QuantumKernel", " ", "computes", " ", "two", " ", 
+           "complex", " ", "functions", " ", "psiUp"}], ",", " ", "psiDown", 
+          ",", " ", 
+          RowBox[{
+          "representing", " ", "upper", " ", "and", " ", "lower", " ", 
+           "components", " ", "of", " ", "the", " ", 
+           RowBox[{"spinor", ".", " ", "QGetSpinorAndDensityPlotTwo"}], " ", 
+           "extracts", " ", 
+           RowBox[{"(", 
+            RowBox[{"via", " ", "MathLink"}], ")"}], " ", "these", " ", 
+           "arrays", " ", "from", " ", "QuantumKernel", " ", "combines", " ", 
+           "them", " ", "into", " ", "a", " ", "spinor", " ", "and", " ", 
+           "visualizes", " ", "the", " ", "absolute", " ", "value", " ", 
+           "with", " ", "a", " ", "density", " ", "plot", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"grayscale", " ", "image"}], ")"}], ".", " ", 
+            "psiUp"}]}], ",", " ", 
+          RowBox[{
+          "psiDown", " ", "are", " ", "the", " ", "names", " ", "of", " ", 
+           "the", " ", "wave", " ", "function", " ", "objects", " ", 
+           "defined", " ", "in", " ", 
+           RowBox[{"QuantumKernel", ".", " ", "T"}], " ", "is", " ", "the", 
+           " ", "time", " ", "variable", " ", "for", " ", "the", " ", 
+           RowBox[{"PlotLabel", ".", " ", "The"}], " ", "required", " ", 
+           "option", " ", "QParameters", " ", "specifies", " ", "the", " ", 
+           "parameters", " ", "for", " ", "extracting", " ", "from", " ", 
+           "psi", " ", "the", " ", "values", " ", "that", " ", "are", " ", 
+           "needed", " ", "for", " ", "the", " ", 
+           RowBox[{"visualization", ".", " ", "See"}], " ", "also", " ", 
+           "the", " ", "description", " ", "of", " ", 
+           RowBox[{"QParameters", ".", "  ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetAndSpinorToColorPlot", "[", 
+         RowBox[{"psi", ",", "T", ",", 
+          RowBox[{"QParameters", "->", "qparams"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "a", " ", "utility", " ", "function", " ", "for", " ", 
+          "visualizing", " ", "a", " ", "numerically", " ", "determined", " ",
+           "spinor", " ", 
+          RowBox[{"psi", ".", " ", "It"}], " ", "is", " ", "assumed", " ", 
+          "that", " ", "QuantumKernel", " ", "computes", " ", "a", " ", 
+          "spinor", " ", "psi", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"given", " ", "by", " ", "a", " ", "two"}], "-", 
+             RowBox[{
+             "dimensional", " ", "array", " ", "of", " ", "4", " ", "real", 
+              " ", "numbers", " ", "representing", " ", "real", " ", "and", 
+              " ", "imaginary", " ", "parts", " ", "of", " ", "upper", " ", 
+              "and", " ", "lower", " ", "components"}]}], ")"}], ".", " ", 
+           "QGetAndSpinorToColorPlot"}], " ", "extracts", " ", 
+          RowBox[{"(", 
+           RowBox[{"via", " ", "MathLink"}], ")"}], " ", "the", " ", "array", 
+          " ", "spinor", " ", "from", " ", "QuantumKernel", " ", "and", " ", 
+          "visualizes", " ", "it", " ", "by", " ", "associating", " ", "a", 
+          " ", "color", " ", "to", " ", "the", " ", "local", " ", "spin", " ",
+           
+          RowBox[{"direction", ".", " ", "psi"}], " ", "is", " ", "the", " ", 
+          "name", " ", "of", " ", "the", " ", "function", " ", "object", " ", 
+          "defined", " ", "in", " ", 
+          RowBox[{"QuantumKernel", ".", " ", "T"}], " ", "is", " ", "the", 
+          " ", "time", " ", "variable", " ", "for", " ", "the", " ", 
+          RowBox[{"PlotLabel", ".", " ", "The"}], " ", "required", " ", 
+          "option", " ", "QParameters", " ", "specifies", " ", "the", " ", 
+          "parameters", " ", "for", " ", "extracting", " ", "from", " ", 
+          "psi", " ", "the", " ", "values", " ", "that", " ", "are", " ", 
+          "needed", " ", "for", " ", "the", " ", 
+          RowBox[{"visualization", ".", " ", "See"}], " ", "also", " ", "the",
+           " ", "description", " ", "of", " ", 
+          RowBox[{"QParameters", ".", "  ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGetAndSpinorToColorPlotTwo", "[", 
+         RowBox[{"psiUp", ",", "psiDown", ",", "T", ",", 
+          RowBox[{"QParameters", "->", "qparams"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "utility", " ", "function", " ", "for", " ", 
+           "visualizing", " ", "a", " ", "numerically", " ", "determined", 
+           " ", 
+           RowBox[{"spinor", ".", " ", "It"}], " ", "is", " ", "assumed", " ",
+            "that", " ", "QuantumKernel", " ", "computes", " ", "two", " ", 
+           "complex", " ", "functions", " ", "psiUp"}], ",", " ", "psiDown", 
+          ",", " ", 
+          RowBox[{
+           RowBox[{
+           "representing", " ", "upper", " ", "and", " ", "lower", " ", 
+            "components", " ", "of", " ", "the", " ", 
+            RowBox[{"spinor", ".", " ", "QGetSpinorAndDensityPlotTwo"}], " ", 
+            "extracts", " ", 
+            RowBox[{"(", 
+             RowBox[{"via", " ", "MathLink"}], ")"}], " ", "these", " ", 
+            "arrays", " ", "from", " ", "QuantumKernel", " ", "combines", " ",
+             "them", " ", "into", " ", "a", " ", "spinor", " ", "and", " ", 
+            "visualizes", " ", "it", " ", "by", " ", "associating", " ", "a", 
+            " ", "color", " ", "to", " ", "the", " ", "local", " ", "spin"}], 
+           "-", 
+           RowBox[{"direction", " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"color", " ", "array", " ", "plot"}], ")"}], ".", " ", 
+             "psiUp"}]}]}], ",", " ", 
+          RowBox[{
+          "psiDown", " ", "are", " ", "the", " ", "names", " ", "of", " ", 
+           "the", " ", "wave", " ", "function", " ", "objects", " ", 
+           "defined", " ", "in", " ", 
+           RowBox[{"QuantumKernel", ".", " ", "T"}], " ", "is", " ", "the", 
+           " ", "time", " ", "variable", " ", "for", " ", "the", " ", 
+           RowBox[{"PlotLabel", ".", " ", "The"}], " ", "required", " ", 
+           "option", " ", "QParameters", " ", "specifies", " ", "the", " ", 
+           "parameters", " ", "for", " ", "extracting", " ", "from", " ", 
+           "psi", " ", "the", " ", "values", " ", "that", " ", "are", " ", 
+           "needed", " ", "for", " ", "the", " ", 
+           RowBox[{"visualization", ".", " ", "See"}], " ", "also", " ", 
+           "the", " ", "description", " ", "of", " ", 
+           RowBox[{"QParameters", ".", "  ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`QGraphics2D`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`QGraphics2D`"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`QGraphics2D`"->{
+  Cell[590, 23, 73, 1, 37, "Subsection",
+   CellTags->"VQM`QGraphics2D`"],
+  Cell[666, 26, 151, 4, 23, "Text",
+   CellTags->"VQM`QGraphics2D`"],
+  Cell[820, 32, 22590, 464, 1901, "Text",
+   CellTags->"VQM`QGraphics2D`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`QGraphics2D`", 23731, 509}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 73, 1, 37, "Subsection",
+ CellTags->"VQM`QGraphics2D`"],
+Cell[666, 26, 151, 4, 23, "Text",
+ CellTags->"VQM`QGraphics2D`"],
+Cell[820, 32, 22590, 464, 1901, "Text",
+ CellTags->"VQM`QGraphics2D`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

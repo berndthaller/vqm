@@ -1,0 +1,374 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     11182,        201]*)
+(*NotebookOutlinePosition[     14888,        304]*)
+(*  CellTagsIndexPosition[     14450,        289]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["QPrepareOptions", "Section",
+  CellTags->"QPrepareOptions"],
+
+Cell["\<\
+QPrepareOptions[{dx,numLeft,numRight,plotLeft,plotRight,skipFac}] turns a list of parameters into a list of Options for QGraphics2D commands. Auxiliary function. See description of QParameters. Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QPrepareOptions"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QPrepareOptions"],
+
+Cell["QExtractPart", "Section",
+  CellTags->"QExtractPart"],
+
+Cell["\<\
+QExtractPart[qparams] generates part specifications. It returns lists of indices suitable for use with the Part function. Here qparams = {dx,numLeft,numRight,plotLeft,plotRight,skipFac}. QExtractPart is useful for extracting a part of a large two-dimensional numerical array of numbers. Assume that the array describes function values on a fine grid of space points in the region defined by numLeft and numRight and grid constant dx. But you want to plot only the values in region defined by plotLeft and plotRight. If you want to plot at a lower resolution, you may want to keep only every n-th value in the x-direction and only every m-th value in the y-direction. Then choose skipfac = {n,m}. The smaller array of numbers containing only the values to be plotted is then obtained by Part[array, QExtractPart[qparams]]. See also the description of QParameters. Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QExtractPart"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QExtractPart"],
+
+Cell["QGetAndDensityPlot", "Section",
+  CellTags->"QGetAndDensityPlot"],
+
+Cell["\<\
+QGetAndDensityPlot[psi,T,QParameters->qparams,opts] is a utility function for visualizing a numerically determined function psi. It is assumed that psi is a function object defined in QuantumKernel (see VQM`QuantumKernel`). Via MathLink, QGetAndDensityPlot gets the numerical array of complex numbers representing psi from QuantumKernel. Then it extracts the part of psi that is needed for the visualization, as specified by qparams = {dx,numLeft,numRight,plotLeft,plotRight,skipFac}. See the description of QParameters. The option QParameters must be given. Finally, QGetAndDensityPlot produces a density plot of Abs[psi] with PlotLabel t=T. Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QGetAndDensityPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetAndDensityPlot"],
+
+Cell["QGetAndComplexDensityPlot", "Section",
+  CellTags->"QGetAndComplexDensityPlot"],
+
+Cell["\<\
+QGetAndComplexDensityPlot[psi,T,QParameters->qparams,opts] is a utility function for visualizing a numerically determined function psi. It is assumed that psi is a function object defined in QuantumKernel (see VQM`QuantumKernel`). Via MathLink, QGetAndComplexDensityPlot gets the numerical array of complex numbers representing psi from QuantumKernel. Then it extracts the part of psi that is needed for the visualization, as specified by qparams = {dx,numLeft,numRight,plotLeft,plotRight,skipFac}. See the description of QParameters. The option QParameters must be given. Finally, QGetAndComplexDensityPlot produces a colored density plot of psi with PlotLabel t=T. Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QGetAndComplexDensityPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetAndComplexDensityPlot"],
+
+Cell["QGetSpinorAndDensityPlot", "Section",
+  CellTags->"QGetSpinorAndDensityPlot"],
+
+Cell["\<\
+QGetSpinorAndDensityPlot[psi,T,QParameters->qparams,opts] is a utility function for visualizing a numerically determined spinor psi. It is assumed that QuantumKernel computes a spinor psi (given by a two-dimensional array of 4 real numbers representing real and imaginary parts of upper and lower components). QGetSpinorAndDensityPlot extracts (via MathLink) the array psi of spinors from QuantumKernel and visualizes the absolute value with a density plot (grayscale image). psi is the name of the function object defined in QuantumKernel. T is the time variable for the PlotLabel. The required option QParameters specifies the parameters for extracting from psi the values that are needed for the visualization. See also the description of QParameters.  Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QGetSpinorAndDensityPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetSpinorAndDensityPlot"],
+
+Cell["QMakeTable", "Section",
+  CellTags->"QMakeTable"],
+
+Cell["\<\
+QMakeTable[f,QParameters->qparams] turns a function f into an array of numerical values by computing the values of f on a two-dimensional grid of points as specified by qparams. The option QParameters must be given. Here qparams = {dx, numleft, numright, ...} describes the numerical region and the spacing of grid points. See also the description of QParameters. The numerical array can then be passed to QuantumKernel. Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QMakeTable"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QMakeTable"],
+
+Cell["QZeroTable", "Section",
+  CellTags->"QZeroTable"],
+
+Cell["\<\
+QZeroTable[QParameters->qparams] generates a table of zero values matching the two-dimensional grid defined by qparams = {dx, numleft, numright, ...}. See also the description of QParameters. Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QZeroTable"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QZeroTable"],
+
+Cell["QGetSpinorAndDensityPlotTwo", "Section",
+  CellTags->"QGetSpinorAndDensityPlotTwo"],
+
+Cell["\<\
+QGetSpinorAndDensityPlotTwo[psiUp,psiDown,T,QParameters->qparams,opts] is a utility function for visualizing a numerically determined spinor. It is assumed that QuantumKernel computes two complex functions psiUp, psiDown, representing upper and lower components of the spinor. QGetSpinorAndDensityPlotTwo extracts (via MathLink) these arrays from QuantumKernel combines them into a spinor and visualizes the absolute value with a density plot (grayscale image). psiUp, psiDown are the names of the wave function objects defined in QuantumKernel. T is the time variable for the PlotLabel. The required option QParameters specifies the parameters for extracting from psi the values that are needed for the visualization. See also the description of QParameters.  Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QGetSpinorAndDensityPlotTwo"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetSpinorAndDensityPlotTwo"],
+
+Cell["QGetAndSpinorToColorPlot", "Section",
+  CellTags->"QGetAndSpinorToColorPlot"],
+
+Cell["\<\
+QGetAndSpinorToColorPlot[psi,T,QParameters->qparams,opts] is a utility function for visualizing a numerically determined spinor psi. It is assumed that QuantumKernel computes a spinor psi (given by a two-dimensional array of 4 real numbers representing real and imaginary parts of upper and lower components). QGetAndSpinorToColorPlot extracts (via MathLink) the array spinor from QuantumKernel and visualizes it by associating a color to the local spin direction. psi is the name of the function object defined in QuantumKernel. T is the time variable for the PlotLabel. The required option QParameters specifies the parameters for extracting from psi the values that are needed for the visualization. See also the description of QParameters.  Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QGetAndSpinorToColorPlot"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetAndSpinorToColorPlot"],
+
+Cell["QGetAndSpinorToColorPlotTwo", "Section",
+  CellTags->"QGetAndSpinorToColorPlotTwo"],
+
+Cell["\<\
+QGetAndSpinorToColorPlotTwo[psiUp,psiDown,T,QParameters->qparams,opts] is a utility function for visualizing a numerically determined spinor. It is assumed that QuantumKernel computes two complex functions psiUp, psiDown, representing upper and lower components of the spinor. QGetSpinorAndDensityPlotTwo extracts (via MathLink) these arrays from QuantumKernel combines them into a spinor and visualizes it by associating a color to the local spin-direction (color array plot). psiUp, psiDown are the names of the wave function objects defined in QuantumKernel. T is the time variable for the PlotLabel. The required option QParameters specifies the parameters for extracting from psi the values that are needed for the visualization. See also the description of QParameters.  Package: VQM`QGraphics2D`.\
+\>", "Usage",
+  CellTags->"QGetAndSpinorToColorPlotTwo"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`QGraphics2D`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QGetAndSpinorToColorPlotTwo"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "QPrepareOptions"->{
+    Cell[1754, 51, 65, 1, 70, "Section",
+      CellTags->"QPrepareOptions"],
+    Cell[1822, 54, 276, 3, 70, "Usage",
+      CellTags->"QPrepareOptions"],
+    Cell[2101, 59, 168, 5, 70, "Text",
+      CellTags->"QPrepareOptions"]},
+  "QExtractPart"->{
+    Cell[2272, 66, 59, 1, 70, "Section",
+      CellTags->"QExtractPart"],
+    Cell[2334, 69, 942, 3, 70, "Usage",
+      CellTags->"QExtractPart"],
+    Cell[3279, 74, 165, 5, 70, "Text",
+      CellTags->"QExtractPart"]},
+  "QGetAndDensityPlot"->{
+    Cell[3447, 81, 71, 1, 70, "Section",
+      CellTags->"QGetAndDensityPlot"],
+    Cell[3521, 84, 728, 3, 70, "Usage",
+      CellTags->"QGetAndDensityPlot"],
+    Cell[4252, 89, 171, 5, 70, "Text",
+      CellTags->"QGetAndDensityPlot"]},
+  "QGetAndComplexDensityPlot"->{
+    Cell[4426, 96, 85, 1, 70, "Section",
+      CellTags->"QGetAndComplexDensityPlot"],
+    Cell[4514, 99, 759, 3, 70, "Usage",
+      CellTags->"QGetAndComplexDensityPlot"],
+    Cell[5276, 104, 178, 5, 70, "Text",
+      CellTags->"QGetAndComplexDensityPlot"]},
+  "QGetSpinorAndDensityPlot"->{
+    Cell[5457, 111, 83, 1, 70, "Section",
+      CellTags->"QGetSpinorAndDensityPlot"],
+    Cell[5543, 114, 847, 3, 70, "Usage",
+      CellTags->"QGetSpinorAndDensityPlot"],
+    Cell[6393, 119, 177, 5, 70, "Text",
+      CellTags->"QGetSpinorAndDensityPlot"]},
+  "QMakeTable"->{
+    Cell[6573, 126, 55, 1, 70, "Section",
+      CellTags->"QMakeTable"],
+    Cell[6631, 129, 498, 3, 70, "Usage",
+      CellTags->"QMakeTable"],
+    Cell[7132, 134, 163, 5, 70, "Text",
+      CellTags->"QMakeTable"]},
+  "QZeroTable"->{
+    Cell[7298, 141, 55, 1, 70, "Section",
+      CellTags->"QZeroTable"],
+    Cell[7356, 144, 269, 3, 70, "Usage",
+      CellTags->"QZeroTable"],
+    Cell[7628, 149, 163, 5, 70, "Text",
+      CellTags->"QZeroTable"]},
+  "QGetSpinorAndDensityPlotTwo"->{
+    Cell[7794, 156, 89, 1, 70, "Section",
+      CellTags->"QGetSpinorAndDensityPlotTwo"],
+    Cell[7886, 159, 855, 3, 70, "Usage",
+      CellTags->"QGetSpinorAndDensityPlotTwo"],
+    Cell[8744, 164, 180, 5, 70, "Text",
+      CellTags->"QGetSpinorAndDensityPlotTwo"]},
+  "QGetAndSpinorToColorPlot"->{
+    Cell[8927, 171, 83, 1, 70, "Section",
+      CellTags->"QGetAndSpinorToColorPlot"],
+    Cell[9013, 174, 836, 3, 70, "Usage",
+      CellTags->"QGetAndSpinorToColorPlot"],
+    Cell[9852, 179, 177, 5, 70, "Text",
+      CellTags->"QGetAndSpinorToColorPlot"]},
+  "QGetAndSpinorToColorPlotTwo"->{
+    Cell[10032, 186, 89, 1, 70, "Section",
+      CellTags->"QGetAndSpinorToColorPlotTwo"],
+    Cell[10124, 189, 871, 3, 70, "Usage",
+      CellTags->"QGetAndSpinorToColorPlotTwo"],
+    Cell[10998, 194, 180, 5, 70, "Text",
+      CellTags->"QGetAndSpinorToColorPlotTwo"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"QPrepareOptions", 11738, 215},
+  {"QExtractPart", 11987, 222},
+  {"QGetAndDensityPlot", 12233, 229},
+  {"QGetAndComplexDensityPlot", 12504, 236},
+  {"QGetSpinorAndDensityPlot", 12796, 243},
+  {"QMakeTable", 13073, 250},
+  {"QZeroTable", 13308, 257},
+  {"QGetSpinorAndDensityPlotTwo", 13560, 264},
+  {"QGetAndSpinorToColorPlot", 13860, 271},
+  {"QGetAndSpinorToColorPlotTwo", 14154, 278}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 65, 1, 70, "Section",
+  CellTags->"QPrepareOptions"],
+Cell[1822, 54, 276, 3, 70, "Usage",
+  CellTags->"QPrepareOptions"],
+Cell[2101, 59, 168, 5, 70, "Text",
+  CellTags->"QPrepareOptions"],
+Cell[2272, 66, 59, 1, 70, "Section",
+  CellTags->"QExtractPart"],
+Cell[2334, 69, 942, 3, 70, "Usage",
+  CellTags->"QExtractPart"],
+Cell[3279, 74, 165, 5, 70, "Text",
+  CellTags->"QExtractPart"],
+Cell[3447, 81, 71, 1, 70, "Section",
+  CellTags->"QGetAndDensityPlot"],
+Cell[3521, 84, 728, 3, 70, "Usage",
+  CellTags->"QGetAndDensityPlot"],
+Cell[4252, 89, 171, 5, 70, "Text",
+  CellTags->"QGetAndDensityPlot"],
+Cell[4426, 96, 85, 1, 70, "Section",
+  CellTags->"QGetAndComplexDensityPlot"],
+Cell[4514, 99, 759, 3, 70, "Usage",
+  CellTags->"QGetAndComplexDensityPlot"],
+Cell[5276, 104, 178, 5, 70, "Text",
+  CellTags->"QGetAndComplexDensityPlot"],
+Cell[5457, 111, 83, 1, 70, "Section",
+  CellTags->"QGetSpinorAndDensityPlot"],
+Cell[5543, 114, 847, 3, 70, "Usage",
+  CellTags->"QGetSpinorAndDensityPlot"],
+Cell[6393, 119, 177, 5, 70, "Text",
+  CellTags->"QGetSpinorAndDensityPlot"],
+Cell[6573, 126, 55, 1, 70, "Section",
+  CellTags->"QMakeTable"],
+Cell[6631, 129, 498, 3, 70, "Usage",
+  CellTags->"QMakeTable"],
+Cell[7132, 134, 163, 5, 70, "Text",
+  CellTags->"QMakeTable"],
+Cell[7298, 141, 55, 1, 70, "Section",
+  CellTags->"QZeroTable"],
+Cell[7356, 144, 269, 3, 70, "Usage",
+  CellTags->"QZeroTable"],
+Cell[7628, 149, 163, 5, 70, "Text",
+  CellTags->"QZeroTable"],
+Cell[7794, 156, 89, 1, 70, "Section",
+  CellTags->"QGetSpinorAndDensityPlotTwo"],
+Cell[7886, 159, 855, 3, 70, "Usage",
+  CellTags->"QGetSpinorAndDensityPlotTwo"],
+Cell[8744, 164, 180, 5, 70, "Text",
+  CellTags->"QGetSpinorAndDensityPlotTwo"],
+Cell[8927, 171, 83, 1, 70, "Section",
+  CellTags->"QGetAndSpinorToColorPlot"],
+Cell[9013, 174, 836, 3, 70, "Usage",
+  CellTags->"QGetAndSpinorToColorPlot"],
+Cell[9852, 179, 177, 5, 70, "Text",
+  CellTags->"QGetAndSpinorToColorPlot"],
+Cell[10032, 186, 89, 1, 70, "Section",
+  CellTags->"QGetAndSpinorToColorPlotTwo"],
+Cell[10124, 189, 871, 3, 70, "Usage",
+  CellTags->"QGetAndSpinorToColorPlotTwo"],
+Cell[10998, 194, 180, 5, 70, "Text",
+  CellTags->"QGetAndSpinorToColorPlotTwo"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

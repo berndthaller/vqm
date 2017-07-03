@@ -1,0 +1,777 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     25996,        767]
+NotebookOptionsPosition[     19075,        537]
+NotebookOutlinePosition[     22976,        662]
+CellTagsIndexPosition[     22526,        645]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QVectorToArrow", "Section",
+ CellTags->"QVectorToArrow"],
+
+Cell["\<\
+QVectorToArrow[pt1,pt2] gives a collection of lines representing a \
+three-dimensional arrow from point pt1 to point pt2. pt1 is optional, default \
+is {0,0,0}. If the vector is shorter than QMinLength, then it is represented \
+by a point. Use with Graphics3D. Example: \
+Show[Graphics3D[QVectorToArrow[{0,0,0},{1,1,1}]]]. The following options \
+control the appearance of the arrow: QArrowHead, QArrowShaft, QArrowShape, \
+QArrowScale, QNeedleStyle, QHeadColor, QShaftColor, QLinePointSize, \
+QMinLength. Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"QVectorToArrow"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QArrowHead", 
+        RowBox[{
+         RowBox[{
+         "QArrowHead", " ", "is", " ", "an", " ", "option", " ", "for", " ", 
+          RowBox[{"QVectorToArrow", ".", " ", "QArrowHead"}]}], "->", 
+         RowBox[{
+          RowBox[{"True", " ", 
+           RowBox[{"(", "default", ")"}], " ", "causes", " ", "the", " ", 
+           "vector", " ", "to", " ", "be", " ", "drawn", " ", "with", " ", 
+           "an", " ", 
+           RowBox[{"arrowhead", ".", " ", "QArrowHead"}]}], "->", 
+          RowBox[{
+          "Automatic", " ", "draws", " ", "the", " ", "vector", " ", "as", 
+           " ", "a", " ", "line", " ", "segment", " ", "and", " ", "with", 
+           " ", "a", " ", "point", " ", "of", " ", "size", " ", "2", "*", 
+           "QLinePointSize", " ", "instead", " ", "of", " ", "the", " ", 
+           RowBox[{"arrowhead", ".", " ", "Otherwise"}], " ", "the", " ", 
+           "vector", " ", "is", " ", "just", " ", "represented", " ", "by", 
+           " ", "a", " ", "line", " ", 
+           RowBox[{"segment", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}]},
+       {"QArrowScale", 
+        RowBox[{"QArrowScale", "->", 
+         RowBox[{"k", " ", "is", " ", "an", " ", "option", " ", "for", " ", 
+          RowBox[{"QVectorToArrow", ".", " ", "It"}], " ", "scales", " ", 
+          "the", " ", "length", " ", "of", " ", "the", " ", "arrow", " ", 
+          "representing", " ", "the", " ", "vector", " ", "by", " ", "the", 
+          " ", "factor", " ", 
+          RowBox[{"k", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]},
+       {"QArrowShaft", 
+        RowBox[{
+         RowBox[{
+         "QArrowShaft", " ", "is", " ", "an", " ", "option", " ", "for", " ", 
+          
+          RowBox[{"QVectorToArrow", ".", " ", "QArrowShaft"}]}], "->", 
+         RowBox[{
+          RowBox[{
+          "True", " ", "causes", " ", "the", " ", "vector", " ", "to", " ", 
+           "be", " ", "drawn", " ", "with", " ", "a", " ", 
+           RowBox[{"shaft", ".", " ", "With"}], " ", "QArrowShaft"}], "->", 
+          RowBox[{"False", " ", 
+           RowBox[{"(", "default", ")"}], " ", "the", " ", "shaft", " ", "is",
+            " ", "drawn", " ", "as", " ", "a", " ", "line", " ", "with", " ", 
+           "thickness", " ", 
+           RowBox[{"QLinePointSize", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}]},
+       {"QArrowShape", 
+        RowBox[{
+         RowBox[{"QArrowShape", "->", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"n", ",", "hfac", ",", "rfac", ",", "sfac"}], "}"}], " ", 
+           "is", " ", "an", " ", "option", " ", "for", " ", "QVectorToArrow", 
+           " ", "that", " ", "controls", " ", "the", " ", "appearance", " ", 
+           "of", " ", "the", " ", 
+           RowBox[{"arrow", "'"}], "s", " ", 
+           RowBox[{"head", ".", " ", "Default"}], " ", "value", " ", "of", 
+           " ", "QArrowShape", " ", "is", " ", 
+           RowBox[{"{", 
+            RowBox[{"6", ",", 
+             RowBox[{"1", "/", "4"}], ",", 
+             RowBox[{"1", "/", 
+              RowBox[{"(", 
+               RowBox[{"2", " ", "GoldenRatio"}], ")"}]}], ",", 
+             RowBox[{"1", "/", "2"}]}], "}"}]}]}], ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"or", " ", 
+            RowBox[{"{", 
+             RowBox[{"6", ",", 
+              RowBox[{"1", "/", "2"}], ",", 
+              RowBox[{"1", "/", "4"}], ",", 
+              RowBox[{"1", "/", "2"}]}], "}"}], " ", "if", " ", 
+            "QNeedleStyle"}], "->", 
+           RowBox[{
+            RowBox[{"True", ".", " ", "The"}], " ", "head", " ", "of", " ", 
+            "the", " ", "arrow", " ", "is", " ", "a", " ", "cone", " ", 
+            "with", " ", "half", " ", "height", " ", "h"}]}], " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"hfac", ".", "length"}], 
+            RowBox[{"(", "vector", ")"}], " ", "and", " ", "radius", " ", 
+            "r"}], "=", 
+           RowBox[{
+           "rfac", "*", "h", " ", "drawn", " ", "using", " ", "n", " ", 
+            RowBox[{"polygons", ".", " ", "If"}], " ", "hfac", " ", 
+            RowBox[{"(", "rfac", ")"}], " ", "is", " ", "negative"}]}]}], ",",
+          " ", 
+         RowBox[{
+          RowBox[{"then", " ", "h"}], "=", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "hfac"}], " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"r", "=", 
+               RowBox[{"-", "rfac"}]}], ")"}], ".", " ", "If"}], " ", "the", 
+            " ", "option", " ", "QArrowShaft"}], "->", 
+           RowBox[{"True", " ", "is", " ", "set"}]}]}], ",", " ", 
+         RowBox[{
+          RowBox[{
+          "then", " ", "the", " ", "shaft", " ", "is", " ", "a", " ", 
+           "cylinder", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"approx", ".", " ", "by"}], " ", "n", " ", "polygons"}], 
+            ")"}], " ", "with", " ", "radius", " ", "r", "*", 
+           RowBox[{"sfac", ".", " ", "If"}], " ", "QNeedleStyle"}], "->", 
+          "True"}], ",", " ", 
+         RowBox[{
+         "then", " ", "the", " ", "shaft", " ", "is", " ", "a", " ", "cone", 
+          " ", "with", " ", "apex", " ", "at", " ", "the", " ", 
+          RowBox[{"origin", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]},
+       {"QHeadColor", 
+        RowBox[{"QHeadColor", "->", 
+         RowBox[{
+          RowBox[{"GrayLevel", "[", "0", "]"}], " ", "is", " ", "an", " ", 
+          "option", " ", "for", " ", 
+          RowBox[{"QVectorToArrow", ".", " ", "It"}], " ", "sets", " ", "the",
+           " ", "color", " ", "for", " ", "the", " ", "head", " ", "of", " ", 
+          "the", " ", 
+          RowBox[{"arrow", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]},
+       {"QLinePointSize", 
+        RowBox[{"QLinePointSize", "->", 
+         RowBox[{
+         "0.001", " ", "is", " ", "an", " ", "option", " ", "for", " ", 
+          RowBox[{"QVectorToArrow", ".", " ", "It"}], " ", "sets", " ", "the",
+           " ", "thickness", " ", "of", " ", "the", " ", "lines", " ", "and", 
+          " ", "points", " ", "representing", " ", "the", " ", 
+          RowBox[{"arrow", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]},
+       {"QMinLength", 
+        RowBox[{
+         RowBox[{
+         "QMinLength", " ", "is", " ", "an", " ", "option", " ", "for", " ", 
+          RowBox[{"QVectorToArrow", ".", " ", "QMinLength"}]}], "->", 
+         RowBox[{"0.1", " ", 
+          RowBox[{"(", "default", ")"}], " ", "specifies", " ", "that", " ", 
+          "vectors", " ", "of", " ", "length", " ", "less", " ", "than", " ", 
+          "0.1", " ", "are", " ", "to", " ", "be", " ", "drawn", " ", "as", 
+          " ", "points", " ", "of", " ", "size", " ", 
+          RowBox[{"QLinePointSize", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]},
+       {"QNeedleStyle", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+          "QNeedleStyle", " ", "is", " ", "an", " ", "option", " ", "for", 
+           " ", 
+           RowBox[{"QVectorToArrow", ".", " ", "QNeedleStyle"}]}], "->", 
+          RowBox[{
+           RowBox[{
+           "True", " ", "causes", " ", "the", " ", "vector", " ", "to", " ", 
+            "be", " ", "drawn", " ", "as", " ", "a", " ", 
+            RowBox[{"needle", ".", " ", "The"}], " ", "needle", " ", "is", 
+            " ", "a", " ", "double"}], "-", 
+           RowBox[{
+           "cone", " ", "whose", " ", "style", " ", "is", " ", "controlled", 
+            " ", "by", " ", "the", " ", "options", " ", "QArrowShape"}]}]}], 
+         ",", " ", "QShaftColor", ",", " ", 
+         RowBox[{"QHeadColor", ".", " ", 
+          RowBox[{"Package", ":", " ", 
+           RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]},
+       {"QShaftColor", 
+        RowBox[{
+         RowBox[{"QShaftColor", "->", 
+          RowBox[{
+           RowBox[{"GrayLevel", "[", "0", "]"}], " ", "is", " ", "an", " ", 
+           "option", " ", "for", " ", 
+           RowBox[{"QVectorToArrow", ".", " ", "It"}], " ", "sets", " ", 
+           "the", " ", "color", " ", "for", " ", "the", " ", "shaft", " ", 
+           "of", " ", "the", " ", "arrow"}]}], ",", " ", 
+         RowBox[{
+          RowBox[{"in", " ", "case", " ", "that", " ", "VectorShaft"}], "->", 
+          
+          RowBox[{"True", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"QVectorToArrow"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QVectorToArrow"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QVisualizeVector", "Section",
+ CellTags->"QVisualizeVector"],
+
+Cell["\<\
+QVisualizeVector[3vector] converts a vector into an arrow graphics and \
+displays it together with other graphics elements whose appearance is \
+controlled by the options QDrawUnitSphere, QDrawAxes, QCoordinateCube, \
+QCoordinateCircles. Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"QVisualizeVector"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QCoordinateCirclesColor", 
+        RowBox[{"QCoordinateCircles", "->", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"RGBColor", "[", 
+            RowBox[{"0", ",", "0", ",", "1"}], "]"}], ".", " ", "Option"}], 
+          " ", "for", " ", "QVisualizeVector", " ", 
+          RowBox[{"etc", ".", " ", "Draws"}], " ", "the", " ", "coordinate", 
+          " ", "circles", " ", "in", " ", "the", " ", "given", " ", "color", 
+          " ", 
+          RowBox[{"(", 
+           RowBox[{
+           "provided", " ", "the", " ", "option", " ", "QCoordinateCircles", 
+            " ", "is", " ", "set", " ", "to", " ", 
+            RowBox[{"True", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}]}]},
+       {"QDrawUnitSphere", 
+        RowBox[{"QDrawUnitSphere", "->", 
+         RowBox[{"n", " ", "is", " ", "an", " ", "option", " ", "for", " ", 
+          RowBox[{"QVisualizeVector", ".", " ", "It"}], " ", "draws", " ", 
+          "the", " ", "outline", " ", "of", " ", "the", " ", "unit", " ", 
+          "sphere", " ", "by", " ", "plotting", " ", "n", " ", 
+          RowBox[{"(", 
+           RowBox[{"default", ":", " ", "20"}], ")"}], " ", 
+          RowBox[{"circles", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"QVisualizeVector"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QVisualizeVector"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["polyDisk", "Section",
+ CellTags->"polyDisk"],
+
+Cell["\<\
+polyDisk[r] is a regular octagon with radius r in the xy-plane. polyDisk[r,n] \
+is a regular polygon with n sides. Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"polyDisk"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"polyDisk"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["polyCone", "Section",
+ CellTags->"polyCone"],
+
+Cell["\<\
+polyCone[r, h] is a set of 8 triangles approximating the shape of a half-cone \
+with apex at the origin and pointing in the z-direction. polyCone[r,h,n] \
+approximates the half-cone by n triangles. Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"polyCone"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"polyCone"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["polyCylinder", "Section",
+ CellTags->"polyCylinder"],
+
+Cell["\<\
+polyCylinder[r1, r2, h, n(optional)] represents a cylindrical shape, \
+symmetric around the z-axis. r1 is the radius at the bottom, r2 the radius at \
+the top. h is the height. The cylinder is approximated by n polygons \
+(default: 8). Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"polyCylinder"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"polyCylinder"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["arrowCone", "Section",
+ CellTags->"arrowCone"],
+
+Cell["\<\
+arrowCone[{pt1,pt2}, c, opts] represents a cone with color c, translated and \
+rotated, so that it has apex at pt2 and points in the direction from pt1 to \
+pt2. Its appearance is controlled by the option QArrowShape. Package: \
+VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"arrowCone"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"arrowCone"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["arrowWithShaft", "Section",
+ CellTags->"arrowWithShaft"],
+
+Cell["\<\
+arrowWithShaft[{pt1,pt2}, colorhead, colorshaft, opts] represents an arrow \
+from pt1 to pt2 (a collection of polygons). Its appearance is controlled by \
+the option QArrowShape. Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"arrowWithShaft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"arrowWithShaft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["doubleHead", "Section",
+ CellTags->"doubleHead"],
+
+Cell["\<\
+doubleHead[{pt1,pt2}, color1, color2, opts] is actually a double-cone \
+connecting the points pt1 with pt2. The part closer to pt1 has color1. The \
+shape is controlled by the option QArrowShape. Package: VQM`VisualizeVector`.\
+\
+\>", "Usage",
+ CellTags->"doubleHead"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"doubleHead"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["unitSphere", "Section",
+ CellTags->"unitSphere"],
+
+Cell["\<\
+unitSphere[theta] represents a sphere with radius 1 and center at the origin \
+as a collection of circles parallel to the xy-plane. The polar angles of the \
+circles are multiples of theta. Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"unitSphere"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"unitSphere"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QRoundSphere", "Section",
+ CellTags->"QRoundSphere"],
+
+Cell["\<\
+QRoundSphere[r,n,m,opts] is a sphere with radus r, represented by as a \
+wireframe. QRoundSphere[r,n,m] is similar to Sphere[r,n,m] in the standard \
+package Graphics`Shapes`, but QRoundSphere uses circles (generated by \
+ParametricPlot3D) instead of polygons. The options are passed to \
+ParametricPlot3D (useful for PlotPoints). Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"QRoundSphere"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QRoundSphere"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["coordinateCube", "Section",
+ CellTags->"coordinateCube"],
+
+Cell["\<\
+coordinateCube[pt] represents a rectangular shape with edges parallel to the \
+coordinate axes. It has one point at the origin and one at the point pt. \
+Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"coordinateCube"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"coordinateCube"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["coordinateCircles", "Section",
+ CellTags->"coordinateCircles"],
+
+Cell["\<\
+coordinateCircles[pt] are two circular arcs representing the polar angle and \
+the azimuthal angle of a point pt. Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"coordinateCircles"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"coordinateCircles"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["graphicElements", "Section",
+ CellTags->"graphicElements"],
+
+Cell["\<\
+graphicElements[pt, opts] defines the graphic elements for the visualization \
+of the position pt according to the values of the options QDrawUnitSphere, \
+QDrawAxes, QCoordinateCube, QCoordinateCircles, QCoordinateCirclesColor. \
+Package: VQM`VisualizeVector`.\
+\>", "Usage",
+ CellTags->"graphicElements"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`VisualizeVector`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"graphicElements"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "QVectorToArrow"->{
+  Cell[590, 23, 62, 1, 63, "Section",
+   CellTags->"QVectorToArrow"],
+  Cell[655, 26, 590, 10, 111, "Usage",
+   CellTags->"QVectorToArrow"],
+  Cell[1248, 38, 9276, 201, 759, "Text",
+   CellTags->"QVectorToArrow"],
+  Cell[10527, 241, 164, 5, 70, "Text",
+   CellTags->"QVectorToArrow"]},
+ "QVisualizeVector"->{
+  Cell[10728, 251, 66, 1, 70, "Section",
+   CellTags->"QVisualizeVector"],
+  Cell[10797, 254, 324, 6, 70, "Usage",
+   CellTags->"QVisualizeVector"],
+  Cell[11124, 262, 1817, 41, 70, "Text",
+   CellTags->"QVisualizeVector"],
+  Cell[12944, 305, 166, 5, 70, "Text",
+   CellTags->"QVisualizeVector"]},
+ "polyDisk"->{
+  Cell[13147, 315, 50, 1, 70, "Section",
+   CellTags->"polyDisk"],
+  Cell[13200, 318, 193, 4, 70, "Usage",
+   CellTags->"polyDisk"],
+  Cell[13396, 324, 158, 5, 70, "Text",
+   CellTags->"polyDisk"]},
+ "polyCone"->{
+  Cell[13591, 334, 50, 1, 70, "Section",
+   CellTags->"polyCone"],
+  Cell[13644, 337, 276, 5, 70, "Usage",
+   CellTags->"polyCone"],
+  Cell[13923, 344, 158, 5, 70, "Text",
+   CellTags->"polyCone"]},
+ "polyCylinder"->{
+  Cell[14118, 354, 58, 1, 70, "Section",
+   CellTags->"polyCylinder"],
+  Cell[14179, 357, 318, 6, 70, "Usage",
+   CellTags->"polyCylinder"],
+  Cell[14500, 365, 162, 5, 70, "Text",
+   CellTags->"polyCylinder"]},
+ "arrowCone"->{
+  Cell[14699, 375, 52, 1, 70, "Section",
+   CellTags->"arrowCone"],
+  Cell[14754, 378, 299, 6, 70, "Usage",
+   CellTags->"arrowCone"],
+  Cell[15056, 386, 159, 5, 70, "Text",
+   CellTags->"arrowCone"]},
+ "arrowWithShaft"->{
+  Cell[15252, 396, 62, 1, 70, "Section",
+   CellTags->"arrowWithShaft"],
+  Cell[15317, 399, 263, 5, 70, "Usage",
+   CellTags->"arrowWithShaft"],
+  Cell[15583, 406, 164, 5, 70, "Text",
+   CellTags->"arrowWithShaft"]},
+ "doubleHead"->{
+  Cell[15784, 416, 54, 1, 70, "Section",
+   CellTags->"doubleHead"],
+  Cell[15841, 419, 278, 6, 70, "Usage",
+   CellTags->"doubleHead"],
+  Cell[16122, 427, 160, 5, 70, "Text",
+   CellTags->"doubleHead"]},
+ "unitSphere"->{
+  Cell[16319, 437, 54, 1, 70, "Section",
+   CellTags->"unitSphere"],
+  Cell[16376, 440, 270, 5, 70, "Usage",
+   CellTags->"unitSphere"],
+  Cell[16649, 447, 160, 5, 70, "Text",
+   CellTags->"unitSphere"]},
+ "QRoundSphere"->{
+  Cell[16846, 457, 58, 1, 70, "Section",
+   CellTags->"QRoundSphere"],
+  Cell[16907, 460, 413, 7, 70, "Usage",
+   CellTags->"QRoundSphere"],
+  Cell[17323, 469, 162, 5, 70, "Text",
+   CellTags->"QRoundSphere"]},
+ "coordinateCube"->{
+  Cell[17522, 479, 62, 1, 70, "Section",
+   CellTags->"coordinateCube"],
+  Cell[17587, 482, 238, 5, 70, "Usage",
+   CellTags->"coordinateCube"],
+  Cell[17828, 489, 164, 5, 70, "Text",
+   CellTags->"coordinateCube"]},
+ "coordinateCircles"->{
+  Cell[18029, 499, 68, 1, 70, "Section",
+   CellTags->"coordinateCircles"],
+  Cell[18100, 502, 201, 4, 70, "Usage",
+   CellTags->"coordinateCircles"],
+  Cell[18304, 508, 167, 5, 70, "Text",
+   CellTags->"coordinateCircles"]},
+ "graphicElements"->{
+  Cell[18508, 518, 64, 1, 70, "Section",
+   CellTags->"graphicElements"],
+  Cell[18575, 521, 316, 6, 70, "Usage",
+   CellTags->"graphicElements"],
+  Cell[18894, 529, 165, 5, 70, "Text",
+   CellTags->"graphicElements"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"QVectorToArrow", 19378, 547},
+ {"QVisualizeVector", 19687, 556},
+ {"polyDisk", 20000, 565},
+ {"polyCone", 20214, 572},
+ {"polyCylinder", 20432, 579},
+ {"arrowCone", 20659, 586},
+ {"arrowWithShaft", 20882, 593},
+ {"doubleHead", 21116, 600},
+ {"unitSphere", 21338, 607},
+ {"QRoundSphere", 21562, 614},
+ {"coordinateCube", 21794, 621},
+ {"coordinateCircles", 22035, 628},
+ {"graphicElements", 22283, 635}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 62, 1, 63, "Section",
+ CellTags->"QVectorToArrow"],
+Cell[655, 26, 590, 10, 111, "Usage",
+ CellTags->"QVectorToArrow"],
+Cell[1248, 38, 9276, 201, 759, "Text",
+ CellTags->"QVectorToArrow"],
+Cell[10527, 241, 164, 5, 70, "Text",
+ CellTags->"QVectorToArrow"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10728, 251, 66, 1, 70, "Section",
+ CellTags->"QVisualizeVector"],
+Cell[10797, 254, 324, 6, 70, "Usage",
+ CellTags->"QVisualizeVector"],
+Cell[11124, 262, 1817, 41, 70, "Text",
+ CellTags->"QVisualizeVector"],
+Cell[12944, 305, 166, 5, 70, "Text",
+ CellTags->"QVisualizeVector"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13147, 315, 50, 1, 70, "Section",
+ CellTags->"polyDisk"],
+Cell[13200, 318, 193, 4, 70, "Usage",
+ CellTags->"polyDisk"],
+Cell[13396, 324, 158, 5, 70, "Text",
+ CellTags->"polyDisk"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13591, 334, 50, 1, 70, "Section",
+ CellTags->"polyCone"],
+Cell[13644, 337, 276, 5, 70, "Usage",
+ CellTags->"polyCone"],
+Cell[13923, 344, 158, 5, 70, "Text",
+ CellTags->"polyCone"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14118, 354, 58, 1, 70, "Section",
+ CellTags->"polyCylinder"],
+Cell[14179, 357, 318, 6, 70, "Usage",
+ CellTags->"polyCylinder"],
+Cell[14500, 365, 162, 5, 70, "Text",
+ CellTags->"polyCylinder"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14699, 375, 52, 1, 70, "Section",
+ CellTags->"arrowCone"],
+Cell[14754, 378, 299, 6, 70, "Usage",
+ CellTags->"arrowCone"],
+Cell[15056, 386, 159, 5, 70, "Text",
+ CellTags->"arrowCone"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15252, 396, 62, 1, 70, "Section",
+ CellTags->"arrowWithShaft"],
+Cell[15317, 399, 263, 5, 70, "Usage",
+ CellTags->"arrowWithShaft"],
+Cell[15583, 406, 164, 5, 70, "Text",
+ CellTags->"arrowWithShaft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15784, 416, 54, 1, 70, "Section",
+ CellTags->"doubleHead"],
+Cell[15841, 419, 278, 6, 70, "Usage",
+ CellTags->"doubleHead"],
+Cell[16122, 427, 160, 5, 70, "Text",
+ CellTags->"doubleHead"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16319, 437, 54, 1, 70, "Section",
+ CellTags->"unitSphere"],
+Cell[16376, 440, 270, 5, 70, "Usage",
+ CellTags->"unitSphere"],
+Cell[16649, 447, 160, 5, 70, "Text",
+ CellTags->"unitSphere"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16846, 457, 58, 1, 70, "Section",
+ CellTags->"QRoundSphere"],
+Cell[16907, 460, 413, 7, 70, "Usage",
+ CellTags->"QRoundSphere"],
+Cell[17323, 469, 162, 5, 70, "Text",
+ CellTags->"QRoundSphere"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17522, 479, 62, 1, 70, "Section",
+ CellTags->"coordinateCube"],
+Cell[17587, 482, 238, 5, 70, "Usage",
+ CellTags->"coordinateCube"],
+Cell[17828, 489, 164, 5, 70, "Text",
+ CellTags->"coordinateCube"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18029, 499, 68, 1, 70, "Section",
+ CellTags->"coordinateCircles"],
+Cell[18100, 502, 201, 4, 70, "Usage",
+ CellTags->"coordinateCircles"],
+Cell[18304, 508, 167, 5, 70, "Text",
+ CellTags->"coordinateCircles"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18508, 518, 64, 1, 70, "Section",
+ CellTags->"graphicElements"],
+Cell[18575, 521, 316, 6, 70, "Usage",
+ CellTags->"graphicElements"],
+Cell[18894, 529, 165, 5, 70, "Text",
+ CellTags->"graphicElements"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

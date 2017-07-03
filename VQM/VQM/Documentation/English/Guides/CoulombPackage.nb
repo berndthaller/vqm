@@ -1,0 +1,454 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     17888,        445]
+NotebookOptionsPosition[     17177,        415]
+NotebookOutlinePosition[     17786,        440]
+CellTagsIndexPosition[     17711,        435]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Coulomb ", "Subsection",
+ CellTags->"VQM`Coulomb`"],
+
+Cell["\<\
+This package provides definitions for the quantum mechanical Coulomb system. \
+It gives the solutions in cartesian as well as polar coordinates in two and \
+three dimensions. \
+\>", "Text",
+ CellTags->"VQM`Coulomb`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QPrincipalQuantumNumber", "[", 
+         RowBox[{"nrad", ",", "ell"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "gives", " ", "the", " ", "principal", " ", "quantum", " ", "number",
+           " ", "in", " ", "terms", " ", "of", " ", "the", " ", "radial", " ",
+           "quantum", " ", "number", " ", "and", " ", "the", " ", "angular", 
+          " ", 
+          RowBox[{"momentum", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Coulomb`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QRadialQuantumNumber", "[", 
+         RowBox[{"n", ",", "ell"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "the", " ", "radial", " ", "quantum", " ", "number", " ",
+            "n"}], " ", "-", " ", "ell", " ", "-", " ", 
+          RowBox[{
+          "1.", " ", "It", " ", "counts", " ", "the", " ", "number", " ", 
+           "of", " ", "radial", " ", "zeros", " ", "of", " ", "the", " ", 
+           "wave", " ", 
+           RowBox[{"function", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCoulombEnergy", "[", 
+         RowBox[{"n", ",", " ", "options"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+             "gives", " ", "the", " ", "energy", " ", "of", " ", "a", " ", 
+              "particle", " ", "in", " ", "the", " ", "Coulomb", " ", "field",
+               " ", 
+              RowBox[{"g", "/", "r"}], " ", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"here", " ", "n"}], "=", 
+                 RowBox[{"nrad", "+", "ell", "+", 
+                  RowBox[{
+                  "1", " ", "is", " ", "the", " ", "principal", " ", 
+                   "quantum", " ", "number"}]}]}], ")"}], ".", " ", 
+               "QCoulombEnergy"}], " ", "is", " ", "an", " ", "eigenfunction",
+               " ", "of", " ", "the", " ", "differential", " ", "operator"}], 
+             " ", "-", 
+             RowBox[{
+              RowBox[{"1", "/", "2"}], " ", "Delta"}], " ", "+", " ", 
+             RowBox[{
+              RowBox[{"g", "/", 
+               RowBox[{"r", ".", " ", "The"}]}], " ", "Coulomb", " ", 
+              "coupling", " ", "constant", " ", "g", " ", "can", " ", "be", 
+              " ", "specified", " ", "by", " ", "giving", " ", "the", " ", 
+              "option", " ", "QCoulombCoupling"}]}], "->", 
+            RowBox[{
+             RowBox[{"g", ".", " ", "Default"}], " ", "is", " ", "g"}]}], "=",
+            
+           RowBox[{
+            RowBox[{"$QCoulombCoupling", ".", " ", "The"}], " ", "constant", 
+            " ", "$QCoulombCoupling", " ", "is", " ", "initially", " ", "set",
+             " ", "to", " ", "1"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "but", " ", "can", " ", "be", " ", "redefined", " ", "by", " ", 
+            "the", " ", 
+            RowBox[{"user", ".", " ", "The"}], " ", "energy", " ", "depends", 
+            " ", "on", " ", "the", " ", "space", " ", 
+            RowBox[{"dimension", ".", " ", "Default"}], " ", "space", " ", 
+            "dimension", " ", "is", " ", "3"}], ";", " ", 
+           RowBox[{
+            RowBox[{
+            "you", " ", "can", " ", "change", " ", "this", " ", "by", " ", 
+             "the", " ", "option", " ", "QCoulombSpaceDimension"}], "->", 
+            "dim"}]}], ",", " ", 
+          RowBox[{
+          "or", " ", "by", " ", "redefining", " ", "the", " ", "constant", 
+           " ", 
+           RowBox[{"$QCoulombSpaceDimension", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCoulombTimePeriod", "[", 
+         RowBox[{"n1", ",", "n2", ",", ".."}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "gives", " ", "the", " ", "time", " ", "period", " ", "of", " ", 
+           "a", " ", "superposition", " ", "of", " ", "Coulomb", " ", 
+           "eigenstates", " ", "with", " ", "principal", " ", "quantum", " ", 
+           "numbers", " ", "n1"}], ",", "n2", ",", " ", 
+          RowBox[{"etc", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`Coulomb`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCoulombFunction", "[", 
+         RowBox[{"n", ",", "ell", ",", "m", ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", "options"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "gives", " ", "the", " ", "energy", " ", "eigenfunction", " ", 
+            "of", " ", "a", " ", "particle", " ", "in", " ", "the", " ", 
+            "three"}], "-", 
+           RowBox[{
+           "dimensional", " ", "attractive", " ", "Coulomb", " ", "field"}], 
+           " ", "-", 
+           RowBox[{
+            RowBox[{"g", "/", 
+             RowBox[{"r", ".", " ", "n"}]}], " ", "is", " ", "the", " ", 
+            "principal", " ", "quantum", " ", "number"}]}], ",", " ", 
+          RowBox[{"ell", " ", "orbital", " ", "angular", " ", "momentum"}], 
+          ",", " ", 
+          RowBox[{
+           RowBox[{
+           "m", " ", "is", " ", "the", " ", "magnetic", " ", "quantum", " ", 
+            RowBox[{"number", ".", " ", "The"}], " ", "function", " ", "is", 
+            " ", "an", " ", "eigenfunction", " ", "of", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "1"}], "/", "2"}], " ", "Delta"}], " ", "-", " ",
+               
+              RowBox[{"g", "/", "r"}]}], ")"}], " ", "Psi"}], " ", "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"QCoulombEnergy", " ", 
+              RowBox[{"Psi", ".", " ", "The"}], " ", "Coulomb", " ", 
+              "coupling", " ", "constant", " ", "g", " ", "can", " ", "be", 
+              " ", "specified", " ", "by", " ", "giving", " ", "the", " ", 
+              "option", " ", "QCoulombCoupling"}], "->", 
+             RowBox[{
+              RowBox[{"g", ".", " ", "Default"}], " ", "is", " ", "g"}]}], 
+            "=", 
+            RowBox[{"$QCoulombCoupling", " ", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+               "attractive", " ", "for", " ", "positive", " ", "values", " ", 
+                "of", " ", "g"}], ")"}], ".", " ", "The"}], " ", "constant", 
+             " ", "$QCoulombCoupling", " ", "is", " ", "initially", " ", 
+             "set", " ", "to", " ", "1"}]}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "but", " ", "can", " ", "be", " ", "redefined", " ", "by", " ", 
+            "the", " ", 
+            RowBox[{"user", ".", " ", "The"}], " ", "energy", " ", "depends", 
+            " ", "on", " ", "the", " ", "space", " ", 
+            RowBox[{"dimension", ".", " ", "Default"}], " ", "space", " ", 
+            "dimension", " ", "is", " ", "3"}], ";", " ", 
+           RowBox[{
+            RowBox[{
+            "you", " ", "can", " ", "change", " ", "this", " ", "by", " ", 
+             "the", " ", "option", " ", "QCoulombSpaceDimension"}], "->", 
+            "dim"}]}], ",", " ", 
+          RowBox[{
+          "or", " ", "by", " ", "redefining", " ", "the", " ", "constant", 
+           " ", 
+           RowBox[{"$QCoulombSpaceDimension", ".", " ", "The"}], " ", 
+           "default", " ", "coordinate", " ", "system", " ", "is", " ", 
+           "Cartesian"}], ",", " ", 
+          RowBox[{
+          "as", " ", "set", " ", "by", " ", "the", " ", "package", " ", 
+           RowBox[{"Calculus`VectorAnalysis`", ".", " ", "The"}], " ", 
+           "coordinatesystem", " ", "can", " ", "be", " ", "changed", " ", 
+           "by", " ", "the", " ", "command", " ", 
+           RowBox[{
+            RowBox[{"SetCoordinates", "[", "Spherical", "]"}], ".", " ", 
+            "In"}], " ", "this", " ", "case"}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "the", " ", "function", " ", "has", " ", "to", " ", "be", " ", 
+            "used", " ", "in", " ", "the", " ", "form", " ", 
+            RowBox[{
+             RowBox[{"QCoulombFunction", "[", 
+              RowBox[{"n", ",", "ell", ",", "m", ",", 
+               RowBox[{"{", 
+                RowBox[{"r", ",", "theta", ",", "phi"}], "}"}]}], "]"}], ".", 
+             " ", 
+             RowBox[{"QCoulombFunction", "[", 
+              RowBox[{"n", ",", "m", ",", 
+               RowBox[{"{", 
+                RowBox[{"x", ",", "y"}], "}"}], ",", "options"}], "]"}]}], 
+            " ", 
+            RowBox[{"resp", ".", " ", 
+             RowBox[{"QCoulombFunction", "[", 
+              RowBox[{"n", ",", "m", ",", 
+               RowBox[{"{", 
+                RowBox[{"r", ",", "phi"}], "}"}], ",", "options"}], "]"}]}], 
+            " ", "give", " ", "the", " ", "eigenfunction", " ", "for", " ", 
+            "the", " ", "two"}], "-", 
+           RowBox[{
+           "dimensional", " ", "Coulomb", " ", "problem", " ", "in", " ", 
+            "Cartesian", " ", 
+            RowBox[{"resp", ".", " ", "Spherical"}], " ", 
+            RowBox[{"coordinates", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QEffectiveCoulombPotential", "[", 
+         RowBox[{"ell", ",", " ", "r"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "the", " ", "effective", " ", "potential", " ", "for", 
+           " ", "the", " ", "radial", " ", "Coulomb", " ", 
+           RowBox[{"equation", ".", " ", "Consists"}], " ", "of", " ", "the", 
+           " ", "Coulomb", " ", "potential", " ", "and", " ", "the", " ", 
+           "repulsive", " ", "angular", " ", "momentum", " ", "barrier"}], 
+          ",", " ", 
+          RowBox[{
+          "which", " ", "depends", " ", "on", " ", "the", " ", "space", " ", 
+           RowBox[{"dimension", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCoulombHamiltonian", "[", 
+         RowBox[{
+          RowBox[{"psi", "[", 
+           RowBox[{"x", ",", "y", ",", "z"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"or", " ", 
+           RowBox[{"QCoulombHamiltonian", "[", 
+            RowBox[{
+             RowBox[{"psi", "[", 
+              RowBox[{"x", ",", "y"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", "y"}], "}"}]}], "]"}], " ", "evaluates", " ", 
+           "the", " ", "action", " ", "of", " ", "the", " ", "Hamiltonian", 
+           " ", "operator"}], " ", "-", 
+          RowBox[{
+           RowBox[{"1", "/", "2"}], " ", "Delta"}], " ", "-", " ", 
+          RowBox[{
+           RowBox[{"g", "/", "r"}], " ", "on", " ", "the", " ", "wave", " ", 
+           "function", " ", 
+           RowBox[{"psi", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QRadialCoulombFunction", "[", 
+         RowBox[{"n", ",", "ell", ",", "r"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "the", " ", "radial", " ", "part", " ", "of", " ", "the",
+            " ", "eigenfunction", " ", "of", " ", "the", " ", "Schroedinger", 
+           " ", "equation", " ", "in", " ", "the", " ", "angular", " ", 
+           "momentum", " ", "subspace", " ", "described", " ", "by", " ", 
+           RowBox[{"ell", ".", " ", "Here"}], " ", "n", " ", "is", " ", "the",
+            " ", "principal", " ", "quantum", " ", 
+           RowBox[{"number", ".", " ", "n"}]}], " ", "-", " ", "ell", " ", 
+          "-", " ", 
+          RowBox[{"1", " ", 
+           RowBox[{"(", 
+            RowBox[{"=", 
+             RowBox[{"the", " ", "radial", " ", "quantum", " ", "number"}]}], 
+            ")"}], " ", "is", " ", "the", " ", "number", " ", "of", " ", 
+           "zeros", " ", "of", " ", "the", " ", "radial", " ", "Coulomb", " ",
+            
+           RowBox[{"eigenfunction", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QRadialPositionAmplitude", "[", 
+         RowBox[{"n", ",", "ell", ",", "r"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "describes", " ", "the", " ", "amplitude", " ", "of", " ", "the", 
+           " ", "radial", " ", "position", " ", 
+           RowBox[{"density", ".", " ", "The"}], " ", "square", " ", "of", 
+           " ", "the", " ", "radial", " ", "position", " ", "amplitude", " ", 
+           "gives", " ", "the", " ", "probability", " ", "density", " ", 
+           "for", " ", "having", " ", "a", " ", "position", " ", "at", " ", 
+           "the", " ", "distance", " ", "r", " ", "from", " ", "the", " ", 
+           "coordinate", " ", 
+           RowBox[{"origin", ".", " ", "Here"}], " ", "n", " ", "is", " ", 
+           "the", " ", "principal", " ", "quantum", " ", "number"}], ",", " ",
+           
+          RowBox[{
+          "ell", " ", "is", " ", "the", " ", "orbital", " ", "angular", " ", 
+           "momentum", " ", "quantum", " ", 
+           RowBox[{"number", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox["Constant",
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "describing", " ", "the", " ", "default", " ", "value", " ", "of", 
+          " ", "the", " ", "space", " ", "dimension", " ", "in", " ", "the", 
+          " ", "package", " ", 
+          RowBox[{"VQM`Coulomb`", ".", " ", "Initially"}], " ", "set", " ", 
+          "to", " ", "3.", " ", 
+          RowBox[{"Package", ":", " ", 
+           RowBox[{"VQM`Coulomb`", "."}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox["Constant",
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "describing", " ", "the", " ", "default", " ", "value", " ", "of", 
+            " ", "the", " ", "strength", " ", "of", " ", "the", " ", 
+            "Coulomb", " ", "potential", " ", 
+            RowBox[{"g", "/", "r"}], " ", "for", " ", "the", " ", "package", 
+            " ", 
+            RowBox[{"VQM`Coulomb`", ".", " ", "Initial"}], " ", "value", " ", 
+            "is", " ", "g"}], "=", "1"}], ",", " ", 
+          RowBox[{
+          "which", " ", "describes", " ", "an", " ", "attractive", " ", 
+           "Coulomb", " ", 
+           RowBox[{"potential", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellChangeTimes->{{3.391858269046875*^9, 3.39185828271875*^9}},
+ CellTags->"VQM`Coulomb`"]
+}, Open  ]]
+},
+WindowSize->{896, 750},
+WindowMargins->{{Automatic, 108}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`Coulomb`"->{
+  Cell[590, 23, 57, 1, 56, "Subsection",
+   CellTags->"VQM`Coulomb`"],
+  Cell[650, 26, 226, 5, 75, "Text",
+   CellTags->"VQM`Coulomb`"],
+  Cell[879, 33, 16282, 379, 1591, "Text",
+   CellTags->"VQM`Coulomb`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`Coulomb`", 17478, 425}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 57, 1, 56, "Subsection",
+ CellTags->"VQM`Coulomb`"],
+Cell[650, 26, 226, 5, 75, "Text",
+ CellTags->"VQM`Coulomb`"],
+Cell[879, 33, 16282, 379, 1591, "Text",
+ CellTags->"VQM`Coulomb`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

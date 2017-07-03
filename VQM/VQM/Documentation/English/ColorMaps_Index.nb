@@ -1,0 +1,327 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     11310,        271]*)
+(*NotebookOutlinePosition[     12201,        302]*)
+(*  CellTagsIndexPosition[     12121,        296]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["ColorMaps ", "Subsection",
+  CellTags->"VQM`ColorMaps`"],
+
+Cell["\<\
+This package defines color maps that associate color values with complex numbers.     These color maps are used to visualize complex-valued functions. \
+\>", "Text",
+  CellTags->"VQM`ColorMaps`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QComplexToColor[z, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(associates\ a\ color\ to\ a\ \
+complex\ number\ z . \ 
+                      The\ color\ map\ is\ given\ by\ the\ option\ \
+QComplexToColorMap . \ 
+                      QComplexToColor[
+                        z]\ returns\ the\ result\ in\ the\ form\ Hue[
+                      h, s, b]\ \((in\ the\ HSB\ system)\) . \ \
+\(Package : \ \(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QRGBValues[hue, lightness]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(converts\ color\ coordinates\ from\
+\ the\ HLS\ system\ to\ color\ coordinates\ in\ the\ RGB\ system . \ 
+                      It\ associates\ the\ RGB\ color\ values\ {r, g, 
+                      b}\ to\ the\ given\ values\ of\ hue\ and\ \
+lightness, \ 
+                  assuming\ that\ the\ saturation\ is\ equal\ to\ 1\ \
+\((maximal\ saturation\ at\ the\ given\ lightness)\) . \ \(Package : \
+\ \(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QComplexToRGBColor[z]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ the\ color\ RGBColor[r, 
+                      g, b]\ of\ the\ complex\ number\ z\ according\ \
+to\ the\ standard\ color\ map . \ \(Package : \ \
+\(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\($QComplexToColorMap[r, 
+                    phi, {parameters}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(associates\ a\ color\ to\ a\ \
+complex\ number . \ Default\ for\ QComplexToColor . \ 
+                      The\ complex\ number\ is\ given\ in\ polar\ \
+form, \ r = Abs[z], \ 
+                  phi = \(Arg[z] . \ 
+                          The\ result\ is\ returned\ as\ \
+$QComplexToColorMap[r, phi, {}]\  = \ Hue[h, s, b]\), \ 
+                  in\ the\ HSB\ color\ system . \ 
+                      
+                      The\ Hue\ h\ of\ the\ color\ is\ given\ by\ \
+\(phi/2\)/Pi, \ the\ lightness\ is\ determined\ from\ r . \ 
+                        The\ color\ map\ can\ be\ described\ as\ a\ \
+stereographic\ projection\ from\ the\ complex\ plane\ onto\ the\ \
+surface\ of\ the\ color\ manifold\ in\ the\ Hue - Lightness - 
+                    Saturation\ system . \ 
+                        The\ optional\ parameters\ are\ {R, bmin, 
+                        bmax, lmin, 
+                        lmax}\ specifying\ the\ radius\ R\ of\ the\ \
+sphere, \ 
+                  the\ value\ bmin\ and\ bmax\ are\ those\ values\ of\
+\ r\ which\ belong\ to\ the\ minimal\ and\ maximal\ lightness\ lmin\ \
+and\ lmax . \ \(Package : \ \(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSaturationFromLightness[x]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ an\ auxiliary\ function\ \
+provided\ by\ the\ package\ ColorMaps . \ 
+                        ComputesComputes\ the\ value\ of\ the\ \
+saturation\ in\ the\ HSB - 
+                    system\ from\ the\ lighness\ x\ \((0\  <= \ 
+                          x\  <= \ 
+                          1)\)\ of\ the\ color\ in\ the\ HLS - 
+                    system, \ 
+                  assuming\ maximal\ HLS - 
+                    saturation . \ 
+                        Compiled\ for\ faster\ execution . \ \
+\(Package : \ \(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QBrightnessFromLightness[x]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ an\ auxiliary\ function\ \
+provided\ by\ the\ package\ ColorMaps . \ 
+                        Computes\ the\ value\ of\ the\ brightness\ in\
+\ the\ HSB - system\ from\ the\ lighness\ x\ \((0\  <= \ x\  <= \ 
+                          1)\)\ of\ the\ color\ in\ the\ HLS - 
+                    system, \ 
+                  assuming\ maximal\ HLS - 
+                    saturation . \ 
+                        Compiled\ for\ faster\ execution . \ \
+\(Package : \ \(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QHueFromArgument[arg]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ compiled\ auxiliary\ \
+function\ provided\ by\ the\ package\ ColorMaps . \ 
+                      Computes\ the\ Hue\ from\ the\ argument\ arg\ \
+of\ a\ complex\ number . \ \(Package : \ \
+\(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QLightnessFromModulus[parameters]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(defines\ a\ compiled\ auxiliary\ \
+function\ that\ depends\ on\ certain\ parameters . \ \ The\ \
+parameters\ are\ given\ as\ a\ list\ of\ the\ form\ {R, bmin, bmax, 
+                        lmin, lmax} . \ 
+                      See\ the\ description\ of\ $QComplexToColorMap\ \
+for\ an\ explanation . \ \([r]\)\ computes\ the\ Lightness\ from\ the\
+\ modulus\ r\ of\ a\ complex\ number . \ 
+                      QLightnessFromModulus\ is\ provided\ by\ the\ \
+package\ ColorMaps . \ \(Package : \ \
+\(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QProcessColorMapOptions[opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ an\ auxiliary\ function\ \
+provided\ by\ the\ package\ ColorMaps . \ 
+                      Converts\ a\ list\ of\ options\ into\ a\ valid\ \
+list\ of\ parameters\ for\ the\ following\ color\ map\ \(functions : \
+\ QLightnessFromModulus\), \ $QComplexToColorMap . \ \(Package : \ \(\
+\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QVectorToColor[{u, v, w}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(maps\ a\ three - 
+                    dimensional\ real\ vector\ to\ a\ unique\ color . \
+\ The\ color\ is\ given\ as\ a\ list\ of\ three\ real\ numbers\ \
+\((the\ RGB\ values\ of\ the\ color)\) . \ 
+                        The\ saturation\ depends\ on\ the\ length\ of\
+\ the\ vector\ and\ the\ hue\ is\ defined\ by\ the\ direction . \ \
+\((red\  = \ positive\ x - direction, \ \(\(etc\)\(.\)\), \ 
+                          the\ standard\ color\ circle\ in\ the\ xy - 
+                              plane . \ White\  = \ 
+                            positive\ z - direction, \ 
+                          black\  = \ negative\ z - direction, \ 
+                          50  %\ gray\  = \ 
+                            zero\ vector)\) . \ \(Package : \ \
+\(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorToColor[{u, v}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(maps\ a\ spinor\ \((i . e . , \ 
+                      a\ C^2 - vector)\)\ to\ a\ unique\ color . \ 
+                      The\ color\ is\ given\ as\ a\ list\ of\ three\ \
+real\ numbers\ \((the\ RGB\ values\ of\ the\ color)\) . \ 
+                      This\ is\ done\ by\ first\ converting\ the\ \
+spinor\ to\ a\ vector\ \((using\ QSpinorToVector\ from\ the\ package\ \
+VQM`Spinors`)\)\ and\ then\ applying\ QVectorToColor . \ \(Package : \
+\ \(\(VQM`ColorMaps`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`ColorMaps`"],
+
+Cell["This loads the package", "MathCaption"],
+
+Cell["<<VQM`ColorMaps`", "Input"],
+
+Cell["This is an example", "MathCaption"],
+
+Cell[BoxData[
+    \(QComplexToColor[\(\(3.\)\(\[InvisibleSpace]\)\) + 
+        2. \ \[ImaginaryI]]\)], "Input"],
+
+Cell[BoxData[
+    \(QComplexToRGBColor[\(\(3.\)\(\[InvisibleSpace]\)\) + 
+        2. \ \[ImaginaryI]]\)], "Input"],
+
+Cell[BoxData[
+    \(<< "\<VQM`ComplexPlot`\>"\)], "Input"],
+
+Cell[BoxData[
+    \(QColorArrayPlot[
+      Table[QComplexToColor[x + \[ImaginaryI]\ y], {y, \(-3\), 3, 
+          0.5}, {x, \(-3\), 3, 0.5}]]\)], "Input"],
+
+Cell[BoxData[
+    \(QColorArrayPlot[
+      Table[RGBColor @@ 
+          QVectorToColor[{x, y, 
+              0}], {y, \(-\[Pi]\), \[Pi], \[Pi]\/5}, {x, \(-\[Pi]\), \
+\[Pi], \[Pi]\/5}], 
+      MeshRange \[Rule] {{\(-\[Pi]\), \[Pi]}, {\(-\[Pi]\), \[Pi]}}]\)], "Input"],
+
+Cell[BoxData[
+    \(QColorArrayPlot[
+      Table[RGBColor @@ 
+          QVectorToColor[{x, 0, 
+              z}], {z, \(-\[Pi]\), \[Pi], \[Pi]\/5}, {x, \(-\[Pi]\), \
+\[Pi], \[Pi]\/5}], 
+      MeshRange \[Rule] {{\(-\[Pi]\), \[Pi]}, {\(-\[Pi]\), \[Pi]}}]\)], "Input"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`ColorMaps`"->{
+    Cell[1754, 51, 62, 1, 70, "Subsection",
+      CellTags->"VQM`ColorMaps`"],
+    Cell[1819, 54, 205, 3, 70, "Text",
+      CellTags->"VQM`ColorMaps`"],
+    Cell[2027, 59, 8164, 172, 70, "Text",
+      CellTags->"VQM`ColorMaps`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`ColorMaps`", 11865, 285}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 62, 1, 70, "Subsection",
+  CellTags->"VQM`ColorMaps`"],
+Cell[1819, 54, 205, 3, 70, "Text",
+  CellTags->"VQM`ColorMaps`"],
+Cell[2027, 59, 8164, 172, 70, "Text",
+  CellTags->"VQM`ColorMaps`"],
+Cell[10194, 233, 45, 0, 70, "MathCaption"],
+Cell[10242, 235, 33, 0, 70, "Input"],
+Cell[10278, 237, 41, 0, 70, "MathCaption"],
+Cell[10322, 239, 111, 2, 70, "Input"],
+Cell[10436, 243, 114, 2, 70, "Input"],
+Cell[10553, 247, 58, 1, 70, "Input"],
+Cell[10614, 250, 154, 3, 70, "Input"],
+Cell[10771, 255, 266, 6, 70, "Input"],
+Cell[11040, 263, 266, 6, 70, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

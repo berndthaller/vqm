@@ -1,0 +1,482 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     18473,        430]*)
+(*NotebookOutlinePosition[     19355,        461]*)
+(*  CellTagsIndexPosition[     19277,        455]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Spinors ", "Subsection",
+  CellTags->"VQM`Spinors`"],
+
+Cell["\<\
+VQM`Spinors` is a package for 'Visual Quantum Mechanics'. It defines basic operations with spinors and provides tools for the visualization of spinors. \
+\>", "Text",
+  CellTags->"VQM`Spinors`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QNorm[spinor]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(determines\ the\ norm\ of\ a\ \
+\((complex)\)\ vector . \ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\
+\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QNormalize[spinor]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ a\ \((complex)\)\ vector\ \
+with\ norm\ 1. \ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["Gives",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(the\ standard\ reference\ basis\ \
+in\ the\ two - 
+                    dimensional\ complex\ linear\ space . \ \(Package \
+: \ \(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSetSpinBasis[{vec1, vec2}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(defines\ QSpinBasis\ to\ consist\ \
+of\ two\ complex\ unit\ vectors\ in\ the\ direction\ of\ vec1\ and\ \
+vec2 . \ The\ complex\ 2 - 
+                    vectors\ vec1\ and\ vec2\ must\ be\ orthogonal . \
+\ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorToComponents[spinor]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ the\ components\ of\ the\ \
+complex\ vector\ ' 
+                    spinor'\ \((which\ is\ given\ with\ respect\ to\ \
+the\ reference\ basis\ $QSpinBasis)\)\ with\ respect\ to\ the\ basis\ \
+QSpinBasis\ \((or\ the\ basis\ specified\ by\ the\ QUseBasis - 
+                          option . \ Hence\  . QSpinBasis\  == \ 
+                        spinor . \ \(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QComponentsToSpinor[{c1, c2}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ spinor\ in\ \
+$QSpinBasis\ that\ has\ the\ components\ c1\ and\ c2\ with\ respect\ \
+to\ QSpinBasis\ \(\((or\ the\ basis\ specified\ by\ the\ QUseBasis - 
+                            option)\)\(.\)\)\ \  == \ {c1, c2} . 
+                      QSpinBasis . \ \(Package : \ \(\(VQM`Spinors`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QProjectUp[spinor]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(projects\ a\ spinor\ into\ the\ \
+direction\ of\ the\ first\ basis\ vector\ of\ QSpinBasis\ \((i . 
+                          e . , \ 
+                        into\ the\ current\ ' up - 
+                          direction')\) . \ \(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QProjectDown[spinor]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(projects\ a\ spinor\ into\ the\ \
+direction\ of\ the\ second\ basis\ vector\ of\ QSpinBasis\ \((i . 
+                          e . , \ 
+                        into\ the\ current\ ' down - 
+                          direction')\) . \ \(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QProbabilityUp[spinor]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ probability\ that\ the\
+\ spinor\ has\ spin - 
+                    up\ with\ respect\ to\ the\ QSpinBasis . \ \
+\(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorBarDiagram[spinor, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ a\ bar - 
+                    diagram\ showing\ the\ components\ of\ the\ \
+spinor\ with\ respect\ to\ the\ current\ QSpinBasis . \ 
+                        The\ options\ are\ Options[
+                          Graphics] . \ \(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QVectorToHermitianMatrix[{k0, k1, k2, 
+                      k3}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(\(=\)\(\ \)\(QIdentity2\ *\ 
+                        k0\  + \ 
+                      Sum[QPauliSigma_i\ *\ k_i, \ {i, 1, 3}] . \ 
+                          Converts\ a\ four - 
+                      dimensional\ real\ vector\ into\ a\ Hermitian\ \
+2  x2\ matrix . \ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QVectorToDensityMatrix[{k1, k2, k3}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(\(=\)\(\ \)\(1/
+                          2\ \((QIdentity2 + 
+                              Sum[QPauliSigma_i\ *\ k_i, \ {i, 1, 
+                                  3}])\) . \ Converts\ a\ three - 
+                      dimensional\ real\ vector\ into\ a\ Hermitian\ \
+2  x2\ matrix\ with\ trace\ 1\ \((a\ density\ matrix)\) . \ \(Package \
+: \ \(\(VQM`Spinors`\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinHamiltonian[{k0, k1, k2, k3}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(\(=\)\(\ \)\(QIdentity2\ *\ 
+                        k0\  + \ 
+                      Sum[QPauliSigma_i\ *\ k_i, \ {i, 1, 
+                            3}] . \ \(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorUp[{k1, k2, k3}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ two - 
+                      dimensional\ complex\ vector\ describing\ ' 
+                        spin\ up'\ in\ the\ direction\ defined\ by\ k\
+\  = \ \(\({k1, k2, k3} . \ 
+                            Normalized\ eigenvector\ of\ \
+\((QPauliSigmaV\  . \ 
+                              k)\)\ belonging\ to\ eigenvalue\)\(\ \)\
+\(+\)\) | 
+                      k | \(\(.\)\(\ \)\(Package : \ \(\(VQM`Spinors`\
+\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorDown[{k1, k2, k3}]\),
+                  FontFamily->"Courier"], 
+                StyleBox[\(\(\ \)\(is\ the\ two - 
+                      dimensional\ complex\ vector\ describing\ ' 
+                        spin\ down'\ in\ the\ direction\ defined\ by\ \
+k\  = \ \(\({k1, k2, k3} . \ 
+                            Normalized\ eigenvector\ of\ \
+\((QPauliSigmaV\  . \ 
+                              k)\)\ belonging\ to\ eigenvalue\)\(\ \)\
+\(-\)\) | 
+                      k | \(\(.\)\(\ \)\(Package : \ \(\(VQM`Spinors`\
+\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QConjSpinorUp[{k1, k2, k3}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(.\)\(\ \)\(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QConjSpinorDown[{k1, k2, k3}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(.\)\(\ \)\(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorHarmonicUp[j, m, {theta, phi}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ spherical\ harmonic\ \
+spinor\ with\ spin\ parallel\ to\ the\ orbital\ angular\ momentum . \ 
+                      It\ is\ an\ eigenfunction\ of\ the\ angular\ \
+momentum\ operators\ J^2, \ L^2, \ J_  3, \ 
+                  and\ L . 
+                      S . \ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\
+\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorHarmonicDown[j, m, {theta, phi}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ spherical\ harmonic\ \
+spinor\ with\ spin\ antiparallel\ to\ the\ orbital\ angular\ momentum \
+. \ It\ is\ an\ eigenfunction\ of\ the\ angular\ momentum\ operators\ \
+J^2, \ L^2, \ J_  3, \ 
+                  and\ L . 
+                      S . \ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\
+\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorToVector[{z1, z2}]\),
+                  FontFamily->"Courier"], 
+                StyleBox[\(\(\ \)\(defines\ a\ real\ three - 
+                      dimensional\ vector\ in\ the\ spin - 
+                      up\ direction\ of\ psi\  = \ \({z1, z2} . \ 
+                          The\ vector\ is\ obtained\ from\ the\ \
+expectation\ value\ of\ QPauliSigmaV\ in\ the\ state\ defined\ by\ \
+psi\  = \ {z1, z2} . \ The\ length\ of\ the\ vector\ is\ Abs[
+                            psi]^2. \ The\ spinor\ {z1, 
+                          z2}\ must\ be\ nonzero . \ \(Package : \ \(\
+\(VQM`Spinors`\)\(.\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QVectorToSpinor[{x, y, z}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(defines\ a\ spinor\ psi\ which\ is\
+\ spin - up\ in\ the\ direction\ defined\ by\ {x, y, z} . \ 
+                            The\ norm\ of\ the\ spinor\ is\ related\ \
+to\ the\ norm\ of\ the\ vector\ by\  | {x, y, z} |  = 
+                    Abs[psi]^2. \ \(Package : \ \(\(VQM`Spinors`\)\(.\
+\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QExtractPhase[psi]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(returns\ a\ real\ number\ arg\ for\
+\ any\ nonzero\ psi = {z1, z2} . \ 
+                        The\ number\ arg\ is\ a\ phase\ determined\ \
+from\ comparison\ with\ QSpinorUp\ \((with\ respect\ to\ the\ \
+direction\ defined\ by\ psi)\) . \ 
+                        Since\ QSpinorUp\ is\ defined\ with\ a\ real\ \
+first\ component, \ 
+                  arg\ is\ just\ the\ argument\ of\ z1 . \ 
+                      For\ a\ normalized\ spinor\ psi, \ 
+                  we\ have\ psi = 
+                    Exp[I\ arg]\ QSpinorUp[
+                          QSpinorToVector[
+                            psi]] . \ \(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QHermitianMatrixToVector[{{z1, z2}, {z3, 
+                        z4}}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(converts\ a\ \ Hermitian\ two - 
+                    by - two\ matrix\ into\ a\ real, \ 
+                  four - dimensional\ vector, \ 
+                  by\ writing\ the\ matrix\ as\ a\ linear\ \
+combination\ of\ the\ identity\ and\ the\ Pauli\ matrices . \ \
+\(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QDensityMatrixToVector[{{z1, z2}, {z3, 
+                        z4}}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(converts\ a\ \ Hermitian\ two - 
+                    by - two\ matrix\ into\ a\ real, \ 
+                  three - dimensional\ vector, \ 
+                  assuming\ that\ the\ matrix\ is\ a\ density\ matrix\
+\ \((i . e . , \ 
+                        has\ trace\ 1)\) . \ \(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorToArrow[pt, spinor]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ a\ list\ of\ lines\ \
+representing\ an\ arrow\ that\ corresponds\ to\ the\ spinor\ as\ \
+defined\ in\ QSpinorToVector . \ 
+                      The\ argument\ pt\ is\ optional\ and\ defaults\ \
+to\ {0, 0, 0} . \ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QRotationSO3[3  vector]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ an\ orthogonal\ 3\ by\ 3\ \
+matrix\ that\ rotates\ a\ vector\ around\ the\ axis\ defined\ by\ the\
+\ direction\ of\ 3  
+                    vector\ through\ an\ angle\ defined\ by\ the\ \
+size\ of\ 3  vector . \ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QRotationSU2[3  vector]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ unitary\ 2\ by\ 2\ matrix\ \
+that\ rotates\ a\ spinor\ around\ the\ axis\ defined\ by\ the\ \
+direction\ of\ 3  
+                    vector\ through\ an\ angle\ defined\ by\ the\ \
+size\ of\ 3  vector . \ \(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QVisualizeSpinor[spinor]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(converts\ a\ spinor\ into\ a\ \
+magnetic\ needle\ and\ displays\ it\ together\ with\ other\ graphics\ \
+elements\ whose\ appearance\ is\ controlled\ by\ the\ options\ \
+QDrawUnitSphere, \ QDrawAxes, \ QCoordinateCube, \ 
+                  QCoordinateCircles . \ 
+                        Behavior\ for\ QNeedleStyle -> \(True\ \
+\((default)\) : \ 
+                        The\ needle\ points\ from\ the\ coordinate\ \
+origin\ to\ the\ point\ QSpinorToVector[spinor] . \ 
+                            The\ upper\ \((lower)\)\ half\ of\ the\ \
+needle\ has\ a\ color\ determined\ from\ the\ upper\ \((lower)\)\ \
+component\ of\ the\ spinor\ via\ QComplexToColor\ \((from\ the\ \
+package\ VQM`ComplexPlot`)\) . \ 
+                            Behavior\ for\ QNeedleStyle -> \(False . \
+\ An\ arrow\ is\ shown\ instead\ of\ the\ needle . \ 
+                            Giving\ the\ option\ QHeadColor -> 
+                        QExtractPhase\ colors\ the\ head\ of\ the\ \
+arrow\ by\ the\ phase\ of\ the\ first\ component\ of\ the\ spinor . \ 
+                            You\ can\ give\ all\ options\ from\ \
+QVisualizeVector\ \((from\ the\ package\ VQM`VisualizeVector`)\) . \ \
+\(Package : \ \(\(VQM`Spinors`\)\(.\)\)\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QVisualizeDensityMatrix[matrix]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(converts\ a\ Hermitian\ matrix\ \
+with\ trace\ 1\ into\ an\ arrow\ graphics\ \((with\ the\ help\ of\ \
+QDensityMatrixToVector)\)\ and\ displays\ it\ together\ with\ other\ \
+graphics\ elements\ whose\ appearance\ is\ controlled\ by\ the\ \
+options\ QDrawUnitSphere, \ QDrawAxes, \ QCoordinateCube, \ 
+                  QCoordinateCircles . \ \(Package : \ \
+\(\(VQM`Spinors`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`Spinors`"],
+
+Cell["This loads the package", "MathCaption"],
+
+Cell["<<VQM`Spinors`", "Input"],
+
+Cell["This is an example", "MathCaption"],
+
+Cell[BoxData[
+    \(QVisualizeSpinor[
+      QNormalize[{\(-1\) + \[ImaginaryI], \(-\(\[ImaginaryI]\/3\)\) - 
+            1}], QDrawUnitSphere \[Rule] 15, 
+      QCoordinateCube \[Rule] True]; \)], "Input"],
+
+Cell[BoxData[
+    \(QVisualizeSpinor[
+      QNormalize[{\[ImaginaryI], \(-\[ImaginaryI]\)}], 
+      QNeedleStyle \[Rule] False, QArrowShaft \[Rule] True, 
+      Lighting \[Rule] False, 
+      QArrowShape \[Rule] {10, 1\/2, 1\/2, 1\/2}]; \)], "Input"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`Spinors`"->{
+    Cell[1754, 51, 58, 1, 70, "Subsection",
+      CellTags->"VQM`Spinors`"],
+    Cell[1815, 54, 204, 3, 70, "Text",
+      CellTags->"VQM`Spinors`"],
+    Cell[2022, 59, 15860, 350, 70, "Text",
+      CellTags->"VQM`Spinors`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`Spinors`", 19026, 444}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 58, 1, 70, "Subsection",
+  CellTags->"VQM`Spinors`"],
+Cell[1815, 54, 204, 3, 70, "Text",
+  CellTags->"VQM`Spinors`"],
+Cell[2022, 59, 15860, 350, 70, "Text",
+  CellTags->"VQM`Spinors`"],
+Cell[17885, 411, 45, 0, 70, "MathCaption"],
+Cell[17933, 413, 31, 0, 70, "Input"],
+Cell[17967, 415, 41, 0, 70, "MathCaption"],
+Cell[18011, 417, 205, 4, 70, "Input"],
+Cell[18219, 423, 250, 5, 70, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

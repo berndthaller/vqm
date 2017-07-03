@@ -1,0 +1,1873 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     55252,       1863]
+NotebookOptionsPosition[     27208,       1033]
+NotebookOutlinePosition[     42613,       1458]
+CellTagsIndexPosition[     40583,       1403]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QRelativisticEnergy", "Section",
+ CellTags->"QRelativisticEnergy"],
+
+Cell["\<\
+QRelativisticEnergy[k] is the relativistic energy- momentum relation. \
+Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QRelativisticEnergy"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QRelativisticEnergy"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QRelativisticVelocity", "Section",
+ CellTags->"QRelativisticVelocity"],
+
+Cell["\<\
+QRelativisticVelocity[k] gives the velocity as a function of the momentum \
+according to relativistic kinematics. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QRelativisticVelocity"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QRelativisticVelocity"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSignedEnergy", "Section",
+ CellTags->"QSignedEnergy"],
+
+Cell["\<\
+QSignedEnergy[k]=Sign[k]*QRelativisticEnergy[k]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QSignedEnergy"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSignedEnergy"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSignedMomentum", "Section",
+ CellTags->"QSignedMomentum"],
+
+Cell["\<\
+QSignedMomentum[en] relativistic relation between momentum and energy. \
+Contains the factor Sign[en]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QSignedMomentum"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSignedMomentum"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["aplus", "Section",
+ CellTags->"aplus"],
+
+Cell["\<\
+aplus[en]. Auxiliary function. Part of the Foldy-Wouthuysen matrix. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"aplus"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"aplus"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["aminus", "Section",
+ CellTags->"aminus"],
+
+Cell["\<\
+aminus[en]. Auxiliary function. Part of the Foldy-Wouthuysen matrix. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"aminus"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"aminus"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDiracMatrix1D", "Section",
+ CellTags->"QDiracMatrix1D"],
+
+Cell["\<\
+QDiracMatrix1D[k] is the one-dimensional Dirac operator in momentum space. \
+Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QDiracMatrix1D"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDiracMatrix1D"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QProjectPositiveEnergy", "Section",
+ CellTags->"QProjectPositiveEnergy"],
+
+Cell["\<\
+QProjectPositiveEnergy[k] is the projection onto the eigenspace of \
+QDiracMatrix1D[k] belonging to the positive eigenvalue. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QProjectPositiveEnergy"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QProjectPositiveEnergy"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QProjectNegativeEnergy", "Section",
+ CellTags->"QProjectNegativeEnergy"],
+
+Cell["\<\
+QProjectNegativeEnergy[k] is the projection onto the eigenspace of \
+QDiracMatrix1D[k] belonging to the negative eigenvalue. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QProjectNegativeEnergy"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QProjectNegativeEnergy"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpacePropagator", "Section",
+ CellTags->"QMomentumSpacePropagator"],
+
+Cell["\<\
+QMomentumSpacePropagator[k,t] is the matrix giving the momentum-space \
+representation of the unitary time evolution according to the free Dirac \
+equation in one space-dimensions. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpacePropagator"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpacePropagator"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QBaseSpinorRight", "Section",
+ CellTags->"QBaseSpinorRight"],
+
+Cell["\<\
+QBaseSpinorRight[k] is the 'spinor-amplitude' of a right-moving plane wave of \
+the Dirac equation in one dimension. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QBaseSpinorRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QBaseSpinorRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QBaseSpinorLeft", "Section",
+ CellTags->"QBaseSpinorLeft"],
+
+Cell["\<\
+QBaseSpinorLeft[k] is the 'spinor-amplitude' of a left-moving plane wave of \
+the Dirac equation in one dimension. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QBaseSpinorLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QBaseSpinorLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QBaseSpinorPos", "Section",
+ CellTags->"QBaseSpinorPos"],
+
+Cell["\<\
+QBaseSpinorPos[k] is the 'spinor-amplitude' of a positive-energy plane wave \
+of the Dirac equation in one dimension. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QBaseSpinorPos"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QBaseSpinorPos"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QBaseSpinorNeg", "Section",
+ CellTags->"QBaseSpinorNeg"],
+
+Cell["\<\
+QBaseSpinorNeg[k] is the 'spinor-amplitude' of a negative-energy plane wave \
+of the Dirac equation in one dimension. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QBaseSpinorNeg"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QBaseSpinorNeg"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDiracPlaneWaveRight", "Section",
+ CellTags->"QDiracPlaneWaveRight"],
+
+Cell["\<\
+QDiracPlaneWaveRight[k,x] or QDiracPlaneWaveRight[k,x,t] gives a plane-wave \
+solution of the one-dimensional Dirac equation, corresponding to a beam of \
+particles with positive velocity. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QDiracPlaneWaveRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDiracPlaneWaveRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDiracPlaneWaveLeft", "Section",
+ CellTags->"QDiracPlaneWaveLeft"],
+
+Cell["\<\
+QDiracPlaneWaveLeft[k,x] or QDiracPlaneWaveLeft[k,x,t] gives a plane-wave \
+solution of the one-dimensional Dirac equation, corresponding to a beam of \
+particles with negative velocity. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QDiracPlaneWaveLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDiracPlaneWaveLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDiracPlaneWavePos", "Section",
+ CellTags->"QDiracPlaneWavePos"],
+
+Cell["\<\
+QDiracPlaneWavePos[k,x] or QDiracPlaneWavePos[k,x,t] gives a plane-wave \
+solution of the one-dimensional Dirac equation, corresponding to particles \
+with momentum k and positive energy. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QDiracPlaneWavePos"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDiracPlaneWavePos"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDiracPlaneWaveNeg", "Section",
+ CellTags->"QDiracPlaneWaveNeg"],
+
+Cell["\<\
+QDiracPlaneWaveNeg[k,x] or QDiracPlaneWaveNeg[k,x,t] gives a plane-wave \
+solution of the one-dimensional Dirac equation, corresponding to particles \
+with momentum k and negative energy. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QDiracPlaneWaveNeg"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDiracPlaneWaveNeg"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QFWMatrix", "Section",
+ CellTags->"QFWMatrix"],
+
+Cell["\<\
+QFWMatrix[k] and QInverseFWMatrix[k] is the unitary matrix  (resp. its \
+inverse) transforming QDiracMatrix1D[k] to a diagonal form. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QFWMatrix"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QFWMatrix"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["$c", "Section",
+ CellTags->"$c"],
+
+Cell["\<\
+Constant representing the velocity of light. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"$c"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"$c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["$m", "Section",
+ CellTags->"$m"],
+
+Cell["\<\
+Constant representing the mass of the particle. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"$m"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"$m"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDiracEquation1D", "Section",
+ CellTags->"QDiracEquation1D"],
+
+Cell["\<\
+QDiracEquation1D[psi[x,t],{x,t}]==0 is the one-dimensional Dirac equation for \
+the two-component spinor function psi[x,t]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QDiracEquation1D"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDiracEquation1D"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDiracOperator1D", "Section",
+ CellTags->"QDiracOperator1D"],
+
+Cell["\<\
+QDiracOperator1D[psi[x],x]==0 gives the action one-dimensional Dirac operator \
+on the two-component spinor function psi[x]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QDiracOperator1D"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDiracOperator1D"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QTridiagonalBlockSolve", "Section",
+ CellTags->"QTridiagonalBlockSolve"],
+
+Cell["\<\
+QTridiagonalBlockSolve[a_List, b_List, c_List, r_List] is a variant of \
+TridiagonalSolve in the standard package LinearAlgebra`Tridiagonal`. a,b,c \
+are lists of 2 by 2 matrices, Length[b]= Length[c]+1=Length[a]+1, and r is a \
+list of two-dimensional vectors, Length[r]=Length[b]. If M[a,b,c] is the \
+block-tridiagonal matrix with b as the diagonal, then QTridiagonalBlockSolve \
+gives the solution of M.x=r as a list x of two-dimensional vectors. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QTridiagonalBlockSolve"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QTridiagonalBlockSolve"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDiracTimeStep1D", "Section",
+ CellTags->"QDiracTimeStep1D"],
+
+Cell["\<\
+QDiracTimeStep1D[psi_List, pot_List, dt, dx] performs a time-step dt of the \
+time-evolution defined by the free, one-dimensional Dirac equation with \
+potential-matrix pot. psi is given as a list of two-dimensional vectors that \
+represent the values of the initial spinor on the points of a regular grid \
+with grid-distance dx. pot is a list of 2 by 2 matrices representing the \
+values of a potential matrix on the grid points. The algorithm uses a \
+Crank-Nicolson formula. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QDiracTimeStep1D"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDiracTimeStep1D"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QInitializeDirac1D", "Section",
+ CellTags->"QInitializeDirac1D"],
+
+Cell["\<\
+QInitializeDirac1D[Kpoints] must be called before executing any of the \
+QMomentumSpaceSpinor- or QPositionSpaceSpinor- commands. It produces some \
+lists (global variables) which are needed by all of these commands and which \
+are pre-calculated once and for all for better performance. Kpoints is the \
+grid of points in momentum space, where the initial spinor is given as a list \
+of spinor-values. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QInitializeDirac1D"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QInitializeDirac1D"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinorPos", "Section",
+ CellTags->"QMomentumSpaceSpinorPos"],
+
+Cell["\<\
+QMomentumSpaceSpinorPos[t,Kvalues,Kpoints] computes the positive-energy part \
+of QMomentumSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinorPos"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinorPos"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinorNeg", "Section",
+ CellTags->"QMomentumSpaceSpinorNeg"],
+
+Cell["\<\
+QMomentumSpaceSpinorNeg[t,Kvalues,Kpoints] computes the negative-energy part \
+of QMomentumSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinorNeg"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinorNeg"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinorRight", "Section",
+ CellTags->"QMomentumSpaceSpinorRight"],
+
+Cell["\<\
+QMomentumSpaceSpinorRight[t,Kvalues,Kpoints] computes the part with positive \
+velocity of QMomentumSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinorRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinorRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinorLeft", "Section",
+ CellTags->"QMomentumSpaceSpinorLeft"],
+
+Cell["\<\
+QMomentumSpaceSpinorLeft[t,Kvalues,Kpoints] computes the part with negative \
+velocity of QMomentumSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinorLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinorLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinorPosRight", "Section",
+ CellTags->"QMomentumSpaceSpinorPosRight"],
+
+Cell["\<\
+QMomentumSpaceSpinorPosRight[t,Kvalues,Kpoints] computes the part with \
+positive energy and positive velocity of \
+QMomentumSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinorPosRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinorPosRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinorPosLeft", "Section",
+ CellTags->"QMomentumSpaceSpinorPosLeft"],
+
+Cell["\<\
+QMomentumSpaceSpinorPosLeft[t,Kvalues,Kpoints] computes the part with \
+positive energy and negative velocity of \
+QMomentumSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinorPosLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinorPosLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinorNegRight", "Section",
+ CellTags->"QMomentumSpaceSpinorNegRight"],
+
+Cell["\<\
+QMomentumSpaceSpinorNegRight[t,Kvalues,Kpoints] computes the part with \
+negative energy and positive velocity of \
+QMomentumSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinorNegRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinorNegRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinorNegLeft", "Section",
+ CellTags->"QMomentumSpaceSpinorNegLeft"],
+
+Cell["\<\
+QMomentumSpaceSpinorNegLeft[t,Kvalues,Kpoints] computes the part with \
+negative energy and negative velocity of \
+QMomentumSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinorNegLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinorNegLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QMomentumSpaceSpinor", "Section",
+ CellTags->"QMomentumSpaceSpinor"],
+
+Cell["\<\
+QMomentumSpaceSpinor[t,Kvalues,Kpoints] computes the solution of the \
+one-dimensional Dirac equation in momentum space at time t, given an initial \
+spinor Kvalues on a grid Kpoints in momentum space. The result is given as a \
+list of spinor values (that is, a list of two-dimensional complex vectors). \
+Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QMomentumSpaceSpinor"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QMomentumSpaceSpinor"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinor", "Section",
+ CellTags->"QPositionSpaceSpinor"],
+
+Cell["\<\
+QPositionSpaceSpinor[t,Kvalues,Kpoints] gives the solution of the \
+one-dimensional Dirac equation in position space at time t, given an initial \
+spinor Kvalues on a grid Kpoints in momentum space. The result is given as a \
+list of spinor values (that is, a list of two-dimensional complex vectors). \
+These values give the solution on the set of points described by \
+QPositionSpaceGrid[Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinor"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinor"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinorPos", "Section",
+ CellTags->"QPositionSpaceSpinorPos"],
+
+Cell["\<\
+QPositionSpaceSpinorPos[t,Kvalues,Kpoints] computes the positive-energy part \
+of QPositionSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinorPos"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinorPos"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinorNeg", "Section",
+ CellTags->"QPositionSpaceSpinorNeg"],
+
+Cell["\<\
+QPositionSpaceSpinorNeg[t,Kvalues,Kpoints] computes the negative-energy part \
+of QPositionSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinorNeg"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinorNeg"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinorRight", "Section",
+ CellTags->"QPositionSpaceSpinorRight"],
+
+Cell["\<\
+QPositionSpaceSpinorRight[t,Kvalues,Kpoints] computes the part with positive \
+velocity of QPositionSpaceSpinorPos[t,Kvalues,Kpoints]. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinorRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinorRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinorLeft", "Section",
+ CellTags->"QPositionSpaceSpinorLeft"],
+
+Cell["\<\
+QPositionSpaceSpinorLeft[t,Kvalues,Kpoints] computes the part with negative \
+velocity of QPositionSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinorLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinorLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinorPosRight", "Section",
+ CellTags->"QPositionSpaceSpinorPosRight"],
+
+Cell["\<\
+QPositionSpaceSpinorPosRight[t,Kvalues,Kpoints] computes the part with \
+positive energy and positive velocity of \
+QPositionSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinorPosRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinorPosRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinorPosLeft", "Section",
+ CellTags->"QPositionSpaceSpinorPosLeft"],
+
+Cell["\<\
+QPositionSpaceSpinorPosLeft[t,Kvalues,Kpoints] computes the part with \
+positive energy and negative velocity of \
+QPositionSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinorPosLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinorPosLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinorNegRight", "Section",
+ CellTags->"QPositionSpaceSpinorNegRight"],
+
+Cell["\<\
+QPositionSpaceSpinorNegRight[t,Kvalues,Kpoints] computes the part with \
+negative energy and positive velocity of \
+QPositionSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinorNegRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinorNegRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceSpinorNegLeft", "Section",
+ CellTags->"QPositionSpaceSpinorNegLeft"],
+
+Cell["\<\
+QPositionSpaceSpinorNegLeft[t,Kvalues,Kpoints] computes the part with \
+negative energy and negative velocity of \
+QPositionSpaceSpinor[t,Kvalues,Kpoints]. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceSpinorNegLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceSpinorNegLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceGrid", "Section",
+ CellTags->"QPositionSpaceGrid"],
+
+Cell["\<\
+QPositionSpaceGrid[Kpoints] gives the grid of points in position space, where \
+the solution is determined by QPositionSpaceSpinor. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceGrid"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceGrid"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceInterval", "Section",
+ CellTags->"QPositionSpaceInterval"],
+
+Cell["\<\
+QPositionSpaceInterval[Kpoints] gives the interval in position space, where \
+the solution is determined by QPositionSpaceSpinor. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceInterval"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceInterval"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPositionSpaceStep", "Section",
+ CellTags->"QPositionSpaceStep"],
+
+Cell["\<\
+QPositionSpaceStep[Kpoints] gives the step size of the grid in position \
+space, where the solution is determined by QPositionSpaceSpinor. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QPositionSpaceStep"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPositionSpaceStep"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QComputeMeanPosition", "Section",
+ CellTags->"QComputeMeanPosition"],
+
+Cell["\<\
+QComputeMeanPosition[Xvalues,Xpoints] computes the mean position of a spinor \
+that is given by a list of spinor-values on points Xpoints of the \
+one-dimensional position space. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QComputeMeanPosition"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QComputeMeanPosition"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QInnerProductList", "Section",
+ CellTags->"QInnerProductList"],
+
+Cell["QInnerProductList[spinorlist1,spinorlist2]", "Usage",
+ CellTags->"QInnerProductList"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QInnerProductList"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorFT", "Section",
+ CellTags->"QSpinorFT"],
+
+Cell["\<\
+QSpinorFT[spinorlist,{x1,x2}] computes the component-wise Fourier transform \
+of the spinorlist, assuming that spinorlist are C^2-values given on a uniform \
+grid of points in the interval {x1,x2}. For example, spinorlist could be the \
+numerical approximation of a spinor-wave function. The Fourier-transform is \
+computed via a fast Fourier transform method provided by the package \
+FastFourier.m. Package: VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QSpinorFT"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorFT"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QInverseSpinorFT", "Section",
+ CellTags->"QInverseSpinorFT"],
+
+Cell["\<\
+QInverseSpinorFT[spinorlist,{k1,k2}] computes the component-wise inverse \
+Fourier transform of the spinorlist, assuming that spinorlist are C^2-values \
+given on a uniform grid of points in the interval {k1,k2}. For example, \
+spinorlist could be the numerical approximation of a spinor-wave function in \
+momentum space. The inverse Fourier-transform is computed via a fast Fourier \
+transform method provided by the package FastFourier.m. Package: \
+VQM`Dirac1D`.\
+\>", "Usage",
+ CellTags->"QInverseSpinorFT"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Dirac1D`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QInverseSpinorFT"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "QRelativisticEnergy"->{
+  Cell[590, 23, 72, 1, 63, "Section",
+   CellTags->"QRelativisticEnergy"],
+  Cell[665, 26, 153, 4, 31, "Usage",
+   CellTags->"QRelativisticEnergy"],
+  Cell[821, 32, 161, 5, 23, "Text",
+   CellTags->"QRelativisticEnergy"]},
+ "QRelativisticVelocity"->{
+  Cell[1019, 42, 76, 1, 63, "Section",
+   CellTags->"QRelativisticVelocity"],
+  Cell[1098, 45, 197, 4, 47, "Usage",
+   CellTags->"QRelativisticVelocity"],
+  Cell[1298, 51, 163, 5, 23, "Text",
+   CellTags->"QRelativisticVelocity"]},
+ "QSignedEnergy"->{
+  Cell[1498, 61, 60, 1, 63, "Section",
+   CellTags->"QSignedEnergy"],
+  Cell[1561, 64, 124, 3, 31, "Usage",
+   CellTags->"QSignedEnergy"],
+  Cell[1688, 69, 155, 5, 23, "Text",
+   CellTags->"QSignedEnergy"]},
+ "QSignedMomentum"->{
+  Cell[1880, 79, 64, 1, 63, "Section",
+   CellTags->"QSignedMomentum"],
+  Cell[1947, 82, 180, 4, 47, "Usage",
+   CellTags->"QSignedMomentum"],
+  Cell[2130, 88, 157, 5, 23, "Text",
+   CellTags->"QSignedMomentum"]},
+ "aplus"->{
+  Cell[2324, 98, 44, 1, 63, "Section",
+   CellTags->"aplus"],
+  Cell[2371, 101, 137, 4, 31, "Usage",
+   CellTags->"aplus"],
+  Cell[2511, 107, 147, 5, 23, "Text",
+   CellTags->"aplus"]},
+ "aminus"->{
+  Cell[2695, 117, 46, 1, 63, "Section",
+   CellTags->"aminus"],
+  Cell[2744, 120, 139, 4, 31, "Usage",
+   CellTags->"aminus"],
+  Cell[2886, 126, 148, 5, 23, "Text",
+   CellTags->"aminus"]},
+ "QDiracMatrix1D"->{
+  Cell[3071, 136, 62, 1, 63, "Section",
+   CellTags->"QDiracMatrix1D"],
+  Cell[3136, 139, 153, 4, 70, "Usage",
+   CellTags->"QDiracMatrix1D"],
+  Cell[3292, 145, 156, 5, 70, "Text",
+   CellTags->"QDiracMatrix1D"]},
+ "QProjectPositiveEnergy"->{
+  Cell[3485, 155, 78, 1, 70, "Section",
+   CellTags->"QProjectPositiveEnergy"],
+  Cell[3566, 158, 211, 5, 70, "Usage",
+   CellTags->"QProjectPositiveEnergy"],
+  Cell[3780, 165, 164, 5, 70, "Text",
+   CellTags->"QProjectPositiveEnergy"]},
+ "QProjectNegativeEnergy"->{
+  Cell[3981, 175, 78, 1, 70, "Section",
+   CellTags->"QProjectNegativeEnergy"],
+  Cell[4062, 178, 211, 5, 70, "Usage",
+   CellTags->"QProjectNegativeEnergy"],
+  Cell[4276, 185, 164, 5, 70, "Text",
+   CellTags->"QProjectNegativeEnergy"]},
+ "QMomentumSpacePropagator"->{
+  Cell[4477, 195, 82, 1, 70, "Section",
+   CellTags->"QMomentumSpacePropagator"],
+  Cell[4562, 198, 267, 5, 70, "Usage",
+   CellTags->"QMomentumSpacePropagator"],
+  Cell[4832, 205, 166, 5, 70, "Text",
+   CellTags->"QMomentumSpacePropagator"]},
+ "QBaseSpinorRight"->{
+  Cell[5035, 215, 66, 1, 70, "Section",
+   CellTags->"QBaseSpinorRight"],
+  Cell[5104, 218, 195, 4, 70, "Usage",
+   CellTags->"QBaseSpinorRight"],
+  Cell[5302, 224, 158, 5, 70, "Text",
+   CellTags->"QBaseSpinorRight"]},
+ "QBaseSpinorLeft"->{
+  Cell[5497, 234, 64, 1, 70, "Section",
+   CellTags->"QBaseSpinorLeft"],
+  Cell[5564, 237, 192, 4, 70, "Usage",
+   CellTags->"QBaseSpinorLeft"],
+  Cell[5759, 243, 157, 5, 70, "Text",
+   CellTags->"QBaseSpinorLeft"]},
+ "QBaseSpinorPos"->{
+  Cell[5953, 253, 62, 1, 70, "Section",
+   CellTags->"QBaseSpinorPos"],
+  Cell[6018, 256, 194, 4, 70, "Usage",
+   CellTags->"QBaseSpinorPos"],
+  Cell[6215, 262, 156, 5, 70, "Text",
+   CellTags->"QBaseSpinorPos"]},
+ "QBaseSpinorNeg"->{
+  Cell[6408, 272, 62, 1, 70, "Section",
+   CellTags->"QBaseSpinorNeg"],
+  Cell[6473, 275, 194, 4, 70, "Usage",
+   CellTags->"QBaseSpinorNeg"],
+  Cell[6670, 281, 156, 5, 70, "Text",
+   CellTags->"QBaseSpinorNeg"]},
+ "QDiracPlaneWaveRight"->{
+  Cell[6863, 291, 74, 1, 70, "Section",
+   CellTags->"QDiracPlaneWaveRight"],
+  Cell[6940, 294, 271, 5, 70, "Usage",
+   CellTags->"QDiracPlaneWaveRight"],
+  Cell[7214, 301, 162, 5, 70, "Text",
+   CellTags->"QDiracPlaneWaveRight"]},
+ "QDiracPlaneWaveLeft"->{
+  Cell[7413, 311, 72, 1, 70, "Section",
+   CellTags->"QDiracPlaneWaveLeft"],
+  Cell[7488, 314, 268, 5, 70, "Usage",
+   CellTags->"QDiracPlaneWaveLeft"],
+  Cell[7759, 321, 161, 5, 70, "Text",
+   CellTags->"QDiracPlaneWaveLeft"]},
+ "QDiracPlaneWavePos"->{
+  Cell[7957, 331, 70, 1, 70, "Section",
+   CellTags->"QDiracPlaneWavePos"],
+  Cell[8030, 334, 268, 5, 70, "Usage",
+   CellTags->"QDiracPlaneWavePos"],
+  Cell[8301, 341, 160, 5, 70, "Text",
+   CellTags->"QDiracPlaneWavePos"]},
+ "QDiracPlaneWaveNeg"->{
+  Cell[8498, 351, 70, 1, 70, "Section",
+   CellTags->"QDiracPlaneWaveNeg"],
+  Cell[8571, 354, 268, 5, 70, "Usage",
+   CellTags->"QDiracPlaneWaveNeg"],
+  Cell[8842, 361, 160, 5, 70, "Text",
+   CellTags->"QDiracPlaneWaveNeg"]},
+ "QFWMatrix"->{
+  Cell[9039, 371, 52, 1, 70, "Section",
+   CellTags->"QFWMatrix"],
+  Cell[9094, 374, 206, 5, 70, "Usage",
+   CellTags->"QFWMatrix"],
+  Cell[9303, 381, 151, 5, 70, "Text",
+   CellTags->"QFWMatrix"]},
+ "$c"->{
+  Cell[9491, 391, 38, 1, 70, "Section",
+   CellTags->"$c"],
+  Cell[9532, 394, 109, 3, 70, "Usage",
+   CellTags->"$c"],
+  Cell[9644, 399, 144, 5, 70, "Text",
+   CellTags->"$c"]},
+ "$m"->{
+  Cell[9825, 409, 38, 1, 70, "Section",
+   CellTags->"$m"],
+  Cell[9866, 412, 112, 3, 70, "Usage",
+   CellTags->"$m"],
+  Cell[9981, 417, 144, 5, 70, "Text",
+   CellTags->"$m"]},
+ "QDiracEquation1D"->{
+  Cell[10162, 427, 66, 1, 70, "Section",
+   CellTags->"QDiracEquation1D"],
+  Cell[10231, 430, 202, 4, 70, "Usage",
+   CellTags->"QDiracEquation1D"],
+  Cell[10436, 436, 158, 5, 70, "Text",
+   CellTags->"QDiracEquation1D"]},
+ "QDiracOperator1D"->{
+  Cell[10631, 446, 66, 1, 70, "Section",
+   CellTags->"QDiracOperator1D"],
+  Cell[10700, 449, 203, 4, 70, "Usage",
+   CellTags->"QDiracOperator1D"],
+  Cell[10906, 455, 158, 5, 70, "Text",
+   CellTags->"QDiracOperator1D"]},
+ "QTridiagonalBlockSolve"->{
+  Cell[11101, 465, 78, 1, 70, "Section",
+   CellTags->"QTridiagonalBlockSolve"],
+  Cell[11182, 468, 537, 9, 70, "Usage",
+   CellTags->"QTridiagonalBlockSolve"],
+  Cell[11722, 479, 164, 5, 70, "Text",
+   CellTags->"QTridiagonalBlockSolve"]},
+ "QDiracTimeStep1D"->{
+  Cell[11923, 489, 66, 1, 70, "Section",
+   CellTags->"QDiracTimeStep1D"],
+  Cell[11992, 492, 557, 9, 70, "Usage",
+   CellTags->"QDiracTimeStep1D"],
+  Cell[12552, 503, 158, 5, 70, "Text",
+   CellTags->"QDiracTimeStep1D"]},
+ "QInitializeDirac1D"->{
+  Cell[12747, 513, 70, 1, 70, "Section",
+   CellTags->"QInitializeDirac1D"],
+  Cell[12820, 516, 483, 8, 70, "Usage",
+   CellTags->"QInitializeDirac1D"],
+  Cell[13306, 526, 160, 5, 70, "Text",
+   CellTags->"QInitializeDirac1D"]},
+ "QMomentumSpaceSpinorPos"->{
+  Cell[13503, 536, 80, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinorPos"],
+  Cell[13586, 539, 208, 4, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinorPos"],
+  Cell[13797, 545, 165, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinorPos"]},
+ "QMomentumSpaceSpinorNeg"->{
+  Cell[13999, 555, 80, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinorNeg"],
+  Cell[14082, 558, 208, 4, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinorNeg"],
+  Cell[14293, 564, 165, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinorNeg"]},
+ "QMomentumSpaceSpinorRight"->{
+  Cell[14495, 574, 84, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinorRight"],
+  Cell[14582, 577, 219, 4, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinorRight"],
+  Cell[14804, 583, 167, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinorRight"]},
+ "QMomentumSpaceSpinorLeft"->{
+  Cell[15008, 593, 82, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinorLeft"],
+  Cell[15093, 596, 217, 4, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinorLeft"],
+  Cell[15313, 602, 166, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinorLeft"]},
+ "QMomentumSpaceSpinorPosRight"->{
+  Cell[15516, 612, 90, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinorPosRight"],
+  Cell[15609, 615, 247, 5, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinorPosRight"],
+  Cell[15859, 622, 170, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinorPosRight"]},
+ "QMomentumSpaceSpinorPosLeft"->{
+  Cell[16066, 632, 88, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinorPosLeft"],
+  Cell[16157, 635, 245, 5, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinorPosLeft"],
+  Cell[16405, 642, 169, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinorPosLeft"]},
+ "QMomentumSpaceSpinorNegRight"->{
+  Cell[16611, 652, 90, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinorNegRight"],
+  Cell[16704, 655, 247, 5, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinorNegRight"],
+  Cell[16954, 662, 170, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinorNegRight"]},
+ "QMomentumSpaceSpinorNegLeft"->{
+  Cell[17161, 672, 88, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinorNegLeft"],
+  Cell[17252, 675, 245, 5, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinorNegLeft"],
+  Cell[17500, 682, 169, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinorNegLeft"]},
+ "QMomentumSpaceSpinor"->{
+  Cell[17706, 692, 74, 1, 70, "Section",
+   CellTags->"QMomentumSpaceSpinor"],
+  Cell[17783, 695, 389, 7, 70, "Usage",
+   CellTags->"QMomentumSpaceSpinor"],
+  Cell[18175, 704, 162, 5, 70, "Text",
+   CellTags->"QMomentumSpaceSpinor"]},
+ "QPositionSpaceSpinor"->{
+  Cell[18374, 714, 74, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinor"],
+  Cell[18451, 717, 482, 8, 70, "Usage",
+   CellTags->"QPositionSpaceSpinor"],
+  Cell[18936, 727, 162, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinor"]},
+ "QPositionSpaceSpinorPos"->{
+  Cell[19135, 737, 80, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinorPos"],
+  Cell[19218, 740, 208, 4, 70, "Usage",
+   CellTags->"QPositionSpaceSpinorPos"],
+  Cell[19429, 746, 165, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinorPos"]},
+ "QPositionSpaceSpinorNeg"->{
+  Cell[19631, 756, 80, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinorNeg"],
+  Cell[19714, 759, 208, 4, 70, "Usage",
+   CellTags->"QPositionSpaceSpinorNeg"],
+  Cell[19925, 765, 165, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinorNeg"]},
+ "QPositionSpaceSpinorRight"->{
+  Cell[20127, 775, 84, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinorRight"],
+  Cell[20214, 778, 224, 5, 70, "Usage",
+   CellTags->"QPositionSpaceSpinorRight"],
+  Cell[20441, 785, 167, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinorRight"]},
+ "QPositionSpaceSpinorLeft"->{
+  Cell[20645, 795, 82, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinorLeft"],
+  Cell[20730, 798, 217, 4, 70, "Usage",
+   CellTags->"QPositionSpaceSpinorLeft"],
+  Cell[20950, 804, 166, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinorLeft"]},
+ "QPositionSpaceSpinorPosRight"->{
+  Cell[21153, 814, 90, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinorPosRight"],
+  Cell[21246, 817, 247, 5, 70, "Usage",
+   CellTags->"QPositionSpaceSpinorPosRight"],
+  Cell[21496, 824, 170, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinorPosRight"]},
+ "QPositionSpaceSpinorPosLeft"->{
+  Cell[21703, 834, 88, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinorPosLeft"],
+  Cell[21794, 837, 245, 5, 70, "Usage",
+   CellTags->"QPositionSpaceSpinorPosLeft"],
+  Cell[22042, 844, 169, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinorPosLeft"]},
+ "QPositionSpaceSpinorNegRight"->{
+  Cell[22248, 854, 90, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinorNegRight"],
+  Cell[22341, 857, 247, 5, 70, "Usage",
+   CellTags->"QPositionSpaceSpinorNegRight"],
+  Cell[22591, 864, 170, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinorNegRight"]},
+ "QPositionSpaceSpinorNegLeft"->{
+  Cell[22798, 874, 88, 1, 70, "Section",
+   CellTags->"QPositionSpaceSpinorNegLeft"],
+  Cell[22889, 877, 245, 5, 70, "Usage",
+   CellTags->"QPositionSpaceSpinorNegLeft"],
+  Cell[23137, 884, 169, 5, 70, "Text",
+   CellTags->"QPositionSpaceSpinorNegLeft"]},
+ "QPositionSpaceGrid"->{
+  Cell[23343, 894, 70, 1, 70, "Section",
+   CellTags->"QPositionSpaceGrid"],
+  Cell[23416, 897, 212, 4, 70, "Usage",
+   CellTags->"QPositionSpaceGrid"],
+  Cell[23631, 903, 160, 5, 70, "Text",
+   CellTags->"QPositionSpaceGrid"]},
+ "QPositionSpaceInterval"->{
+  Cell[23828, 913, 78, 1, 70, "Section",
+   CellTags->"QPositionSpaceInterval"],
+  Cell[23909, 916, 214, 4, 70, "Usage",
+   CellTags->"QPositionSpaceInterval"],
+  Cell[24126, 922, 164, 5, 70, "Text",
+   CellTags->"QPositionSpaceInterval"]},
+ "QPositionSpaceStep"->{
+  Cell[24327, 932, 70, 1, 70, "Section",
+   CellTags->"QPositionSpaceStep"],
+  Cell[24400, 935, 221, 5, 70, "Usage",
+   CellTags->"QPositionSpaceStep"],
+  Cell[24624, 942, 160, 5, 70, "Text",
+   CellTags->"QPositionSpaceStep"]},
+ "QComputeMeanPosition"->{
+  Cell[24821, 952, 74, 1, 70, "Section",
+   CellTags->"QComputeMeanPosition"],
+  Cell[24898, 955, 261, 5, 70, "Usage",
+   CellTags->"QComputeMeanPosition"],
+  Cell[25162, 962, 162, 5, 70, "Text",
+   CellTags->"QComputeMeanPosition"]},
+ "QInnerProductList"->{
+  Cell[25361, 972, 68, 1, 70, "Section",
+   CellTags->"QInnerProductList"],
+  Cell[25432, 975, 91, 1, 70, "Usage",
+   CellTags->"QInnerProductList"],
+  Cell[25526, 978, 159, 5, 70, "Text",
+   CellTags->"QInnerProductList"]},
+ "QSpinorFT"->{
+  Cell[25722, 988, 52, 1, 70, "Section",
+   CellTags->"QSpinorFT"],
+  Cell[25777, 991, 472, 8, 70, "Usage",
+   CellTags->"QSpinorFT"],
+  Cell[26252, 1001, 151, 5, 70, "Text",
+   CellTags->"QSpinorFT"]},
+ "QInverseSpinorFT"->{
+  Cell[26440, 1011, 66, 1, 70, "Section",
+   CellTags->"QInverseSpinorFT"],
+  Cell[26509, 1014, 522, 9, 70, "Usage",
+   CellTags->"QInverseSpinorFT"],
+  Cell[27034, 1025, 158, 5, 70, "Text",
+   CellTags->"QInverseSpinorFT"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"QRelativisticEnergy", 27516, 1043},
+ {"QRelativisticVelocity", 27767, 1050},
+ {"QSignedEnergy", 28019, 1057},
+ {"QSignedMomentum", 28249, 1064},
+ {"aplus", 28475, 1071},
+ {"aminus", 28674, 1078},
+ {"QDiracMatrix1D", 28885, 1085},
+ {"QProjectPositiveEnergy", 29128, 1092},
+ {"QProjectNegativeEnergy", 29395, 1099},
+ {"QMomentumSpacePropagator", 29664, 1106},
+ {"QBaseSpinorRight", 29931, 1113},
+ {"QBaseSpinorLeft", 30173, 1120},
+ {"QBaseSpinorPos", 30411, 1127},
+ {"QBaseSpinorNeg", 30646, 1134},
+ {"QDiracPlaneWaveRight", 30887, 1141},
+ {"QDiracPlaneWaveLeft", 31145, 1148},
+ {"QDiracPlaneWavePos", 31399, 1155},
+ {"QDiracPlaneWaveNeg", 31650, 1162},
+ {"QFWMatrix", 31892, 1169},
+ {"$c", 32100, 1176},
+ {"$m", 32287, 1183},
+ {"QDiracEquation1D", 32488, 1190},
+ {"QDiracOperator1D", 32734, 1197},
+ {"QTridiagonalBlockSolve", 32986, 1204},
+ {"QDiracTimeStep1D", 33250, 1211},
+ {"QInitializeDirac1D", 33498, 1218},
+ {"QMomentumSpaceSpinorPos", 33757, 1225},
+ {"QMomentumSpaceSpinorNeg", 34031, 1232},
+ {"QMomentumSpaceSpinorRight", 34307, 1239},
+ {"QMomentumSpaceSpinorLeft", 34588, 1246},
+ {"QMomentumSpaceSpinorPosRight", 34870, 1253},
+ {"QMomentumSpaceSpinorPosLeft", 35163, 1260},
+ {"QMomentumSpaceSpinorNegRight", 35454, 1267},
+ {"QMomentumSpaceSpinorNegLeft", 35747, 1274},
+ {"QMomentumSpaceSpinor", 36030, 1281},
+ {"QPositionSpaceSpinor", 36292, 1288},
+ {"QPositionSpaceSpinorPos", 36557, 1295},
+ {"QPositionSpaceSpinorNeg", 36831, 1302},
+ {"QPositionSpaceSpinorRight", 37107, 1309},
+ {"QPositionSpaceSpinorLeft", 37388, 1316},
+ {"QPositionSpaceSpinorPosRight", 37670, 1323},
+ {"QPositionSpaceSpinorPosLeft", 37963, 1330},
+ {"QPositionSpaceSpinorNegRight", 38254, 1337},
+ {"QPositionSpaceSpinorNegLeft", 38547, 1344},
+ {"QPositionSpaceGrid", 38828, 1351},
+ {"QPositionSpaceInterval", 39086, 1358},
+ {"QPositionSpaceStep", 39352, 1365},
+ {"QComputeMeanPosition", 39608, 1372},
+ {"QInnerProductList", 39867, 1379},
+ {"QSpinorFT", 40108, 1386},
+ {"QInverseSpinorFT", 40334, 1393}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 72, 1, 63, "Section",
+ CellTags->"QRelativisticEnergy"],
+Cell[665, 26, 153, 4, 31, "Usage",
+ CellTags->"QRelativisticEnergy"],
+Cell[821, 32, 161, 5, 23, "Text",
+ CellTags->"QRelativisticEnergy"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1019, 42, 76, 1, 63, "Section",
+ CellTags->"QRelativisticVelocity"],
+Cell[1098, 45, 197, 4, 47, "Usage",
+ CellTags->"QRelativisticVelocity"],
+Cell[1298, 51, 163, 5, 23, "Text",
+ CellTags->"QRelativisticVelocity"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1498, 61, 60, 1, 63, "Section",
+ CellTags->"QSignedEnergy"],
+Cell[1561, 64, 124, 3, 31, "Usage",
+ CellTags->"QSignedEnergy"],
+Cell[1688, 69, 155, 5, 23, "Text",
+ CellTags->"QSignedEnergy"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1880, 79, 64, 1, 63, "Section",
+ CellTags->"QSignedMomentum"],
+Cell[1947, 82, 180, 4, 47, "Usage",
+ CellTags->"QSignedMomentum"],
+Cell[2130, 88, 157, 5, 23, "Text",
+ CellTags->"QSignedMomentum"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2324, 98, 44, 1, 63, "Section",
+ CellTags->"aplus"],
+Cell[2371, 101, 137, 4, 31, "Usage",
+ CellTags->"aplus"],
+Cell[2511, 107, 147, 5, 23, "Text",
+ CellTags->"aplus"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2695, 117, 46, 1, 63, "Section",
+ CellTags->"aminus"],
+Cell[2744, 120, 139, 4, 31, "Usage",
+ CellTags->"aminus"],
+Cell[2886, 126, 148, 5, 23, "Text",
+ CellTags->"aminus"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3071, 136, 62, 1, 63, "Section",
+ CellTags->"QDiracMatrix1D"],
+Cell[3136, 139, 153, 4, 70, "Usage",
+ CellTags->"QDiracMatrix1D"],
+Cell[3292, 145, 156, 5, 70, "Text",
+ CellTags->"QDiracMatrix1D"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3485, 155, 78, 1, 70, "Section",
+ CellTags->"QProjectPositiveEnergy"],
+Cell[3566, 158, 211, 5, 70, "Usage",
+ CellTags->"QProjectPositiveEnergy"],
+Cell[3780, 165, 164, 5, 70, "Text",
+ CellTags->"QProjectPositiveEnergy"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3981, 175, 78, 1, 70, "Section",
+ CellTags->"QProjectNegativeEnergy"],
+Cell[4062, 178, 211, 5, 70, "Usage",
+ CellTags->"QProjectNegativeEnergy"],
+Cell[4276, 185, 164, 5, 70, "Text",
+ CellTags->"QProjectNegativeEnergy"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4477, 195, 82, 1, 70, "Section",
+ CellTags->"QMomentumSpacePropagator"],
+Cell[4562, 198, 267, 5, 70, "Usage",
+ CellTags->"QMomentumSpacePropagator"],
+Cell[4832, 205, 166, 5, 70, "Text",
+ CellTags->"QMomentumSpacePropagator"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5035, 215, 66, 1, 70, "Section",
+ CellTags->"QBaseSpinorRight"],
+Cell[5104, 218, 195, 4, 70, "Usage",
+ CellTags->"QBaseSpinorRight"],
+Cell[5302, 224, 158, 5, 70, "Text",
+ CellTags->"QBaseSpinorRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5497, 234, 64, 1, 70, "Section",
+ CellTags->"QBaseSpinorLeft"],
+Cell[5564, 237, 192, 4, 70, "Usage",
+ CellTags->"QBaseSpinorLeft"],
+Cell[5759, 243, 157, 5, 70, "Text",
+ CellTags->"QBaseSpinorLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5953, 253, 62, 1, 70, "Section",
+ CellTags->"QBaseSpinorPos"],
+Cell[6018, 256, 194, 4, 70, "Usage",
+ CellTags->"QBaseSpinorPos"],
+Cell[6215, 262, 156, 5, 70, "Text",
+ CellTags->"QBaseSpinorPos"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6408, 272, 62, 1, 70, "Section",
+ CellTags->"QBaseSpinorNeg"],
+Cell[6473, 275, 194, 4, 70, "Usage",
+ CellTags->"QBaseSpinorNeg"],
+Cell[6670, 281, 156, 5, 70, "Text",
+ CellTags->"QBaseSpinorNeg"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6863, 291, 74, 1, 70, "Section",
+ CellTags->"QDiracPlaneWaveRight"],
+Cell[6940, 294, 271, 5, 70, "Usage",
+ CellTags->"QDiracPlaneWaveRight"],
+Cell[7214, 301, 162, 5, 70, "Text",
+ CellTags->"QDiracPlaneWaveRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7413, 311, 72, 1, 70, "Section",
+ CellTags->"QDiracPlaneWaveLeft"],
+Cell[7488, 314, 268, 5, 70, "Usage",
+ CellTags->"QDiracPlaneWaveLeft"],
+Cell[7759, 321, 161, 5, 70, "Text",
+ CellTags->"QDiracPlaneWaveLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7957, 331, 70, 1, 70, "Section",
+ CellTags->"QDiracPlaneWavePos"],
+Cell[8030, 334, 268, 5, 70, "Usage",
+ CellTags->"QDiracPlaneWavePos"],
+Cell[8301, 341, 160, 5, 70, "Text",
+ CellTags->"QDiracPlaneWavePos"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8498, 351, 70, 1, 70, "Section",
+ CellTags->"QDiracPlaneWaveNeg"],
+Cell[8571, 354, 268, 5, 70, "Usage",
+ CellTags->"QDiracPlaneWaveNeg"],
+Cell[8842, 361, 160, 5, 70, "Text",
+ CellTags->"QDiracPlaneWaveNeg"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9039, 371, 52, 1, 70, "Section",
+ CellTags->"QFWMatrix"],
+Cell[9094, 374, 206, 5, 70, "Usage",
+ CellTags->"QFWMatrix"],
+Cell[9303, 381, 151, 5, 70, "Text",
+ CellTags->"QFWMatrix"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9491, 391, 38, 1, 70, "Section",
+ CellTags->"$c"],
+Cell[9532, 394, 109, 3, 70, "Usage",
+ CellTags->"$c"],
+Cell[9644, 399, 144, 5, 70, "Text",
+ CellTags->"$c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9825, 409, 38, 1, 70, "Section",
+ CellTags->"$m"],
+Cell[9866, 412, 112, 3, 70, "Usage",
+ CellTags->"$m"],
+Cell[9981, 417, 144, 5, 70, "Text",
+ CellTags->"$m"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10162, 427, 66, 1, 70, "Section",
+ CellTags->"QDiracEquation1D"],
+Cell[10231, 430, 202, 4, 70, "Usage",
+ CellTags->"QDiracEquation1D"],
+Cell[10436, 436, 158, 5, 70, "Text",
+ CellTags->"QDiracEquation1D"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10631, 446, 66, 1, 70, "Section",
+ CellTags->"QDiracOperator1D"],
+Cell[10700, 449, 203, 4, 70, "Usage",
+ CellTags->"QDiracOperator1D"],
+Cell[10906, 455, 158, 5, 70, "Text",
+ CellTags->"QDiracOperator1D"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11101, 465, 78, 1, 70, "Section",
+ CellTags->"QTridiagonalBlockSolve"],
+Cell[11182, 468, 537, 9, 70, "Usage",
+ CellTags->"QTridiagonalBlockSolve"],
+Cell[11722, 479, 164, 5, 70, "Text",
+ CellTags->"QTridiagonalBlockSolve"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11923, 489, 66, 1, 70, "Section",
+ CellTags->"QDiracTimeStep1D"],
+Cell[11992, 492, 557, 9, 70, "Usage",
+ CellTags->"QDiracTimeStep1D"],
+Cell[12552, 503, 158, 5, 70, "Text",
+ CellTags->"QDiracTimeStep1D"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12747, 513, 70, 1, 70, "Section",
+ CellTags->"QInitializeDirac1D"],
+Cell[12820, 516, 483, 8, 70, "Usage",
+ CellTags->"QInitializeDirac1D"],
+Cell[13306, 526, 160, 5, 70, "Text",
+ CellTags->"QInitializeDirac1D"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13503, 536, 80, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinorPos"],
+Cell[13586, 539, 208, 4, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinorPos"],
+Cell[13797, 545, 165, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinorPos"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13999, 555, 80, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinorNeg"],
+Cell[14082, 558, 208, 4, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinorNeg"],
+Cell[14293, 564, 165, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinorNeg"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14495, 574, 84, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinorRight"],
+Cell[14582, 577, 219, 4, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinorRight"],
+Cell[14804, 583, 167, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinorRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15008, 593, 82, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinorLeft"],
+Cell[15093, 596, 217, 4, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinorLeft"],
+Cell[15313, 602, 166, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinorLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15516, 612, 90, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinorPosRight"],
+Cell[15609, 615, 247, 5, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinorPosRight"],
+Cell[15859, 622, 170, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinorPosRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16066, 632, 88, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinorPosLeft"],
+Cell[16157, 635, 245, 5, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinorPosLeft"],
+Cell[16405, 642, 169, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinorPosLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16611, 652, 90, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinorNegRight"],
+Cell[16704, 655, 247, 5, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinorNegRight"],
+Cell[16954, 662, 170, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinorNegRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17161, 672, 88, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinorNegLeft"],
+Cell[17252, 675, 245, 5, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinorNegLeft"],
+Cell[17500, 682, 169, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinorNegLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17706, 692, 74, 1, 70, "Section",
+ CellTags->"QMomentumSpaceSpinor"],
+Cell[17783, 695, 389, 7, 70, "Usage",
+ CellTags->"QMomentumSpaceSpinor"],
+Cell[18175, 704, 162, 5, 70, "Text",
+ CellTags->"QMomentumSpaceSpinor"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18374, 714, 74, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinor"],
+Cell[18451, 717, 482, 8, 70, "Usage",
+ CellTags->"QPositionSpaceSpinor"],
+Cell[18936, 727, 162, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinor"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19135, 737, 80, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinorPos"],
+Cell[19218, 740, 208, 4, 70, "Usage",
+ CellTags->"QPositionSpaceSpinorPos"],
+Cell[19429, 746, 165, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinorPos"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19631, 756, 80, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinorNeg"],
+Cell[19714, 759, 208, 4, 70, "Usage",
+ CellTags->"QPositionSpaceSpinorNeg"],
+Cell[19925, 765, 165, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinorNeg"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20127, 775, 84, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinorRight"],
+Cell[20214, 778, 224, 5, 70, "Usage",
+ CellTags->"QPositionSpaceSpinorRight"],
+Cell[20441, 785, 167, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinorRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20645, 795, 82, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinorLeft"],
+Cell[20730, 798, 217, 4, 70, "Usage",
+ CellTags->"QPositionSpaceSpinorLeft"],
+Cell[20950, 804, 166, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinorLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21153, 814, 90, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinorPosRight"],
+Cell[21246, 817, 247, 5, 70, "Usage",
+ CellTags->"QPositionSpaceSpinorPosRight"],
+Cell[21496, 824, 170, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinorPosRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21703, 834, 88, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinorPosLeft"],
+Cell[21794, 837, 245, 5, 70, "Usage",
+ CellTags->"QPositionSpaceSpinorPosLeft"],
+Cell[22042, 844, 169, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinorPosLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22248, 854, 90, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinorNegRight"],
+Cell[22341, 857, 247, 5, 70, "Usage",
+ CellTags->"QPositionSpaceSpinorNegRight"],
+Cell[22591, 864, 170, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinorNegRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22798, 874, 88, 1, 70, "Section",
+ CellTags->"QPositionSpaceSpinorNegLeft"],
+Cell[22889, 877, 245, 5, 70, "Usage",
+ CellTags->"QPositionSpaceSpinorNegLeft"],
+Cell[23137, 884, 169, 5, 70, "Text",
+ CellTags->"QPositionSpaceSpinorNegLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23343, 894, 70, 1, 70, "Section",
+ CellTags->"QPositionSpaceGrid"],
+Cell[23416, 897, 212, 4, 70, "Usage",
+ CellTags->"QPositionSpaceGrid"],
+Cell[23631, 903, 160, 5, 70, "Text",
+ CellTags->"QPositionSpaceGrid"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23828, 913, 78, 1, 70, "Section",
+ CellTags->"QPositionSpaceInterval"],
+Cell[23909, 916, 214, 4, 70, "Usage",
+ CellTags->"QPositionSpaceInterval"],
+Cell[24126, 922, 164, 5, 70, "Text",
+ CellTags->"QPositionSpaceInterval"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24327, 932, 70, 1, 70, "Section",
+ CellTags->"QPositionSpaceStep"],
+Cell[24400, 935, 221, 5, 70, "Usage",
+ CellTags->"QPositionSpaceStep"],
+Cell[24624, 942, 160, 5, 70, "Text",
+ CellTags->"QPositionSpaceStep"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24821, 952, 74, 1, 70, "Section",
+ CellTags->"QComputeMeanPosition"],
+Cell[24898, 955, 261, 5, 70, "Usage",
+ CellTags->"QComputeMeanPosition"],
+Cell[25162, 962, 162, 5, 70, "Text",
+ CellTags->"QComputeMeanPosition"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25361, 972, 68, 1, 70, "Section",
+ CellTags->"QInnerProductList"],
+Cell[25432, 975, 91, 1, 70, "Usage",
+ CellTags->"QInnerProductList"],
+Cell[25526, 978, 159, 5, 70, "Text",
+ CellTags->"QInnerProductList"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25722, 988, 52, 1, 70, "Section",
+ CellTags->"QSpinorFT"],
+Cell[25777, 991, 472, 8, 70, "Usage",
+ CellTags->"QSpinorFT"],
+Cell[26252, 1001, 151, 5, 70, "Text",
+ CellTags->"QSpinorFT"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26440, 1011, 66, 1, 70, "Section",
+ CellTags->"QInverseSpinorFT"],
+Cell[26509, 1014, 522, 9, 70, "Usage",
+ CellTags->"QInverseSpinorFT"],
+Cell[27034, 1025, 158, 5, 70, "Text",
+ CellTags->"QInverseSpinorFT"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

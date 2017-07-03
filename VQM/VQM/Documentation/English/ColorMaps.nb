@@ -1,0 +1,573 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     16557,        378]*)
+(*NotebookOutlinePosition[     20695,        493]*)
+(*  CellTagsIndexPosition[     20231,        477]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["QComplexToColor", "Section",
+  CellTags->"QComplexToColor"],
+
+Cell["\<\
+QComplexToColor[z,opts] associates a color to a complex number z. The color map is given by the option QComplexToColorMap. QComplexToColor[z] returns the result in the form Hue[h,s,b] (in the HSB system). Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QComplexToColor"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QComplexToColorMap",
+                    
+                    "InputForm"], \(QComplexToColorMap\ is\ an\ \
+option\ for\ QComplexToColor, \ QComplexDensityPlot, \ 
+                  and\ QComplexPlot3D . \ 
+                        It\ specifies\ the\ color\ map\ to\ be\ used\ \
+when\ converting\ a\ complex\ number\ to\ a\ color . \ 
+                        The\ default\ setting\ is\ QComplexToColorMap \
+-> $QComplexToColorMap, \ 
+                  which\ determines\ the\ color\ representing\ a\ \
+complex\ number\ via\ a\ stereographic\ projection\ from\ the\ \
+complex\ plane\ onto\ the\ surface\ of\ the\ color\ manifold\ in\ the\
+\ HLS\ system . \ \(Package : \ \(\(VQM`ColorMaps`\)\(.\)\)\)\)},
+                {
+                  FormBox["QLightnessRange",
+                    
+                    "InputForm"], \(QLightnessRange\ is\ an\ option\ \
+for\ QComplexToColor, \ QComplexDensityPlot, \ 
+                  and\ QComplexPlot3D . \ QLightnessRange -> {lmin, 
+                      lmax}, \ 
+                  where\ lmin\ and\ lmax\ are\ real\ numbers\ in\ the\
+\ interval\ [0, 1], \ 
+                  sets\ the\ minimal\ lightness\ to\ lmin\ and\ the\ \
+maximal\ lightness\ to\ lmax . \ 
+                        Default\ is\ QLightnessRange -> {0, 1} . \ 
+                        The\ setting\ for\ this\ option\ is\ used\ to\
+\ determine\ parameters\ for\ the\ default\ color\ map\ \
+$QComplexToColorMap . \ \(Package : \ \
+\(\(VQM`ColorMaps`\)\(.\)\)\)\)},
+                {
+                  FormBox["QSphereRadius",
+                    
+                    "InputForm"], \(QSphereRadius\ is\ an\ option\ \
+for\ QComplexToColor, \ QComplexDensityPlot, \ 
+                  and\ QComplexPlot3D . \ QSphereRadius -> 
+                      R\ sets\ the\ radius\ of\ the\ sphere\ used\ by\
+\ $QComplexToColorMap\ to\ R . \ $QComplexToColorMap\ uses\ a\ \
+stereographic\ projection\ onto\ the\ surface\ of\ the\ color\ \
+manifold\ to\ determine\ the\ color\ of\ a\ complex\ number . \ 
+                          Setting\ the\ radius\ to\ R\ causes\ \
+complex\ numbers\ with\ Abs[z] = 
+                    R\ to\ be\ drawn\ at\ lightness\ 1/
+                        
+                        2\ \((which\ corresponds\ to\ maximal\ \
+brightness\ and\ saturation\ in\ the\ HSB\ system)\) . \ \(Package : \
+\ \(\(VQM`ColorMaps`\)\(.\)\)\)\)},
+                {
+                  FormBox["QValueRange",
+                    
+                    "InputForm"], \(QValueRange\ is\ an\ option\ for\ \
+QComplexToColor, \ QComplexDensityPlot, \ 
+                  and\ QComplexPlot3D . \ 
+                        This\ option\ is\ used\ to\ determine\ \
+parameters\ for\ the\ default\ color\ map\ $QComplexToColorMap . \ 
+                        QValueRange -> {rmin, rmax}, \ 
+                  where\ rmin\  < \ 
+                    rmax\ are\ positive\ real\ numbers, \ 
+                  causes\ every\ z\ with\ Abs[z] < 
+                    rmin\ \((resp . \ Abs[z] > 
+                          rmax)\)\ to\ be\ colored\ with\ minimal\ \
+\((resp . \ maximal)\)\ lightness . \ If\ rmax\  < \ rmin, \ 
+                  then\ Abs[z]\  < \ rmax\ has\ maximal\ lightness, \ 
+                  Abs[z]\  > \ 
+                      rmin\ has\ minimal\ lightness . \ 
+                          The\ default\ Automatic\ corresponds\ to\ \
+QValueRange -> {0, Infinity} . \ The\ setting\ for\ minimal/
+                        maximal\ lightness\ is\ determined\ by\ the\ \
+QLightnessRange\ option . \ \(Package : \ \(\(VQM`ColorMaps`\)\(.\)\)\
+\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"QComplexToColor"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QComplexToColor"],
+
+Cell["QRGBValues", "Section",
+  CellTags->"QRGBValues"],
+
+Cell["\<\
+QRGBValues[hue,lightness] converts color coordinates from the HLS system to color coordinates in the RGB system. It associates the RGB color values {r,g,b} to the given values of hue and lightness, assuming that the saturation is equal to 1 (maximal saturation at the given lightness). Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QRGBValues"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QRGBValues"],
+
+Cell["QComplexToRGBColor", "Section",
+  CellTags->"QComplexToRGBColor"],
+
+Cell["\<\
+QComplexToRGBColor[z] returns the color RGBColor[r,g,b] of the complex number z according to the standard color map. Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QComplexToRGBColor"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QComplexToRGBColor"],
+
+Cell["$QComplexToColorMap", "Section",
+  CellTags->"$QComplexToColorMap"],
+
+Cell["\<\
+$QComplexToColorMap[r,phi,{parameters}] associates a color to a complex number. Default for QComplexToColor. The complex number is given in polar form, r=Abs[z], phi=Arg[z]. The result is returned as $QComplexToColorMap[r,phi,{}] = Hue[h,s,b], in the HSB color system. The Hue h of the color is given by phi/2/Pi, the lightness is determined from r. The color map can be described as a stereographic projection from the complex plane onto the surface of the color manifold in the Hue-Lightness-Saturation system. The optional parameters are {R,bmin,bmax,lmin,lmax} specifying the radius R of the sphere, the value bmin and bmax are those values of r which belong to the minimal and maximal lightness lmin and lmax. Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"$QComplexToColorMap"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[
+          StyleBox[GridBox[{
+                {
+                  FormBox["QComplexToColorMap",
+                    
+                    "InputForm"], \(QComplexToColorMap\ is\ an\ \
+option\ for\ QComplexToColor, \ QComplexDensityPlot, \ 
+                  and\ QComplexPlot3D . \ 
+                        It\ specifies\ the\ color\ map\ to\ be\ used\ \
+when\ converting\ a\ complex\ number\ to\ a\ color . \ 
+                        The\ default\ setting\ is\ QComplexToColorMap \
+-> $QComplexToColorMap, \ 
+                  which\ determines\ the\ color\ representing\ a\ \
+complex\ number\ via\ a\ stereographic\ projection\ from\ the\ \
+complex\ plane\ onto\ the\ surface\ of\ the\ color\ manifold\ in\ the\
+\ HLS\ system . \ \(Package : \ \(\(VQM`ColorMaps`\)\(.\)\)\)\)},
+                {
+                  FormBox["QLightnessRange",
+                    
+                    "InputForm"], \(QLightnessRange\ is\ an\ option\ \
+for\ QComplexToColor, \ QComplexDensityPlot, \ 
+                  and\ QComplexPlot3D . \ QLightnessRange -> {lmin, 
+                      lmax}, \ 
+                  where\ lmin\ and\ lmax\ are\ real\ numbers\ in\ the\
+\ interval\ [0, 1], \ 
+                  sets\ the\ minimal\ lightness\ to\ lmin\ and\ the\ \
+maximal\ lightness\ to\ lmax . \ 
+                        Default\ is\ QLightnessRange -> {0, 1} . \ 
+                        The\ setting\ for\ this\ option\ is\ used\ to\
+\ determine\ parameters\ for\ the\ default\ color\ map\ \
+$QComplexToColorMap . \ \(Package : \ \
+\(\(VQM`ColorMaps`\)\(.\)\)\)\)},
+                {
+                  FormBox["QSphereRadius",
+                    
+                    "InputForm"], \(QSphereRadius\ is\ an\ option\ \
+for\ QComplexToColor, \ QComplexDensityPlot, \ 
+                  and\ QComplexPlot3D . \ QSphereRadius -> 
+                      R\ sets\ the\ radius\ of\ the\ sphere\ used\ by\
+\ $QComplexToColorMap\ to\ R . \ $QComplexToColorMap\ uses\ a\ \
+stereographic\ projection\ onto\ the\ surface\ of\ the\ color\ \
+manifold\ to\ determine\ the\ color\ of\ a\ complex\ number . \ 
+                          Setting\ the\ radius\ to\ R\ causes\ \
+complex\ numbers\ with\ Abs[z] = 
+                    R\ to\ be\ drawn\ at\ lightness\ 1/
+                        
+                        2\ \((which\ corresponds\ to\ maximal\ \
+brightness\ and\ saturation\ in\ the\ HSB\ system)\) . \ \(Package : \
+\ \(\(VQM`ColorMaps`\)\(.\)\)\)\)},
+                {
+                  FormBox["QValueRange",
+                    
+                    "InputForm"], \(QValueRange\ is\ an\ option\ for\ \
+QComplexToColor, \ QComplexDensityPlot, \ 
+                  and\ QComplexPlot3D . \ 
+                        This\ option\ is\ used\ to\ determine\ \
+parameters\ for\ the\ default\ color\ map\ $QComplexToColorMap . \ 
+                        QValueRange -> {rmin, rmax}, \ 
+                  where\ rmin\  < \ 
+                    rmax\ are\ positive\ real\ numbers, \ 
+                  causes\ every\ z\ with\ Abs[z] < 
+                    rmin\ \((resp . \ Abs[z] > 
+                          rmax)\)\ to\ be\ colored\ with\ minimal\ \
+\((resp . \ maximal)\)\ lightness . \ If\ rmax\  < \ rmin, \ 
+                  then\ Abs[z]\  < \ rmax\ has\ maximal\ lightness, \ 
+                  Abs[z]\  > \ 
+                      rmin\ has\ minimal\ lightness . \ 
+                          The\ default\ Automatic\ corresponds\ to\ \
+QValueRange -> {0, Infinity} . \ The\ setting\ for\ minimal/
+                        maximal\ lightness\ is\ determined\ by\ the\ \
+QLightnessRange\ option . \ \(Package : \ \(\(VQM`ColorMaps`\)\(.\)\)\
+\)\)}
+                },
+              ColumnAlignments->{Right, Left}],
+            GridBoxOptions->{RowLines->False}]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"$QComplexToColorMap"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"$QComplexToColorMap"],
+
+Cell["QSaturationFromLightness", "Section",
+  CellTags->"QSaturationFromLightness"],
+
+Cell["\<\
+QSaturationFromLightness[x] is an auxiliary function provided by the package ColorMaps. ComputesComputes the value of the saturation in the HSB-system from the lighness x (0 <= x <= 1) of the color in the HLS-system, assuming maximal HLS-saturation. Compiled for faster execution. Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QSaturationFromLightness"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSaturationFromLightness"],
+
+Cell["QBrightnessFromLightness", "Section",
+  CellTags->"QBrightnessFromLightness"],
+
+Cell["\<\
+QBrightnessFromLightness[x] is an auxiliary function provided by the package ColorMaps. Computes the value of the brightness in the HSB-system from the lighness x (0 <= x <= 1) of the color in the HLS-system, assuming maximal HLS-saturation. Compiled for faster execution. Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QBrightnessFromLightness"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QBrightnessFromLightness"],
+
+Cell["QHueFromArgument", "Section",
+  CellTags->"QHueFromArgument"],
+
+Cell["\<\
+QHueFromArgument[arg] is a compiled auxiliary function provided by the package ColorMaps. Computes the Hue from the argument arg of a complex number. Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QHueFromArgument"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QHueFromArgument"],
+
+Cell["QLightnessFromModulus", "Section",
+  CellTags->"QLightnessFromModulus"],
+
+Cell["\<\
+QLightnessFromModulus[parameters] defines a compiled auxiliary function that depends on certain parameters.  The parameters are given as a list of the form {R,bmin,bmax,lmin,lmax}. See the description of $QComplexToColorMap for an explanation. QLightnessFromModulus[parameters][r] computes the Lightness from the modulus r of a complex number. QLightnessFromModulus is provided by the package ColorMaps. Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QLightnessFromModulus"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QLightnessFromModulus"],
+
+Cell["QProcessColorMapOptions", "Section",
+  CellTags->"QProcessColorMapOptions"],
+
+Cell["\<\
+QProcessColorMapOptions[opts] is an auxiliary function provided by the package ColorMaps. Converts a list of options into a valid list of parameters for the following color map functions: QLightnessFromModulus, $QComplexToColorMap. Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QProcessColorMapOptions"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QProcessColorMapOptions"],
+
+Cell["QVectorToColor", "Section",
+  CellTags->"QVectorToColor"],
+
+Cell["\<\
+QVectorToColor[{u,v,w}] maps a three-dimensional real vector to a unique color. The color is given as a list of three real numbers (the RGB values of the color). The saturation depends on the length of the vector and the hue is defined by the direction. (red = positive x-direction, etc., the standard color circle in the xy-plane. White = positive z-direction, black = negative z-direction, 50% gray = zero vector). Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QVectorToColor"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QVectorToColor"],
+
+Cell["QSpinorToColor", "Section",
+  CellTags->"QSpinorToColor"],
+
+Cell["\<\
+QSpinorToColor[{u,v}] maps a spinor (i.e., a C^2-vector) to a unique color. The color is given as a list of three real numbers (the RGB values of the color). This is done by first converting the spinor to a vector (using QSpinorToVector from the package VQM`Spinors`) and then applying QVectorToColor. Package: VQM`ColorMaps`.\
+\>", "Usage",
+  CellTags->"QSpinorToColor"],
+
+Cell[TextData[{
+  "This command is contained in the package ",
+  ButtonBox["VQM`ColorMaps`",
+    ButtonStyle->"AddOnsLink"]
+}], "Text",
+  CellTags->"QSpinorToColor"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "QComplexToColor"->{
+    Cell[1754, 51, 65, 1, 70, "Section",
+      CellTags->"QComplexToColor"],
+    Cell[1822, 54, 285, 3, 70, "Usage",
+      CellTags->"QComplexToColor"],
+    Cell[2110, 59, 3879, 79, 70, "Text",
+      CellTags->"QComplexToColor"],
+    Cell[5992, 140, 166, 5, 70, "Text",
+      CellTags->"QComplexToColor"]},
+  "QRGBValues"->{
+    Cell[6161, 147, 55, 1, 70, "Section",
+      CellTags->"QRGBValues"],
+    Cell[6219, 150, 361, 3, 70, "Usage",
+      CellTags->"QRGBValues"],
+    Cell[6583, 155, 161, 5, 70, "Text",
+      CellTags->"QRGBValues"]},
+  "QComplexToRGBColor"->{
+    Cell[6747, 162, 71, 1, 70, "Section",
+      CellTags->"QComplexToRGBColor"],
+    Cell[6821, 165, 200, 3, 70, "Usage",
+      CellTags->"QComplexToRGBColor"],
+    Cell[7024, 170, 169, 5, 70, "Text",
+      CellTags->"QComplexToRGBColor"]},
+  "$QComplexToColorMap"->{
+    Cell[7196, 177, 73, 1, 70, "Section",
+      CellTags->"$QComplexToColorMap"],
+    Cell[7272, 180, 799, 3, 70, "Usage",
+      CellTags->"$QComplexToColorMap"],
+    Cell[8074, 185, 3883, 79, 70, "Text",
+      CellTags->"$QComplexToColorMap"],
+    Cell[11960, 266, 170, 5, 70, "Text",
+      CellTags->"$QComplexToColorMap"]},
+  "QSaturationFromLightness"->{
+    Cell[12133, 273, 83, 1, 70, "Section",
+      CellTags->"QSaturationFromLightness"],
+    Cell[12219, 276, 370, 3, 70, "Usage",
+      CellTags->"QSaturationFromLightness"],
+    Cell[12592, 281, 175, 5, 70, "Text",
+      CellTags->"QSaturationFromLightness"]},
+  "QBrightnessFromLightness"->{
+    Cell[12770, 288, 83, 1, 70, "Section",
+      CellTags->"QBrightnessFromLightness"],
+    Cell[12856, 291, 362, 3, 70, "Usage",
+      CellTags->"QBrightnessFromLightness"],
+    Cell[13221, 296, 175, 5, 70, "Text",
+      CellTags->"QBrightnessFromLightness"]},
+  "QHueFromArgument"->{
+    Cell[13399, 303, 67, 1, 70, "Section",
+      CellTags->"QHueFromArgument"],
+    Cell[13469, 306, 231, 3, 70, "Usage",
+      CellTags->"QHueFromArgument"],
+    Cell[13703, 311, 167, 5, 70, "Text",
+      CellTags->"QHueFromArgument"]},
+  "QLightnessFromModulus"->{
+    Cell[13873, 318, 77, 1, 70, "Section",
+      CellTags->"QLightnessFromModulus"],
+    Cell[13953, 321, 490, 3, 70, "Usage",
+      CellTags->"QLightnessFromModulus"],
+    Cell[14446, 326, 172, 5, 70, "Text",
+      CellTags->"QLightnessFromModulus"]},
+  "QProcessColorMapOptions"->{
+    Cell[14621, 333, 81, 1, 70, "Section",
+      CellTags->"QProcessColorMapOptions"],
+    Cell[14705, 336, 320, 3, 70, "Usage",
+      CellTags->"QProcessColorMapOptions"],
+    Cell[15028, 341, 174, 5, 70, "Text",
+      CellTags->"QProcessColorMapOptions"]},
+  "QVectorToColor"->{
+    Cell[15205, 348, 63, 1, 70, "Section",
+      CellTags->"QVectorToColor"],
+    Cell[15271, 351, 496, 3, 70, "Usage",
+      CellTags->"QVectorToColor"],
+    Cell[15770, 356, 165, 5, 70, "Text",
+      CellTags->"QVectorToColor"]},
+  "QSpinorToColor"->{
+    Cell[15938, 363, 63, 1, 70, "Section",
+      CellTags->"QSpinorToColor"],
+    Cell[16004, 366, 381, 3, 70, "Usage",
+      CellTags->"QSpinorToColor"],
+    Cell[16388, 371, 165, 5, 70, "Text",
+      CellTags->"QSpinorToColor"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"QComplexToColor", 17113, 392},
+  {"QRGBValues", 17438, 401},
+  {"QComplexToRGBColor", 17681, 408},
+  {"$QComplexToColorMap", 17949, 415},
+  {"QSaturationFromLightness", 18308, 424},
+  {"QBrightnessFromLightness", 18602, 431},
+  {"QHueFromArgument", 18888, 438},
+  {"QLightnessFromModulus", 19155, 445},
+  {"QProcessColorMapOptions", 19439, 452},
+  {"QVectorToColor", 19720, 459},
+  {"QSpinorToColor", 19974, 466}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 65, 1, 70, "Section",
+  CellTags->"QComplexToColor"],
+Cell[1822, 54, 285, 3, 70, "Usage",
+  CellTags->"QComplexToColor"],
+Cell[2110, 59, 3879, 79, 70, "Text",
+  CellTags->"QComplexToColor"],
+Cell[5992, 140, 166, 5, 70, "Text",
+  CellTags->"QComplexToColor"],
+Cell[6161, 147, 55, 1, 70, "Section",
+  CellTags->"QRGBValues"],
+Cell[6219, 150, 361, 3, 70, "Usage",
+  CellTags->"QRGBValues"],
+Cell[6583, 155, 161, 5, 70, "Text",
+  CellTags->"QRGBValues"],
+Cell[6747, 162, 71, 1, 70, "Section",
+  CellTags->"QComplexToRGBColor"],
+Cell[6821, 165, 200, 3, 70, "Usage",
+  CellTags->"QComplexToRGBColor"],
+Cell[7024, 170, 169, 5, 70, "Text",
+  CellTags->"QComplexToRGBColor"],
+Cell[7196, 177, 73, 1, 70, "Section",
+  CellTags->"$QComplexToColorMap"],
+Cell[7272, 180, 799, 3, 70, "Usage",
+  CellTags->"$QComplexToColorMap"],
+Cell[8074, 185, 3883, 79, 70, "Text",
+  CellTags->"$QComplexToColorMap"],
+Cell[11960, 266, 170, 5, 70, "Text",
+  CellTags->"$QComplexToColorMap"],
+Cell[12133, 273, 83, 1, 70, "Section",
+  CellTags->"QSaturationFromLightness"],
+Cell[12219, 276, 370, 3, 70, "Usage",
+  CellTags->"QSaturationFromLightness"],
+Cell[12592, 281, 175, 5, 70, "Text",
+  CellTags->"QSaturationFromLightness"],
+Cell[12770, 288, 83, 1, 70, "Section",
+  CellTags->"QBrightnessFromLightness"],
+Cell[12856, 291, 362, 3, 70, "Usage",
+  CellTags->"QBrightnessFromLightness"],
+Cell[13221, 296, 175, 5, 70, "Text",
+  CellTags->"QBrightnessFromLightness"],
+Cell[13399, 303, 67, 1, 70, "Section",
+  CellTags->"QHueFromArgument"],
+Cell[13469, 306, 231, 3, 70, "Usage",
+  CellTags->"QHueFromArgument"],
+Cell[13703, 311, 167, 5, 70, "Text",
+  CellTags->"QHueFromArgument"],
+Cell[13873, 318, 77, 1, 70, "Section",
+  CellTags->"QLightnessFromModulus"],
+Cell[13953, 321, 490, 3, 70, "Usage",
+  CellTags->"QLightnessFromModulus"],
+Cell[14446, 326, 172, 5, 70, "Text",
+  CellTags->"QLightnessFromModulus"],
+Cell[14621, 333, 81, 1, 70, "Section",
+  CellTags->"QProcessColorMapOptions"],
+Cell[14705, 336, 320, 3, 70, "Usage",
+  CellTags->"QProcessColorMapOptions"],
+Cell[15028, 341, 174, 5, 70, "Text",
+  CellTags->"QProcessColorMapOptions"],
+Cell[15205, 348, 63, 1, 70, "Section",
+  CellTags->"QVectorToColor"],
+Cell[15271, 351, 496, 3, 70, "Usage",
+  CellTags->"QVectorToColor"],
+Cell[15770, 356, 165, 5, 70, "Text",
+  CellTags->"QVectorToColor"],
+Cell[15938, 363, 63, 1, 70, "Section",
+  CellTags->"QSpinorToColor"],
+Cell[16004, 366, 381, 3, 70, "Usage",
+  CellTags->"QSpinorToColor"],
+Cell[16388, 371, 165, 5, 70, "Text",
+  CellTags->"QSpinorToColor"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

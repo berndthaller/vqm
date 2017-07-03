@@ -1,0 +1,552 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     21313,        543]
+NotebookOptionsPosition[     20549,        512]
+NotebookOutlinePosition[     21198,        538]
+CellTagsIndexPosition[     21119,        533]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["FastFourier ", "Subsection",
+ CellTags->"VQM`FastFourier`"],
+
+Cell["\<\
+This package allows computes the one-dimensional Fourier transform of a \
+complex-valued function f[x] via a fast Fourier transform of a list \
+representing the function values on a suitable space grid. The package \
+provides methods to determine the domains of definition and the \
+discretization in Fourier space from the discretization in position space and \
+vice versa. This package can be used, e.g., to compute the Fourier transform \
+of a numerical solution of the Schroedinger equation. \
+\>", "Text",
+ CellTags->"VQM`FastFourier`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QFourierList", "[", 
+         RowBox[{"xlist", ",", 
+          RowBox[{"{", 
+           RowBox[{"left", ",", "right"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "returns", " ", "the", " ", "Fourier", " ", "transform", " ", "of",
+             " ", "the", " ", "function", " ", 
+            RowBox[{"f", "[", "x", "]"}], " ", "represented", " ", "by", " ", 
+            
+            RowBox[{"xlist", ".", " ", "The"}], " ", "result", " ", "is", " ",
+             "given", " ", "in", " ", "the", " ", "form", " ", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"klist", ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"kmin", ",", " ", "kmax"}], "}"}]}], "}"}], ".", " ", 
+             "xlist"}], " ", "is", " ", "a", " ", "list", " ", "of", " ", 
+            "complex", " ", "numbers", " ", "that", " ", "can", " ", "be", 
+            " ", "interpreted", " ", "as", " ", "the", " ", "discretization", 
+            " ", "of", " ", "a", " ", "complex"}], "-", 
+           RowBox[{"valued", " ", "function", " ", 
+            RowBox[{"f", "[", "x", "]"}], " ", "defined", " ", "in", " ", 
+            "the", " ", 
+            RowBox[{
+             RowBox[{"interval", " ", "[", 
+              RowBox[{"left", ",", "right"}], "]"}], ".", " ", "xlist"}], " ",
+             "should", " ", "consist", " ", "of", " ", "an", " ", "even", " ",
+             "number", " ", "of", " ", 
+            RowBox[{"values", ".", " ", "Use"}], " ", 
+            RowBox[{"f", " ", "/@", " ", 
+             RowBox[{"QGrid", "[", 
+              RowBox[{"a", ",", "b", ",", "n"}], "]"}]}], " ", "to", " ", 
+            "generate", " ", "the", " ", "values"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"and", " ", "left"}], "=", 
+           RowBox[{"QLeftBorder", "[", 
+            RowBox[{"a", ",", "b", ",", "n"}], "]"}]}], ",", " ", 
+          RowBox[{"right", " ", "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"QRightBorder", "[", 
+              RowBox[{"a", ",", "b", ",", "n"}], "]"}], ".", " ", "klist"}], 
+            "=", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"[", 
+               RowBox[{"[", "1", "]"}], "]"}], " ", "is", " ", "a", " ", 
+              "list", " ", "of", " ", "complex", " ", "values", " ", "in", 
+              " ", "k"}], "-", 
+             RowBox[{
+              RowBox[{"space", ".", " ", "It"}], " ", "can", " ", "be", " ", 
+              "interpreted", " ", "as", " ", "the", " ", "discretization", 
+              " ", "of", " ", "the", " ", "Fourier", " ", "transform", " ", 
+              "of", " ", "f"}]}]}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+            "defined", " ", "on", " ", "an", " ", "appropriate", " ", 
+             "interval", " ", "in", " ", "Fourier", " ", "space", " ", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"k", "-", "space"}], ")"}], ".", " ", "The"}], " ", 
+             "corresponding", " ", "interval", " ", "in", " ", "k"}], "-", 
+            RowBox[{"space", " ", "is", " ", 
+             RowBox[{"{", 
+              RowBox[{"kmin", ",", " ", "kmax"}], "}"}]}]}], " ", "==", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "Pi"}], "/", "dx"}], ",", 
+             RowBox[{"Pi", "/", "dx"}]}], "}"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+            "and", " ", "the", " ", "step", " ", "size", " ", "in", " ", 
+             "k"}], "-", 
+            RowBox[{
+            "space", " ", "is", " ", "given", " ", "by", " ", "dk"}]}], " ", 
+           "=", " ", 
+           RowBox[{
+            RowBox[{"QFourierStep", "[", 
+             RowBox[{"left", ",", "right", ",", "n"}], "]"}], " ", "==", " ", 
+            
+            RowBox[{"2", " ", 
+             RowBox[{"Pi", " ", "/", " ", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"right", "-", "left"}], ")"}], ".", " ", 
+               RowBox[{"Package", ":", " ", 
+                RowBox[{"VQM`FastFourier`", "."}]}]}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QInverseFourierList", "[", 
+         RowBox[{"klist", ",", 
+          RowBox[{"{", 
+           RowBox[{"left", ",", "right"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "returns", " ", "the", " ", "inverse", " ", "Fourier", " ", 
+            "transform", " ", "of", " ", "the", " ", "function", " ", 
+            RowBox[{"f", "[", "k", "]"}], " ", "represented", " ", "by", " ", 
+            
+            RowBox[{"klist", ".", " ", "See"}], " ", 
+            RowBox[{"QFourierList", ".", " ", "We"}], " ", "have", " ", 
+            RowBox[{"QInverseFourierList", "[", 
+             RowBox[{"QFourierList", "[", 
+              RowBox[{"xlist", ",", 
+               RowBox[{"{", 
+                RowBox[{"left", ",", "right"}], "}"}]}], "]"}], "]"}]}], "==",
+            
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"xlist", ",", 
+                RowBox[{"{", 
+                 RowBox[{"left", ",", "right"}], "}"}]}], "}"}], ".", " ", 
+              "The"}], " ", "size", " ", "of", " ", "the", " ", "interval", 
+             " ", "in", " ", "Fourier", " ", "space", " ", "is", " ", 
+             "related", " ", "to", " ", "the", " ", "step", " ", "size", " ", 
+             "in", " ", "x"}], "-", 
+            RowBox[{"space", " ", "by", " ", "dx"}]}]}], " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"2", " ", 
+             RowBox[{"Pi", " ", "/", " ", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"right", "-", "left"}], ")"}], ".", " ", "The"}]}], 
+             " ", "step", " ", "size", " ", "dk", " ", "in", " ", "k"}], "-", 
+            
+            RowBox[{
+            "space", " ", "determines", " ", "the", " ", "size", " ", "of", 
+             " ", "the", " ", "x"}], "-", 
+            RowBox[{"interval", " ", "according", " ", "to", " ", 
+             RowBox[{"{", 
+              RowBox[{"xleft", ",", " ", "xright"}], "}"}]}]}], " ", "==", 
+           " ", 
+           RowBox[{"[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", "==", " ", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "Pi"}], "/", "dk"}], ",", " ", 
+              RowBox[{"Pi", "/", "dk"}]}], "}"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`FastFourier`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFourierListArgColorPlot", "[", 
+         RowBox[{"xlist", ",", 
+          RowBox[{"{", 
+           RowBox[{"left", ",", "right"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "produces", " ", "a", " ", "QArgColorPlot", " ", "of", " ", "the", 
+            " ", "QFourierList", " ", "obtained", " ", "from", " ", "xlist", 
+            " ", "and", " ", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"left", ",", "right"}], "}"}], ".", " ", "xlist"}], " ",
+             "can", " ", "be", " ", "interpreted", " ", "as", " ", "a", " ", 
+            "discretization", " ", "of", " ", "a", " ", "complex"}], "-", 
+           RowBox[{"valued", " ", "function", " ", 
+            RowBox[{"f", "[", "x", "]"}], " ", "on", " ", "a", " ", "uniform",
+             " ", "grid", " ", "of", " ", "x"}], "-", 
+           RowBox[{"values", " ", "in", " ", "the", " ", 
+            RowBox[{
+             RowBox[{"interval", " ", "[", 
+              RowBox[{"left", ",", "right"}], "]"}], ".", " ", "The"}], " ", 
+            "QFourierList", " ", "is", " ", "a", " ", "discretization", " ", 
+            "of", " ", "the", " ", "FourierTransform", " ", "of", " ", "the", 
+            " ", "function", " ", 
+            RowBox[{
+             RowBox[{"f", "[", "x", "]"}], ".", " ", "The"}], " ", "option", 
+            " ", "QFourierRange"}]}], "->", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"kmin", ",", "kmax"}], "}"}], " ", "can", " ", "be", " ",
+             "used", " ", "to", " ", "restrict", " ", "the", " ", "plot", " ",
+             "region", " ", "in", " ", "k"}], "-", 
+           RowBox[{"space", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`FastFourier`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QInverseFourierListArgColorPlot", "[", 
+         RowBox[{"klist", ",", 
+          RowBox[{"{", 
+           RowBox[{"left", ",", "right"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "produces", " ", "a", " ", "QArgColorPlot", " ", "of", " ", "the", 
+          " ", "QInverseFourierList", " ", "obtained", " ", "from", " ", 
+          "klist", " ", "and", " ", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"left", ",", "right"}], "}"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QStepSize", "[", 
+         RowBox[{"list", ",", 
+          RowBox[{"{", 
+           RowBox[{"left", ",", "right"}], "}"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"returns", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"right", "-", "left"}], ")"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Length", "[", "list", "]"}], "-", "1"}], ")"}]}]}], 
+          ",", " ", 
+          RowBox[{"that", " ", "is"}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "the", " ", "distance", " ", "between", " ", "the", " ", "x"}], 
+           "-", 
+           RowBox[{
+           "values", " ", "if", " ", "list", " ", "represents", " ", "values",
+             " ", "of", " ", "a", " ", "function", " ", 
+            RowBox[{"f", "[", "x", "]"}], " ", "on", " ", "a", " ", 
+            "uniformly", " ", "spaced", " ", "grid", " ", "of", " ", "x"}], 
+           "-", 
+           RowBox[{"values", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`FastFourier`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QGrid", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "generates", " ", "a", " ", "list", " ", "of", " ", "n", " ", 
+           "points", " ", "within", " ", "the", " ", 
+           RowBox[{
+            RowBox[{"interval", " ", "[", 
+             RowBox[{"a", ",", "b"}], "]"}], ".", " ", "Defines"}], " ", "a", 
+           " ", "space", " ", "discretization", " ", "that", " ", "is", " ", 
+           "useful", " ", "for", " ", "a", " ", "fast", " ", "Fourier", " ", 
+           RowBox[{"transform", ".", " ", "The"}], " ", "distance", " ", 
+           "between", " ", "two", " ", "adjacent", " ", "points", " ", "is", 
+           " ", "dx"}], " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"b", "-", "a"}], ")"}], "/", "n"}], " ", "=", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"QSpaceStep", "[", 
+              RowBox[{"a", ",", "b", ",", "n"}], "]"}], ".", " ", "n"}], " ", 
+            "has", " ", "to", " ", "be", " ", "an", " ", "even", " ", 
+            RowBox[{"number", ".", " ", 
+             RowBox[{"Package", ":", " ", 
+              RowBox[{"VQM`FastFourier`", "."}]}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QLeftBorder", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "the", " ", "first", " ", "element", " ", "of", " ", 
+          RowBox[{
+           RowBox[{"QGrid", "[", 
+            RowBox[{"a", ",", "b", ",", "n"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSpaceStep", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "gives", " ", "the", " ", "step", " ", "size", " ", "in", " ", "the",
+           " ", "list", " ", 
+          RowBox[{
+           RowBox[{"QGrid", "[", 
+            RowBox[{"a", ",", "b", ",", "n"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSpaceInterval", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{" ", 
+            RowBox[{"gives", " ", "the", " ", "interval", " ", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"QGrid", "[", 
+                 RowBox[{"a", ",", "b", ",", "n"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], ",", 
+               RowBox[{"QGrid", "[", 
+                RowBox[{"a", ",", "b", ",", "n"}], "]"}]}]}]}], "]"}], "[", 
+           RowBox[{"[", "n", "]"}], "]"}], "}"}], ".", " ", 
+         RowBox[{"Package", ":", " ", 
+          RowBox[{"VQM`FastFourier`", "."}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QIndexPosition", "[", 
+         RowBox[{"x", ",", "a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "gives", " ", "the", " ", "position", " ", "of", " ", "x", " ", "in",
+           " ", "the", " ", "list", " ", 
+          RowBox[{
+           RowBox[{"QGrid", "[", 
+            RowBox[{"a", ",", "b", ",", "n"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFourierGrid", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "generates", " ", "a", " ", "list", " ", "of", " ", "n", " ", 
+          "points", " ", "in", " ", "Fourier", " ", 
+          RowBox[{"space", ".", " ", "Defines"}], " ", "the", " ", "domain", 
+          " ", "in", " ", "Fourier", " ", "space", " ", "that", " ", 
+          "corresponds", " ", "to", " ", 
+          RowBox[{"QGrid", "[", 
+           RowBox[{"a", ",", "b", ",", "n"}], "]"}], " ", "in", " ", 
+          "position", " ", 
+          RowBox[{"space", ".", "  ", "are"}], " ", "the", " ", "points", " ",
+           "where", " ", "the", " ", "values", " ", "of", " ", "QFourierList",
+           " ", "are", " ", 
+          RowBox[{"defined", ".", " ", "Also"}], " ", "works", " ", "for", 
+          " ", 
+          RowBox[{"QInverseFourierList", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFourierLeftBorder", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "determines", " ", "the", " ", "left", " ", "border", " ", "of", " ",
+           "the", " ", "interval", " ", "where", " ", "the", " ", "values", 
+          " ", "of", " ", "QFourierList", " ", "are", " ", 
+          RowBox[{"defined", ".", " ", "This"}], " ", "is", " ", "the", " ", 
+          "first", " ", "element", " ", "of", " ", 
+          RowBox[{
+           RowBox[{"QFourierGrid", "[", 
+            RowBox[{"a", ",", "b", ",", "n"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFourierRightBorder", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "determines", " ", "the", " ", "right", " ", "border", " ", "of", 
+          " ", "the", " ", "interval", " ", "where", " ", "the", " ", 
+          "values", " ", "of", " ", "QFourierList", " ", "are", " ", 
+          RowBox[{"defined", ".", " ", "This"}], " ", "is", " ", "the", " ", 
+          "last", " ", "element", " ", "of", " ", 
+          RowBox[{
+           RowBox[{"QFourierGrid", "[", 
+            RowBox[{"a", ",", "b", ",", "n"}], "]"}], ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFourierStep", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "is", " ", "the", " ", "distance", " ", "between", " ", "adjacent", 
+          " ", "values", " ", "of", " ", 
+          RowBox[{
+           RowBox[{"QFourierGrid", "[", 
+            RowBox[{"a", ",", "b", ",", "n"}], "]"}], ".", " ", "This"}], " ",
+           "is", " ", "the", " ", "step", " ", "size", " ", "in", " ", 
+          "Fourier", " ", 
+          RowBox[{"space", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QFourierInterval", "[", 
+         RowBox[{"a", ",", "b", ",", "n"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "determines", " ", "the", " ", "interval", " ", "in", " ", 
+           "Fourier", " ", "space", " ", "in", " ", "which", " ", "the", " ", 
+           "values", " ", "of", " ", "QFourierList", " ", "are", " ", 
+           RowBox[{"defined", ".", " ", "QFourierInterval"}]}], " ", "==", 
+          " ", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"QFourierLeftBorder", ",", "QFourierRightBorder"}], "}"}],
+            ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`FastFourier`", "."}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`FastFourier`"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+Magnification->1.,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`FastFourier`"->{
+  Cell[590, 23, 65, 1, 37, "Subsection",
+   CellTags->"VQM`FastFourier`"],
+  Cell[658, 26, 551, 9, 87, "Text",
+   CellTags->"VQM`FastFourier`"],
+  Cell[1212, 37, 19321, 472, 1237, "Text",
+   CellTags->"VQM`FastFourier`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`FastFourier`", 20873, 523}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 65, 1, 37, "Subsection",
+ CellTags->"VQM`FastFourier`"],
+Cell[658, 26, 551, 9, 87, "Text",
+ CellTags->"VQM`FastFourier`"],
+Cell[1212, 37, 19321, 472, 1237, "Text",
+ CellTags->"VQM`FastFourier`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,281 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      9918,        234]*)
+(*NotebookOutlinePosition[     10839,        265]*)
+(*  CellTagsIndexPosition[     10753,        259]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["VisualizeVector ", "Subsection",
+  CellTags->"VQM`VisualizeVector`"],
+
+Cell["\<\
+VQM`VisualizeVector` is a package for 'Visual Quantum Mechanics'. It helps to visualize a vector through various types of arrows in three dimensions and defines auxiliary graphics elements. \
+\>", "Text",
+  CellTags->"VQM`VisualizeVector`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QVectorToArrow[pt1, pt2]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ a\ collection\ of\ lines\ \
+representing\ a\ three - 
+                    dimensional\ arrow\ from\ point\ pt1\ to\ point\ \
+pt2 . \ pt1\ is\ optional, \ 
+                  default\ is\ {0, 0, 0} . \ 
+                      If\ the\ vector\ is\ shorter\ than\ QMinLength, \
+\ then\ it\ is\ represented\ by\ a\ point . \ 
+                      Use\ with\ Graphics3D . \ \(Example : \ 
+                        Show[Graphics3D[
+                                QVectorToArrow[{0, 0, 0}, {1, 1, 
+                                    1}]]] . \ 
+                            The\ following\ options\ control\ the\ \
+appearance\ of\ the\ \(arrow : \ QArrowHead\)\), \ QArrowShaft, \ 
+                  QArrowShape, \ QArrowScale, \ QNeedleStyle, \ 
+                  QHeadColor, \ QShaftColor, \ QLinePointSize, \ 
+                  QMinLength . \ \(Package : \ \
+\(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QVisualizeVector[3  vector]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(converts\ a\ vector\ into\ an\ \
+arrow\ graphics\ and\ displays\ it\ together\ with\ other\ graphics\ \
+elements\ whose\ appearance\ is\ controlled\ by\ the\ options\ \
+QDrawUnitSphere, \ QDrawAxes, \ QCoordinateCube, \ 
+                  QCoordinateCircles . \ \(Package : \ \
+\(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(polyDisk[r]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ regular\ octagon\ with\ \
+radius\ r\ in\ the\ xy - 
+                    plane . \ 
+                        polyDisk[r, 
+                          n]\ is\ a\ regular\ polygon\ with\ n\ sides \
+. \ \(Package : \ \(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(polyCone[r, \ h]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ set\ of\ 8\ triangles\ \
+approximating\ the\ shape\ of\ a\ half - 
+                    cone\ with\ apex\ at\ the\ origin\ and\ pointing\ \
+in\ the\ z - direction . \ 
+                        polyCone[r, h, n]\ approximates\ the\ half - 
+                    cone\ by\ n\ triangles . \ \(Package : \ \
+\(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(polyCylinder[r1, \ r2, \ h, \ 
+                    n \((optional)\)]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(represents\ a\ cylindrical\ shape, \
+\ symmetric\ around\ the\ z - 
+                    axis . \ r1\ is\ the\ radius\ at\ the\ bottom, \ 
+                  r2\ the\ radius\ at\ the\ top . \ 
+                      h\ is\ the\ height . \ 
+                      The\ cylinder\ is\ approximated\ by\ n\ \
+polygons\ \((default : \ 
+                          8)\) . \ \(Package : \ \
+\(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(arrowCone[{pt1, pt2}, \ c, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(represents\ a\ cone\ with\ color\ \
+c, \ translated\ and\ rotated, \ 
+                  so\ that\ it\ has\ apex\ at\ pt2\ and\ points\ in\ \
+the\ direction\ from\ pt1\ to\ pt2 . \ 
+                      Its\ appearance\ is\ controlled\ by\ the\ \
+option\ QArrowShape . \ \(Package : \ \(\(VQM`VisualizeVector`\)\(.\)\
+\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(arrowWithShaft[{pt1, pt2}, \ colorhead, \ 
+                    colorshaft, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(represents\ an\ arrow\ from\ pt1\ \
+to\ pt2\ \((a\ collection\ of\ polygons)\) . \ 
+                      Its\ appearance\ is\ controlled\ by\ the\ \
+option\ QArrowShape . \ \(Package : \ \(\(VQM`VisualizeVector`\)\(.\)\
+\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(doubleHead[{pt1, pt2}, \ color1, \ 
+                    color2, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ actually\ a\ double - 
+                    cone\ connecting\ the\ points\ pt1\ with\ pt2 . \ 
+                        The\ part\ closer\ to\ pt1\ has\ color1 . \ 
+                        The\ shape\ is\ controlled\ by\ the\ option\ \
+QArrowShape . \ \(Package : \ \(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(unitSphere[theta]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(represents\ a\ sphere\ with\ \
+radius\ 1\ and\ center\ at\ the\ origin\ as\ a\ collection\ of\ \
+circles\ parallel\ to\ the\ xy - 
+                    plane . \ 
+                        The\ polar\ angles\ of\ the\ circles\ are\ \
+multiples\ of\ theta . \ \(Package : \ \
+\(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QRoundSphere[r, n, m, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ sphere\ with\ radus\ r, \ 
+                  represented\ by\ as\ a\ wireframe . \ 
+                      QRoundSphere[r, n, m]\ is\ similar\ to\ Sphere[
+                      r, n, m]\ in\ the\ standard\ package\ \
+Graphics`Shapes`, \ 
+                  but\ QRoundSphere\ uses\ circles\ \((generated\ by\ \
+ParametricPlot3D)\)\ instead\ of\ polygons . \ 
+                      The\ options\ are\ passed\ to\ ParametricPlot3D\
+\ \((useful\ for\ PlotPoints)\) . \ \(Package : \ \
+\(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(coordinateCube[pt]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(represents\ a\ rectangular\ shape\ \
+with\ edges\ parallel\ to\ the\ coordinate\ axes . \ 
+                      It\ has\ one\ point\ at\ the\ origin\ and\ one\ \
+at\ the\ point\ pt . \ \(Package : \ \
+\(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(coordinateCircles[pt]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(are\ two\ circular\ arcs\ \
+representing\ the\ polar\ angle\ and\ the\ azimuthal\ angle\ of\ a\ \
+point\ pt . \ \(Package : \ \(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(graphicElements[pt, \ opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(defines\ the\ graphic\ elements\ \
+for\ the\ visualization\ of\ the\ position\ pt\ according\ to\ the\ \
+values\ of\ the\ options\ QDrawUnitSphere, \ QDrawAxes, \ 
+                  QCoordinateCube, \ QCoordinateCircles, \ 
+                  QCoordinateCirclesColor . \ \(Package : \ \
+\(\(VQM`VisualizeVector`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`VisualizeVector`"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`VisualizeVector`"->{
+    Cell[1754, 51, 74, 1, 70, "Subsection",
+      CellTags->"VQM`VisualizeVector`"],
+    Cell[1831, 54, 250, 3, 70, "Text",
+      CellTags->"VQM`VisualizeVector`"],
+    Cell[2084, 59, 7830, 173, 70, "Text",
+      CellTags->"VQM`VisualizeVector`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`VisualizeVector`", 10479, 248}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 74, 1, 70, "Subsection",
+  CellTags->"VQM`VisualizeVector`"],
+Cell[1831, 54, 250, 3, 70, "Text",
+  CellTags->"VQM`VisualizeVector`"],
+Cell[2084, 59, 7830, 173, 70, "Text",
+  CellTags->"VQM`VisualizeVector`"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

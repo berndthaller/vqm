@@ -1,0 +1,405 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     15679,        395]
+NotebookOptionsPosition[     14904,        365]
+NotebookOutlinePosition[     15553,        390]
+CellTagsIndexPosition[     15470,        385]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["VisualizeVector ", "Subsection",
+ CellTags->"VQM`VisualizeVector`"],
+
+Cell["\<\
+VQM`VisualizeVector` is a package for 'Visual Quantum Mechanics'. It helps to \
+visualize a vector through various types of arrows in three dimensions and \
+defines auxiliary graphics elements. \
+\>", "Text",
+ CellTags->"VQM`VisualizeVector`"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QVectorToArrow", "[", 
+         RowBox[{"pt1", ",", "pt2"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "gives", " ", "a", " ", "collection", " ", "of", " ", "lines", " ",
+             "representing", " ", "a", " ", "three"}], "-", 
+           RowBox[{
+           "dimensional", " ", "arrow", " ", "from", " ", "point", " ", "pt1",
+             " ", "to", " ", "point", " ", 
+            RowBox[{"pt2", ".", " ", "pt1"}], " ", "is", " ", "optional"}]}], 
+          ",", " ", 
+          RowBox[{"default", " ", "is", " ", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ".", " ", "If"}], " ", 
+           "the", " ", "vector", " ", "is", " ", "shorter", " ", "than", " ", 
+           "QMinLength"}], ",", " ", 
+          RowBox[{
+          "then", " ", "it", " ", "is", " ", "represented", " ", "by", " ", 
+           "a", " ", 
+           RowBox[{"point", ".", " ", "Use"}], " ", "with", " ", 
+           RowBox[{"Graphics3D", ".", " ", 
+            RowBox[{"Example", ":", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Show", "[", 
+                RowBox[{"Graphics3D", "[", 
+                 RowBox[{"QVectorToArrow", "[", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], "]"}], 
+                "]"}], ".", " ", "The"}], " ", "following", " ", "options", 
+              " ", "control", " ", "the", " ", "appearance", " ", "of", " ", 
+              "the", " ", 
+              RowBox[{"arrow", ":", " ", "QArrowHead"}]}]}]}]}], ",", " ", 
+          "QArrowShaft", ",", " ", "QArrowShape", ",", " ", "QArrowScale", 
+          ",", " ", "QNeedleStyle", ",", " ", "QHeadColor", ",", " ", 
+          "QShaftColor", ",", " ", "QLinePointSize", ",", " ", 
+          RowBox[{"QMinLength", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QVisualizeVector", "[", 
+         RowBox[{"3", "vector"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "converts", " ", "a", " ", "vector", " ", "into", " ", "an", " ", 
+           "arrow", " ", "graphics", " ", "and", " ", "displays", " ", "it", 
+           " ", "together", " ", "with", " ", "other", " ", "graphics", " ", 
+           "elements", " ", "whose", " ", "appearance", " ", "is", " ", 
+           "controlled", " ", "by", " ", "the", " ", "options", " ", 
+           "QDrawUnitSphere"}], ",", " ", "QDrawAxes", ",", " ", 
+          "QCoordinateCube", ",", " ", 
+          RowBox[{"QCoordinateCircles", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"polyDisk", "[", "r", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "regular", " ", "octagon", " ", "with", " ", 
+           "radius", " ", "r", " ", "in", " ", "the", " ", "xy"}], "-", 
+          RowBox[{
+           RowBox[{"plane", ".", " ", 
+            RowBox[{"polyDisk", "[", 
+             RowBox[{"r", ",", "n"}], "]"}]}], " ", "is", " ", "a", " ", 
+           "regular", " ", "polygon", " ", "with", " ", "n", " ", 
+           RowBox[{"sides", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"polyCone", "[", 
+         RowBox[{"r", ",", " ", "h"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "set", " ", "of", " ", "8", " ", "triangles", 
+           " ", "approximating", " ", "the", " ", "shape", " ", "of", " ", 
+           "a", " ", "half"}], "-", 
+          RowBox[{
+          "cone", " ", "with", " ", "apex", " ", "at", " ", "the", " ", 
+           "origin", " ", "and", " ", "pointing", " ", "in", " ", "the", " ", 
+           "z"}], "-", 
+          RowBox[{
+           RowBox[{"direction", ".", " ", 
+            RowBox[{"polyCone", "[", 
+             RowBox[{"r", ",", "h", ",", "n"}], "]"}]}], " ", "approximates", 
+           " ", "the", " ", "half"}], "-", 
+          RowBox[{"cone", " ", "by", " ", "n", " ", 
+           RowBox[{"triangles", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"polyCylinder", "[", 
+         RowBox[{"r1", ",", " ", "r2", ",", " ", "h", ",", " ", 
+          RowBox[{"n", "(", "optional", ")"}]}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"represents", " ", "a", " ", "cylindrical", " ", "shape"}], 
+          ",", " ", 
+          RowBox[{
+           RowBox[{"symmetric", " ", "around", " ", "the", " ", "z"}], "-", 
+           RowBox[{
+            RowBox[{"axis", ".", " ", "r1"}], " ", "is", " ", "the", " ", 
+            "radius", " ", "at", " ", "the", " ", "bottom"}]}], ",", " ", 
+          RowBox[{
+          "r2", " ", "the", " ", "radius", " ", "at", " ", "the", " ", 
+           RowBox[{"top", ".", " ", "h"}], " ", "is", " ", "the", " ", 
+           RowBox[{"height", ".", " ", "The"}], " ", "cylinder", " ", "is", 
+           " ", "approximated", " ", "by", " ", "n", " ", "polygons", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"default", ":", " ", "8"}], ")"}], ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"arrowCone", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"pt1", ",", "pt2"}], "}"}], ",", " ", "c", ",", " ", 
+          "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "represents", " ", "a", " ", "cone", " ", "with", " ", "color", " ",
+            "c"}], ",", " ", 
+          RowBox[{"translated", " ", "and", " ", "rotated"}], ",", " ", 
+          RowBox[{
+          "so", " ", "that", " ", "it", " ", "has", " ", "apex", " ", "at", 
+           " ", "pt2", " ", "and", " ", "points", " ", "in", " ", "the", " ", 
+           "direction", " ", "from", " ", "pt1", " ", "to", " ", 
+           RowBox[{"pt2", ".", " ", "Its"}], " ", "appearance", " ", "is", 
+           " ", "controlled", " ", "by", " ", "the", " ", "option", " ", 
+           RowBox[{"QArrowShape", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"arrowWithShaft", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"pt1", ",", "pt2"}], "}"}], ",", " ", "colorhead", ",", 
+          " ", "colorshaft", ",", " ", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "represents", " ", "an", " ", "arrow", " ", "from", " ", "pt1", " ", 
+          "to", " ", "pt2", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"a", " ", "collection", " ", "of", " ", "polygons"}], 
+            ")"}], ".", " ", "Its"}], " ", "appearance", " ", "is", " ", 
+          "controlled", " ", "by", " ", "the", " ", "option", " ", 
+          RowBox[{"QArrowShape", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"doubleHead", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"pt1", ",", "pt2"}], "}"}], ",", " ", "color1", ",", " ", 
+          "color2", ",", " ", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"is", " ", "actually", " ", "a", " ", "double"}], "-", 
+          RowBox[{
+          "cone", " ", "connecting", " ", "the", " ", "points", " ", "pt1", 
+           " ", "with", " ", 
+           RowBox[{"pt2", ".", " ", "The"}], " ", "part", " ", "closer", " ", 
+           "to", " ", "pt1", " ", "has", " ", 
+           RowBox[{"color1", ".", " ", "The"}], " ", "shape", " ", "is", " ", 
+           "controlled", " ", "by", " ", "the", " ", "option", " ", 
+           RowBox[{"QArrowShape", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"unitSphere", "[", "theta", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "represents", " ", "a", " ", "sphere", " ", "with", " ", "radius", 
+           " ", "1", " ", "and", " ", "center", " ", "at", " ", "the", " ", 
+           "origin", " ", "as", " ", "a", " ", "collection", " ", "of", " ", 
+           "circles", " ", "parallel", " ", "to", " ", "the", " ", "xy"}], 
+          "-", 
+          RowBox[{
+           RowBox[{"plane", ".", " ", "The"}], " ", "polar", " ", "angles", 
+           " ", "of", " ", "the", " ", "circles", " ", "are", " ", 
+           "multiples", " ", "of", " ", 
+           RowBox[{"theta", ".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QRoundSphere", "[", 
+         RowBox[{"r", ",", "n", ",", "m", ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "is", " ", "a", " ", "sphere", " ", "with", " ", "radus", " ", 
+           "r"}], ",", " ", 
+          RowBox[{"represented", " ", "by", " ", "as", " ", "a", " ", 
+           RowBox[{"wireframe", ".", " ", 
+            RowBox[{"QRoundSphere", "[", 
+             RowBox[{"r", ",", "n", ",", "m"}], "]"}]}], " ", "is", " ", 
+           "similar", " ", "to", " ", 
+           RowBox[{"Sphere", "[", 
+            RowBox[{"r", ",", "n", ",", "m"}], "]"}], " ", "in", " ", "the", 
+           " ", "standard", " ", "package", " ", "Graphics`Shapes`"}], ",", 
+          " ", 
+          RowBox[{
+          "but", " ", "QRoundSphere", " ", "uses", " ", "circles", " ", 
+           RowBox[{"(", 
+            RowBox[{"generated", " ", "by", " ", "ParametricPlot3D"}], ")"}], 
+           " ", "instead", " ", "of", " ", 
+           RowBox[{"polygons", ".", " ", "The"}], " ", "options", " ", "are", 
+           " ", "passed", " ", "to", " ", "ParametricPlot3D", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"useful", " ", "for", " ", "PlotPoints"}], ")"}], ".", 
+            " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"coordinateCube", "[", "pt", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "represents", " ", "a", " ", "rectangular", " ", "shape", " ", 
+          "with", " ", "edges", " ", "parallel", " ", "to", " ", "the", " ", 
+          "coordinate", " ", 
+          RowBox[{"axes", ".", " ", "It"}], " ", "has", " ", "one", " ", 
+          "point", " ", "at", " ", "the", " ", "origin", " ", "and", " ", 
+          "one", " ", "at", " ", "the", " ", "point", " ", 
+          RowBox[{"pt", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"coordinateCircles", "[", "pt", "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "are", " ", "two", " ", "circular", " ", "arcs", " ", "representing",
+           " ", "the", " ", "polar", " ", "angle", " ", "and", " ", "the", 
+          " ", "azimuthal", " ", "angle", " ", "of", " ", "a", " ", "point", 
+          " ", 
+          RowBox[{"pt", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"graphicElements", "[", 
+         RowBox[{"pt", ",", " ", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "defines", " ", "the", " ", "graphic", " ", "elements", " ", "for", 
+           " ", "the", " ", "visualization", " ", "of", " ", "the", " ", 
+           "position", " ", "pt", " ", "according", " ", "to", " ", "the", 
+           " ", "values", " ", "of", " ", "the", " ", "options", " ", 
+           "QDrawUnitSphere"}], ",", " ", "QDrawAxes", ",", " ", 
+          "QCoordinateCube", ",", " ", "QCoordinateCircles", ",", " ", 
+          RowBox[{"QCoordinateCirclesColor", ".", " ", 
+           RowBox[{"Package", ":", " ", 
+            RowBox[{"VQM`VisualizeVector`", "."}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"VQM`VisualizeVector`"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "VQM`VisualizeVector`"->{
+  Cell[590, 23, 73, 1, 37, "Subsection",
+   CellTags->"VQM`VisualizeVector`"],
+  Cell[666, 26, 253, 5, 39, "Text",
+   CellTags->"VQM`VisualizeVector`"],
+  Cell[922, 33, 13966, 329, 1011, "Text",
+   CellTags->"VQM`VisualizeVector`"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"VQM`VisualizeVector`", 15213, 375}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 73, 1, 37, "Subsection",
+ CellTags->"VQM`VisualizeVector`"],
+Cell[666, 26, 253, 5, 39, "Text",
+ CellTags->"VQM`VisualizeVector`"],
+Cell[922, 33, 13966, 329, 1011, "Text",
+ CellTags->"VQM`VisualizeVector`"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,348 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12074,        288]*)
+(*NotebookOutlinePosition[     12980,        319]*)
+(*  CellTagsIndexPosition[     12897,        313]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Arg Color Plot ", "Subsection",
+  CellTags->"VQM`ArgColorPlot`"],
+
+Cell["\<\
+Plot the absolute value Abs[f[x]] of a complex-valued function f depending on a real variable x and fill the space between the plotted function and the x-axis with a color corresponding to the argument Arg[f[x]]. The saturation and brightness of the colors can be set using the options QSaturation and QBrightness. \
+\>", "Text",
+  CellTags->"VQM`ArgColorPlot`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QArgColorPlot[f[x], {x, x0, x1}, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ used\ like\ the\ usual\ Plot\ \
+command . \ It\ gives\ a\ two - dimensional\ plot\ of\ a\ complex - 
+                      valued\ function\ f\ of\ a\ single\ real\ \
+variable\ x\ in\ the\ range\ {x0, x1} . \ 
+                          The\ plot\ shows\ the\ curve\ Abs[
+                          f]\ with\ area\ between\ the\ curve\ and\ \
+the\ x - axis\ colored\ by\ Hue[Arg[f[x]]/\((2\ Pi)\)] . \ 
+                          The\ default\ options\ of\ Plot\ are\ \
+changed\ to\ Axes -> {True, None}, \ 
+                  Fame -> True . \ \(Package : \ 
+                        VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QListArgColorPlot[f, {x, x0, x1}, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(plots\ a\ Abs[f], \ 
+                  where\ f\ is\ a\ list\ of\ complex\ numbers . \ 
+                        The\ \ points\ of\ the\ list\ Abs[
+                        f]\ are\ joined\ by\ a\ line . \ 
+                        The\ area\ between\ the\ curve\ and\ the\ x - 
+                    axis\ is\ colored\ at\ each\ point\ by\ Hue[
+                          Arg[f]/\((2\ Pi)\)] . \ \(Package : \ 
+                          VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QCombinedPlot[{f[x], g[x]}, {x, x0, x1}, 
+                    opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(works\ like\ QArgColorPlot\ with\ \
+respect\ to\ f . \ 
+                      The\ curve\ g\ is\ drawn\ in\ front\ of\ the\ \
+QArgColorPlot\ of\ f . \ \(Package : \ VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QListCombinedPlot[{list, f[x]}, {x, x0, 
+                      x1}, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(works\ like\ QListArgColorPlot\ \
+with\ respect\ to\ list . \ 
+                      It\ is\ assumed\ that\ list\ represents\ the\ \
+discretized\ values\ of\ a\ function\ defined\ on\ the\ interval\ [
+                        x0, x1] . \ 
+                      The\ color\ list\ plot\ is\ then\ combined\ \
+with\ an\ ordinary\ plot\ of\ f\ on\ the\ same\ scale\ and\ with\ the\
+\ Ticks\ automatically\ adjusted . \ \(Package : \ 
+                        VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QSpinorPlot[{func1, func2}, {x, x0, x1}, 
+                    opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(provides\ a\ method\ to\ visualize\
+\ C^2 - valued\ functions\ \((for\ example, \ 
+                            spinor\ wavefunctions\ in\ quantum\ \
+mechanics)\) . \ 
+                          The\ QSpinorPlot\ combines\ a\ \
+QArgColorPlot\ of\ func1\ with\ a\ QArgColorPlot\ of\ func2\ \
+\((upside\ down, \ 
+                          with\ less\ saturation)\)\ Both\ curves\ \
+are\ plotted\ with\ the\ option\ QSquared -> 
+                    True\ \((that\ is, \ 
+                          a\ plot\ of\ the\ curve\ Abs[
+                                func]^2\ is\ filled\ with\ a\ color\ \
+describing\ the\ phase)\) . \ In\ the\ background, \ 
+                  a\ filled\ plot\ of\ Abs[func1]^2\  + \ 
+                    Abs[func2]^2\ displays\ the\ corresponding\ \
+density . \ \(Package : \ VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QListSpinorPlot[list, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(visualizes\ a\ spinor - 
+                    valued\ list\ of\ complex\ numbers . \ 
+                        Each\ element\ of\ list\ is\ a\ \
+C^\(-vector\), \ that\ is, \ 
+                  list\  = \ {{z11, z12}, {z21, z22},  ... } . \ 
+                      Alternatively, \ 
+                  list\  = \ {list1, 
+                        list2}\ with\ two\ lists\ of\ complex\ \
+numbers, \ list1\ giving\ the\ upper\ component\ of\ the\ spinor - 
+                    valued\ wave\ function, \ 
+                  and\ list2\ giving\ the\ lower\ component . \ 
+                      The\ lower\ component\ is\ plotted\ upside\ \
+down\ with\ less\ saturation . \ 
+                      See\ also\ the\ description\ of\ QSpinorPlot . \
+\ \(Package : \ VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QSpinorCombinedPlot[{func1, func2}, {x, 
+                      x0, x1}, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(combines\ a\ QSpinorPlot\ of\ \
+func1\ with\ an\ ordinary\ Plot\ of\ a\ real - 
+                    valued\ function\ func2 . \ 
+                        See\ the\ description\ of\ QCombinedPlot\ and\
+\ of\ QSpinorPlot . \ \(Package : \ VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QListSpinorCombinedPlot[{list, f[x]}, {x, 
+                      x0, x1}, opts]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(combines\ a\ QListSpinorPlot\ of\ \
+list1\ with\ an\ ordinary\ Plot\ \ of\ a\ real - 
+                    valued\ function\ f . \ 
+                        See\ the\ description\ of\ QListCombinedPlot\ \
+and\ of\ QListSpinorPlot . \ \(Package : \ VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QNiceTicks[xmin, xmax, dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(provides\ a\ list\ of\ nice\ \
+positions\ for\ use\ in\ the\ Ticks\ or\ FrameTicks\ option\ in\ a\ \
+ListPlot, \ 
+                  where\ it\ is\ assumed\ that\ the\ list\ of\ values\
+\ ranges\ between\ xmin\ and\ xmax\ in\ steps\ dx . \ \(Package : \ 
+                        VQM`ArgColorPlot`\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`ArgColorPlot`"],
+
+Cell["This loads the package", "MathCaption"],
+
+Cell["<<VQM`ArgColorPlot`", "Input"],
+
+Cell["This is an example", "MathCaption"],
+
+Cell[BoxData[{
+    \(msgonindet = Head[General::"\<indet\>"] =!= $Off; \), "\n", 
+    \(Off[Arg::"\<indet\>"]; \)}], "Input"],
+
+Cell[BoxData[
+    \(QArgColorPlot[\[ExponentialE]\^\(\(-\[ImaginaryI]\)\ 6\ x - \
+x\^2\/2\), {x, \(-4\), 4}]; \)], "Input"],
+
+Cell[BoxData[
+    \(QArgColorPlot[\[ExponentialE]\^\(\(-\[ImaginaryI]\)\ 6\ x - \
+x\^2\/2\), {x, \(-4\), 4}, 
+      PlotStyle \[Rule] {Thickness[0.025], GrayLevel[0.5]}, 
+      QSaturation \[Rule] 0.5, QBrightness \[Rule] 0.7, 
+      PlotRange \[Rule] {\(-0.2\), 1.2}, Frame \[Rule] True, 
+      Axes \[Rule] {True, False}]\)], "Input"],
+
+Cell[BoxData[{
+    \(mytab = 
+      Table[Sin[\[Pi]\ x]\ \[ExponentialE]\^\(2\ \[ImaginaryI]\ \[Pi]\
+\ x\), {x, \(-2\), 2, 0.1}]; \), "\n", 
+    \(QListArgColorPlot[mytab, Axes \[Rule] True, 
+      QHorizontalRange \[Rule] {\(-2\), 2}]; \), "\n", 
+    \(QListArgColorPlot[mytab, Axes \[Rule] True, 
+      QHorizontalRange \[Rule] {{\(-2\), 2}, {\(-1\), 
+            0}}]; \), "\n", 
+    \(QListArgColorPlot[mytab, Axes \[Rule] True, 
+      QHorizontalRange \[Rule] {{\(-2\), 2}, {\(-4\), 4}}]; \)}], "Input"],
+
+Cell[BoxData[
+    \(QCombinedPlot[{Sin[\[Pi]\ x], Sin[\[Pi]\ x]}, {x, \(-4\), 
+        3}]; \)], "Input"],
+
+Cell[BoxData[{
+    \(mytab = Table[Sin[\[Pi]\ x], {x, \(-4\), 3, 0.1}]; \), "\n", 
+    \(QListCombinedPlot[{mytab, Sin[\[Pi]\ x]}, {x, \(-4\), 
+        3}]; \), "\n", 
+    \(QListCombinedPlot[{mytab, Sin[\[Pi]\ x]}, {x, 0, 
+        3}]; \), "\n", 
+    \(QListCombinedPlot[{mytab, Sin[\[Pi]\ x]}, {x, 0, 3}, 
+      QHorizontalRange \[Rule] {\(-4\), 3}]; \), "\n", 
+    \(QListCombinedPlot[{mytab, Sin[\[Pi]\ x]}, {x, 0, 3}, 
+      QHorizontalRange \[Rule] {{\(-4\), 3}, {1, 2}}]; \)}], "Input"],
+
+Cell[BoxData[
+    \(Show[
+      QArgColorPlot[Sin[x + \[ImaginaryI]], {x, \(-3\), 3}, 
+        QBottomLine \[Rule] 1, 
+        Epilog \[Rule] Line[{{\(-3\), 1}, {3, 1}}], 
+        DisplayFunction \[Rule] Identity], 
+      QArgColorPlot[
+        Cos[x + \[ImaginaryI]] - \[ExponentialE]\^\(\[ImaginaryI]\ \
+Arg[Cos[x + \[ImaginaryI]]]\), {x, \(-3\), 3}, 
+        DisplayFunction \[Rule] Identity], 
+      PlotRange \[Rule] {\(-0.2\), 1.7}, Frame \[Rule] True, 
+      DisplayFunction \[Rule] $DisplayFunction]\)], "Input"],
+
+Cell[BoxData[{
+    \(spinorfunction[
+        x_] := {Cos[
+            3\ x]\ \[ExponentialE]\^\(\(-\(1\/3\)\)\ \((x - \
+1\/4)\)\^2 + \[ImaginaryI]\ x\), 
+        Sin[4\ x]\ \[ExponentialE]\^\(\(-\(1\/2\)\)\ \((x + \
+1\/4)\)\^2 + 2\ \[ImaginaryI]\ x\)}; \), "\n", 
+    \(QSpinorPlot[Evaluate[spinorfunction[x]], {x, \(-3. \), 3. }, 
+      PlotRange \[Rule] All, Frame \[Rule] True, 
+      Axes \[Rule] {True, False}]\)}], "Input"],
+
+Cell[BoxData[{
+    \(spinorlist = 
+      Table[{x, spinorfunction[x]}, {x, \(-3\), 3, 0.1}]; \), "\n", 
+    \(QListSpinorCombinedPlot[{spinorlist, Sin[4\ x]}, {x, \(-2\), 
+        3}, PlotRange \[Rule] All, 
+      QCurveStyle \[Rule] {RGBColor[0, 0.7, 0.9], Thickness[0.03]}, 
+      PlotStyle \[Rule] {RGBColor[0.2, 0.2, 0.5], Thickness[0.02]}]\)}
+  ], "Input"],
+
+Cell[BoxData[
+    \(If[msgonindet, On[Arg::"\<indet\>"]]; \)], "Input"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`ArgColorPlot`"->{
+    Cell[1754, 51, 70, 1, 70, "Subsection",
+      CellTags->"VQM`ArgColorPlot`"],
+    Cell[1827, 54, 372, 3, 70, "Text",
+      CellTags->"VQM`ArgColorPlot`"],
+    Cell[2202, 59, 6636, 142, 70, "Text",
+      CellTags->"VQM`ArgColorPlot`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`ArgColorPlot`", 12632, 302}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 70, 1, 70, "Subsection",
+  CellTags->"VQM`ArgColorPlot`"],
+Cell[1827, 54, 372, 3, 70, "Text",
+  CellTags->"VQM`ArgColorPlot`"],
+Cell[2202, 59, 6636, 142, 70, "Text",
+  CellTags->"VQM`ArgColorPlot`"],
+Cell[8841, 203, 45, 0, 70, "MathCaption"],
+Cell[8889, 205, 36, 0, 70, "Input"],
+Cell[8928, 207, 41, 0, 70, "MathCaption"],
+Cell[8972, 209, 125, 2, 70, "Input"],
+Cell[9100, 213, 123, 2, 70, "Input"],
+Cell[9226, 217, 336, 6, 70, "Input"],
+Cell[9565, 225, 508, 10, 70, "Input"],
+Cell[10076, 237, 105, 2, 70, "Input"],
+Cell[10184, 241, 493, 9, 70, "Input"],
+Cell[10680, 252, 520, 11, 70, "Input"],
+Cell[11203, 265, 429, 9, 70, "Input"],
+Cell[11635, 276, 361, 7, 70, "Input"],
+Cell[11999, 285, 71, 1, 70, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

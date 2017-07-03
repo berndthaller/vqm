@@ -1,0 +1,569 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     15833,        559]
+NotebookOptionsPosition[      6935,        289]
+NotebookOutlinePosition[     11977,        434]
+CellTagsIndexPosition[     11328,        414]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QPlaneWaveToRight", "Section",
+ CellTags->"QPlaneWaveToRight"],
+
+Cell["QPlaneWaveToRight[...]...Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QPlaneWaveToRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPlaneWaveToRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPlaneWaveToLeft", "Section",
+ CellTags->"QPlaneWaveToLeft"],
+
+Cell["QPlaneWaveToLeft[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QPlaneWaveToLeft"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPlaneWaveToLeft"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QReflectionCoefficientJump", "Section",
+ CellTags->"QReflectionCoefficientJump"],
+
+Cell["\<\
+QReflectionCoefficientJump[...]... Package: VQM`Rectangular`.\
+\>", "Usage",
+ CellTags->"QReflectionCoefficientJump"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QReflectionCoefficientJump"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QTransmissionCoefficientJump", "Section",
+ CellTags->"QTransmissionCoefficientJump"],
+
+Cell["\<\
+QTransmissionCoefficientJump[...]... Package: VQM`Rectangular`.\
+\>", "Usage",
+ CellTags->"QTransmissionCoefficientJump"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QTransmissionCoefficientJump"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QReflectionCoefficientWell", "Section",
+ CellTags->"QReflectionCoefficientWell"],
+
+Cell["\<\
+QReflectionCoefficientWell[...]... Package: VQM`Rectangular`.\
+\>", "Usage",
+ CellTags->"QReflectionCoefficientWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QReflectionCoefficientWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QTransmissionCoefficientWell", "Section",
+ CellTags->"QTransmissionCoefficientWell"],
+
+Cell["\<\
+QTransmissionCoefficientWell[...]... Package: VQM`Rectangular`.\
+\>", "Usage",
+ CellTags->"QTransmissionCoefficientWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QTransmissionCoefficientWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QTransitionMatrix", "Section",
+ CellTags->"QTransitionMatrix"],
+
+Cell["\<\
+QTransitionMatrix[En,V1,V2,s] is the transition matrix as a function of the \
+energy for a potential-jump from V[x]=V1 (for x<s) to V[x]=V2 (for x>s). \
+Package: VQM`Rectangular`.\
+\>", "Usage",
+ CellTags->"QTransitionMatrix"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QTransitionMatrix"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSolutionWellToRight", "Section",
+ CellTags->"QSolutionWellToRight"],
+
+Cell["QSolutionWellToRight[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QSolutionWellToRight"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSolutionWellToRight"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPsiEvenWell", "Section",
+ CellTags->"QPsiEvenWell"],
+
+Cell["QPsiEvenWell[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QPsiEvenWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPsiEvenWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QPsiOddWell", "Section",
+ CellTags->"QPsiOddWell"],
+
+Cell["QPsiOddWell[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QPsiOddWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QPsiOddWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDetEvenWell", "Section",
+ CellTags->"QDetEvenWell"],
+
+Cell["QDetEvenWell[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QDetEvenWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDetEvenWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDetOddWell", "Section",
+ CellTags->"QDetOddWell"],
+
+Cell["QDetOddWell[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QDetOddWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDetOddWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QCriticalRadiusEvenWell", "Section",
+ CellTags->"QCriticalRadiusEvenWell"],
+
+Cell["QCriticalRadiusEvenWell[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QCriticalRadiusEvenWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QCriticalRadiusEvenWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QCriticalRadiusOddWell", "Section",
+ CellTags->"QCriticalRadiusOddWell"],
+
+Cell["QCriticalRadiusOddWell[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QCriticalRadiusOddWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QCriticalRadiusOddWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QCriticalDepthEvenWell", "Section",
+ CellTags->"QCriticalDepthEvenWell"],
+
+Cell["QCriticalDepthEvenWell[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QCriticalDepthEvenWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QCriticalDepthEvenWell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QCriticalDepthOddWell", "Section",
+ CellTags->"QCriticalDepthOddWell"],
+
+Cell["QCriticalDepthOddWell[...]... Package: VQM`Rectangular`.", "Usage",
+ CellTags->"QCriticalDepthOddWell"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Rectangular`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QCriticalDepthOddWell"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "QPlaneWaveToRight"->{
+  Cell[590, 23, 68, 1, 63, "Section",
+   CellTags->"QPlaneWaveToRight"],
+  Cell[661, 26, 100, 1, 31, "Usage",
+   CellTags->"QPlaneWaveToRight"],
+  Cell[764, 29, 163, 5, 23, "Text",
+   CellTags->"QPlaneWaveToRight"]},
+ "QPlaneWaveToLeft"->{
+  Cell[964, 39, 66, 1, 63, "Section",
+   CellTags->"QPlaneWaveToLeft"],
+  Cell[1033, 42, 99, 1, 31, "Usage",
+   CellTags->"QPlaneWaveToLeft"],
+  Cell[1135, 45, 162, 5, 23, "Text",
+   CellTags->"QPlaneWaveToLeft"]},
+ "QReflectionCoefficientJump"->{
+  Cell[1334, 55, 86, 1, 63, "Section",
+   CellTags->"QReflectionCoefficientJump"],
+  Cell[1423, 58, 127, 3, 31, "Usage",
+   CellTags->"QReflectionCoefficientJump"],
+  Cell[1553, 63, 172, 5, 23, "Text",
+   CellTags->"QReflectionCoefficientJump"]},
+ "QTransmissionCoefficientJump"->{
+  Cell[1762, 73, 90, 1, 63, "Section",
+   CellTags->"QTransmissionCoefficientJump"],
+  Cell[1855, 76, 131, 3, 31, "Usage",
+   CellTags->"QTransmissionCoefficientJump"],
+  Cell[1989, 81, 174, 5, 23, "Text",
+   CellTags->"QTransmissionCoefficientJump"]},
+ "QReflectionCoefficientWell"->{
+  Cell[2200, 91, 86, 1, 63, "Section",
+   CellTags->"QReflectionCoefficientWell"],
+  Cell[2289, 94, 127, 3, 31, "Usage",
+   CellTags->"QReflectionCoefficientWell"],
+  Cell[2419, 99, 172, 5, 23, "Text",
+   CellTags->"QReflectionCoefficientWell"]},
+ "QTransmissionCoefficientWell"->{
+  Cell[2628, 109, 90, 1, 63, "Section",
+   CellTags->"QTransmissionCoefficientWell"],
+  Cell[2721, 112, 131, 3, 31, "Usage",
+   CellTags->"QTransmissionCoefficientWell"],
+  Cell[2855, 117, 174, 5, 23, "Text",
+   CellTags->"QTransmissionCoefficientWell"]},
+ "QTransitionMatrix"->{
+  Cell[3066, 127, 68, 1, 63, "Section",
+   CellTags->"QTransitionMatrix"],
+  Cell[3137, 130, 236, 5, 47, "Usage",
+   CellTags->"QTransitionMatrix"],
+  Cell[3376, 137, 163, 5, 70, "Text",
+   CellTags->"QTransitionMatrix"]},
+ "QSolutionWellToRight"->{
+  Cell[3576, 147, 74, 1, 70, "Section",
+   CellTags->"QSolutionWellToRight"],
+  Cell[3653, 150, 107, 1, 70, "Usage",
+   CellTags->"QSolutionWellToRight"],
+  Cell[3763, 153, 166, 5, 70, "Text",
+   CellTags->"QSolutionWellToRight"]},
+ "QPsiEvenWell"->{
+  Cell[3966, 163, 58, 1, 70, "Section",
+   CellTags->"QPsiEvenWell"],
+  Cell[4027, 166, 91, 1, 70, "Usage",
+   CellTags->"QPsiEvenWell"],
+  Cell[4121, 169, 158, 5, 70, "Text",
+   CellTags->"QPsiEvenWell"]},
+ "QPsiOddWell"->{
+  Cell[4316, 179, 56, 1, 70, "Section",
+   CellTags->"QPsiOddWell"],
+  Cell[4375, 182, 89, 1, 70, "Usage",
+   CellTags->"QPsiOddWell"],
+  Cell[4467, 185, 157, 5, 70, "Text",
+   CellTags->"QPsiOddWell"]},
+ "QDetEvenWell"->{
+  Cell[4661, 195, 58, 1, 70, "Section",
+   CellTags->"QDetEvenWell"],
+  Cell[4722, 198, 91, 1, 70, "Usage",
+   CellTags->"QDetEvenWell"],
+  Cell[4816, 201, 158, 5, 70, "Text",
+   CellTags->"QDetEvenWell"]},
+ "QDetOddWell"->{
+  Cell[5011, 211, 56, 1, 70, "Section",
+   CellTags->"QDetOddWell"],
+  Cell[5070, 214, 89, 1, 70, "Usage",
+   CellTags->"QDetOddWell"],
+  Cell[5162, 217, 157, 5, 70, "Text",
+   CellTags->"QDetOddWell"]},
+ "QCriticalRadiusEvenWell"->{
+  Cell[5356, 227, 80, 1, 70, "Section",
+   CellTags->"QCriticalRadiusEvenWell"],
+  Cell[5439, 230, 113, 1, 70, "Usage",
+   CellTags->"QCriticalRadiusEvenWell"],
+  Cell[5555, 233, 169, 5, 70, "Text",
+   CellTags->"QCriticalRadiusEvenWell"]},
+ "QCriticalRadiusOddWell"->{
+  Cell[5761, 243, 78, 1, 70, "Section",
+   CellTags->"QCriticalRadiusOddWell"],
+  Cell[5842, 246, 111, 1, 70, "Usage",
+   CellTags->"QCriticalRadiusOddWell"],
+  Cell[5956, 249, 168, 5, 70, "Text",
+   CellTags->"QCriticalRadiusOddWell"]},
+ "QCriticalDepthEvenWell"->{
+  Cell[6161, 259, 78, 1, 70, "Section",
+   CellTags->"QCriticalDepthEvenWell"],
+  Cell[6242, 262, 111, 1, 70, "Usage",
+   CellTags->"QCriticalDepthEvenWell"],
+  Cell[6356, 265, 168, 5, 70, "Text",
+   CellTags->"QCriticalDepthEvenWell"]},
+ "QCriticalDepthOddWell"->{
+  Cell[6561, 275, 76, 1, 70, "Section",
+   CellTags->"QCriticalDepthOddWell"],
+  Cell[6640, 278, 109, 1, 70, "Usage",
+   CellTags->"QCriticalDepthOddWell"],
+  Cell[6752, 281, 167, 5, 70, "Text",
+   CellTags->"QCriticalDepthOddWell"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"QPlaneWaveToRight", 7241, 299},
+ {"QPlaneWaveToLeft", 7481, 306},
+ {"QReflectionCoefficientJump", 7729, 313},
+ {"QTransmissionCoefficientJump", 8011, 320},
+ {"QReflectionCoefficientWell", 8297, 327},
+ {"QTransmissionCoefficientWell", 8579, 334},
+ {"QTransitionMatrix", 8859, 341},
+ {"QSolutionWellToRight", 9109, 348},
+ {"QPsiEvenWell", 9360, 355},
+ {"QPsiOddWell", 9585, 362},
+ {"QDetEvenWell", 9808, 369},
+ {"QDetOddWell", 10033, 376},
+ {"QCriticalRadiusEvenWell", 10267, 383},
+ {"QCriticalRadiusOddWell", 10537, 390},
+ {"QCriticalDepthEvenWell", 10804, 397},
+ {"QCriticalDepthOddWell", 11070, 404}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 68, 1, 63, "Section",
+ CellTags->"QPlaneWaveToRight"],
+Cell[661, 26, 100, 1, 31, "Usage",
+ CellTags->"QPlaneWaveToRight"],
+Cell[764, 29, 163, 5, 23, "Text",
+ CellTags->"QPlaneWaveToRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[964, 39, 66, 1, 63, "Section",
+ CellTags->"QPlaneWaveToLeft"],
+Cell[1033, 42, 99, 1, 31, "Usage",
+ CellTags->"QPlaneWaveToLeft"],
+Cell[1135, 45, 162, 5, 23, "Text",
+ CellTags->"QPlaneWaveToLeft"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1334, 55, 86, 1, 63, "Section",
+ CellTags->"QReflectionCoefficientJump"],
+Cell[1423, 58, 127, 3, 31, "Usage",
+ CellTags->"QReflectionCoefficientJump"],
+Cell[1553, 63, 172, 5, 23, "Text",
+ CellTags->"QReflectionCoefficientJump"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1762, 73, 90, 1, 63, "Section",
+ CellTags->"QTransmissionCoefficientJump"],
+Cell[1855, 76, 131, 3, 31, "Usage",
+ CellTags->"QTransmissionCoefficientJump"],
+Cell[1989, 81, 174, 5, 23, "Text",
+ CellTags->"QTransmissionCoefficientJump"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2200, 91, 86, 1, 63, "Section",
+ CellTags->"QReflectionCoefficientWell"],
+Cell[2289, 94, 127, 3, 31, "Usage",
+ CellTags->"QReflectionCoefficientWell"],
+Cell[2419, 99, 172, 5, 23, "Text",
+ CellTags->"QReflectionCoefficientWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2628, 109, 90, 1, 63, "Section",
+ CellTags->"QTransmissionCoefficientWell"],
+Cell[2721, 112, 131, 3, 31, "Usage",
+ CellTags->"QTransmissionCoefficientWell"],
+Cell[2855, 117, 174, 5, 23, "Text",
+ CellTags->"QTransmissionCoefficientWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3066, 127, 68, 1, 63, "Section",
+ CellTags->"QTransitionMatrix"],
+Cell[3137, 130, 236, 5, 47, "Usage",
+ CellTags->"QTransitionMatrix"],
+Cell[3376, 137, 163, 5, 70, "Text",
+ CellTags->"QTransitionMatrix"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3576, 147, 74, 1, 70, "Section",
+ CellTags->"QSolutionWellToRight"],
+Cell[3653, 150, 107, 1, 70, "Usage",
+ CellTags->"QSolutionWellToRight"],
+Cell[3763, 153, 166, 5, 70, "Text",
+ CellTags->"QSolutionWellToRight"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3966, 163, 58, 1, 70, "Section",
+ CellTags->"QPsiEvenWell"],
+Cell[4027, 166, 91, 1, 70, "Usage",
+ CellTags->"QPsiEvenWell"],
+Cell[4121, 169, 158, 5, 70, "Text",
+ CellTags->"QPsiEvenWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4316, 179, 56, 1, 70, "Section",
+ CellTags->"QPsiOddWell"],
+Cell[4375, 182, 89, 1, 70, "Usage",
+ CellTags->"QPsiOddWell"],
+Cell[4467, 185, 157, 5, 70, "Text",
+ CellTags->"QPsiOddWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4661, 195, 58, 1, 70, "Section",
+ CellTags->"QDetEvenWell"],
+Cell[4722, 198, 91, 1, 70, "Usage",
+ CellTags->"QDetEvenWell"],
+Cell[4816, 201, 158, 5, 70, "Text",
+ CellTags->"QDetEvenWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5011, 211, 56, 1, 70, "Section",
+ CellTags->"QDetOddWell"],
+Cell[5070, 214, 89, 1, 70, "Usage",
+ CellTags->"QDetOddWell"],
+Cell[5162, 217, 157, 5, 70, "Text",
+ CellTags->"QDetOddWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5356, 227, 80, 1, 70, "Section",
+ CellTags->"QCriticalRadiusEvenWell"],
+Cell[5439, 230, 113, 1, 70, "Usage",
+ CellTags->"QCriticalRadiusEvenWell"],
+Cell[5555, 233, 169, 5, 70, "Text",
+ CellTags->"QCriticalRadiusEvenWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5761, 243, 78, 1, 70, "Section",
+ CellTags->"QCriticalRadiusOddWell"],
+Cell[5842, 246, 111, 1, 70, "Usage",
+ CellTags->"QCriticalRadiusOddWell"],
+Cell[5956, 249, 168, 5, 70, "Text",
+ CellTags->"QCriticalRadiusOddWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6161, 259, 78, 1, 70, "Section",
+ CellTags->"QCriticalDepthEvenWell"],
+Cell[6242, 262, 111, 1, 70, "Usage",
+ CellTags->"QCriticalDepthEvenWell"],
+Cell[6356, 265, 168, 5, 70, "Text",
+ CellTags->"QCriticalDepthEvenWell"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6561, 275, 76, 1, 70, "Section",
+ CellTags->"QCriticalDepthOddWell"],
+Cell[6640, 278, 109, 1, 70, "Usage",
+ CellTags->"QCriticalDepthOddWell"],
+Cell[6752, 281, 167, 5, 70, "Text",
+ CellTags->"QCriticalDepthOddWell"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,697 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     27483,        650]*)
+(*NotebookOutlinePosition[     28365,        681]*)
+(*  CellTagsIndexPosition[     28287,        675]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Dirac1D ", "Subsection",
+  CellTags->"VQM`Dirac1D`"],
+
+Cell["\<\
+This package provides code for solving the Dirac equation in one dimension (a two-by-two matrix-differential equation). For the free Dirac equation we use a fast Fourier transform. For the Dirac equation with an external field we use the Crank-Nicolson formula. \
+\>", "Text",
+  CellTags->"VQM`Dirac1D`"],
+
+Cell[BoxData[
+    FormBox[
+      StyleBox[
+        FrameBox[GridBox[{
+              {
+                StyleBox[\(QRelativisticEnergy[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ relativistic\ energy - \ 
+                    momentum\ relation . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QRelativisticVelocity[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ velocity\ as\ a\ \
+function\ of\ the\ momentum\ according\ to\ relativistic\ kinematics \
+. \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSignedEnergy[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(=\)\(Sign[k]*
+                      QRelativisticEnergy[
+                          k] . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSignedMomentum[en]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(relativistic\ relation\ between\ \
+momentum\ and\ energy . \ 
+                      Contains\ the\ factor\ Sign[
+                        en] . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\
+\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(aplus[en]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\(.\)\(\ \)\(Auxiliary\)\)\ function . \ 
+                        Part\ of\ the\ Foldy - 
+                    Wouthuysen\ matrix . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(aminus[en]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\(.\)\(\ \)\(Auxiliary\)\)\ function . \ 
+                        Part\ of\ the\ Foldy - 
+                    Wouthuysen\ matrix . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDiracMatrix1D[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ one - 
+                    dimensional\ Dirac\ operator\ in\ momentum\ space \
+. \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QProjectPositiveEnergy[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ projection\ onto\ the\ \
+eigenspace\ of\ QDiracMatrix1D[
+                      k]\ belonging\ to\ the\ positive\ eigenvalue . \
+\ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QProjectNegativeEnergy[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ projection\ onto\ the\ \
+eigenspace\ of\ QDiracMatrix1D[
+                      k]\ belonging\ to\ the\ negative\ eigenvalue . \
+\ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QMomentumSpacePropagator[k, t]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ matrix\ giving\ the\ \
+momentum - 
+                    space\ representation\ of\ the\ unitary\ time\ \
+evolution\ according\ to\ the\ free\ Dirac\ equation\ in\ one\ space \
+- dimensions . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QBaseSpinorRight[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ ' spinor - 
+                    amplitude'\ of\ a\ right - 
+                    moving\ plane\ wave\ of\ the\ Dirac\ equation\ in\
+\ one\ dimension . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QBaseSpinorLeft[k]\),
+                  FontFamily->"Courier"], 
+                StyleBox[\(\(\ \)\(is\ the\ ' spinor - 
+                    amplitude'\ of\ a\ left - 
+                    moving\ plane\ wave\ of\ the\ Dirac\ equation\ in\
+\ one\ dimension . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QBaseSpinorPos[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ ' spinor - 
+                    amplitude'\ of\ a\ positive - 
+                    energy\ plane\ wave\ of\ the\ Dirac\ equation\ in\
+\ one\ dimension . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QBaseSpinorNeg[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ the\ ' spinor - 
+                    amplitude'\ of\ a\ negative - 
+                    energy\ plane\ wave\ of\ the\ Dirac\ equation\ in\
+\ one\ dimension . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDiracPlaneWaveRight[k, x]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(or\ QDiracPlaneWaveRight[k, x, 
+                        t]\ gives\ a\ plane - 
+                    wave\ solution\ of\ the\ one - 
+                    dimensional\ Dirac\ equation, \ 
+                  corresponding\ to\ a\ beam\ of\ particles\ with\ \
+positive\ velocity . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDiracPlaneWaveLeft[k, x]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(or\ QDiracPlaneWaveLeft[k, x, 
+                        t]\ gives\ a\ plane - 
+                    wave\ solution\ of\ the\ one - 
+                    dimensional\ Dirac\ equation, \ 
+                  corresponding\ to\ a\ beam\ of\ particles\ with\ \
+negative\ velocity . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDiracPlaneWavePos[k, x]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(or\ QDiracPlaneWavePos[k, x, 
+                        t]\ gives\ a\ plane - 
+                    wave\ solution\ of\ the\ one - 
+                    dimensional\ Dirac\ equation, \ 
+                  corresponding\ to\ particles\ with\ momentum\ k\ \
+and\ positive\ energy . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\
+\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDiracPlaneWaveNeg[k, x]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(or\ QDiracPlaneWaveNeg[k, x, 
+                        t]\ gives\ a\ plane - 
+                    wave\ solution\ of\ the\ one - 
+                    dimensional\ Dirac\ equation, \ 
+                  corresponding\ to\ particles\ with\ momentum\ k\ \
+and\ negative\ energy . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\
+\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QFWMatrix[k]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(and\ QInverseFWMatrix[
+                      k]\ is\ the\ unitary\ matrix\ \ \((resp . \ 
+                          its\ inverse)\)\ transforming\ \
+QDiracMatrix1D[
+                      k]\ to\ a\ diagonal\ form . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["Constant",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(representing\ the\ velocity\ of\ \
+light . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox["Constant",
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(representing\ the\ mass\ of\ the\ \
+particle . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDiracEquation1D[psi[x, t], {x, t}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(==\)\(0\ is\ the\ one - 
+                      dimensional\ Dirac\ equation\ for\ the\ two - 
+                      component\ spinor\ function\ psi[x, 
+                            t] . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QDiracOperator1D[psi[x], x]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(==\)\(0\ gives\ the\ action\ one - 
+                      dimensional\ Dirac\ operator\ on\ the\ two - 
+                      component\ spinor\ function\ psi[
+                            x] . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QTridiagonalBlockSolve[a_List, \ b_List, \ 
+                    c_List, \ r_List]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(is\ a\ variant\ of\ \
+TridiagonalSolve\ in\ the\ standard\ package\ \
+LinearAlgebra`Tridiagonal` . \ a, b, 
+                  c\ are\ lists\ of\ 2\ by\ 2\ matrices, \ 
+                  Length[b] = \ \(Length[c] + 1 = Length[a] + 1\), \ 
+                  and\ r\ is\ a\ list\ of\ two - 
+                    dimensional\ vectors, \ 
+                  Length[r] = 
+                    Length[b] . \ If\ M[a, b, c]\ is\ the\ block - 
+                      tridiagonal\ matrix\ with\ b\ as\ the\ \
+diagonal, \ 
+                  then\ QTridiagonalBlockSolve\ gives\ the\ solution\ \
+of\ M . x = r\ as\ a\ list\ x\ of\ two - 
+                      dimensional\ vectors . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QDiracTimeStep1D[psi_List, \ pot_List, \ 
+                    dt, \ dx]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(performs\ a\ time - 
+                    step\ dt\ of\ the\ time - 
+                    evolution\ defined\ by\ the\ free, \ 
+                  one - dimensional\ Dirac\ equation\ with\ potential \
+- matrix\ pot . \ psi\ is\ given\ as\ a\ list\ of\ two - 
+                    dimensional\ vectors\ that\ represent\ the\ \
+values\ of\ the\ initial\ spinor\ on\ the\ points\ of\ a\ regular\ \
+grid\ with\ grid - distance\ dx . \ 
+                        pot\ is\ a\ list\ of\ 2\ by\ 2\ matrices\ \
+representing\ the\ values\ of\ a\ potential\ matrix\ on\ the\ grid\ \
+points . \ The\ algorithm\ uses\ a\ Crank - 
+                    Nicolson\ formula . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QInitializeDirac1D[Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(must\ be\ called\ before\ \
+executing\ any\ of\ the\ QMomentumSpaceSpinor - \ 
+                    or\ QPositionSpaceSpinor - \ 
+                    commands . \ 
+                        It\ produces\ some\ lists\ \((global\ \
+variables)\)\ which\ are\ needed\ by\ all\ of\ these\ commands\ and\ \
+which\ are\ pre - 
+                    calculated\ once\ and\ for\ all\ for\ better\ \
+performance . \ 
+                        Kpoints\ is\ the\ grid\ of\ points\ in\ \
+momentum\ space, \ 
+                  where\ the\ initial\ spinor\ is\ given\ as\ a\ list\
+\ of\ spinor - 
+                    values . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinorPos[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ positive - 
+                    energy\ part\ of\ QMomentumSpaceSpinor[t, 
+                          Kvalues, 
+                          Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\
+\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinorNeg[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ negative - 
+                    energy\ part\ of\ QMomentumSpaceSpinor[t, 
+                          Kvalues, 
+                          Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\
+\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinorRight[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+positive\ velocity\ of\ QMomentumSpaceSpinor[t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinorLeft[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+negative\ velocity\ of\ QMomentumSpaceSpinor[t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinorPosRight[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+positive\ energy\ and\ positive\ velocity\ of\ QMomentumSpaceSpinor[
+                        t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinorPosLeft[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+positive\ energy\ and\ negative\ velocity\ of\ QMomentumSpaceSpinor[
+                        t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinorNegRight[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+negative\ energy\ and\ positive\ velocity\ of\ QMomentumSpaceSpinor[
+                        t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinorNegLeft[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+negative\ energy\ and\ negative\ velocity\ of\ QMomentumSpaceSpinor[
+                        t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QMomentumSpaceSpinor[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ solution\ of\ the\ \
+one - dimensional\ Dirac\ equation\ in\ momentum\ space\ at\ time\ t, \
+\ given\ an\ initial\ spinor\ Kvalues\ on\ a\ grid\ Kpoints\ in\ \
+momentum\ space . \ 
+                      The\ result\ is\ given\ as\ a\ list\ of\ spinor\
+\ values\ \((that\ is, \ 
+                        a\ list\ of\ two - 
+                          dimensional\ complex\ vectors)\) . \ \
+\(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinor[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ solution\ of\ the\ one \
+- dimensional\ Dirac\ equation\ in\ position\ space\ at\ time\ t, \ 
+                  given\ an\ initial\ spinor\ Kvalues\ on\ a\ grid\ \
+Kpoints\ in\ momentum\ space . \ 
+                      The\ result\ is\ given\ as\ a\ list\ of\ spinor\
+\ values\ \((that\ is, \ 
+                        a\ list\ of\ two - 
+                          dimensional\ complex\ vectors)\) . \ 
+                      These\ values\ give\ the\ solution\ on\ the\ \
+set\ of\ points\ described\ by\ QPositionSpaceGrid[
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinorPos[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ positive - 
+                    energy\ part\ of\ QPositionSpaceSpinor[t, 
+                          Kvalues, 
+                          Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\
+\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinorNeg[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ negative - 
+                    energy\ part\ of\ QPositionSpaceSpinor[t, 
+                          Kvalues, 
+                          Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\
+\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinorRight[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+positive\ velocity\ of\ QPositionSpaceSpinorPos[t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinorLeft[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+negative\ velocity\ of\ QPositionSpaceSpinor[t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinorPosRight[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+positive\ energy\ and\ positive\ velocity\ of\ QPositionSpaceSpinor[
+                        t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinorPosLeft[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+positive\ energy\ and\ negative\ velocity\ of\ QPositionSpaceSpinor[
+                        t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinorNegRight[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+negative\ energy\ and\ positive\ velocity\ of\ QPositionSpaceSpinor[
+                        t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QPositionSpaceSpinorNegLeft[t, Kvalues, 
+                    Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ part\ with\ \
+negative\ energy\ and\ negative\ velocity\ of\ QPositionSpaceSpinor[
+                        t, Kvalues, 
+                        Kpoints] . \ \(Package : \ \(\(VQM`Dirac1D`\)\
+\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QPositionSpaceGrid[Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ grid\ of\ points\ in\ \
+position\ space, \ 
+                  where\ the\ solution\ is\ determined\ by\ \
+QPositionSpaceSpinor . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QPositionSpaceInterval[Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ interval\ in\ position\
+\ space, \ 
+                  where\ the\ solution\ is\ determined\ by\ \
+QPositionSpaceSpinor . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QPositionSpaceStep[Kpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(gives\ the\ step\ size\ of\ the\ \
+grid\ in\ position\ space, \ 
+                  where\ the\ solution\ is\ determined\ by\ \
+QPositionSpaceSpinor . \ \(Package : \ \
+\(\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QComputeMeanPosition[Xvalues, Xpoints]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ mean\ position\ of\ \
+a\ spinor\ that\ is\ given\ by\ a\ list\ of\ spinor - 
+                    values\ on\ points\ Xpoints\ of\ the\ one - 
+                    dimensional\ position\ space . \ \(Package : \ \(\
+\(VQM`Dirac1D`\)\(.\)\)\)\)\),
+                  FontFamily->"Times"]},
+              {
+                
+                StyleBox[\(QInnerProductList[spinorlist1, 
+                    spinorlist2]\),
+                  FontFamily->"Courier"], 
+                StyleBox["",
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QSpinorFT[spinorlist, {x1, x2}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ component - 
+                    wise\ Fourier\ transform\ of\ the\ spinorlist, \ 
+                  assuming\ that\ spinorlist\ are\ C^2 - 
+                    values\ given\ on\ a\ uniform\ grid\ of\ points\ \
+in\ the\ interval\ {x1, x2} . \ For\ example, \ 
+                  spinorlist\ could\ be\ the\ numerical\ \
+approximation\ of\ a\ spinor - wave\ function . \ The\ Fourier - 
+                    transform\ is\ computed\ via\ a\ fast\ Fourier\ \
+transform\ method\ provided\ by\ the\ package\ FastFourier . 
+                        m . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\
+\)\)\),
+                  FontFamily->"Times"]},
+              {
+                StyleBox[\(QInverseSpinorFT[spinorlist, {k1, k2}]\),
+                  FontFamily->"Courier"], 
+                
+                StyleBox[\(\(\ \)\(computes\ the\ component - 
+                    wise\ inverse\ Fourier\ transform\ of\ the\ \
+spinorlist, \ assuming\ that\ spinorlist\ are\ C^2 - 
+                    values\ given\ on\ a\ uniform\ grid\ of\ points\ \
+in\ the\ interval\ {k1, k2} . \ For\ example, \ 
+                  spinorlist\ could\ be\ the\ numerical\ \
+approximation\ of\ a\ spinor - 
+                    wave\ function\ in\ momentum\ space . \ 
+                        The\ inverse\ Fourier - 
+                    transform\ is\ computed\ via\ a\ fast\ Fourier\ \
+transform\ method\ provided\ by\ the\ package\ FastFourier . 
+                        m . \ \(Package : \ \(\(VQM`Dirac1D`\)\(.\)\)\
+\)\)\),
+                  FontFamily->"Times"]}
+              },
+            ColumnAlignments->{Right, Left},
+            RowLines->False]],
+        "2ColumnBox"], TraditionalForm]], "Text",
+  CellTags->"VQM`Dirac1D`"]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 961}},
+StyleDefinitions -> "HelpBrowser.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "VQM`Dirac1D`"->{
+    Cell[1754, 51, 58, 1, 70, "Subsection",
+      CellTags->"VQM`Dirac1D`"],
+    Cell[1815, 54, 314, 3, 70, "Text",
+      CellTags->"VQM`Dirac1D`"],
+    Cell[2132, 59, 25347, 589, 70, "Text",
+      CellTags->"VQM`Dirac1D`"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"VQM`Dirac1D`", 28036, 664}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 58, 1, 70, "Subsection",
+  CellTags->"VQM`Dirac1D`"],
+Cell[1815, 54, 314, 3, 70, "Text",
+  CellTags->"VQM`Dirac1D`"],
+Cell[2132, 59, 25347, 589, 70, "Text",
+  CellTags->"VQM`Dirac1D`"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)

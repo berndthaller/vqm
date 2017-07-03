@@ -1,0 +1,1208 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     35587,       1198]
+NotebookOptionsPosition[     20210,        712]
+NotebookOutlinePosition[     28670,        965]
+CellTagsIndexPosition[     27633,        932]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QNorm", "Section",
+ CellTags->"QNorm"],
+
+Cell["\<\
+QNorm[spinor] determines the norm of a (complex) vector. Package: \
+VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QNorm"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QNorm"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QNormalize", "Section",
+ CellTags->"QNormalize"],
+
+Cell["\<\
+QNormalize[spinor] returns a (complex) vector with norm 1. Package: \
+VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QNormalize"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QNormalize"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["$QSpinBasis", "Section",
+ CellTags->"$QSpinBasis"],
+
+Cell["\<\
+Gives the standard reference basis in the two-dimensional complex linear \
+space. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"$QSpinBasis"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"$QSpinBasis"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSetSpinBasis", "Section",
+ CellTags->"QSetSpinBasis"],
+
+Cell["\<\
+QSetSpinBasis[{vec1,vec2}] defines QSpinBasis to consist of two complex unit \
+vectors in the direction of vec1 and vec2. The complex 2-vectors vec1 and \
+vec2 must be orthogonal. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSetSpinBasis"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSetSpinBasis"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorToComponents", "Section",
+ CellTags->"QSpinorToComponents"],
+
+Cell["\<\
+QSpinorToComponents[spinor] returns the components of the complex vector \
+'spinor' (which is given with respect to the reference basis $QSpinBasis) \
+with respect to the basis QSpinBasis (or the basis specified by the \
+QUseBasis-option. Hence QSpinorToComponents[spinor].QSpinBasis == spinor. \
+Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSpinorToComponents"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorToComponents"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QComponentsToSpinor", "Section",
+ CellTags->"QComponentsToSpinor"],
+
+Cell["\<\
+QComponentsToSpinor[{c1,c2}] gives the spinor in $QSpinBasis that has the \
+components c1 and c2 with respect to QSpinBasis (or the basis specified by \
+the QUseBasis-option). QComponentsToSpinor[{c1,c2}] == {c1,c2}.QSpinBasis. \
+Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QComponentsToSpinor"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QComponentsToSpinor"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QProjectUp", "Section",
+ CellTags->"QProjectUp"],
+
+Cell["\<\
+QProjectUp[spinor] projects a spinor into the direction of the first basis \
+vector of QSpinBasis (i.e., into the current 'up-direction'). Package: \
+VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QProjectUp"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QProjectUp"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QProjectDown", "Section",
+ CellTags->"QProjectDown"],
+
+Cell["\<\
+QProjectDown[spinor] projects a spinor into the direction of the second basis \
+vector of QSpinBasis (i.e., into the current 'down-direction'). Package: \
+VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QProjectDown"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QProjectDown"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QProbabilityUp", "Section",
+ CellTags->"QProbabilityUp"],
+
+Cell["\<\
+QProbabilityUp[spinor] gives the probability that the spinor has spin-up with \
+respect to the QSpinBasis. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QProbabilityUp"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QProbabilityUp"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorBarDiagram", "Section",
+ CellTags->"QSpinorBarDiagram"],
+
+Cell["\<\
+QSpinorBarDiagram[spinor,opts] gives a bar-diagram showing the components of \
+the spinor with respect to the current QSpinBasis. The options are \
+Options[Graphics]. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSpinorBarDiagram"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorBarDiagram"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QVectorToHermitianMatrix", "Section",
+ CellTags->"QVectorToHermitianMatrix"],
+
+Cell["\<\
+QVectorToHermitianMatrix[{k0,k1,k2,k3}] = QIdentity2 * k0 + Sum[QPauliSigma_i \
+* k_i, {i,1,3}]. Converts a four-dimensional real vector into a Hermitian 2x2 \
+matrix. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QVectorToHermitianMatrix"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QVectorToHermitianMatrix"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QVectorToDensityMatrix", "Section",
+ CellTags->"QVectorToDensityMatrix"],
+
+Cell["\<\
+QVectorToDensityMatrix[{k1,k2,k3}] = 1/2 (QIdentity2+Sum[QPauliSigma_i * k_i, \
+{i,1,3}]). Converts a three-dimensional real vector into a Hermitian 2x2 \
+matrix with trace 1 (a density matrix). Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QVectorToDensityMatrix"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QVectorToDensityMatrix"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinHamiltonian", "Section",
+ CellTags->"QSpinHamiltonian"],
+
+Cell["\<\
+QSpinHamiltonian[{k0,k1,k2,k3}] = QIdentity2 * k0 + Sum[QPauliSigma_i * k_i, \
+{i,1,3}]. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSpinHamiltonian"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinHamiltonian"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorUp", "Section",
+ CellTags->"QSpinorUp"],
+
+Cell["\<\
+QSpinorUp[{k1,k2,k3}] is the two-dimensional complex vector describing 'spin \
+up' in the direction defined by k = {k1,k2,k3}. Normalized eigenvector of \
+(QPauliSigmaV . k) belonging to eigenvalue +|k|. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSpinorUp"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorUp"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorDown", "Section",
+ CellTags->"QSpinorDown"],
+
+Cell["\<\
+QSpinorDown[{k1,k2,k3}] is the two-dimensional complex vector describing \
+'spin down' in the direction defined by k = {k1,k2,k3}. Normalized \
+eigenvector of (QPauliSigmaV . k) belonging to eigenvalue -|k|. Package: \
+VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSpinorDown"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorDown"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QConjSpinorUp", "Section",
+ CellTags->"QConjSpinorUp"],
+
+Cell["QConjSpinorUp[{k1,k2,k3}]. Package: VQM`Spinors`.", "Usage",
+ CellTags->"QConjSpinorUp"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QConjSpinorUp"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QConjSpinorDown", "Section",
+ CellTags->"QConjSpinorDown"],
+
+Cell["QConjSpinorDown[{k1,k2,k3}]. Package: VQM`Spinors`.", "Usage",
+ CellTags->"QConjSpinorDown"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QConjSpinorDown"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorHarmonicUp", "Section",
+ CellTags->"QSpinorHarmonicUp"],
+
+Cell["\<\
+QSpinorHarmonicUp[j,m,{theta,phi}] gives the spherical harmonic spinor with \
+spin parallel to the orbital angular momentum. It is an eigenfunction of the \
+angular momentum operators J^2, L^2, J_3, and L.S. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSpinorHarmonicUp"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorHarmonicUp"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorHarmonicDown", "Section",
+ CellTags->"QSpinorHarmonicDown"],
+
+Cell["\<\
+QSpinorHarmonicDown[j,m,{theta,phi}] gives the spherical harmonic spinor with \
+spin antiparallel to the orbital angular momentum. It is an eigenfunction of \
+the angular momentum operators J^2, L^2, J_3, and L.S. Package: VQM`Spinors`.\
+\
+\>", "Usage",
+ CellTags->"QSpinorHarmonicDown"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorHarmonicDown"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorToVector", "Section",
+ CellTags->"QSpinorToVector"],
+
+Cell["\<\
+QSpinorToVector[{z1,z2}] defines a real three-dimensional vector in the \
+spin-up direction of psi = {z1,z2}. The vector is obtained from the \
+expectation value of QPauliSigmaV in the state defined by psi = {z1,z2}. The \
+length of the vector is Abs[psi]^2. The spinor {z1,z2} must be nonzero. \
+Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSpinorToVector"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QVectorLength", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "QVectorLength", " ", "is", " ", "an", " ", "option", " ", "for", 
+            " ", "QSpinorToVector", " ", "and", " ", 
+            RowBox[{"QVectorToSpinor", ".", " ", "Default"}], " ", "is", " ", 
+            "QVectorLength"}], "->", 
+           RowBox[{
+            RowBox[{
+            "2", " ", "where", " ", "the", " ", "vector", " ", "has", " ", 
+             "the", " ", "length"}], " ", "|", "spinor", "|", 
+            RowBox[{
+             RowBox[{"^", "2"}], " ", "and", " ", "the", " ", "spinor", " ", 
+             "has"}], " ", "|", "spinor", "|"}]}], " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Sqrt", "[", 
+             RowBox[{"|", "vector", "|"}], "]"}], ".", " ", "QVectorLength"}],
+            "->", 
+           RowBox[{
+           "1", " ", "gives", " ", "a", " ", "unit", " ", "vector", " ", 
+            RowBox[{"resp", ".", " ", "spinor"}]}]}]}], ",", " ", 
+         RowBox[{
+          RowBox[{"and", " ", "QVectorLength"}], "->", 
+          RowBox[{
+           RowBox[{
+           "3", " ", "generates", " ", "the", " ", "vector", " ", "with", " ",
+             "length"}], " ", "|", "spinor", "|", " ", 
+           RowBox[{
+           "and", " ", "the", " ", "spinor", " ", "with", " ", "length"}], 
+           " ", "|", "vector", "|", 
+           RowBox[{".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Spinors`", "."}]}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"QSpinorToVector"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorToVector"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QVectorToSpinor", "Section",
+ CellTags->"QVectorToSpinor"],
+
+Cell["\<\
+QVectorToSpinor[{x,y,z}] defines a spinor psi which is spin-up in the \
+direction defined by {x,y,z}. The norm of the spinor is related to the norm \
+of the vector by |{x,y,z}|=Abs[psi]^2. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QVectorToSpinor"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   FrameBox[
+    StyleBox[GridBox[{
+       {"QVectorLength", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "QVectorLength", " ", "is", " ", "an", " ", "option", " ", "for", 
+            " ", "QSpinorToVector", " ", "and", " ", 
+            RowBox[{"QVectorToSpinor", ".", " ", "Default"}], " ", "is", " ", 
+            "QVectorLength"}], "->", 
+           RowBox[{
+            RowBox[{
+            "2", " ", "where", " ", "the", " ", "vector", " ", "has", " ", 
+             "the", " ", "length"}], " ", "|", "spinor", "|", 
+            RowBox[{
+             RowBox[{"^", "2"}], " ", "and", " ", "the", " ", "spinor", " ", 
+             "has"}], " ", "|", "spinor", "|"}]}], " ", "=", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Sqrt", "[", 
+             RowBox[{"|", "vector", "|"}], "]"}], ".", " ", "QVectorLength"}],
+            "->", 
+           RowBox[{
+           "1", " ", "gives", " ", "a", " ", "unit", " ", "vector", " ", 
+            RowBox[{"resp", ".", " ", "spinor"}]}]}]}], ",", " ", 
+         RowBox[{
+          RowBox[{"and", " ", "QVectorLength"}], "->", 
+          RowBox[{
+           RowBox[{
+           "3", " ", "generates", " ", "the", " ", "vector", " ", "with", " ",
+             "length"}], " ", "|", "spinor", "|", " ", 
+           RowBox[{
+           "and", " ", "the", " ", "spinor", " ", "with", " ", "length"}], 
+           " ", "|", "vector", "|", 
+           RowBox[{".", " ", 
+            RowBox[{"Package", ":", " ", 
+             RowBox[{"VQM`Spinors`", "."}]}]}]}]}]}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}],
+     GridBoxOptions->{
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->"QVectorToSpinor"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QVectorToSpinor"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QExtractPhase", "Section",
+ CellTags->"QExtractPhase"],
+
+Cell["\<\
+QExtractPhase[psi] returns a real number arg for any nonzero psi={z1,z2}. The \
+number arg is a phase determined from comparison with QSpinorUp (with respect \
+to the direction defined by psi). Since QSpinorUp is defined with a real \
+first component, arg is just the argument of z1. For a normalized spinor psi, \
+we have psi=Exp[I arg] QSpinorUp[QSpinorToVector[psi]]. Package: \
+VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QExtractPhase"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QExtractPhase"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QHermitianMatrixToVector", "Section",
+ CellTags->"QHermitianMatrixToVector"],
+
+Cell["\<\
+QHermitianMatrixToVector[{{z1,z2},{z3,z4}}] converts a  Hermitian two-by-two \
+matrix into a real, four-dimensional vector, by writing the matrix as a \
+linear combination of the identity and the Pauli matrices. Package: \
+VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QHermitianMatrixToVector"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QHermitianMatrixToVector"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QDensityMatrixToVector", "Section",
+ CellTags->"QDensityMatrixToVector"],
+
+Cell["\<\
+QDensityMatrixToVector[{{z1,z2},{z3,z4}}] converts a  Hermitian two-by-two \
+matrix into a real, three-dimensional vector, assuming that the matrix is a \
+density matrix (i.e., has trace 1). Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QDensityMatrixToVector"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QDensityMatrixToVector"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QSpinorToArrow", "Section",
+ CellTags->"QSpinorToArrow"],
+
+Cell["\<\
+QSpinorToArrow[pt,spinor] gives a list of lines representing an arrow that \
+corresponds to the spinor as defined in QSpinorToVector. The argument pt is \
+optional and defaults to {0,0,0}. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QSpinorToArrow"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QSpinorToArrow"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QRotationSO3", "Section",
+ CellTags->"QRotationSO3"],
+
+Cell["\<\
+QRotationSO3[3vector] is an orthogonal 3 by 3 matrix that rotates a vector \
+around the axis defined by the direction of 3vector through an angle defined \
+by the size of 3vector. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QRotationSO3"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QRotationSO3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QRotationSU2", "Section",
+ CellTags->"QRotationSU2"],
+
+Cell["\<\
+QRotationSU2[3vector] is a unitary 2 by 2 matrix that rotates a spinor around \
+the axis defined by the direction of 3vector through an angle defined by the \
+size of 3vector. Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QRotationSU2"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QRotationSU2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QVisualizeSpinor", "Section",
+ CellTags->"QVisualizeSpinor"],
+
+Cell["\<\
+QVisualizeSpinor[spinor] converts a spinor into a magnetic needle and \
+displays it together with other graphics elements whose appearance is \
+controlled by the options QDrawUnitSphere, QDrawAxes, QCoordinateCube, \
+QCoordinateCircles. Behavior for QNeedleStyle->True (default): The needle \
+points from the coordinate origin to the point QSpinorToVector[spinor]. The \
+upper (lower) half of the needle has a color determined from the upper \
+(lower) component of the spinor via QComplexToColor (from the package \
+VQM`ComplexPlot`). Behavior for QNeedleStyle->False. An arrow is shown \
+instead of the needle. Giving the option QHeadColor->QExtractPhase colors the \
+head of the arrow by the phase of the first component of the spinor. You can \
+give all options from QVisualizeVector (from the package \
+VQM`VisualizeVector`). Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QVisualizeSpinor"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QVisualizeSpinor"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["QVisualizeDensityMatrix", "Section",
+ CellTags->"QVisualizeDensityMatrix"],
+
+Cell["\<\
+QVisualizeDensityMatrix[matrix] converts a Hermitian matrix with trace 1 into \
+an arrow graphics (with the help of QDensityMatrixToVector) and displays it \
+together with other graphics elements whose appearance is controlled by the \
+options QDrawUnitSphere, QDrawAxes, QCoordinateCube, QCoordinateCircles. \
+Package: VQM`Spinors`.\
+\>", "Usage",
+ CellTags->"QVisualizeDensityMatrix"],
+
+Cell[TextData[{
+ "This command is contained in the package ",
+ ButtonBox["VQM`Spinors`",
+  BaseStyle->"AddOnsLink"]
+}], "Text",
+ CellTags->"QVisualizeDensityMatrix"]
+}, Open  ]]
+},
+WindowSize->{615, 750},
+WindowMargins->{{388, Automatic}, {Automatic, 91}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+StyleDefinitions->"HelpBrowser.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "QNorm"->{
+  Cell[590, 23, 44, 1, 63, "Section",
+   CellTags->"QNorm"],
+  Cell[637, 26, 126, 4, 31, "Usage",
+   CellTags->"QNorm"],
+  Cell[766, 32, 147, 5, 23, "Text",
+   CellTags->"QNorm"]},
+ "QNormalize"->{
+  Cell[950, 42, 54, 1, 63, "Section",
+   CellTags->"QNormalize"],
+  Cell[1007, 45, 133, 4, 31, "Usage",
+   CellTags->"QNormalize"],
+  Cell[1143, 51, 152, 5, 23, "Text",
+   CellTags->"QNormalize"]},
+ "$QSpinBasis"->{
+  Cell[1332, 61, 56, 1, 63, "Section",
+   CellTags->"$QSpinBasis"],
+  Cell[1391, 64, 155, 4, 31, "Usage",
+   CellTags->"$QSpinBasis"],
+  Cell[1549, 70, 153, 5, 23, "Text",
+   CellTags->"$QSpinBasis"]},
+ "QSetSpinBasis"->{
+  Cell[1739, 80, 60, 1, 63, "Section",
+   CellTags->"QSetSpinBasis"],
+  Cell[1802, 83, 255, 5, 47, "Usage",
+   CellTags->"QSetSpinBasis"],
+  Cell[2060, 90, 155, 5, 23, "Text",
+   CellTags->"QSetSpinBasis"]},
+ "QSpinorToComponents"->{
+  Cell[2252, 100, 72, 1, 63, "Section",
+   CellTags->"QSpinorToComponents"],
+  Cell[2327, 103, 378, 7, 79, "Usage",
+   CellTags->"QSpinorToComponents"],
+  Cell[2708, 112, 161, 5, 23, "Text",
+   CellTags->"QSpinorToComponents"]},
+ "QComponentsToSpinor"->{
+  Cell[2906, 122, 72, 1, 63, "Section",
+   CellTags->"QComponentsToSpinor"],
+  Cell[2981, 125, 311, 6, 63, "Usage",
+   CellTags->"QComponentsToSpinor"],
+  Cell[3295, 133, 161, 5, 23, "Text",
+   CellTags->"QComponentsToSpinor"]},
+ "QProjectUp"->{
+  Cell[3493, 143, 54, 1, 70, "Section",
+   CellTags->"QProjectUp"],
+  Cell[3550, 146, 213, 5, 70, "Usage",
+   CellTags->"QProjectUp"],
+  Cell[3766, 153, 152, 5, 70, "Text",
+   CellTags->"QProjectUp"]},
+ "QProjectDown"->{
+  Cell[3955, 163, 58, 1, 70, "Section",
+   CellTags->"QProjectDown"],
+  Cell[4016, 166, 220, 5, 70, "Usage",
+   CellTags->"QProjectDown"],
+  Cell[4239, 173, 154, 5, 70, "Text",
+   CellTags->"QProjectDown"]},
+ "QProbabilityUp"->{
+  Cell[4430, 183, 62, 1, 70, "Section",
+   CellTags->"QProbabilityUp"],
+  Cell[4495, 186, 183, 4, 70, "Usage",
+   CellTags->"QProbabilityUp"],
+  Cell[4681, 192, 156, 5, 70, "Text",
+   CellTags->"QProbabilityUp"]},
+ "QSpinorBarDiagram"->{
+  Cell[4874, 202, 68, 1, 70, "Section",
+   CellTags->"QSpinorBarDiagram"],
+  Cell[4945, 205, 246, 5, 70, "Usage",
+   CellTags->"QSpinorBarDiagram"],
+  Cell[5194, 212, 159, 5, 70, "Text",
+   CellTags->"QSpinorBarDiagram"]},
+ "QVectorToHermitianMatrix"->{
+  Cell[5390, 222, 82, 1, 70, "Section",
+   CellTags->"QVectorToHermitianMatrix"],
+  Cell[5475, 225, 254, 5, 70, "Usage",
+   CellTags->"QVectorToHermitianMatrix"],
+  Cell[5732, 232, 166, 5, 70, "Text",
+   CellTags->"QVectorToHermitianMatrix"]},
+ "QVectorToDensityMatrix"->{
+  Cell[5935, 242, 78, 1, 70, "Section",
+   CellTags->"QVectorToDensityMatrix"],
+  Cell[6016, 245, 279, 5, 70, "Usage",
+   CellTags->"QVectorToDensityMatrix"],
+  Cell[6298, 252, 164, 5, 70, "Text",
+   CellTags->"QVectorToDensityMatrix"]},
+ "QSpinHamiltonian"->{
+  Cell[6499, 262, 66, 1, 70, "Section",
+   CellTags->"QSpinHamiltonian"],
+  Cell[6568, 265, 167, 4, 70, "Usage",
+   CellTags->"QSpinHamiltonian"],
+  Cell[6738, 271, 158, 5, 70, "Text",
+   CellTags->"QSpinHamiltonian"]},
+ "QSpinorUp"->{
+  Cell[6933, 281, 52, 1, 70, "Section",
+   CellTags->"QSpinorUp"],
+  Cell[6988, 284, 275, 5, 70, "Usage",
+   CellTags->"QSpinorUp"],
+  Cell[7266, 291, 151, 5, 70, "Text",
+   CellTags->"QSpinorUp"]},
+ "QSpinorDown"->{
+  Cell[7454, 301, 56, 1, 70, "Section",
+   CellTags->"QSpinorDown"],
+  Cell[7513, 304, 283, 6, 70, "Usage",
+   CellTags->"QSpinorDown"],
+  Cell[7799, 312, 153, 5, 70, "Text",
+   CellTags->"QSpinorDown"]},
+ "QConjSpinorUp"->{
+  Cell[7989, 322, 60, 1, 70, "Section",
+   CellTags->"QConjSpinorUp"],
+  Cell[8052, 325, 94, 1, 70, "Usage",
+   CellTags->"QConjSpinorUp"],
+  Cell[8149, 328, 155, 5, 70, "Text",
+   CellTags->"QConjSpinorUp"]},
+ "QConjSpinorDown"->{
+  Cell[8341, 338, 64, 1, 70, "Section",
+   CellTags->"QConjSpinorDown"],
+  Cell[8408, 341, 98, 1, 70, "Usage",
+   CellTags->"QConjSpinorDown"],
+  Cell[8509, 344, 157, 5, 70, "Text",
+   CellTags->"QConjSpinorDown"]},
+ "QSpinorHarmonicUp"->{
+  Cell[8703, 354, 68, 1, 70, "Section",
+   CellTags->"QSpinorHarmonicUp"],
+  Cell[8774, 357, 287, 5, 70, "Usage",
+   CellTags->"QSpinorHarmonicUp"],
+  Cell[9064, 364, 159, 5, 70, "Text",
+   CellTags->"QSpinorHarmonicUp"]},
+ "QSpinorHarmonicDown"->{
+  Cell[9260, 374, 72, 1, 70, "Section",
+   CellTags->"QSpinorHarmonicDown"],
+  Cell[9335, 377, 297, 6, 70, "Usage",
+   CellTags->"QSpinorHarmonicDown"],
+  Cell[9635, 385, 161, 5, 70, "Text",
+   CellTags->"QSpinorHarmonicDown"]},
+ "QSpinorToVector"->{
+  Cell[9833, 395, 64, 1, 70, "Section",
+   CellTags->"QSpinorToVector"],
+  Cell[9900, 398, 374, 7, 70, "Usage",
+   CellTags->"QSpinorToVector"],
+  Cell[10277, 407, 1984, 49, 70, "Text",
+   CellTags->"QSpinorToVector"],
+  Cell[12264, 458, 157, 5, 70, "Text",
+   CellTags->"QSpinorToVector"]},
+ "QVectorToSpinor"->{
+  Cell[12458, 468, 64, 1, 70, "Section",
+   CellTags->"QVectorToSpinor"],
+  Cell[12525, 471, 266, 5, 70, "Usage",
+   CellTags->"QVectorToSpinor"],
+  Cell[12794, 478, 1984, 49, 70, "Text",
+   CellTags->"QVectorToSpinor"],
+  Cell[14781, 529, 157, 5, 70, "Text",
+   CellTags->"QVectorToSpinor"]},
+ "QExtractPhase"->{
+  Cell[14975, 539, 60, 1, 70, "Section",
+   CellTags->"QExtractPhase"],
+  Cell[15038, 542, 448, 8, 70, "Usage",
+   CellTags->"QExtractPhase"],
+  Cell[15489, 552, 155, 5, 70, "Text",
+   CellTags->"QExtractPhase"]},
+ "QHermitianMatrixToVector"->{
+  Cell[15681, 562, 82, 1, 70, "Section",
+   CellTags->"QHermitianMatrixToVector"],
+  Cell[15766, 565, 300, 6, 70, "Usage",
+   CellTags->"QHermitianMatrixToVector"],
+  Cell[16069, 573, 166, 5, 70, "Text",
+   CellTags->"QHermitianMatrixToVector"]},
+ "QDensityMatrixToVector"->{
+  Cell[16272, 583, 78, 1, 70, "Section",
+   CellTags->"QDensityMatrixToVector"],
+  Cell[16353, 586, 275, 5, 70, "Usage",
+   CellTags->"QDensityMatrixToVector"],
+  Cell[16631, 593, 164, 5, 70, "Text",
+   CellTags->"QDensityMatrixToVector"]},
+ "QSpinorToArrow"->{
+  Cell[16832, 603, 62, 1, 70, "Section",
+   CellTags->"QSpinorToArrow"],
+  Cell[16897, 606, 265, 5, 70, "Usage",
+   CellTags->"QSpinorToArrow"],
+  Cell[17165, 613, 156, 5, 70, "Text",
+   CellTags->"QSpinorToArrow"]},
+ "QRotationSO3"->{
+  Cell[17358, 623, 58, 1, 70, "Section",
+   CellTags->"QRotationSO3"],
+  Cell[17419, 626, 254, 5, 70, "Usage",
+   CellTags->"QRotationSO3"],
+  Cell[17676, 633, 154, 5, 70, "Text",
+   CellTags->"QRotationSO3"]},
+ "QRotationSU2"->{
+  Cell[17867, 643, 58, 1, 70, "Section",
+   CellTags->"QRotationSU2"],
+  Cell[17928, 646, 250, 5, 70, "Usage",
+   CellTags->"QRotationSU2"],
+  Cell[18181, 653, 154, 5, 70, "Text",
+   CellTags->"QRotationSU2"]},
+ "QVisualizeSpinor"->{
+  Cell[18372, 663, 66, 1, 70, "Section",
+   CellTags->"QVisualizeSpinor"],
+  Cell[18441, 666, 908, 14, 70, "Usage",
+   CellTags->"QVisualizeSpinor"],
+  Cell[19352, 682, 158, 5, 70, "Text",
+   CellTags->"QVisualizeSpinor"]},
+ "QVisualizeDensityMatrix"->{
+  Cell[19547, 692, 80, 1, 70, "Section",
+   CellTags->"QVisualizeDensityMatrix"],
+  Cell[19630, 695, 396, 7, 70, "Usage",
+   CellTags->"QVisualizeDensityMatrix"],
+  Cell[20029, 704, 165, 5, 70, "Text",
+   CellTags->"QVisualizeDensityMatrix"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"QNorm", 20504, 722},
+ {"QNormalize", 20702, 729},
+ {"$QSpinBasis", 20918, 736},
+ {"QSetSpinBasis", 21140, 743},
+ {"QSpinorToComponents", 21374, 750},
+ {"QComponentsToSpinor", 21629, 757},
+ {"QProjectUp", 21875, 764},
+ {"QProjectDown", 22096, 771},
+ {"QProbabilityUp", 22325, 778},
+ {"QSpinorBarDiagram", 22563, 785},
+ {"QVectorToHermitianMatrix", 22817, 792},
+ {"QVectorToDensityMatrix", 23090, 799},
+ {"QSpinHamiltonian", 23351, 806},
+ {"QSpinorUp", 23587, 813},
+ {"QSpinorDown", 23804, 820},
+ {"QConjSpinorUp", 24029, 827},
+ {"QConjSpinorDown", 24261, 834},
+ {"QSpinorHarmonicUp", 24501, 841},
+ {"QSpinorHarmonicDown", 24750, 848},
+ {"QSpinorToVector", 25001, 855},
+ {"QVectorToSpinor", 25315, 864},
+ {"QExtractPhase", 25629, 873},
+ {"QHermitianMatrixToVector", 25874, 880},
+ {"QDensityMatrixToVector", 26150, 887},
+ {"QSpinorToArrow", 26412, 894},
+ {"QRotationSO3", 26648, 901},
+ {"QRotationSU2", 26878, 908},
+ {"QVisualizeSpinor", 27112, 915},
+ {"QVisualizeDensityMatrix", 27366, 922}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 44, 1, 63, "Section",
+ CellTags->"QNorm"],
+Cell[637, 26, 126, 4, 31, "Usage",
+ CellTags->"QNorm"],
+Cell[766, 32, 147, 5, 23, "Text",
+ CellTags->"QNorm"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[950, 42, 54, 1, 63, "Section",
+ CellTags->"QNormalize"],
+Cell[1007, 45, 133, 4, 31, "Usage",
+ CellTags->"QNormalize"],
+Cell[1143, 51, 152, 5, 23, "Text",
+ CellTags->"QNormalize"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1332, 61, 56, 1, 63, "Section",
+ CellTags->"$QSpinBasis"],
+Cell[1391, 64, 155, 4, 31, "Usage",
+ CellTags->"$QSpinBasis"],
+Cell[1549, 70, 153, 5, 23, "Text",
+ CellTags->"$QSpinBasis"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1739, 80, 60, 1, 63, "Section",
+ CellTags->"QSetSpinBasis"],
+Cell[1802, 83, 255, 5, 47, "Usage",
+ CellTags->"QSetSpinBasis"],
+Cell[2060, 90, 155, 5, 23, "Text",
+ CellTags->"QSetSpinBasis"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2252, 100, 72, 1, 63, "Section",
+ CellTags->"QSpinorToComponents"],
+Cell[2327, 103, 378, 7, 79, "Usage",
+ CellTags->"QSpinorToComponents"],
+Cell[2708, 112, 161, 5, 23, "Text",
+ CellTags->"QSpinorToComponents"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2906, 122, 72, 1, 63, "Section",
+ CellTags->"QComponentsToSpinor"],
+Cell[2981, 125, 311, 6, 63, "Usage",
+ CellTags->"QComponentsToSpinor"],
+Cell[3295, 133, 161, 5, 23, "Text",
+ CellTags->"QComponentsToSpinor"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3493, 143, 54, 1, 70, "Section",
+ CellTags->"QProjectUp"],
+Cell[3550, 146, 213, 5, 70, "Usage",
+ CellTags->"QProjectUp"],
+Cell[3766, 153, 152, 5, 70, "Text",
+ CellTags->"QProjectUp"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3955, 163, 58, 1, 70, "Section",
+ CellTags->"QProjectDown"],
+Cell[4016, 166, 220, 5, 70, "Usage",
+ CellTags->"QProjectDown"],
+Cell[4239, 173, 154, 5, 70, "Text",
+ CellTags->"QProjectDown"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4430, 183, 62, 1, 70, "Section",
+ CellTags->"QProbabilityUp"],
+Cell[4495, 186, 183, 4, 70, "Usage",
+ CellTags->"QProbabilityUp"],
+Cell[4681, 192, 156, 5, 70, "Text",
+ CellTags->"QProbabilityUp"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4874, 202, 68, 1, 70, "Section",
+ CellTags->"QSpinorBarDiagram"],
+Cell[4945, 205, 246, 5, 70, "Usage",
+ CellTags->"QSpinorBarDiagram"],
+Cell[5194, 212, 159, 5, 70, "Text",
+ CellTags->"QSpinorBarDiagram"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5390, 222, 82, 1, 70, "Section",
+ CellTags->"QVectorToHermitianMatrix"],
+Cell[5475, 225, 254, 5, 70, "Usage",
+ CellTags->"QVectorToHermitianMatrix"],
+Cell[5732, 232, 166, 5, 70, "Text",
+ CellTags->"QVectorToHermitianMatrix"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5935, 242, 78, 1, 70, "Section",
+ CellTags->"QVectorToDensityMatrix"],
+Cell[6016, 245, 279, 5, 70, "Usage",
+ CellTags->"QVectorToDensityMatrix"],
+Cell[6298, 252, 164, 5, 70, "Text",
+ CellTags->"QVectorToDensityMatrix"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6499, 262, 66, 1, 70, "Section",
+ CellTags->"QSpinHamiltonian"],
+Cell[6568, 265, 167, 4, 70, "Usage",
+ CellTags->"QSpinHamiltonian"],
+Cell[6738, 271, 158, 5, 70, "Text",
+ CellTags->"QSpinHamiltonian"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6933, 281, 52, 1, 70, "Section",
+ CellTags->"QSpinorUp"],
+Cell[6988, 284, 275, 5, 70, "Usage",
+ CellTags->"QSpinorUp"],
+Cell[7266, 291, 151, 5, 70, "Text",
+ CellTags->"QSpinorUp"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7454, 301, 56, 1, 70, "Section",
+ CellTags->"QSpinorDown"],
+Cell[7513, 304, 283, 6, 70, "Usage",
+ CellTags->"QSpinorDown"],
+Cell[7799, 312, 153, 5, 70, "Text",
+ CellTags->"QSpinorDown"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7989, 322, 60, 1, 70, "Section",
+ CellTags->"QConjSpinorUp"],
+Cell[8052, 325, 94, 1, 70, "Usage",
+ CellTags->"QConjSpinorUp"],
+Cell[8149, 328, 155, 5, 70, "Text",
+ CellTags->"QConjSpinorUp"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8341, 338, 64, 1, 70, "Section",
+ CellTags->"QConjSpinorDown"],
+Cell[8408, 341, 98, 1, 70, "Usage",
+ CellTags->"QConjSpinorDown"],
+Cell[8509, 344, 157, 5, 70, "Text",
+ CellTags->"QConjSpinorDown"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8703, 354, 68, 1, 70, "Section",
+ CellTags->"QSpinorHarmonicUp"],
+Cell[8774, 357, 287, 5, 70, "Usage",
+ CellTags->"QSpinorHarmonicUp"],
+Cell[9064, 364, 159, 5, 70, "Text",
+ CellTags->"QSpinorHarmonicUp"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9260, 374, 72, 1, 70, "Section",
+ CellTags->"QSpinorHarmonicDown"],
+Cell[9335, 377, 297, 6, 70, "Usage",
+ CellTags->"QSpinorHarmonicDown"],
+Cell[9635, 385, 161, 5, 70, "Text",
+ CellTags->"QSpinorHarmonicDown"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9833, 395, 64, 1, 70, "Section",
+ CellTags->"QSpinorToVector"],
+Cell[9900, 398, 374, 7, 70, "Usage",
+ CellTags->"QSpinorToVector"],
+Cell[10277, 407, 1984, 49, 70, "Text",
+ CellTags->"QSpinorToVector"],
+Cell[12264, 458, 157, 5, 70, "Text",
+ CellTags->"QSpinorToVector"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12458, 468, 64, 1, 70, "Section",
+ CellTags->"QVectorToSpinor"],
+Cell[12525, 471, 266, 5, 70, "Usage",
+ CellTags->"QVectorToSpinor"],
+Cell[12794, 478, 1984, 49, 70, "Text",
+ CellTags->"QVectorToSpinor"],
+Cell[14781, 529, 157, 5, 70, "Text",
+ CellTags->"QVectorToSpinor"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14975, 539, 60, 1, 70, "Section",
+ CellTags->"QExtractPhase"],
+Cell[15038, 542, 448, 8, 70, "Usage",
+ CellTags->"QExtractPhase"],
+Cell[15489, 552, 155, 5, 70, "Text",
+ CellTags->"QExtractPhase"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15681, 562, 82, 1, 70, "Section",
+ CellTags->"QHermitianMatrixToVector"],
+Cell[15766, 565, 300, 6, 70, "Usage",
+ CellTags->"QHermitianMatrixToVector"],
+Cell[16069, 573, 166, 5, 70, "Text",
+ CellTags->"QHermitianMatrixToVector"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16272, 583, 78, 1, 70, "Section",
+ CellTags->"QDensityMatrixToVector"],
+Cell[16353, 586, 275, 5, 70, "Usage",
+ CellTags->"QDensityMatrixToVector"],
+Cell[16631, 593, 164, 5, 70, "Text",
+ CellTags->"QDensityMatrixToVector"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16832, 603, 62, 1, 70, "Section",
+ CellTags->"QSpinorToArrow"],
+Cell[16897, 606, 265, 5, 70, "Usage",
+ CellTags->"QSpinorToArrow"],
+Cell[17165, 613, 156, 5, 70, "Text",
+ CellTags->"QSpinorToArrow"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17358, 623, 58, 1, 70, "Section",
+ CellTags->"QRotationSO3"],
+Cell[17419, 626, 254, 5, 70, "Usage",
+ CellTags->"QRotationSO3"],
+Cell[17676, 633, 154, 5, 70, "Text",
+ CellTags->"QRotationSO3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17867, 643, 58, 1, 70, "Section",
+ CellTags->"QRotationSU2"],
+Cell[17928, 646, 250, 5, 70, "Usage",
+ CellTags->"QRotationSU2"],
+Cell[18181, 653, 154, 5, 70, "Text",
+ CellTags->"QRotationSU2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18372, 663, 66, 1, 70, "Section",
+ CellTags->"QVisualizeSpinor"],
+Cell[18441, 666, 908, 14, 70, "Usage",
+ CellTags->"QVisualizeSpinor"],
+Cell[19352, 682, 158, 5, 70, "Text",
+ CellTags->"QVisualizeSpinor"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19547, 692, 80, 1, 70, "Section",
+ CellTags->"QVisualizeDensityMatrix"],
+Cell[19630, 695, 396, 7, 70, "Usage",
+ CellTags->"QVisualizeDensityMatrix"],
+Cell[20029, 704, 165, 5, 70, "Text",
+ CellTags->"QVisualizeDensityMatrix"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
