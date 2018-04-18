@@ -34,7 +34,7 @@ certain time (after a prescribed number of time steps).
 
 (* :Package Version: 2.2 *)
 
-(* :Mathematica Version: 6.0.1 *)
+(* :Mathematica Version: 11.3.0 *)
 
 (* :Keywords:
     Schroedinger equation, Dirac equation, numerical solution, Wavefunction
@@ -199,9 +199,9 @@ exponential operator, see M.Suzuki, J.Math.Phys.32 (1991), 410). The integer
 Begin["`Private`"];
 (*-----------------------------------*)
 
-(* RM: use FindFile to get the directory of this file *)
-SetDirectory @ DirectoryName[System`Private`FindFile[$Input]];
+SetDirectory @ DirectoryName[$InputFileName];
 
+(*
 	QuantumLink = 
 		Install[
 			Which[
@@ -219,6 +219,7 @@ SetDirectory @ DirectoryName[System`Private`FindFile[$Input]];
                                         "QuantumKernel.exe"
                              ]
 		];
+		*)
 
 (*-----------------------------------*)
 End[];      (* end `Private` Context *)

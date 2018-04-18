@@ -1,24 +1,47 @@
+Print["VQM.m loaded now"];
 (* ::Package:: *)
 
+(*
 Off[CompiledFunction::cfsa];
 Off[CompiledFunction::cfse];
 Off[CompiledFunction::cfn];
 Off[CompiledFunction::cfex];
+*)
 
 (* RM: added $VQMDirectory *)
+(* RM: added dPrint *)
 
-(* init.m Master package, automatically created by a script *)
+
+(* VQM.m Master package *)
 
 (* First, define the context of this package directory. *)
 BeginPackage["VQM`"];
 
 $VQMDirectory::usage="$VQMDirectory is the installation directory of VQM.";
 
-(* note: I found the function call System`Private`FindFile[$Input]  in JLink.m, so 
-         it will probably not go away in future Mathematica versions.
-         However, this trick will not work from an init.m file. Hence it is here.
-*)
-$VQMDirectory=DirectoryName[System`Private`FindFile[$Input]];
+(*
+$VQMDirectory = If[TrueQ[$Notebooks]
+ , NotebookDirectory @ EvaluationNotebook[]
+ , DirectoryName[$InputFileName]
+ ];
+ *)
+$VQMDirectory = DirectoryName[$InputFileName]
+
+	dPrint ~ SetAttributes ~ HoldAll;
+
+	dPrint[a__] := 
+	If[$Notebooks =!= True
+	  ,	
+	  Print[ Style[DateString[{"Hour",":", "Minute",":", "SecondExact"}],"Text"], ": ", a ]
+	  ,
+	  NotebookWrite[
+	    MessagesNotebook[], 
+	      Cell[BoxData @ ToBoxes @ Row[{ Style[DateString[{"Hour",":", "Minute",":", "SecondExact"}],"Text"], ": ", a}]
+	      ,"Print"]]
+	];
+
+dPrint["$VQMDirectory = ", $VQMDirectory];
+
 
 EndPackage[];
 
@@ -28,6 +51,9 @@ DeclarePackage["VQM`ArgColorPlot`", {"QArgColorPlot", "QListArgColorPlot", "QCom
 "QListSpinorCombinedPlot", "QNiceTicks", "QSaturation", "QBrightness", "QBottomLine",
 "QShiftPlot", "QHorizontalRange", "QPlotDown", "QSquared", "QCurveStyle"}];
 
+Get["VQM`ArgColorPlot`"]
+
+(*
 DeclarePackage["VQM`ColorMaps`", {"QComplexToColor", "QRGBValues", "QComplexToRGBValues",
 "QComplexToRGBColor", "QComplexToColorMap", "QValueRange", "QLightnessRange", "QSphereRadius",
 "$QComplexToColorMap", "QSaturationFromLightness", "QBrightnessFromLightness",
@@ -110,4 +136,5 @@ DeclarePackage["VQM`VisualizeVector`", {"QVectorToArrow", "QArrowHead", "QArrowS
 
 DeclarePackage["VQM`VisualizeFunction1D`", {"QShowComplexPoint", "QShowComplexPointPolar", "QPlotRe", "QPlotIm",
 "QPlotReIm", "QPlotAbs", "QPlotArg", "QPlotAbsArg", "QComplexFunctionGraph", "QBoxSize", "QProjectionAt"}];
+*)
 

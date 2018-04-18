@@ -70,8 +70,8 @@ Off[General::spell1,General::spell];
 BeginPackage[
     "VQM`ComplexPlot`",			(* package Context *)
 	"VQM`ColorMaps`",
-    "VQM`ArgColorPlot`",		(* needed for QNiceTicks *)
-    "Utilities`FilterOptions`"];				
+    "VQM`ArgColorPlot`"		(* needed for QNiceTicks *)
+    ];				
 (*-----------------------------------*)
 
 $MaxAbsValue=1;

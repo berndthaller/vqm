@@ -2,6 +2,7 @@ Resources[
     Version[1],
     ExecutionBuildCommand["<<VQM`"],
     Paclet[
+        PacletFolder["VQM"],
         FunctionPaclet[False]
     ]
 ]

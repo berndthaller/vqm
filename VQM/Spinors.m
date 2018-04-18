@@ -49,8 +49,8 @@ Off[General::spell1,General::spell];
 BeginPackage[
 	"VQM`Spinors`",
 	"VQM`VisualizeVector`",
-	"VQM`ColorMaps`",
-	"Utilities`FilterOptions`"];
+	"VQM`ColorMaps`"
+	];
 (*-----------------------------------*)
 
 VQM`Spinors`Private`Symbols=Hold[

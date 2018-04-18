@@ -36,7 +36,6 @@ BeginPackage[
     "VQM`QGraphics2D`",
     {"VQM`QuantumKernel`",
     "VQM`ComplexPlot`",
-    "Utilities`FilterOptions`",
     "VQM`ColorMaps`"}]  ;              
 (*-----------------------------------*)
     

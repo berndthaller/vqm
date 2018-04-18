@@ -9,10 +9,10 @@
 # make -f Makefile.windows
 
 # eventually adjust this  to your installation of Mathematica 
-MLINKDIR = /cygdrive/c/Programme/Wolfram\ Research/Mathematica/11.1/SystemFiles/Links/MathLink/DeveloperKit
+MLINKDIR = /cygdrive/c/Programme/Wolfram\ Research/Mathematica/11.3/SystemFiles/Links/MathLink/DeveloperKit
 
 CPP = g++
-SYS = Windows
+SYS = Windows-x86-64
 
 #while there is a cygwin directory in CompilerAdditions we only need mldev32, because of the -mno-cygwin compiler option 
 CADDSDIR = ${MLINKDIR}/${SYS}/CompilerAdditions/mldev64

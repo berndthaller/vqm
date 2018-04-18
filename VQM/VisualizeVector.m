@@ -45,7 +45,6 @@ Off[General::spell1, General::spell];
 (*-----------------------------------*)
 BeginPackage[
 	"VQM`VisualizeVector`",
-	"Utilities`FilterOptions`",
 	"VectorAnalysis`"];
 (*-----------------------------------*)
 

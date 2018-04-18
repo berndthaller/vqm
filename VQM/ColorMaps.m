@@ -42,8 +42,7 @@ Off[General::spell1,General::spell];
 (*-----------------------------------*)
 BeginPackage[
     "VQM`ColorMaps`",    (* package Context *)
-    "VQM`Spinors`",
-    "Utilities`FilterOptions`"
+    "VQM`Spinors`"
     ];
 (*-----------------------------------*)
 
