@@ -65,7 +65,7 @@ VQM`ArgColorPlot`Private`Symbols = Hold[
     QShiftPlot, QHorizontalRange, QPlotDown, QSquared, QCurveStyle];
 
 Unprotect @@ VQM`ArgColorPlot`Private`Symbols;
-ClearAll @@ VQM`ArgColorPlot`Private`Symbols;
+ClearAll  @@ VQM`ArgColorPlot`Private`Symbols;
 
 (* 
 this is a local flag to whether to use ListLinePlot or not,
@@ -279,8 +279,6 @@ Global`res = res;
          res = fillit[xvars,hues,yvals,style,nbl,shift]
 ];
    fiops = FilterRules[optsWithDefaults, Options[Graphics]];
-Global`fiops = fiops;
-Global`res = res;
    Show[res, fiops, AspectRatio->(1/GoldenRatio)]
 ];
 
