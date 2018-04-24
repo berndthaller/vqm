@@ -39,10 +39,7 @@ VQMmsgon1 = Head[General::"spell1"] =!= $Off;
 Off[General::spell1,General::spell];
 
 (*-----------------------------------*)
-BeginPackage[
-	"VQM`Coulomb`",
-	"VectorAnalysis`"
-	];                  (* prevent shadowing *)
+BeginPackage[ "VQM`Coulomb`" ];   
 (*-----------------------------------*)
 
 ClearAll[$QCoulombSpaceDimension,$QCoulombCoupling];
@@ -90,7 +87,7 @@ QCoulombFunction::usage = "QCoulombFunction[n,ell,m,{x,y,z},options]
 	The energy depends on the space dimension.
 	Default space dimension is 3; you can change this by the option QCoulombSpaceDimension->dim,
 	or by redefining the constant $QCoulombSpaceDimension.
-	The default coordinate system is Cartesian, as set by the package Calculus`VectorAnalysis`.
+	The default coordinate system is Cartesian.
 	The coordinatesystem can be changed by the command SetCoordinates[Spherical].
 	In this case, the function has to be used in the form QCoulombFunction[n,ell,m,{r,theta,phi}].
 	QCoulombFunction[n,m,{x,y},options] resp. QCoulombFunction[n,m,{r,phi},options]

@@ -69,7 +69,9 @@ Int32	TFunction::GetArray( void )
 
 Int32	TFunction::PutArray( void )
 {	
-	return MLPutFloatArray(stdlink, mArrayP, mCountP, mHeadH, mDepth);
+ //RM2018	return MLPutFloatArray(stdlink, mArrayP, mCountP, mHeadH, mDepth);
+//    MLErrorReport(stdlink, "Test in PutArray");
+	return MLPutReal32Array(stdlink, mArrayP, (int *)mCountP, (const char **)mHeadH, mDepth);
 }
 
 // RM: commmented out 2007-06-28
@@ -133,15 +135,18 @@ Int32	TFunction::PutColor( void )
 {
 	Int32	i, size;	
 	Float	*realP, *imagP, *colorP;
-	Int8	*headH[3] = {"List", "List", "RGBColor"};
-	Int32	countP[3] = {0, 0, 3};
+//RM20180422 add const:
+	Int8	const *headH[3] = {"List", "List", "RGBColor"};
+//RM20180422 add const:
+	Int32	const countP[3] = {0, 0, 3};
 	Float	re, im, r, s, s0, phi, phi0, red, green, blue, temp;
 	Float	zero = 0.0, one = 1.0, two = 2.0;
 	Float	k3pi = 3.0 / M_PI, k4pi = 4.0 / M_PI;
 
 
-	if( !IsFunction2D(countP[1], countP[0]) )
-		return MLErrorReport(stdlink, "two-dimensional function expected");
+//RM: TODO_SH
+//	if( !IsFunction2D(countP[1], countP[0]) )
+//		return MLErrorReport(stdlink, "two-dimensional function expected");
 	if( !IsFunctionC(realP, imagP) )
 		return MLErrorReport(stdlink, "complex function expected");
 
@@ -184,7 +189,8 @@ Int32	TFunction::PutColor( void )
 	colorP -= 3*size;
 
 
-	MLPutFloatArray(stdlink, colorP, countP, headH, 3);
+//RM2018	MLPutFloatArray(stdlink, colorP, countP, headH, 3);
+	MLPutReal32Array(stdlink, colorP, (int *)countP, (const char **)headH, 3);
 	delete [] colorP;
 
 	return eOK;
@@ -201,15 +207,19 @@ Int32	TFunction::PutGray( void )
 {
 	Int32	i, size;
 	Float	*realP, *imagP, *grayP;
-	Int8	*headH[3] = {"List", "List", "GrayLevel"};
-	Int32	countP[3] = {0, 0, 1};
+//RM20180420 add const:
+	Int8	const *headH[3] = {"List", "List", "GrayLevel"};
+//RM20180420 add const:
+	Int8	const  countP[3]={0, 0, 1};
 	Float	re, im, r, gray;
 	Float	zero = 0.0, one = 1.0;
 	Float	k2pi = 2.0 / M_PI;
 
 
-	if( !IsFunction2D(countP[1], countP[0]) )
-		return MLErrorReport(stdlink, "two-dimensional function expected");
+//RM:  TODO_SH
+//uncommenting the followint two lines gives errors
+//	if( !IsFunction2D(countP[1], countP[0]) )
+//		return MLErrorReport(stdlink, "two-dimensional function expected");
 	if( !IsFunctionC(realP, imagP) )
 		return MLErrorReport(stdlink, "complex function expected");
 
@@ -230,9 +240,9 @@ Int32	TFunction::PutGray( void )
 	}
 	grayP -= size;
 
-	MLPutFloatArray(stdlink, grayP, countP, headH, 3);
+//RM2018	MLPutFloatArray(stdlink, grayP, countP, headH, 3);
+	MLPutReal32Array(stdlink, grayP, (int *)countP, (const char **)headH, 3);
 	delete [] grayP;
-
 	return eOK;
 }
 
@@ -247,15 +257,18 @@ Int32	TFunction::PutRedBlue( void )
 {
 	Int32	i, size;	
 	Float	*realP, *colorP;
-	Int8	*headH[3] = {"List", "List", "RGBColor"};
-	Int32	countP[3] = {0, 0, 3};
+//RM20180422 add const:
+	Int8	const *headH[3] = {"List", "List", "RGBColor"};
+//RM20180422 add const:
+	Int32	const countP[3] = {0, 0, 3};
 	Float	r, s, red, green, blue, temp;
 	Float	zero = 0.0, one = 1.0;
 	Float	k4pi = 4.0 / M_PI;
 
 
-	if( !IsFunction2D(countP[1], countP[0]) )
-		return MLErrorReport(stdlink, "two-dimensional function expected");
+//TODO_SH
+//	if( !IsFunction2D(countP[1], countP[0]) )
+//	return MLErrorReport(stdlink, "two-dimensional function expected");
 	if( !IsFunctionR(realP) )
 		return MLErrorReport(stdlink, "real function expected");
 
@@ -283,7 +296,8 @@ Int32	TFunction::PutRedBlue( void )
 	}
 	colorP -= 3*size;
 
-	MLPutFloatArray(stdlink, colorP, countP, headH, 3);
+//RM2018	MLPutFloatArray(stdlink, colorP, countP, headH, 3);
+	MLPutReal32Array(stdlink, colorP, (int *)countP, (const char **)headH, 3);
 	delete [] colorP;
 
 	return eOK;
@@ -296,38 +310,42 @@ Int32	TFunction::PutRedBlue( void )
 // ---------------------------------------------------------------------------
 //	Return black-white array
 
+
 Int32	TFunction::PutBlackWhite( void )
 {
 	Int32	i, size;
-	Float	*realP, *grayP;
-	Int8	*headH[3] = {"List", "List", "GrayLevel"};
-	Int32	countP[3] = {0, 0, 1};
-	Float	gray;
-	Float	zero = 0.0, one = 1.0;
-
-
-	if( !IsFunction2D(countP[1], countP[0]) )
-		return MLErrorReport(stdlink, "two-dimensional function expected");
+ 	Float	*realP, *grayP;
+//RM20180422 add const
+ 	Int8	const *headH[3] = {"List", "List", "GrayLevel"};
+//RM20180422 add const
+ 	Int32	const countP[3] = {0, 0, 1};
+ 	Float	gray;
+ 	Float	zero = 0.0, one = 1.0;
+ 
+//RM:  TODO_SH
+//	if( !IsFunction2D(countP[1], countP[0]) )
+//		return MLErrorReport(stdlink, "two-dimensional function expected");
 	if( !IsFunctionR(realP) )
-		return MLErrorReport(stdlink, "real function expected");
-
-	size = countP[0] * countP[1];
-	grayP = new Float[size];
-	if( !grayP )
-		return MLErrorReport(stdlink, "out of memory");
-	if( eError == MLCheckMemoryReserve(stdlink) ) return eError;
-
-	for( i = 0; i < size; i++ ) {
-		if( *realP++ < zero ) gray = one;
-		else gray = zero;
-		
-		*grayP++ = gray;
-	}
-	grayP -= size;
-
-	MLPutFloatArray(stdlink, grayP, countP, headH, 3);
-	delete [] grayP;
-
+ 		return MLErrorReport(stdlink, "real function expected");
+ 
+ 	size = countP[0] * countP[1];
+ 	grayP = new Float[size];
+ 	if( !grayP )
+ 		return MLErrorReport(stdlink, "out of memory");
+ 	if( eError == MLCheckMemoryReserve(stdlink) ) return eError;
+ 
+ 	for( i = 0; i < size; i++ ) {
+ 		if( *realP++ < zero ) gray = one;
+ 		else gray = zero;
+ 		
+ 		*grayP++ = gray;
+ 	}
+ 	grayP -= size;
+ 
+ //RM2018	MLPutFloatArray(stdlink, grayP, countP, headH, 3);
+ 	MLPutReal32Array(stdlink, grayP, (int *)countP, (const char **)headH, 3);
+ 	delete [] grayP;
+ 
 	return eOK;
 }
 
@@ -341,35 +359,36 @@ Int32	TFunction::PutBlackWhite( void )
 Int32	TFunction::PutAbs( void )
 {	
 	Int32	i, size, countP[2] = {0, 0};
-	Float	*realP, *imagP, *absP, re, im, r;
-	Float	zero = 0.0;
-
-
+ 	Float	*realP, *imagP, *absP, re, im, r;
+ 	Float	zero = 0.0;
+ 
+//RM:  TODO_SH
 	if( !IsFunction2D(countP[1], countP[0]) )
 		return MLErrorReport(stdlink, "two-dimensional function expected");
-	if( !IsFunctionC(realP, imagP) )
-		return MLErrorReport(stdlink, "complex function expected");
-
-	size = countP[0] * countP[1];
-	absP = new Float[size];
-	if( !absP )
-		return MLErrorReport(stdlink, "out of memory");
-	if( eError == MLCheckMemoryReserve(stdlink) ) return eError;
-	
-	for( i = 0; i < size; i++ ) {
-		re = *realP++;
-		im = *imagP++;
-		r = hypot( re, im );
-
-		if( !isfinite(r) ) r = zero;
-		*absP++ = r;
-	}
-	absP -= size;
-
-	MLPutFloatArray(stdlink, absP, countP, mHeadH, 2);
-	delete [] absP;
-
-	return eOK;
+ 	if( !IsFunctionC(realP, imagP) )
+ 		return MLErrorReport(stdlink, "complex function expected");
+ 
+ 	size = countP[0] * countP[1];
+ 	absP = new Float[size];
+ 	if( !absP )
+ 		return MLErrorReport(stdlink, "out of memory");
+ 	if( eError == MLCheckMemoryReserve(stdlink) ) return eError;
+ 	
+ 	for( i = 0; i < size; i++ ) {
+ 		re = *realP++;
+ 		im = *imagP++;
+ 		r = hypot( re, im );
+ 
+ 		if( !isfinite(r) ) r = zero;
+ 		*absP++ = r;
+ 	}
+ 	absP -= size;
+ 
+//RM1018 MLPutFloatArray(stdlink, absP, countP, mHeadH, 2);
+ 	MLPutReal32Array(stdlink, absP, (int *)countP, (const char **)mHeadH, 2);
+ 	delete [] absP;
+ 
+ 	return eOK;
 }
 
 
@@ -395,8 +414,9 @@ bool	TFunction::IsFunction1D(	Int32 &ioNi )
 // ---------------------------------------------------------------------------
 //	Check if function is 2D
 
-bool	TFunction::IsFunction2D(	Int32 &ioNi,
-									Int32 &ioNj )
+//RMCHANGE TODO: ASK_SH
+bool	TFunction::IsFunction2D(	Int32 &ioNi, Int32 &ioNj )
+//bool	TFunction::IsFunction2D(	Int8 &ioNi, Int8 &ioNj )
 {
 	if( mDepth != 3 ) return false;
 	
@@ -654,5 +674,3 @@ void	TFunction::SwapArrayPointers( TFunction* inFunction )
 	inFunction->mArrayP = mArrayP;
 	mArrayP = theArrayP;
 }
-
-

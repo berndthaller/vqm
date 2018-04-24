@@ -1,12 +1,11 @@
 Print["VQM.m loaded now"];
 (* ::Package:: *)
 
-(*
 Off[CompiledFunction::cfsa];
 Off[CompiledFunction::cfse];
 Off[CompiledFunction::cfn];
 Off[CompiledFunction::cfex];
-*)
+Off[DeclarePackage::aldec];
 
 (* RM: added $VQMDirectory *)
 (* RM: added dPrint *)
@@ -53,7 +52,6 @@ DeclarePackage["VQM`ArgColorPlot`", {"QArgColorPlot", "QListArgColorPlot", "QCom
 
 Get["VQM`ArgColorPlot`"]
 
-(*
 DeclarePackage["VQM`ColorMaps`", {"QComplexToColor", "QRGBValues", "QComplexToRGBValues",
 "QComplexToRGBColor", "QComplexToColorMap", "QValueRange", "QLightnessRange", "QSphereRadius",
 "$QComplexToColorMap", "QSaturationFromLightness", "QBrightnessFromLightness",
@@ -136,5 +134,4 @@ DeclarePackage["VQM`VisualizeVector`", {"QVectorToArrow", "QArrowHead", "QArrowS
 
 DeclarePackage["VQM`VisualizeFunction1D`", {"QShowComplexPoint", "QShowComplexPointPolar", "QPlotRe", "QPlotIm",
 "QPlotReIm", "QPlotAbs", "QPlotArg", "QPlotAbsArg", "QComplexFunctionGraph", "QBoxSize", "QProjectionAt"}];
-*)
 

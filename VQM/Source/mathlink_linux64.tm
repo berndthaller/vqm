@@ -24,61 +24,61 @@
 :ReturnType: Manual
 :End:
 
-:Begin:
-:Function: QDisposeFunction
-:Pattern: QDisposeFunction[ function_ ]
-:Arguments: { function }
-:ArgumentTypes: { Manual }
-:ReturnType: Manual
-:End:
+//:Begin:
+//:Function: QDisposeFunction
+//:Pattern: QDisposeFunction[ function_ ]
+//:Arguments: { function }
+//:ArgumentTypes: { Manual }
+//:ReturnType: Manual
+//:End:
 
-:Begin:
-:Function: QGetArray
-:Pattern: QGetArray[ function_ ]
-:Arguments: { function }
-:ArgumentTypes: { Manual }
-:ReturnType: Manual
-:End:
+//:Begin:
+//:Function: QGetArray
+//:Pattern: QGetArray[ function_ ]
+//:Arguments: { function }
+//:ArgumentTypes: { Manual }
+//:ReturnType: Manual
+//:End:
 
-:Begin:
-:Function: QGetFunctionInfo
-:Pattern: QGetFunctionInfo[ function_ ]
-:Arguments: { function }
-:ArgumentTypes: { Manual }
-:ReturnType: Manual
-:End:
+//:Begin:
+//:Function: QGetFunctionInfo
+//:Pattern: QGetFunctionInfo[ function_ ]
+//:Arguments: { function }
+//:ArgumentTypes: { Manual }
+//:ReturnType: Manual
+//:End:
 
-:Begin:
-:Function: QGetColorArray
-:Pattern: QGetColorArray[ function_ ]
-:Arguments: { function }
-:ArgumentTypes: { Manual }
-:ReturnType: Manual
-:End:
+//:Begin:
+//:Function: QGetColorArray
+//:Pattern: QGetColorArray[ function_ ]
+//:Arguments: { function }
+//:ArgumentTypes: { Manual }
+//:ReturnType: Manual
+//:End:
 
-:Begin:
-:Function: QGetGrayArray
-:Pattern: QGetGrayArray[ function_ ]
-:Arguments: { function }
-:ArgumentTypes: { Manual }
-:ReturnType: Manual
-:End:
+//:Begin:
+//:Function: QGetGrayArray
+//:Pattern: QGetGrayArray[ function_ ]
+//:Arguments: { function }
+//:ArgumentTypes: { Manual }
+//:ReturnType: Manual
+//:End:
 
-:Begin:
-:Function: QGetRedBlueArray
-:Pattern: QGetRedBlueArray[ function_ ]
-:Arguments: { function }
-:ArgumentTypes: { Manual }
-:ReturnType: Manual
-:End:
+//:Begin:
+//:Function: QGetRedBlueArray
+//:Pattern: QGetRedBlueArray[ function_ ]
+//:Arguments: { function }
+//:ArgumentTypes: { Manual }
+//:ReturnType: Manual
+//:End:
 
-:Begin:
-:Function: QGetBlackWhiteArray
-:Pattern: QGetBlackWhiteArray[ function_ ]
-:Arguments: { function }
-:ArgumentTypes: { Manual }
-:ReturnType: Manual
-:End:
+//:Begin:
+//:Function: QGetBlackWhiteArray
+//:Pattern: QGetBlackWhiteArray[ function_ ]
+//:Arguments: { function }
+//:ArgumentTypes: { Manual }
+//:ReturnType: Manual
+//:End:
 
 :Begin:
 :Function: QGetAbsArray

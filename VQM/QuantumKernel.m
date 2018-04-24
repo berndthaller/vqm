@@ -201,7 +201,6 @@ Begin["`Private`"];
 
 SetDirectory @ DirectoryName[$InputFileName];
 
-(*
 	QuantumLink = 
 		Install[
 			Which[
@@ -219,7 +218,6 @@ SetDirectory @ DirectoryName[$InputFileName];
                                         "QuantumKernel.exe"
                              ]
 		];
-		*)
 
 (*-----------------------------------*)
 End[];      (* end `Private` Context *)

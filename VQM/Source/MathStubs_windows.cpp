@@ -1,10 +1,10 @@
 /*
- * This file automatically produced by c:\Programme\Wolfram Research\Mathematica\6.0\SystemFiles\Links\MathLink\DeveloperKit\Windows\CompilerAdditions\mldev32\bin\mprep.exe from:
+ * This file automatically produced by mprep.exe from:
  *	mathlink_windows.tm
- * mprep Revision 12 Copyright (c) Wolfram Research, Inc. 1990-2006
+ * mprep Revision 18 Copyright (c) Wolfram Research, Inc. 1990-2013
  */
 
-#define MPREP_REVISION 12
+#define MPREP_REVISION 18
 
 
 #include "mathlink.h"
@@ -26,6 +26,42 @@ MLMessageHandlerObject stdhandler = 0;
 #endif /* MLINTERFACE >= 3 */
 
 #include <windows.h>
+
+#if defined(__GNUC__)
+
+#	ifdef TCHAR
+#		undef TCHAR
+#	endif
+#	define TCHAR char
+
+#	ifdef PTCHAR
+#		undef PTCHAR
+#	endif
+#	define PTCHAR char *
+
+#	ifdef __TEXT
+#		undef __TEXT
+#	endif
+#	define __TEXT(arg) arg
+
+#	ifdef _tcsrchr
+#		undef _tcsrchr
+#	endif
+#	define _tcsrchr strrchr
+
+#	ifdef _tcscat
+#		undef _tcscat
+#	endif
+#	define _tcscat strcat
+
+#	ifdef _tcsncpy
+#		undef _tcsncpy
+#	endif
+#	define _tcsncpy _fstrncpy
+#else
+#	include <tchar.h>
+#endif
+
 #include <stdlib.h>
 #include <string.h>
 #if (WIN32_MATHLINK || WIN64_MATHLINK || __GNUC__) && !defined(_fstrncpy)
@@ -58,43 +94,52 @@ IconProcedure( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc( hWnd, msg, wParam, lParam);
 }
 
+
+#ifdef _UNICODE
+#define _APISTR(i) L ## #i
+#else
 #define _APISTR(i) #i
+#endif
+
 #define APISTR(i) _APISTR(i)
 
 HWND MLInitializeIcon( HINSTANCE hInstance, int nCmdShow)
 {
-	char path_name[260], *icon_name;
+	TCHAR path_name[260];
+	PTCHAR icon_name;
+
 	WNDCLASS  wc;
 	HMODULE hdll;
 
 	MLInstance = hInstance;
 	if( ! nCmdShow) return (HWND)0;
-#if WIN16_MATHLINK
-	hdll = GetModuleHandle( "ml16i" APISTR(MLINTERFACE));
-#else
-	hdll = GetModuleHandle( "ml32i" APISTR(MLINTERFACE));
-#endif
 
-	(void)GetModuleFileName( hInstance, path_name, sizeof(path_name));
-	icon_name = strrchr( path_name, '\\') + 1;
-	*strchr( icon_name, '.') = '\0';
+	hdll = GetModuleHandle( __TEXT("ml32i" APISTR(MLINTERFACE)));
+
+	(void)GetModuleFileName( hInstance, path_name, 260);
+
+	icon_name = _tcsrchr( path_name, '\\') + 1;
+	*_tcsrchr( icon_name, '.') = '\0';
+
 
 	wc.style = 0;
 	wc.lpfnWndProc = IconProcedure;
 	wc.cbClsExtra = 0;
 	wc.cbWndExtra = 0;
 	wc.hInstance = hInstance;
+
 	if( hdll)
-		wc.hIcon = LoadIcon( hdll, "MLIcon");
+		wc.hIcon = LoadIcon( hdll, __TEXT("MLIcon"));
 	else
 		wc.hIcon = LoadIcon( NULL, IDI_APPLICATION);
+
 	wc.hCursor = LoadCursor( NULL, IDC_ARROW);
-	wc.hbrBackground = (HBRUSH)GetStockObject( WHITE_BRUSH);
-	wc.lpszMenuName =  (LPSTR) 0;
-	wc.lpszClassName = "mprepIcon";
+	wc.hbrBackground = (HBRUSH)( COLOR_WINDOW + 1);
+	wc.lpszMenuName =  NULL;
+	wc.lpszClassName = __TEXT("mprepIcon");
 	(void)RegisterClass( &wc);
 
-	MLIconWindow = CreateWindow( "mprepIcon", icon_name,
+	MLIconWindow = CreateWindow( __TEXT("mprepIcon"), icon_name,
 			WS_OVERLAPPEDWINDOW | WS_MINIMIZE, CW_USEDEFAULT,
 			CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
 			(HWND)0, (HMENU)0, hInstance, (void FAR*)0);
@@ -149,19 +194,19 @@ MLYDEFN( devyield_result, MLDefaultYielder, ( MLINK mlp, MLYieldParameters yp))
 //
 //	Mathlink templates
 
-# line 153 "MathStubs_windows.cpp"
+# line 198 "MathStubs_windows.cpp"
 
 
 # line 17 "mathlink_windows.tm"
 //	TFunction
 
-# line 159 "MathStubs_windows.cpp"
+# line 204 "MathStubs_windows.cpp"
 
 
 # line 99 "mathlink_windows.tm"
 //	TOperator
 
-# line 165 "MathStubs_windows.cpp"
+# line 210 "MathStubs_windows.cpp"
 
 
 void QNewFunction P(( void));
@@ -549,7 +594,7 @@ static struct func {
 	int   f_nargs;
 	int   manual;
 	int   (*f_func)P((MLINK));
-	char  *f_name;
+	const char  *f_name;
 	} _tramps[20] = {
 		{ 0, 2, _tr0, "QNewFunction" },
 		{ 0, 2, _tr1, "QDisposeFunction" },
@@ -573,14 +618,14 @@ static struct func {
 		{ 0, 2, _tr19, "QTimeEvolution" }
 		};
 
-static char* evalstrs[] = {
-	"Print[\"QuantumKernel 1.2 Windows, Copyright 1996-98 Manfred Lieb",
-	"mann, Copyright 1998-2000 Wolfgang Thaller, Updates 2007 by Gluo",
-	"nVision.com\"];",
-	(char*)0,
+static const char* evalstrs[] = {
+	"Print[\"QuantumKernel 1.3 Windows, Copyright 1996-98 Manfred Lieb",
+	"mann, Copyright 1998-2018 Wolfgang Thaller, Updates 2007 und 201",
+	"8 by Rolf Mertig, GluonVision.com\"];",
+	(const char*)0,
 	"QuantumKernel::err = \"`1`.\";",
-	(char*)0,
-	(char*)0
+	(const char*)0,
+	(const char*)0
 };
 #define CARDOF_EVALSTRS 2
 
@@ -601,26 +646,26 @@ int MLInstall(mlp) MLINK mlp;
 	_res = MLConnect(mlp);
 	if (_res) _res = _doevalstr( mlp, 0);
 	if (_res) _res = _doevalstr( mlp, 1);
-	if (_res) _res = _definepattern(mlp, "QNewFunction[ arrays__ ]", "{ { arrays } }", 0);
-	if (_res) _res = _definepattern(mlp, "QDisposeFunction[ function_ ]", "{ function }", 1);
-	if (_res) _res = _definepattern(mlp, "QGetArray[ function_ ]", "{ function }", 2);
-	if (_res) _res = _definepattern(mlp, "QGetFunctionInfo[ function_ ]", "{ function }", 3);
-	if (_res) _res = _definepattern(mlp, "QGetColorArray[ function_ ]", "{ function }", 4);
-	if (_res) _res = _definepattern(mlp, "QGetGrayArray[ function_ ]", "{ function }", 5);
-	if (_res) _res = _definepattern(mlp, "QGetRedBlueArray[ function_ ]", "{ function }", 6);
-	if (_res) _res = _definepattern(mlp, "QGetBlackWhiteArray[ function_ ]", "{ function }", 7);
-	if (_res) _res = _definepattern(mlp, "QGetAbsArray[ function_ ]", "{ function }", 8);
-	if (_res) _res = _definepattern(mlp, "QInfo[ ]", "{ }", 9);
-	if (_res) _res = _definepattern(mlp, "QSchroedinger1D[scalar_:None,mass_,dx_]", "{ scalar, mass, dx  }", 10);
-	if (_res) _res = _definepattern(mlp, "QSchroedinger2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", "{ scalar, vector, domain, mass, charge, units }", 11);
-	if (_res) _res = _definepattern(mlp, "QSchroedinger3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", "{ scalar, vector, domain, mass, charge, units }", 12);
-	if (_res) _res = _definepattern(mlp, "QPauli2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", "{ scalar, vector, domain, mass, charge, units }", 13);
-	if (_res) _res = _definepattern(mlp, "QPauli3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", "{ scalar, vector, domain, mass, charge, units }", 14);
-	if (_res) _res = _definepattern(mlp, "QDirac2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", "{ scalar, vector, domain, mass, charge, units }", 15);
-	if (_res) _res = _definepattern(mlp, "QDirac3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", "{ scalar, vector, domain, mass, charge, units }", 16);
-	if (_res) _res = _definepattern(mlp, "QDisposeOperator[ operator_ ]", "{ operator }", 17);
-	if (_res) _res = _definepattern(mlp, "QGetOperatorInfo[ operator_ ]", "{ operator }", 18);
-	if (_res) _res = _definepattern(mlp, "QTimeEvolution[ operator_, function_, timestep_, fractal_:4, steps_:1 ]", "{ operator, function, timestep, fractal, steps }", 19);
+	if (_res) _res = _definepattern(mlp, (char *)"QNewFunction[ arrays__ ]", (char *)"{ { arrays } }", 0);
+	if (_res) _res = _definepattern(mlp, (char *)"QDisposeFunction[ function_ ]", (char *)"{ function }", 1);
+	if (_res) _res = _definepattern(mlp, (char *)"QGetArray[ function_ ]", (char *)"{ function }", 2);
+	if (_res) _res = _definepattern(mlp, (char *)"QGetFunctionInfo[ function_ ]", (char *)"{ function }", 3);
+	if (_res) _res = _definepattern(mlp, (char *)"QGetColorArray[ function_ ]", (char *)"{ function }", 4);
+	if (_res) _res = _definepattern(mlp, (char *)"QGetGrayArray[ function_ ]", (char *)"{ function }", 5);
+	if (_res) _res = _definepattern(mlp, (char *)"QGetRedBlueArray[ function_ ]", (char *)"{ function }", 6);
+	if (_res) _res = _definepattern(mlp, (char *)"QGetBlackWhiteArray[ function_ ]", (char *)"{ function }", 7);
+	if (_res) _res = _definepattern(mlp, (char *)"QGetAbsArray[ function_ ]", (char *)"{ function }", 8);
+	if (_res) _res = _definepattern(mlp, (char *)"QInfo[ ]", (char *)"{ }", 9);
+	if (_res) _res = _definepattern(mlp, (char *)"QSchroedinger1D[scalar_:None,mass_,dx_]", (char *)"{ scalar, mass, dx  }", 10);
+	if (_res) _res = _definepattern(mlp, (char *)"QSchroedinger2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", (char *)"{ scalar, vector, domain, mass, charge, units }", 11);
+	if (_res) _res = _definepattern(mlp, (char *)"QSchroedinger3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", (char *)"{ scalar, vector, domain, mass, charge, units }", 12);
+	if (_res) _res = _definepattern(mlp, (char *)"QPauli2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", (char *)"{ scalar, vector, domain, mass, charge, units }", 13);
+	if (_res) _res = _definepattern(mlp, (char *)"QPauli3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", (char *)"{ scalar, vector, domain, mass, charge, units }", 14);
+	if (_res) _res = _definepattern(mlp, (char *)"QDirac2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", (char *)"{ scalar, vector, domain, mass, charge, units }", 15);
+	if (_res) _res = _definepattern(mlp, (char *)"QDirac3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]", (char *)"{ scalar, vector, domain, mass, charge, units }", 16);
+	if (_res) _res = _definepattern(mlp, (char *)"QDisposeOperator[ operator_ ]", (char *)"{ operator }", 17);
+	if (_res) _res = _definepattern(mlp, (char *)"QGetOperatorInfo[ operator_ ]", (char *)"{ operator }", 18);
+	if (_res) _res = _definepattern(mlp, (char *)"QTimeEvolution[ operator_, function_, timestep_, fractal_:4, steps_:1 ]", (char *)"{ operator, function, timestep, fractal, steps }", 19);
 	if (_res) _res = MLPutSymbol( mlp, "End");
 	if (_res) _res = MLFlush( mlp);
 	return _res;
@@ -652,7 +697,7 @@ static int  _doevalstr( MLINK mlp, int n)
 	char **s, **p;
 	char *t;
 
-	s = evalstrs;
+	s = (char **)evalstrs;
 	while( n-- > 0){
 		if( *s == 0) break;
 		while( *s++ != 0){}
@@ -718,7 +763,11 @@ static int  _definepattern( MLINK mlp, char *patt, char *args, int func_n)
 
 int _MLDoCallPacket( MLINK mlp, struct func functable[], int nfuncs)
 {
+#if MLINTERFACE >= 4
+	int len;
+#else
 	long len;
+#endif
 	int n, res = 0;
 	struct func* funcp;
 
@@ -726,7 +775,11 @@ int _MLDoCallPacket( MLINK mlp, struct func functable[], int nfuncs)
 	funcp = &functable[n];
 
 	if( funcp->f_nargs >= 0
+#if MLINTERFACE >= 4
+	&& ( ! MLTestHead(mlp, "List", &len)
+#else
 	&& ( ! MLCheckFunction(mlp, "List", &len)
+#endif
 	     || ( !funcp->manual && (len != funcp->f_nargs))
 	     || (  funcp->manual && (len <  funcp->f_nargs))
 	   )
@@ -744,12 +797,24 @@ L0:	if( res == 0)
 mlapi_packet MLAnswer( MLINK mlp)
 {
 	mlapi_packet pkt = 0;
+#if MLINTERFACE >= 4
+	int waitResult;
 
-	while( !MLDone && !MLError(mlp)
-	&& (pkt = MLNextPacket(mlp), pkt) && pkt == CALLPKT){
+	while( ! MLDone && ! MLError(mlp)
+		&& (waitResult = MLWaitForLinkActivity(mlp),waitResult) &&
+		waitResult == MLWAITSUCCESS && (pkt = MLNextPacket(mlp), pkt) &&
+		pkt == CALLPKT)
+	{
+		MLAbort = 0;
+		if(! MLDoCallPacket(mlp))
+			pkt = 0;
+	}
+#else
+	while( !MLDone && !MLError(mlp) && (pkt = MLNextPacket(mlp), pkt) && pkt == CALLPKT){
 		MLAbort = 0;
 		if( !MLDoCallPacket(mlp)) pkt = 0;
 	}
+#endif
 	MLAbort = 0;
 	return pkt;
 }
@@ -864,8 +929,14 @@ static int _MLMain( charpp_ct argv, charpp_ct argv_end, charp_ct commandline)
 	long err;
 #endif /* MLINTERFACE >= 3 */
 
+#if MLINTERFACE >= 4
+	if( !stdenv)
+		stdenv = MLInitialize( (MLEnvironmentParameter)0);
+#else
 	if( !stdenv)
 		stdenv = MLInitialize( (MLParametersPointer)0);
+#endif
+
 	if( stdenv == (MLEnvironment)0) goto R0;
 
 	if( !stdyielder)
@@ -889,27 +960,47 @@ static int _MLMain( charpp_ct argv, charpp_ct argv_end, charp_ct commandline)
 
 	mlp = commandline
 		? MLOpenString( stdenv, commandline, &err)
+#if MLINTERFACE >= 3
 		: MLOpenArgcArgv( stdenv, (int)(argv_end - argv), argv, &err);
+#else
+		: MLOpenArgv( stdenv, argv, argv_end, &err);
+#endif
 	if( mlp == (MLINK)0){
 		MLAlert( stdenv, MLErrorString( stdenv, err));
 		goto R1;
 	}
 
 	if( MLIconWindow){
-		char textbuf[64];
+#define TEXTBUFLEN 64
+		TCHAR textbuf[TEXTBUFLEN];
+		PTCHAR tmlname;
+		const char *mlname;
+		size_t namelen, i;
 		int len;
-		len = GetWindowText(MLIconWindow, textbuf, sizeof(textbuf)-2);
+		len = GetWindowText(MLIconWindow, textbuf, 62 );
+		mlname = MLName(mlp);
+		namelen = strlen(mlname);
+		tmlname = (PTCHAR)malloc((namelen + 1)*sizeof(TCHAR));
+		if(tmlname == NULL) goto R2;
+
+		for(i = 0; i < namelen; i++){
+			tmlname[i] = mlname[i];
+		}
+		tmlname[namelen] = '\0';
+		
 #if defined(_MSC_VER) && (_MSC_VER >= 1400)
-		strcat_s( textbuf + len, sizeof(textbuf) - len, "(");
-		strncpy_s(textbuf + len + 1, sizeof(textbuf) - len - 1, MLName(mlp), sizeof(textbuf) - len - 3);
-		textbuf[sizeof(textbuf) - 2] = '\0';
-		strcat_s(textbuf, sizeof(textbuf), ")");
+		_tcscat_s( textbuf + len, TEXTBUFLEN - len, __TEXT("("));
+		_tcsncpy_s(textbuf + len + 1, TEXTBUFLEN - len - 1, tmlname, TEXTBUFLEN - len - 3);
+		textbuf[TEXTBUFLEN - 2] = '\0';
+		_tcscat_s(textbuf, TEXTBUFLEN, __TEXT(")"));
 #else
-		strcat( textbuf + len, "(");
-		_fstrncpy( textbuf + len + 1, MLName(mlp), sizeof(textbuf) - len - 3);
-		textbuf[sizeof(textbuf) - 2] = '\0';
-		strcat( textbuf, ")");
+		_tcscat( textbuf + len, __TEXT("("));
+		_tcsncpy( textbuf + len + 1, tmlname, TEXTBUFLEN - len - 3);
+		textbuf[TEXTBUFLEN - 2] = '\0';
+		_tcscat( textbuf, __TEXT(")"));
 #endif
+		textbuf[len + namelen + 2] = '\0';
+		free(tmlname);
 		SetWindowText( MLIconWindow, textbuf);
 	}
 
@@ -923,7 +1014,7 @@ static int _MLMain( charpp_ct argv, charpp_ct argv_end, charp_ct commandline)
 			if( ! refuse_to_be_a_frontend( mlp)) break;
 		}
 
-	MLClose( mlp);
+R2:	MLClose( mlp);
 R1:	MLDeinitialize( stdenv);
 	stdenv = (MLEnvironment)0;
 R0:	return !MLDone;

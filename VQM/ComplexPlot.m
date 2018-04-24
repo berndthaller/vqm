@@ -266,7 +266,8 @@ Plot3D[valuemap[func],
               {x,xmin,xmax}, {y,ymin,ymax},
               ColorFunction ->  colfun,
               ColorFunctionScaling -> False,
-              Evaluate[FilterOptions[Plot3D,opts]]]
+              Evaluate[FilterRules[Flatten[{opts}],Options[Plot3D]]]
+     ]
 ]/;And @@ NumericQ /@ {xmin,xmax,ymin,ymax};
 
 
@@ -284,7 +285,7 @@ QComplexContourPlot3D[func_,{x_Symbol,xmin_,xmax_},
        	If[valuemap === Automatic || valuemap === $QComplexToValueMap, valuemap=$QComplexToValueMap];
 		gr = ContourPlot[valuemap[func],{x,xmin,xmax},{y,ymin,ymax},
 				ContourShading->False,
-				Evaluate[FilterOptions[ContourPlot,opts]],
+				Evaluate[FilterRules[Flatten[{opts}], Options@ContourPlot]],
 				PlotRange->All];
 		cgr = Last/@ Graphics[gr][[1]];
 		absf[n_] := valuemap[f[cgr[[n,1,3]][[1]],cgr[[n,1,3]][[2]]]];
@@ -309,9 +310,8 @@ Options[QListComplexPlot3D] =
     
 QListComplexPlot3D[array_, opts___?OptionQ] := 
 Module[{ab1=$QComplexToValueMap[array],absarr,plotarr,
-        argarr=N[Arg[Drop[#,-1]& /@ Drop[array,-1]]],args,
-        abss,ligarr,hues,stns,brts,colors,fli,
-        colormap=QComplexToColorMap/.Join[{opts}, myoptions],
+        argarr=N[Arg[Drop[#,-1]& /@ Drop[array,-1]]],
+        abss,ligarr,hues,stns,brts,colors,
         checkopts={QComplexToColorMap,QValueChecking}/.Join[{opts}, myoptions],
         scaledvl=QScaledValues/.Join[{opts}, myoptions],
         valuemap=QComplexToValueMap/.Join[{opts}, myoptions]},
@@ -338,7 +338,7 @@ Module[{ab1=$QComplexToValueMap[array],absarr,plotarr,
             MapThread[checkopts[[1]][#1,#2]&,{abss,argarr},2];
             Remove[argarr]];
             ListPlot3D[ plotarr, colors,
-            Evaluate[FilterOptions[ListPlot3D,opts]]
+            Evaluate[FilterRules[Flatten[{opts}], Options @ ListPlot3D]]
        ]
 ]/; MatrixQ[array]
 
@@ -402,7 +402,7 @@ meshchange[ops___][z__] := If[FreeQ[{ops,z}, Mesh],
 
           ListPlot3D[Abs[array],ColorFunction -> colorfun,
             ColorFunctionScaling -> False,
-            Evaluate[(meshchange[opts]@FilterOptions[ListPlot3D,opts])],
+            Evaluate[(meshchange[opts]@FilterRules[Flatten[{opts}], Options@ListPlot3D])],
             BoxRatios->{1,1,.4}
        ]
 ];
@@ -559,7 +559,7 @@ QColorDensityGraphics[abs_,colors_,opts___?OptionQ] :=
 
 QColorDensityGraphics[SurfaceGraphics[abs_,colors_,opts___],opts2___] :=
     QColorDensityGraphics[abs,colors,
-    FilterOptions[QColorDensityGraphics,JoinOptions[{opts2},opts]]]
+    FilterRules[{JoinOptions[{opts2},opts]}, Options@QColorDensityGraphics ]]
 
 QColorDensityGraphics/:
 SurfaceGraphics[QColorDensityGraphics[abs_,colors_,opts___],opts2___] :=
@@ -568,18 +568,21 @@ SurfaceGraphics[QColorDensityGraphics[abs_,colors_,opts___],opts2___] :=
             colorarray = Drop[#,-1]& /@ Drop[colors,-1],
             colorarray = colors];
         SurfaceGraphics[abs, colorarray,
-            FilterOptions[SurfaceGraphics,JoinOptions[{opts2},opts]]]
+         FilterRules[{JoinOptions[{opts2},opts]}, Options@SurfaceGraphics]
+        ]
     ]
 
 QColorDensityGraphics/:
 DensityGraphics[QColorDensityGraphics[abs_,colors_,opts___],opts2___] :=
     DensityGraphics[abs,
-        FilterOptions[DensityGraphics,JoinOptions[{opts2},opts]]]
+         FilterRules[{JoinOptions[{opts2},opts]}, Options@DensityGraphics]
+        ]
 
 QColorDensityGraphics/:
 ContourGraphics[QColorDensityGraphics[abs_,colors_,opts___],opts2___] :=
     ContourGraphics[abs,
-        FilterOptions[ContourGraphics,JoinOptions[{opts2},opts]]]
+        FilterRules[{JoinOptions[{opts2},opts]}, Options@ContourGraphics]
+        ]
 
 QColorDensityGraphics/:
 Graphics[QColorDensityGraphics[abs_,colors_,opts___]] :=
@@ -674,8 +677,8 @@ Module[{gr1,gr2,antial},
         Mesh->False, PlotRange->All, opts];
     gr2=ContourPlot @@ {Abs[func], {x,xmin,xmax}, {y,ymin,ymax},
         ContourShading->False,
-        FilterOptions[ContourPlot,opts] };
-   antial @ Show[gr1,gr2,PlotRange->All,FilterOptions[Graphics,opts]]
+        FilterRules[Flatten[{opts}], Options[ContourPlot]] };
+   antial @ Show[gr1,gr2,PlotRange -> All, FilterRules[{opts}, Options@Graphics]]
 ]/; And @@ NumericQ /@ {xmin,xmax,ymin,ymax}
 
 
@@ -692,7 +695,8 @@ QListComplexContourPlot[array_,opts___?OptionQ]:=
             datran = { {0,dims[[2]]}, {0,dims[[1]]} } ];
     gr2=ListContourPlot[Abs[array],ContourShading->False,
         DataRange->datran,
-        FilterOptions[ListContourPlot,opts]][[1]];
+        FilterRules[Flatten[{opts}], Options[ListContourPlot]]
+        ][[1]];
         ep={epi,gr2};
    QListComplexDensityPlot[array,
         Mesh->False,PlotRange->All,Epilog->ep,opts]
@@ -712,7 +716,7 @@ testplotpoints[pl_] :=
 over list2: *)
 
 (* RM: this will e.g. allow QListComplexDensityPlot to still accept MeshRange *)
-$fixfor6 = {MeshRange -> DataRange};
+$fixfor6 = {System`MeshRange -> DataRange};
 
 JoinOptions[list1_,list2___]:=
     Module[{namelist=First /@ Flatten[{list1}/. $fixfor6 ]},

@@ -185,7 +185,8 @@ Int32	MLGetFunctionObject(	MLINK inLink,
 	case MLTKSYM:
 		MLGetSymbol(inLink, &symbolP);
 		result = strcmp( symbolP, "None");
-		MLDisownSymbol(inLink, symbolP);
+//		MLDisownSymbol(inLink, symbolP);
+		MLReleaseSymbol(inLink, symbolP);
 		if( result == 0 ) {
 			outID = 0;
 			return eOK;

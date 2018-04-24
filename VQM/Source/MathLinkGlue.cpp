@@ -122,18 +122,18 @@ void	QDisposeFunction( void )
 void	QGetArray( void )
 {
 	TFunction	*theFunction;
-	Int32	ID;
-
-	
-	if( eError == MLGetFunctionObject(stdlink, ID) ) return;
-
-	theFunction = gFunctionList->Fetch(ID);
-	if( !theFunction ) {
-		MLErrorReport(stdlink, "invalid function ID");
-		return;
-	}
-	
-	theFunction->PutArray();
+ 	Int32	ID;
+ 
+ 	
+ 	if( eError == MLGetFunctionObject(stdlink, ID) ) return;
+ 
+ 	theFunction = gFunctionList->Fetch(ID);
+ 	if( !theFunction ) {
+ 		MLErrorReport(stdlink, "invalid function ID");
+ 		return;
+ 	}
+ 	
+ 	theFunction->PutArray();
 }
 
 
@@ -166,22 +166,22 @@ void	QGetFunctionInfo( void )
 //		$ QGetColorArray
 // ---------------------------------------------------------------------------
 //	Return RGB color array
-
+//
 void	QGetColorArray( void )
 {
-	TFunction	*theFunction;
-	Int32	ID;
-
-	
-	if( eError == MLGetFunctionObject(stdlink, ID) ) return;
-
-	theFunction = gFunctionList->Fetch(ID);
-	if( !theFunction ) {
-		MLErrorReport(stdlink, "invalid function ID");
-		return;
-	}
-	
-	theFunction->PutColor();
+ 	TFunction	*theFunction;
+ 	Int32	ID;
+ 
+ 	
+ 	if( eError == MLGetFunctionObject(stdlink, ID) ) return;
+ 
+ 	theFunction = gFunctionList->Fetch(ID);
+ 	if( !theFunction ) {
+ 		MLErrorReport(stdlink, "invalid function ID");
+ 		return;
+ 	}
+ 	
+ 	theFunction->PutColor();
 }
 
 
@@ -190,6 +190,7 @@ void	QGetColorArray( void )
 //		$ QGetGrayArray
 // ---------------------------------------------------------------------------
 //	Return gray array
+//RM2018COMMENT
 
 void	QGetGrayArray( void )
 {
@@ -214,46 +215,47 @@ void	QGetGrayArray( void )
 //		$ QGetRedBlueArray
 // ---------------------------------------------------------------------------
 //	Return red-blue color array
+//RM2018COMMENT
 
 void	QGetRedBlueArray( void )
 {
 	TFunction	*theFunction;
-	Int32	ID;
-
-	
-	if( eError == MLGetFunctionObject(stdlink, ID) ) return;
-
-	theFunction = gFunctionList->Fetch(ID);
-	if( !theFunction ) {
-		MLErrorReport(stdlink, "invalid function ID");
-		return;
-	}
-	
-	theFunction->PutRedBlue();
+ 	Int32	ID;
+ 
+ 	
+ 	if( eError == MLGetFunctionObject(stdlink, ID) ) return;
+ 
+ 	theFunction = gFunctionList->Fetch(ID);
+ 	if( !theFunction ) {
+ 		MLErrorReport(stdlink, "invalid function ID");
+ 		return;
+ 	}
+ 	
+ 	theFunction->PutRedBlue();
 }
-
+ 
 
 
 // ---------------------------------------------------------------------------
 //		$ QGetBlackWhiteArray
 // ---------------------------------------------------------------------------
 //	Return black-white array
-
+//
 void	QGetBlackWhiteArray( void )
 {
-	TFunction	*theFunction;
-	Int32	ID;
-
-	
-	if( eError == MLGetFunctionObject(stdlink, ID) ) return;
-
-	theFunction = gFunctionList->Fetch(ID);
-	if( !theFunction ) {
-		MLErrorReport(stdlink, "invalid function ID");
-		return;
-	}
-	
-	theFunction->PutBlackWhite();
+ 	TFunction	*theFunction;
+ 	Int32	ID;
+ 
+ 	
+ 	if( eError == MLGetFunctionObject(stdlink, ID) ) return;
+ 
+ 	theFunction = gFunctionList->Fetch(ID);
+ 	if( !theFunction ) {
+ 		MLErrorReport(stdlink, "invalid function ID");
+ 		return;
+ 	}
+ 	
+ 	theFunction->PutBlackWhite();
 }
 
 
@@ -730,6 +732,3 @@ void	QGetOperatorInfo( void )
 
 	theOperator->PutInfo();
 }
-
-
-

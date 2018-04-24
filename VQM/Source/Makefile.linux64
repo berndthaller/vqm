@@ -5,7 +5,7 @@
 # To build it, use the command
 # make -f Makefile.linux64
 
-VERSION=6.0
+VERSION=11.3
 MLINKDIR = /usr/local/Wolfram/Mathematica/${VERSION}/SystemFiles/Links/MathLink/DeveloperKit
 
 CPP = g++
@@ -13,7 +13,7 @@ SYS = Linux-x86-64
 CADDSDIR = ${MLINKDIR}/${SYS}/CompilerAdditions
 EXTRA_CFLAGS=
 #MLLIB = ML32i3 # Set this to ML64i3 if using a 64-bit system
-MLLIB = ML64i3 # Set this to ML32i3 if using a 32-bit system
+MLLIB = ML64i3 
 
 INCDIR = ${CADDSDIR}
 LIBDIR = ${CADDSDIR}
@@ -26,10 +26,10 @@ BINARIES = QuantumKernel64
 all : ${BINARIES}
 
 QuantumKernel64: MathLinkGlue.o MathStubs_linux64.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o
-	${CPP} -I${INCDIR} MathLinkGlue.o MathStubs_linux64.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -l${MLLIB} -lm -lpthread -lrt -o $@
+	${CPP}  -I${INCDIR} MathLinkGlue.o MathStubs_linux64.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -l${MLLIB} -lm -lpthread -lrt -lstdc++ -ldl -luuid -o $@
 
 .cpp.o :
-	${CPP} -c -I${INCDIR} $<
+	${CPP} -w -c -I${INCDIR} $<
 
 MathStubs_linux64.cpp : mathlink_linux64.tm
 	${MPREP} $? -o $@

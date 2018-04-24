@@ -43,9 +43,7 @@ Off[General::spell1, General::spell];
     
 
 (*-----------------------------------*)
-BeginPackage[
-	"VQM`VisualizeVector`",
-	"VectorAnalysis`"];
+BeginPackage[ "VQM`VisualizeVector`" ];
 (*-----------------------------------*)
 
 VQM`VisualizeVector`Private`Symbols=Hold[

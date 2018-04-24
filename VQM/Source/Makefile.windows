@@ -1,30 +1,26 @@
-# Makefile for Mathematica 6 and cygwin for Windows
-# by Rolf Mertig, GluonVision.com, 2007-07-20
+# Makefile for Mathematica 11.3 and cygwin and mingw for Windows
+# by Rolf Mertig, GluonVision.com, 2007-07-20, 2018-04-23
 #
 # This makefile can be used to build QuantumKernel.exe on Windows
 #
 #
 # To build it, use the commands
+#
+# in a cygwin bash shell, do:
+# PATH=/cygdrive/c/gcc/bin:/cygdrive/c/gcc:/usr/local/bin:/usr/bin/:"/cygdrive/c/Program Files/Wolfram Research/Mathematica/11.3/SystemFiles/Links/MathLink/DeveloperKit/Windows-x86-64/CompilerAdditions"
+
 # make clean
 # make -f Makefile.windows
 
-# eventually adjust this  to your installation of Mathematica 
-MLINKDIR = /cygdrive/c/Programme/Wolfram\ Research/Mathematica/11.3/SystemFiles/Links/MathLink/DeveloperKit
+CPP = /cygdrive/c/gcc/bin/x86_64-w64-mingw32-g++.exe
+EXTRA_CFLAGS=-mwindows
 
-CPP = g++
-SYS = Windows-x86-64
+INCDIR=.
+LIBDIR=.
 
-#while there is a cygwin directory in CompilerAdditions we only need mldev32, because of the -mno-cygwin compiler option 
-CADDSDIR = ${MLINKDIR}/${SYS}/CompilerAdditions/mldev64
-MLLIB =ml64i3m# Set this to ML64i3 if using a 64-bit system
+MLLIB = ML64i4cyg
 
-INCDIR = ${CADDSDIR}/include
-LIBDIR = ${CADDSDIR}/lib
-
-# this flag is essential for stopping a terminal window (cmd.exe) to appear when loading the Mathlink executable
-EXTRALIBS= -mwindows
-
-MPREP = ${CADDSDIR}/bin/mprep
+MPREP = mprep.exe
 RM = rm
 
 BINARIES = QuantumKernel.exe
@@ -32,10 +28,10 @@ BINARIES = QuantumKernel.exe
 all : ${BINARIES}
 
 QuantumKernel.exe: MathLinkGlue.o MathStubs_windows.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o
-	${CPP} -I${INCDIR} MathLinkGlue.o MathStubs_windows.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -l${MLLIB}  ${EXTRALIBS} -o $@
+	${CPP} ${EXTRA_CFLAGS} -I${INCDIR} MathLinkGlue.o MathStubs_windows.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -l${MLLIB} -o $@
 
 .cpp.o :
-	${CPP} -c -mno-cygwin -I${INCDIR} $<
+	${CPP} -w -c -I${INCDIR} $<
 
 MathStubs_windows.cpp : mathlink_windows.tm
 	${MPREP} $? -o $@
