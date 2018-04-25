@@ -2,7 +2,7 @@
 
 (* :Name:	VQM`QuantumKernel` *)
 
-(* :Copyright: ©2002 Bernd Thaller *)
+(* :Copyright: ï¿½2002 Bernd Thaller *)
 
 (* :Author:	Bernd Thaller,
 			Institute of Mathematics,
@@ -199,10 +199,13 @@ exponential operator, see M.Suzuki, J.Math.Phys.32 (1991), 410). The integer
 Begin["`Private`"];
 (*-----------------------------------*)
 
+(*
 SetDirectory @ DirectoryName[$InputFileName];
+*)
 
 	QuantumLink = 
 		Install[
+			FileNameJoin[{DirectoryName[$InputFileName],#}]&@
 			Which[
 (* RM: fresh compiled *)
 				$SystemID === "Linux",
@@ -215,7 +218,7 @@ SetDirectory @ DirectoryName[$InputFileName];
 					"QuantumKernelX",
 (* RM: fresh compiled *)
  				$OperatingSystem === "Windows",
-                                        "QuantumKernel.exe"
+                    "QuantumKernel.exe"
                              ]
 		];
 

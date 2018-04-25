@@ -11,7 +11,7 @@
 //
 //	Mathlink templates
 
-:Evaluate: Print["QuantumKernel 1.2 MacOS X, Copyright \[Copyright]1996-98 Manfred Liebmann, \[Copyright]1998-2000 Wolfgang Thaller, Updates 2007 by GluonVision"];
+:Evaluate: Print["QuantumKernel 1.3 MacOS X, Copyright \[Copyright]1996-98 Manfred Liebmann, \[Copyright]1998-2018 Wolfgang Thaller, Updates 2018 by Rolf Mertig, GluonVision.com"];
 :Evaluate: QuantumKernel::err = "`1`.";
 
 //	TFunction

@@ -11,7 +11,7 @@
 //
 //	Mathlink templates
 
-:Evaluate: Print["QuantumKernel 1.2 Linux x86_64, Copyright 1996-98 Manfred Liebmann, Copyright 1998-2000 Wolfgang Thaller, Updates 2007 by GluonVision.com"];
+:Evaluate: Print["QuantumKernel 1.3 Linux x86_64, Copyright 1996-98 Manfred Liebmann, Copyright 1998-2000 Wolfgang Thaller, Updates 2018 by GluonVision.com"];
 :Evaluate: QuantumKernel::err = "`1`.";
 
 //	TFunction

@@ -188,8 +188,6 @@ Options[QArgColorPlot] = Sort @ {JoinOptions[
 		QSquared -> False
         } ] };
 
-Options[QListArgColorPlot] =  Sort @  Join[Options[QArgColorPlot],{QHorizontalRange->All}];
-
 
 SetAttributes[QArgColorPlot, HoldAll];
 
@@ -228,6 +226,8 @@ QArgColorPlot[func_,{x_Symbol, xmin_?NumericQ, xmax_?NumericQ}, opts___?OptionQ]
         ]
 	];
 
+(* RM2018: InterpolationOrder *)
+Options[QListArgColorPlot] = Sort[Join[Options[QArgColorPlot], {QHorizontalRange->All}]] /. (InterpolationOrder -> None) :>  (InterpolationOrder -> 3);
 
 QListArgColorPlot[list_List, opts___?OptionQ] :=
 	Module[{ran, auxopts, xvars},
@@ -249,19 +249,22 @@ QListArgColorPlot[list:{ {_, _}.. }, opts___?OptionQ] :=
 			xvars = list[[All,1]],
 			yvals = list[[All,-1]],
 			hues, auxlist=list,
-			optsWithDefaults, fiops
+			optsWithDefaults, fiops, interpolOrder, liminmax
            },
          optsWithDefaults = JoinOptions[{opts}, {Axes->True}, Options[QListArgColorPlot]];
+         (*RM2018: *)
+         liminmax = MinMax[list[[All,1]]];
 
 		If[Not[And @@ (NumberQ[#]& /@ Flatten[N[list]])],
 			Message[LACP::listform]; Return[] ];
-		    {opac, sat,bri,style,dir,squ,bl,sh,ran} =
+		    {opac, sat,bri,style,dir,squ,bl,sh,ran,interpolOrder} =
 			{Opacity, QSaturation,QBrightness,PlotStyle,QPlotDown,QSquared,
-			 QBottomLine,QShiftPlot,QHorizontalRange}/.Flatten[{opts}]/.Options[QListArgColorPlot];
+			 QBottomLine,QShiftPlot,QHorizontalRange, InterpolationOrder}/.Flatten[{opts}]/.Options[QListArgColorPlot];
         nbl    = If[NumberQ[N[bl]],N[bl],0.,0.];
         shift  = If[NumberQ[N[sh]],N[sh],0.,0.];
 		If[MatchQ[N[ran],{{_?NumberQ,_?NumberQ},{_?NumberQ,_?NumberQ}}],
-			ran = ran[[2]] ];
+			ran = ran[[2]] 
+		];
 		If[MatchQ[N[ran],{_?NumberQ,_?NumberQ}],
 		    auxlist = TrimList[list,{ran[[1]],ran[[2]]}];
 (* RM: This is necessary for successful Interpolation later *)
@@ -269,12 +272,13 @@ QListArgColorPlot[list:{ {_, _}.. }, opts___?OptionQ] :=
 			xvars    = First /@ auxlist;
             yvals	= Last /@ auxlist; 
          ];
+         Global`RR1=ran1;
          
          yvals	= If[squ === True, Abs[yvals]^2, Abs[yvals], Abs[yvals]];
          yvals	= If[dir === True, -1*yvals, yvals, yvals];
 If[$UseListLinePlot,
          (* create a complex-valued interpolation function *)
-         interp   = Interpolation[auxlist, InterpolationOrder -> 3]; 
+         interp   = Interpolation[auxlist, InterpolationOrder -> interpolOrder]; 
          If[opac == 1, opac=Sequence[]];
          colorfun = Function[{x,y},(Hue[#,sat,bri,opac]& @ (Mod[Arg[interp[x]]/(2Pi), 1]))];
          (*
@@ -284,7 +288,9 @@ If[$UseListLinePlot,
          res = Plot[interp[x], {x, Min[xvars],Max[xvars]}, ColorFunctionScaling -> False, 
            ColorFunction -> colorfun, Filling -> Axis];
            *)
-         res = QArgColorPlot[interp[x], {x, Min[xvars], Max[xvars]}, opts]
+         res = With[{r1=liminmax[[1]], r2=liminmax[[2]]},
+         	     QArgColorPlot[If[ (x < r1) || (x > r2), 0, interp[x]], {x, Min[xvars], Max[xvars]}, opts]
+         ]
          
     (* else *)
          ,
@@ -510,6 +516,7 @@ fillit[xvars_,colorfun_Function,values_,style_,bl_,sh_, opts___?OptionQ] :=
      (* since there might other Epilog settings from QListArgColorPlot, we merge them here *)
      epilogs = DeleteCases[{lines, Epilog /. {opts}}, Epilog];
      ListLinePlot[valpts, 
+     	                  InterpolationOrder -> None,
                           Filling -> (bl+sh), ColorFunctionScaling -> False,
                           Epilog ->  epilogs,   (*FillingStyle->Automatic,*) (*RM: should work with this option ... *)
                           ColorFunction ->colorfun,

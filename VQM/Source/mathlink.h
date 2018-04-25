@@ -34,7 +34,7 @@ search for WSTP_ERRSTRIP_COMMAND in libsrc/CMakeLists.txt.
 
 
 #if (! WINDOWS_MATHLINK || ! WINDOWS_WSTP) && ! UNIX_MATHLINK
-#	define	WINDOWS_MATHLINK	1
+#	define	UNIX_MATHLINK	1
 
 #endif
 
@@ -551,7 +551,7 @@ search for WSTP_ERRSTRIP_COMMAND in libsrc/CMakeLists.txt.
 #elif MLINTERFACE == 4
 #define MLAPIREVISION MLAPI4REVISION
 #else
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 #endif
 
@@ -575,7 +575,7 @@ search for WSTP_ERRSTRIP_COMMAND in libsrc/CMakeLists.txt.
 #elif MLINTERFACE == 4
 #define MLOLDDEFINITION MLAPI3REVISION
 #else
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 #else
 #define MLOLDDEFINITION MLAPI1REVISION
@@ -586,7 +586,7 @@ search for WSTP_ERRSTRIP_COMMAND in libsrc/CMakeLists.txt.
 
 
 #else
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #endif /* _MLVERS_H */
@@ -678,7 +678,7 @@ search for WSTP_ERRSTRIP_COMMAND in libsrc/CMakeLists.txt.
 #if WINDOWS_MATHLINK
 
 #ifndef FAR
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 #else
 #define FAR
@@ -1517,7 +1517,7 @@ ML_END_EXTERN_C
 
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 
@@ -2602,7 +2602,7 @@ MLBRIARD_MLLONGDOUBLE */
 #endif /* _ILP32 || _LP64 */
 
 #else
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #elif (WIN32_MATHLINK || WIN64_MATHLINK) && NEW_WIN32_NUMENV
@@ -3750,7 +3750,7 @@ typedef dev_msghandler FAR* dev_msghandlerp;
 #endif /* _MLSTDDEV_H */
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 
@@ -3989,7 +3989,7 @@ MLDECL( void,     MLSetAllocParameter, ( MLParametersPointer p, MLAllocator allo
 
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #if MLINTERFACE > 1 && MLINTERFACE <= 3
@@ -4176,7 +4176,7 @@ MLDECL( long_et, MLTestPoint1, ( MLEnvironment ep, ulong_ct selector, voidp_ct p
 #endif /* MLINTERFACE <= 3 */
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 #if MLINTERFACE > 1
 
@@ -4790,7 +4790,7 @@ typedef unsigned long devinfo_selector;
 ML_EXTERN_C
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #if MLINTERFACE >= 3
@@ -5233,7 +5233,7 @@ MLDECL( mlapi_result,   MLGetString,           ( MLINK mlp, kcharpp_ct   sp));
 #endif /* MLINTERFACE >= 3 */
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #if MLINTERFACE >= 3
@@ -5605,7 +5605,7 @@ MLDECL( mlapi_result,   MLPutString,        ( MLINK mlp, kcharp_ct   s));
 #endif /* MLINTERFACE >= 3 */
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #if MLINTERFACE >= 3
@@ -5815,7 +5815,7 @@ MLDECL( long, MLNextCharacter,             ( kcharpp_ct startp, kcharp_ct end));
 
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 #if MLINTERFACE > 1
 #if MLINTERFACE >= 4
@@ -5917,7 +5917,7 @@ ML_END_EXTERN_C
 
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #ifndef __array_meterp__
@@ -6183,7 +6183,7 @@ ML_END_EXTERN_C
 
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #ifndef __array_meterp__
@@ -6635,7 +6635,7 @@ ML_END_EXTERN_C
 ML_EXTERN_C
 
 #ifndef MLINTERFACE
-/* syntax error */ )
+/*\ syntax\ error\ */\ )
 #endif
 
 #if MLINTERFACE >= 3

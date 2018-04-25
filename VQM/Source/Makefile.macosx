@@ -1,19 +1,20 @@
-# Makefile for Mathematica 6 and Mac OS X
-# by Rolf Mertig, GluonVision.com, 2007-06-28
+# Makefile for Mathematica 11.3 and Mac OS X
+# by Rolf Mertig, GluonVision.com, 2018-04-24
 #
 # This makefile can be used to build QuantumKernel on MacOS X
 # To build it, use the command
-# make
+# make -f Makefile.macosx
 
-MLINKDIR = /Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit
-SDK=/Developer/SDKs/MacOSX10.4u.sdk
-ARCHS=-arch ppc -arch i386 -arch ppc64 -arch x86_64
+MLINKDIR = /Applications/Mathematica.app/Contents/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64
+#ARCHS=-arch ppc -arch i386 -arch ppc64 -arch x86_64
 
-CPP = g++
+#CPP=g++
+
 CADDSDIR = ${MLINKDIR}/CompilerAdditions
-MLLIB = MLi3
-CPPFLAGS= -isysroot ${SDK} -I${INCDIR}  ${ARCHS}
-LDFLAGS= -isysroot ${SDK} ${ARCHS} -L${LIBDIR} -l${MLLIB}
+EXTRA_CFLAGS=-stdlib=libstdc++ -stdlib=libc++
+
+#CPPFLAGS= -isysroot ${SDK} -I${INCDIR}  ${ARCHS}
+#LDFLAGS= -isysroot ${SDK} ${ARCHS} -L${LIBDIR} -l${MLLIB}
 
 INCDIR = ${CADDSDIR}
 LIBDIR = ${CADDSDIR}
@@ -21,13 +22,12 @@ LIBDIR = ${CADDSDIR}
 MPREP = ${CADDSDIR}/mprep
 RM = rm
 
-
 BINARIES = QuantumKernelX
 
 all : ${BINARIES}
 
 QuantumKernelX: MathLinkGlue.o MathStubs_macosx.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o
-	${CPP} $? ${LDFLAGS} -o $@
+	${CXX} ${EXTRA_CFLAGS} -I${INCDIR} MathLinkGlue.o MathStubs_macosx.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -lMLi4 -lc++ -framework Foundation -o $@
 
 MathStubs_macosx.cpp : mathlink_macosx.tm
 	${MPREP} $? -o $@
