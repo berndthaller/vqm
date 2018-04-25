@@ -1,4 +1,3 @@
-Print["Loading ArgColorPlot.m"]
 (* ::Package:: *)
 
 (* :Title:	Arg Color Plot *)
@@ -198,20 +197,18 @@ Options[QListArgColorPlot] =  Sort @  Join[Options[QArgColorPlot],{QHorizontalRa
 SetAttributes[QArgColorPlot, HoldAll];
 
 QArgColorPlot[func_,{x_Symbol, xmin_?NumericQ, xmax_?NumericQ}, opts___?OptionQ] :=
-	Module[{opac, sat, bri, comp, opts1, fnc, colorfun, pStyle, qbottomLine, qshiftPlot, qsquared, dir, flip},
+	Module[{opac, sat, bri, comp, opts1, fnc, colorfun, pStyle, qbottomLine, qshiftPlot, qsquared, dir, flip
+	       },
 	{opac, sat, bri, pStyle, qbottomLine, qshiftPlot, qsquared, dir} =
 			{Opacity, QSaturation, QBrightness, PlotStyle, QBottomLine, QShiftPlot, QSquared,
 			 QPlotDown
 			} /. Flatten[{opts}] /. Options[QArgColorPlot];
-Global`pStyle = pStyle;
-        comp = Compiled /. Join[{opts}, Options[QArgColorPlot]];
+        comp = Compiled /. Flatten[{{opts}, Options[QArgColorPlot]}];
         qshiftPlot = If[NumericQ[qshiftPlot], qshiftPlot, 0.];
         fnc = Function[{x},func];
         flip = If[TrueQ[dir], -1, 1];
         opts1   = Normal @ Association[ Options @ QArgColorPlot , Flatten @ {opts} ];
-Global`opts1 = opts1;
 		opts1 = FilterRules[ opts1, Options @ Plot];
-Global`opts1n = opts1;
         (* RM2018 *)
         If[opac == 1, opac = Sequence[]];
         colorfun = Function[{x,y},(Hue[#,sat,bri,opac]& @ (Mod[Arg[fnc[x]]/(2 Pi), 1]))];
@@ -223,12 +220,10 @@ Global`opts1n = opts1;
               abfnc = flip (qshiftPlot + If[qsquared, Abs[fnc[x]]^2, Abs[fnc[x]]])
               },
           Show[{
-          Global`P1=
             Plot[ abfnc, {x,xmin,xmax}, 
               ColorFunctionScaling -> False, ColorFunction -> colorfun, Filling -> (qbottomLine + qshiftPlot ), op2
             ]
             ,
-          Global`P2=
             (* take the default option of Plot now: *)
             Plot[ abfnc, {x,xmin,xmax}, op3 ]
             }
@@ -270,12 +265,10 @@ QListArgColorPlot[list:{ {_, _}.. }, opts___?OptionQ] :=
         shift  = If[NumberQ[N[sh]],N[sh],0.,0.];
 		If[MatchQ[N[ran],{{_?NumberQ,_?NumberQ},{_?NumberQ,_?NumberQ}}],
 			ran = ran[[2]] ];
-Global`ran=ran;
 		If[MatchQ[N[ran],{_?NumberQ,_?NumberQ}],
 		    auxlist = TrimList[list,{ran[[1]],ran[[2]]}];
 (* RM: This is necessary for successful Interpolation later *)
             auxlist = Union[Chop @ auxlist];  
-Global`auxlist = auxlist;
 			xvars    = First /@ auxlist;
             yvals	= Last /@ auxlist; 
          ];
@@ -284,7 +277,7 @@ Global`auxlist = auxlist;
          yvals	= If[dir === True, -1*yvals, yvals, yvals];
 If[$UseListLinePlot,
          (* create a complex-valued interpolation function *)
-         interp   = Interpolation[auxlist, InterpolationOrder -> 1]; 
+         interp   = Interpolation[auxlist, InterpolationOrder -> 3]; 
          If[opac == 1, opac=Sequence[]];
          colorfun = Function[{x,y},(Hue[#,sat,bri,opac]& @ (Mod[Arg[interp[x]]/(2Pi), 1]))];
          (*
@@ -341,16 +334,20 @@ QListSpinorPlot[list_, opts___?OptionQ] :=
 	QListSpinorPlot[list//Transpose, opts
 	]/;((Dimensions[list] == {Length[list],2}) && Length[list]>2 && VectorQ[Last/@list])
 
-QListSpinorPlot[list_,opts___?OptionQ] := 
+QListSpinorPlot[list_,opts___?OptionQ] :=  Module[{},
+
 		Show[
-			QListArgColorPlot[{First /@ list,
-					Sqrt[Abs[First /@ Last /@ list]^2 +
-					Abs[Last  /@ Last /@ list]^2]}//Transpose,
-				QSaturation->0, QBrightness->1/4, opts],
-			QListArgColorPlot[{First /@ list,First /@ Last /@ list}//Transpose, opts],
+			QListArgColorPlot[{list[[All,1]], Sqrt[Abs[First /@ Last /@ list]^2 + Abs[list[[All, -1, -1]]]^2]
+			                  }//Transpose,
+				Flatten[{QSaturation->0, QBrightness->1/4, opts}]
+			],
+			QListArgColorPlot[{First /@ list,First /@ Last /@ list}//Transpose, opts]
+			,
 			QListArgColorPlot[{First /@ list,Last  /@ Last /@ list}//Transpose,
-				QPlotDown->True, opts, QSaturation->1/2],
+				Flatten[{QPlotDown->True, opts, QSaturation->1/2}]]
+			,
 			FilterRules[Flatten[{opts}], Options[Graphics]]
+		]
 		]/;MatchQ[ N[list],{{_?NumberQ,{_?NumberQ,_?NumberQ}},__}]
 
 LSP::unequal = "The two lists of complex numbers must be of equal length";
@@ -373,10 +370,8 @@ QCombinedPlot[{func1_,func2_},
 		  opP2 = FilterRules[Flatten[{opts}], Options[QCombinedPlot]]
 		  },
 		  Show[
-  		  Global`Q1=
 			QArgColorPlot[func1, {x,xmin,xmax}, opP0 ]
 			,
-		  Global`Q2=
 			Plot[func2, {x,xmin,xmax}, opP1] 
 			, PlotRange -> Automatic
 			, opP2
@@ -426,9 +421,9 @@ QSpinorCombinedPlot[{func1_,func2_}, {x_Symbol,xmin_?NumericQ,xmax_?NumericQ},
      ];
 
 QListSpinorCombinedPlot[{list_List,func_},
-	{x_Symbol,xmin_,xmax_}, opts___Rule] :=
+	{x_Symbol,xmin_,xmax_}, opts___?OptionQ] :=
 Module[{ran,ps,auxopts},
-		{ran,ps} = {QHorizontalRange,QCurveStyle}/.{opts}/.Options[QListCombinedPlot];
+		{ran,ps} = {QHorizontalRange,QCurveStyle}/.Flatten[{opts}/.Options[QListCombinedPlot]];
 		If[MatchQ[N[ran],{_?NumberQ,_?NumberQ}],
 			ran = {ran,{xmin,xmax}}];
 		If[Not[MatchQ[N[ran],{{_?NumberQ,_?NumberQ},{_?NumberQ,_?NumberQ}}]],
@@ -436,10 +431,7 @@ Module[{ran,ps,auxopts},
 		auxopts = JoinOptions[PlotStyle->ps, opts];
 		Show[
             QListSpinorPlot[list,
-            	Evaluate[FilterRules[{
-            		JoinOptions[QHorizontalRange->ran,opts]},
-            		Options[QListArgColorPlot]
-            		]] 
+            	Evaluate[FilterRules[{JoinOptions[QHorizontalRange->ran,opts]}, Options[QListArgColorPlot] ]] 
             ],
             Plot[func, {x,xmin,xmax},
 			Evaluate[FilterRules[{auxopts}, Options @ Plot]] ],
@@ -520,7 +512,6 @@ fillit[xvars_,colorfun_Function,values_,style_,bl_,sh_, opts___?OptionQ] :=
 
      (* since there might other Epilog settings from QListArgColorPlot, we merge them here *)
      epilogs = DeleteCases[{lines, Epilog /. {opts}}, Epilog];
-Global`valpts  = valpts;    
      ListLinePlot[valpts, 
                           Filling -> (bl+sh), ColorFunctionScaling -> False,
                           Epilog ->  epilogs,   (*FillingStyle->Automatic,*) (*RM: should work with this option ... *)

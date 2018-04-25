@@ -219,7 +219,8 @@ QCoulombFunction[np_, ell1_, m_, {c1_,c2_,c3_}, opts___?OptionQ] :=
          Message[Coulomb::wrongcoords];Return[]];
       Which[
          CoordinateSystem===Cartesian,
-            {ra,th,ph}=CoordinatesFromCartesian[{c1,c2,c3},Spherical];
+            (*{ra,th,ph}=CoordinatesFromCartesian[{c1,c2,c3},Spherical];*)
+            {ra,th,ph}=ToSphericalCoordinates[{c1,c2,c3}];
             QRadialCoulombFunction[np, ell, ra, QCoulombSpaceDimension->3, QCoulombCoupling->g]*
             SphericalHarmonicY[ell,m,th,ph],
          CoordinateSystem===Spherical,
@@ -237,7 +238,8 @@ QCoulombFunction[np_, ell1_, {c1_,c2_}, opts___?OptionQ] :=
          Message[Coulomb::wrongcoords];Return[]];
       Which[
          CoordinateSystem===Cartesian,
-            {r,th,ph}=CoordinatesFromCartesian[{c1,c2,0},Spherical];
+            (*{r,th,ph}=CoordinatesFromCartesian[{c1,c2,0},Spherical];*)
+            {r,th,ph}=ToSphericalCoordinates[{c1,c2,0}];
             QRadialCoulombFunction[np, Abs[ell], r, QCoulombSpaceDimension->2, QCoulombCoupling->g]*
             Exp[ I ell ph]/Sqrt[2 Pi],
          CoordinateSystem===Spherical,

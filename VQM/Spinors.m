@@ -26,10 +26,11 @@ tools for the visualization of spinors.
 *)
 
 (* :Date:    Jul-20-2007 *)
+(* :Date:    Apr-25-2018 *)
 
-(* :Package Version:        2.0 *)
+(* :Package Version:        3.0 *)
 
-(* :Mathematica Version:    6.0.1 *)
+(* :Mathematica Version:    11.3.0 *)
 
 (* :Keywords:
     Spinors, Visualization, SU2, Spinor Harmonics
@@ -498,8 +499,8 @@ QSpinorToArrow[pt_?VectorQ, spinor_?VectorQ, opts___?OptionQ] :=
 			   QVectorToArrow[pt,pt+vec, opts2, QHeadColor->Automatic],
 
 			(*else*)QVectorToArrow[pt,pt+vec, opts2,
-							QHeadColor ->QComplexToColor[spinor[[1]], FilterOptions[QComplexToColor,opts]],
-							QShaftColor->QComplexToColor[spinor[[2]], FilterOptions[QComplexToColor,opts]] ]
+							QHeadColor ->QComplexToColor[spinor[[1]], FilterRules[Flatten[{opts}], Options @ QComplexToColor]],
+							QShaftColor->QComplexToColor[spinor[[2]], FilterRules[Flatten[{opts}], Options @ QComplexToColor]] ]
 		]
 	]/;(Length[pt]==3 && Length[spinor]==2);
 
@@ -512,15 +513,22 @@ Options[QVisualizeSpinor] = Join[Flatten[{QNeedleStyle -> True}],
                 !MemberQ[{QNeedleStyle},First[#]]&]];
 
 QVisualizeSpinor[psi_?VectorQ, opts___?OptionQ] :=
-	Module[{glow, light, vec, coloropt, color, vshp},
+	Module[{vec, coloropt, color, vshp},
 		{ coloropt, vshp} = {QHeadColor, QNeedleStyle}/.{opts}/.Options[QVisualizeSpinor];
 		vec = QSpinorToVector[psi, opts];
-		If[	coloropt === QExtractPhase,
-						color = Hue[QExtractPhase[psi]/(2 Pi)];
-						QVisualizeVector[vec, opts, QHeadColor->color],
-			(*else*) QVisualizeVector[vec, opts,  QNeedleStyle -> True,
-						QHeadColor ->(QComplexToColor[psi[[1]], FilterOptions[QComplexToColor,opts]]),
-						QShaftColor->QComplexToColor[psi[[2]], FilterOptions[QComplexToColor,opts]] ]
+		If[	coloropt === QExtractPhase
+		    , 
+		    color = Hue[QExtractPhase[psi]/(2 Pi)];
+			QVisualizeVector[vec, opts, QHeadColor->color]
+			,
+			(*else*) 
+			(* Glow would restore the old behaviour ..., but this is not advisable *)
+			headColor  = (*Glow @ *)(QComplexToColor[psi[[1]], FilterRules[Flatten[{opts}], Options @ QComplexToColor]]);
+			shaftColor = (*Glow @ *)(QComplexToColor[psi[[2]], FilterRules[Flatten[{opts}], Options @ QComplexToColor]]);
+			QVisualizeVector[vec, opts,  QNeedleStyle -> True,
+						QHeadColor -> headColor,
+						QShaftColor-> shaftColor
+			]
 		]
 	];
 
@@ -543,10 +551,12 @@ QSpinorBarDiagram[spinor_,opts___?OptionQ]:=
 			Graphics[{
 				{clr1, Rectangle[{0.05,0},{0.95,abs1}] },
 				{clr2, Rectangle[{1.05,0},{1.95,abs2}] }
-			}], FilterOptions[Graphics,opts],
+			}], Flatten[{
+			    FilterRules[Flatten[{opts}], Options @ Graphics],
 				Frame->True, PlotRange->{{-0.1,2.1},{-0.1,1.1}},
 				FrameTicks->{{{0.5,"\!\(c\_1\)"},{1.5,"\!\(c\_2\)"}},Automatic,None,Automatic},
 				Epilog->{GrayLevel[0], Line[{{0,0},{2,0}}],Line[{{0,1},{2,1}}]}
+				}]
 		]
 	];
 

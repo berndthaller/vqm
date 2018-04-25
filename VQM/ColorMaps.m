@@ -196,13 +196,16 @@ myoptions =
 
 
 (* --------- QComplexToColor -------- *)
+ClearAll[QComplexToColor];
 
 Options[QComplexToColor] = myoptions;
 
-SetAttributes[QComplexToColor,Listable]
+(*SetAttributes[QComplexToColor,Listable]*)
+QComplexToColor[z_List, opts___?OptionQ] :=
+	Map[QComplexToColor[#, opts]&, z];
 
-QComplexToColor[z_,opts___?OptionQ] :=
-    Module[{colormap=QComplexToColorMap/.{opts}/.myoptions},
+QComplexToColor[z_?NumericQ, opts___?OptionQ] :=
+    Module[{colormap = QComplexToColorMap/.Flatten[{opts}]/.myoptions},
         If[colormap===Automatic ||
         colormap === $QComplexToColorMap,
         $QComplexToColorMap[Abs[z],Arg[z],QProcessColorMapOptions[opts]],
@@ -275,9 +278,7 @@ QComplexToRGBColor[z_] := RGBColor @@ QComplexToRGBValues[z];
 
 QProcessColorMapOptions[opts___] :=
     Module[ {rad,vran,lran,bds},
-        {rad,vran,lran} =
-            {QSphereRadius,QValueRange,QLightnessRange}
-                /.{opts}/.myoptions;
+        {rad,vran,lran} = {QSphereRadius,QValueRange,QLightnessRange} /.Flatten[{opts} ] /.myoptions;
         rad = testrad[rad];
         bds = borders[ testvran[vran]/rad];
         Flatten[{rad,bds,testlran[lran]}]

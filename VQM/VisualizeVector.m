@@ -25,15 +25,17 @@ and defines auxiliary graphics elements.
 *)
 
 (* :Date:	2007-07-20 *)
+(* :Date:   2018-04-24 *)
 
-(* :Package Version: 2.0 *)
+(* :Package Version: 3.0 *)
 
-(* :Mathematica Version: 6.0.1 *)
+(* :Mathematica Version: 11.3.0 *)
 
 (* :History:
     1.0 for Visual Quantum Mechanics, Book Two, 1st ed.
     1.1 fixed bug concerning QArrowShape
     2.0 adaption to Mathematica 6
+    3.0 adaption to Mathematica 11.3
 *)
 
 VQMmsgon  = Head[General::"spell"]  =!= $Off;
@@ -265,7 +267,9 @@ polyDisk[r_,no_:8] :=
 	The cone has apex at pt2 and points in the direction from pt1 to pt2 *)
 
 arrowCone[{pt1_?VectorQ,pt2_?VectorQ}, color_, opts___?OptionQ] :=
-	Module[{ len = Sqrt[(pt2-pt1).(pt2-pt1)], coords=CoordinatesFromCartesian[pt2-pt1, Spherical],
+	Module[{ len = Sqrt[(pt2-pt1).(pt2-pt1)], 
+	        (*coords = CoordinatesFromCartesian[pt2-pt1, Spherical],*)
+	        coords = ToSphericalCoordinates[pt2-pt1],
 			no, lenfac, headlength, headwidth, radfac, test},
 			test = QArrowShape/.{opts}/.Options[QVectorToArrow];
 			Which[
@@ -293,10 +297,12 @@ arrowCone[{pt1_?VectorQ,pt2_?VectorQ}, color_, opts___?OptionQ] :=
 (* an arrow from pt1 to pt2, with a cylinder forming the shaft, and a cone forming the head *)
 
 arrowWithShaft[{pt1_?VectorQ,pt2_?VectorQ}, colorhead_, colorshaft_, opts___?OptionQ] :=
-	Module[{ len = Sqrt[(pt2-pt1).(pt2-pt1)], coords=CoordinatesFromCartesian[pt2-pt1, Spherical],
-			no, lenfac, headlength, headwidth, radfac, sfac, test, shaftwidth, shaftlength},
-			test = QArrowShape/.{opts}/.Options[QVectorToArrow];
-			light = Lighting ->( Lighting /. {opts}/.Options[QVectorToArrow] );
+	Module[{ len = Sqrt[(pt2-pt1).(pt2-pt1)], 
+	         (*coords=CoordinatesFromCartesian[pt2-pt1, Spherical],*)
+	         coords = ToSphericalCoordinates[pt2-pt1],
+ 			 no, lenfac, headlength, headwidth, radfac, sfac, test, shaftwidth, shaftlength},
+			 test = QArrowShape/.{opts}/.Options[QVectorToArrow];
+			 light = Lighting ->( Lighting /. {opts}/.Options[QVectorToArrow] );
 			Which[
 				test===Automatic || test===True,
 					{no,lenfac,radfac,sfac}={6,1/4,1/(2 GoldenRatio),1/2},
@@ -329,7 +335,9 @@ arrowWithShaft[{pt1_?VectorQ,pt2_?VectorQ}, colorhead_, colorshaft_, opts___?Opt
 	];
 
 doubleHead[{pt1_?VectorQ,pt2_?VectorQ}, colorhead_, colorshaft_, opts___?OptionQ] :=
-	Module[{ len = Sqrt[(pt2-pt1).(pt2-pt1)], coords=CoordinatesFromCartesian[pt2-pt1, Spherical],
+	Module[{ len = Sqrt[(pt2-pt1).(pt2-pt1)], 
+	 		(*coords=CoordinatesFromCartesian[pt2-pt1, Spherical],*)
+	        coords = ToSphericalCoordinates[pt2-pt1],
 			no, lenfac, headlength, headwidth, radfac, sfac, test, shaftwidth},
 			test = QArrowShape/.{opts}/.Options[QVectorToArrow];
 			
@@ -398,7 +406,7 @@ Options[QVisualizeVector] = Join[myoptions,Options[QVectorToArrow]];
 QVisualizeVector[vec_?VectorQ, opts___Rule] :=
 	Module[{myvec = Re[Chop[vec]]},  (* make sure that this is a real vector *)
 		Show[Graphics3D[{ QVectorToArrow[myvec, opts], graphicElements[myvec,opts] }],
-		FilterOptions[Graphics3D,opts], Boxed->False, Axes->False]];
+		Flatten[{FilterRules[Flatten[{opts}], Flatten@{Options@Graphics3D,opts}], Boxed->False, Axes->False}]]];
 
 (* Graphicelements for the visualization of vectors in the unit sphere: *)
 
@@ -432,7 +440,10 @@ coordinateCube[pt_] := {RGBColor[0,.6,.4],
 	Line[{ {0,pt[[2]],0}, {0,pt[[2]],pt[[3]]} }]};
 
 coordinateCircles[pt_,color_] :=
-	Module[{coords=Simplify[CoordinatesFromCartesian[pt, Spherical]],the,phi,t},
+	Module[{
+	   (* coords = Simplify[CoordinatesFromCartesian[pt, Spherical]],*)
+	    coords = Simplify[ToSphericalCoordinates[pt]],
+	    the,phi,t},
 		rad = coords[[1]];
 		the = coords[[2]];
 		phi = coords[[3]];

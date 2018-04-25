@@ -27,6 +27,7 @@ of complex-valued functions with a color code for complex
 numbers.*)
 
 (* :Date:    Nov 12, 2010 *)
+(* :Date:    Apr 25, 2018 *)
 
 (* :Package Version:        3.6 *)
 (* added option QComplexToValueMap *)
@@ -34,7 +35,7 @@ numbers.*)
 (* added QComplexContourPlot3D *)
 (* repaired QListComplexContourPlot *)
 
-(* :Mathematica Version:    6.0.1 *)
+(* :Mathematica Version:    11.3.0 *)
 
 (* :Keywords:
     DensityPlot, Complex Function, Wavefunction
@@ -59,10 +60,9 @@ Off[CompiledFunction::"cfsa"];
 Off[CompiledFunction::"cfse"];
 Off[CompiledFunction::"cfn"];
 Off[CompiledFunction::"cfex"];
-(*
 Off[General::"ovfl"];
 Off[General::"unfl"];
-*)
+Off[General::"munfl"];
 
 Off[General::spell1,General::spell];
 
@@ -412,7 +412,7 @@ meshchange[ops___][z__] := If[FreeQ[{ops,z}, Mesh],
 
 Options[QComplexDensityPlot] =
     Sort @ Join[myoptions, adjustOptions[DensityPlot],
-    {Compiled -> True}];
+    {Compiled -> (*RM2018 True*)False}];
 
 SetAttributes[QComplexDensityPlot,HoldAll]
 
@@ -433,15 +433,13 @@ QComplexDensityPlot[func_,
            gc = fcomp[f,bmin,dx];
            array =
               Table[gc[j,i],{j,0,pl[[2]]-1},{i,0,pl[[1]]-1}],
-       array = Table[
+       array = Table[f[x,y]
 (*RM:
- there are bugs in Mathematica, like 
-Log[Sin[1/(-0.1138-I*0.0910)^11]] crashing the kernel ...
-Check[ ....] does not work, so we use TimeConstrained
-*)
+Commenting this out 2018 ... 
 TimeConstrained[ TimeConstrained[f[x,y], 1] /. 
                  {$Aborted:>10.^10000, Overflow[]:>10.^10000, Underflow[]:> -10.^10000}, 1
       ]/.$Aborted:>-10.^10000
+*)
                  ,
                 {y, N@(ymin+dx[[2]]/112.), ymax, dx[[2]]},
                 {x, N@xmin, xmax, dx[[1]]}] ];

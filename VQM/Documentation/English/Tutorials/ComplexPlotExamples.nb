@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    599619,      10670]
-NotebookOptionsPosition[    596001,      10599]
-NotebookOutlinePosition[    596443,      10616]
-CellTagsIndexPosition[    596400,      10613]
+NotebookDataLength[    599176,      10662]
+NotebookOptionsPosition[    595560,      10591]
+NotebookOutlinePosition[    596000,      10608]
+CellTagsIndexPosition[    595957,      10605]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,7 @@ Cell[BoxData[
    RowBox[{"Date", "[", "]"}]}], "}"}]], "Input",
  CellChangeTimes->{{3.39185096409375*^9, 3.391850967875*^9}},
  CellLabel->
-  "In[219]:=",ExpressionUUID->"7db3e1fa-e21c-4976-b49e-cec0984ce298"],
+  "In[1108]:=",ExpressionUUID->"7db3e1fa-e21c-4976-b49e-cec0984ce298"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -34,18 +34,15 @@ Cell[BoxData[
    ",", 
    RowBox[{"{", 
     RowBox[{
-    "2018", ",", "4", ",", "24", ",", "23", ",", "3", ",", 
-     "56.3486037`9.503457995258312"}], "}"}]}], "}"}]], "Output",
+    "2018", ",", "4", ",", "25", ",", "15", ",", "0", ",", 
+     "9.090734`8.71117391486169"}], "}"}]}], "}"}]], "Output",
  CellLabel->
-  "Out[219]=",ExpressionUUID->"c229cd07-9515-47d6-9a95-5b7aa7547339"]
+  "Out[1108]=",ExpressionUUID->"91b4bb17-37c0-41b2-8c22-0b92b94054d0"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[":Examples: from ComplexPlot.m", "Section",
- CellChangeTimes->{{3.391851007703125*^9, 
-  3.391851040328125*^9}},ExpressionUUID->"fea0c3e7-891f-47d5-a0f7-\
-d2aff7f54d9d"],
+Cell["Examples from ComplexPlot.m", "Section",ExpressionUUID->"fea0c3e7-891f-47d5-a0f7-d2aff7f54d9d"],
 
 Cell[BoxData[
  RowBox[{"\n", 
@@ -64,7 +61,7 @@ Cell[BoxData[
      RowBox[{"Arg", "::", "\"\<indet\>\""}], " ", "]"}], ";"}]}]}]], "Input",
  CellChangeTimes->{{3.3926441392078257`*^9, 3.3926441425125775`*^9}},
  CellLabel->
-  "In[220]:=",ExpressionUUID->"6f347826-0611-4047-a19e-ee2ab566454d"],
+  "In[1109]:=",ExpressionUUID->"6f347826-0611-4047-a19e-ee2ab566454d"],
 
 Cell[CellGroupData[{
 
@@ -81,58 +78,57 @@ Cell[BoxData[
      RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.3926441392078257`*^9, 3.3926441440447807`*^9}},
  CellLabel->
-  "In[222]:=",ExpressionUUID->"653c48dc-b557-456e-a5d2-bf5c49152879"],
+  "In[1111]:=",ExpressionUUID->"653c48dc-b557-456e-a5d2-bf5c49152879"],
 
 Cell[BoxData[
  StyleBox[
   GraphicsBox[{RasterBox[CompressedData["
-1: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
-Dxn48x9Et0B1
-     "], {{-4, -4}, {4, 4}}, {1, 256},
+1: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
+     "], {{-4, -4}, {4, 
+     4}}, {1, 256},
      ColorFunction->Hue], 
     {GrayLevel[0], LineBox[{{-4, -4}, {-4, 4}}], 
      LineBox[NCache[{{Rational[-92, 25], -4}, {
@@ -153,10 +149,10 @@ Dxn48x9Et0B1
         Rational[-36, 25], 4}}, {{-1.44, -4}, {-1.44, 4}}]], 
      LineBox[NCache[{{Rational[-28, 25], -4}, {
         Rational[-28, 25], 4}}, {{-1.12, -4}, {-1.12, 4}}]], 
-     LineBox[
-      NCache[{{Rational[-4, 5], -4}, {
+     LineBox[NCache[{{Rational[-4, 5], -4}, {
         Rational[-4, 5], 4}}, {{-0.8, -4}, {-0.8, 4}}]], 
-     LineBox[NCache[{{Rational[-12, 25], -4}, {
+     LineBox[
+      NCache[{{Rational[-12, 25], -4}, {
         Rational[-12, 25], 4}}, {{-0.48, -4}, {-0.48, 4}}]], 
      LineBox[NCache[{{Rational[-4, 25], -4}, {
         Rational[-4, 25], 4}}, {{-0.16, -4}, {-0.16, 4}}]], 
@@ -185,56 +181,55 @@ Dxn48x9Et0B1
      LineBox[NCache[{{Rational[92, 25], -4}, {Rational[92, 25], 4}}, {{
         3.68, -4}, {3.68, 4}}]], LineBox[{{4, -4}, {4, 4}}], 
      LineBox[{{-4, -4}, {4, -4}}], 
-     LineBox[NCache[{{-4, Rational[-92, 25]}, {
-        4, Rational[-92, 25]}}, {{-4, -3.68}, {4, -3.68}}]], 
-     LineBox[NCache[{{-4, Rational[-84, 25]}, {
-        4, Rational[-84, 25]}}, {{-4, -3.36}, {4, -3.36}}]], 
-     LineBox[NCache[{{-4, Rational[-76, 25]}, {
-        4, Rational[-76, 25]}}, {{-4, -3.04}, {4, -3.04}}]], 
-     LineBox[NCache[{{-4, Rational[-68, 25]}, {
-        4, Rational[-68, 25]}}, {{-4, -2.72}, {4, -2.72}}]], 
-     LineBox[NCache[{{-4, Rational[-12, 5]}, {
-        4, Rational[-12, 5]}}, {{-4, -2.4}, {4, -2.4}}]], 
+     LineBox[NCache[{{-4, Rational[-11, 3]}, {
+        4, Rational[-11, 3]}}, {{-4, -3.6666666666666665`}, {
+        4, -3.6666666666666665`}}]], 
+     LineBox[NCache[{{-4, Rational[-10, 3]}, {
+        4, Rational[-10, 3]}}, {{-4, -3.3333333333333335`}, {
+        4, -3.3333333333333335`}}]], LineBox[{{-4, -3}, {4, -3}}], 
+     LineBox[NCache[{{-4, Rational[-8, 3]}, {
+        4, Rational[-8, 3]}}, {{-4, -2.6666666666666665`}, {
+        4, -2.6666666666666665`}}]], 
+     LineBox[NCache[{{-4, Rational[-7, 3]}, {
+        4, Rational[-7, 3]}}, {{-4, -2.3333333333333335`}, {
+        4, -2.3333333333333335`}}]], LineBox[{{-4, -2}, {4, -2}}], 
      LineBox[
-      NCache[{{-4, Rational[-52, 25]}, {
-        4, Rational[-52, 25]}}, {{-4, -2.08}, {4, -2.08}}]], 
-     LineBox[NCache[{{-4, Rational[-44, 25]}, {
-        4, Rational[-44, 25]}}, {{-4, -1.76}, {4, -1.76}}]], 
-     LineBox[NCache[{{-4, Rational[-36, 25]}, {
-        4, Rational[-36, 25]}}, {{-4, -1.44}, {4, -1.44}}]], 
-     LineBox[NCache[{{-4, Rational[-28, 25]}, {
-        4, Rational[-28, 25]}}, {{-4, -1.12}, {4, -1.12}}]], 
-     LineBox[NCache[{{-4, Rational[-4, 5]}, {
-        4, Rational[-4, 5]}}, {{-4, -0.8}, {4, -0.8}}]], 
-     LineBox[NCache[{{-4, Rational[-12, 25]}, {
-        4, Rational[-12, 25]}}, {{-4, -0.48}, {4, -0.48}}]], 
-     LineBox[NCache[{{-4, Rational[-4, 25]}, {
-        4, Rational[-4, 25]}}, {{-4, -0.16}, {4, -0.16}}]], 
-     LineBox[NCache[{{-4, Rational[4, 25]}, {
-        4, Rational[4, 25]}}, {{-4, 0.16}, {4, 0.16}}]], 
-     LineBox[NCache[{{-4, Rational[12, 25]}, {
-        4, Rational[12, 25]}}, {{-4, 0.48}, {4, 0.48}}]], 
-     LineBox[NCache[{{-4, Rational[4, 5]}, {4, Rational[4, 5]}}, {{-4, 0.8}, {
-        4, 0.8}}]], 
-     LineBox[NCache[{{-4, Rational[28, 25]}, {
-        4, Rational[28, 25]}}, {{-4, 1.12}, {4, 1.12}}]], 
-     LineBox[NCache[{{-4, Rational[36, 25]}, {
-        4, Rational[36, 25]}}, {{-4, 1.44}, {4, 1.44}}]], 
-     LineBox[NCache[{{-4, Rational[44, 25]}, {
-        4, Rational[44, 25]}}, {{-4, 1.76}, {4, 1.76}}]], 
-     LineBox[NCache[{{-4, Rational[52, 25]}, {
-        4, Rational[52, 25]}}, {{-4, 2.08}, {4, 2.08}}]], 
-     LineBox[NCache[{{-4, Rational[12, 5]}, {
-        4, Rational[12, 5]}}, {{-4, 2.4}, {4, 2.4}}]], 
-     LineBox[NCache[{{-4, Rational[68, 25]}, {
-        4, Rational[68, 25]}}, {{-4, 2.72}, {4, 2.72}}]], 
-     LineBox[NCache[{{-4, Rational[76, 25]}, {
-        4, Rational[76, 25]}}, {{-4, 3.04}, {4, 3.04}}]], 
-     LineBox[NCache[{{-4, Rational[84, 25]}, {
-        4, Rational[84, 25]}}, {{-4, 3.36}, {4, 3.36}}]], 
-     LineBox[NCache[{{-4, Rational[92, 25]}, {
-        4, Rational[92, 25]}}, {{-4, 3.68}, {4, 3.68}}]], 
-     LineBox[{{-4, 4}, {4, 4}}]}},
+      NCache[{{-4, Rational[-5, 3]}, {
+        4, Rational[-5, 3]}}, {{-4, -1.6666666666666667`}, {
+        4, -1.6666666666666667`}}]], 
+     LineBox[NCache[{{-4, Rational[-4, 3]}, {
+        4, Rational[-4, 3]}}, {{-4, -1.3333333333333333`}, {
+        4, -1.3333333333333333`}}]], LineBox[{{-4, -1}, {4, -1}}], 
+     LineBox[NCache[{{-4, Rational[-2, 3]}, {
+        4, Rational[-2, 3]}}, {{-4, -0.6666666666666666}, {
+        4, -0.6666666666666666}}]], 
+     LineBox[NCache[{{-4, Rational[-1, 3]}, {
+        4, Rational[-1, 3]}}, {{-4, -0.3333333333333333}, {
+        4, -0.3333333333333333}}]], LineBox[{{-4, 0}, {4, 0}}], 
+     LineBox[NCache[{{-4, Rational[1, 3]}, {
+        4, Rational[1, 3]}}, {{-4, 0.3333333333333333}, {
+        4, 0.3333333333333333}}]], 
+     LineBox[NCache[{{-4, Rational[2, 3]}, {
+        4, Rational[2, 3]}}, {{-4, 0.6666666666666666}, {
+        4, 0.6666666666666666}}]], LineBox[{{-4, 1}, {4, 1}}], 
+     LineBox[NCache[{{-4, Rational[4, 3]}, {
+        4, Rational[4, 3]}}, {{-4, 1.3333333333333333`}, {
+        4, 1.3333333333333333`}}]], 
+     LineBox[NCache[{{-4, Rational[5, 3]}, {
+        4, Rational[5, 3]}}, {{-4, 1.6666666666666667`}, {
+        4, 1.6666666666666667`}}]], LineBox[{{-4, 2}, {4, 2}}], 
+     LineBox[NCache[{{-4, Rational[7, 3]}, {
+        4, Rational[7, 3]}}, {{-4, 2.3333333333333335`}, {
+        4, 2.3333333333333335`}}]], 
+     LineBox[NCache[{{-4, Rational[8, 3]}, {
+        4, Rational[8, 3]}}, {{-4, 2.6666666666666665`}, {
+        4, 2.6666666666666665`}}]], LineBox[{{-4, 3}, {4, 3}}], 
+     LineBox[NCache[{{-4, Rational[10, 3]}, {
+        4, Rational[10, 3]}}, {{-4, 3.3333333333333335`}, {
+        4, 3.3333333333333335`}}]], 
+     LineBox[NCache[{{-4, Rational[11, 3]}, {
+        4, Rational[11, 3]}}, {{-4, 3.6666666666666665`}, {
+        4, 3.6666666666666665`}}]], LineBox[{{-4, 4}, {4, 4}}]}},
    AlignmentPoint->Center,
    AspectRatio->1,
    Axes->False,
@@ -276,7 +271,7 @@ Dxn48x9Et0B1
   StripOnInput->False,
   Antialiasing->False]], "Output",
  CellLabel->
-  "Out[222]=",ExpressionUUID->"25ca0740-fc6f-4613-8f0e-e9a4e0576eee"]
+  "Out[1111]=",ExpressionUUID->"8a8fbac3-8470-455f-b2d3-9982c09a7128"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -300,74 +295,73 @@ Cell[BoxData[
    3.392644219563371*^9, 3.392644246802539*^9}, 3.3926443693387375`*^9, {
    3.3926444547014832`*^9, 3.392644495059515*^9}},
  CellLabel->
-  "In[223]:=",ExpressionUUID->"3b5cb3c0-11a2-450a-8a22-638aebed26db"],
+  "In[1112]:=",ExpressionUUID->"3b5cb3c0-11a2-450a-8a22-638aebed26db"],
 
 Cell[BoxData[
  GraphicsBox[RasterBox[CompressedData["
-1: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
-B7eBW8EtYHr7P7h9CO4=
+1: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
+
    "], {{-Pi, -1}, {Pi, 2.5}}, {1, 256},
    ColorFunction->Hue],
   AlignmentPoint->Center,
@@ -409,7 +403,7 @@ B7eBW8EtYHr7P7h9CO4=
   Ticks->Automatic,
   TicksStyle->{}]], "Output",
  CellLabel->
-  "Out[223]=",ExpressionUUID->"0df5d6f8-168f-49b3-bccf-f4e188f8fc0e"]
+  "Out[1112]=",ExpressionUUID->"d58eeb22-13ef-4127-a281-529684bd55b2"]
 }, Open  ]],
 
 Cell["\<\
@@ -449,55 +443,54 @@ Cell[BoxData[
  CellChangeTimes->{{3.3926441392078257`*^9, 3.3926441440447807`*^9}, {
    3.392644219563371*^9, 3.392644222477562*^9}, 3.3926446711026525`*^9},
  CellLabel->
-  "In[224]:=",ExpressionUUID->"eaddae9f-d03f-413d-ae63-34cca276e9b0"],
+  "In[1113]:=",ExpressionUUID->"eaddae9f-d03f-413d-ae63-34cca276e9b0"],
 
 Cell[BoxData[
  StyleBox[
   GraphicsBox[{RasterBox[CompressedData["
-1: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
-xLwZ8JMOn2nwn4q8ukOnQJPb33H6IyE=
+1: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
+
      "], {{-4, -4}, {4, 4}}, {1, 256},
      ColorFunction->Hue], GraphicsComplexBox[CompressedData["
 1:eJyNnXmcVcWxxwcGGUSFgLiBuEsQFVSMCKJ9k7jEKCAq+ESDG4iihsWnuAUR
@@ -808,7 +801,7 @@ Fu31nB//3uMTw+yHOT7zy3yBW/pi/v9//wIccC/O
   StripOnInput->False,
   Antialiasing->False]], "Output",
  CellLabel->
-  "Out[224]=",ExpressionUUID->"0e33b2ab-a969-4a06-899a-54664814f9b5"]
+  "Out[1113]=",ExpressionUUID->"2932f887-5746-4d95-809c-4e721cb7116b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -839,54 +832,53 @@ Cell[BoxData[
   3.392644219563371*^9, 3.392644222477562*^9}, {3.3926446711026525`*^9, 
   3.3926446918725185`*^9}, {3.3926447314093695`*^9, 3.3926447516084146`*^9}},
  CellLabel->
-  "In[225]:=",ExpressionUUID->"4cd86d92-cdd2-4ec3-8de0-34f82de65e08"],
+  "In[1114]:=",ExpressionUUID->"4cd86d92-cdd2-4ec3-8de0-34f82de65e08"],
 
 Cell[BoxData[
  StyleBox[
   GraphicsBox[{RasterBox[CompressedData["
-1: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
-     
+1:eJxtmAvMlmMYx++SM8kpOa5U5iybw8QYGyKbM5vTkuOYDHNmYc6MMXMYImeW
+Zcv50MkpS0KlEhUhCslX+qSD+9f7/+/5s97t+a7f877f+9zXfV/X9b+v++0x
+8OLjBq1RStmzXuvVC968XqVDKUdWs6V4QDVbia8JfqiabuIR8d3x1WwinllN
+Z/H8atYXL6pmXfHf1fQV71fNAeKTq9lffGM1+8ZYe4h/rKZ3vZbofutqfhJv
+Ws0c8YbxPuPOE18q26c0zLiXiB+uZlC9Vup+YDXXiXet5uB4/uXitap5Styp
+mlHijtV8KX5Fdq9qhotPKs37d1XzupjvjC2tuXI/uZp3Yv5viBdU8754cTVf
+xPp+K7Y9pJqvxadWMz3iO0M8pJpZ4tHV/BDP8PotLK1x4WXVtNVrhe7/quaf
+8MFru1h8gf4fHlzNn+IHg4fF/7COi8Sfl9bznWOO/8+lGQu/nG+XlVZc4JtK
+K9fh+4pelYdGnInDcvHI4PHBXwXPCibPXAvkz8ZicmJD8culVXMw8VtbPKaa
+NWOsTuJJpZU/8Izg71tm1Z+5pZX/MHnQVfxJaerxs2o2imduIJ4e/rCe64jn
+xLrNDd/mh2+s8zZi8qFb8GbBXgdia01oCx8WhQ+Lw4cl4UN7+ECc0SLnJfP9
+RUzt/ybuUs0fYsZ1PpEbziE0oV3MuM4hxnUOM+4yMfF1XbO248Ss7ediYj01
+xvo2xrIuEfe5MdavMZbrinV2PeD/M/HM4fHMt+OZH8QzJ8Qzp8QzvxFTC9+L
+O4Y/HcMf/v++eH+ImNwbJub1prlDo0Urwwf4q+CZwT8EW1+I/W3BDwU/H2yt
+bI+5t0csiKf1bmnMl9g6Z4jt72LW4FYxmvKoGL+s0azNWDHfs7aT69bNtng+
+ubYwfHPu4ZvzjWfcL54SY+H7Z+JZESP0f2n45jk5d6gj53tbjNkWY1J3r9Xr
+Jd2TR7PFnh9zmCgm753Lw2N+I2J+o2KsT8NH6sE1xBh31utV3TvO+H+LmLW4
+VrxDabRi79JoJtpuTXi8NLr0Vml0Hh+smazlGfW6Xffsu66d/jEH9yHU6m5i
+8ri7GH22xqKlXcTUlfcdcto6hmYeoLG536e09luY/uNh8U6KB9yjNLWDtjuv
+0J/54i4RY9bHe+G6se743E+MVp8mpse7TNxV8bCmPSneKGLE811faLVznjk6
+J9Ac9yrE4iAxsThWTCzODb4u2DqDjDwX/Gbwx8GTgu3D3BiX+j0hYnChmP3h
+ZjH7g2uctXTdkcOugdQT1tV9Evlq7fqwtHpnmH33PPHEWFtq4GUx8fwkfLb/
++Oa6Qvu9f1HP7oFSQx4pTV6hzdbJF0pr/rB7RmphsnhExGpMafSPz51TaKVz
+Cs2zbvD5gHqdpfvTS6PJJ8qiQweKqWn3BleXpn6faJlVf+i13IMRV/eSs4NZ
+F+rxGN3vWM1V4p7VvCimXqaJ6QdcC9lv2AfmZd0gRzrG+/Ztgfiw4jeb+PK6
+J9j7UYfwAV4YvOpPh2as9hhrcTB+UmdH6J59wTVLDnr/JQedh9Z/YuW+hnm5
+R51X9FrNHO0PeUdeHaV79OnuYD/fZ53DS6O3aKp17+ng8bHms0vT15Hv1nDm
+Sy73jWcNEOPLg2K01GecXUpzrtg21naz4M4xf7TL+xD+uMfbvZqdxeiwNaRX
+NaeItytNvnULf9BM6wZjpU5OirHc8zBfn0lZt15i1n/v4P5ipnF28GDPTXHy
+PF8JHhvstaK+rDPk5g7iGbHm6NLxYnLK52Fq796ImWuNvHY/TBysk+iG+0xy
+xVqDTuwpRguPE3MWulHM+rmOJoXP+OY6Qtuc3wsijm0R6yXB55fmzM4+cIPY
+8+PynkCueb8lB73fPhrjjy6NHlOX1kk00zpJrfWMcXtUc6WYvfgjsXMVDfY5
+iM9cj6mNrI31cELMb2r5r2bSuziHYesGe82YWDfH0Gs5LsYaHT6wv7nGJwZP
+C/6umsdKk0tohX8bYW/3WeZ6WWK/vZjfInx2Hlqanopx86zq347IzdRwanRH
+3ZO/1up+MXd+U3pBzD7iuuhemr1yi/CzS8QVH7yP4IM1hNrdLp7TJ+Jr3UYr
+vF8Q69vi+c/G898TkwPuuZmj6wjNtG4QM5+98dd9Kjl5qJgeYaCYnHR9USs+
+x5E/rjXyxz0JOeAzrGOLpbfuIR4ZsaYvO1PMnuVejjpyjz0v1hyfXdessc/F
+SyMWrLHPoVdEfKkhaxRnhHfFd8hS665Z8s91Oi7iyeeu038U2xVxbz3h98be
+YvYa5xXv+XzCbxHusdB/92/5u8HKsMuDl62Guej7ekas3UuxbudErB8Qo72j
+Yz1nR9zdz/1/jo7/sniPc91Ouqf3P1pMbvp8Sh/pc7T3tAWx5nNiTHTf2vJz
+rOuvMS7fJU931z3s/Y5+wP22zzHswf4t66LSaBT9htd5bPDk4FnB1NK/ijw9
+rg==
      "], {{-0.7, -2}, {2.5, 42}}, {1, 256},
      ColorFunction->Hue], GraphicsComplexBox[CompressedData["
 1:eJxs3Q3Up0dZH/4lEKtS/SOHIiYpKZAlm7Cbzcvustm8PE+SRUv1r4gWETkU
@@ -3326,7 +3318,7 @@ k+IqLEWXO7qxxno15mTeAKWYJx5C/wcQiu2A
   StripOnInput->False,
   Antialiasing->False]], "Output",
  CellLabel->
-  "Out[225]=",ExpressionUUID->"57e618cc-2bc7-499f-8f8f-20e98231c6ab"]
+  "Out[1114]=",ExpressionUUID->"a30ab922-b234-46fa-86f0-5d15dabf04e0"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3367,7 +3359,7 @@ Cell[BoxData[{
    3.392644219563371*^9, 3.392644222477562*^9}, {3.3926446711026525`*^9, 
    3.3926446918725185`*^9}, 3.3926447610720224`*^9},
  CellLabel->
-  "In[226]:=",ExpressionUUID->"443edc5c-1353-47b2-bff0-07ee9e3932f0"],
+  "In[1115]:=",ExpressionUUID->"443edc5c-1353-47b2-bff0-07ee9e3932f0"],
 
 Cell[BoxData[
  GraphicsBox[RasterBox[CompressedData["
@@ -3431,7 +3423,7 @@ nnlS1dkktZmvktrMk1L7+cp57Fxf9J55UvCV/r//1/0GvmNhGA==
   Ticks->Automatic,
   TicksStyle->{}]], "Output",
  CellLabel->
-  "Out[228]=",ExpressionUUID->"6d7e8f8f-0574-421a-ad6e-22d8f8afcc4b"]
+  "Out[1117]=",ExpressionUUID->"34e4b4a2-4564-4eef-ba01-2eee4fe0999e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3470,7 +3462,7 @@ Cell[BoxData[{
   3.392644219563371*^9, 3.392644222477562*^9}, {3.3926446711026525`*^9, 
   3.3926446918725185`*^9}, {3.3926447610720224`*^9, 3.3926447761436944`*^9}},
  CellLabel->
-  "In[229]:=",ExpressionUUID->"be4536ed-61a9-490d-8b27-c68be18748a6"],
+  "In[1118]:=",ExpressionUUID->"be4536ed-61a9-490d-8b27-c68be18748a6"],
 
 Cell[BoxData[
  StyleBox[
@@ -3657,7 +3649,7 @@ fwx9fwHDdRCn
   StripOnInput->False,
   Antialiasing->False]], "Output",
  CellLabel->
-  "Out[230]=",ExpressionUUID->"ea9fa81d-8bf7-4c53-8c8d-771d86a294a3"]
+  "Out[1119]=",ExpressionUUID->"2ff3e927-55bf-4c3e-9dd1-866a0af136c5"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3685,7 +3677,7 @@ Cell[BoxData[
   3.392644219563371*^9, 3.392644222477562*^9}, {3.3926446711026525`*^9, 
   3.3926446918725185`*^9}, {3.3926447610720224`*^9, 3.3926447831437597`*^9}},
  CellLabel->
-  "In[231]:=",ExpressionUUID->"0ffb29a7-29bb-42e0-9b57-a0f5b76b1ee3"],
+  "In[1120]:=",ExpressionUUID->"0ffb29a7-29bb-42e0-9b57-a0f5b76b1ee3"],
 
 Cell[BoxData[
  Graphics3DBox[GraphicsComplex3DBox[CompressedData["
@@ -4563,7 +4555,7 @@ dyldXZi+geNbuDi+S2kYVjvuO/rISfe+guf/szrpQA==
           Polygon3DBox[{{2084, 913, 782, 781, 1149, 1804}, {1646, 894, 1094, 
            2126, 1520, 1521}, {1757, 1080, 724, 725, 1081, 1758}, {1521, 1520,
             2127, 1097, 1098, 2128}, {1818, 1161, 781, 782, 1162, 1819}}]},
-         Annotation[#, "Charting`Private`Tag$30951#1"]& ]],
+         Annotation[#, "Charting`Private`Tag$83977#1"]& ]],
        Lighting->"Neutral"]}, {}, {}, {}, {}}, {
      {GrayLevel[0], Line3DBox[CompressedData["
 1:eJwl0jtLXFEUBtA9vh3jo5M0io2k0SLgI+okMZYzVUrt7Eyhrf6AEFsRtbBI
@@ -8154,7 +8146,7 @@ b/NYP3kd1k9+PesnLxs5Mgz9ncfeWSHonyp7rJHGdRayvKoZp6/yfwCVTUXE
     Scaled[0.02]},
   Ticks->{Automatic, Automatic, Automatic}]], "Output",
  CellLabel->
-  "Out[231]=",ExpressionUUID->"29058428-653e-46c3-a471-0472e543db03"]
+  "Out[1120]=",ExpressionUUID->"49809e97-be45-40e3-9cb0-36ee5fbfee61"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8205,7 +8197,7 @@ Cell[BoxData[{
   3.3926446918725185`*^9}, {3.3926447610720224`*^9, 3.392644812125434*^9}, {
   3.392700968083736*^9, 3.392700969836256*^9}},
  CellLabel->
-  "In[232]:=",ExpressionUUID->"2badfb91-93fa-43f9-b8c7-c651eedf9e57"],
+  "In[1121]:=",ExpressionUUID->"2badfb91-93fa-43f9-b8c7-c651eedf9e57"],
 
 Cell[BoxData[
  StyleBox[
@@ -8375,7 +8367,7 @@ YXcrwG7YK87pWm0SZWXfdXIZdp9l8hzsVkXyKOxug+R+cU7XapNGrMxQIq+Q
   StripOnInput->False,
   Antialiasing->False]], "Output",
  CellLabel->
-  "Out[233]=",ExpressionUUID->"f76199b4-a509-46e7-bef4-682748ee84f3"]
+  "Out[1122]=",ExpressionUUID->"ce9ce5d8-5a05-4b74-b059-6848b1449521"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8401,7 +8393,7 @@ Cell[BoxData[
   3.3926446918725185`*^9}, {3.3926447610720224`*^9, 3.3926447958720627`*^9}, {
   3.392644841858187*^9, 3.392644843660779*^9}},
  CellLabel->
-  "In[234]:=",ExpressionUUID->"a3831377-7448-4ba0-9e79-67ec35521904"],
+  "In[1123]:=",ExpressionUUID->"a3831377-7448-4ba0-9e79-67ec35521904"],
 
 Cell[BoxData[
  StyleBox[
@@ -8569,7 +8561,7 @@ f+x33V8/m4a2sufWfH4AyV0n4Q==
   StripOnInput->False,
   Antialiasing->False]], "Output",
  CellLabel->
-  "Out[234]=",ExpressionUUID->"f3227a27-4408-4aa5-99d1-b2d701d0fe3e"]
+  "Out[1123]=",ExpressionUUID->"b9513f89-8a14-4867-9ccc-b4af9a14cdc3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8627,7 +8619,7 @@ Cell[BoxData[
   3.3926988391224403`*^9, 3.3926989423108177`*^9}, {3.3927010349298563`*^9, 
   3.3927010427811456`*^9}},
  CellLabel->
-  "In[235]:=",ExpressionUUID->"f3d74eba-6a9e-4f53-a97c-16d703aa27c4"],
+  "In[1124]:=",ExpressionUUID->"f3d74eba-6a9e-4f53-a97c-16d703aa27c4"],
 
 Cell[BoxData[
  Graphics3DBox[GraphicsComplex3DBox[CompressedData["
@@ -8974,906 +8966,906 @@ Le4=
       "],
       VertexColors->None]}},
    VertexColors->{
-     VQM`ComplexPlot`Private`colorfun$31000[1.523352849284803*^-8], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.851591922697428*^-8], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.427514049785137*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.8856818233675993`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.77923365276586*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[2.2694859223713337`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.843491389616269*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.50929857656226*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000017253868975815904`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000029094396665728726`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00004560806927879798], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006594616187764025], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00008704890656478345], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001045971812242999], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00011576654455792066`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00012060306104005608`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001155823000017133], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00010088673311670028`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00007793009886781862], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00005308213086752186], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00003347238563596208], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000021347830218685182`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000013717239908954003`], 
-     VQM`ComplexPlot`Private`colorfun$31000[7.969566041098522*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.845640174891586*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.4673449252319815`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.5151822540282333`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.7601935624779806`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.472573199456073*^-8], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.13441784506737*^-8], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.851591922697428*^-8], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.5464075090565518`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.559889860937157*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2431842471873113`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.125372074467163*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[7.225640077842377*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00001536773401239159], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000030205873939672976`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00005517696697146829], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00009369873219970984], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001467658823356782], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00020986618328097572`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000273176089333503], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000327528677555957], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00036963079855861867`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003959157884715977], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003776615534310677], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00031602213434498035`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002331869175284445], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00015928909988986354`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00011005168349572797`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00007660431672285729], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00004821306499300324], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00002520242158438966], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000010417161541619669`], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.472450217744485*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.4664414573946835`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[8.549010099946889*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.042088195067701*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.4202007443999177`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.427514049785137*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.559889860937157*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.346725417715239*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.667658105281443*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.185588809485394*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000021163333183394408`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0000450618687570429], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00008917008391323251], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00016403579377464062`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002783386895839336], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0004311560567235127], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006079645674972249], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000789638792562873], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0009653634530641135], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011201316849942552`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0012068176669842393`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0010920503426055524`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0008729168919735443], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006459491525920927], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00048345106769039596`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003645462498900009], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00024854652274331954`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00014074364070670907`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006302015490663933], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000022756719385705184`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000010410747527949822`], 
-     VQM`ComplexPlot`Private`colorfun$31000[6.574709571596077*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.367519249046833*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.281733089011562*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.449146265578206*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.8856818233675993`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2431842471873113`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.667658105281443*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.950629566295366*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000024835401557135056`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00005728486236928545], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00012279859830507963`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002447126484501991], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00044981603137650943`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007548130518419604], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011529931775533923`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0016222601598539072`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0021484558756650054`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0027005251505012665`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.003151841444927456], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0032987347899870673`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0027845466409903287`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0022321505892492774`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0018097610616518186`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.001478307940467284], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0010918513735926397`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006697738275131374], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00032487958123101474`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00012708554716301336`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006298135238510501], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000043087391144949664`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000023907120547194083`], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.85730828485993*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[2.873531175367665*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.424171550722522*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.77923365276586*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.125372074467163*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.185588809485394*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000024835401557135056`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006205595057818671], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00014410549005356744`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00031109074641521634`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006194541456520047], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011260487528398158`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0018633227601470809`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002840046250182189], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004074505488229053], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005548048555368884], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007014552135804882], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00795291873672805], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007927236524280028], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006572968195061201], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005773017032382484], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005108460824144323], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004087259772698322], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002716066803124699], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014271783531874809`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006047774017893166], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003246795476550018], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00024062276230036702`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001446296511997473], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006459991777294638], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000020400137645859037`], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.4024574425405477`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[7.95558004924316*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[2.2694859223713337`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[7.225640077842377*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000021163333183394408`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00005728486236928545], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00014410549005356744`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003370005824649538], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007269361740035727], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014314885202680947`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002566033506917657], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004236851138465273], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006584704021121433], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009712816036191821], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.01330296400244169], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016338740374286148`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.017642389334625586`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.017073747567158053`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.01569268729450989], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.015042780126277131`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.013038085957061464`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009385677016072637], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005342529956485959], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002452493299684448], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014262996165536983`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011450807132987449`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000745590368430075], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00036076007959291224`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001234136409829457], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000022298021393087994`], 
-     VQM`ComplexPlot`Private`colorfun$31000[5.6479264762612255`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[6.570645248262876*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.843491389616269*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00001536773401239159], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0000450618687570429], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00012279859830507963`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00031109074641521634`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007269361740035727], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0015507130015315913`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0030112682156971118`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005386093409812255], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009067978727420949], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.014489818846437151`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.021498579597639542`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.02860378346274042], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03345845403837104], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03507687403211981], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.035623090240149875`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03774670360879196], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03544119213496726], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.027637811182134805`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.01704231408684213], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.008474868868629805], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005339240474986091], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004643531270603552], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0032753379887295268`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0017167927311643764`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000636218239389159], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00012452393516673523`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00003416796408630445], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000043060755582224024`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000022907520923433745`], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.50929857656226*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000030205873939672976`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00008917008391323251], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002447126484501991], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006194541456520047], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014314885202680947`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0030112682156971118`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005834685336138936], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.010641371614550966`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0184201698968443], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.029606290857695946`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04267183061569908], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.054071351108358895`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.061408118764382534`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06755850950219904], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.076502825124516], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08209480707919191], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06935129399820482], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04632581269715459], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.024955773055416], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.017031820860344504`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016046249182744173`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.012260970244764713`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006961937826496964], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002794872166846346], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0005925871481996296], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00017614164675284759`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002404740152421641], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00013858242587043754`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000055233952177567415`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000017253868975815904`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00005517696697146829], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00016403579377464062`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00044981603137650943`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011260487528398158`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002566033506917657], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005386093409812255], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.010641371614550966`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.019954331833627006`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03474330417125165], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05424652841286632], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07446315886647882], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.09161014820839422], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.10917957785680923`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.13393139214045185`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15735159282821215`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.14829222281704502`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1073075827042351], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0626212815013866], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04629728915024417], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0472510618397286], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03911167698124535], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.024057766094083506`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.010462384216084], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002403059383731723], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007737806863328349], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011443728526380121`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000714415896778803], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003084555781300876], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000100514039306139], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000029094396665728726`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00009369873219970984], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002783386895839336], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007548130518419604], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0018633227601470809`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004236851138465273], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009067978727420949], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0184201698968443], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03474330417125165], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.058764562695920286`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08738332641820308], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11645932307073911`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15035422796509126`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.19980215858460387`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.25429188131395253`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2787490930233356], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.21181204799936673`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.13390159713145236`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.10724151170211106`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11856663538871672`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.10631656081867905`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07084241186156523], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.033374307558399145`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00830404436304766], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002896587162529915], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0046406607540756175`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0031383902281341336`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014678849583867417`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0005181669109825665], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001494308201902637], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00004560806927879798], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001467658823356782], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0004311560567235127], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011529931775533923`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002840046250182189], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006584704021121433], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.014489818846437151`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.029606290857695946`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05424652841286632], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08738332641820308], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.12615887859271158`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.17644232101661544`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2539983243330603], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.35019241000266793`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.41584478141731607`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.39900493955512617`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.24398461753553516`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.211681631919528], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2535282169960094], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.24626817056532677`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1777641832841345], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.09072077377339982], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.024452749627007428`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009239919776925112], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016036329787179407`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.011748317070183919`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005952567034581693], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0022762790935958815`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007111145617998027], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002505309923144024], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006594616187764025], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00020986618328097572`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006079645674972249], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0016222601598539072`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004074505488229053], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009712816036191821], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.021498579597639542`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04267183061569908], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07446315886647882], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11645932307073911`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.17644232101661544`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.27515309996111403`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4109546000769523], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5286423250423533], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5494807803685545], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4467994370198484], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.35605435782202877`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4619585306179136], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.48610325803602855`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.3801089259725032], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.21014260447673086`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06135904964656817], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.025116706026034913`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.047221852398450184`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03747634756054354], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.020569770794602947`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.008521071819578776], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0028837117474333285`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.001100569040623846], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0005356663837813533], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00008704890656478345], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000273176089333503], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000789638792562873], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0021484558756650054`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005548048555368884], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.01330296400244169], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.02860378346274042], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.054071351108358895`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.09161014820839422], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15035422796509126`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2539983243330603], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4109546000769523], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5726713941440036], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.6448216691635621], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5679934046755639], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4689108528272072], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7172863451433251], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.8176391206253125], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.6926036202107425], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.41479580756952966`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.13120259677153942`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05817950840422594], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11849334041842145`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.10187127457084107`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0605713834289722], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.02718165054545024], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009964993142924877], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004119893673822788], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002172234301749954], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0010237919235154733`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001045971812242999], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000327528677555957], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0009653634530641135], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0027005251505012665`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007014552135804882], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016338740374286148`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03345845403837104], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.061408118764382534`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.10917957785680923`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.19980215858460387`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.35019241000266793`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5286423250423533], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.6448216691635621], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.615299909809708], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5502719833187683], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7748951319680112], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.1719462020875102`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.075410640668304], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.6976980173111281], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.23906671823747785`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11483923611121616`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2533714921039448], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.23597125629849547`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15199119034346673`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07388738674522134], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.029343711534479074`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.013142185924187831`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007506402101746487], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0038324845723548408`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.001591142115504009], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00011576654455792066`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00036963079855861867`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011201316849942552`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.003151841444927456], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00795291873672805], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.017642389334625586`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03507687403211981], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06755850950219904], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.13393139214045185`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.25429188131395253`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.41584478141731607`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5494807803685545], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5679934046755639], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5502719833187683], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.8394338752652277], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2830080610169632`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.4229078791731353`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.0000310906924696`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.37120061911314767`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.19316277040936447`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4616729592455938], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4657784082540443], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.32499914803644075`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.17115030265728381`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07363189335853132], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03572416518395004], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.02210394877108811], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.012225370067556625`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005498372118686629], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00206487813685597], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00012060306104005608`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003959157884715977], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0012068176669842393`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0032987347899870673`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007927236524280028], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.017073747567158053`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.035623090240149875`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.076502825124516], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15735159282821215`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2787490930233356], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.39900493955512617`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4467994370198484], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4689108528272072], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7748951319680112], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2830080610169632`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.6065306597126334`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2214407324177052`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.49114660550672107`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.27686588062570644`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7168429364121225], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7834521613160376], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5921870577480969], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.33782977127971436`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15744532663870528`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08275027650517475], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.055465226230935624`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03323200130082621], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016190943942045337`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0065868234798816495`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002384173811047308], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001155823000017133], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003776615534310677], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0010920503426055524`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0027845466409903287`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006572968195061201], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.01569268729450989], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03774670360879196], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08209480707919191], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.14829222281704502`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.21181204799936673`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.24398461753553516`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.35605435782202877`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7172863451433251], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.1719462020875102`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.4229078791731353`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2214407324177052`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1521497491369327], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7319358191667586], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2078295939625836`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2144318762125899`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.8938979715610866], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5101353008363326], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.268637103520647], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1870709209311958], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.13768263548846735`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08386006401489707], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04185441190355485], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.01792412981757762], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007134805541668259], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0028333069664132527`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00010088673311670028`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00031602213434498035`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0008729168919735443], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0022321505892492774`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005773017032382484], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.015042780126277131`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03544119213496726], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06935129399820482], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1073075827042351], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.13390159713145236`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.211681631919528], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4619585306179136], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.8176391206253125], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.075410640668304], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.0000310906924696`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.49114660550672107`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7319358191667586], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.3084261790947622`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.425149008814455], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.1363670368210594`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7025214863495882], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.40075946573491605`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.3023205267115562], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.24103720371795193`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1590390079415416], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.085987093826632], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.039890884516631114`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0172013005857519], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007399737812306652], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0031078760637941716`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00007793009886781862], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002331869175284445], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006459491525920927], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0018097610616518186`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005108460824144323], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.013038085957061464`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.027637811182134805`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04632581269715459], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0626212815013866], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.10724151170211106`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2535282169960094], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.48610325803602855`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.6926036202107425], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.6976980173111281], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.37120061911314767`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.27686588062570644`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2078295939625836`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.425149008814455], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2310117151203672`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.8244166013365668], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5094651302987713], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4163339910631545], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.3595852535568311], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.25701886968447785`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15053524054266537`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07565229974435289], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03533892318963677], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016468419361401778`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007492777489782448], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.003119296739952155], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00005308213086752186], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00015928909988986354`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00048345106769039596`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.001478307940467284], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004087259772698322], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009385677016072637], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.01704231408684213], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.024955773055416], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04629728915024417], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11856663538871672`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.24626817056532677`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.3801089259725032], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.41479580756952966`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.23906671823747785`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.19316277040936447`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7168429364121225], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.2144318762125899`], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.1363670368210594`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.8244166013365668], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5518969870839967], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.48857246447601893`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.45712244805222835`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.3539478214007397], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2245721897069178], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.12225974508387273`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06186688101817331], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.031232042431273855`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.015393410914974015`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006942122562876652], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002783159768451402], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00003347238563596208], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00011005168349572797`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003645462498900009], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0010918513735926397`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002716066803124699], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005342529956485959], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.008474868868629805], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.017031820860344504`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0472510618397286], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.10631656081867905`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1777641832841345], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.21014260447673086`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.13120259677153942`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11483923611121616`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4616729592455938], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7834521613160376], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.8938979715610866], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.7025214863495882], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5094651302987713], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.48857246447601893`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4951948363188966], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4153616161776357], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2854872053507365], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.16836728941563772`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.09229454106894487], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05047330430138396], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.026948821174602774`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.013165602702287064`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005717815858834516], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0022263726773124933`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000021347830218685182`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00007660431672285729], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00024854652274331954`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006697738275131374], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014271783531874809`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002452493299684448], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005339240474986091], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016046249182744173`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03911167698124535], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07084241186156523], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.09072077377339982], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06135904964656817], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05817950840422594], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2533714921039448], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4657784082540443], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5921870577480969], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.5101353008363326], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.40075946573491605`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4163339910631545], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.45712244805222835`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.4153616161776357], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.30926459754311864`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.19758084444867563`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11732935691320036`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06950818871121348], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04020291700059051], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.02127659351660767], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.010010022985818533`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004222273212730122], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0016394171062108077`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000013717239908954003`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00004821306499300324], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00014074364070670907`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00032487958123101474`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006047774017893166], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014262996165536983`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004643531270603552], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.012260970244764713`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.024057766094083506`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.033374307558399145`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.024452749627007428`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.025116706026034913`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11849334041842145`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.23597125629849547`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.32499914803644075`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.33782977127971436`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.268637103520647], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.3023205267115562], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.3595852535568311], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.3539478214007397], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2854872053507365], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.19758084444867563`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.12710137500268945`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08156861507555928], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05110792407744267], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.029300587662210848`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.014933199514200865`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006823507658157902], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002870082444358275], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011357650978208065`], 
-     VQM`ComplexPlot`Private`colorfun$31000[7.969566041098522*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00002520242158438966], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006302015490663933], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00012708554716301336`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003246795476550018], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011450807132987449`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0032753379887295268`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006961937826496964], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.010462384216084], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00830404436304766], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009239919776925112], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.047221852398450184`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.10187127457084107`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15199119034346673`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.17115030265728381`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15744532663870528`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1870709209311958], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.24103720371795193`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.25701886968447785`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.2245721897069178], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.16836728941563772`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.11732935691320036`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08156861507555928], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05536455320880729], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03438455814805296], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.018983817194007865`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009396841846208244], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004281659874760303], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0018354809014923135`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007400671740572707], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.845640174891586*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000010417161541619669`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000022756719385705184`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006298135238510501], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00024062276230036702`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000745590368430075], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0017167927311643764`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002794872166846346], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002403059383731723], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002896587162529915], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016036329787179407`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03747634756054354], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0605713834289722], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07388738674522134], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07363189335853132], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08275027650517475], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.13768263548846735`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.1590390079415416], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.15053524054266537`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.12225974508387273`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.09229454106894487], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06950818871121348], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05110792407744267], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03438455814805296], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.020564923661374232`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.011027296059516127`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005443056477754268], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0025276917103534574`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011040504881722176`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0004464485567295003], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.4673449252319815`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.472450217744485*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000010410747527949822`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000043087391144949664`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001446296511997473], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00036076007959291224`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000636218239389159], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0005925871481996296], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007737806863328349], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0046406607540756175`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.011748317070183919`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.020569770794602947`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.02718165054545024], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.029343711534479074`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03572416518395004], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.055465226230935624`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.08386006401489707], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.085987093826632], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.07565229974435289], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.06186688101817331], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.05047330430138396], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04020291700059051], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.029300587662210848`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.018983817194007865`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.011027296059516127`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005896392690975611], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0029662737006156546`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014035232450008627`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006148167028199117], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002462784241488708], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.5151822540282333`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.4664414573946835`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[6.574709571596077*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000023907120547194083`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00006459991777294638], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001234136409829457], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00012452393516673523`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00017614164675284759`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011443728526380121`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0031383902281341336`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005952567034581693], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.008521071819578776], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009964993142924877], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.013142185924187831`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.02210394877108811], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03323200130082621], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.04185441190355485], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.039890884516631114`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.03533892318963677], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.031232042431273855`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.026948821174602774`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.02127659351660767], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.014933199514200865`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.009396841846208244], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005443056477754268], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0029662737006156546`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0015204185804906234`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007214940844265077], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003130812374417466], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001241388871627054], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.7601935624779806`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[8.549010099946889*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.367519249046833*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.85730828485993*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000020400137645859037`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000022298021393087994`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00003416796408630445], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002404740152421641], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000714415896778803], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014678849583867417`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0022762790935958815`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0028837117474333285`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004119893673822788], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007506402101746487], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.012225370067556625`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016190943942045337`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.01792412981757762], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0172013005857519], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.016468419361401778`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.015393410914974015`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.013165602702287064`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.010010022985818533`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006823507658157902], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004281659874760303], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0025276917103534574`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0014035232450008627`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007214940844265077], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003391568556523184], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00014567833359826102`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00005759053446230848], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.472573199456073*^-8], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.042088195067701*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.281733089011562*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[2.873531175367665*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.4024574425405477`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[5.6479264762612255`*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000043060755582224024`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00013858242587043754`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003084555781300876], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0005181669109825665], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007111145617998027], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.001100569040623846], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002172234301749954], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0038324845723548408`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005498372118686629], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0065868234798816495`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007134805541668259], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007399737812306652], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.007492777489782448], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.006942122562876652], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.005717815858834516], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.004222273212730122], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002870082444358275], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0018354809014923135`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011040504881722176`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0006148167028199117], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0003130812374417466], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00014567833359826102`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0000623870812035078], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000024769817735470683`], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.13441784506737*^-8], 
-     VQM`ComplexPlot`Private`colorfun$31000[1.4202007443999177`*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[3.449146265578206*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[4.424171550722522*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[7.95558004924316*^-7], 
-     VQM`ComplexPlot`Private`colorfun$31000[6.570645248262876*^-6], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000022907520923433745`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000055233952177567415`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000100514039306139], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001494308201902637], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002505309923144024], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0005356663837813533], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0010237919235154733`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.001591142115504009], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00206487813685597], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002384173811047308], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0028333069664132527`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0031078760637941716`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.003119296739952155], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.002783159768451402], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0022263726773124933`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0016394171062108077`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0011357650978208065`], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0007400671740572707], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0004464485567295003], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0002462784241488708], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.0001241388871627054], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.00005759053446230848], 
-     VQM`ComplexPlot`Private`colorfun$31000[0.000024769817735470683`], 
-     VQM`ComplexPlot`Private`colorfun$31000[9.892482226203885*^-6]},
+     VQM`ComplexPlot`Private`colorfun$84026[1.523352849284803*^-8], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.851591922697428*^-8], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.427514049785137*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.8856818233675993`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.77923365276586*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[2.2694859223713337`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.843491389616269*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.50929857656226*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000017253868975815904`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000029094396665728726`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00004560806927879798], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006594616187764025], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00008704890656478345], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001045971812242999], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00011576654455792066`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00012060306104005608`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001155823000017133], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00010088673311670028`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00007793009886781862], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00005308213086752186], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00003347238563596208], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000021347830218685182`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000013717239908954003`], 
+     VQM`ComplexPlot`Private`colorfun$84026[7.969566041098522*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.845640174891586*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.4673449252319815`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.5151822540282333`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.7601935624779806`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.472573199456073*^-8], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.13441784506737*^-8], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.851591922697428*^-8], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.5464075090565518`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.559889860937157*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2431842471873113`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.125372074467163*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[7.225640077842377*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00001536773401239159], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000030205873939672976`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00005517696697146829], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00009369873219970984], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001467658823356782], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00020986618328097572`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000273176089333503], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000327528677555957], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00036963079855861867`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003959157884715977], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003776615534310677], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00031602213434498035`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002331869175284445], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00015928909988986354`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00011005168349572797`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00007660431672285729], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00004821306499300324], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00002520242158438966], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000010417161541619669`], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.472450217744485*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.4664414573946835`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[8.549010099946889*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.042088195067701*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.4202007443999177`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.427514049785137*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.559889860937157*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.346725417715239*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.667658105281443*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.185588809485394*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000021163333183394408`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0000450618687570429], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00008917008391323251], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00016403579377464062`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002783386895839336], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0004311560567235127], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006079645674972249], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000789638792562873], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0009653634530641135], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011201316849942552`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0012068176669842393`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0010920503426055524`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0008729168919735443], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006459491525920927], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00048345106769039596`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003645462498900009], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00024854652274331954`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00014074364070670907`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006302015490663933], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000022756719385705184`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000010410747527949822`], 
+     VQM`ComplexPlot`Private`colorfun$84026[6.574709571596077*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.367519249046833*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.281733089011562*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.449146265578206*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.8856818233675993`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2431842471873113`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.667658105281443*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.950629566295366*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000024835401557135056`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00005728486236928545], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00012279859830507963`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002447126484501991], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00044981603137650943`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007548130518419604], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011529931775533923`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0016222601598539072`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0021484558756650054`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0027005251505012665`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.003151841444927456], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0032987347899870673`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0027845466409903287`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0022321505892492774`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0018097610616518186`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.001478307940467284], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0010918513735926397`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006697738275131374], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00032487958123101474`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00012708554716301336`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006298135238510501], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000043087391144949664`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000023907120547194083`], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.85730828485993*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[2.873531175367665*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.424171550722522*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.77923365276586*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.125372074467163*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.185588809485394*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000024835401557135056`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006205595057818671], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00014410549005356744`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00031109074641521634`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006194541456520047], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011260487528398158`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0018633227601470809`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002840046250182189], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004074505488229053], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005548048555368884], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007014552135804882], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00795291873672805], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007927236524280028], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006572968195061201], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005773017032382484], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005108460824144323], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004087259772698322], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002716066803124699], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014271783531874809`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006047774017893166], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003246795476550018], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00024062276230036702`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001446296511997473], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006459991777294638], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000020400137645859037`], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.4024574425405477`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[7.95558004924316*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[2.2694859223713337`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[7.225640077842377*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000021163333183394408`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00005728486236928545], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00014410549005356744`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003370005824649538], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007269361740035727], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014314885202680947`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002566033506917657], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004236851138465273], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006584704021121433], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009712816036191821], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.01330296400244169], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016338740374286148`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.017642389334625586`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.017073747567158053`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.01569268729450989], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.015042780126277131`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.013038085957061464`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009385677016072637], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005342529956485959], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002452493299684448], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014262996165536983`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011450807132987449`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000745590368430075], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00036076007959291224`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001234136409829457], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000022298021393087994`], 
+     VQM`ComplexPlot`Private`colorfun$84026[5.6479264762612255`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[6.570645248262876*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.843491389616269*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00001536773401239159], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0000450618687570429], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00012279859830507963`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00031109074641521634`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007269361740035727], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0015507130015315913`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0030112682156971118`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005386093409812255], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009067978727420949], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.014489818846437151`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.021498579597639542`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.02860378346274042], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03345845403837104], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03507687403211981], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.035623090240149875`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03774670360879196], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03544119213496726], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.027637811182134805`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.01704231408684213], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.008474868868629805], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005339240474986091], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004643531270603552], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0032753379887295268`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0017167927311643764`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000636218239389159], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00012452393516673523`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00003416796408630445], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000043060755582224024`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000022907520923433745`], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.50929857656226*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000030205873939672976`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00008917008391323251], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002447126484501991], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006194541456520047], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014314885202680947`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0030112682156971118`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005834685336138936], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.010641371614550966`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0184201698968443], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.029606290857695946`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04267183061569908], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.054071351108358895`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.061408118764382534`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06755850950219904], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.076502825124516], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08209480707919191], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06935129399820482], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04632581269715459], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.024955773055416], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.017031820860344504`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016046249182744173`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.012260970244764713`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006961937826496964], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002794872166846346], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0005925871481996296], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00017614164675284759`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002404740152421641], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00013858242587043754`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000055233952177567415`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000017253868975815904`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00005517696697146829], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00016403579377464062`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00044981603137650943`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011260487528398158`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002566033506917657], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005386093409812255], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.010641371614550966`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.019954331833627006`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03474330417125165], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05424652841286632], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07446315886647882], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.09161014820839422], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.10917957785680923`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.13393139214045185`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15735159282821215`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.14829222281704502`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1073075827042351], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0626212815013866], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04629728915024417], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0472510618397286], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03911167698124535], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.024057766094083506`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.010462384216084], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002403059383731723], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007737806863328349], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011443728526380121`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000714415896778803], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003084555781300876], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000100514039306139], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000029094396665728726`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00009369873219970984], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002783386895839336], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007548130518419604], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0018633227601470809`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004236851138465273], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009067978727420949], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0184201698968443], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03474330417125165], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.058764562695920286`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08738332641820308], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11645932307073911`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15035422796509126`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.19980215858460387`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.25429188131395253`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2787490930233356], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.21181204799936673`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.13390159713145236`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.10724151170211106`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11856663538871672`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.10631656081867905`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07084241186156523], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.033374307558399145`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00830404436304766], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002896587162529915], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0046406607540756175`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0031383902281341336`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014678849583867417`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0005181669109825665], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001494308201902637], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00004560806927879798], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001467658823356782], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0004311560567235127], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011529931775533923`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002840046250182189], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006584704021121433], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.014489818846437151`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.029606290857695946`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05424652841286632], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08738332641820308], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.12615887859271158`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.17644232101661544`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2539983243330603], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.35019241000266793`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.41584478141731607`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.39900493955512617`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.24398461753553516`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.211681631919528], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2535282169960094], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.24626817056532677`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1777641832841345], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.09072077377339982], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.024452749627007428`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009239919776925112], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016036329787179407`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.011748317070183919`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005952567034581693], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0022762790935958815`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007111145617998027], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002505309923144024], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006594616187764025], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00020986618328097572`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006079645674972249], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0016222601598539072`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004074505488229053], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009712816036191821], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.021498579597639542`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04267183061569908], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07446315886647882], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11645932307073911`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.17644232101661544`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.27515309996111403`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4109546000769523], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5286423250423533], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5494807803685545], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4467994370198484], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.35605435782202877`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4619585306179136], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.48610325803602855`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.3801089259725032], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.21014260447673086`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06135904964656817], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.025116706026034913`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.047221852398450184`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03747634756054354], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.020569770794602947`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.008521071819578776], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0028837117474333285`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.001100569040623846], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0005356663837813533], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00008704890656478345], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000273176089333503], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000789638792562873], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0021484558756650054`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005548048555368884], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.01330296400244169], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.02860378346274042], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.054071351108358895`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.09161014820839422], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15035422796509126`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2539983243330603], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4109546000769523], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5726713941440036], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.6448216691635621], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5679934046755639], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4689108528272072], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7172863451433251], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.8176391206253125], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.6926036202107425], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.41479580756952966`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.13120259677153942`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05817950840422594], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11849334041842145`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.10187127457084107`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0605713834289722], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.02718165054545024], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009964993142924877], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004119893673822788], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002172234301749954], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0010237919235154733`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001045971812242999], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000327528677555957], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0009653634530641135], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0027005251505012665`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007014552135804882], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016338740374286148`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03345845403837104], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.061408118764382534`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.10917957785680923`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.19980215858460387`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.35019241000266793`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5286423250423533], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.6448216691635621], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.615299909809708], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5502719833187683], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7748951319680112], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.1719462020875102`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.075410640668304], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.6976980173111281], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.23906671823747785`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11483923611121616`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2533714921039448], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.23597125629849547`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15199119034346673`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07388738674522134], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.029343711534479074`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.013142185924187831`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007506402101746487], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0038324845723548408`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.001591142115504009], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00011576654455792066`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00036963079855861867`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011201316849942552`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.003151841444927456], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00795291873672805], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.017642389334625586`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03507687403211981], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06755850950219904], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.13393139214045185`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.25429188131395253`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.41584478141731607`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5494807803685545], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5679934046755639], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5502719833187683], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.8394338752652277], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2830080610169632`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.4229078791731353`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.0000310906924696`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.37120061911314767`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.19316277040936447`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4616729592455938], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4657784082540443], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.32499914803644075`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.17115030265728381`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07363189335853132], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03572416518395004], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.02210394877108811], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.012225370067556625`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005498372118686629], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00206487813685597], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00012060306104005608`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003959157884715977], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0012068176669842393`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0032987347899870673`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007927236524280028], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.017073747567158053`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.035623090240149875`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.076502825124516], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15735159282821215`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2787490930233356], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.39900493955512617`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4467994370198484], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4689108528272072], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7748951319680112], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2830080610169632`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.6065306597126334`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2214407324177052`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.49114660550672107`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.27686588062570644`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7168429364121225], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7834521613160376], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5921870577480969], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.33782977127971436`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15744532663870528`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08275027650517475], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.055465226230935624`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03323200130082621], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016190943942045337`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0065868234798816495`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002384173811047308], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001155823000017133], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003776615534310677], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0010920503426055524`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0027845466409903287`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006572968195061201], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.01569268729450989], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03774670360879196], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08209480707919191], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.14829222281704502`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.21181204799936673`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.24398461753553516`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.35605435782202877`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7172863451433251], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.1719462020875102`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.4229078791731353`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2214407324177052`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1521497491369327], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7319358191667586], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2078295939625836`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2144318762125899`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.8938979715610866], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5101353008363326], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.268637103520647], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1870709209311958], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.13768263548846735`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08386006401489707], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04185441190355485], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.01792412981757762], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007134805541668259], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0028333069664132527`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00010088673311670028`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00031602213434498035`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0008729168919735443], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0022321505892492774`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005773017032382484], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.015042780126277131`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03544119213496726], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06935129399820482], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1073075827042351], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.13390159713145236`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.211681631919528], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4619585306179136], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.8176391206253125], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.075410640668304], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.0000310906924696`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.49114660550672107`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7319358191667586], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.3084261790947622`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.425149008814455], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.1363670368210594`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7025214863495882], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.40075946573491605`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.3023205267115562], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.24103720371795193`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1590390079415416], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.085987093826632], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.039890884516631114`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0172013005857519], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007399737812306652], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0031078760637941716`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00007793009886781862], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002331869175284445], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006459491525920927], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0018097610616518186`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005108460824144323], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.013038085957061464`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.027637811182134805`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04632581269715459], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0626212815013866], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.10724151170211106`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2535282169960094], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.48610325803602855`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.6926036202107425], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.6976980173111281], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.37120061911314767`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.27686588062570644`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2078295939625836`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.425149008814455], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2310117151203672`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.8244166013365668], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5094651302987713], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4163339910631545], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.3595852535568311], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.25701886968447785`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15053524054266537`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07565229974435289], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03533892318963677], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016468419361401778`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007492777489782448], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.003119296739952155], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00005308213086752186], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00015928909988986354`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00048345106769039596`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.001478307940467284], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004087259772698322], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009385677016072637], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.01704231408684213], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.024955773055416], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04629728915024417], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11856663538871672`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.24626817056532677`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.3801089259725032], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.41479580756952966`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.23906671823747785`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.19316277040936447`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7168429364121225], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.2144318762125899`], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.1363670368210594`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.8244166013365668], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5518969870839967], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.48857246447601893`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.45712244805222835`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.3539478214007397], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2245721897069178], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.12225974508387273`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06186688101817331], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.031232042431273855`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.015393410914974015`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006942122562876652], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002783159768451402], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00003347238563596208], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00011005168349572797`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003645462498900009], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0010918513735926397`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002716066803124699], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005342529956485959], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.008474868868629805], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.017031820860344504`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0472510618397286], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.10631656081867905`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1777641832841345], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.21014260447673086`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.13120259677153942`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11483923611121616`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4616729592455938], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7834521613160376], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.8938979715610866], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.7025214863495882], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5094651302987713], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.48857246447601893`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4951948363188966], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4153616161776357], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2854872053507365], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.16836728941563772`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.09229454106894487], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05047330430138396], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.026948821174602774`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.013165602702287064`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005717815858834516], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0022263726773124933`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000021347830218685182`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00007660431672285729], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00024854652274331954`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006697738275131374], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014271783531874809`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002452493299684448], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005339240474986091], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016046249182744173`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03911167698124535], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07084241186156523], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.09072077377339982], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06135904964656817], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05817950840422594], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2533714921039448], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4657784082540443], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5921870577480969], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.5101353008363326], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.40075946573491605`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4163339910631545], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.45712244805222835`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.4153616161776357], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.30926459754311864`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.19758084444867563`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11732935691320036`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06950818871121348], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04020291700059051], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.02127659351660767], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.010010022985818533`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004222273212730122], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0016394171062108077`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000013717239908954003`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00004821306499300324], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00014074364070670907`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00032487958123101474`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006047774017893166], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014262996165536983`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004643531270603552], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.012260970244764713`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.024057766094083506`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.033374307558399145`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.024452749627007428`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.025116706026034913`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11849334041842145`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.23597125629849547`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.32499914803644075`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.33782977127971436`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.268637103520647], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.3023205267115562], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.3595852535568311], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.3539478214007397], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2854872053507365], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.19758084444867563`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.12710137500268945`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08156861507555928], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05110792407744267], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.029300587662210848`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.014933199514200865`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006823507658157902], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002870082444358275], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011357650978208065`], 
+     VQM`ComplexPlot`Private`colorfun$84026[7.969566041098522*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00002520242158438966], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006302015490663933], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00012708554716301336`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003246795476550018], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011450807132987449`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0032753379887295268`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006961937826496964], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.010462384216084], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00830404436304766], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009239919776925112], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.047221852398450184`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.10187127457084107`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15199119034346673`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.17115030265728381`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15744532663870528`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1870709209311958], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.24103720371795193`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.25701886968447785`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.2245721897069178], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.16836728941563772`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.11732935691320036`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08156861507555928], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05536455320880729], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03438455814805296], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.018983817194007865`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009396841846208244], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004281659874760303], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0018354809014923135`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007400671740572707], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.845640174891586*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000010417161541619669`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000022756719385705184`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006298135238510501], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00024062276230036702`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000745590368430075], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0017167927311643764`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002794872166846346], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002403059383731723], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002896587162529915], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016036329787179407`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03747634756054354], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0605713834289722], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07388738674522134], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07363189335853132], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08275027650517475], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.13768263548846735`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.1590390079415416], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.15053524054266537`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.12225974508387273`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.09229454106894487], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06950818871121348], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05110792407744267], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03438455814805296], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.020564923661374232`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.011027296059516127`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005443056477754268], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0025276917103534574`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011040504881722176`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0004464485567295003], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.4673449252319815`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.472450217744485*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000010410747527949822`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000043087391144949664`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001446296511997473], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00036076007959291224`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000636218239389159], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0005925871481996296], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007737806863328349], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0046406607540756175`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.011748317070183919`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.020569770794602947`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.02718165054545024], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.029343711534479074`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03572416518395004], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.055465226230935624`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.08386006401489707], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.085987093826632], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.07565229974435289], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.06186688101817331], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.05047330430138396], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04020291700059051], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.029300587662210848`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.018983817194007865`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.011027296059516127`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005896392690975611], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0029662737006156546`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014035232450008627`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006148167028199117], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002462784241488708], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.5151822540282333`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.4664414573946835`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[6.574709571596077*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000023907120547194083`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00006459991777294638], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001234136409829457], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00012452393516673523`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00017614164675284759`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011443728526380121`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0031383902281341336`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005952567034581693], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.008521071819578776], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009964993142924877], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.013142185924187831`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.02210394877108811], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03323200130082621], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.04185441190355485], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.039890884516631114`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.03533892318963677], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.031232042431273855`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.026948821174602774`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.02127659351660767], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.014933199514200865`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.009396841846208244], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005443056477754268], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0029662737006156546`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0015204185804906234`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007214940844265077], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003130812374417466], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001241388871627054], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.7601935624779806`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[8.549010099946889*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.367519249046833*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.85730828485993*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000020400137645859037`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000022298021393087994`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00003416796408630445], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002404740152421641], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000714415896778803], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014678849583867417`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0022762790935958815`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0028837117474333285`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004119893673822788], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007506402101746487], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.012225370067556625`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016190943942045337`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.01792412981757762], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0172013005857519], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.016468419361401778`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.015393410914974015`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.013165602702287064`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.010010022985818533`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006823507658157902], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004281659874760303], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0025276917103534574`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0014035232450008627`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007214940844265077], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003391568556523184], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00014567833359826102`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00005759053446230848], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.472573199456073*^-8], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.042088195067701*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.281733089011562*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[2.873531175367665*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.4024574425405477`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[5.6479264762612255`*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000043060755582224024`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00013858242587043754`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003084555781300876], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0005181669109825665], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007111145617998027], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.001100569040623846], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002172234301749954], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0038324845723548408`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005498372118686629], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0065868234798816495`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007134805541668259], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007399737812306652], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.007492777489782448], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.006942122562876652], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.005717815858834516], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.004222273212730122], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002870082444358275], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0018354809014923135`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011040504881722176`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0006148167028199117], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0003130812374417466], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00014567833359826102`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0000623870812035078], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000024769817735470683`], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.13441784506737*^-8], 
+     VQM`ComplexPlot`Private`colorfun$84026[1.4202007443999177`*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[3.449146265578206*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[4.424171550722522*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[7.95558004924316*^-7], 
+     VQM`ComplexPlot`Private`colorfun$84026[6.570645248262876*^-6], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000022907520923433745`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000055233952177567415`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000100514039306139], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001494308201902637], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002505309923144024], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0005356663837813533], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0010237919235154733`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.001591142115504009], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00206487813685597], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002384173811047308], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0028333069664132527`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0031078760637941716`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.003119296739952155], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.002783159768451402], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0022263726773124933`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0016394171062108077`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0011357650978208065`], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0007400671740572707], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0004464485567295003], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0002462784241488708], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.0001241388871627054], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.00005759053446230848], 
+     VQM`ComplexPlot`Private`colorfun$84026[0.000024769817735470683`], 
+     VQM`ComplexPlot`Private`colorfun$84026[9.892482226203885*^-6]},
    VertexNormals->CompressedData["
 1:eJw9XAk0VW0XNkQlJEOGJlJpMiVUct+SvmigkmQoQ8YiM4kGkowJlSlKiQyJ
 SlLcV6iIklKElChFueYiw3/Ovfv9v/Wtddbaq3W7nbPvPs9+hlfOxnWvHQ8X
@@ -10213,7 +10205,7 @@ zlbD3CXztgb6lXeY07+kb+P/nNn3Mamb8QSuHu0cXuJ/yOXPxg==
      Scaled[0.02]}},
   Ticks->{Automatic, Automatic, Automatic}]], "Output",
  CellLabel->
-  "Out[236]=",ExpressionUUID->"2a64cb55-1f43-4110-ac96-cdfb18621984"]
+  "Out[1125]=",ExpressionUUID->"f19ea8c2-b5aa-4209-b46b-a56fc65fb0e9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -10242,7 +10234,7 @@ Cell[BoxData[
    3.392699280206688*^9, {3.392699318381581*^9, 3.3926993189223585`*^9}, {
    3.392701099322448*^9, 3.3927011034083233`*^9}},
  CellLabel->
-  "In[237]:=",ExpressionUUID->"ecfb5c46-41d4-4008-abeb-f26bd9ad5723"],
+  "In[1126]:=",ExpressionUUID->"ecfb5c46-41d4-4008-abeb-f26bd9ad5723"],
 
 Cell[BoxData[
  GraphicsBox[RasterBox[CompressedData["
@@ -10375,7 +10367,7 @@ kcHQX4c4xqcm0F8nrQfyFduhvw5x1C/sr6Pj3aC/js6vhf46up7n0F9H1y/1
   Ticks->Automatic,
   TicksStyle->{}]], "Output",
  CellLabel->
-  "Out[237]=",ExpressionUUID->"94fee3ab-40e0-415f-a10d-b9e1a5a05feb"]
+  "Out[1126]=",ExpressionUUID->"800726b1-9ad5-43b4-8c04-dcf91c79d5ce"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -10397,7 +10389,7 @@ Cell[BoxData[
      RowBox[{"-", "Pi"}], ",", "Pi"}], "}"}], ",", " ", "\n", "\t", 
    RowBox[{"PlotPoints", "->", "20"}]}], "]"}]], "Input",
  CellLabel->
-  "In[238]:=",ExpressionUUID->"0a52b46c-2e4e-46fd-9224-5a8bc300a36f"],
+  "In[1127]:=",ExpressionUUID->"0a52b46c-2e4e-46fd-9224-5a8bc300a36f"],
 
 Cell[BoxData[
  StyleBox[
@@ -10593,12 +10585,12 @@ LrOtb5TZ1reQ2da3lNnWt5LZ1reW2da3ldnWt5fZ1neQ2dbXbEPfH0QZmEQ=
   StripOnInput->False,
   Antialiasing->False]], "Output",
  CellLabel->
-  "Out[238]=",ExpressionUUID->"59ab6b6f-f98e-49a2-8475-e90701a6c59e"]
+  "Out[1127]=",ExpressionUUID->"63f87dd4-1a93-4379-920f-8d4e4a2f9bc3"]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{615, 723},
-WindowMargins->{{Automatic, -1046}, {Automatic, 46}},
+WindowMargins->{{Automatic, 614}, {Automatic, 47}},
 PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
 Magnification->1.,
 FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
@@ -10616,60 +10608,60 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[567, 22, 251, 6, 28, "Input",ExpressionUUID->"7db3e1fa-e21c-4976-b49e-cec0984ce298"],
-Cell[821, 30, 352, 9, 52, "Output",ExpressionUUID->"c229cd07-9515-47d6-9a95-5b7aa7547339"]
+Cell[567, 22, 252, 6, 28, "Input",ExpressionUUID->"7db3e1fa-e21c-4976-b49e-cec0984ce298"],
+Cell[822, 30, 350, 9, 52, "Output",ExpressionUUID->"91b4bb17-37c0-41b2-8c22-0b92b94054d0"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1210, 44, 174, 3, 67, "Section",ExpressionUUID->"fea0c3e7-891f-47d5-a0f7-d2aff7f54d9d"],
-Cell[1387, 49, 609, 17, 86, "Input",ExpressionUUID->"6f347826-0611-4047-a19e-ee2ab566454d"],
+Cell[1209, 44, 101, 0, 67, "Section",ExpressionUUID->"fea0c3e7-891f-47d5-a0f7-d2aff7f54d9d"],
+Cell[1313, 46, 610, 17, 86, "Input",ExpressionUUID->"6f347826-0611-4047-a19e-ee2ab566454d"],
 Cell[CellGroupData[{
-Cell[2021, 70, 477, 13, 28, "Input",ExpressionUUID->"653c48dc-b557-456e-a5d2-bf5c49152879"],
-Cell[2501, 85, 9243, 193, 378, "Output",ExpressionUUID->"25ca0740-fc6f-4613-8f0e-e9a4e0576eee"]
+Cell[1948, 67, 478, 13, 28, "Input",ExpressionUUID->"653c48dc-b557-456e-a5d2-bf5c49152879"],
+Cell[2429, 82, 9084, 191, 378, "Output",ExpressionUUID->"8a8fbac3-8470-455f-b2d3-9982c09a7128"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11781, 283, 810, 19, 67, "Input",ExpressionUUID->"3b5cb3c0-11a2-450a-8a22-638aebed26db"],
-Cell[12594, 304, 4951, 107, 369, "Output",ExpressionUUID->"0df5d6f8-168f-49b3-bccf-f4e188f8fc0e"]
+Cell[11550, 278, 811, 19, 67, "Input",ExpressionUUID->"3b5cb3c0-11a2-450a-8a22-638aebed26db"],
+Cell[12364, 299, 4871, 106, 369, "Output",ExpressionUUID->"d58eeb22-13ef-4127-a281-529684bd55b2"]
 }, Open  ]],
-Cell[17560, 414, 405, 10, 122, "Text",ExpressionUUID->"8dcb739f-3700-49ec-8b9b-9a42b9e30190"],
+Cell[17250, 408, 405, 10, 122, "Text",ExpressionUUID->"8dcb739f-3700-49ec-8b9b-9a42b9e30190"],
 Cell[CellGroupData[{
-Cell[17990, 428, 921, 23, 86, "Input",ExpressionUUID->"eaddae9f-d03f-413d-ae63-34cca276e9b0"],
-Cell[18914, 453, 18853, 357, 378, "Output",ExpressionUUID->"0e33b2ab-a969-4a06-899a-54664814f9b5"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[37804, 815, 1076, 26, 86, "Input",ExpressionUUID->"4cd86d92-cdd2-4ec3-8de0-34f82de65e08"],
-Cell[38883, 843, 148477, 2485, 680, "Output",ExpressionUUID->"57e618cc-2bc7-499f-8f8f-20e98231c6ab"]
+Cell[17680, 422, 922, 23, 86, "Input",ExpressionUUID->"eaddae9f-d03f-413d-ae63-34cca276e9b0"],
+Cell[18605, 447, 18761, 356, 378, "Output",ExpressionUUID->"2932f887-5746-4d95-809c-4e721cb7116b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[187397, 3333, 1301, 36, 86, "Input",ExpressionUUID->"443edc5c-1353-47b2-bff0-07ee9e3932f0"],
-Cell[188701, 3371, 2177, 62, 378, "Output",ExpressionUUID->"6d7e8f8f-0574-421a-ad6e-22d8f8afcc4b"]
+Cell[37403, 808, 1077, 26, 86, "Input",ExpressionUUID->"4cd86d92-cdd2-4ec3-8de0-34f82de65e08"],
+Cell[38483, 836, 148420, 2484, 680, "Output",ExpressionUUID->"a30ab922-b234-46fa-86f0-5d15dabf04e0"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[190915, 3438, 1244, 34, 86, "Input",ExpressionUUID->"be4536ed-61a9-490d-8b27-c68be18748a6"],
-Cell[192162, 3474, 9150, 185, 369, "Output",ExpressionUUID->"ea9fa81d-8bf7-4c53-8c8d-771d86a294a3"]
+Cell[186940, 3325, 1302, 36, 86, "Input",ExpressionUUID->"443edc5c-1353-47b2-bff0-07ee9e3932f0"],
+Cell[188245, 3363, 2178, 62, 378, "Output",ExpressionUUID->"34e4b4a2-4564-4eef-ba01-2eee4fe0999e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[201349, 3664, 910, 23, 48, "Input",ExpressionUUID->"0ffb29a7-29bb-42e0-9b57-a0f5b76b1ee3"],
-Cell[202262, 3689, 254625, 4467, 304, "Output",ExpressionUUID->"29058428-653e-46c3-a471-0472e543db03"]
+Cell[190460, 3430, 1245, 34, 86, "Input",ExpressionUUID->"be4536ed-61a9-490d-8b27-c68be18748a6"],
+Cell[191708, 3466, 9151, 185, 369, "Output",ExpressionUUID->"2ff3e927-55bf-4c3e-9dd1-866a0af136c5"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[456924, 8161, 1743, 46, 162, "Input",ExpressionUUID->"2badfb91-93fa-43f9-b8c7-c651eedf9e57"],
-Cell[458670, 8209, 7428, 168, 369, "Output",ExpressionUUID->"f76199b4-a509-46e7-bef4-682748ee84f3"]
+Cell[200896, 3656, 911, 23, 48, "Input",ExpressionUUID->"0ffb29a7-29bb-42e0-9b57-a0f5b76b1ee3"],
+Cell[201810, 3681, 254626, 4467, 304, "Output",ExpressionUUID->"49809e97-be45-40e3-9cb0-36ee5fbfee61"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[466135, 8382, 900, 21, 67, "Input",ExpressionUUID->"a3831377-7448-4ba0-9e79-67ec35521904"],
-Cell[467038, 8405, 7341, 166, 369, "Output",ExpressionUUID->"f3227a27-4408-4aa5-99d1-b2d701d0fe3e"]
+Cell[456473, 8153, 1744, 46, 162, "Input",ExpressionUUID->"2badfb91-93fa-43f9-b8c7-c651eedf9e57"],
+Cell[458220, 8201, 7429, 168, 369, "Output",ExpressionUUID->"ce9ce5d8-5a05-4b74-b059-6848b1449521"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[474416, 8576, 2258, 53, 162, "Input",ExpressionUUID->"f3d74eba-6a9e-4f53-a97c-16d703aa27c4"],
-Cell[476677, 8631, 102269, 1584, 305, "Output",ExpressionUUID->"2a64cb55-1f43-4110-ac96-cdfb18621984"]
+Cell[465686, 8374, 901, 21, 67, "Input",ExpressionUUID->"a3831377-7448-4ba0-9e79-67ec35521904"],
+Cell[466590, 8397, 7342, 166, 369, "Output",ExpressionUUID->"b9513f89-8a14-4867-9ccc-b4af9a14cdc3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[578983, 10220, 1059, 24, 86, "Input",ExpressionUUID->"ecfb5c46-41d4-4008-abeb-f26bd9ad5723"],
-Cell[580045, 10246, 6385, 131, 378, "Output",ExpressionUUID->"94fee3ab-40e0-415f-a10d-b9e1a5a05feb"]
+Cell[473969, 8568, 2259, 53, 162, "Input",ExpressionUUID->"f3d74eba-6a9e-4f53-a97c-16d703aa27c4"],
+Cell[476231, 8623, 102270, 1584, 305, "Output",ExpressionUUID->"f19ea8c2-b5aa-4209-b46b-a56fc65fb0e9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[586467, 10382, 592, 17, 48, "Input",ExpressionUUID->"0a52b46c-2e4e-46fd-9224-5a8bc300a36f"],
-Cell[587062, 10401, 8911, 194, 378, "Output",ExpressionUUID->"59ab6b6f-f98e-49a2-8475-e90701a6c59e"]
+Cell[578538, 10212, 1060, 24, 86, "Input",ExpressionUUID->"ecfb5c46-41d4-4008-abeb-f26bd9ad5723"],
+Cell[579601, 10238, 6386, 131, 378, "Output",ExpressionUUID->"800726b1-9ad5-43b4-8c04-dcf91c79d5ce"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[586024, 10374, 593, 17, 48, "Input",ExpressionUUID->"0a52b46c-2e4e-46fd-9224-5a8bc300a36f"],
+Cell[586620, 10393, 8912, 194, 378, "Output",ExpressionUUID->"63f87dd4-1a93-4379-920f-8d4e4a2f9bc3"]
 }, Open  ]]
 }, Open  ]]
 }

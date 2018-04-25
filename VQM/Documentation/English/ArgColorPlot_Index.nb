@@ -1,348 +1,732 @@
-(************** Content-type: application/mathematica **************
-                     CreatedBy='Mathematica 5.0'
+(* Content-type: application/vnd.wolfram.mathematica *)
 
-                    Mathematica-Compatible Notebook
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
 
-This notebook can be used with any Mathematica-compatible
-application, such as Mathematica, MathReader or Publicon. The data
-for the notebook starts with the line containing stars above.
+(* CreatedBy='Mathematica 11.3' *)
 
-To get the notebook into a Mathematica-compatible application, do
-one of the following:
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27457,        722]
+NotebookOptionsPosition[     25141,        679]
+NotebookOutlinePosition[     25940,        704]
+CellTagsIndexPosition[     25860,        699]
+WindowFrame->Normal*)
 
-* Save the data starting with the line of stars above into a file
-  with a name ending in .nb, then open the file inside the
-  application;
-
-* Copy the data starting with the line of stars above to the
-  clipboard, then use the Paste menu command inside the application.
-
-Data for notebooks contains only printable 7-bit ASCII and can be
-sent directly in email or through ftp in text mode.  Newlines can be
-CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
-
-NOTE: If you modify the data for this notebook not in a Mathematica-
-compatible application, you must delete the line below containing
-the word CacheID, otherwise Mathematica-compatible applications may
-try to use invalid cache data.
-
-For more information on notebooks and Mathematica-compatible 
-applications, contact Wolfram Research:
-  web: http://www.wolfram.com
-  email: info@wolfram.com
-  phone: +1-217-398-0700 (U.S.)
-
-Notebook reader applications are available free of charge from 
-Wolfram Research.
-*******************************************************************)
-
-(*CacheID: 232*)
-
-
-(*NotebookFileLineBreakTest
-NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     12074,        288]*)
-(*NotebookOutlinePosition[     12980,        319]*)
-(*  CellTagsIndexPosition[     12897,        313]*)
-(*WindowFrame->Normal*)
-
-
-
+(* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell["Arg Color Plot ", "Subsection",
-  CellTags->"VQM`ArgColorPlot`"],
+ CellTags->
+  "VQM`ArgColorPlot`",ExpressionUUID->"cf7c7f4e-7541-45e2-a06d-94241a02af19"],
 
 Cell["\<\
-Plot the absolute value Abs[f[x]] of a complex-valued function f depending on a real variable x and fill the space between the plotted function and the x-axis with a color corresponding to the argument Arg[f[x]]. The saturation and brightness of the colors can be set using the options QSaturation and QBrightness. \
+Plot the absolute value Abs[f[x]] of a complex-valued function f depending on \
+a real variable x and fill the space between the plotted function and the \
+x-axis with a color corresponding to the argument Arg[f[x]]. The saturation \
+and brightness of the colors can be set using the options QSaturation and \
+QBrightness. \
 \>", "Text",
-  CellTags->"VQM`ArgColorPlot`"],
+ CellTags->
+  "VQM`ArgColorPlot`",ExpressionUUID->"3c8f76e0-3344-482d-9607-f9355b9ca61e"],
 
 Cell[BoxData[
-    FormBox[
-      StyleBox[
-        FrameBox[GridBox[{
-              {
-                StyleBox[\(QArgColorPlot[f[x], {x, x0, x1}, opts]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(is\ used\ like\ the\ usual\ Plot\ \
-command . \ It\ gives\ a\ two - dimensional\ plot\ of\ a\ complex - 
-                      valued\ function\ f\ of\ a\ single\ real\ \
-variable\ x\ in\ the\ range\ {x0, x1} . \ 
-                          The\ plot\ shows\ the\ curve\ Abs[
-                          f]\ with\ area\ between\ the\ curve\ and\ \
-the\ x - axis\ colored\ by\ Hue[Arg[f[x]]/\((2\ Pi)\)] . \ 
-                          The\ default\ options\ of\ Plot\ are\ \
-changed\ to\ Axes -> {True, None}, \ 
-                  Fame -> True . \ \(Package : \ 
-                        VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]},
-              {
-                StyleBox[\(QListArgColorPlot[f, {x, x0, x1}, opts]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(plots\ a\ Abs[f], \ 
-                  where\ f\ is\ a\ list\ of\ complex\ numbers . \ 
-                        The\ \ points\ of\ the\ list\ Abs[
-                        f]\ are\ joined\ by\ a\ line . \ 
-                        The\ area\ between\ the\ curve\ and\ the\ x - 
-                    axis\ is\ colored\ at\ each\ point\ by\ Hue[
-                          Arg[f]/\((2\ Pi)\)] . \ \(Package : \ 
-                          VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]},
-              {
-                
-                StyleBox[\(QCombinedPlot[{f[x], g[x]}, {x, x0, x1}, 
-                    opts]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(works\ like\ QArgColorPlot\ with\ \
-respect\ to\ f . \ 
-                      The\ curve\ g\ is\ drawn\ in\ front\ of\ the\ \
-QArgColorPlot\ of\ f . \ \(Package : \ VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]},
-              {
-                
-                StyleBox[\(QListCombinedPlot[{list, f[x]}, {x, x0, 
-                      x1}, opts]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(works\ like\ QListArgColorPlot\ \
-with\ respect\ to\ list . \ 
-                      It\ is\ assumed\ that\ list\ represents\ the\ \
-discretized\ values\ of\ a\ function\ defined\ on\ the\ interval\ [
-                        x0, x1] . \ 
-                      The\ color\ list\ plot\ is\ then\ combined\ \
-with\ an\ ordinary\ plot\ of\ f\ on\ the\ same\ scale\ and\ with\ the\
-\ Ticks\ automatically\ adjusted . \ \(Package : \ 
-                        VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]},
-              {
-                
-                StyleBox[\(QSpinorPlot[{func1, func2}, {x, x0, x1}, 
-                    opts]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(provides\ a\ method\ to\ visualize\
-\ C^2 - valued\ functions\ \((for\ example, \ 
-                            spinor\ wavefunctions\ in\ quantum\ \
-mechanics)\) . \ 
-                          The\ QSpinorPlot\ combines\ a\ \
-QArgColorPlot\ of\ func1\ with\ a\ QArgColorPlot\ of\ func2\ \
-\((upside\ down, \ 
-                          with\ less\ saturation)\)\ Both\ curves\ \
-are\ plotted\ with\ the\ option\ QSquared -> 
-                    True\ \((that\ is, \ 
-                          a\ plot\ of\ the\ curve\ Abs[
-                                func]^2\ is\ filled\ with\ a\ color\ \
-describing\ the\ phase)\) . \ In\ the\ background, \ 
-                  a\ filled\ plot\ of\ Abs[func1]^2\  + \ 
-                    Abs[func2]^2\ displays\ the\ corresponding\ \
-density . \ \(Package : \ VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]},
-              {
-                StyleBox[\(QListSpinorPlot[list, opts]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(visualizes\ a\ spinor - 
-                    valued\ list\ of\ complex\ numbers . \ 
-                        Each\ element\ of\ list\ is\ a\ \
-C^\(-vector\), \ that\ is, \ 
-                  list\  = \ {{z11, z12}, {z21, z22},  ... } . \ 
-                      Alternatively, \ 
-                  list\  = \ {list1, 
-                        list2}\ with\ two\ lists\ of\ complex\ \
-numbers, \ list1\ giving\ the\ upper\ component\ of\ the\ spinor - 
-                    valued\ wave\ function, \ 
-                  and\ list2\ giving\ the\ lower\ component . \ 
-                      The\ lower\ component\ is\ plotted\ upside\ \
-down\ with\ less\ saturation . \ 
-                      See\ also\ the\ description\ of\ QSpinorPlot . \
-\ \(Package : \ VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]},
-              {
-                
-                StyleBox[\(QSpinorCombinedPlot[{func1, func2}, {x, 
-                      x0, x1}, opts]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(combines\ a\ QSpinorPlot\ of\ \
-func1\ with\ an\ ordinary\ Plot\ of\ a\ real - 
-                    valued\ function\ func2 . \ 
-                        See\ the\ description\ of\ QCombinedPlot\ and\
-\ of\ QSpinorPlot . \ \(Package : \ VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]},
-              {
-                
-                StyleBox[\(QListSpinorCombinedPlot[{list, f[x]}, {x, 
-                      x0, x1}, opts]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(combines\ a\ QListSpinorPlot\ of\ \
-list1\ with\ an\ ordinary\ Plot\ \ of\ a\ real - 
-                    valued\ function\ f . \ 
-                        See\ the\ description\ of\ QListCombinedPlot\ \
-and\ of\ QListSpinorPlot . \ \(Package : \ VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]},
-              {
-                StyleBox[\(QNiceTicks[xmin, xmax, dx]\),
-                  FontFamily->"Courier"], 
-                
-                StyleBox[\(\(\ \)\(provides\ a\ list\ of\ nice\ \
-positions\ for\ use\ in\ the\ Ticks\ or\ FrameTicks\ option\ in\ a\ \
-ListPlot, \ 
-                  where\ it\ is\ assumed\ that\ the\ list\ of\ values\
-\ ranges\ between\ xmin\ and\ xmax\ in\ steps\ dx . \ \(Package : \ 
-                        VQM`ArgColorPlot`\)\)\),
-                  FontFamily->"Times"]}
-              },
-            ColumnAlignments->{Right, Left},
-            RowLines->False]],
-        "2ColumnBox"], TraditionalForm]], "Text",
-  CellTags->"VQM`ArgColorPlot`"],
+ FormBox[
+  StyleBox[
+   FrameBox[GridBox[{
+      {
+       StyleBox[
+        RowBox[{"QArgColorPlot", "[", 
+         RowBox[{
+          RowBox[{"f", "[", "x", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "x0", ",", "x1"}], "}"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+            "is", " ", "used", " ", "like", " ", "the", " ", "usual", " ", 
+             "Plot", " ", 
+             RowBox[{"command", ".", " ", "It"}], " ", "gives", " ", "a", " ",
+              "two"}], "-", 
+            RowBox[{
+            "dimensional", " ", "plot", " ", "of", " ", "a", " ", "complex"}],
+             "-", 
+            RowBox[{
+            "valued", " ", "function", " ", "f", " ", "of", " ", "a", " ", 
+             "single", " ", "real", " ", "variable", " ", "x", " ", "in", " ",
+              "the", " ", "range", " ", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"x0", ",", "x1"}], "}"}], ".", " ", "The"}], " ", 
+             "plot", " ", "shows", " ", "the", " ", "curve", " ", 
+             RowBox[{"Abs", "[", "f", "]"}], " ", "with", " ", "area", " ", 
+             "between", " ", "the", " ", "curve", " ", "and", " ", "the", " ",
+              "x"}], "-", 
+            RowBox[{"axis", " ", "colored", " ", "by", " ", 
+             RowBox[{
+              RowBox[{"Hue", "[", 
+               RowBox[{
+                RowBox[{"Arg", "[", 
+                 RowBox[{"f", "[", "x", "]"}], "]"}], "/", 
+                RowBox[{"(", 
+                 RowBox[{"2", " ", "Pi"}], ")"}]}], "]"}], ".", " ", "The"}], 
+             " ", "default", " ", "options", " ", "of", " ", "Plot", " ", 
+             "are", " ", "changed", " ", "to", " ", "Axes"}]}], "->", 
+           RowBox[{"{", 
+            RowBox[{"True", ",", "None"}], "}"}]}], ",", " ", 
+          RowBox[{"Fame", "->", 
+           RowBox[{"True", ".", " ", 
+            RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QListArgColorPlot", "[", 
+         RowBox[{"f", ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "x0", ",", "x1"}], "}"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{"plots", " ", "a", " ", 
+           RowBox[{"Abs", "[", "f", "]"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+           "where", " ", "f", " ", "is", " ", "a", " ", "list", " ", "of", 
+            " ", "complex", " ", 
+            RowBox[{"numbers", ".", " ", "The"}], "  ", "points", " ", "of", 
+            " ", "the", " ", "list", " ", 
+            RowBox[{"Abs", "[", "f", "]"}], " ", "are", " ", "joined", " ", 
+            "by", " ", "a", " ", 
+            RowBox[{"line", ".", " ", "The"}], " ", "area", " ", "between", 
+            " ", "the", " ", "curve", " ", "and", " ", "the", " ", "x"}], "-", 
+           RowBox[{
+           "axis", " ", "is", " ", "colored", " ", "at", " ", "each", " ", 
+            "point", " ", "by", " ", 
+            RowBox[{
+             RowBox[{"Hue", "[", 
+              RowBox[{
+               RowBox[{"Arg", "[", "f", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{"2", " ", "Pi"}], ")"}]}], "]"}], ".", " ", 
+             RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QCombinedPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", 
+            RowBox[{"g", "[", "x", "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "x0", ",", "x1"}], "}"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "works", " ", "like", " ", "QArgColorPlot", " ", "with", " ", 
+          "respect", " ", "to", " ", 
+          RowBox[{"f", ".", " ", "The"}], " ", "curve", " ", "g", " ", "is", 
+          " ", "drawn", " ", "in", " ", "front", " ", "of", " ", "the", " ", 
+          "QArgColorPlot", " ", "of", " ", 
+          RowBox[{"f", ".", " ", 
+           RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QListCombinedPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"list", ",", 
+            RowBox[{"f", "[", "x", "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "x0", ",", "x1"}], "}"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+         "works", " ", "like", " ", "QListArgColorPlot", " ", "with", " ", 
+          "respect", " ", "to", " ", 
+          RowBox[{"list", ".", " ", "It"}], " ", "is", " ", "assumed", " ", 
+          "that", " ", "list", " ", "represents", " ", "the", " ", 
+          "discretized", " ", "values", " ", "of", " ", "a", " ", "function", 
+          " ", "defined", " ", "on", " ", "the", " ", 
+          RowBox[{
+           RowBox[{"interval", " ", "[", 
+            RowBox[{"x0", ",", "x1"}], "]"}], ".", " ", "The"}], " ", "color",
+           " ", "list", " ", "plot", " ", "is", " ", "then", " ", "combined", 
+          " ", "with", " ", "an", " ", "ordinary", " ", "plot", " ", "of", 
+          " ", "f", " ", "on", " ", "the", " ", "same", " ", "scale", " ", 
+          "and", " ", "with", " ", "the", " ", "Ticks", " ", "automatically", 
+          " ", 
+          RowBox[{"adjusted", ".", " ", 
+           RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSpinorPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"func1", ",", "func2"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "x0", ",", "x1"}], "}"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+            "provides", " ", "a", " ", "method", " ", "to", " ", "visualize", 
+             " ", 
+             RowBox[{"C", "^", "2"}]}], "-", 
+            RowBox[{"valued", " ", "functions", " ", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"for", " ", "example"}], ",", " ", 
+                RowBox[{
+                "spinor", " ", "wavefunctions", " ", "in", " ", "quantum", 
+                 " ", "mechanics"}]}], ")"}], ".", " ", "The"}], " ", 
+             "QSpinorPlot", " ", "combines", " ", "a", " ", "QArgColorPlot", 
+             " ", "of", " ", "func1", " ", "with", " ", "a", " ", 
+             "QArgColorPlot", " ", "of", " ", "func2", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"upside", " ", "down"}], ",", " ", 
+               RowBox[{"with", " ", "less", " ", "saturation"}]}], ")"}], " ",
+              "Both", " ", "curves", " ", "are", " ", "plotted", " ", "with", 
+             " ", "the", " ", "option", " ", "QSquared"}]}], "->", 
+           RowBox[{"True", " ", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"that", " ", "is"}], ",", " ", 
+               RowBox[{
+               "a", " ", "plot", " ", "of", " ", "the", " ", "curve", " ", 
+                RowBox[{
+                 RowBox[{"Abs", "[", "func", "]"}], "^", "2"}], " ", "is", 
+                " ", "filled", " ", "with", " ", "a", " ", "color", " ", 
+                "describing", " ", "the", " ", "phase"}]}], ")"}], ".", " ", 
+             "In"}], " ", "the", " ", "background"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"a", " ", "filled", " ", "plot", " ", "of", " ", 
+            RowBox[{
+             RowBox[{"Abs", "[", "func1", "]"}], "^", "2"}]}], " ", "+", " ", 
+           
+           RowBox[{
+            RowBox[{
+             RowBox[{"Abs", "[", "func2", "]"}], "^", "2"}], " ", "displays", 
+            " ", "the", " ", "corresponding", " ", 
+            RowBox[{"density", ".", " ", 
+             RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QListSpinorPlot", "[", 
+         RowBox[{"list", ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"visualizes", " ", "a", " ", "spinor"}], "-", 
+           RowBox[{"valued", " ", "list", " ", "of", " ", "complex", " ", 
+            RowBox[{"numbers", ".", " ", "Each"}], " ", "element", " ", "of", 
+            " ", "list", " ", "is", " ", "a", " ", 
+            RowBox[{"C", "^", 
+             RowBox[{"-", "vector"}]}]}]}], ",", " ", 
+          RowBox[{"that", " ", "is"}], ",", " ", 
+          RowBox[{"list", " ", "=", " ", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"z11", ",", "z12"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"z21", ",", "z22"}], "}"}], ",", "..."}], "}"}], ".", 
+            " ", "Alternatively"}]}], ",", " ", 
+          RowBox[{"list", " ", "=", " ", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"list1", ",", "list2"}], "}"}], " ", "with", " ", "two", 
+            " ", "lists", " ", "of", " ", "complex", " ", "numbers"}]}], ",", 
+          " ", 
+          RowBox[{
+           RowBox[{
+           "list1", " ", "giving", " ", "the", " ", "upper", " ", "component",
+             " ", "of", " ", "the", " ", "spinor"}], "-", 
+           RowBox[{"valued", " ", "wave", " ", "function"}]}], ",", " ", 
+          RowBox[{
+          "and", " ", "list2", " ", "giving", " ", "the", " ", "lower", " ", 
+           RowBox[{"component", ".", " ", "The"}], " ", "lower", " ", 
+           "component", " ", "is", " ", "plotted", " ", "upside", " ", "down",
+            " ", "with", " ", "less", " ", 
+           RowBox[{"saturation", ".", " ", "See"}], " ", "also", " ", "the", 
+           " ", "description", " ", "of", " ", 
+           RowBox[{"QSpinorPlot", ".", " ", 
+            RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QSpinorCombinedPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"func1", ",", "func2"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "x0", ",", "x1"}], "}"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "combines", " ", "a", " ", "QSpinorPlot", " ", "of", " ", "func1", 
+           " ", "with", " ", "an", " ", "ordinary", " ", "Plot", " ", "of", 
+           " ", "a", " ", "real"}], "-", 
+          RowBox[{"valued", " ", "function", " ", 
+           RowBox[{"func2", ".", " ", "See"}], " ", "the", " ", "description",
+            " ", "of", " ", "QCombinedPlot", " ", "and", " ", "of", " ", 
+           RowBox[{"QSpinorPlot", ".", " ", 
+            RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QListSpinorCombinedPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"list", ",", 
+            RowBox[{"f", "[", "x", "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "x0", ",", "x1"}], "}"}], ",", "opts"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "combines", " ", "a", " ", "QListSpinorPlot", " ", "of", " ", 
+           "list1", " ", "with", " ", "an", " ", "ordinary", " ", "Plot", "  ",
+            "of", " ", "a", " ", "real"}], "-", 
+          RowBox[{"valued", " ", "function", " ", 
+           RowBox[{"f", ".", " ", "See"}], " ", "the", " ", "description", 
+           " ", "of", " ", "QListCombinedPlot", " ", "and", " ", "of", " ", 
+           RowBox[{"QListSpinorPlot", ".", " ", 
+            RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}]}],
+        FontFamily->"Times"]},
+      {
+       StyleBox[
+        RowBox[{"QNiceTicks", "[", 
+         RowBox[{"xmin", ",", "xmax", ",", "dx"}], "]"}],
+        FontFamily->"Courier"], 
+       StyleBox[
+        RowBox[{" ", 
+         RowBox[{
+          RowBox[{
+          "provides", " ", "a", " ", "list", " ", "of", " ", "nice", " ", 
+           "positions", " ", "for", " ", "use", " ", "in", " ", "the", " ", 
+           "Ticks", " ", "or", " ", "FrameTicks", " ", "option", " ", "in", 
+           " ", "a", " ", "ListPlot"}], ",", " ", 
+          RowBox[{
+          "where", " ", "it", " ", "is", " ", "assumed", " ", "that", " ", 
+           "the", " ", "list", " ", "of", " ", "values", " ", "ranges", " ", 
+           "between", " ", "xmin", " ", "and", " ", "xmax", " ", "in", " ", 
+           "steps", " ", 
+           RowBox[{"dx", ".", " ", 
+            RowBox[{"Package", ":", " ", "VQM`ArgColorPlot`"}]}]}]}]}],
+        FontFamily->"Times"]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+       "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
+ CellTags->
+  "VQM`ArgColorPlot`",ExpressionUUID->"29f60000-efea-47c5-b0d0-446c16c903a7"],
 
-Cell["This loads the package", "MathCaption"],
+Cell["This loads the package", "MathCaption",ExpressionUUID->"1d6a5fd4-6a47-4950-a408-8be3786f686e"],
 
-Cell["<<VQM`ArgColorPlot`", "Input"],
+Cell["<<VQM`ArgColorPlot`", "Input",ExpressionUUID->"bfb56c01-237a-47ac-90ab-12a638b445d9"],
 
-Cell["This is an example", "MathCaption"],
+Cell["This is an example", "MathCaption",ExpressionUUID->"7a6c2a86-0f0f-495e-8d80-165339bab64e"],
 
 Cell[BoxData[{
-    \(msgonindet = Head[General::"\<indet\>"] =!= $Off; \), "\n", 
-    \(Off[Arg::"\<indet\>"]; \)}], "Input"],
+ RowBox[{
+  RowBox[{"msgonindet", "=", 
+   RowBox[{
+    RowBox[{"Head", "[", 
+     RowBox[{"General", "::", "\"\<indet\>\""}], "]"}], "=!=", "$Off"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Off", "[", 
+   RowBox[{"Arg", "::", "\"\<indet\>\""}], "]"}], ";"}]}], "Input",ExpressionU\
+UID->"5c199f74-147a-4275-a985-e46ff633a6bf"],
 
 Cell[BoxData[
-    \(QArgColorPlot[\[ExponentialE]\^\(\(-\[ImaginaryI]\)\ 6\ x - \
-x\^2\/2\), {x, \(-4\), 4}]; \)], "Input"],
+ RowBox[{
+  RowBox[{"QArgColorPlot", "[", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "6", " ", "x"}], "-", 
+      FractionBox[
+       SuperscriptBox["x", "2"], "2"]}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "]"}], ";"}]], "Input",Expressi\
+onUUID->"3b75b3a5-2e76-4d0e-ac91-729426f8633a"],
 
 Cell[BoxData[
-    \(QArgColorPlot[\[ExponentialE]\^\(\(-\[ImaginaryI]\)\ 6\ x - \
-x\^2\/2\), {x, \(-4\), 4}, 
-      PlotStyle \[Rule] {Thickness[0.025], GrayLevel[0.5]}, 
-      QSaturation \[Rule] 0.5, QBrightness \[Rule] 0.7, 
-      PlotRange \[Rule] {\(-0.2\), 1.2}, Frame \[Rule] True, 
-      Axes \[Rule] {True, False}]\)], "Input"],
+ RowBox[{"QArgColorPlot", "[", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "6", " ", "x"}], "-", 
+     FractionBox[
+      SuperscriptBox["x", "2"], "2"]}]], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Thickness", "[", "0.025", "]"}], ",", 
+      RowBox[{"GrayLevel", "[", "0.5", "]"}]}], "}"}]}], ",", 
+   RowBox[{"QSaturation", "\[Rule]", "0.5"}], ",", 
+   RowBox[{"QBrightness", "\[Rule]", "0.7"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.2"}], ",", "1.2"}], "}"}]}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"Axes", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"True", ",", "False"}], "}"}]}]}], "]"}]], "Input",ExpressionUUID\
+->"f0f77464-71d6-4d56-bcbe-017d0a48f280"],
 
 Cell[BoxData[{
-    \(mytab = 
-      Table[Sin[\[Pi]\ x]\ \[ExponentialE]\^\(2\ \[ImaginaryI]\ \[Pi]\
-\ x\), {x, \(-2\), 2, 0.1}]; \), "\n", 
-    \(QListArgColorPlot[mytab, Axes \[Rule] True, 
-      QHorizontalRange \[Rule] {\(-2\), 2}]; \), "\n", 
-    \(QListArgColorPlot[mytab, Axes \[Rule] True, 
-      QHorizontalRange \[Rule] {{\(-2\), 2}, {\(-1\), 
-            0}}]; \), "\n", 
-    \(QListArgColorPlot[mytab, Axes \[Rule] True, 
-      QHorizontalRange \[Rule] {{\(-2\), 2}, {\(-4\), 4}}]; \)}], "Input"],
+ RowBox[{
+  RowBox[{"mytab", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Pi]", " ", "x"}], "]"}], " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", "x"}]]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "2"}], ",", "2", ",", "0.1"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"QListArgColorPlot", "[", 
+   RowBox[{"mytab", ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"QHorizontalRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "2"}], "}"}]}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"QListArgColorPlot", "[", 
+   RowBox[{"mytab", ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"QHorizontalRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}]}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"QListArgColorPlot", "[", 
+   RowBox[{"mytab", ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"QHorizontalRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "}"}]}]}], "]"}], 
+  ";"}]}], "Input",ExpressionUUID->"f10626eb-86a3-4f14-a924-232e38d3557d"],
 
 Cell[BoxData[
-    \(QCombinedPlot[{Sin[\[Pi]\ x], Sin[\[Pi]\ x]}, {x, \(-4\), 
-        3}]; \)], "Input"],
+ RowBox[{
+  RowBox[{"QCombinedPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Pi]", " ", "x"}], "]"}], ",", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Pi]", " ", "x"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"-", "4"}], ",", "3"}], "}"}]}], "]"}], ";"}]], "Input",Expressi\
+onUUID->"2c618f6c-5275-48f4-baf4-795b0fe8209a"],
 
 Cell[BoxData[{
-    \(mytab = Table[Sin[\[Pi]\ x], {x, \(-4\), 3, 0.1}]; \), "\n", 
-    \(QListCombinedPlot[{mytab, Sin[\[Pi]\ x]}, {x, \(-4\), 
-        3}]; \), "\n", 
-    \(QListCombinedPlot[{mytab, Sin[\[Pi]\ x]}, {x, 0, 
-        3}]; \), "\n", 
-    \(QListCombinedPlot[{mytab, Sin[\[Pi]\ x]}, {x, 0, 3}, 
-      QHorizontalRange \[Rule] {\(-4\), 3}]; \), "\n", 
-    \(QListCombinedPlot[{mytab, Sin[\[Pi]\ x]}, {x, 0, 3}, 
-      QHorizontalRange \[Rule] {{\(-4\), 3}, {1, 2}}]; \)}], "Input"],
+ RowBox[{
+  RowBox[{"mytab", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{"\[Pi]", " ", "x"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "4"}], ",", "3", ",", "0.1"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"QListCombinedPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"mytab", ",", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Pi]", " ", "x"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"-", "4"}], ",", "3"}], "}"}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"QListCombinedPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"mytab", ",", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Pi]", " ", "x"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"QListCombinedPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"mytab", ",", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Pi]", " ", "x"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+    RowBox[{"QHorizontalRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "4"}], ",", "3"}], "}"}]}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"QListCombinedPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"mytab", ",", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Pi]", " ", "x"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+    RowBox[{"QHorizontalRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "4"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2"}], "}"}]}], "}"}]}]}], "]"}], ";"}]}], "Input",E\
+xpressionUUID->"fc297428-ac7a-452c-9879-cf3cb519a172"],
 
 Cell[BoxData[
-    \(Show[
-      QArgColorPlot[Sin[x + \[ImaginaryI]], {x, \(-3\), 3}, 
-        QBottomLine \[Rule] 1, 
-        Epilog \[Rule] Line[{{\(-3\), 1}, {3, 1}}], 
-        DisplayFunction \[Rule] Identity], 
-      QArgColorPlot[
-        Cos[x + \[ImaginaryI]] - \[ExponentialE]\^\(\[ImaginaryI]\ \
-Arg[Cos[x + \[ImaginaryI]]]\), {x, \(-3\), 3}, 
-        DisplayFunction \[Rule] Identity], 
-      PlotRange \[Rule] {\(-0.2\), 1.7}, Frame \[Rule] True, 
-      DisplayFunction \[Rule] $DisplayFunction]\)], "Input"],
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"QArgColorPlot", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{"x", "+", "\[ImaginaryI]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"QBottomLine", "\[Rule]", "1"}], ",", 
+     RowBox[{"Epilog", "\[Rule]", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "3"}], ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"3", ",", "1"}], "}"}]}], "}"}], "]"}]}], ",", 
+     RowBox[{"DisplayFunction", "\[Rule]", "Identity"}]}], "]"}], ",", 
+   RowBox[{"QArgColorPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{"x", "+", "\[ImaginaryI]"}], "]"}], "-", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[ImaginaryI]", " ", 
+        RowBox[{"Arg", "[", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"x", "+", "\[ImaginaryI]"}], "]"}], "]"}]}]]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"DisplayFunction", "\[Rule]", "Identity"}]}], "]"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.2"}], ",", "1.7"}], "}"}]}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"DisplayFunction", "\[Rule]", "$DisplayFunction"}]}], 
+  "]"}]], "Input",ExpressionUUID->"9c7da5c2-1c75-4189-bfd0-9473c8e7158c"],
 
 Cell[BoxData[{
-    \(spinorfunction[
-        x_] := {Cos[
-            3\ x]\ \[ExponentialE]\^\(\(-\(1\/3\)\)\ \((x - \
-1\/4)\)\^2 + \[ImaginaryI]\ x\), 
-        Sin[4\ x]\ \[ExponentialE]\^\(\(-\(1\/2\)\)\ \((x + \
-1\/4)\)\^2 + 2\ \[ImaginaryI]\ x\)}; \), "\n", 
-    \(QSpinorPlot[Evaluate[spinorfunction[x]], {x, \(-3. \), 3. }, 
-      PlotRange \[Rule] All, Frame \[Rule] True, 
-      Axes \[Rule] {True, False}]\)}], "Input"],
+ RowBox[{
+  RowBox[{
+   RowBox[{"spinorfunction", "[", "x_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{"3", " ", "x"}], "]"}], " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1", "3"]}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"x", "-", 
+            FractionBox["1", "4"]}], ")"}], "2"]}], "+", 
+        RowBox[{"\[ImaginaryI]", " ", "x"}]}]]}], ",", 
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{"4", " ", "x"}], "]"}], " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1", "2"]}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"x", "+", 
+            FractionBox["1", "4"]}], ")"}], "2"]}], "+", 
+        RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]}]]}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"QSpinorPlot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{"spinorfunction", "[", "x", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "3."}], ",", "3."}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"Axes", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"True", ",", "False"}], "}"}]}]}], "]"}]}], "Input",ExpressionUUI\
+D->"2524cca4-332c-480e-9baa-964bdafa7a53"],
 
 Cell[BoxData[{
-    \(spinorlist = 
-      Table[{x, spinorfunction[x]}, {x, \(-3\), 3, 0.1}]; \), "\n", 
-    \(QListSpinorCombinedPlot[{spinorlist, Sin[4\ x]}, {x, \(-2\), 
-        3}, PlotRange \[Rule] All, 
-      QCurveStyle \[Rule] {RGBColor[0, 0.7, 0.9], Thickness[0.03]}, 
-      PlotStyle \[Rule] {RGBColor[0.2, 0.2, 0.5], Thickness[0.02]}]\)}
-  ], "Input"],
+ RowBox[{
+  RowBox[{"spinorlist", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"spinorfunction", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3"}], ",", "3", ",", "0.1"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"QListSpinorCombinedPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"spinorlist", ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"4", " ", "x"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"QCurveStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0.7", ",", "0.9"}], "]"}], ",", 
+      RowBox[{"Thickness", "[", "0.03", "]"}]}], "}"}]}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0.2", ",", "0.2", ",", "0.5"}], "]"}], ",", 
+      RowBox[{"Thickness", "[", "0.02", "]"}]}], "}"}]}]}], "]"}]}], "Input",E\
+xpressionUUID->"0abd470a-3805-43bc-b411-4331a0e03044"],
 
 Cell[BoxData[
-    \(If[msgonindet, On[Arg::"\<indet\>"]]; \)], "Input"]
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{"msgonindet", ",", 
+    RowBox[{"On", "[", 
+     RowBox[{"Arg", "::", "\"\<indet\>\""}], "]"}]}], "]"}], ";"}]], "Input",E\
+xpressionUUID->"6c1217c5-4b4c-4a3d-90e6-287dd21215e2"]
+}, Open  ]]
 },
-FrontEndVersion->"5.0 for Macintosh",
-ScreenRectangle->{{0, 1280}, {0, 961}},
-StyleDefinitions -> "HelpBrowser.nb"
+WindowSize->{775, 872},
+WindowMargins->{{50, Automatic}, {Automatic, 62}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"HelpBrowser.nb"
 ]
+(* End of Notebook Content *)
 
-(*******************************************************************
-Cached data follows.  If you edit this Notebook file directly, not
-using Mathematica, you must remove the line containing CacheID at
-the top of  the file.  The cache data will then be recreated when
-you save this file from within Mathematica.
-*******************************************************************)
-
+(* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
-  "VQM`ArgColorPlot`"->{
-    Cell[1754, 51, 70, 1, 70, "Subsection",
-      CellTags->"VQM`ArgColorPlot`"],
-    Cell[1827, 54, 372, 3, 70, "Text",
-      CellTags->"VQM`ArgColorPlot`"],
-    Cell[2202, 59, 6636, 142, 70, "Text",
-      CellTags->"VQM`ArgColorPlot`"]}
-  }
+ "VQM`ArgColorPlot`"->{
+  Cell[580, 22, 127, 2, 37, "Subsection",ExpressionUUID->"cf7c7f4e-7541-45e2-a06d-94241a02af19",
+   CellTags->"VQM`ArgColorPlot`"],
+  Cell[710, 26, 437, 8, 55, "Text",ExpressionUUID->"3c8f76e0-3344-482d-9607-f9355b9ca61e",
+   CellTags->"VQM`ArgColorPlot`"],
+  Cell[1150, 36, 13611, 316, 700, "Text",ExpressionUUID->"29f60000-efea-47c5-b0d0-446c16c903a7",
+   CellTags->"VQM`ArgColorPlot`"]}
+ }
 *)
-
 (*CellTagsIndex
 CellTagsIndex->{
-  {"VQM`ArgColorPlot`", 12632, 302}
-  }
+ {"VQM`ArgColorPlot`", 25446, 689}
+ }
 *)
-
 (*NotebookFileOutline
 Notebook[{
-Cell[1754, 51, 70, 1, 70, "Subsection",
-  CellTags->"VQM`ArgColorPlot`"],
-Cell[1827, 54, 372, 3, 70, "Text",
-  CellTags->"VQM`ArgColorPlot`"],
-Cell[2202, 59, 6636, 142, 70, "Text",
-  CellTags->"VQM`ArgColorPlot`"],
-Cell[8841, 203, 45, 0, 70, "MathCaption"],
-Cell[8889, 205, 36, 0, 70, "Input"],
-Cell[8928, 207, 41, 0, 70, "MathCaption"],
-Cell[8972, 209, 125, 2, 70, "Input"],
-Cell[9100, 213, 123, 2, 70, "Input"],
-Cell[9226, 217, 336, 6, 70, "Input"],
-Cell[9565, 225, 508, 10, 70, "Input"],
-Cell[10076, 237, 105, 2, 70, "Input"],
-Cell[10184, 241, 493, 9, 70, "Input"],
-Cell[10680, 252, 520, 11, 70, "Input"],
-Cell[11203, 265, 429, 9, 70, "Input"],
-Cell[11635, 276, 361, 7, 70, "Input"],
-Cell[11999, 285, 71, 1, 70, "Input"]
+Cell[CellGroupData[{
+Cell[580, 22, 127, 2, 37, "Subsection",ExpressionUUID->"cf7c7f4e-7541-45e2-a06d-94241a02af19",
+ CellTags->"VQM`ArgColorPlot`"],
+Cell[710, 26, 437, 8, 55, "Text",ExpressionUUID->"3c8f76e0-3344-482d-9607-f9355b9ca61e",
+ CellTags->"VQM`ArgColorPlot`"],
+Cell[1150, 36, 13611, 316, 700, "Text",ExpressionUUID->"29f60000-efea-47c5-b0d0-446c16c903a7",
+ CellTags->"VQM`ArgColorPlot`"],
+Cell[14764, 354, 100, 0, 40, "MathCaption",ExpressionUUID->"1d6a5fd4-6a47-4950-a408-8be3786f686e"],
+Cell[14867, 356, 91, 0, 27, "Input",ExpressionUUID->"bfb56c01-237a-47ac-90ab-12a638b445d9"],
+Cell[14961, 358, 96, 0, 40, "MathCaption",ExpressionUUID->"7a6c2a86-0f0f-495e-8d80-165339bab64e"],
+Cell[15060, 360, 342, 10, 48, "Input",ExpressionUUID->"5c199f74-147a-4275-a985-e46ff633a6bf"],
+Cell[15405, 372, 440, 13, 42, "Input",ExpressionUUID->"3b75b3a5-2e76-4d0e-ac91-729426f8633a"],
+Cell[15848, 387, 974, 27, 65, "Input",ExpressionUUID->"f0f77464-71d6-4d56-bcbe-017d0a48f280"],
+Cell[16825, 416, 1580, 49, 88, "Input",ExpressionUUID->"f10626eb-86a3-4f14-a924-232e38d3557d"],
+Cell[18408, 467, 431, 13, 27, "Input",ExpressionUUID->"2c618f6c-5275-48f4-baf4-795b0fe8209a"],
+Cell[18842, 482, 1867, 60, 108, "Input",ExpressionUUID->"fc297428-ac7a-452c-9879-cf3cb519a172"],
+Cell[20712, 544, 1519, 41, 88, "Input",ExpressionUUID->"9c7da5c2-1c75-4189-bfd0-9473c8e7158c"],
+Cell[22234, 587, 1476, 45, 82, "Input",ExpressionUUID->"2524cca4-332c-480e-9baa-964bdafa7a53"],
+Cell[23713, 634, 1174, 34, 88, "Input",ExpressionUUID->"0abd470a-3805-43bc-b411-4331a0e03044"],
+Cell[24890, 670, 235, 6, 27, "Input",ExpressionUUID->"6c1217c5-4b4c-4a3d-90e6-287dd21215e2"]
+}, Open  ]]
 }
 ]
 *)
 
+(* End of internal cache information *)
 
-
-(*******************************************************************
-End of Mathematica Notebook file.
-*******************************************************************)

@@ -10,19 +10,19 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     34237,        795]
-NotebookOptionsPosition[     33472,        765]
-NotebookOutlinePosition[     34114,        790]
-CellTagsIndexPosition[     34033,        785]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     34706,        796]
+NotebookOptionsPosition[     33609,        766]
+NotebookOutlinePosition[     34417,        791]
+CellTagsIndexPosition[     34336,        786]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["QuantumKernel ", "Subsection",
- CellTags->"VQM`QuantumKernel`"],
+Cell["QuantumKernel", "Subsection",
+ CellTags->
+  "VQM`QuantumKernel`",ExpressionUUID->"3752e5a4-9080-43d8-afb7-bd4e5dd5b5be"],
 
 Cell["\<\
 This package starts the auxiliary C++ program \"QuantumKernel\". \
@@ -35,7 +35,8 @@ numerical data describing the initial function, the scalar and magnetic \
 vector potentials, etc., from Mathematica and returns the data describing the \
 solution at a certain time (after a prescribed number of time steps). \
 \>", "Text",
- CellTags->"VQM`QuantumKernel`"],
+ CellTags->
+  "VQM`QuantumKernel`",ExpressionUUID->"73c2c046-277a-4232-9e17-1c77f86178af"],
 
 Cell[BoxData[
  FormBox[
@@ -306,8 +307,7 @@ Cell[BoxData[
               RowBox[{"of", " ", 
                RowBox[{"type", " ", "'"}], 
                RowBox[{"TOperator", "'"}]}], ")"}], ".", " ", "It"}], " ", 
-            "needs", " ", "a", " ", "scalar", " ", "potential", " ", "V", " ",
-             
+            "needs", " ", "a", " ", "scalar", " ", "potential", " ", "V", " ", 
             RowBox[{
              RowBox[{"(", 
               RowBox[{"a", " ", "complex", " ", "function", " ", "object"}], 
@@ -760,12 +760,13 @@ Cell[BoxData[
      GridBoxDividers->{
       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
        "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
- CellTags->"VQM`QuantumKernel`"]
+ CellTags->
+  "VQM`QuantumKernel`",ExpressionUUID->"38797941-695b-4f51-8463-b72c101406f6"]
 }, Open  ]]
 },
 WindowSize->{615, 750},
 WindowMargins->{{388, Automatic}, {Automatic, 91}},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"HelpBrowser.nb"
 ]
 (* End of Notebook Content *)
@@ -774,31 +775,30 @@ StyleDefinitions->"HelpBrowser.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "VQM`QuantumKernel`"->{
-  Cell[590, 23, 69, 1, 37, "Subsection",
+  Cell[567, 22, 126, 2, 37, "Subsection",ExpressionUUID->"3752e5a4-9080-43d8-afb7-bd4e5dd5b5be",
    CellTags->"VQM`QuantumKernel`"],
-  Cell[662, 26, 732, 11, 119, "Text",
+  Cell[696, 26, 790, 12, 119, "Text",ExpressionUUID->"73c2c046-277a-4232-9e17-1c77f86178af",
    CellTags->"VQM`QuantumKernel`"],
-  Cell[1397, 39, 32059, 723, 2449, "Text",
+  Cell[1489, 40, 32104, 723, 2466, "Text",ExpressionUUID->"38797941-695b-4f51-8463-b72c101406f6",
    CellTags->"VQM`QuantumKernel`"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"VQM`QuantumKernel`", 33779, 775}
+ {"VQM`QuantumKernel`", 33916, 776}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 69, 1, 37, "Subsection",
+Cell[567, 22, 126, 2, 37, "Subsection",ExpressionUUID->"3752e5a4-9080-43d8-afb7-bd4e5dd5b5be",
  CellTags->"VQM`QuantumKernel`"],
-Cell[662, 26, 732, 11, 119, "Text",
+Cell[696, 26, 790, 12, 119, "Text",ExpressionUUID->"73c2c046-277a-4232-9e17-1c77f86178af",
  CellTags->"VQM`QuantumKernel`"],
-Cell[1397, 39, 32059, 723, 2449, "Text",
+Cell[1489, 40, 32104, 723, 2466, "Text",ExpressionUUID->"38797941-695b-4f51-8463-b72c101406f6",
  CellTags->"VQM`QuantumKernel`"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

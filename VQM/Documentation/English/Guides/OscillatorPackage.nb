@@ -10,19 +10,19 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[      9575,        247]
-NotebookOptionsPosition[      8843,        217]
-NotebookOutlinePosition[      9465,        242]
-CellTagsIndexPosition[      9388,        237]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     10058,        249]
+NotebookOptionsPosition[      8994,        219]
+NotebookOutlinePosition[      9782,        244]
+CellTagsIndexPosition[      9705,        239]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
 Cell["Harmonic Oscillator ", "Subsection",
- CellTags->"VQM`Oscillator`"],
+ CellTags->
+  "VQM`Oscillator`",ExpressionUUID->"38d129f8-d73c-4985-98e7-3e0e99441223"],
 
 Cell["\<\
 Defines eigenfunctions and squeezed states for the one dimensional harmonic \
@@ -32,7 +32,8 @@ Psi. That is, we use units where hbar is scaled to 1. The value of m is given \
 by the constant $QOscillatorMass, w is given by $QOscillatorFrequency \
 (defaults 1). \
 \>", "Text",
- CellTags->"VQM`Oscillator`"],
+ CellTags->
+  "VQM`Oscillator`",ExpressionUUID->"de9c06ff-ceaf-4c67-9e76-6b54dc4fd811"],
 
 Cell[BoxData[
  FormBox[
@@ -212,12 +213,13 @@ Cell[BoxData[
      GridBoxDividers->{
       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
        "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
- CellTags->"VQM`Oscillator`"]
+ CellTags->
+  "VQM`Oscillator`",ExpressionUUID->"d3ba8338-4ca5-4931-889c-218461c3ac3f"]
 }, Open  ]]
 },
 WindowSize->{615, 750},
-WindowMargins->{{388, Automatic}, {Automatic, 91}},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+WindowMargins->{{534, Automatic}, {Automatic, 60}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"HelpBrowser.nb"
 ]
 (* End of Notebook Content *)
@@ -226,31 +228,30 @@ StyleDefinitions->"HelpBrowser.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "VQM`Oscillator`"->{
-  Cell[590, 23, 72, 1, 37, "Subsection",
+  Cell[567, 22, 130, 2, 37, "Subsection",ExpressionUUID->"38d129f8-d73c-4985-98e7-3e0e99441223",
    CellTags->"VQM`Oscillator`"],
-  Cell[665, 26, 456, 8, 71, "Text",
+  Cell[700, 26, 514, 9, 71, "Text",ExpressionUUID->"de9c06ff-ceaf-4c67-9e76-6b54dc4fd811",
    CellTags->"VQM`Oscillator`"],
-  Cell[1124, 36, 7703, 178, 509, "Text",
+  Cell[1217, 37, 7761, 179, 526, "Text",ExpressionUUID->"d3ba8338-4ca5-4931-889c-218461c3ac3f",
    CellTags->"VQM`Oscillator`"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"VQM`Oscillator`", 9147, 227}
+ {"VQM`Oscillator`", 9298, 229}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 72, 1, 37, "Subsection",
+Cell[567, 22, 130, 2, 37, "Subsection",ExpressionUUID->"38d129f8-d73c-4985-98e7-3e0e99441223",
  CellTags->"VQM`Oscillator`"],
-Cell[665, 26, 456, 8, 71, "Text",
+Cell[700, 26, 514, 9, 71, "Text",ExpressionUUID->"de9c06ff-ceaf-4c67-9e76-6b54dc4fd811",
  CellTags->"VQM`Oscillator`"],
-Cell[1124, 36, 7703, 178, 509, "Text",
+Cell[1217, 37, 7761, 179, 526, "Text",ExpressionUUID->"d3ba8338-4ca5-4931-889c-218461c3ac3f",
  CellTags->"VQM`Oscillator`"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

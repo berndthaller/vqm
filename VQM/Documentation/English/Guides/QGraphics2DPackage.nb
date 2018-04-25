@@ -10,25 +10,26 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     24169,        529]
-NotebookOptionsPosition[     23426,        499]
-NotebookOutlinePosition[     24055,        524]
-CellTagsIndexPosition[     23976,        519]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     24641,        530]
+NotebookOptionsPosition[     23565,        500]
+NotebookOutlinePosition[     24361,        525]
+CellTagsIndexPosition[     24282,        520]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Quantum Kernel Plot ", "Subsection",
- CellTags->"VQM`QGraphics2D`"],
+Cell["Quantum Kernel Plot", "Subsection",
+ CellTags->
+  "VQM`QGraphics2D`",ExpressionUUID->"8f15912c-55fa-4056-8fdd-62e0a77d9b69"],
 
 Cell["\<\
 This package provides some plot commands for use together with the \
 QuantumKernel application. \
 \>", "Text",
- CellTags->"VQM`QGraphics2D`"],
+ CellTags->
+  "VQM`QGraphics2D`",ExpressionUUID->"01f80bde-6bb2-4122-a957-db3f78f5d384"],
 
 Cell[BoxData[
  FormBox[
@@ -417,8 +418,7 @@ Cell[BoxData[
            RowBox[{"via", " ", "MathLink"}], ")"}], " ", "the", " ", "array", 
           " ", "spinor", " ", "from", " ", "QuantumKernel", " ", "and", " ", 
           "visualizes", " ", "it", " ", "by", " ", "associating", " ", "a", 
-          " ", "color", " ", "to", " ", "the", " ", "local", " ", "spin", " ",
-           
+          " ", "color", " ", "to", " ", "the", " ", "local", " ", "spin", " ", 
           RowBox[{"direction", ".", " ", "psi"}], " ", "is", " ", "the", " ", 
           "name", " ", "of", " ", "the", " ", "function", " ", "object", " ", 
           "defined", " ", "in", " ", 
@@ -494,12 +494,13 @@ Cell[BoxData[
      GridBoxDividers->{
       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
        "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
- CellTags->"VQM`QGraphics2D`"]
+ CellTags->
+  "VQM`QGraphics2D`",ExpressionUUID->"b3a3ce77-70fa-4f6e-89c9-5a17ba168f85"]
 }, Open  ]]
 },
 WindowSize->{615, 750},
-WindowMargins->{{388, Automatic}, {Automatic, 91}},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+WindowMargins->{{Automatic, 602}, {Automatic, 130}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"HelpBrowser.nb"
 ]
 (* End of Notebook Content *)
@@ -508,31 +509,30 @@ StyleDefinitions->"HelpBrowser.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "VQM`QGraphics2D`"->{
-  Cell[590, 23, 73, 1, 37, "Subsection",
+  Cell[567, 22, 130, 2, 37, "Subsection",ExpressionUUID->"8f15912c-55fa-4056-8fdd-62e0a77d9b69",
    CellTags->"VQM`QGraphics2D`"],
-  Cell[666, 26, 151, 4, 23, "Text",
+  Cell[700, 26, 209, 5, 23, "Text",ExpressionUUID->"01f80bde-6bb2-4122-a957-db3f78f5d384",
    CellTags->"VQM`QGraphics2D`"],
-  Cell[820, 32, 22590, 464, 1901, "Text",
+  Cell[912, 33, 22637, 464, 1956, "Text",ExpressionUUID->"b3a3ce77-70fa-4f6e-89c9-5a17ba168f85",
    CellTags->"VQM`QGraphics2D`"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"VQM`QGraphics2D`", 23731, 509}
+ {"VQM`QGraphics2D`", 23871, 510}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 73, 1, 37, "Subsection",
+Cell[567, 22, 130, 2, 37, "Subsection",ExpressionUUID->"8f15912c-55fa-4056-8fdd-62e0a77d9b69",
  CellTags->"VQM`QGraphics2D`"],
-Cell[666, 26, 151, 4, 23, "Text",
+Cell[700, 26, 209, 5, 23, "Text",ExpressionUUID->"01f80bde-6bb2-4122-a957-db3f78f5d384",
  CellTags->"VQM`QGraphics2D`"],
-Cell[820, 32, 22590, 464, 1901, "Text",
+Cell[912, 33, 22637, 464, 1956, "Text",ExpressionUUID->"b3a3ce77-70fa-4f6e-89c9-5a17ba168f85",
  CellTags->"VQM`QGraphics2D`"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

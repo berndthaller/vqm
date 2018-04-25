@@ -10,22 +10,21 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     22346,        555]
-NotebookOptionsPosition[     21642,        524]
-NotebookOutlinePosition[     22254,        550]
-CellTagsIndexPosition[     22182,        545]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     22822,        554]
+NotebookOptionsPosition[     21784,        523]
+NotebookOutlinePosition[     22563,        549]
+CellTagsIndexPosition[     22491,        544]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
 Cell["Free Time Evolution ", "Subsection",
- CellTags->"VQM`Free`"],
+ CellTags->"VQM`Free`",ExpressionUUID->"7dfb8c0e-28e4-4632-b537-6c1eb42e5f23"],
 
 Cell["Defines free Gaussian wave packets ", "Text",
- CellTags->"VQM`Free`"],
+ CellTags->"VQM`Free`",ExpressionUUID->"6815dd65-6637-4938-9ad3-c77acb7468e3"],
 
 Cell[BoxData[
  FormBox[
@@ -519,13 +518,13 @@ Cell[BoxData[
      GridBoxDividers->{
       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
        "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
- CellTags->"VQM`Free`"]
+ CellTags->"VQM`Free`",ExpressionUUID->"9e381a3f-539f-4ca8-8d16-9f88e2ea2cc3"]
 }, Open  ]]
 },
 WindowSize->{615, 750},
 WindowMargins->{{388, Automatic}, {Automatic, 91}},
 Magnification->1.,
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"HelpBrowser.nb"
 ]
 (* End of Notebook Content *)
@@ -534,31 +533,30 @@ StyleDefinitions->"HelpBrowser.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "VQM`Free`"->{
-  Cell[590, 23, 66, 1, 37, "Subsection",
+  Cell[567, 22, 121, 1, 37, "Subsection",ExpressionUUID->"7dfb8c0e-28e4-4632-b537-6c1eb42e5f23",
    CellTags->"VQM`Free`"],
-  Cell[659, 26, 75, 1, 23, "Text",
+  Cell[691, 25, 130, 1, 23, "Text",ExpressionUUID->"6815dd65-6637-4938-9ad3-c77acb7468e3",
    CellTags->"VQM`Free`"],
-  Cell[737, 29, 20889, 492, 1429, "Text",
+  Cell[824, 28, 20944, 492, 1452, "Text",ExpressionUUID->"9e381a3f-539f-4ca8-8d16-9f88e2ea2cc3",
    CellTags->"VQM`Free`"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"VQM`Free`", 21959, 535}
+ {"VQM`Free`", 22101, 534}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 66, 1, 37, "Subsection",
+Cell[567, 22, 121, 1, 37, "Subsection",ExpressionUUID->"7dfb8c0e-28e4-4632-b537-6c1eb42e5f23",
  CellTags->"VQM`Free`"],
-Cell[659, 26, 75, 1, 23, "Text",
+Cell[691, 25, 130, 1, 23, "Text",ExpressionUUID->"6815dd65-6637-4938-9ad3-c77acb7468e3",
  CellTags->"VQM`Free`"],
-Cell[737, 29, 20889, 492, 1429, "Text",
+Cell[824, 28, 20944, 492, 1452, "Text",ExpressionUUID->"9e381a3f-539f-4ca8-8d16-9f88e2ea2cc3",
  CellTags->"VQM`Free`"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

@@ -10,19 +10,19 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     21313,        543]
-NotebookOptionsPosition[     20549,        512]
-NotebookOutlinePosition[     21198,        538]
-CellTagsIndexPosition[     21119,        533]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     21786,        544]
+NotebookOptionsPosition[     20688,        513]
+NotebookOutlinePosition[     21504,        539]
+CellTagsIndexPosition[     21425,        534]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
 Cell["FastFourier ", "Subsection",
- CellTags->"VQM`FastFourier`"],
+ CellTags->
+  "VQM`FastFourier`",ExpressionUUID->"7091ca28-de78-436b-b2a2-dfb7a5e860bf"],
 
 Cell["\<\
 This package allows computes the one-dimensional Fourier transform of a \
@@ -33,7 +33,8 @@ discretization in Fourier space from the discretization in position space and \
 vice versa. This package can be used, e.g., to compute the Fourier transform \
 of a numerical solution of the Schroedinger equation. \
 \>", "Text",
- CellTags->"VQM`FastFourier`"],
+ CellTags->
+  "VQM`FastFourier`",ExpressionUUID->"1e0641bb-83e9-468d-a7ec-1075ec949fca"],
 
 Cell[BoxData[
  FormBox[
@@ -159,8 +160,7 @@ Cell[BoxData[
              RowBox[{"QFourierList", "[", 
               RowBox[{"xlist", ",", 
                RowBox[{"{", 
-                RowBox[{"left", ",", "right"}], "}"}]}], "]"}], "]"}]}], "==",
-            
+                RowBox[{"left", ",", "right"}], "}"}]}], "]"}], "]"}]}], "==", 
            RowBox[{
             RowBox[{
              RowBox[{
@@ -507,13 +507,14 @@ Cell[BoxData[
      GridBoxDividers->{
       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
        "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
- CellTags->"VQM`FastFourier`"]
+ CellTags->
+  "VQM`FastFourier`",ExpressionUUID->"03406039-ef66-4580-8b7b-d991b831698f"]
 }, Open  ]]
 },
 WindowSize->{615, 750},
 WindowMargins->{{388, Automatic}, {Automatic, 91}},
 Magnification->1.,
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"HelpBrowser.nb"
 ]
 (* End of Notebook Content *)
@@ -522,31 +523,30 @@ StyleDefinitions->"HelpBrowser.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "VQM`FastFourier`"->{
-  Cell[590, 23, 65, 1, 37, "Subsection",
+  Cell[567, 22, 123, 2, 37, "Subsection",ExpressionUUID->"7091ca28-de78-436b-b2a2-dfb7a5e860bf",
    CellTags->"VQM`FastFourier`"],
-  Cell[658, 26, 551, 9, 87, "Text",
+  Cell[693, 26, 609, 10, 87, "Text",ExpressionUUID->"1e0641bb-83e9-468d-a7ec-1075ec949fca",
    CellTags->"VQM`FastFourier`"],
-  Cell[1212, 37, 19321, 472, 1237, "Text",
+  Cell[1305, 38, 19367, 472, 1274, "Text",ExpressionUUID->"03406039-ef66-4580-8b7b-d991b831698f",
    CellTags->"VQM`FastFourier`"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"VQM`FastFourier`", 20873, 523}
+ {"VQM`FastFourier`", 21012, 524}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 65, 1, 37, "Subsection",
+Cell[567, 22, 123, 2, 37, "Subsection",ExpressionUUID->"7091ca28-de78-436b-b2a2-dfb7a5e860bf",
  CellTags->"VQM`FastFourier`"],
-Cell[658, 26, 551, 9, 87, "Text",
+Cell[693, 26, 609, 10, 87, "Text",ExpressionUUID->"1e0641bb-83e9-468d-a7ec-1075ec949fca",
  CellTags->"VQM`FastFourier`"],
-Cell[1212, 37, 19321, 472, 1237, "Text",
+Cell[1305, 38, 19367, 472, 1274, "Text",ExpressionUUID->"03406039-ef66-4580-8b7b-d991b831698f",
  CellTags->"VQM`FastFourier`"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

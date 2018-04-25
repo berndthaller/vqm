@@ -10,26 +10,27 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     17888,        445]
-NotebookOptionsPosition[     17177,        415]
-NotebookOutlinePosition[     17786,        440]
-CellTagsIndexPosition[     17711,        435]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     18254,        442]
+NotebookOptionsPosition[     17213,        412]
+NotebookOutlinePosition[     17987,        437]
+CellTagsIndexPosition[     17912,        432]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
 Cell["Coulomb ", "Subsection",
- CellTags->"VQM`Coulomb`"],
+ CellTags->
+  "VQM`Coulomb`",ExpressionUUID->"c6067a7b-e3a0-4856-b968-8b570e61c565"],
 
 Cell["\<\
 This package provides definitions for the quantum mechanical Coulomb system. \
 It gives the solutions in cartesian as well as polar coordinates in two and \
 three dimensions. \
 \>", "Text",
- CellTags->"VQM`Coulomb`"],
+ CellTags->
+  "VQM`Coulomb`",ExpressionUUID->"4b5663ba-1883-4087-97f0-addef98e5bbe"],
 
 Cell[BoxData[
  FormBox[
@@ -106,8 +107,7 @@ Cell[BoxData[
               " ", "specified", " ", "by", " ", "giving", " ", "the", " ", 
               "option", " ", "QCoulombCoupling"}]}], "->", 
             RowBox[{
-             RowBox[{"g", ".", " ", "Default"}], " ", "is", " ", "g"}]}], "=",
-            
+             RowBox[{"g", ".", " ", "Default"}], " ", "is", " ", "g"}]}], "=", 
            RowBox[{
             RowBox[{"$QCoulombCoupling", ".", " ", "The"}], " ", "constant", 
             " ", "$QCoulombCoupling", " ", "is", " ", "initially", " ", "set",
@@ -182,8 +182,7 @@ Cell[BoxData[
              RowBox[{
               RowBox[{
                RowBox[{
-                RowBox[{"-", "1"}], "/", "2"}], " ", "Delta"}], " ", "-", " ",
-               
+                RowBox[{"-", "1"}], "/", "2"}], " ", "Delta"}], " ", "-", " ", 
               RowBox[{"g", "/", "r"}]}], ")"}], " ", "Psi"}], " ", "=", " ", 
            RowBox[{
             RowBox[{
@@ -333,8 +332,7 @@ Cell[BoxData[
             RowBox[{"=", 
              RowBox[{"the", " ", "radial", " ", "quantum", " ", "number"}]}], 
             ")"}], " ", "is", " ", "the", " ", "number", " ", "of", " ", 
-           "zeros", " ", "of", " ", "the", " ", "radial", " ", "Coulomb", " ",
-            
+           "zeros", " ", "of", " ", "the", " ", "radial", " ", "Coulomb", " ", 
            RowBox[{"eigenfunction", ".", " ", 
             RowBox[{"Package", ":", " ", 
              RowBox[{"VQM`Coulomb`", "."}]}]}]}]}]}],
@@ -357,8 +355,7 @@ Cell[BoxData[
            "the", " ", "distance", " ", "r", " ", "from", " ", "the", " ", 
            "coordinate", " ", 
            RowBox[{"origin", ".", " ", "Here"}], " ", "n", " ", "is", " ", 
-           "the", " ", "principal", " ", "quantum", " ", "number"}], ",", " ",
-           
+           "the", " ", "principal", " ", "quantum", " ", "number"}], ",", " ", 
           RowBox[{
           "ell", " ", "is", " ", "the", " ", "orbital", " ", "angular", " ", 
            "momentum", " ", "quantum", " ", 
@@ -409,13 +406,13 @@ Cell[BoxData[
      GridBoxDividers->{
       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
        "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
- CellChangeTimes->{{3.391858269046875*^9, 3.39185828271875*^9}},
- CellTags->"VQM`Coulomb`"]
+ CellTags->
+  "VQM`Coulomb`",ExpressionUUID->"4e18420c-3b04-44ce-942f-af7ed06a9347"]
 }, Open  ]]
 },
 WindowSize->{896, 750},
-WindowMargins->{{Automatic, 108}, {Automatic, 91}},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+WindowMargins->{{286, Automatic}, {Automatic, 12}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"HelpBrowser.nb"
 ]
 (* End of Notebook Content *)
@@ -424,31 +421,30 @@ StyleDefinitions->"HelpBrowser.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "VQM`Coulomb`"->{
-  Cell[590, 23, 57, 1, 56, "Subsection",
+  Cell[567, 22, 115, 2, 37, "Subsection",ExpressionUUID->"c6067a7b-e3a0-4856-b968-8b570e61c565",
    CellTags->"VQM`Coulomb`"],
-  Cell[650, 26, 226, 5, 75, "Text",
+  Cell[685, 26, 284, 6, 23, "Text",ExpressionUUID->"4b5663ba-1883-4087-97f0-addef98e5bbe",
    CellTags->"VQM`Coulomb`"],
-  Cell[879, 33, 16282, 379, 1591, "Text",
+  Cell[972, 34, 16225, 375, 912, "Text",ExpressionUUID->"4e18420c-3b04-44ce-942f-af7ed06a9347",
    CellTags->"VQM`Coulomb`"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"VQM`Coulomb`", 17478, 425}
+ {"VQM`Coulomb`", 17514, 422}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 57, 1, 56, "Subsection",
+Cell[567, 22, 115, 2, 37, "Subsection",ExpressionUUID->"c6067a7b-e3a0-4856-b968-8b570e61c565",
  CellTags->"VQM`Coulomb`"],
-Cell[650, 26, 226, 5, 75, "Text",
+Cell[685, 26, 284, 6, 23, "Text",ExpressionUUID->"4b5663ba-1883-4087-97f0-addef98e5bbe",
  CellTags->"VQM`Coulomb`"],
-Cell[879, 33, 16282, 379, 1591, "Text",
+Cell[972, 34, 16225, 375, 912, "Text",ExpressionUUID->"4e18420c-3b04-44ce-942f-af7ed06a9347",
  CellTags->"VQM`Coulomb`"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

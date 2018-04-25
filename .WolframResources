@@ -1,8 +1,5 @@
 Resources[
     Version[1],
-     Sources[
-        Directory["~"]
-    ],
     ExecutionBuildCommand["<<VQM`"],
     Paclet[
         PacletFolder["VQM"],

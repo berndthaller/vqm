@@ -211,7 +211,7 @@ QGetAndDensityPlot[psi_, T_, opts___] :=
 		qparams = QParameters/.{opts}/.Options[QPlotCommands];
 		If[qparams=!=None, psi3 = Part[psi3,QExtractPart[qparams]]];
 		Remove[psi1];
-		ListDensityPlot[psi3, FilterOptions[ListDensityPlot,opts],
+		ListDensityPlot[psi3, FilterRules[Flatten[{opts}], Options @ ListDensityPlot],
 			QPrepareOptions[qparams],
 			PlotLabel->StringForm["t =``", PaddedForm[T,{3,2}]]
 		]
@@ -224,7 +224,7 @@ QGetAndComplexDensityPlot[psi_, T_, opts___] :=
 		qparams = QParameters/.{opts}/.Options[QPlotCommands];
 		If[qparams=!=None, psi3 = Part[psi3,QExtractPart[qparams]]];
 		Remove[psi1];
-		QListComplexDensityPlot[psi3, FilterOptions[ListDensityPlot,opts],
+		QListComplexDensityPlot[psi3, FilterRules[Flatten[{opts}], Options @ ListDensityPlot],
 			QPrepareOptions[qparams],
 			PlotLabel->StringForm["t =``", PaddedForm[T,{3,2}]]
 		]
@@ -237,7 +237,7 @@ QGetSpinorAndDensityPlot[psi_, T_, opts___] :=
 		qparams = QParameters/.{opts}/.Options[QPlotCommands];
 		If[qparams=!=None, psi3 = Part[psi3,QExtractPart[qparams]]];
 		Remove[psi1];
-		ListDensityPlot[psi3, FilterOptions[ListDensityPlot,opts],
+		ListDensityPlot[psi3, FilterRules[Flatten[{opts}], Options @ ListDensityPlot],
 			QPrepareOptions[qparams],
 			PlotLabel->StringForm["t =``", PaddedForm[T,{3,2}]]
 		]
@@ -251,7 +251,7 @@ QGetSpinorAndDensityPlotTwo[psiUp_, psiDown_, T_, opts___] :=
 		qparams = QParameters/.{opts}/.Options[QPlotCommands];
 		If[qparams=!=None, psi3 = Part[psi3,QExtractPart[qparams]]];
 		Remove[psi1,psi2];
-		ListDensityPlot[psi3, FilterOptions[ListDensityPlot,opts],
+		ListDensityPlot[psi3, FilterRules[Flatten[{opts}], Options @ ListDensityPlot],
 			QPrepareOptions[qparams],
 			PlotLabel->StringForm["t =``", PaddedForm[T,{3,2}]]
 		]
@@ -267,7 +267,7 @@ QGetAndSpinorToColorPlot[psi_, T_, opts___] :=
         	 Transpose[(psi1[[3]] + I*psi1[[4]])[[QExtractPart[qparams]]]]}, {3, 2, 1}];
         Remove[psi1]; 
 		QColorArrayPlot[Apply[RGBColor, Chop[Map[QSpinorToColor, psi3, {2}]], {2}], 
-			FilterOptions[QColorArrayPlot, opts],
+			FilterRules[Flatten[{opts}], Options @ QColorArrayPlot],
 			QPrepareOptions[qparams], 
 			PlotLabel -> StringForm["t =``", PaddedForm[T, {3, 2}]]
 		]
@@ -284,7 +284,7 @@ QGetAndSpinorToColorPlotTwo[psiUp_, psiDown_, T_, opts___] :=
     					  Transpose[Part[psi2[[1]]+I psi2[[2]],QExtractPart[qparams]]]},{3,2,1}];
 		Remove[psi1,psi2];
 		QColorArrayPlot[Apply[RGBColor,Chop[Map[QSpinorToColor,psi3,{2}]],{2}],
-			FilterOptions[QColorArrayPlot,opts],
+			FilterRules[Flatten[{opts}], Options @ QColorArrayPlot],
 			QPrepareOptions[qparams],
 			PlotLabel->StringForm["t =``", PaddedForm[T,{3,2}]]
 		]

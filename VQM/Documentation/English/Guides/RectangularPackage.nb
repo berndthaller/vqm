@@ -10,26 +10,27 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[      7366,        241]
-NotebookOptionsPosition[      6628,        211]
-NotebookOutlinePosition[      7254,        236]
-CellTagsIndexPosition[      7176,        231]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[      7849,        243]
+NotebookOptionsPosition[      6778,        213]
+NotebookOutlinePosition[      7571,        238]
+CellTagsIndexPosition[      7493,        233]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Rectangular potentials ", "Subsection",
- CellTags->"VQM`Rectangular`"],
+Cell["Rectangular potentials", "Subsection",
+ CellTags->
+  "VQM`Rectangular`",ExpressionUUID->"fb6741e8-d3f1-4faf-9337-a36db11afc05"],
 
 Cell["\<\
 This package defines the solutions of the one-dimensional Schroedinger \
 equation in the presence of rectangular potentials (steps, wells, barriers). \
 \
 \>", "Text",
- CellTags->"VQM`Rectangular`"],
+ CellTags->
+  "VQM`Rectangular`",ExpressionUUID->"ec94726e-cc3c-45da-89d9-e91e4b27f263"],
 
 Cell[BoxData[
  FormBox[
@@ -206,12 +207,13 @@ Cell[BoxData[
      GridBoxDividers->{
       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
        "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
- CellTags->"VQM`Rectangular`"]
+ CellTags->
+  "VQM`Rectangular`",ExpressionUUID->"f82cc03c-da2e-41a8-9911-53fb6736ad01"]
 }, Open  ]]
 },
-WindowSize->{615, 750},
-WindowMargins->{{388, Automatic}, {Automatic, 91}},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+WindowSize->{1388, 883},
+WindowMargins->{{473, Automatic}, {Automatic, 68}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"HelpBrowser.nb"
 ]
 (* End of Notebook Content *)
@@ -220,31 +222,30 @@ StyleDefinitions->"HelpBrowser.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "VQM`Rectangular`"->{
-  Cell[590, 23, 76, 1, 37, "Subsection",
+  Cell[567, 22, 133, 2, 37, "Subsection",ExpressionUUID->"fb6741e8-d3f1-4faf-9337-a36db11afc05",
    CellTags->"VQM`Rectangular`"],
-  Cell[669, 26, 207, 5, 39, "Text",
+  Cell[703, 26, 265, 6, 23, "Text",ExpressionUUID->"ec94726e-cc3c-45da-89d9-e91e4b27f263",
    CellTags->"VQM`Rectangular`"],
-  Cell[879, 33, 5733, 175, 521, "Text",
+  Cell[971, 34, 5791, 176, 280, "Text",ExpressionUUID->"f82cc03c-da2e-41a8-9911-53fb6736ad01",
    CellTags->"VQM`Rectangular`"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"VQM`Rectangular`", 6933, 221}
+ {"VQM`Rectangular`", 7084, 223}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 76, 1, 37, "Subsection",
+Cell[567, 22, 133, 2, 37, "Subsection",ExpressionUUID->"fb6741e8-d3f1-4faf-9337-a36db11afc05",
  CellTags->"VQM`Rectangular`"],
-Cell[669, 26, 207, 5, 39, "Text",
+Cell[703, 26, 265, 6, 23, "Text",ExpressionUUID->"ec94726e-cc3c-45da-89d9-e91e4b27f263",
  CellTags->"VQM`Rectangular`"],
-Cell[879, 33, 5733, 175, 521, "Text",
+Cell[971, 34, 5791, 176, 280, "Text",ExpressionUUID->"f82cc03c-da2e-41a8-9911-53fb6736ad01",
  CellTags->"VQM`Rectangular`"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

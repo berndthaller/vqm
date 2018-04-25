@@ -10,26 +10,29 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     15679,        395]
-NotebookOptionsPosition[     14904,        365]
-NotebookOutlinePosition[     15553,        390]
-CellTagsIndexPosition[     15470,        385]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     16158,        399]
+NotebookOptionsPosition[     15049,        369]
+NotebookOutlinePosition[     15865,        394]
+CellTagsIndexPosition[     15782,        389]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["VisualizeVector ", "Subsection",
- CellTags->"VQM`VisualizeVector`"],
+Cell["VisualizeVector", "Subsection",
+ CellTags->
+  "VQM`VisualizeVector`",ExpressionUUID->"723113e3-f183-4a95-b614-\
+5699913381cf"],
 
 Cell["\<\
 VQM`VisualizeVector` is a package for 'Visual Quantum Mechanics'. It helps to \
 visualize a vector through various types of arrows in three dimensions and \
 defines auxiliary graphics elements. \
 \>", "Text",
- CellTags->"VQM`VisualizeVector`"],
+ CellTags->
+  "VQM`VisualizeVector`",ExpressionUUID->"8c91f1e2-6a0d-4fa0-8e02-\
+126933469703"],
 
 Cell[BoxData[
  FormBox[
@@ -166,8 +169,7 @@ Cell[BoxData[
            RowBox[{
             RowBox[{"axis", ".", " ", "r1"}], " ", "is", " ", "the", " ", 
             "radius", " ", "at", " ", "the", " ", "bottom"}]}], ",", " ", 
-          RowBox[{
-          "r2", " ", "the", " ", "radius", " ", "at", " ", "the", " ", 
+          RowBox[{"r2", " ", "the", " ", "radius", " ", "at", " ", "the", " ", 
            RowBox[{"top", ".", " ", "h"}], " ", "is", " ", "the", " ", 
            RowBox[{"height", ".", " ", "The"}], " ", "cylinder", " ", "is", 
            " ", "approximated", " ", "by", " ", "n", " ", "polygons", " ", 
@@ -360,12 +362,14 @@ Cell[BoxData[
      GridBoxDividers->{
       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
        "RowsIndexed" -> {}}]], "2ColumnBox"], TraditionalForm]], "Text",
- CellTags->"VQM`VisualizeVector`"]
+ CellTags->
+  "VQM`VisualizeVector`",ExpressionUUID->"e9109a86-1393-4488-a2bc-\
+4755b4695588"]
 }, Open  ]]
 },
-WindowSize->{615, 750},
-WindowMargins->{{388, Automatic}, {Automatic, 91}},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (April 20, 2007)",
+WindowSize->{615, 753},
+WindowMargins->{{590, Automatic}, {Automatic, 68}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->"HelpBrowser.nb"
 ]
 (* End of Notebook Content *)
@@ -374,32 +378,30 @@ StyleDefinitions->"HelpBrowser.nb"
 (*CellTagsOutline
 CellTagsIndex->{
  "VQM`VisualizeVector`"->{
-  Cell[590, 23, 73, 1, 37, "Subsection",
+  Cell[567, 22, 132, 3, 37, "Subsection",ExpressionUUID->"723113e3-f183-4a95-b614-5699913381cf",
    CellTags->"VQM`VisualizeVector`"],
-  Cell[666, 26, 253, 5, 39, "Text",
+  Cell[702, 27, 313, 7, 39, "Text",ExpressionUUID->"8c91f1e2-6a0d-4fa0-8e02-126933469703",
    CellTags->"VQM`VisualizeVector`"],
-  Cell[922, 33, 13966, 329, 1011, "Text",
+  Cell[1018, 36, 14015, 330, 1028, "Text",ExpressionUUID->"e9109a86-1393-4488-a2bc-4755b4695588",
    CellTags->"VQM`VisualizeVector`"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"VQM`VisualizeVector`", 15213, 375}
+ {"VQM`VisualizeVector`", 15358, 379}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 73, 1, 37, "Subsection",
+Cell[567, 22, 132, 3, 37, "Subsection",ExpressionUUID->"723113e3-f183-4a95-b614-5699913381cf",
  CellTags->"VQM`VisualizeVector`"],
-Cell[666, 26, 253, 5, 39, "Text",
+Cell[702, 27, 313, 7, 39, "Text",ExpressionUUID->"8c91f1e2-6a0d-4fa0-8e02-126933469703",
  CellTags->"VQM`VisualizeVector`"],
-Cell[922, 33, 13966, 329, 1011, "Text",
+Cell[1018, 36, 14015, 330, 1028, "Text",ExpressionUUID->"e9109a86-1393-4488-a2bc-4755b4695588",
  CellTags->"VQM`VisualizeVector`"]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

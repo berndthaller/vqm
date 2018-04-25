@@ -25,12 +25,14 @@ the package ArgColorPlot.
 *)
 
 (* :Date:	2005-07-24 *)
+(* :Date:	2018-04-25 *)
 
-(* :Package Version: 1.1
+(* :Package Version: 1.2
 Changed for Mathematica 7 2009-06-10
+Changed for Mathematica 11.3 2018-04-24
 *)
 
-(* :Mathematica Version: 5.1 *)
+(* :Mathematica Version: 11.3 *)
 
 (* :History:
     1.0 for Visual Quantum Mechanics, 2nd ed.
@@ -148,7 +150,7 @@ QShowComplexPointPolar[z_,opts___?OptionQ]:=
   Module[
     {zpoint={Re[z],Im[z]},
       relativeThickn = 0.015,
-      arglinecolor = RGBColor[0,0,1],
+      (*arglinecolor = RGBColor[0,0,1],*)
       abslinecolor = GrayLevel[0.4],
       dotcolor = GrayLevel[0],
       angles = If[Arg[z]>0,{0,Arg[z]},{Arg[z],0},{0,0}]
@@ -230,7 +232,6 @@ QPlotAbsArg[func_,{x_Symbol,a_,b_},opts___?OptionQ] :=
 Options[QPlotAbsArg] = Union[Options[Plot],Options[Graphics]];
 
 axes[x1_, x2_, y1_, y2_, z1_, z2_] :=
-  
   Graphics3D[{Dashing[{0.02, 0.02}], Thickness[0.0075], GrayLevel[0],
     Line[{{x1, 0, 0}, {x2, 0, 0}}],
     Line[{{0, y1, 0}, {0, y2, 0}}],
@@ -238,7 +239,7 @@ axes[x1_, x2_, y1_, y2_, z1_, z2_] :=
 
 
 prAxes[x1_, x2_, y1_, y2_, z1_, z2_, a_, b_, c_] :=
-  Module[{xp},
+  Module[{},
    Graphics3D[{Dashing[{0.02, 0.02}], Thickness[0.0075], 
      GrayLevel[0.75],
      (*x-axis projected on surfaces y=b and z=c*)
@@ -258,12 +259,11 @@ prAxes[x1_, x2_, y1_, y2_, z1_, z2_, a_, b_, c_] :=
 
 
 myoptions =
-	{QBoxSize -> Automatic,
-	QProjectionAt->Automatic};
+	{ QBoxSize -> Automatic, QProjectionAt->Automatic};
 
 QComplexFunctionGraph[func_, {x_, le_, ri_}, opts___?OptionQ] := 
 	Module[{f = Function[{x}, func], curve, imcurve, recurve, prcurve, 
-			thickn = 0.015, box, pr, x1, x2, y1, y2, z1, z2
+			thickn = 0.015, box, pr, x1, x2, y1, y2, z1, z2, a,b,c, t
 			}, 
 		{box, pr} = {QBoxSize, QProjectionAt} /. {opts} /. myoptions;
 		If[(box === Automatic) || (Dimensions[box] != {3, 2}),

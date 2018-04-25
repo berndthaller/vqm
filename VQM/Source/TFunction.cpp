@@ -137,16 +137,14 @@ Int32	TFunction::PutColor( void )
 	Float	*realP, *imagP, *colorP;
 //RM20180422 add const:
 	Int8	const *headH[3] = {"List", "List", "RGBColor"};
-//RM20180422 add const:
-	Int32	const countP[3] = {0, 0, 3};
+	Int32	countP[3] = {0, 0, 3};
 	Float	re, im, r, s, s0, phi, phi0, red, green, blue, temp;
 	Float	zero = 0.0, one = 1.0, two = 2.0;
 	Float	k3pi = 3.0 / M_PI, k4pi = 4.0 / M_PI;
 
 
-//RM: TODO_SH
-//	if( !IsFunction2D(countP[1], countP[0]) )
-//		return MLErrorReport(stdlink, "two-dimensional function expected");
+	if( !IsFunction2D(countP[1], countP[0]) )
+		return MLErrorReport(stdlink, "two-dimensional function expected");
 	if( !IsFunctionC(realP, imagP) )
 		return MLErrorReport(stdlink, "complex function expected");
 
@@ -209,17 +207,14 @@ Int32	TFunction::PutGray( void )
 	Float	*realP, *imagP, *grayP;
 //RM20180420 add const:
 	Int8	const *headH[3] = {"List", "List", "GrayLevel"};
-//RM20180420 add const:
-	Int8	const  countP[3]={0, 0, 1};
+	Int32	countP[3]={0, 0, 1};
 	Float	re, im, r, gray;
 	Float	zero = 0.0, one = 1.0;
 	Float	k2pi = 2.0 / M_PI;
 
 
-//RM:  TODO_SH
-//uncommenting the followint two lines gives errors
-//	if( !IsFunction2D(countP[1], countP[0]) )
-//		return MLErrorReport(stdlink, "two-dimensional function expected");
+	if( !IsFunction2D(countP[1], countP[0]) )
+		return MLErrorReport(stdlink, "two-dimensional function expected");
 	if( !IsFunctionC(realP, imagP) )
 		return MLErrorReport(stdlink, "complex function expected");
 
@@ -259,16 +254,14 @@ Int32	TFunction::PutRedBlue( void )
 	Float	*realP, *colorP;
 //RM20180422 add const:
 	Int8	const *headH[3] = {"List", "List", "RGBColor"};
-//RM20180422 add const:
-	Int32	const countP[3] = {0, 0, 3};
+	Int32	countP[3] = {0, 0, 3};
 	Float	r, s, red, green, blue, temp;
 	Float	zero = 0.0, one = 1.0;
 	Float	k4pi = 4.0 / M_PI;
 
 
-//TODO_SH
-//	if( !IsFunction2D(countP[1], countP[0]) )
-//	return MLErrorReport(stdlink, "two-dimensional function expected");
+	if( !IsFunction2D(countP[1], countP[0]) )
+	return MLErrorReport(stdlink, "two-dimensional function expected");
 	if( !IsFunctionR(realP) )
 		return MLErrorReport(stdlink, "real function expected");
 
@@ -317,14 +310,12 @@ Int32	TFunction::PutBlackWhite( void )
  	Float	*realP, *grayP;
 //RM20180422 add const
  	Int8	const *headH[3] = {"List", "List", "GrayLevel"};
-//RM20180422 add const
- 	Int32	const countP[3] = {0, 0, 1};
+ 	Int32	countP[3] = {0, 0, 1};
  	Float	gray;
  	Float	zero = 0.0, one = 1.0;
  
-//RM:  TODO_SH
-//	if( !IsFunction2D(countP[1], countP[0]) )
-//		return MLErrorReport(stdlink, "two-dimensional function expected");
+	if( !IsFunction2D(countP[1], countP[0]) )
+		return MLErrorReport(stdlink, "two-dimensional function expected");
 	if( !IsFunctionR(realP) )
  		return MLErrorReport(stdlink, "real function expected");
  
@@ -362,7 +353,6 @@ Int32	TFunction::PutAbs( void )
  	Float	*realP, *imagP, *absP, re, im, r;
  	Float	zero = 0.0;
  
-//RM:  TODO_SH
 	if( !IsFunction2D(countP[1], countP[0]) )
 		return MLErrorReport(stdlink, "two-dimensional function expected");
  	if( !IsFunctionC(realP, imagP) )
