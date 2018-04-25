@@ -64,7 +64,7 @@ VQM`ArgColorPlot`Private`Symbols = Hold[
     QShiftPlot, QHorizontalRange, QPlotDown, QSquared, QCurveStyle];
 
 Unprotect @@ VQM`ArgColorPlot`Private`Symbols;
-ClearAll @@ VQM`ArgColorPlot`Private`Symbols;
+ClearAll  @@ VQM`ArgColorPlot`Private`Symbols;
 
 (* 
 this is a local flag to whether to use ListLinePlot or not,
@@ -72,9 +72,6 @@ could be exported if needed here.
 Default is True.
 $UseListLinePlot::usage="test (RM)";
 *)
-
-ClearAll[QArgColorPlot]
-ClearAll[QListArgColorPlot];
 
 QArgColorPlot::usage = "QArgColorPlot[f[x],{x,x0,x1},opts] is used
 like the usual Plot command. It gives a two-dimensional plot
