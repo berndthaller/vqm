@@ -1,4 +1,3 @@
-Print["VQM.m loaded now"];
 (* ::Package:: *)
 
 Off[CompiledFunction::cfsa];
@@ -39,8 +38,7 @@ $VQMDirectory = DirectoryName[$InputFileName]
 	      ,"Print"]]
 	];
 
-dPrint["$VQMDirectory = ", $VQMDirectory];
-
+(* dPrint["$VQMDirectory = ", $VQMDirectory];*)
 
 EndPackage[];
 
@@ -104,7 +102,10 @@ DeclarePackage["VQM`QGraphics2D`", {"QPrepareOptions", "QExtractPart", "QGetAndD
 
 DeclarePackage["VQM`QuantumKernel`", {"QuantumKernel", "QuantumLink", "QNewFunction",
 "QDisposeFunction", "QGetArray", "QGetFunctionInfo", "QGetColorArray", "QGetGrayArray",
-"QGetRedBlueArray", "QGetBlackWhiteArray", "QGetAbsArray", "QInfo", "QSchroedinger1D",
+"QGetRedBlueArray", "QGetBlackWhiteArray", 
+(* RM2018*)"QGetAbsList", 
+"QGetAbsArray", 
+(*RM2018*) "QGetList", "QInfo", "QSchroedinger1D",
 "QSchroedinger2D", "QSchroedinger3D", "QPauli2D", "QPauli3D", "QDirac2D", "QDirac3D",
 "QDisposeOperator", "QGetOperatorInfo", "QTimeEvolution", "QBeginMovie", "QEndMovie",
 "QFunctionObject", "QGetWindowInfo", "QHideWindow", "QOperatorObject", "QShowWindow"}];

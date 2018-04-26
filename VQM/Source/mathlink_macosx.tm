@@ -32,9 +32,10 @@
 :ReturnType: Manual
 :End:
 
+// QGetArray is now defined top-level-wise in QuantumKernel.m, by use of QGetList
 :Begin:
-:Function: QGetArray
-:Pattern: QGetArray[ function_ ]
+:Function: QGetList
+:Pattern: QGetList[ function_ ]
 :Arguments: { function }
 :ArgumentTypes: { Manual }
 :ReturnType: Manual
@@ -80,9 +81,10 @@
 :ReturnType: Manual
 :End:
 
+// QGetAbsArray is now defined top-level-wise in QuantumKernel.m, by use of QGetAbsList
 :Begin:
-:Function: QGetAbsArray
-:Pattern: QGetAbsArray[ function_ ]
+:Function: QGetAbsList
+:Pattern: QGetAbsList[ function_ ]
 :Arguments: { function }
 :ArgumentTypes: { Manual }
 :ReturnType: Manual

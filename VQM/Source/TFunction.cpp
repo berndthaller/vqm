@@ -70,8 +70,17 @@ Int32	TFunction::GetArray( void )
 Int32	TFunction::PutArray( void )
 {	
  //RM2018	return MLPutFloatArray(stdlink, mArrayP, mCountP, mHeadH, mDepth);
-//    MLErrorReport(stdlink, "Test in PutArray");
-	return MLPutReal32Array(stdlink, mArrayP, (int *)mCountP, (const char **)mHeadH, mDepth);
+//	return MLPutReal32Array(stdlink, mArrayP, (int *)mCountP, (const char **)mHeadH, mDepth);
+// RM2018: Only in MacOSX this does not work :
+//	return MLPutReal32Array(stdlink, (float *)mArrayP, (int *)mCountP, (const char **)mHeadH, mDepth);
+
+	    Int32 i;
+		Int32 size = 1;
+		for(i=0;i<mDepth;i++)
+		{
+			size *= mCountP[i];
+		}
+		return MLPutReal32List(stdlink, (float *)mArrayP, size);
 }
 
 // RM: commmented out 2007-06-28
@@ -237,6 +246,8 @@ Int32	TFunction::PutGray( void )
 
 //RM2018	MLPutFloatArray(stdlink, grayP, countP, headH, 3);
 	MLPutReal32Array(stdlink, grayP, (int *)countP, (const char **)headH, 3);
+	return MLPutReal32List(stdlink, (float *)mArrayP, size);
+
 	delete [] grayP;
 	return eOK;
 }
@@ -353,10 +364,10 @@ Int32	TFunction::PutAbs( void )
  	Float	*realP, *imagP, *absP, re, im, r;
  	Float	zero = 0.0;
  
-	if( !IsFunction2D(countP[1], countP[0]) )
-		return MLErrorReport(stdlink, "two-dimensional function expected");
- 	if( !IsFunctionC(realP, imagP) )
- 		return MLErrorReport(stdlink, "complex function expected");
+//	if( !IsFunction2D(countP[1], countP[0]) )
+//		return MLErrorReport(stdlink, "two-dimensional function expected");
+// 	if( !IsFunctionC(realP, imagP) )
+// 		return MLErrorReport(stdlink, "complex function expected");
  
  	size = countP[0] * countP[1];
  	absP = new Float[size];
@@ -375,10 +386,11 @@ Int32	TFunction::PutAbs( void )
  	absP -= size;
  
 //RM1018 MLPutFloatArray(stdlink, absP, countP, mHeadH, 2);
- 	MLPutReal32Array(stdlink, absP, (int *)countP, (const char **)mHeadH, 2);
- 	delete [] absP;
+// 	MLPutReal32Array(stdlink, absP, (int *)countP, (const char **)mHeadH, 2);
+return  	MLPutReal32List(stdlink, (const float *)absP, size);
+// 	delete [] absP;
  
- 	return eOK;
+ //	return eOK;
 }
 
 
