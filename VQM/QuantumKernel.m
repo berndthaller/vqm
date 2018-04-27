@@ -88,6 +88,12 @@ QGetArray::usage = "QGetArray[f] returns the numerical values contained
 in the function object f. ('function object' is obtained when calling
 QNewFunction). Package: VQM`QuantumKernel`.";
 
+(* RM2018 a helper function for QGetArray*)
+QGetList::usage = "QGetList[f] returns the flat list of numerical values contained
+in the function object f. ('function object' is obtained when calling
+QNewFunction). Package: VQM`QuantumKernel`.";
+
+
 QGetFunctionInfo::usage = "QGetFunctionInfo[f] gives some information
 about the function object refered to by f. This reference is obtained
 from 'QNewFunction'. Package: VQM`QuantumKernel`.";
@@ -100,8 +106,12 @@ An expression suitable as an argument for QGetColorArray is returned by QNewFunc
 Package: VQM`QuantumKernel`.";
 
 QGetGrayArray::usage = "QGetGrayArray[f]. Package: VQM`QuantumKernel`.";
+
 QGetRedBlueArray::usage = "QGetRedBlueArray[f]. Package: VQM`QuantumKernel`.";
 QGetBlackWhiteArray::usage = "QGetBlackWhiteArray[f]. Package: VQM`QuantumKernel`.";
+
+(* RM2018 a helper function for QGetAbsArray*)
+QGetAbsList::usage = "QGetAbsList[f]. Package: VQM`QuantumKernel`.";
 QGetAbsArray::usage = "QGetAbsArray[f]. Package: VQM`QuantumKernel`.";
 
 QInfo::usage = "QInfo[] returns informations about the state of QuantumKernel.
@@ -221,6 +231,11 @@ SetDirectory @ DirectoryName[$InputFileName];
                     "QuantumKernel.exe"
                              ]
 		];
+(* RM2018: because of MacOSX compiler trouble, do: *)
+QGetArray[ arg_ ] := ArrayReshape[ QGetList[arg], Reverse @ QGetFunctionInfo @ arg ]
+
+QGetAbsArray[ arg_ ] := ArrayReshape[ QGetAbsList[arg], Most @ QGetFunctionInfo @ arg]
+
 
 (*-----------------------------------*)
 End[];      (* end `Private` Context *)

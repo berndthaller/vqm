@@ -115,11 +115,12 @@ void	QDisposeFunction( void )
 
 
 // ---------------------------------------------------------------------------
-//		$ QGetArray
+//  RM2018:	$ QGetArray changed to QGetList
+//  define QGetArray now in QuantumKernel.m
 // ---------------------------------------------------------------------------
-//	Return float array
+//	Return flat array
 
-void	QGetArray( void )
+void	QGetList( void )
 {
 	TFunction	*theFunction;
  	Int32	ID;
@@ -133,6 +134,7 @@ void	QGetArray( void )
  		return;
  	}
  	
+//RM2018: This is now a flat array ...
  	theFunction->PutArray();
 }
 
@@ -261,11 +263,12 @@ void	QGetBlackWhiteArray( void )
 
 
 // ---------------------------------------------------------------------------
-//		$ QGetAbsArray
+//		$ QGetAbsArray  defined in QuantumKernel.m
 // ---------------------------------------------------------------------------
 //	Return abs array
 
-void	QGetAbsArray( void )
+//RM2018
+void	QGetAbsList( void )
 {
 	TFunction	*theFunction;
 	Int32	ID;

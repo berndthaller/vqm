@@ -3,15 +3,24 @@
 #
 # This makefile can be used to build QuantumKernel on MacOS X
 # To build it, use the command
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# brew install gcc@7 --without-multilib
+
+
 # make -f Makefile.macosx
+# make -f Makefile.macosx clean; make -f Makefile.macosx ; mv QuantumKernelX .. ; make -f Makefile.macosx clean;
+
 
 MLINKDIR = /Applications/Mathematica.app/Contents/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64
 #ARCHS=-arch ppc -arch i386 -arch ppc64 -arch x86_64
 
-#CPP=g++
+CXX=/usr/local/bin/g++-7
 
 CADDSDIR = ${MLINKDIR}/CompilerAdditions
-EXTRA_CFLAGS=-stdlib=libstdc++ -stdlib=libc++
+#EXTRA_CFLAGS=-stdlib=libstdc++ -stdlib=libc++
+EXTRA_CFLAGS=-static-libstdc++ -static-libgcc
+#EXTRA_CFLAGS=-static-libstdc++ 
+#EXTRA_CFLAGS=""
 
 #CPPFLAGS= -isysroot ${SDK} -I${INCDIR}  ${ARCHS}
 #LDFLAGS= -isysroot ${SDK} ${ARCHS} -L${LIBDIR} -l${MLLIB}
@@ -28,6 +37,10 @@ all : ${BINARIES}
 
 QuantumKernelX: MathLinkGlue.o MathStubs_macosx.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o
 	${CXX} ${EXTRA_CFLAGS} -I${INCDIR} MathLinkGlue.o MathStubs_macosx.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -lMLi4 -lc++ -framework Foundation -o $@
+	
+	
+.cpp.o :
+	${CXX} -Wno-write-strings -c -I${INCDIR} $<
 
 MathStubs_macosx.cpp : mathlink_macosx.tm
 	${MPREP} $? -o $@

@@ -55,7 +55,6 @@ Int32	MLGetRealArray2(	MLINK inLink,
 	Int32	i, len, size, ioIteration;
 	const Int32	kIterationLimit = 16;	
 
-
 	outCountP = new Int32[kIterationLimit];
 	if( outCountP == NULL )
 		return MLErrorReport(inLink, "out of memory");

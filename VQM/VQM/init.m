@@ -9,6 +9,7 @@ Print["VQM, version 2007/06/26"];
 (* First, define the context of this package directory. *)
 BeginPackage["VQM`"];
 EndPackage[];
+(*
 
 (* Now declare all symbols that occur in any of the subpackages so the appropriate package is loaded automatically when the symbol is used *)
 DeclarePackage["VQM`ArgColorPlot`", {"QArgColorPlot", "QListArgColorPlot", "QCombinedPlot",
@@ -99,3 +100,4 @@ DeclarePackage["VQM`VisualizeVector`", {"QVectorToArrow", "QArrowHead", "QArrowS
 DeclarePackage["VQM`VisualizeFunction1D`", {"QShowComplexPoint", "QShowComplexPointPolar", "QPlotRe", "QPlotIm",
 "QPlotReIm", "QPlotAbs", "QPlotArg", "QPlotAbsArg", "QComplexFunctionGraph", "QBoxSize", "QProjectionAt"}];
 
+*)
