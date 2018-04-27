@@ -9,13 +9,14 @@
 # in a cygwin bash shell, do:
 # PATH=/cygdrive/c/gcc/bin:/cygdrive/c/gcc:/usr/local/bin:/usr/bin/:"/cygdrive/c/Program Files/Wolfram Research/Mathematica/11.3/SystemFiles/Links/MathLink/DeveloperKit/Windows-x86-64/CompilerAdditions"
 
-#   make -f Makefile.windows clean; make -f Makefile.windows ; mv QuantumKernel.exe .. ; make -f Makefile.windows clean
+# make clean
+# make -f Makefile.windows
 
 CPP = /cygdrive/c/gcc/bin/x86_64-w64-mingw32-g++.exe
 EXTRA_CFLAGS=-mwindows
 
-INCDIR=lib/windows
-LIBDIR=lib/windows
+INCDIR=.
+LIBDIR=.
 
 MLLIB = ML64i4cyg
 
