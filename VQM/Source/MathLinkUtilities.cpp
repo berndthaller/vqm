@@ -7,10 +7,37 @@
 //
 //	MathLink utility functions
 
-#include "MathLinkUtilities.h"
+//RM: change order
 #include <string.h>
 #include <stdio.h>
 
+#include "MathLinkUtilities.h"
+
+// ---------------------------------------------------------------------------
+//		$ MLPrint
+// ---------------------------------------------------------------------------
+//	Print a string
+
+
+Int32  MLPrint(	MLINK inLink, const char *inMessage )
+{
+	MLPutFunction(stdlink, "EvaluatePacket", 1);
+		MLPutFunction(stdlink, "Print", 1);
+		MLPutString(stdlink,  inMessage);
+//		MLEndPacket(stdlink);
+return eOK;
+};
+
+
+Int32  MLPrintReal(	MLINK inLink, float number)
+{
+	MLPutFunction(stdlink, "EvaluatePacket", 1);
+		MLPutFunction(stdlink, "Print", 1);
+		MLPutFunction(stdlink, "InputForm", 1);
+		MLPutReal32(stdlink,  number);
+//		MLEndPacket(stdlink);
+return eOK;
+};
 
 	// if set to true, MLErrorReport does nothing:
 bool mlSuppressErrorReport = false;
@@ -21,21 +48,28 @@ bool mlSuppressErrorReport = false;
 //	Send error message
 
 Int32	MLErrorReport(	MLINK inLink,
-						Int8* inMessage )
+//						Int8* inMessage )
+//RM2018
+						const char *inMessage )
 {
+//RM2018:
 	if(mlSuppressErrorReport)
 		return eError;
 		
 	char	errMsg[256]; 	
 
 	
-	sprintf(errMsg, "%s\"%.192s\"%s","Message[QuantumKernel::err,",inMessage,"]");
-	MLClearError(inLink);
-	MLNewPacket(inLink);
-	MLEvaluate(inLink, errMsg);
-	while( MLNextPacket(inLink) != RETURNPKT ) MLNewPacket(inLink);
-	MLNewPacket(inLink);
-	MLPutSymbol(inLink, "$Failed");
+	//RM2018
+	MLPrint(inLink, inMessage);
+
+//	sprintf(errMsg, "%s\"%.192s\"%s","Message[QuantumKernel::err,",inMessage,"]");
+//	MLClearError(inLink);
+//
+//	MLNewPacket(inLink);
+//	MLEvaluate(inLink, errMsg);
+//	while( MLNextPacket(inLink) != RETURNPKT ) MLNewPacket(inLink);
+//	MLNewPacket(inLink);
+	MLPutSymbol(inLink, "$FAILED");
 
 	return eError;		//we have an error!
 }
@@ -61,6 +95,7 @@ Int32	MLGetRealArray2(	MLINK inLink,
 
 	outDepth = 0;
 	while( MLGetType(inLink) == MLTKFUNC ) {
+//RM2018: comment: gives the length of list
 		MLCheckFunction(inLink, "List", &len);
 		if( MLError(inLink) || len == 0 )
 			return MLErrorReport(inLink, "out of sequence");
@@ -112,7 +147,9 @@ Int32	MLReadList(	MLINK inLink,
 
 	ioIteration++;
 	for( i = 0; i < len; i++) {
-		if( ioIteration == inDepth ) MLGetFloat(inLink, sArrayP++);
+//		if( ioIteration == inDepth ) MLGetFloat(inLink, sArrayP++);
+//RM2018
+		if( ioIteration == inDepth ) MLGetReal32(inLink, sArrayP++);
 		else {
 			if( eError == MLReadList(inLink, inArrayP, inCountP, inDepth, ioIteration) )
 				return eError;

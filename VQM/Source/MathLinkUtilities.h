@@ -16,12 +16,20 @@
 #define isfinite(x) ((x) < HUGE_VAL && (x) > -HUGE_VAL)
 #endif
 
+
 // if set to true, MLErrorReport does nothing:
 extern bool mlSuppressErrorReport;
 
 //	Prototypes
 
-Int32	MLErrorReport(	MLINK inLink, Int8* inMessage );
+//Int32	MLErrorReport(	MLINK inLink, Int8* inMessage );
+//RM2018
+Int32	MLPrint( MLINK inLink, const char *inMessage );
+
+Int32	MLPrintReal( MLINK inLink, Float number);
+
+Int32	MLErrorReport(	MLINK inLink, const char *inMessage );
+
 Int32	MLGetRealArray2(	MLINK inLink,
 							Float* &outArrayP,
 							Int32* &outCountP,
@@ -31,6 +39,7 @@ Int32	MLReadList(	MLINK inLink,
 					Int32* inCountP,
 					Int32 inDepth,
 					Int32 &ioIteration );
+
 Int32	MLCheckMemoryReserve( MLINK inLink );
 Int32	MLGetFunctionObject(	MLINK inLink,
 								Int32 &outID );

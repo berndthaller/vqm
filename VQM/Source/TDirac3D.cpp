@@ -121,7 +121,7 @@ Int32	TDirac3D::TimeEvolution(	TFunction* inFunction,
 
 
 	if( inFractal < 0 || inFractal >= 16 )
-		return MLErrorReport(stdlink, "fractal order is out of range");
+		return MLErrorReport(stdlink, "FRACTAL order is out of range");
 
 	ni = nj = nk = 0;
 	if( !inFunction->IsFunction3D(ni, nj, nk) )

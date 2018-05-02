@@ -1,0 +1,126 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3371,        118]
+NotebookOptionsPosition[      3035,        104]
+NotebookOutlinePosition[      3415,        120]
+CellTagsIndexPosition[      3372,        117]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+/* *Compiled (replace the Intel icc by e.g.gcc) under Ubuntu Linux with : \
+mprep mlmatrix.tm > mlmatrix.c
+    icc - Wall - \
+L/usr/local/Wolfram/Mathematica/7.0/SystemFiles/Links/MathLink/DeveloperKit/\
+Linux - x86 - 64/CompilerAdditions/-lML64i3 - lpthread - lrt mlmatrix.c
+    
+    ** /
+    
+    #include < stdlib.h > 
+    #include < stdio.h >
+   
+    : Begin :
+    : Function : matrixListAdd
+    : Pattern : MatrixListAdd[m_]
+    : Arguments : {m}
+    : ArgumentTypes : {Manual}
+    : ReturnType : Manual
+    : End : 
+    
+    void matrixListAdd P (());
+    
+    void matrixListAdd () {double*mat, *sum;
+      long*dims, d;
+      char ** heads;
+      int err, nx, ny, nz, x, y, z;
+      if (! MLGetRealArray (stdlink, & mat, & dims, & heads, & d)) {err = \
+MLError (stdlink);
+         fprintf (stderr, \"Error %d: %s\\n\", err, MLErrorMessage (stdlink));
+         MLClearError (stdlink);
+         MLPutSymbol (stdlink, \"$Failed\");
+         return;} if (d != 3) {MLPutSymbol (stdlink, \"$Failed\");
+         MLDisownRealArray (stdlink, mat, dims, heads, d);
+         return;} nx = dims[2]; ny = dims[1]; nz = dims[0];
+      sum = (double*) calloc (nx*ny, sizeof (double));
+ 
+ for (z = 0; z < nz; ++z)
+ for (y = 0; y < ny; ++y)
+ for (x = 0; x < nx; ++x) {
+   *(sum + y*nx + x) += *(mat + z*nx*ny + y*nx + x);}
+ 
+ MLPutFunction (stdlink, \"Partition\", 2);
+ MLPutRealList (stdlink, sum, nx*ny);
+ MLPutInteger (stdlink, dims[2]);
+ free (sum);
+ MLDisownRealArray (stdlink, mat, dims, heads, d);
+ }
+#if MACINTOSH_MATHLINK
+
+int main (int argc, char*argv[])
+{
+ /* Due to a bug in some standard C libraries that have shipped with*MPW, \
+zero is passed to MLMain below.(If you build this program*as an MPW tool, you \
+can change the zero to argc.)*/argc = argc; /* suppress warning*/return \
+MLMain (0, argv);}
+
+#elif WINDOWS_MATHLINK
+
+#if __BORLANDC __
+#pragma argsused
+#endif
+
+int __stdcall WinMain (HINSTANCE hinstCurrent, HINSTANCE hinstPrevious, LPSTR \
+lpszCmdLine, int nCmdShow)
+{char buff[512];
+   char FAR*buff_start = buff;
+   char FAR*argv[32];
+   char FAR*FAR*argv_end = argv + 32;
+   hinstPrevious = hinstPrevious; /* suppress warning*/if (! MLInitializeIcon \
+(hinstCurrent, nCmdShow)) return 1;
+ MLScanString (argv, & argv_end, & lpszCmdLine, & buff_start);
+ return MLMain (argv_end - argv, argv);}
+
+#else
+
+
+
+int main (int argc, char*argv[])
+{return MLMain (argc, argv);}
+
+#endif
+\
+\>", "Program",ExpressionUUID->"c8c2cb35-578f-41d4-adc1-6440cf559f17"]
+},
+WindowSize->{1464, 833},
+WindowMargins->{{Automatic, 138}, {Automatic, 144}},
+Magnification:>1.8 Inherited,
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2473, 82, 2169, "Program",ExpressionUUID->"c8c2cb35-578f-41d4-adc1-6440cf559f17"]
+}
+]
+*)
+

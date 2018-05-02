@@ -20,7 +20,10 @@
 
 void	QNewFunction( void );
 void	QDisposeFunction( void );
-void	QGetArray( void );
+//RM2018 void	QGetArray( void );
+//RM2018
+void	QGetAbsList( void );
+void	QGetList( void );
 void	QGetFunctionInfo( void );
 void	QGetColorArray( void );
 void	QGetGrayArray( void );

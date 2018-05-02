@@ -24,8 +24,6 @@
 #include "TDirac2D.h"
 #include "TDirac3D.h"
 
-
-
 // ---------------------------------------------------------------------------
 //		$ main
 // ---------------------------------------------------------------------------
@@ -65,7 +63,7 @@ void	QNewFunction( void )
 
 	theFunction = new TFunction();
 	if ( theFunction == NULL ) {
-		MLErrorReport(stdlink, "out of memory");
+		MLErrorReport(stdlink, "out of memory !");
 		return;
 	}
 	
@@ -81,7 +79,7 @@ void	QNewFunction( void )
 		return;
 	}
 	theFunction->mID = ID;
-	
+
 	MLPutFunction(stdlink, "QFunctionObject", 1);
 	MLPutLongInteger(stdlink, ID);
 }
@@ -282,6 +280,8 @@ void	QGetAbsList( void )
 		return;
 	}
 	
+	MLPrint(stdlink, "!!!!!!!!!!!!!! in QGetAbsList, vor PutAbs() ... ");
+
 	theFunction->PutAbs();
 }
 
@@ -337,6 +337,7 @@ void	QInfo( void )
 	MLPutFunction(stdlink, "List", 0);
 }
 
+/*
 
 // ---------------------------------------------------------------------------
 //		$ QSchroedinger1D
@@ -712,6 +713,7 @@ void	QTimeEvolution( void )
 	theOperator->TimeEvolution(theFunction, timeStep, fractal, steps);
 }
 
+*/
 
 
 // ---------------------------------------------------------------------------
