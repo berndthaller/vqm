@@ -388,14 +388,26 @@ Int32	TFunction::PutAbs( void )
 	 	Float	zero = 0.0;
 
 //RM2018:
-		if( !IsFunction2D(countP[1], countP[0]) )
-		return MLErrorReport(stdlink, "two-dimensional function expected");
+// 	    MLPrint(stdlink, "\n\nmCountP[0] = ");
+ //	    MLPrintReal(stdlink, mCountP[0]);
+ //	    MLPrint(stdlink, "\n\nmCountP[1] = ");
+ //	    MLPrintReal(stdlink, mCountP[1]);
+//
+// 	    MLPrint(stdlink, "\n\ncountP[0] = ");
+// 	    MLPrintReal(stdlink, countP[0]);
+// 	    MLPrint(stdlink, "\n\ncountP[1] = ");
+// 	    MLPrintReal(stdlink, countP[1]);
+//
+//
+//		if( !IsFunction2D(countP[1], countP[0]) )
+//		return MLErrorReport(stdlink, "two-dimensional function expected");
+//
 
- 	    if( !IsFunctionC(realP, imagP) )
-		return MLErrorReport(stdlink, "complex function expected");
+// 	    if( !IsFunctionC(realP, imagP) )
+//		return MLErrorReport(stdlink, "complex function expected");
 
-// 	    MLPrint(stdlink, "mCountP[0] = ");
-// 	    MLPrintReal(stdlink, mCountP[0]);
+//	    MLPrint(stdlink, "mCountP[0] = ");
+//	    MLPrintReal(stdlink, mCountP[0]);
 
 // 	    MLPrint(stdlink, "countP[1] = ");
 // 	    MLPrintReal(stdlink, countP[1] );
@@ -403,7 +415,7 @@ Int32	TFunction::PutAbs( void )
 //	size = countP[0] * countP[1];
 	size = mCountP[0] * mCountP[1];
  	    MLPrint(stdlink, "size");
- 	    MLPrintReal(stdlink, (float) size);
+	    MLPrintReal(stdlink, (float) size);
 
  	absP = new Float[size];
 
@@ -422,15 +434,17 @@ Int32	TFunction::PutAbs( void )
  	for( i = 0; i < size; i++ ) {
 //MIST
 
-// 		re = (float) *realP++;
-//		im = (float) *imagP++;
+ 		re = (float) *realP++;
+		im = (float) *imagP++;
 // 		r = hypot( re, im );
- 		r = 2.0*re;
+ 		r = (float) i;
  
  		if(!isfinite(r) ) r = zero;
  		*absP++ = r;
  	}
- 	absP -= size;
+
+//ASK: why ?
+// 	absP -= size;
 
 
 //RM1018 MLPutFloatArray(stdlink, absP, countP, mHeadH, 2);
@@ -439,9 +453,9 @@ Int32	TFunction::PutAbs( void )
 
 //    MLPutReal32List(stdlink, (float *)realP, size);
 
-   MLPutReal32List(stdlink, (float *)absP, size);
+//   MLPutReal32List(stdlink, (float *)absP, size);
 
-//    MLPutReal32List(stdlink, (float *)mArrayP, size);
+    MLPutReal32List(stdlink, (float *)mArrayP, size);
 
 
 //    MLReleaseReal32List(stdlink, mArrayP, size);
@@ -476,8 +490,8 @@ bool	TFunction::IsFunction1D(	Int32 &ioNi )
 bool	TFunction::IsFunction2D(	Int32 &ioNi,
 									Int32 &ioNj )
 {
-	MLPrint(stdlink, "mDepth = ");
-	MLPrintReal(stdlink, mDepth);
+//	MLPrint(stdlink, "mDepth = ");
+//	MLPrintReal(stdlink, mDepth);
 	if( mDepth != 3 ) return false;
 	
 	if( ioNi == 0 && ioNj == 0 ) {

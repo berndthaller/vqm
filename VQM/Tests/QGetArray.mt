@@ -10,7 +10,8 @@ Test[
       Print["QGetArray test started"]; startTime = AbsoluteTime[];
       numleft = -20;      (* left border of the domain *)
 	  numright = 20;      (* right border of the domain *)
-	  dx = 0.02;          (* space step *)
+//	  dx = 0.02;          (* space step *)
+	  dx = 2.;          (* space step *)
 	  p0 = 8.;            (* initial momentum *)
 	  x0 = -7.;           (* initial position *)
 	  psi0 = Table[ Module[ {x=x1-x0}, (1./Pi)^(1/4) Exp[I*p0*x-x*x/2] ], {x1,numleft,numright,dx}]; 

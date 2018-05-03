@@ -12,8 +12,10 @@ CPP = g++
 SYS = Linux-x86-64
 CADDSDIR = ${MLINKDIR}/${SYS}/CompilerAdditions
 EXTRA_CFLAGS=
-MLLIB = ML64i3 
+MLLIB = ML64i4 
 
+#INCDIR=.
+#LIBDIR=./lib/linux
 INCDIR = ${CADDSDIR}
 LIBDIR = ${CADDSDIR}
 
