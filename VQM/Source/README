@@ -35,17 +35,13 @@ Building the executables on Mathematica 11 from this directory:
 
 Run from a terminal (shell):
 
-MacOS X univerisal binary :
-make -f Makefile.macosx clean;  make -f Makefile.macosx
+MacOS X 64 bit binary :
+make -f Makefile.macosx
 
 Linux 64 bit:
-make -f Makefile.linux clean;  make -f Makefile.linux; mv QuantuKernel ..; make -f Makefile.linux clean
+make -f Makefile.linux
 
 Windows 64 bit:
-make -f Makefile.windows clean; make -f Makefile.windows ; mv QuantumKernel.exe .. ; make -f Makefile.windows clean
+make -f Makefile.windows
 
 ================================================================================================================
-Then copy the resulting Mathlink executable, i.e., QuantumKernel, QuantumKernelX, QuantumKernel32 or QuantumKernel64
-to the VQM package directory, i.e., to the parent directory of this Source directory.
-
-

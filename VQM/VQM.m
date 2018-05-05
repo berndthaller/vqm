@@ -1,5 +1,9 @@
 (* ::Package:: *)
 
+If[$Notebooks,
+	CurrentValue[$FrontEndSession, ShowAutoSpellCheck] = False
+];
+
 Off[CompiledFunction::cfsa];
 Off[CompiledFunction::cfse];
 Off[CompiledFunction::cfn];

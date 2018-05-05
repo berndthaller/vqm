@@ -36,13 +36,13 @@ BINARIES = QuantumKernelX
 all : ${BINARIES}
 
 QuantumKernelX: MathLinkGlue.o MathStubs_macosx.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o
-	${CXX} ${EXTRA_CFLAGS} -I${INCDIR} MathLinkGlue.o MathStubs_macosx.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -lMLi4 -lc++ -framework Foundation -o $@
+	${CXX} ${EXTRA_CFLAGS} -I${INCDIR} MathLinkGlue.o MathStubs_macosx.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -lMLi4 -lc++ -framework Foundation -o ../$@
 	
 	
 .cpp.o :
 	${CXX} -Wno-write-strings -c -I${INCDIR} $<
 
-MathStubs_macosx.cpp : mathlink_macosx.tm
+MathStubs_macosx.cpp : mathlink_vqm.tm
 	${MPREP} $? -o $@
 
 clean :
