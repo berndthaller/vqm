@@ -21,15 +21,16 @@
 void	QNewFunction( void );
 void	QDisposeFunction( void );
 //RM2018 void	QGetArray( void );
-//RM2018
-void	QGetAbsList( void );
 void	QGetList( void );
 void	QGetFunctionInfo( void );
-void	QGetColorArray( void );
-void	QGetGrayArray( void );
+//RM2018 void	QGetColorArray( void );
+void	QGetColorList( void );
+//RM2018 void	QGetGrayArray( void );
+void	QGetGrayList( void );
 void	QGetRedBlueArray( void );
 void	QGetBlackWhiteArray( void );
-void	QGetAbsArray( void );
+//void	QGetAbsArray( void );
+void	QGetAbsList( void );
 void	QInfo( void );
 
 void	QSchroedinger1D( void );

@@ -2,7 +2,7 @@
 
 (* :Name:	VQM`QuantumKernel` *)
 
-(* :Copyright: �2002 Bernd Thaller *)
+(* :Copyright: 2002 Bernd Thaller *)
 
 (* :Author:	Bernd Thaller,
 			Institute of Mathematics,
@@ -106,13 +106,17 @@ An expression suitable as an argument for QGetColorArray is returned by QNewFunc
 Package: VQM`QuantumKernel`.";
 
 QGetGrayArray::usage = "QGetGrayArray[f]. Package: VQM`QuantumKernel`.";
+(* RM2018 a helper function for QGetGrayArray*)
+QGetGrayList::usage = "QGetGrayList[f]. Package: VQM`QuantumKernel`.";
 
 QGetRedBlueArray::usage = "QGetRedBlueArray[f]. Package: VQM`QuantumKernel`.";
 QGetBlackWhiteArray::usage = "QGetBlackWhiteArray[f]. Package: VQM`QuantumKernel`.";
 
 (* RM2018 a helper function for QGetAbsArray*)
 QGetAbsList::usage = "QGetAbsList[f]. Package: VQM`QuantumKernel`.";
-QGetAbsArray::usage = "QGetAbsArray[f]. Package: VQM`QuantumKernel`.";
+QGetColorList::usage = "QGetColorList[f]. Package: VQM`QuantumKernel`.";
+
+QGetAbsArray::usage = "QGetAbsArray[f]. QGetAbsArray[f] uses QGetAbsList: VQM`QuantumKernel`.";
 
 QInfo::usage = "QInfo[] returns informations about the state of QuantumKernel.
 It lists informations about all TFunction and TOperator objects. Package: VQM`QuantumKernel`.";
@@ -236,6 +240,9 @@ QGetArray[ arg_ ] := ArrayReshape[ QGetList[arg], Reverse @ QGetFunctionInfo @ a
 
 QGetAbsArray[ arg_ ] := ArrayReshape[ QGetAbsList[arg], Most @ QGetFunctionInfo @ arg]
 
+QGetColorArray[ arg_ ] := ArrayReshape[(RGBColor @@@ Partition[#, 3])& @ QGetColorList[arg], Most @ QGetFunctionInfo @ arg]
+
+QGetGrayArray[ arg_ ] := ArrayReshape[GrayLevel /@ QGetGrayList[arg], Most @ QGetFunctionInfo @ arg]
 
 (*-----------------------------------*)
 End[];      (* end `Private` Context *)

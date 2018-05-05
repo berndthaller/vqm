@@ -1,2 +1,6 @@
 install gcc to C:\gcc from equation.com
 https://mathematica.stackexchange.com/questions/154633/portable-makefile-for-wscc-builds/154664#154664
+
+Linux: 
+
+sudo apt-get install uuid-dev

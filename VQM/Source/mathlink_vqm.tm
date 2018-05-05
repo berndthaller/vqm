@@ -32,7 +32,7 @@
 :ReturnType: Manual
 :End:
 
-// QGetArray is now defined top-level-wise in QuantumKernel.m, by use of QGetList
+//RM2018: QGetArray is now defined top-level-wise in QuantumKernel.m, by use of QGetList
 :Begin:
 :Function: QGetList
 :Pattern: QGetList[ function_ ]
@@ -49,17 +49,19 @@
 :ReturnType: Manual
 :End:
 
+//RM2018: QGetColorArray is now defined top-level-wise in QuantumKernel.m, using QGetColorList
 :Begin:
-:Function: QGetColorArray
-:Pattern: QGetColorArray[ function_ ]
+:Function: QGetColorList
+:Pattern: QGetColorList[ function_ ]
 :Arguments: { function }
 :ArgumentTypes: { Manual }
 :ReturnType: Manual
 :End:
 
+//RM2018: QGetGrayArray is now defined top-level-wise in QuantumKernel.m, using QGetGrayList
 :Begin:
-:Function: QGetGrayArray
-:Pattern: QGetGrayArray[ function_ ]
+:Function: QGetGrayList
+:Pattern: QGetGrayList[ function_ ]
 :Arguments: { function }
 :ArgumentTypes: { Manual }
 :ReturnType: Manual
@@ -100,69 +102,69 @@
 
 //	TOperator
 
-//:Begin:
-//:Function: QSchroedinger1D
-//:Pattern: QSchroedinger1D[scalar_:None,mass_,dx_]
-//:Arguments: { scalar, mass, dx  }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
+:Begin:
+:Function: QSchroedinger1D
+:Pattern: QSchroedinger1D[scalar_:None,mass_,dx_]
+:Arguments: { scalar, mass, dx  }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
 
-//:Begin:
-//:Function: QSchroedinger2D
-//:Pattern: QSchroedinger2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
-//:Arguments: { scalar, vector, domain, mass, charge, units }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
+:Begin:
+:Function: QSchroedinger2D
+:Pattern: QSchroedinger2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
+:Arguments: { scalar, vector, domain, mass, charge, units }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
 
-//:Begin:
-//:Function: QSchroedinger3D
-//:Pattern: QSchroedinger3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
-//:Arguments: { scalar, vector, domain, mass, charge, units }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
-//
-//:Begin:
-//:Function: QPauli2D
-//:Pattern: QPauli2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
-//:Arguments: { scalar, vector, domain, mass, charge, units }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
-//
-//:Begin:
-//:Function: QPauli3D
-//:Pattern: QPauli3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
-//:Arguments: { scalar, vector, domain, mass, charge, units }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
-//
-//:Begin:
-//:Function: QDirac2D
-//:Pattern: QDirac2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
-//:Arguments: { scalar, vector, domain, mass, charge, units }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
-//
-//:Begin:
-//:Function: QDirac3D
-//:Pattern: QDirac3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
-//:Arguments: { scalar, vector, domain, mass, charge, units }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
+:Begin:
+:Function: QSchroedinger3D
+:Pattern: QSchroedinger3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
+:Arguments: { scalar, vector, domain, mass, charge, units }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
 
-//:Begin:
-//:Function: QDisposeOperator
-//:Pattern: QDisposeOperator[ operator_ ]
-//:Arguments: { operator }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
+:Begin:
+:Function: QPauli2D
+:Pattern: QPauli2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
+:Arguments: { scalar, vector, domain, mass, charge, units }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: QPauli3D
+:Pattern: QPauli3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
+:Arguments: { scalar, vector, domain, mass, charge, units }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: QDirac2D
+:Pattern: QDirac2D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
+:Arguments: { scalar, vector, domain, mass, charge, units }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: QDirac3D
+:Pattern: QDirac3D[scalar_:None,vector_:None,domain_:None,mass_:1.,charge_:1.,units_:1.]
+:Arguments: { scalar, vector, domain, mass, charge, units }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
+
+:Begin:
+:Function: QDisposeOperator
+:Pattern: QDisposeOperator[ operator_ ]
+:Arguments: { operator }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
 
 :Begin:
 :Function: QGetOperatorInfo
@@ -172,11 +174,11 @@
 :ReturnType: Manual
 :End:
 
-//:Begin:
-//:Function: QTimeEvolution
-//:Pattern: QTimeEvolution[ operator_, function_, timestep_, fractal_:4, steps_:1 ]
-//:Arguments: { operator, function, timestep, fractal, steps }
-//:ArgumentTypes: { Manual }
-//:ReturnType: Manual
-//:End:
+:Begin:
+:Function: QTimeEvolution
+:Pattern: QTimeEvolution[ operator_, function_, timestep_, fractal_:4, steps_:1 ]
+:Arguments: { operator, function, timestep, fractal, steps }
+:ArgumentTypes: { Manual }
+:ReturnType: Manual
+:End:
 

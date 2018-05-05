@@ -163,11 +163,12 @@ void	QGetFunctionInfo( void )
 
 
 // ---------------------------------------------------------------------------
-//		$ QGetColorArray
+// RM2018: due to problems define QGetColorArray in terms of QGetColorList in QuantumKernel.m
+//		$ QGetColorList
 // ---------------------------------------------------------------------------
 //	Return RGB color array
 //
-void	QGetColorArray( void )
+void	QGetColorList( void )
 {
  	TFunction	*theFunction;
  	Int32	ID;
@@ -191,8 +192,11 @@ void	QGetColorArray( void )
 // ---------------------------------------------------------------------------
 //	Return gray array
 //RM2018COMMENT
+// RM2018: due to problems define QGetGrayArray in terms of QGetGrayList in QuantumKernel.m
+//		$ QGetGrayList
+// ---------------------------------------------------------------------------
 
-void	QGetGrayArray( void )
+void	QGetGrayList( void )
 {
 	TFunction	*theFunction;
 	Int32	ID;
@@ -280,7 +284,7 @@ void	QGetAbsList( void )
 		return;
 	}
 	
-	MLPrint(stdlink, "!!!!!!!!!!!!!! in QGetAbsList, vor PutAbs() ... ");
+//	MLPrint(stdlink, "!!!!!!!!!!!!!! in QGetAbsList, vor PutAbs() ... ");
 
 	theFunction->PutAbs();
 }
@@ -337,7 +341,6 @@ void	QInfo( void )
 	MLPutFunction(stdlink, "List", 0);
 }
 
-/*
 
 // ---------------------------------------------------------------------------
 //		$ QSchroedinger1D
@@ -713,7 +716,6 @@ void	QTimeEvolution( void )
 	theOperator->TimeEvolution(theFunction, timeStep, fractal, steps);
 }
 
-*/
 
 
 // ---------------------------------------------------------------------------
