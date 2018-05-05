@@ -1,0 +1,5 @@
+<pre name='i_115_in' id='i_115_in' class='IFT'>spinorlist = Table[{x, spinorfunction[x]}, {x, -3, 3, 0.1}];
+QListSpinorCombinedPlot[{spinorlist, Sin[4 x]}, {x, -2, 3}, 
+ PlotRange -&gt; All, 
+ QCurveStyle -&gt; {RGBColor[1, 0.7, 0.9], Thickness[0.03]}, 
+ PlotStyle -&gt; {RGBColor[1, 0.2, 0.5], Thickness[0.04]}]</pre><div class='IFU'><a name='1075757492'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-r2rh2u</div>

@@ -1,0 +1,237 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8099,        228]
+NotebookOptionsPosition[      5603,        174]
+NotebookOutlinePosition[      7392,        216]
+CellTagsIndexPosition[      7349,        213]
+WindowTitle->ArgColorPlot
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["V Q M GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ArgColorPlot\"\>":>
+       Documentation`HelpLookup["paclet:VQM/tutorial/ArgColorPlot"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideTutorial"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"VQM/guide/ArgColorPlotPackage\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["VQM/guide/ArgColorPlotPackage"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/VQM/guide/\
+ArgColorPlotPackage.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$6832], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "VQM/guide/ArgColorPlotPackage", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["ArgColorPlot", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+Plot the absolute value Abs[f[x]] of a complex-valued function f depending on \
+a real variable x and fill the space between the plotted function and the \
+x-axis with a color corresponding to the argument Arg[f[x]]. The saturation \
+and brightness of the colors can be set using the options QSaturation and \
+QBrightness. \
+\>", "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Reference"
+}], "GuideReferenceSection",
+ WholeCellGroupOpener->True],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[TextData[{
+  StyleBox["QArgColorPlot",
+   FontFamily->"Courier"],
+  StyleBox["[",
+   FontFamily->"Courier"],
+  StyleBox["f",
+   FontFamily->"Courier"],
+  StyleBox["[",
+   FontFamily->"Courier"],
+  StyleBox["x",
+   FontFamily->"Courier"],
+  StyleBox["]",
+   FontFamily->"Courier"],
+  StyleBox[",",
+   FontFamily->"Courier"],
+  StyleBox["{",
+   FontFamily->"Courier"],
+  StyleBox["x",
+   FontFamily->"Courier"],
+  StyleBox[",",
+   FontFamily->"Courier"],
+  StyleBox["x0",
+   FontFamily->"Courier"],
+  StyleBox[",",
+   FontFamily->"Courier"],
+  StyleBox["x1",
+   FontFamily->"Courier"],
+  StyleBox["}",
+   FontFamily->"Courier"],
+  StyleBox[",",
+   FontFamily->"Courier"],
+  StyleBox["opts",
+   FontFamily->"Courier"],
+  StyleBox["]",
+   FontFamily->"Courier"]
+ }], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " is used like the usual Plot command. It gives a two-dimensional plot of a \
+complex-valued function f of a single real variable x in the range {x0,x1}. \
+The plot shows the curve Abs[f] with area between the curve and the x-axis \
+colored by Hue[Arg[f[x]]/(2 Pi)]. The default options of Plot are changed to \
+Axes->{True,None}, Fame->True. Package: VQM`ArgColorPlot`"
+}], "GuideText",
+ CellID->203374175]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ArgColorPlot",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2018, 5, 5, 23, 32, 51.978981}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "VQM`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "V Q M Guide", "language" -> "en", "paclet" -> "VQM", 
+    "status" -> "None", "summary" -> 
+    "Plot the absolute value Abs[f[x]] of a complex-valued function f \
+depending on a real variable x and fill the space between the plotted \
+function and the x-axis with a color corresponding to the argument Arg[f[x]]. \
+The saturation and brightness of the colors can be set using the options \
+QSaturation and QBrightness. ", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$6763, "title" -> 
+    "ArgColorPlot", "titlemodifier" -> "", "windowtitle" -> "ArgColorPlot", 
+    "type" -> "Guide", "uri" -> "VQM/guide/ArgColorPlotPackage"}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[584, 21, 3044, 74, 70, "AnchorBarGrid",ExpressionUUID->"aa70cbc9-8406-4f9d-ad4f-5036c5966187",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3653, 99, 54, 1, 70, "GuideTitle",ExpressionUUID->"ce67548a-07dc-4039-9bd0-876ed0cc8042",
+ CellID->942062912],
+Cell[3710, 102, 377, 7, 70, "GuideAbstract",ExpressionUUID->"a70622d5-46cb-45eb-8a53-4637d022ef41",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4124, 114, 137, 6, 70, "GuideReferenceSection",ExpressionUUID->"488c259b-26ae-485e-9fb1-bba7ba8f724f"],
+Cell[4264, 122, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"54b3dd7d-0b8e-444e-9d49-1977d70d0aaf"],
+Cell[4298, 124, 1263, 45, 70, "GuideText",ExpressionUUID->"80a7f857-8190-4eb5-9c78-8c0e42d25858",
+ CellID->203374175]
+}, Open  ]],
+Cell[5576, 172, 23, 0, 70, "FooterCell",ExpressionUUID->"d0de6da6-5459-42ff-a089-801a788510d4"]
+}
+]
+*)
+
+(* End of internal cache information *)

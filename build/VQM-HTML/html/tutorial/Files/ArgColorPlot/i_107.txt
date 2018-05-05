@@ -1,0 +1,1 @@
+<pre name='i_107_in' id='i_107_in' class='IFT'>QArgColorPlot[Sin[x],{x,-2Pi,Pi}, QShiftPlot-&gt;1, PlotRange-&gt;{0,2}]</pre><div class='IFU'><a name='1670400663'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-1wsrop</div>

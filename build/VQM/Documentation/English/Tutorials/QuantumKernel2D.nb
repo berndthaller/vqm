@@ -1,0 +1,198 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7182,        189]
+NotebookOptionsPosition[      4441,        120]
+NotebookOutlinePosition[      6594,        177]
+CellTagsIndexPosition[      6551,        174]
+WindowTitle->QuantumKernel2D
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["V Q M TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"VQM/tutorial/QuantumKernel2D\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["VQM/tutorial/QuantumKernel2D"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/VQM/tutorial/\
+QuantumKernel2D.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9476], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "VQM/tutorial/QuantumKernel2D", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["QuantumKernel2D", "Title",
+ CellID->509267359],
+
+Cell["XXXX.", "Caption",
+ CellID->1891092685],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", "\"\<VQM`QuantumKernel`*\>\"", "]"}]], "Input",
+ CellLabel->"In[38]:=",
+ CellID->2058623809],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"QBeginMovie\"\>", ",", "\<\"QDirac2D\"\>", 
+   ",", "\<\"QDirac3D\"\>", ",", "\<\"QDisposeFunction\"\>", 
+   ",", "\<\"QDisposeOperator\"\>", ",", "\<\"QEndMovie\"\>", 
+   ",", "\<\"QFunctionObject\"\>", ",", "\<\"QGetAbsArray\"\>", 
+   ",", "\<\"QGetAbsList\"\>", ",", "\<\"QGetArray\"\>", 
+   ",", "\<\"QGetBlackWhiteArray\"\>", ",", "\<\"QGetColorArray\"\>", 
+   ",", "\<\"QGetColorList\"\>", ",", "\<\"QGetFunctionInfo\"\>", 
+   ",", "\<\"QGetGrayArray\"\>", ",", "\<\"QGetGrayList\"\>", 
+   ",", "\<\"QGetList\"\>", ",", "\<\"QGetOperatorInfo\"\>", 
+   ",", "\<\"QGetRedBlueArray\"\>", ",", "\<\"QGetWindowInfo\"\>", 
+   ",", "\<\"QHideWindow\"\>", ",", "\<\"QInfo\"\>", 
+   ",", "\<\"QNewFunction\"\>", ",", "\<\"QOperatorObject\"\>", 
+   ",", "\<\"QPauli2D\"\>", ",", "\<\"QPauli3D\"\>", 
+   ",", "\<\"QSchroedinger1D\"\>", ",", "\<\"QSchroedinger2D\"\>", 
+   ",", "\<\"QSchroedinger3D\"\>", ",", "\<\"QShowWindow\"\>", 
+   ",", "\<\"QTimeEvolution\"\>", ",", "\<\"QuantumKernel\"\>", 
+   ",", "\<\"QuantumLink\"\>"}], "}"}]], "Output",
+ ImageSize->{524, 119},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[38]=",
+ CellID->397686489]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"QuantumKernel2D",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:VQM/guide/VQM", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2018, 5, 5, 23, 33, 14.123167}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "VQM`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "V Q M Tutorial", "language" -> "en", "paclet" -> "VQM", 
+    "status" -> "None", "summary" -> "XXXX.", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$9427, "title" -> 
+    "QuantumKernel2D", "titlemodifier" -> "", "windowtitle" -> 
+    "QuantumKernel2D", "type" -> "Tutorial", "uri" -> 
+    "VQM/tutorial/QuantumKernel2D", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 2298, 53, 70, "AnchorBarGrid",ExpressionUUID->"8bfbaf90-f4e6-42f0-b136-f4b46c5b9375",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2910, 78, 52, 1, 70, "Title",ExpressionUUID->"c8d62cd2-c554-4409-a2dc-828279fd6415",
+ CellID->509267359],
+Cell[2965, 81, 45, 1, 70, "Caption",ExpressionUUID->"72ea3c72-f8b6-4f30-873e-639e854c580d",
+ CellID->1891092685],
+Cell[CellGroupData[{
+Cell[3035, 86, 129, 3, 70, "Input",ExpressionUUID->"07ad8109-f83a-485d-91b5-cc0899705a65",
+ CellID->2058623809],
+Cell[3167, 91, 1220, 23, 70, "Output",ExpressionUUID->"f9d8b9be-2fbb-42b5-90c9-488e1ece161a",
+ CellID->397686489]
+}, Open  ]]
+}, Open  ]],
+Cell[4414, 118, 23, 0, 70, "FooterCell",ExpressionUUID->"3fdc4d59-11a3-402d-9bb2-d5e48ef1ff52"]
+}
+]
+*)
+
+(* End of internal cache information *)

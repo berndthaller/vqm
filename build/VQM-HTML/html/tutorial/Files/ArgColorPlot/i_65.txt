@@ -1,0 +1,2 @@
+<pre name='i_65_in' id='i_65_in' class='IFT'>yvalues = Table[Tan[x + 0.3 I],{x,-5.,5.,0.01}];
+QListArgColorPlot[yvalues, Frame-&gt;True, Axes-&gt;{True,False},PlotRange-&gt;{-.5,4}]</pre><div class='IFU'><a name='402561692'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-gxykvi</div>

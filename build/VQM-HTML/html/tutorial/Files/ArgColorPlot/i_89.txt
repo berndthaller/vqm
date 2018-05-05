@@ -1,0 +1,2 @@
+<pre name='i_89_in' id='i_89_in' class='IFT'>QListArgColorPlot[mytab, Axes -&gt; True, 
+ QHorizontalRange -&gt; {{-2, 2}, {-1, 0}}]</pre><div class='IFU'><a name='429311217'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-hdvwxv</div>

@@ -1,0 +1,2 @@
+<pre name='i_95_in' id='i_95_in' class='IFT'>mytab = Table[Exp[-x^2/2], {x, -4, 4, 0.1}];
+QListCombinedPlot[{mytab, x^2/2 - 1/2}, {x, -4, 4}]</pre><div class='IFU'><a name='1489155089'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-ywv1pf</div>

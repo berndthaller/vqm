@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="UTF-8">
+
+<title>ArgColorPlot&mdash;Wolfram Language Documentation</title>
+<meta name="buildnumber" content="0000000" />
+<meta name="historydata" content="{0.0, 11.3, , }" />
+<meta name="keywords" content="ArgColorPlot" />
+
+<meta name="description" content="The package VQM`ArgColorPlot provides methods to visualize complex-valued functions of one real variable. This package is part of the VQM packages which can be obtained here: https://vqm.uni-graz.at/pages/software.html (free download). The VQM packages are part of the Visual Quantum Mechanics project, see https://vqm.uni-graz.at. In particular, these packages are distributed with the book Advanced Visual Quantum Mechanics, Springer-Verlag New York, 2004. Available functions in the VQM`ArgColorPlot package. Here we describe theoretical background and the practical implementation of the main function in the package VQM`ArgColorPlot`." />
+<script language="JavaScript" type="text/javascript">baselang='ArgColorPlot';</script>
+<script language="JavaScript" type="text/javascript">packagename='VQM';</script>
+<!--#include virtual="/common/includes/gl-head-includes.html"-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--[if IE]>
+<style type="text/css">
+/* doctype problem overrides */
+#menu .searchboxsub, #menu .searchboxsub-on { padding-bottom: 0; }
+#menu .headerSearchSubmit { margin-bottom: 4px; }
+
+/*
+.WRIdropMenu .WRImenuContents { margin-top: -2px; margin-left: -2px; }
+.WRIdropMenu .WRImenuContents .WRImenuContents { margin: 0; }
+*/
+</style>
+<![endif]-->
+<link rel="stylesheet" href="/webMathematica/Resources/Documentation/English/css/reference.css" />
+
+<script src="/webMathematica/Resources/Documentation/English/javascript/reference.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/documentation-search.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/faster-page-load.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/hyperlink-filter.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/brokenlinks.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/clipboard.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/image-swap.js"></script>
+
+</head>
+<body id="tutorial">
+<a name="top"></a>
+ 
+<div class="main-wrapper">
+<div class="outer-wrapper">
+
+<div class="wrapper mainOuter">
+    <div class="mainContent">
+ <div class="topContentWrap">
+  <div class="ribbonWrap">
+   <span class="ribbonOuter"><span class="ribbonInner">V Q M TUTORIAL</span></span>
+  </div>
+  
+  <div class="clear"><!-- --></div>
+ </div>
+ <h1 class="Title"><a name="509267359"></a>ArgColorPlot</h1>
+ <div class="TutorialJumpBox">
+  <table class="nogridboxdividers">
+   <col />
+   <col />
+   <tr class="lineAbove" style=""><td><a class="package-symbol" href="../tutorial/ArgColorPlot.html#1892760991">Introduction and implementation</a></td><td><a class="package-symbol" href="../tutorial/ArgColorPlot.html#559656922">Examples for using the ArgColorPlot package</a></td></tr>
+   <tr class="" style=""><td><a class="package-symbol" href="../tutorial/ArgColorPlot.html#1933453141">The package VQM`ArgColorPlot</a></td><td></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1534169418"></a>The package VQM`ArgColorPlot provides methods to visualize complex-valued functions of one real variable. This package is part of the VQM packages which can be obtained here:  <a href="https://vqm.uni-graz.at/pages/software.html">https://vqm.uni-graz.at/pages/software.html</a> (free download). The VQM packages are part of the Visual Quantum Mechanics project, see <a href="https://vqm.uni-graz.at">https://vqm.uni-graz.at</a>. In particular, these packages are distributed with the book <em>Advanced Visual Quantum Mechanics</em>, Springer-Verlag New York, 2004.</p>
+ <p class="Caption"><a name="1891092685"></a>Available functions in the VQM`ArgColorPlot package.</p>
+ <table class="InCell">
+  <tr><td class="lab">In[34]:=</td><td class="Input"><div>
+     <a name="2058623809"></a>
+     <img src="Files/ArgColorPlot/I_2.png"
+         height="17"
+         width="177"
+         alt="Click for copyable input" />
+    </div><div id="i_1_out" class="IFL"></div></td></tr>
+ </table>
+ <h2 class="Section"><a name="1892760991"></a>Introduction and implementation</h2>
+ <p class="Text"><a name="958712726"></a>Here we describe theoretical background and the practical implementation of the main function in the package VQM`ArgColorPlot`.</p>
+ <h3 class="Subsection"><a name="514982441"></a>FilledPlot</h3>
+ <p class="Text"><a name="950788477"></a>Filling of a graph can be obtained by </p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[13]:=</td><td class="Input"><div>
+      <a name="476115612"></a>
+      <img src="Files/ArgColorPlot/I_4.png"
+          height="31"
+          width="225"
+          alt="Click for copyable input" />
+     </div><div id="i_3_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[13]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_1.png"
+          height="157"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[14]:=</td><td class="Input"><div>
+      <a name="1079990870"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_6.png"
+          data-big="510 31"
+          data-small="381 54"
+          alt="Click for copyable input" />
+     </div><div id="i_5_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[14]=</td><td class="Output"><a href="javascript:swap(this,width,height,'Files/ArgColorPlot/Flash_1.swf','Flash_1')"><span class="playAnimation">Play Animation</span><span id="Flash_1"><img src="Files/ArgColorPlot/1.png" height="322" width="405" alt="" /></span></a></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="546778960"></a>In that way one can produce neat looking graphs. </p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[15]:=</td><td class="Input"><div>
+      <a name="631455207"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_8.png"
+          data-big="548 61"
+          data-small="354 79"
+          alt="Click for copyable input" />
+     </div><div id="i_7_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[15]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_2.png"
+          height="138"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text">
+  <a name="515965556"></a>
+  <span class="plain">Again, it is only possible to plot real-valued functions.</span>
+ </p>
+ <h3 class="Subsection"><a name="294133106"></a>Filling with an x-dependent color</h3>
+ <p class="Text"><a name="2135240795"></a>In order to visualize a complex-valued function f[x] of one real variable, we use the following idea. We plot the curve Abs[f[x]] and fill the space between the curve and the horizontal axis with a color determined by Arg[f[x]]. Since the argument of a complex number is a real number modulo 2<span class="special-character Pi">&#960;</span>, it appears natural to choose Hue[Arg[f[x]]/(2<span class="special-character Pi">&#960;</span>)].</p>
+ <p class="Text"><a name="392816548"></a>In order to be specific, we define a sample function</p>
+ <table class="InCell">
+  <tr><td class="lab">In[16]:=</td><td class="Input"><div>
+     <a name="702991358"></a>
+     <img src="Files/ArgColorPlot/I_10.png"
+         height="17"
+         width="131"
+         alt="Click for copyable input" />
+    </div><div id="i_9_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="1868211759"></a>We proceed as follows. First, we define a set of positions on the x-axis and calculate a table of function values at these positions.</p>
+ <table class="InCell">
+  <tr><td class="lab">In[17]:=</td><td class="Input"><div>
+     <a name="676630726"></a>
+     <img src="Files/ArgColorPlot/I_12.png"
+         height="17"
+         width="172"
+         alt="Click for copyable input" />
+    </div><div id="i_11_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="1206701017"></a>(The semicolon serves to suppress the lengthy output). Observe that the boundary values and the increment are given as real numbers. This guarantees that all generated values are real numbers. and when we calculate the value of f for one of these x-values, then <em>Mathematica</em> will return a numeric expression. The function values at these points can be calculated just by applying the function f to the list xvalues:</p>
+ <table class="InCell">
+  <tr><td class="lab">In[18]:=</td><td class="Input"><div>
+     <a name="188430451"></a>
+     <img src="Files/ArgColorPlot/I_14.png"
+         height="17"
+         width="113"
+         alt="Click for copyable input" />
+    </div><div id="i_13_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="1559694279"></a>The variable yvalues now contains a one-dimensional array of complex numbers. With the command Short we can look at an abbreviated form of this expression (The parameter in the command Short describes the desired length of the abbreviated expression). :</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[19]:=</td><td class="Input"><div>
+      <a name="1596351871"></a>
+      <img src="Files/ArgColorPlot/I_16.png"
+          height="17"
+          width="92"
+          alt="Click for copyable input" />
+     </div><div id="i_15_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td colspan="2"><div class="celllabelTableForm">Out[19]//Short=</div></td></tr>
+   <tr><td class="lab"> </td><td class="Output"><img src="Files/ArgColorPlot/O_3.png" width="350" height="16" alt="" /></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="449994561"></a>Next we generate a table of absolute values</p>
+ <table class="InCell">
+  <tr><td class="lab">In[20]:=</td><td class="Input"><div>
+     <a name="1768665640"></a>
+     <img src="Files/ArgColorPlot/I_18.png"
+         height="17"
+         width="129"
+         alt="Click for copyable input" />
+    </div><div id="i_17_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="494769706"></a>and a table of arguments</p>
+ <table class="InCell">
+  <tr><td class="lab">In[21]:=</td><td class="Input"><div>
+     <a name="537767558"></a>
+     <img src="Files/ArgColorPlot/I_20.png"
+         height="17"
+         width="110"
+         alt="Click for copyable input" />
+    </div><div id="i_19_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="1648160730"></a>From this we want to determine a table of color values. We could try to apply Hue to the list args, but this does not work because Hue is not &quot;listable&quot;</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[22]:=</td><td class="Input"><div>
+      <a name="245826457"></a>
+      <img src="Files/ArgColorPlot/I_22.png"
+          height="17"
+          width="179"
+          alt="Click for copyable input" />
+     </div><div id="i_21_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td colspan="2"><div class="celllabelTableForm">Out[22]//Short=</div></td></tr>
+   <tr><td class="lab"> </td><td class="Output"><img src="Files/ArgColorPlot/O_4.png" width="416" height="16" alt="" /></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="903770997"></a>We have to use the command Map in order to apply Hue to each of the values in the list. Map has the shortcut /@</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[23]:=</td><td class="Input"><div>
+      <a name="527311348"></a>
+      <img src="Files/ArgColorPlot/I_24.png"
+          height="17"
+          width="199"
+          alt="Click for copyable input" />
+     </div><div id="i_23_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td colspan="2"><div class="celllabelTableForm">Out[23]//Short=</div></td></tr>
+   <tr><td class="lab"> </td><td class="Output"><img src="Files/ArgColorPlot/O_5.png" width="513" height="34" alt="" /></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="813276556"></a>We can achieve this in one step by writing</p>
+ <table class="InCell">
+  <tr><td class="lab">In[24]:=</td><td class="Input"><div>
+     <a name="5663537"></a>
+     <img src="Files/ArgColorPlot/I_26.png"
+         height="17"
+         width="230"
+         alt="Click for copyable input" />
+    </div><div id="i_25_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="697785891"></a>Next, we are going to plot a graph of the function f. Let us first plot the graph of the absolute value, which is represented by the list absvals. We shall convert this into a list of points which can then be joined to form a line. The coordinates of these points can be obtained from the lists xvalues and absvals. We just apply the command Transpose in order to obtain the list of (x.y) pairs. </p>
+ <table class="InCell">
+  <tr><td class="lab">In[25]:=</td><td class="Input"><div>
+     <a name="279273770"></a>
+     <img src="Files/ArgColorPlot/I_28.png"
+         height="17"
+         width="268"
+         alt="Click for copyable input" />
+    </div><div id="i_27_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="1502483695"></a>We can look at this by converting the graphics primitive graphline into a graphics object and by applying the command Show:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[26]:=</td><td class="Input"><div>
+      <a name="2130740439"></a>
+      <img src="Files/ArgColorPlot/I_30.png"
+          height="17"
+          width="151"
+          alt="Click for copyable input" />
+     </div><div id="i_29_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[26]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_6.png"
+          height="48"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="973366363"></a>In fact, this line is a polygonal curve, but the corners are too close to be visible at this magnification.</p>
+ <p class="Text"><a name="1985523742"></a>The colors will be obtained by generating polygons which are filled with the appropriate color. Assume that we are given n+1 function values f[<img style="vertical-align:middle;" title="x_0" src="Files/ArgColorPlot/Image_2.png" width="13" height="19" alt="x_0" />], f[<img style="vertical-align:middle;" title="x_1], ... f[x_n]. " src="Files/ArgColorPlot/Image_3.png" width="76" height="19" alt="x_1], ... f[x_n]. " />From these n+1 values we can generate n polygons, where the k-th polygon is given by the points <img style="vertical-align:middle;" title="x_k" src="Files/ArgColorPlot/Image_4.png" width="13" height="19" alt="x_k" />, f[<img style="vertical-align:middle;" title="x_k" src="Files/ArgColorPlot/Image_5.png" width="13" height="19" alt="x_k" />], f[<img style="vertical-align:middle;" title="x_(k+1)" src="Files/ArgColorPlot/Image_6.png" width="23" height="19" alt="x_(k+1)" />], and <img style="vertical-align:middle;" title="x_(k+1)" src="Files/ArgColorPlot/Image_7.png" width="23" height="19" alt="x_(k+1)" />(k=0,..n-1). In a conventional programming language, one would think to generate the list of polygons with a sort of do-loop. In <em>Mathematica</em> it is much more effective to apply list operations. We first generate an auxiliary list of zero values</p>
+ <table class="InCell">
+  <tr><td class="lab">In[27]:=</td><td class="Input"><div>
+     <a name="949141061"></a>
+     <img src="Files/ArgColorPlot/I_32.png"
+         height="17"
+         width="193"
+         alt="Click for copyable input" />
+    </div><div id="i_31_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="705282311"></a>The n-1 points (<img style="vertical-align:middle;" title="x_k" src="Files/ArgColorPlot/Image_8.png" width="13" height="19" alt="x_k" />,0) for k=0 .. n on the x-axis are obtained by</p>
+ <table class="InCell">
+  <tr><td class="lab">In[28]:=</td><td class="Input"><div>
+     <a name="1717553184"></a>
+     <img src="Files/ArgColorPlot/I_34.png"
+         height="17"
+         width="209"
+         alt="Click for copyable input" />
+    </div><div id="i_33_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="441180514"></a>Next we form the list of points with coordinates (<img style="vertical-align:middle;" title="x_k" src="Files/ArgColorPlot/Image_9.png" width="13" height="19" alt="x_k" />,f[<img style="vertical-align:middle;" title="x_k" src="Files/ArgColorPlot/Image_10.png" width="13" height="19" alt="x_k" />])</p>
+ <table class="InCell">
+  <tr><td class="lab">In[29]:=</td><td class="Input"><div>
+     <a name="1807349354"></a>
+     <img src="Files/ArgColorPlot/I_36.png"
+         height="17"
+         width="223"
+         alt="Click for copyable input" />
+    </div><div id="i_35_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="2111889510"></a>Now, this is a list of corner points for the polygons. The command Drop[list,<span class="special-character PlusMinus">&#177;</span>1] removes either the first or the last element of a list.</p>
+ <table class="InCell">
+  <tr><td class="lab">In[30]:=</td><td class="Input"><div>
+     <a name="917276954"></a>
+     <img src=""
+         data-src="Files/ArgColorPlot/I_38.png"
+         data-big="555 17"
+         data-small="555 17"
+         alt="Click for copyable input" />
+    </div><div id="i_37_out" class="IFL"></div></td></tr>
+ </table>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[31]:=</td><td class="Input"><div>
+      <a name="2036147712"></a>
+      <img src="Files/ArgColorPlot/I_40.png"
+          height="17"
+          width="122"
+          alt="Click for copyable input" />
+     </div><div id="i_39_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td colspan="2"><div class="celllabelTableForm">Out[31]//Short=</div></td></tr>
+   <tr><td class="lab"> </td><td class="Output"><img src="Files/ArgColorPlot/O_7.png" width="311" height="34" alt="" /></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="792955486"></a>The list of polygons is formed by mapping the command Polygon on the list of corner points.</p>
+ <table class="InCell">
+  <tr><td class="lab">In[32]:=</td><td class="Input"><div>
+     <a name="2066823567"></a>
+     <img src="Files/ArgColorPlot/I_42.png"
+         height="17"
+         width="214"
+         alt="Click for copyable input" />
+    </div><div id="i_41_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="1555700344"></a>Finally, we combine the color directives from the list hue with each polygon</p>
+ <table class="InCell">
+  <tr><td class="lab">In[33]:=</td><td class="Input"><div>
+     <a name="1042279383"></a>
+     <img src="Files/ArgColorPlot/I_44.png"
+         height="17"
+         width="310"
+         alt="Click for copyable input" />
+    </div><div id="i_43_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="565481502"></a>Lets have a look at this:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[34]:=</td><td class="Input"><div>
+      <a name="1432466139"></a>
+      <img src="Files/ArgColorPlot/I_46.png"
+          height="17"
+          width="348"
+          alt="Click for copyable input" />
+     </div><div id="i_45_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[34]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_8.png"
+          height="149"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1103895342"></a>We can combine this with the line of the curve:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[35]:=</td><td class="Input"><div>
+      <a name="1057786561"></a>
+      <img src="Files/ArgColorPlot/I_48.png"
+          height="17"
+          width="376"
+          alt="Click for copyable input" />
+     </div><div id="i_47_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[35]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_9.png"
+          height="149"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1205825801"></a>We combine everything into a single command. This can be done using a Module.</p>
+ <table class="InCell">
+  <tr><td class="lab">In[36]:=</td><td class="Input"><div>
+     <a name="511060668"></a>
+     <img src=""
+         data-src="Files/ArgColorPlot/I_50.png"
+         data-big="428 305"
+         data-small="355 305"
+         alt="Click for copyable input" />
+    </div><div id="i_49_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="1609542723"></a>Let us test this command with a small list:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[37]:=</td><td class="Input"><div>
+      <a name="1880527849"></a>
+      <img src="Files/ArgColorPlot/I_52.png"
+          height="17"
+          width="281"
+          alt="Click for copyable input" />
+     </div><div id="i_51_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[37]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_10.png"
+          height="149"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <h3 class="Subsection"><a name="1716024370"></a>Phase-colored plot</h3>
+ <p class="Text"><a name="516207380"></a>We can easily use the command fillit to define a useful plot command for a list of complex numbers:</p>
+ <table class="InCell">
+  <tr><td class="lab">In[38]:=</td><td class="Input"><div>
+     <a name="63501780"></a>
+     <img src="Files/ArgColorPlot/I_54.png"
+         height="143"
+         width="251"
+         alt="Click for copyable input" />
+    </div><div id="i_53_out" class="IFL"></div></td></tr>
+ </table>
+ <table class="InCell">
+  <tr><td class="lab">In[40]:=</td><td class="Input"><div>
+     <a name="2122527548"></a>
+     <img src="Files/ArgColorPlot/I_56.png"
+         height="17"
+         width="112"
+         alt="Click for copyable input" />
+    </div><div id="i_55_out" class="IFL"></div></td></tr>
+ </table>
+ <table class="InCell">
+  <tr><td class="lab">In[41]:=</td><td class="Input"><div>
+     <a name="1469638919"></a>
+     <img src="Files/ArgColorPlot/I_58.png"
+         height="17"
+         width="197"
+         alt="Click for copyable input" />
+    </div><div id="i_57_out" class="IFL"></div></td></tr>
+ </table>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[42]:=</td><td class="Input"><div>
+      <a name="2011887486"></a>
+      <img src="Files/ArgColorPlot/I_60.png"
+          height="17"
+          width="143"
+          alt="Click for copyable input" />
+     </div><div id="i_59_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[42]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_11.png"
+          height="149"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1935645851"></a>In <em>Mathematica</em> 6 we can use ColorFunction to color the graphics as desired, however, antialiasing does not work (but should be possible to get it working).</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[43]:=</td><td class="Input"><div>
+      <a name="170049354"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_62.png"
+          data-big="464 143"
+          data-small="377 197"
+          alt="Click for copyable input" />
+     </div><div id="i_61_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[44]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_12.png"
+          height="149"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <h2 class="Section"><a name="1933453141"></a>The package VQM`ArgColorPlot</h2>
+ <p class="Text"><a name="1971878030"></a>The (non-standard) package <span class="InlineInput">VQM`ArgColorPlot</span> provides additional functionality</p>
+ <table class="InCell">
+  <tr><td class="lab">In[45]:=</td><td class="Input"><div>
+     <a name="1386409706"></a>
+     <img src="Files/ArgColorPlot/I_64.png"
+         height="17"
+         width="167"
+         alt="Click for copyable input" />
+    </div><div id="i_63_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="1190358792"></a>All symbols defined by the VQM packages start with the letter &quot;Q&quot;. In particular, the package implements <span class="Input">QListArgColorPlot</span> which corresponds to the command <span class="Input">ListArgColorPlot</span> defined above. But the command defined in the package accepts the standard options:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[46]:=</td><td class="Input"><div>
+      <a name="402561692"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_66.png"
+          data-big="468 35"
+          data-small="468 35"
+          alt="Click for copyable input" />
+     </div><div id="i_65_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[47]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_13.png"
+          height="237"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <table class="InCell">
+  <tr><td class="lab">In[48]:=</td><td class="Input"><div>
+     <a name="1195827430"></a>
+     <img src="Files/ArgColorPlot/I_68.png"
+         height="17"
+         width="22"
+         alt="Click for copyable input" />
+    </div><div id="i_67_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="2119647384"></a>There is a variant which corresponds to Plot</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[49]:=</td><td class="Input"><div>
+      <a name="307362805"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_70.png"
+          data-big="463 35"
+          data-small="463 35"
+          alt="Click for copyable input" />
+     </div><div id="i_69_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[49]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_14.png"
+          height="91"
+          width="203"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1132108964"></a>Further documentation is available via <em>Mathematica</em>'s Help Browser, provided the VQM packages are properly installed.</p>
+ <p class="Text"><a name="650245528"></a>Moreover, you can get help in the usual way:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[50]:=</td><td class="Input"><div>
+      <a name="132309513"></a>
+      <img src="Files/ArgColorPlot/I_72.png"
+          height="17"
+          width="87"
+          alt="Click for copyable input" />
+     </div><div id="i_71_out" class="IFL"></div></td></tr>
+  </table>
+  <div class="Print">
+   <a name="1080410346"></a>
+   <img class="FlushInput"
+       src="Files/ArgColorPlot/Image_11.gif"
+       alt=" " />
+  </div>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[51]:=</td><td class="Input"><div>
+      <a name="1482449837"></a>
+      <img src="Files/ArgColorPlot/I_74.png"
+          height="17"
+          width="133"
+          alt="Click for copyable input" />
+     </div><div id="i_73_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[51]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_15.png"
+          height="302"
+          width="539"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[52]:=</td><td class="Input"><div>
+      <a name="1271691129"></a>
+      <img src="Files/ArgColorPlot/I_76.png"
+          height="17"
+          width="75"
+          alt="Click for copyable input" />
+     </div><div id="i_75_out" class="IFL"></div></td></tr>
+  </table>
+  <div class="Print">
+   <a name="1555550159"></a>
+   <img class="FlushInput"
+       src="Files/ArgColorPlot/Image_12.gif"
+       alt=" " />
+  </div>
+ </div>
+ <h2 class="Section"><a name="559656922"></a>Examples for using the ArgColorPlot package</h2>
+ <p class="Text"><a name="175514194"></a>This example shows a complex-valued Gaussian function.</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[53]:=</td><td class="Input"><div>
+      <a name="1372011227"></a>
+      <img src="Files/ArgColorPlot/I_78.png"
+          height="31"
+          width="189"
+          alt="Click for copyable input" />
+     </div><div id="i_77_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[53]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_16.png"
+          height="157"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="230149189"></a>Most of the options for ListLinePlot can be used also for QArgColorPlot. In addition, we can influence the Saturation and the Brightness of the colors for the complex phase:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[54]:=</td><td class="Input"><div>
+      <a name="499371276"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_80.png"
+          data-big="481 167"
+          data-small="375 185"
+          alt="Click for copyable input" />
+     </div><div id="i_79_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[54]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_17.png"
+          height="115"
+          width="353"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="230361853"></a>Next, we illustrate the usage of QListArgColorPlot. First, we create a list of complex numbers.</p>
+ <table class="InCell">
+  <tr><td class="lab">In[55]:=</td><td class="Input"><div>
+     <a name="1926131477"></a>
+     <img src="Files/ArgColorPlot/I_82.png"
+         height="19"
+         width="254"
+         alt="Click for copyable input" />
+    </div><div id="i_81_out" class="IFL"></div></td></tr>
+ </table>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[56]:=</td><td class="Input"><div>
+      <a name="1323239061"></a>
+      <img src="Files/ArgColorPlot/I_84.png"
+          height="17"
+          width="146"
+          alt="Click for copyable input" />
+     </div><div id="i_83_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[56]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_18.png"
+          height="226"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="576771656"></a>If, like here, the complex values come from the discretization of a function of a real variable x, we want to have x-values on the horizontal axis, and not the index of the complex list. This can be done with the option QHorizontalRange which specifies the range of x-values on the horizontal axis:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[57]:=</td><td class="Input"><div>
+      <a name="60039834"></a>
+      <img src="Files/ArgColorPlot/I_86.png"
+          height="17"
+          width="379"
+          alt="Click for copyable input" />
+     </div><div id="i_85_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[57]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_19.png"
+          height="232"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="2071984284"></a>Here is another method to achieve a similar result:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[58]:=</td><td class="Input"><div>
+      <a name="245041436"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_88.png"
+          data-big="470 17"
+          data-small="470 17"
+          alt="Click for copyable input" />
+     </div><div id="i_87_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[58]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_20.png"
+          height="226"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1062714988"></a>We can also plot a part of the list, corresponding, for example, to the values in the sub-interval {-1,0} of the horizontal range {-2,2}:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[59]:=</td><td class="Input"><div>
+      <a name="429311217"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_90.png"
+          data-big="430 17"
+          data-small="221 35"
+          alt="Click for copyable input" />
+     </div><div id="i_89_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[59]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_21.png"
+          height="230"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1952558424"></a>If the &quot;sub-interval&quot; is larger than the horizontal range, the list will be padded with zeros:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[60]:=</td><td class="Input"><div>
+      <a name="951822361"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_92.png"
+          data-big="430 17"
+          data-small="221 35"
+          alt="Click for copyable input" />
+     </div><div id="i_91_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[60]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_22.png"
+          height="232"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="152785513"></a>If you want to combine a phase-colored plot with an ordinary plot of another function, you can use QCombinedPlot:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[61]:=</td><td class="Input"><div>
+      <a name="1623158826"></a>
+      <img src="Files/ArgColorPlot/I_94.png"
+          height="17"
+          width="304"
+          alt="Click for copyable input" />
+     </div><div id="i_93_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[61]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_23.png"
+          height="149"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1668806187"></a>There is also a &quot;ListPlot&quot;-version of QCombinedPlot, where a list of complex values is plotted together with an ordinary function:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[62]:=</td><td class="Input"><div>
+      <a name="1489155089"></a>
+      <img src="Files/ArgColorPlot/I_96.png"
+          height="35"
+          width="290"
+          alt="Click for copyable input" />
+     </div><div id="i_95_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[63]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_24.png"
+          height="223"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[64]:=</td><td class="Input"><div>
+      <a name="1308246759"></a>
+      <img src="Files/ArgColorPlot/I_98.png"
+          height="17"
+          width="282"
+          alt="Click for copyable input" />
+     </div><div id="i_97_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[64]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_25.png"
+          height="214"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[65]:=</td><td class="Input"><div>
+      <a name="52239396"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_100.png"
+          data-big="443 17"
+          data-small="234 35"
+          alt="Click for copyable input" />
+     </div><div id="i_99_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[65]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_26.png"
+          height="214"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1296596866"></a>Normally, in QArgColorPlot, the range between the x-axis and the graph of the function is filled with a color corresponding to the phase. But we can also use another horizontal line at height y=y0 by using the option QBottomLine-&gt;y0:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[66]:=</td><td class="Input"><div>
+      <a name="1386960753"></a>
+      <img src="Files/ArgColorPlot/I_102.png"
+          height="17"
+          width="322"
+          alt="Click for copyable input" />
+     </div><div id="i_101_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[66]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_27.png"
+          height="157"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1483911894"></a>This is useful, if we want to combine several ArgColorPlots in the same graphics:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[67]:=</td><td class="Input"><div>
+      <a name="1379609847"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_104.png"
+          data-big="505 39"
+          data-small="295 76"
+          alt="Click for copyable input" />
+     </div><div id="i_103_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[67]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_28.png"
+          height="156"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1664110834"></a>Some more options for use with QArgColorPlot:</p>
+ <p class="Text"><a name="2031252157"></a>QSquared-&gt;True plots the square of the curve instead of the absolute value:</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[68]:=</td><td class="Input"><div>
+      <a name="707466340"></a>
+      <img src="Files/ArgColorPlot/I_106.png"
+          height="17"
+          width="290"
+          alt="Click for copyable input" />
+     </div><div id="i_105_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[68]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_29.png"
+          height="157"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1179701281"></a>QShiftPlot-&gt;number performs a vertical shift of the whole plot by number.</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[69]:=</td><td class="Input"><div>
+      <a name="1670400663"></a>
+      <img src="Files/ArgColorPlot/I_108.png"
+          height="17"
+          width="379"
+          alt="Click for copyable input" />
+     </div><div id="i_107_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[69]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_30.png"
+          height="171"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <table class="InCell">
+  <tr><td class="lab">In[70]:=</td><td class="Input"><div>
+     <a name="1125063311"></a>
+     <img src="Files/ArgColorPlot/I_110.png"
+         height="17"
+         width="2"
+         alt="Click for copyable input" />
+    </div><div id="i_109_out" class="IFL"></div></td></tr>
+ </table>
+ <p class="Text"><a name="345556142"></a>QPlotDown-&gt;True lets the whole plot appear uside down.</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[71]:=</td><td class="Input"><div>
+      <a name="966297106"></a>
+      <img src="Files/ArgColorPlot/I_112.png"
+          height="17"
+          width="298"
+          alt="Click for copyable input" />
+     </div><div id="i_111_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[71]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_31.png"
+          height="149"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="26591546"></a>In quantum mechanics, a <span class="special-character DoubleStruckCapitalC">&#63398;</span><sup>2</sup>-valued functions is called a spinor function. The ArgColorPlot has a method to plot such functions by combining QArgColorPlots of the two component-functions. By default, the second component is plotted upside down and with less saturation:</p>
+ <div class="Program">
+  <pre>RM: QSpinorPlot does not add black boundary-lines for the second component. OK?</pre>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[72]:=</td><td class="Input"><div>
+      <a name="309553883"></a>
+      <img src="Files/ArgColorPlot/I_114.png"
+          height="67"
+          width="366"
+          alt="Click for copyable input" />
+     </div><div id="i_113_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[73]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_32.png"
+          height="152"
+          width="240"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="173835516"></a>Like the other commands, this command accepts options and allows a combination with an ordinary plot</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[74]:=</td><td class="Input"><div>
+      <a name="1075757492"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_116.png"
+          data-big="412 71"
+          data-small="318 89"
+          alt="Click for copyable input" />
+     </div><div id="i_115_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[75]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_33.png"
+          height="223"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[76]:=</td><td class="Input"><div>
+      <a name="163466141"></a>
+      <img src=""
+          data-src="Files/ArgColorPlot/I_118.png"
+          data-big="412 53"
+          data-small="318 71"
+          alt="Click for copyable input" />
+     </div><div id="i_117_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[77]=</td><td class="Output"><div class="output-image">
+      <img src="Files/ArgColorPlot/O_34.png"
+          height="223"
+          width="360"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+</div>
+</div><!-- /wrapper -->
+
+
+	
+</div>
+
+
+</body></html>

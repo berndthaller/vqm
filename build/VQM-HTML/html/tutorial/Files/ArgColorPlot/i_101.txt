@@ -1,0 +1,1 @@
+<pre name='i_101_in' id='i_101_in' class='IFT'>QArgColorPlot[Exp[I x - x^2],{x,-3,3}, QBottomLine-&gt;1/3]</pre><div class='IFU'><a name='1386960753'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-w71n1v</div>

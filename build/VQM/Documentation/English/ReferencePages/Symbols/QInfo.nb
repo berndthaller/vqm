@@ -1,0 +1,237 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7604,        228]
+NotebookOptionsPosition[      4465,        150]
+NotebookOutlinePosition[      6669,        208]
+CellTagsIndexPosition[      6585,        203]
+WindowTitle->QInfo
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["V Q M SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"VQM/ref/QInfo\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["VQM/ref/QInfo"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/VQM/ref/QInfo.html"], 
+               StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+           Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$8413], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], "VQM/ref/QInfo", 
+            ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["QInfo", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"QInfo", "[", "]"}]], "InlineFormula"],
+     " returns informations about the state of QuantumKernel.\nIt lists \
+informations about all TFunction and TOperator objects. Package: \
+VQM`QuantumKernel`."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1616838921],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2101159756],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QInfo", "[", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->289195529],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "}"}]}], "}"}]], "Output",
+ ImageSize->{82, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->1592680597]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"QInfo",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:VQM/guide/VQM", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 5, 5, 23, 32, 55.113085}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "VQM`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "V Q M Symbol", "language" -> "en", "paclet" -> "VQM", 
+    "status" -> "None", "summary" -> 
+    "QInfo[] returns informations about the state of QuantumKernel. It lists \
+informations about all TFunction and TOperator objects. Package: \
+VQM`QuantumKernel`.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "QInfo",
+     "titlemodifier" -> "", "windowtitle" -> "QInfo", "type" -> "Symbol", 
+    "uri" -> "VQM/ref/QInfo", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[3515, 104, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"51a69086-b07a-40ab-82fa-c4706e79a19a",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1616838921]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 6386, 196}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[577, 21, 2248, 53, 70, "AnchorBarGrid",ExpressionUUID->"f54f2e0f-b26e-4e81-8b62-19361d1da374",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2850, 78, 162, 6, 70, "ObjectNameGrid",ExpressionUUID->"6e453de6-80fc-4165-8c05-aa0c7366ed54"],
+Cell[3015, 86, 463, 13, 70, "Usage",ExpressionUUID->"1258abd7-deb7-4218-96e8-70e7855268b6",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3515, 104, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"51a69086-b07a-40ab-82fa-c4706e79a19a",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1616838921],
+Cell[CellGroupData[{
+Cell[3808, 118, 196, 6, 70, "ExampleSection",ExpressionUUID->"3a2f799a-024b-4fb7-87bf-5ff91538d15d",
+ CellID->2101159756],
+Cell[CellGroupData[{
+Cell[4029, 128, 96, 3, 70, "Input",ExpressionUUID->"509c1800-4fc9-4f7d-abeb-96eab58782c6",
+ CellID->289195529],
+Cell[4128, 133, 271, 10, 70, "Output",ExpressionUUID->"c586a93c-990a-4764-9096-ad9145b2bf85",
+ CellID->1592680597]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[4438, 148, 23, 0, 70, "FooterCell",ExpressionUUID->"78739e36-664d-464f-801c-54a23f8e027c"]
+}
+]
+*)
+
+(* End of internal cache information *)

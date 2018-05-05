@@ -1,0 +1,1 @@
+<pre name='i_9_in' id='i_9_in' class='IFT'>f[x_] := Exp[-x^2 + 2 I x]</pre><div class='IFU'><a name='702991358'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-lwttv0</div>

@@ -1,0 +1,2 @@
+<pre name='i_99_in' id='i_99_in' class='IFT'>QListCombinedPlot[{mytab, x^2/2 - 1/2}, {x, 0, 2}, 
+ QHorizontalRange -&gt; {-4, 4}]</pre><div class='IFU'><a name='52239396'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-5dygm</div>

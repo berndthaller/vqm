@@ -1,0 +1,1 @@
+<pre name='i_97_in' id='i_97_in' class='IFT'>QListCombinedPlot[{mytab, x^2/2 - 1/2}, {x, 0, 2}]</pre><div class='IFU'><a name='1308246759'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-vw6jx1</div>

@@ -1,0 +1,1 @@
+<pre name='i_87_in' id='i_87_in' class='IFT'>QListArgColorPlot[mytab, Axes-&gt;True, Ticks-&gt;{QNiceTicks[-2.,2.,0.01],Automatic}]</pre><div class='IFU'><a name='245041436'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-eb6dgu</div>

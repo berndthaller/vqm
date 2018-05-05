@@ -1,0 +1,4 @@
+<pre name='i_103_in' id='i_103_in' class='IFT'>Show[QArgColorPlot[Sin[x + I], {x, -3, 3}, QBottomLine -&gt; 1, 
+  Epilog -&gt; Line[{{-3, 1}, {3, 1}}]], 
+ QArgColorPlot[Cos[x + I] - E^(I Arg[Cos[x + I]]), {x, -3, 3}], 
+ PlotRange -&gt; {-0.2, 1.7}, Frame -&gt; True]</pre><div class='IFU'><a name='1379609847'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-w3n311</div>

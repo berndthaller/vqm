@@ -1,0 +1,19 @@
+<pre name='i_49_in' id='i_49_in' class='IFT'>fillit[xvars_, hues_, values_] :=
+    
+ Module[{nullv, xpts, valpts, lines, fills},
+        nullv = Table[0, {Length[xvars]}];
+  		xpts = {xvars, nullv} // Transpose;
+        valpts = {xvars, values} // Transpose;
+  		lines = Line[valpts];
+        fills =
+            {Drop[hues, -1],
+                  Map[Polygon,
+      					    { Drop[xpts, -1], Drop[valpts, -1], Drop[valpts, 1], 
+        Drop[xpts, 1]
+                                  } // Transpose
+                   ]
+              } // Transpose;
+        Show[Graphics[ {fills, lines} ], 
+   AspectRatio -&gt; (1/GoldenRatio)]
+     ]
+</pre><div class='IFU'><a name='511060668'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-iqj27y</div>
