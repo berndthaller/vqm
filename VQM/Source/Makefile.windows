@@ -29,11 +29,8 @@ BINARIES = QuantumKernel.exe
 
 all : ${BINARIES}
 
-QuantumKernel.exe: MathLinkGlue.o MathStubs_vqm.o TFunction.o TOperator.o MathLinkUtilities.o TDomain.o 
-	${CPP} ${EXTRA_CFLAGS} -I${INCDIR} MathLinkGlue.o MathStubs_vqm.o TFunction.o TOperator.o MathLinkUtilities.o -L${LIBDIR} -l${MLLIB} -o $@
-
-#QuantumKernel.exe: MathLinkGlue.o MathStubs_vqm.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o
-#	${CPP} ${EXTRA_CFLAGS} -I${INCDIR} MathLinkGlue.o MathStubs_vqm.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -l${MLLIB} -o $@
+QuantumKernel.exe: MathLinkGlue.o MathStubs_vqm.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o
+	${CPP} ${EXTRA_CFLAGS} -I${INCDIR} MathLinkGlue.o MathStubs_vqm.o TDirac3D.o TFunction.o TOperator.o TPauli3D.o TSchroedinger2D.o MathLinkUtilities.o TDirac2D.o TDomain.o TPauli2D.o TSchroedinger1D.o TSchroedinger3D.o -L${LIBDIR} -l${MLLIB} -o ../$@
 
 .cpp.o :
 	${CPP} -c -I${INCDIR} $<
