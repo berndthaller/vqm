@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8099,        228]
+NotebookDataLength[      8088,        227]
 NotebookOptionsPosition[      5603,        174]
-NotebookOutlinePosition[      7392,        216]
-CellTagsIndexPosition[      7349,        213]
+NotebookOutlinePosition[      7381,        215]
+CellTagsIndexPosition[      7338,        212]
 WindowTitle->ArgColorPlot
 WindowFrame->Normal*)
 
@@ -79,7 +79,7 @@ ArgColorPlotPackage.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$6832], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$6800], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "VQM/guide/ArgColorPlotPackage", ".html"]], None}]}]},
@@ -186,7 +186,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2018, 5, 5, 23, 32, 51.978981}", 
+   "built" -> "{2018, 5, 6, 22, 27, 52.8022361}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "VQM`", "keywords" -> {}, 
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "V Q M Guide", "language" -> "en", "paclet" -> "VQM", 
@@ -196,11 +196,10 @@ depending on a real variable x and fill the space between the plotted \
 function and the x-axis with a color corresponding to the argument Arg[f[x]]. \
 The saturation and brightness of the colors can be set using the options \
 QSaturation and QBrightness. ", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$6763, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$6733, "title" -> 
     "ArgColorPlot", "titlemodifier" -> "", "windowtitle" -> "ArgColorPlot", 
     "type" -> "Guide", "uri" -> "VQM/guide/ArgColorPlotPackage"}},
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
@@ -215,7 +214,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[584, 21, 3044, 74, 70, "AnchorBarGrid",ExpressionUUID->"aa70cbc9-8406-4f9d-ad4f-5036c5966187",
+Cell[584, 21, 3044, 74, 70, "AnchorBarGrid",ExpressionUUID->"59722cf3-5b6c-40a0-b30f-766962fd4a7d",
  CellID->1],
 Cell[CellGroupData[{
 Cell[3653, 99, 54, 1, 70, "GuideTitle",ExpressionUUID->"ce67548a-07dc-4039-9bd0-876ed0cc8042",
@@ -224,12 +223,12 @@ Cell[3710, 102, 377, 7, 70, "GuideAbstract",ExpressionUUID->"a70622d5-46cb-45eb-
  CellID->2001916300]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4124, 114, 137, 6, 70, "GuideReferenceSection",ExpressionUUID->"488c259b-26ae-485e-9fb1-bba7ba8f724f"],
-Cell[4264, 122, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"54b3dd7d-0b8e-444e-9d49-1977d70d0aaf"],
+Cell[4124, 114, 137, 6, 70, "GuideReferenceSection",ExpressionUUID->"85bdc955-e0b4-4fea-b0ba-64dda5798401"],
+Cell[4264, 122, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"d8f16670-c834-4b7f-8a55-bcc6666f8c4f"],
 Cell[4298, 124, 1263, 45, 70, "GuideText",ExpressionUUID->"80a7f857-8190-4eb5-9c78-8c0e42d25858",
  CellID->203374175]
 }, Open  ]],
-Cell[5576, 172, 23, 0, 70, "FooterCell",ExpressionUUID->"d0de6da6-5459-42ff-a089-801a788510d4"]
+Cell[5576, 172, 23, 0, 70, "FooterCell",ExpressionUUID->"052af414-2337-489f-b6cc-d6454b476add"]
 }
 ]
 *)

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7965,        222]
-NotebookOptionsPosition[      4566,        146]
-NotebookOutlinePosition[      6791,        205]
-CellTagsIndexPosition[      6748,        202]
+NotebookDataLength[      7942,        220]
+NotebookOptionsPosition[      4567,        146]
+NotebookOutlinePosition[      6768,        203]
+CellTagsIndexPosition[      6725,        200]
 WindowTitle->VQM Overview
 WindowFrame->Normal*)
 
@@ -60,7 +60,7 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9730], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$10027], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "tutorial/VQMOverview", ".html"]], None}]}]},
@@ -158,17 +158,16 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2018, 5, 5, 23, 33, 15.551225}", 
+   "built" -> "{2018, 5, 6, 22, 28, 25.9968143}", 
     "history" -> {"XX", "", "", ""}, "context" -> "System`", "keywords" -> {},
      "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
     True, "label" -> "Wolfram Language Overview", "language" -> "en", 
     "paclet" -> "Mathematica", "status" -> "None", "summary" -> 
     "ArgColorPlot QuantumKernel2D", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$9690, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$9987, "title" -> 
     "VQM Overview", "titlemodifier" -> "", "windowtitle" -> "VQM Overview", 
     "type" -> "Overview", "uri" -> "tutorial/VQMOverview"}},
-FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
-2018)",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -189,8 +188,7 @@ StyleDefinitions->Notebook[{
    Cell[
     StyleData["TutorialRelatedLinksSection"], 
     CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
-  FrontEndVersion -> 
-  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
+  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -204,26 +202,26 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[584, 21, 2281, 54, 70, "AnchorBarGrid",ExpressionUUID->"c1c98f33-965f-4faf-8124-99ca74e4bd01",
+Cell[584, 21, 2282, 54, 70, "AnchorBarGrid",ExpressionUUID->"c1249712-b0ce-48d9-9f90-cf7d8ea08348",
  CellID->1],
 Cell[CellGroupData[{
-Cell[2890, 79, 40, 0, 70, "TOCDocumentTitle",ExpressionUUID->"60f6a338-dd48-469b-874d-333b94a01142"],
-Cell[2933, 81, 66, 1, 70, "Section",ExpressionUUID->"0c11af7c-50b9-42ed-bce6-a54950d64c5b",
+Cell[2891, 79, 40, 0, 70, "TOCDocumentTitle",ExpressionUUID->"60f6a338-dd48-469b-874d-333b94a01142"],
+Cell[2934, 81, 66, 1, 70, "Section",ExpressionUUID->"0c11af7c-50b9-42ed-bce6-a54950d64c5b",
  CellID->216197966],
 Cell[CellGroupData[{
-Cell[3024, 86, 162, 4, 70, "TOCChapter",ExpressionUUID->"8f1d11de-3c28-4653-bdb3-2357f83ca4e0"],
+Cell[3025, 86, 162, 4, 70, "TOCChapter",ExpressionUUID->"8f1d11de-3c28-4653-bdb3-2357f83ca4e0"],
 Cell[CellGroupData[{
-Cell[3211, 94, 186, 5, 70, "TOCSection",ExpressionUUID->"ba675ff0-848c-41bd-acf1-7ea3cfcb409f"],
-Cell[3400, 101, 166, 4, 70, "TOCSubsection",ExpressionUUID->"b4a3271b-d442-4b8b-8671-256d38d18179"],
-Cell[3569, 107, 193, 5, 70, "TOCSubsection",ExpressionUUID->"d3c14a03-b6b3-4301-838a-7a0634856493"],
-Cell[3765, 114, 175, 4, 70, "TOCSubsection",ExpressionUUID->"d7ebd690-2bf2-4067-8672-fb084b74289c"]
+Cell[3212, 94, 186, 5, 70, "TOCSection",ExpressionUUID->"ba675ff0-848c-41bd-acf1-7ea3cfcb409f"],
+Cell[3401, 101, 166, 4, 70, "TOCSubsection",ExpressionUUID->"b4a3271b-d442-4b8b-8671-256d38d18179"],
+Cell[3570, 107, 193, 5, 70, "TOCSubsection",ExpressionUUID->"d3c14a03-b6b3-4301-838a-7a0634856493"],
+Cell[3766, 114, 175, 4, 70, "TOCSubsection",ExpressionUUID->"d7ebd690-2bf2-4067-8672-fb084b74289c"]
 }, Open  ]],
-Cell[3955, 121, 183, 5, 70, "TOCSection",ExpressionUUID->"77ef685f-ddd6-4949-b7dd-f69c36de2ed0"],
-Cell[4141, 128, 197, 5, 70, "TOCSection",ExpressionUUID->"d78ebc3d-6eee-47ac-bbf6-5384d3ee4ec1"]
+Cell[3956, 121, 183, 5, 70, "TOCSection",ExpressionUUID->"77ef685f-ddd6-4949-b7dd-f69c36de2ed0"],
+Cell[4142, 128, 197, 5, 70, "TOCSection",ExpressionUUID->"d78ebc3d-6eee-47ac-bbf6-5384d3ee4ec1"]
 }, Open  ]],
-Cell[4353, 136, 171, 5, 70, "TOCChapter",ExpressionUUID->"9db710ac-290c-44ae-95c7-a51b8d7be531"]
+Cell[4354, 136, 171, 5, 70, "TOCChapter",ExpressionUUID->"9db710ac-290c-44ae-95c7-a51b8d7be531"]
 }, Open  ]],
-Cell[4539, 144, 23, 0, 70, "FooterCell",ExpressionUUID->"89276a4e-532c-485f-99e6-cfcf53811eec"]
+Cell[4540, 144, 23, 0, 70, "FooterCell",ExpressionUUID->"3810da68-ba2c-469e-9597-248b7576250e"]
 }
 ]
 *)
