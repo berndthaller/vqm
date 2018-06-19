@@ -1,1 +1,1 @@
-<pre name='i_11_in' id='i_11_in' class='IFT'>xvalues = Table[x,{x,-3.,3.,.1}];</pre><div class='IFU'><a name='676630726'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-lg4tv8</div>
+<pre name='i_11_in' id='i_11_in' class='IFT'>yvalues = f[xvalues];</pre><div class='IFU'><a name='188430451'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-degz5h</div>

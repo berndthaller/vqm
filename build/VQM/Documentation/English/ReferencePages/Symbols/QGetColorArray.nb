@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8604,        233]
-NotebookOptionsPosition[      5055,        150]
-NotebookOutlinePosition[      7680,        214]
-CellTagsIndexPosition[      7554,        208]
+NotebookDataLength[      9706,        260]
+NotebookOptionsPosition[      5715,        165]
+NotebookOutlinePosition[      8596,        236]
+CellTagsIndexPosition[      8428,        229]
 WindowTitle->QGetColorArray
 WindowFrame->Normal*)
 
@@ -59,7 +59,7 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$7901], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$8956], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "VQM/ref/QGetColorArray", ".html"]], None}]}]},
@@ -126,10 +126,24 @@ Cell[TextData[{
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"?", "QGetColorArray"}]], "Input",
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<VQM`\>\"", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"?", "QGetColorArray"}]}], "Input",
  CellLabel->"In[1]:=",
  CellID->1395784636],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"QGetColorArray[f]. This returns an array \
+of\\nRGBcolor-values. These RGB values are obtained from the function-object \
+\\nf. Here 'f' refers to the data structure holding an array of complex \
+values.\\nThese values are transformed to colors via a colormap like the one \
+defined in VQM`ColorMaps`. \\nAn expression suitable as an argument for \
+QGetColorArray is returned by QNewFunction.\\nPackage: \
+VQM`QuantumKernel`.\"\>"], "Print", "PrintUsage",
+ CellTags->"Info113738437965-2213812",
+ CellID->1503627714],
 
 Cell[BoxData["\<\"QGetColorArray[f]. This returns an array \
 of\\nRGBcolor-values. These RGB values are obtained from the function-object \
@@ -142,6 +156,7 @@ VQM`QuantumKernel`.\"\>"], "Print", "PrintUsage",
  CellAutoOverwrite->False,
  CellTags->"Info373734546412-6817486",
  CellID->1623235266]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -163,7 +178,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2018, 5, 6, 22, 27, 54.1522980}", 
+   "built" -> "{2018, 6, 19, 23, 5, 0.667060}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "VQM`", "keywords" -> {}, 
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "V Q M Symbol", "language" -> "en", "paclet" -> "VQM", 
@@ -178,7 +193,8 @@ QNewFunction. Package: VQM`QuantumKernel`.", "synonyms" -> {},
     "windowtitle" -> "QGetColorArray", "type" -> "Symbol", "uri" -> 
     "VQM/ref/QGetColorArray"}},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -187,7 +203,8 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -196,45 +213,55 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[3806, 104, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"a5a3e90e-5b71-4e8f-95f0-2dbfabb69af7",
+  Cell[3806, 104, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"50179ea7-22de-411f-a9f3-c840ca40060c",
    CellTags->"PrimaryExamplesSection",
    CellID->1]},
+ "Info113738437965-2213812"->{
+  Cell[4518, 137, 533, 8, 70, "Print",ExpressionUUID->"e722b397-b1de-4cbe-9ec8-a554bbebc39b",
+   CellTags->"Info113738437965-2213812",
+   CellID->1503627714]},
  "Info373734546412-6817486"->{
-  Cell[4406, 133, 583, 10, 70, "Print",ExpressionUUID->"573fda83-d547-43d1-91e8-e977c83f9216",
+  Cell[5054, 147, 583, 10, 70, "Print",ExpressionUUID->"573fda83-d547-43d1-91e8-e977c83f9216",
    CellTags->"Info373734546412-6817486",
    CellID->1623235266]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 7172, 197},
- {"Info373734546412-6817486", 7370, 201}
+ {"PrimaryExamplesSection", 7855, 214},
+ {"Info113738437965-2213812", 8053, 218},
+ {"Info373734546412-6817486", 8244, 222}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[586, 21, 2271, 53, 70, "AnchorBarGrid",ExpressionUUID->"9b7ea386-82ac-4dc7-89df-b7ce1c97f9bd",
+Cell[586, 21, 2271, 53, 70, "AnchorBarGrid",ExpressionUUID->"5dc74775-cee8-4d0e-9568-3bf64f0ebb0b",
  CellID->1],
-Cell[2860, 76, 171, 6, 70, "ObjectNameGrid",ExpressionUUID->"b80adc35-7ab2-482d-851d-6733ff2b0db8"],
+Cell[2860, 76, 171, 6, 70, "ObjectNameGrid",ExpressionUUID->"1d9df8e1-ef04-472a-9334-76971b0f4d24"],
 Cell[3034, 84, 747, 16, 70, "Usage",ExpressionUUID->"8c973fdd-bd42-4877-84e4-fd49ccdf4e94",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[3806, 104, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"a5a3e90e-5b71-4e8f-95f0-2dbfabb69af7",
+Cell[3806, 104, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"50179ea7-22de-411f-a9f3-c840ca40060c",
  CellTags->"PrimaryExamplesSection",
  CellID->1],
 Cell[CellGroupData[{
-Cell[4090, 118, 187, 6, 70, "ExampleSection",ExpressionUUID->"42b9f0a8-53cb-47b8-8401-ae36d9c95466",
+Cell[4090, 118, 187, 6, 70, "ExampleSection",ExpressionUUID->"92eb034d-861f-43e5-94f4-6dc15d98d0c3",
  CellID->1],
 Cell[CellGroupData[{
-Cell[4302, 128, 101, 3, 70, "Input",ExpressionUUID->"896c12f8-c29e-41b9-8374-b92360cbb9f8",
+Cell[4302, 128, 191, 5, 70, "Input",ExpressionUUID->"896c12f8-c29e-41b9-8374-b92360cbb9f8",
  CellID->1395784636],
-Cell[4406, 133, 583, 10, 70, "Print",ExpressionUUID->"573fda83-d547-43d1-91e8-e977c83f9216",
+Cell[CellGroupData[{
+Cell[4518, 137, 533, 8, 70, "Print",ExpressionUUID->"e722b397-b1de-4cbe-9ec8-a554bbebc39b",
+ CellTags->"Info113738437965-2213812",
+ CellID->1503627714],
+Cell[5054, 147, 583, 10, 70, "Print",ExpressionUUID->"573fda83-d547-43d1-91e8-e977c83f9216",
  CellTags->"Info373734546412-6817486",
  CellID->1623235266]
 }, Open  ]]
 }, Open  ]]
+}, Open  ]]
 }, Open  ]],
-Cell[5028, 148, 23, 0, 70, "FooterCell",ExpressionUUID->"781f819b-e42a-412b-9ca9-79603635dcb3"]
+Cell[5688, 163, 23, 0, 70, "FooterCell",ExpressionUUID->"6e678e2e-ef02-41b9-9b70-d992b481999f"]
 }
 ]
 *)

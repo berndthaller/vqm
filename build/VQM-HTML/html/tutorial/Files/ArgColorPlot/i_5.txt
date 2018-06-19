@@ -1,3 +1,3 @@
-<pre name='i_5_in' id='i_5_in' class='IFT'>Manipulate[
- Plot[E^(-(x^2/2)), {x, -3, 3}, Filling -&gt; Axis, 
-  FillingStyle -&gt; Hue[c]], {{c, .42, &quot;color&quot;}, 0, 1}]</pre><div class='IFU'><a name='1079990870'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-r498ko</div>
+<pre name='i_5_in' id='i_5_in' class='IFT'>Plot[{x^2/18, Cos[x], Sin[x]}, {x, 0, 2 \[Pi]}, 
+ Filling -&gt; {2 -&gt; {{3}, {GrayLevel[0.3], GrayLevel[0.3]}}, 1 -&gt; Axis},
+  FillingStyle -&gt; {GrayLevel[.3], GrayLevel[.7]}]</pre><div class='IFU'><a name='631455207'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-kp8j8p</div>

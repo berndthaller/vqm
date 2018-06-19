@@ -1,1 +1,10 @@
-<pre name='i_77_in' id='i_77_in' class='IFT'>QArgColorPlot[E^(-I 6 x - x^2/2), {x, -4, 4}]</pre><div class='IFU'><a name='1372011227'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-wy48w9</div>
+<pre name='i_77_in' id='i_77_in' class='IFT'>Manipulate[
+ QArgColorPlot[E^(-I 6 x - x^2/2), {x, -4, 4}, 
+  PlotStyle -&gt; {Thickness[th], GrayLevel[0.5]}, QSaturation -&gt; sat, 
+  QBrightness -&gt; bri, PlotRange -&gt; {-0.2, 1.2}, Frame -&gt; True, 
+  Axes -&gt; {True, False}],
+ {{sat, 0.5, &quot;saturation&quot;}, 0, 1},
+ {{bri, 0.7, &quot;brightness&quot;}, 0, 1},
+ {{th, 0.025, &quot;thickness&quot;}, 0.001, 0.05},
+ Initialization :&gt; Needs[&quot;VQM`&quot;]
+ ]</pre><div class='IFU'><a name='499371276'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-ijljmm</div>

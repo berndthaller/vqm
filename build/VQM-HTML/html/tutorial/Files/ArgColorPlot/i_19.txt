@@ -1,1 +1,1 @@
-<pre name='i_19_in' id='i_19_in' class='IFT'>args = Arg[yvalues];</pre><div class='IFU'><a name='537767558'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-i6gid0</div>
+<pre name='i_19_in' id='i_19_in' class='IFT'>Hue[args/(2 Pi)]    //(Short[#,2]&amp;)</pre><div class='IFU'><a name='245826457'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-ecm66z</div>

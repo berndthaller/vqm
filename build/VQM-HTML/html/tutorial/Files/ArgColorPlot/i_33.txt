@@ -1,1 +1,1 @@
-<pre name='i_33_in' id='i_33_in' class='IFT'>xpoints = {xvalues, nullv}//Transpose;</pre><div class='IFU'><a name='1717553184'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-2ovesy</div>
+<pre name='i_33_in' id='i_33_in' class='IFT'>ypoints = {xvalues, absvals}//Transpose;</pre><div class='IFU'><a name='1807349354'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-36b1y0</div>

@@ -1,1 +1,1 @@
-<pre name='i_55_in' id='i_55_in' class='IFT'>f[x_] := Tan[x + 0.3 I]</pre><div class='IFU'><a name='2122527548'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-9dze0u</div>
+<pre name='i_55_in' id='i_55_in' class='IFT'>yvalues = Table[f[x],{x,-5.,5.,0.01}];</pre><div class='IFU'><a name='1469638919'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-yk9qxl</div>

@@ -1,6 +1,6 @@
 (* Paclet Info File *)
 
-(* created 2018/05/05*)
+(* created 2018/06/19*)
 
 Paclet[
     Name -> "VQM",
@@ -9,7 +9,9 @@ Paclet[
     Description -> "New Documentation for VQM",
     Extensions -> 
         {
-            {"Documentation", Language -> "English"}
+            {"Documentation", Resources -> 
+                {"Guides/VQM-Guide"}
+            , Language -> "English"}
         }
 ]
 

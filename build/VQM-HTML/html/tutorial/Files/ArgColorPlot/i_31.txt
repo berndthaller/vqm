@@ -1,1 +1,1 @@
-<pre name='i_31_in' id='i_31_in' class='IFT'>nullv = Table[0,{Length[xvalues]}];</pre><div class='IFU'><a name='949141061'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-pzdn7r</div>
+<pre name='i_31_in' id='i_31_in' class='IFT'>xpoints = {xvalues, nullv}//Transpose;</pre><div class='IFU'><a name='1717553184'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-2ovesy</div>

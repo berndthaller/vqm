@@ -1,1 +1,1 @@
-<pre name='i_43_in' id='i_43_in' class='IFT'>coloredpolys = {Drop[huevals,-1],polylist}//Transpose;</pre><div class='IFU'><a name='1042279383'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-ritx7d</div>
+<pre name='i_43_in' id='i_43_in' class='IFT'>Show[Graphics[coloredpolys],AspectRatio-&gt;(1/GoldenRatio)]</pre><div class='IFU'><a name='1432466139'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-xy4z8d</div>

@@ -1,1 +1,1 @@
-<pre name='i_37_in' id='i_37_in' class='IFT'>cornerpoints = {Drop[xpoints,-1], Drop[ypoints,-1], Drop[ypoints,1], Drop[xpoints,1]}//Transpose;</pre><div class='IFU'><a name='917276954'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-pgeppo</div>
+<pre name='i_37_in' id='i_37_in' class='IFT'>Short[cornerpoints,3]</pre><div class='IFU'><a name='2036147712'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-7yjzwy</div>

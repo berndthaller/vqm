@@ -1,1 +1,1 @@
-<pre name='i_27_in' id='i_27_in' class='IFT'>graphline = Line[{xvalues,absvals}//Transpose];</pre><div class='IFU'><a name='279273770'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-ewj3a0</div>
+<pre name='i_27_in' id='i_27_in' class='IFT'>Show[Graphics[graphline]]</pre><div class='IFU'><a name='2130740439'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-9ivf4p</div>

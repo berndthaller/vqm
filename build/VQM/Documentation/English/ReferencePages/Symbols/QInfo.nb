@@ -10,25 +10,24 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8713,        235]
-NotebookOptionsPosition[      5601,        159]
-NotebookOutlinePosition[      7779,        215]
-CellTagsIndexPosition[      7695,        210]
+NotebookDataLength[      7692,        230]
+NotebookOptionsPosition[      4554,        152]
+NotebookOutlinePosition[      6757,        210]
+CellTagsIndexPosition[      6673,        205]
 WindowTitle->QInfo
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[GridBox[{
-   {Cell["V Q M SYMBOL", "PacletNameCell",ExpressionUUID->
-     "484ae56a-7965-46e7-95ee-d6359285a192"], Cell[TextData[Cell[BoxData[
+   {Cell["V Q M SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
      ActionMenuBox[
       FrameBox[
        InterpretationBox[Cell[TextData[{
          "URL",
          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
           StripOnInput->False]
-        }],ExpressionUUID->"ceab4ace-53f0-4145-b4d1-6cd59e5ed8fb"],
+        }]],
         TextCell[
          Row[{"URL", 
            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
@@ -60,51 +59,45 @@ Cell[BoxData[GridBox[{
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$8381], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9434], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], "VQM/ref/QInfo", 
             ".html"]], None}]}]},
       Appearance->None,
       MenuAppearance->Automatic,
       MenuStyle->"URLMenu"]],
-     LineSpacing->{1.4, 0},ExpressionUUID->
-     "041d2b03-f76d-467a-b6fc-ddbe14d66c22"]], "AnchorBar",ExpressionUUID->
-     "312e5a0b-6c0f-4b54-8c57-b8aab4e370ee"]}
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
      Scaled[0.65], {
       Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
    "RowsIndexed" -> {}}},
- CellID->1,ExpressionUUID->"4744edb9-52c3-4ffa-b628-8b06f9bd57ec"],
+ CellID->1],
 
 Cell[CellGroupData[{
 
 Cell[TextData[{
- Cell["QInfo", "ObjectName",ExpressionUUID->
-  "30768fdc-2b0e-4098-b0b5-bb3240b05b28"],
+ Cell["QInfo", "ObjectName"],
  Cell[BoxData[
   TemplateBox[{8},
-   "Spacer1"]],ExpressionUUID->"16421b52-3d9e-4fcc-8165-2f325514be22"],
- Cell[BoxData[
- ""], "ObjectNameTranslation",ExpressionUUID->
-  "1ee1e38f-8456-4499-b744-bd37a0afff29"]
-}], "ObjectNameGrid",ExpressionUUID->"49641fbc-8518-40f7-818e-f58a772b5767"],
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
-      RowBox[{"QInfo", "[", "]"}]], "InlineFormula",ExpressionUUID->
-      "01010fc4-75a7-42d0-b4d7-7101ca5892b6"],
+      RowBox[{"QInfo", "[", "]"}]], "InlineFormula"],
      " returns informations about the state of QuantumKernel.\nIt lists \
 informations about all TFunction and TOperator objects. Package: \
 VQM`QuantumKernel`."
-    }],ExpressionUUID->"440cbbaa-7a58-4c6e-aa24-f18d563c8cc1"]}
+    }]]}
   }]], "Usage",
  GridBoxOptions->{
  GridBoxBackground->{
   "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
    "RowsIndexed" -> {}}},
- CellID->982511436,ExpressionUUID->"cffd4bb8-cff5-441b-a9b4-7fc8b7fda9ce"]
+ CellID->982511436]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -112,33 +105,33 @@ Cell[CellGroupData[{
 Cell[TextData[{
  Cell[BoxData[
   TemplateBox[{6},
-   "Spacer1"]],ExpressionUUID->"b772ec5c-20ea-4f0e-bade-d29828c3bf3e"],
+   "Spacer1"]]],
  "Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
- Cell["(1)", "ExampleCount",ExpressionUUID->
-  "17f233ad-d1f7-46d8-898d-39915daf4e69"]
+ Cell["(1)", "ExampleCount"]
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->13917927,ExpressionUUID->"6a7e625f-a9b4-4d66-8660-cbbaa60e6692"],
+ CellID->1401775386],
 
 Cell[CellGroupData[{
 
 Cell[TextData[{
  "Basic Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
- Cell["(1)", "ExampleCount",ExpressionUUID->
-  "1667fdcc-a888-48f6-8023-137a746d95e7"]
+ Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->274603790,ExpressionUUID->"b28ece29-7fc8-4007-8beb-9e66bb63352f"],
+ CellID->1743304912],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"QInfo", "[", "]"}]], "Input",
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<VQM`\>\"", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"QInfo", "[", "]"}]}], "Input",
  CellLabel->"In[1]:=",
- CellID->289195529,ExpressionUUID->"89929a50-f0ab-4819-b3f1-fa3853ba472c"],
+ CellID->289195529],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -146,16 +139,16 @@ Cell[BoxData[
    RowBox[{"{", "}"}], ",", 
    RowBox[{"{", "}"}], ",", 
    RowBox[{"{", "}"}]}], "}"}]], "Output",
- ImageSize->{82, 14},
+ ImageSize->{82, 16},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[1]=",
- CellID->1592680597,ExpressionUUID->"f2891fd2-055f-42fb-8726-c445221e35f7"]
+ CellID->730074998]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
-Cell[" ", "FooterCell",ExpressionUUID->"3a81f5ee-aa10-4c36-8d08-48544ecae24f"]
+Cell[" ", "FooterCell"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
@@ -172,7 +165,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2018, 5, 6, 22, 27, 55.3086518}", 
+   "built" -> "{2018, 6, 19, 23, 5, 1.834198}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "VQM`", "keywords" -> {}, 
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "V Q M Symbol", "language" -> "en", "paclet" -> "VQM", 
@@ -184,7 +177,8 @@ VQM`QuantumKernel`.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "QInfo",
     "uri" -> "VQM/ref/QInfo", "WorkflowDockedCell" -> ""}, 
   "SearchTextTranslated" -> "", "NewStyles" -> False},
 CellContext->"Global`",
-FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -193,7 +187,8 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", 
+  FrontEndVersion -> 
+  "11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, 2018)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -202,44 +197,43 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[4208, 111, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"6a7e625f-a9b4-4d66-8660-cbbaa60e6692",
+  Cell[3515, 104, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"81a41abe-fb5f-4118-96a1-9f3786f0dbe2",
    CellTags->"PrimaryExamplesSection",
-   CellID->13917927]}
+   CellID->1401775386]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 7498, 203}
+ {"PrimaryExamplesSection", 6474, 198}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[577, 21, 2541, 56, 55, "AnchorBarGrid",ExpressionUUID->"4744edb9-52c3-4ffa-b628-8b06f9bd57ec",
+Cell[577, 21, 2248, 53, 70, "AnchorBarGrid",ExpressionUUID->"a914dafc-02a1-4e03-9bf4-39569f14e15f",
  CellID->1],
 Cell[CellGroupData[{
-Cell[3143, 81, 390, 9, 52, "ObjectNameGrid",ExpressionUUID->"49641fbc-8518-40f7-818e-f58a772b5767"],
-Cell[3536, 92, 635, 14, 117, "Usage",ExpressionUUID->"cffd4bb8-cff5-441b-a9b4-7fc8b7fda9ce",
+Cell[2850, 78, 162, 6, 70, "ObjectNameGrid",ExpressionUUID->"36c0e73b-30ba-47a4-b91d-6846d58e20bc"],
+Cell[3015, 86, 463, 13, 70, "Usage",ExpressionUUID->"37023a02-5977-49aa-a624-3271e563d096",
  CellID->982511436]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4208, 111, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"6a7e625f-a9b4-4d66-8660-cbbaa60e6692",
+Cell[3515, 104, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"81a41abe-fb5f-4118-96a1-9f3786f0dbe2",
  CellTags->"PrimaryExamplesSection",
- CellID->13917927],
+ CellID->1401775386],
 Cell[CellGroupData[{
-Cell[4667, 126, 308, 7, 29, "ExampleSection",ExpressionUUID->"b28ece29-7fc8-4007-8beb-9e66bb63352f",
- CellID->274603790],
+Cell[3808, 118, 196, 6, 70, "ExampleSection",ExpressionUUID->"270fc707-5b56-4e51-a36d-80fbaba0a58f",
+ CellID->1743304912],
 Cell[CellGroupData[{
-Cell[5000, 137, 151, 3, 26, "Input",ExpressionUUID->"89929a50-f0ab-4819-b3f1-fa3853ba472c",
+Cell[4029, 128, 186, 5, 70, "Input",ExpressionUUID->"f8ed7c5c-6395-4dfd-8356-8978b0f8b9bc",
  CellID->289195529],
-Cell[5154, 142, 326, 10, 35, "Output",ExpressionUUID->"f2891fd2-055f-42fb-8726-c445221e35f7",
- CellID->1592680597]
+Cell[4218, 135, 270, 10, 70, "Output",ExpressionUUID->"18f6a7ab-61ba-4b43-8041-ff1b32f01538",
+ CellID->730074998]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[5519, 157, 78, 0, 41, "FooterCell",ExpressionUUID->"3a81f5ee-aa10-4c36-8d08-48544ecae24f"]
+Cell[4527, 150, 23, 0, 70, "FooterCell",ExpressionUUID->"58b41b1d-b1fd-4d3b-97d2-cc844795b745"]
 }
 ]
 *)
 
 (* End of internal cache information *)
-

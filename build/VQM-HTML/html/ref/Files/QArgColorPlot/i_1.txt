@@ -1,0 +1,3 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>Needs[&quot;VQM`&quot;];
+QArgColorPlot[Tan[x + 0.3 I], {x,-5,5}, Frame-&gt;True, Axes-&gt;{True,False},
+PlotRange-&gt;{-.5,4}]</pre><div class='IFU'><a name='307362805'></a>http://wolfram.com/xid/0pmqbe5vlvqf2zelk42a-fc94xz</div>

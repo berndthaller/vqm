@@ -1,11 +1,1 @@
-<pre name='i_61_in' id='i_61_in' class='IFT'>ListArgColorPlot6[list_] := 
-  With[{intfun = Interpolation@list}, 
-   Style[ListLinePlot[Abs@list, Filling -&gt; Bottom, 
-     ColorFunctionScaling -&gt; False,
-     Epilog -&gt; (FF = First[ListLinePlot[Abs@yvalues]]), 
-     Axes -&gt; False,
-     ColorFunction :&gt; 
-      Function[{x, y}, (Hue@(Mod[Arg[intfun[x]]/(2 Pi), 1]))]],
-    Antialiasing -&gt; True]];
-ListArgColorPlot6@yvalues
-</pre><div class='IFU'><a name='170049354'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-c3i07g</div>
+<pre name='i_61_in' id='i_61_in' class='IFT'>Needs[&quot;VQM`ArgColorPlot`&quot;]</pre><div class='IFU'><a name='1386409706'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-w7puu0</div>

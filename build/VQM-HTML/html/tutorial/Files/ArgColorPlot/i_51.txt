@@ -1,1 +1,8 @@
-<pre name='i_51_in' id='i_51_in' class='IFT'>fillit[{1,2,3,4,5}, Hue/@{0,.25,.5,.75,1}, {0,1,2,1,0}]</pre><div class='IFU'><a name='1880527849'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-5dwiuz</div>
+<pre name='i_51_in' id='i_51_in' class='IFT'>ListArgColorPlot[list_List] :=
+   Module[{xvars,hues,values},
+         xvars	= Range[Length[list]];
+         hues	= Hue[Arg[#]/(2 Pi)]&amp; /@ list;
+         values	= Abs[list];
+         fillit[xvars,hues,values]
+         ]
+</pre><div class='IFU'><a name='63501780'></a>http://wolfram.com/xid/0rjsbj9trwcd2al2vhe-bb3ckm</div>

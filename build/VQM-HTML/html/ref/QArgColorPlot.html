@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="UTF-8">
+
+<title>QArgColorPlot&mdash;Wolfram Language Documentation</title>
+<meta name="buildnumber" content="0000000" />
+<meta name="historydata" content="{0.0, 2018, , }" />
+<meta name="keywords" content=" QArgColorPlot, Quantum Mechanics" />
+
+<meta name="description" content="QArgColorPlot[f[x], {x, x0, x1}, opts] is used like the usual Plot command. It gives a two-dimensional plot of a complex-valued function f of a single real variable x in the range {x0,x1}. The plot shows the curve Abs[f] with area between the curve and the x-axis colored by Hue[Arg[f[x]]/(2 Pi)]. The default options of Plot are changed to Axes -&amp;gt; {True,None}, Frame -&amp;gt; True. Package: VQM`ArgColorPlot` QArgColorPlot" />
+<script language="JavaScript" type="text/javascript">baselang='QArgColorPlot';</script>
+<!--#include virtual="/common/includes/gl-head-includes.html"-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--[if IE]>
+<style type="text/css">
+/* doctype problem overrides */
+#menu .searchboxsub, #menu .searchboxsub-on { padding-bottom: 0; }
+#menu .headerSearchSubmit { margin-bottom: 4px; }
+
+/*
+.WRIdropMenu .WRImenuContents { margin-top: -2px; margin-left: -2px; }
+.WRIdropMenu .WRImenuContents .WRImenuContents { margin: 0; }
+*/
+</style>
+<![endif]-->
+<link rel="stylesheet" href="/webMathematica/Resources/Documentation/English/css/reference.css" />
+
+<script src="/webMathematica/Resources/Documentation/English/javascript/reference.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/documentation-search.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/faster-page-load.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/hyperlink-filter.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/brokenlinks.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/clipboard.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/image-swap.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="/2013/javascript/toggle-highlight.js"></script>
+</head>
+<body id="ref" class="function">
+<a name="top"></a>
+ 
+<div class="main-wrapper">
+<div class="outer-wrapper">
+
+<div class="wrapper mainOuter">
+    <div class="mainContent">
+ <div class="topContentWrap">
+  <div class="ribbonWrap">
+   <span class="ribbonOuter"><span class="ribbonInner">V Q M SYMBOL</span></span>
+  </div>
+  <ul class="dropdown">
+   <li>
+    <a href="#">See Also</a>
+    <ul class="sub_menu">
+     <li>
+      <a href="/language/VQM/ref/QListArgColorPlot.html"><span class="dropdownPad">QListArgColorPlot</span></a>
+     </li>
+     <li>
+      <a href="/language/VQM/ref/QCombinedPlot.html"><span class="dropdownPad">QCombinedPlot</span></a>
+     </li>
+     <li>
+      <a href="/language/VQM/ref/QListCombinedPlot.html"><span class="dropdownPad">QListCombinedPlot</span></a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#">Related Guides</a>
+    <ul class="sub_menu">
+     <li>
+      <a href="/language/VQM/tutorial/ArgColorPlot.html"><span class="dropdownPad">ArgColorPlot</span></a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <div class="clear"><!-- --></div>
+ </div>
+ <h1>QArgColorPlot</h1>
+ <img src="Files/QArgColorPlot/1.png"
+     height="47"
+     width="8"
+     alt="" />
+ <div class="ObjectNameTranslation"></div>
+ <div class="functionIntroWrap">
+  <div class="functionIntro">
+   <p><span class="IF"><span class="specialcharacters">QArgColorPlot<span class="openbracket">[</span>f<span class="openbracket">[</span>x<span class="closebracket">]</span><span class="comma">,</span><span class="openbrace">{</span>x<span class="comma">,</span>x0<span class="comma">,</span>x1<span class="closebrace">}</span><span class="comma">,</span>opts<span class="closebracket">]</span></span></span> is used like the usual Plot command. It gives a two-dimensional plot of a complex-valued function f of a single real variable x in the range {x0,x1}. The plot shows the curve Abs[f] with area between the curve and the x-axis colored by Hue[Arg[f[x]]/(2 Pi)]. The default options of Plot are changed to Axes <span class="special-character Rule">&#62754;</span> {True,None}, Frame <span class="special-character Rule">&#62754;</span> True. Package: VQM`ArgColorPlot`<br />QArgColorPlot</p>
+  </div>
+ </div>
+ <div class="expandWrap"
+     id="Examples">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#">Examples</a><a class="collapse" title="hide" href="#">Examples</a><a class="all opener" title="open all" href="#"><span>open all</span></a><a class="all closer hide" title="close all" href="#"><span>close all</span></a></h2>
+   <div class="expanded">
+    <div class="expandSubWrap">
+     <div class="expandSubOuter">
+      <h3 class="expandSubInner"><a class="expand hide" href="#" title="show">Basic Examples<span class="special-character NonBreakingSpace">&#160;</span><span class="special-character NonBreakingSpace">&#160;</span><span>(1)</span></a><a class="collapse" href="#" title="hide">Basic Examples<span class="special-character NonBreakingSpace">&#160;</span><span class="special-character NonBreakingSpace">&#160;</span><span>(1)</span></a></h3>
+      <div class="expanded">
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[1]:=</td><td class="Input"><div>
+            <a name="307362805"></a>
+            <img src=""
+                data-src="Files/QArgColorPlot/I_2.png"
+                data-big="411 53"
+                data-small="411 53"
+                alt="Click for copyable input" />
+           </div><div id="i_1_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[1]=</td><td class="Output"><div class="output-image">
+            <img src="Files/QArgColorPlot/O_1.png"
+                height="163"
+                width="240"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="toplink">
+     <a href="#top">Top</a>
+    </div>
+    <div class="clear"><!-- --></div>
+   </div>
+  </div>
+ </div>
+ <div class="expandWrap"
+     id="SeeAlso">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#">See Also</a><a class="collapse" title="hide" href="#">See Also</a></h2>
+   <div class="expanded">
+    <p class="inlineFunctionList"><span class="IF"><a class="package-symbol" href="../ref/QListArgColorPlot.html">QListArgColorPlot</a></span><span class="special-character NonBreakingSpace">&#160;</span><span class="inlineSeparator"><img src="../images/mathematicaImages/bullet.gif" style="vertical-align:middle;" width="4" height="4" alt="bullet" title="bullet" /></span> <span class="IF"><a class="package-symbol" href="../ref/QCombinedPlot.html">QCombinedPlot</a></span><span class="special-character NonBreakingSpace">&#160;</span><span class="inlineSeparator"><img src="../images/mathematicaImages/bullet.gif" style="vertical-align:middle;" width="4" height="4" alt="bullet" title="bullet" /></span> <span class="IF"><a class="package-symbol" href="../ref/QListCombinedPlot.html">QListCombinedPlot</a></span></p>
+   </div>
+  </div>
+ </div>
+ <div class="expandWrap"
+     id="RelatedGuides">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#">Related Guides</a><a class="collapse" title="hide" href="#">Related Guides</a></h2>
+   <div class="expanded">
+    <ul class="functionList">
+     <li>
+      <a name="1501196610"></a>
+      <a class="package-symbol" href="../tutorial/ArgColorPlot.html">ArgColorPlot</a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+</div><!-- /wrapper -->
+
+	
+</div>
+
+
+</body></html>
