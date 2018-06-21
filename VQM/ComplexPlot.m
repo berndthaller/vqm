@@ -65,12 +65,16 @@ Off[General::"unfl"];
 Off[General::"munfl"];
 
 Off[General::spell1,General::spell];
+Off[Arg::"indet" ]; (* RM: just for Arg[ComplexInfinity] showing up in QListComplexDensityPlot exampless*)
+Off[Raster::matrix]; (* RMTODO: where exactly does this show up? *)
 
 (*-----------------------------------*)
 BeginPackage[
     "VQM`ComplexPlot`",			(* package Context *)
+    {
 	"VQM`ColorMaps`",
     "VQM`ArgColorPlot`"		(* needed for QNiceTicks *)
+    }
     ];				
 (*-----------------------------------*)
 
@@ -657,7 +661,11 @@ If[TrueQ[newcolorfunctionflag],
 (* ------- QComplexContourPlot ------- *)
 
 Options[QComplexContourPlot]=
-    Join[myoptions, {Antialiasing -> False},
+    Join[myoptions, 
+(* RM20180620: change to True by default *)
+(*    	{Antialiasing -> False}*)
+    	{Antialiasing -> True}
+    	,
     Options[ContourPlot]]/. (ColorFunction -> _) :>
     (ColorFunction -> (Hue[Mod[#,1],.1,1,0]&) );
 
@@ -667,16 +675,21 @@ QComplexContourPlot[func_,
         {x_Symbol,xmin_,xmax_}, {y_Symbol,ymin_,ymax_},
         opts___?OptionQ]:=
 Module[{gr1,gr2,antial},
-    If[TrueQ[Antialiasing /. Flatten[{opts}] /. Options[QComplexContourPlot]],
-       antial = Identity,
-       antial = Style[#, Antialiasing -> False]&
+    If[TrueQ[Antialiasing /. Flatten[{opts}] /. Options[QComplexContourPlot]]
+    	, antial = Style[#, Antialiasing -> True]&
+    	, antial = Identity
       ];
     gr1=QComplexDensityPlot[func,{x,xmin,xmax},{y,ymin,ymax},
         Mesh->False, PlotRange->All, opts];
-    gr2=ContourPlot @@ {Abs[func], {x,xmin,xmax}, {y,ymin,ymax},
-        ContourShading->False,
-        FilterRules[Flatten[{opts}], Options[ContourPlot]] };
-   antial @ Show[gr1,gr2,PlotRange -> All, FilterRules[{opts}, Options@Graphics]]
+    gr2=ContourPlot @@  
+    ( 
+    	{
+    	Abs[func], {x,xmin,xmax}, {y,ymin,ymax},
+        (*ContourShading->False,*)
+        FilterRules[Flatten[{opts}], Options[ContourPlot]] 
+    }
+    );
+   antial @ Show[gr1,gr2, FilterRules[{opts}, Options@Graphics], PlotRange -> All]
 ]/; And @@ NumericQ /@ {xmin,xmax,ymin,ymax}
 
 
@@ -686,7 +699,7 @@ Options[QListComplexContourPlot]=
     Join[myoptions,Options[ListContourPlot]];
 
 QListComplexContourPlot[array_,opts___?OptionQ]:=
-	Module[{gr1,gr2,dims=Dimensions[array],datran,epi,ep,
+	Module[{(*gr1,*)gr2,dims=Dimensions[array],datran,epi,ep,
 		ops=JoinOptions[Flatten[{opts}],Options[QListComplexContourPlot]]},
         {datran,epi}={DataRange,Epilog}/.{ops};
         If[ datran === Automatic,
