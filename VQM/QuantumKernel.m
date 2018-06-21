@@ -217,9 +217,7 @@ Begin["`Private`"];
 SetDirectory @ DirectoryName[$InputFileName];
 *)
 
-	QuantumLink = 
-		Install[
-			FileNameJoin[{DirectoryName[$InputFileName],#}]&@
+quantumExe = FileNameJoin[{DirectoryName[$InputFileName],#}]&@
 			Which[
 (* RM: fresh compiled *)
 				$SystemID === "Linux",
@@ -233,7 +231,16 @@ SetDirectory @ DirectoryName[$InputFileName];
 (* RM: fresh compiled *)
  				$OperatingSystem === "Windows",
                     "QuantumKernel.exe"
-                             ]
+  ];
+
+(* Since iCloudDrive might change the executable bit on OSX, do: *)
+If[$OperatingSystem === "MacOSX",
+   RunProcess[$SystemShell, All, "chmod +x " <> quantumExe]
+];
+
+	QuantumLink = 
+		Install[
+			quantumExe
 		];
 (* RM2018: because of MacOSX compiler trouble, do: *)
 QGetArray[ arg_ ] := ArrayReshape[ QGetList[arg], Reverse @ QGetFunctionInfo @ arg ]

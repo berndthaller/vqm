@@ -60,7 +60,7 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$11114], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$13343], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "tutorial/VQMOverview", ".html"]], None}]}]},
@@ -158,13 +158,13 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2018, 6, 19, 23, 5, 19.398767}", 
+   "built" -> "{2018, 6, 21, 18, 19, 2.919323}", 
     "history" -> {"XX", "", "", ""}, "context" -> "System`", "keywords" -> {},
      "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
     True, "label" -> "Wolfram Language Overview", "language" -> "en", 
     "paclet" -> "Mathematica", "status" -> "None", "summary" -> 
     "ArgColorPlot QuantumKernel2D", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$11074, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$13303, "title" -> 
     "VQM Overview", "titlemodifier" -> "", "windowtitle" -> "VQM Overview", 
     "type" -> "Overview", "uri" -> "tutorial/VQMOverview"}},
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
@@ -204,7 +204,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[584, 21, 2282, 54, 70, "AnchorBarGrid",ExpressionUUID->"f8f79105-b72e-405b-a2d4-ab0daeb887d3",
+Cell[584, 21, 2282, 54, 70, "AnchorBarGrid",ExpressionUUID->"680d3618-82b4-42bd-907e-0b4bdcb47e8c",
  CellID->1],
 Cell[CellGroupData[{
 Cell[2891, 79, 40, 0, 70, "TOCDocumentTitle",ExpressionUUID->"60f6a338-dd48-469b-874d-333b94a01142"],
@@ -223,7 +223,7 @@ Cell[4142, 128, 197, 5, 70, "TOCSection",ExpressionUUID->"d78ebc3d-6eee-47ac-bbf
 }, Open  ]],
 Cell[4354, 136, 171, 5, 70, "TOCChapter",ExpressionUUID->"9db710ac-290c-44ae-95c7-a51b8d7be531"]
 }, Open  ]],
-Cell[4540, 144, 23, 0, 70, "FooterCell",ExpressionUUID->"c9bf84ed-3a51-4c0f-9905-80a46eb7465f"]
+Cell[4540, 144, 23, 0, 70, "FooterCell",ExpressionUUID->"9ca7e832-75d6-4d9b-a204-b56609400289"]
 }
 ]
 *)

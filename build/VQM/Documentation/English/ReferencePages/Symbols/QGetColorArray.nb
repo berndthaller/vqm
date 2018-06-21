@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9706,        260]
+NotebookDataLength[      9708,        260]
 NotebookOptionsPosition[      5715,        165]
-NotebookOutlinePosition[      8596,        236]
-CellTagsIndexPosition[      8428,        229]
+NotebookOutlinePosition[      8598,        236]
+CellTagsIndexPosition[      8430,        229]
 WindowTitle->QGetColorArray
 WindowFrame->Normal*)
 
@@ -59,7 +59,7 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$8956], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9074], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "VQM/ref/QGetColorArray", ".html"]], None}]}]},
@@ -178,7 +178,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2018, 6, 19, 23, 5, 0.667060}", 
+   "built" -> "{2018, 6, 21, 18, 18, 13.213015}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "VQM`", "keywords" -> {}, 
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "V Q M Symbol", "language" -> "en", "paclet" -> "VQM", 
@@ -213,7 +213,7 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[3806, 104, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"50179ea7-22de-411f-a9f3-c840ca40060c",
+  Cell[3806, 104, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"5ef9d20d-0518-45ec-81c7-1a8ccbc6145d",
    CellTags->"PrimaryExamplesSection",
    CellID->1]},
  "Info113738437965-2213812"->{
@@ -228,24 +228,24 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 7855, 214},
- {"Info113738437965-2213812", 8053, 218},
- {"Info373734546412-6817486", 8244, 222}
+ {"PrimaryExamplesSection", 7857, 214},
+ {"Info113738437965-2213812", 8055, 218},
+ {"Info373734546412-6817486", 8246, 222}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[586, 21, 2271, 53, 70, "AnchorBarGrid",ExpressionUUID->"5dc74775-cee8-4d0e-9568-3bf64f0ebb0b",
+Cell[586, 21, 2271, 53, 70, "AnchorBarGrid",ExpressionUUID->"f54a0bde-9eed-4c95-8319-0b07dd45daf8",
  CellID->1],
-Cell[2860, 76, 171, 6, 70, "ObjectNameGrid",ExpressionUUID->"1d9df8e1-ef04-472a-9334-76971b0f4d24"],
+Cell[2860, 76, 171, 6, 70, "ObjectNameGrid",ExpressionUUID->"bba0564b-0d24-4193-9340-d9b82b0a9b2d"],
 Cell[3034, 84, 747, 16, 70, "Usage",ExpressionUUID->"8c973fdd-bd42-4877-84e4-fd49ccdf4e94",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[3806, 104, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"50179ea7-22de-411f-a9f3-c840ca40060c",
+Cell[3806, 104, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"5ef9d20d-0518-45ec-81c7-1a8ccbc6145d",
  CellTags->"PrimaryExamplesSection",
  CellID->1],
 Cell[CellGroupData[{
-Cell[4090, 118, 187, 6, 70, "ExampleSection",ExpressionUUID->"92eb034d-861f-43e5-94f4-6dc15d98d0c3",
+Cell[4090, 118, 187, 6, 70, "ExampleSection",ExpressionUUID->"a3defc2f-a776-470d-a9b1-906a2edf2c51",
  CellID->1],
 Cell[CellGroupData[{
 Cell[4302, 128, 191, 5, 70, "Input",ExpressionUUID->"896c12f8-c29e-41b9-8374-b92360cbb9f8",
@@ -261,7 +261,7 @@ Cell[5054, 147, 583, 10, 70, "Print",ExpressionUUID->"573fda83-d547-43d1-91e8-e9
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[5688, 163, 23, 0, 70, "FooterCell",ExpressionUUID->"6e678e2e-ef02-41b9-9b70-d992b481999f"]
+Cell[5688, 163, 23, 0, 70, "FooterCell",ExpressionUUID->"610b5da1-6a13-4b7b-b5d5-844d01843d54"]
 }
 ]
 *)

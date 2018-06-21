@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7692,        230]
-NotebookOptionsPosition[      4554,        152]
-NotebookOutlinePosition[      6757,        210]
-CellTagsIndexPosition[      6673,        205]
+NotebookDataLength[      7687,        230]
+NotebookOptionsPosition[      4551,        152]
+NotebookOutlinePosition[      6755,        210]
+CellTagsIndexPosition[      6671,        205]
 WindowTitle->QInfo
 WindowFrame->Normal*)
 
@@ -59,7 +59,7 @@ Cell[BoxData[GridBox[{
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9434], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9552], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], "VQM/ref/QInfo", 
             ".html"]], None}]}]},
@@ -112,7 +112,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->1401775386],
+ CellID->183358350],
 
 Cell[CellGroupData[{
 
@@ -122,7 +122,7 @@ Cell[TextData[{
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->1743304912],
+ CellID->64755005],
 
 Cell[CellGroupData[{
 
@@ -165,7 +165,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2018, 6, 19, 23, 5, 1.834198}", 
+   "built" -> "{2018, 6, 21, 18, 18, 14.545030}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "VQM`", "keywords" -> {}, 
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "V Q M Symbol", "language" -> "en", "paclet" -> "VQM", 
@@ -197,41 +197,41 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[3515, 104, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"81a41abe-fb5f-4118-96a1-9f3786f0dbe2",
+  Cell[3515, 104, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"4692ba88-e68b-422a-a8fd-2b78b0a3dfe7",
    CellTags->"PrimaryExamplesSection",
-   CellID->1401775386]}
+   CellID->183358350]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 6474, 198}
+ {"PrimaryExamplesSection", 6473, 198}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[577, 21, 2248, 53, 70, "AnchorBarGrid",ExpressionUUID->"a914dafc-02a1-4e03-9bf4-39569f14e15f",
+Cell[577, 21, 2248, 53, 70, "AnchorBarGrid",ExpressionUUID->"b1839420-2b03-4ccb-8659-925b6a250e0c",
  CellID->1],
 Cell[CellGroupData[{
-Cell[2850, 78, 162, 6, 70, "ObjectNameGrid",ExpressionUUID->"36c0e73b-30ba-47a4-b91d-6846d58e20bc"],
-Cell[3015, 86, 463, 13, 70, "Usage",ExpressionUUID->"37023a02-5977-49aa-a624-3271e563d096",
+Cell[2850, 78, 162, 6, 70, "ObjectNameGrid",ExpressionUUID->"50331c28-be0e-40dc-bb94-42b54fc61b41"],
+Cell[3015, 86, 463, 13, 70, "Usage",ExpressionUUID->"56a9c595-6cb8-40c5-8800-9b1271db0897",
  CellID->982511436]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3515, 104, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"81a41abe-fb5f-4118-96a1-9f3786f0dbe2",
+Cell[3515, 104, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"4692ba88-e68b-422a-a8fd-2b78b0a3dfe7",
  CellTags->"PrimaryExamplesSection",
- CellID->1401775386],
+ CellID->183358350],
 Cell[CellGroupData[{
-Cell[3808, 118, 196, 6, 70, "ExampleSection",ExpressionUUID->"270fc707-5b56-4e51-a36d-80fbaba0a58f",
- CellID->1743304912],
+Cell[3807, 118, 194, 6, 70, "ExampleSection",ExpressionUUID->"ae5b4e08-db0c-4d6a-bd45-44d0ffd5a8e7",
+ CellID->64755005],
 Cell[CellGroupData[{
-Cell[4029, 128, 186, 5, 70, "Input",ExpressionUUID->"f8ed7c5c-6395-4dfd-8356-8978b0f8b9bc",
+Cell[4026, 128, 186, 5, 70, "Input",ExpressionUUID->"b93ef18f-990a-4d51-acac-610397ae5784",
  CellID->289195529],
-Cell[4218, 135, 270, 10, 70, "Output",ExpressionUUID->"18f6a7ab-61ba-4b43-8041-ff1b32f01538",
+Cell[4215, 135, 270, 10, 70, "Output",ExpressionUUID->"43d26709-eef4-4480-ba58-b6c99acc6fbf",
  CellID->730074998]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[4527, 150, 23, 0, 70, "FooterCell",ExpressionUUID->"58b41b1d-b1fd-4d3b-97d2-cc844795b745"]
+Cell[4524, 150, 23, 0, 70, "FooterCell",ExpressionUUID->"54c506f0-a0e4-420b-b24f-27340665b6ed"]
 }
 ]
 *)
