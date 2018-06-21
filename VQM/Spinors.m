@@ -49,8 +49,9 @@ Off[General::spell1,General::spell];
 (*-----------------------------------*)
 BeginPackage[
 	"VQM`Spinors`",
-	"VQM`VisualizeVector`",
+	{"VQM`VisualizeVector`",
 	"VQM`ColorMaps`"
+	}
 	];
 (*-----------------------------------*)
 
