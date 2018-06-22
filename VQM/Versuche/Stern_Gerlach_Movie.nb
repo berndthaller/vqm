@@ -1,0 +1,577 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24166,        569]
+NotebookOptionsPosition[     16713,        454]
+NotebookOutlinePosition[     17068,        470]
+CellTagsIndexPosition[     17025,        467]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Spinors in a Stern-Gerlach device", "Title",ExpressionUUID->"981f6590-2ea2-4972-98fd-5f254a3f1c0d"],
+
+Cell["Author: Bernd Thaller", "Subsection",ExpressionUUID->"93daeeab-5bd6-4693-9968-c5cc88f8b2cb"],
+
+Cell["\<\
+Source: Advanced Visual Quantum Mechanics. Springer-Verlag, New York 2004\
+\>", "Subsection",ExpressionUUID->"818f67a1-9523-42b7-9eb3-f3b0a33eb7c3"],
+
+Cell["Topic: CD 3.12.1", "Subsection",ExpressionUUID->"1fe1f837-9a71-4a67-a185-3e5e8b7877bf"],
+
+Cell["QuickTime Movie Files: 12a.mov", "Subsection",ExpressionUUID->"f29323a4-26ae-43db-a1e6-c48a3711b266"],
+
+Cell[CellGroupData[{
+
+Cell["Abstract", "Subsection",ExpressionUUID->"caaf3c8a-4a62-4f22-91c6-2adfe1b6c890"],
+
+Cell["\<\
+Wave packet moving through a Stern-Gerlach apparatus. Visualization of the \
+spin via colors.\
+\>", "Text",ExpressionUUID->"7c6274e8-a9af-4baa-aba4-7388db5e150a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Initialize notebook", "Section",ExpressionUUID->"ac5eb417-b29a-454c-bda2-46cb348bb9e9"],
+
+Cell[TextData[{
+ "This notebook uses an external C++ program for the numerical integration of \
+the two-dimensional Schr\[ODoubleDot]dinger equation. It is assumed that the \
+application \"QuantumKernel\" is installed in the AddOns/Applications \
+directory\n\n",
+ StyleBox["Warning",
+  FontWeight->"Bold"],
+ ": This notebook takes a long time to execute even on fast computers."
+}], "Text",ExpressionUUID->"f2b6ee4a-310b-4813-9214-c7dbb5c4261a"],
+
+Cell["Load package definitions", "Text",ExpressionUUID->"8f6e64de-8beb-44ee-bcb6-940fa9d89f94"],
+
+Cell["<<VQM`", "Input",
+ CellLabel->"In[50]:=",ExpressionUUID->"7ee77dfe-fd3f-4740-ad7b-19eaf133a45a"],
+
+Cell["Disable error messages after saving the current state:", "Text",ExpressionUUID->"ea5d6995-7acc-4aa5-be52-4eaa63a71d4f"],
+
+Cell["Clear the symbols used by this notebook", "Text",ExpressionUUID->"cc23e1d4-f6bb-4f22-bc37-2164b61da565"],
+
+Cell["\<\
+ClearAll[
+a, arrays, a$, charge, domain, domArray, domObj, dotheplot, dt, dx, dx$, f,
+fractal, function, f$, graphiccommands, HDown, HUp, kx, ky, maskfnc, mass,
+mode, mom, n, nullArray, numleft, numright, operator, ordr, plotleft,
+plotPot, plotright, pos, potDown, potDownArray, potDownObj,
+potgraphiccommands, potUp, potUpArray, potUpObj, psi0, psiDown, psiUp,
+qparams, qparams$, reps, scalar, skipfac, slice, steps, T, timestep, units,
+vector, wave, window, x, x0, x$, y, y0, y$]\
+\>", "Input",
+ CellLabel->"In[51]:=",ExpressionUUID->"c338563c-bf17-4af8-b037-c0e73fd04e67"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parameters", "Section",ExpressionUUID->"b275415b-573c-4da5-9cbc-e801be2ff1e4"],
+
+Cell["\<\
+The space region for the plot and for the numerical computation and the space \
+discretization are defined by\
+\>", "Text",ExpressionUUID->"55d662b3-da61-4146-9556-79a8d1a2c18a"],
+
+Cell["\<\
+numleft={-11.,-7.};
+numright = {12.,7.};   (* numerical region *)\
+\>", "Input",
+ CellLabel->"In[52]:=",ExpressionUUID->"50fa835c-8d25-4a81-ad37-36c1b9b249fb"],
+
+Cell["\<\
+plotleft= {-8.,-6.0};
+plotright = {9.,6.0};   (* plot region *)\
+\>", "Input",
+ CellLabel->"In[54]:=",ExpressionUUID->"d55da8d9-3528-4740-a4b8-acb448b7bd36"],
+
+Cell["\<\
+dx = 0.03;             (* discretization in space *)
+skipfac = {2,2};\
+\>", "Input",
+ CellLabel->"In[56]:=",ExpressionUUID->"350a9dae-5c82-485c-bb2f-16755bf262fa"],
+
+Cell["\<\
+skipfac other than {1,1} indicates that the numerical computation is done on \
+a finer grid than the plot of the result.
+E.g., skipfac = {2,2} means that only every second numerical value is plotted.
+
+The utility functions in the package QGraphics2D.m expect the parameters \
+above in form of the following list.\
+\>", "Text",ExpressionUUID->"ed16f5f9-ab1c-4046-8a92-870da253069a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"qparams", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "dx", ",", "numleft", ",", "numright", ",", "plotleft", ",", "plotright", 
+     ",", "skipfac"}], "}"}]}], ";"}]], "Input",
+ CellLabel->"In[58]:=",ExpressionUUID->"adebae4e-ce90-4203-a96e-d4b0d42b8be4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Define the wave function", "Section",ExpressionUUID->"56b5187c-0c8c-4393-9a27-bc65d37a0f2c"],
+
+Cell["This is a Gaussian wave packet in 2D:", "Text",ExpressionUUID->"6869eeca-d73e-46aa-8a98-aaa368619349"],
+
+Cell["\<\
+wave[x0_,y0_,kx_,ky_,a_] := Compile @@ {{x,y},
+   QGaussian2D[x,y,{x0,y0},{kx,ky},{a,a}] }\
+\>", "Input",
+ CellLabel->"In[59]:=",ExpressionUUID->"dce1ae28-6696-43ac-80ca-04d5986e1163"],
+
+Cell["We use it to define a wave packet in two dimensions", "Text",ExpressionUUID->"cdde0de6-b267-4765-9b28-697e5730b0eb"],
+
+Cell["\<\
+pos={-7.5,0.};          (* average position at t=0 *)
+mom={15.,0.};           (* initial average momentum *)
+a=2.;\t\t\t\t\t(* initial shape of Gaussian *)\
+\>", "Input",
+ CellLabel->"In[60]:=",ExpressionUUID->"acc8a176-fcb9-4768-b247-f57f162ae74c"],
+
+Cell["\<\
+Generate a table of function values from the initial function:\
+\>", "Text",ExpressionUUID->"8b8e3ed5-034c-4a18-a731-67ce5666136a"],
+
+Cell["f = wave[pos[[1]], pos[[2]], mom[[1]], mom[[2]], a];", "Input",
+ CellLabel->"In[63]:=",ExpressionUUID->"33bdeac2-c2e7-4836-b3ee-24f10de8799a"],
+
+Cell["psi0 = QMakeTable[f, QParameters->qparams];", "Input",
+ CellLabel->"In[64]:=",ExpressionUUID->"2de346f6-db2b-4cf6-8d1a-a65f46d9dd70"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Domain mask", "Section",ExpressionUUID->"8c1b1d89-37a3-4566-922c-837a3907909f"],
+
+Cell["\<\
+The quantum kernel takes the values of psi at the borders of the domain mask \
+as a boundary condition. These values are approximately zero, because the \
+initial wave packet is a Gaussian which is well localized sufficiently far \
+away from the walls.
+Forbidden region: mask function = -1, allowed region: mask function = 1.\
+\>", "Text",ExpressionUUID->"8d81c0a4-d693-4dad-9689-4b94fe7a1660"],
+
+Cell["maskfnc=Compile[{x, y}, If[(Abs[y]>5 && Abs[x]<5),-1,1]];", "Input",
+ CellLabel->"In[65]:=",ExpressionUUID->"e9190afa-da71-4b9f-a98f-7b5c490bb848"],
+
+Cell["domArray = QMakeTable[maskfnc, QParameters->qparams];", "Input",
+ CellLabel->"In[66]:=",ExpressionUUID->"18777b9e-e273-44a8-8de2-5a4c76419ac4"],
+
+Cell["domObj = QNewFunction[domArray];", "Input",
+ CellLabel->"In[67]:=",ExpressionUUID->"01b599c4-9b10-4f95-a35b-0592c920d537"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Potential", "Section",ExpressionUUID->"6df9e379-2aa4-4344-97c0-dd6c303cabd8"],
+
+Cell[TextData[{
+ "We describe a neutral particle with magnetic moment in a magnetic field in \
+two dimensions. Because the charge is e=0 we need no vector potential in the \
+Pauli equation. The force is described by the term ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Sigma]", "3"], TraditionalForm]],ExpressionUUID->
+  "af8b29e9-6321-44a1-b4dc-43499c1d0d46"],
+ "B(x). Hence the Pauli equation consists of two independend (decoupled) Schr\
+\[ODoubleDot]dinger equations. The potential for the upper component is B(x), \
+for the lower component -B(x) (in the representation where ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Sigma]", "3"], TraditionalForm]],ExpressionUUID->
+  "46a16ce0-44e3-418e-a341-5e81a2c5cf8f"],
+ "is diagonal).\n\nThe imaginary part of potential functions is zero. \
+Therefore we introduce the abbreviation"
+}], "Text",ExpressionUUID->"113a508e-7af2-42da-8365-2217cd46529c"],
+
+Cell["nullArray = QZeroTable[QParameters->qparams];", "Input",
+ CellLabel->"In[68]:=",ExpressionUUID->"8749639e-857d-49ec-ac8d-66d3fcb58b6c"],
+
+Cell[CellGroupData[{
+
+Cell["Potential for \"spin-up\"", "Subsection",ExpressionUUID->"ab30122f-3b9a-491a-8be4-9295a311e093"],
+
+Cell["\<\
+potUp = Compile @@ {{x,y},
+   (-7.5 (y+5))(Tanh[x+5] -Tanh[x-5])/2};\
+\>", "Input",
+ CellLabel->"In[69]:=",ExpressionUUID->"94cedeba-72de-4220-9139-ea48a8673e8a"],
+
+Cell["potUpArray = QMakeTable[potUp, QParameters->qparams];", "Input",
+ CellLabel->"In[70]:=",ExpressionUUID->"fb0a71bf-c399-4180-8453-5ddc98165d87"],
+
+Cell["potUpObj = QNewFunction[potUpArray, nullArray];", "Input",
+ CellLabel->"In[71]:=",ExpressionUUID->"64e4faf7-25a0-46e6-9cf4-26e38ac2fff5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Potential for \"spin-down\"", "Subsection",ExpressionUUID->"01759c40-a676-4ad5-aec9-4fbc2ea577e3"],
+
+Cell["\<\
+potDown = Compile @@ {{x,y},
+   (7.5 (y+5))(Tanh[x+5] -Tanh[x-5])/2};\
+\>", "Input",
+ CellLabel->"In[72]:=",ExpressionUUID->"038a6b3b-d454-45c1-812c-df80f187879b"],
+
+Cell["potDownArray = QMakeTable[potDown, QParameters->qparams];", "Input",
+ CellLabel->"In[73]:=",ExpressionUUID->"129a96f2-4f97-44ff-aa15-5d6b4a747b14"],
+
+Cell["potDownObj = QNewFunction[potDownArray, nullArray];", "Input",
+ CellLabel->"In[74]:=",ExpressionUUID->"bc088b57-d5df-45b0-84a2-7a685ec177ff"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Plot command", "Section",ExpressionUUID->"490dc4ea-30d9-438c-990a-14c1aae83330"],
+
+Cell["\<\
+The following set of graphic primitives contain the outline of the \
+Stern-Gerlach filter. It can used with Epilog->graphiccommands in a plot of \
+the wave function.\
+\>", "Text",ExpressionUUID->"62ee30ad-9855-4143-a875-d46652797962"],
+
+Cell["\<\
+graphiccommands =
+  {Thickness[0.008],GrayLevel[1], \
+Line[{{-5,numleft[[2]]},{-5,-5},{5,-5},{5,numleft[[2]]} }],
+                 Line[{{-5,numright[[2]]},{-5,5},{5,5},{5,numright[[2]]}}]};\
+\>", "Input",
+ CellLabel->"In[75]:=",ExpressionUUID->"f0a9bbc5-5d41-4bbe-9447-c41c46f999a7"],
+
+Cell[CellGroupData[{
+
+Cell["SpinorToColor visualization method", "Subsection",ExpressionUUID->"6ad5a462-d1dc-4a35-9ab2-721c0ca62049"],
+
+Cell["\<\
+dotheplot[T_] :=
+\tQGetAndSpinorToColorPlotTwo[psiUp, psiDown, T, QParameters->qparams,
+\t\tEpilog->graphiccommands,FrameTicks->False]\
+\>", "Input",
+ CellLabel->"In[76]:=",ExpressionUUID->"831ac574-dc5d-4e8c-bb25-b249dac5a1f9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Illustration: Plot the effective potential", "Subsection",ExpressionUUID->"9df6ed36-69f3-4c2a-919c-d25befa66b85"],
+
+Cell["plotPot = Part[potDownArray, QExtractPart[qparams]];", "Input",
+ CellLabel->"In[77]:=",ExpressionUUID->"e47ba938-c77d-4189-9fa4-7a48c1358a03"],
+
+Cell["\<\
+potgraphiccommands =
+  {Thickness[0.008],GrayLevel[1], Polygon[{{-5,-6},{-5,-5},{5,-5},{5,-6} }],
+                 Polygon[{{-5,7},{-5,5},{5,5},{5,7}}]};\
+\>", "Input",
+ CellLabel->"In[78]:=",ExpressionUUID->"9786a11a-7ddf-4d63-a340-033412884de1"],
+
+Cell["\<\
+ListContourPlot[plotPot,
+\t\t\tPlotRange->All,
+\t\t\tBackground->White,
+\t\t\tDataRange->({plotleft,plotright}//Transpose),
+\t\t\tAspectRatio->(plotright[[2]]-plotleft[[2]])/(plotright[[1]]-plotleft[[1]\
+]),
+\t\t\tEpilog->potgraphiccommands
+      ]\
+\>", "Input",
+ CellLabel->"In[79]:=",ExpressionUUID->"68cc353a-c9fd-469c-b240-1c631eb3e2fa"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generator of the time evolution", "Section",ExpressionUUID->"aea84ea5-a291-4201-ba4f-6c08c905e5a9"],
+
+Cell["\<\
+We define an operator object with the given domain mask. Mass and Charge are \
+set to 1, the units are adjusted by indicating the space step.\
+\>", "Text",ExpressionUUID->"6f816dfc-9325-44f4-bba0-1208078fa476"],
+
+Cell["\<\
+HUp   = QSchroedinger2D[potUpObj,\t(* scalar potential *)
+\t\t\t\t\t\tNone,\t\t(* vector potential *)
+\t\t\t\t\t\tdomObj,\t\t(* domain mask *)
+\t\t\t\t\t\t1.,\t\t\t(* mass *)
+\t\t\t\t\t\t1.,\t\t\t(* charge *)
+\t\t\t\t\t\tdx];\t\t(* units for space grid *)    \
+\>", "Input",
+ CellLabel->"In[80]:=",ExpressionUUID->"76ac875d-e047-4787-a77c-86f9f052868e"],
+
+Cell["\<\
+HDown = QSchroedinger2D[potDownObj,\t(* scalar potential *)
+\t\t\t\t\t\tNone,\t\t(* vector potential *)
+\t\t\t\t\t\tdomObj,\t\t(* domain mask *)
+\t\t\t\t\t\t1.,\t\t\t(* mass *)
+\t\t\t\t\t\t1.,\t\t\t(* charge *)
+\t\t\t\t\t\tdx];\t\t(* units for space grid *)\
+\>", "Input",
+ CellLabel->"In[81]:=",ExpressionUUID->"86e20da0-8367-40da-b37d-901ec512ba74"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Initialization", "Section",ExpressionUUID->"2ffa480d-2134-4a3e-b710-174fe85c1f5a"],
+
+Cell["\<\
+The initial function is passed to the \"QuantumKernel\" as an array of \
+values. The quantum kernel returns a \"FunctionObject\" which is referred to \
+as psi.\
+\>", "Text",ExpressionUUID->"c9c9ff96-7309-44f4-b6b3-7128c2ac8427"],
+
+Cell["psiUp   = QNewFunction[2. Re[psi0], 2. Im[psi0]];", "Input",
+ CellLabel->"In[82]:=",ExpressionUUID->"ebd4a929-189f-478a-bc1d-c8135e1369fb"],
+
+Cell["psiDown = QNewFunction[2. Re[psi0], 2. Im[psi0]];", "Input",
+ CellLabel->"In[83]:=",ExpressionUUID->"0da5f822-f9e3-4a43-a016-5d0cfd660519"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generate the results", "Section",ExpressionUUID->"49afe006-a83b-4b6b-8416-7252f14052b7"],
+
+Cell["\<\
+Parameters for the time evolution and the animation are set by:\
+\>", "Text",ExpressionUUID->"4921a462-c10f-4231-92fb-a9ad40ed429f"],
+
+Cell["\<\
+dt = 0.001; 
+ordr = 5; 
+reps = 10;
+initialSpinor=dotheplot[0] (*initial function*)\
+\>", "Input",
+ CellLabel->"In[84]:=",ExpressionUUID->"e58a63e2-0316-43e1-8561-6631b8a05ab0"],
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{
+   RowBox[{"spinorTimeEvolution", "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"QTimeEvolution", "[", 
+        RowBox[{"HUp", ",", 
+         RowBox[{"(*", "generator", "*)"}], "psiUp", ",", 
+         RowBox[{"(*", 
+          RowBox[{"initial", " ", "wave", " ", "function"}], "*)"}], "dt", 
+         ",", 
+         RowBox[{"(*", 
+          RowBox[{"time", " ", "step"}], "*)"}], "ordr", ",", 
+         RowBox[{"(*", 
+          RowBox[{"order", " ", "of", " ", "method"}], "*)"}], "reps"}], 
+        "\t\t", 
+        RowBox[{"(*", 
+         RowBox[{"number", " ", "of", " ", "repetitions"}], "*)"}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"QTimeEvolution", "[", 
+        RowBox[{"HDown", ",", 
+         RowBox[{"(*", "generator", "*)"}], "psiDown", ",", 
+         "\[IndentingNewLine]", " ", 
+         RowBox[{"(*", 
+          RowBox[{"initial", " ", "wave", " ", "function"}], "*)"}], "dt", 
+         ",", 
+         RowBox[{"(*", 
+          RowBox[{"time", " ", "step"}], "*)"}], "ordr", ",", 
+         RowBox[{"(*", 
+          RowBox[{"order", " ", "of", " ", "method"}], "*)"}], "reps"}], 
+        "\t\t", 
+        RowBox[{"(*", 
+         RowBox[{"number", " ", "of", " ", "repetitions"}], "*)"}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"dotheplot", "[", 
+        RowBox[{"#", " ", "reps", " ", "dt"}], "]"}]}], ")"}], "&"}]}], 
+   ";"}]}]], "Input",
+ CellLabel->"In[88]:=",ExpressionUUID->"0872021b-eba4-43bf-a058-0ce72d727124"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"allFrames", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Prepend", "[", 
+      RowBox[{"#", ",", "initialSpinor"}], "]"}], "&"}], "@", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Table", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"PrintTemporary", "[", 
+        RowBox[{"\"\<i = \>\"", ",", "i"}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"spinorTimeEvolution", "[", "i", "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "120"}], "}"}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[89]:=",ExpressionUUID->"7ee94700-5eb3-4448-8194-1b1453f7b868"],
+
+Cell[BoxData[
+ RowBox[{"animation", "=", 
+  RowBox[{"ListAnimate", "@", "allFrames"}]}]], "Input",
+ CellLabel->"In[90]:=",ExpressionUUID->"38960908-c07c-498a-a19c-7493ab828621"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"movieFile", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+      "\"\<stern_gerlach_movie.gif\>\""}], "}"}], "]"}]}], ";"}]], "Input",
+ CellLabel->"In[91]:=",ExpressionUUID->"6374fc67-5709-45c1-97ca-9a76b6cc9723"],
+
+Cell["Save the antimated gif next to this notebook", "Text",ExpressionUUID->"859a129b-1223-4584-a49b-7a0d0cc7dc8c"],
+
+Cell[BoxData[
+ RowBox[{"AbsoluteTiming", "[", 
+  RowBox[{
+   RowBox[{"Export", "[", 
+    RowBox[{"movieFile", ",", "allFrames", ",", 
+     RowBox[{"AnimationRepetitions", "\[Rule]", "Infinity"}]}], "]"}], ";"}], 
+  "]"}]], "Input",
+ CellLabel->"In[92]:=",ExpressionUUID->"f7a8d1bf-0e9d-4b6e-b2ad-7ff8c31f6592"],
+
+Cell[BoxData[
+ RowBox[{"FileByteCount", "@", "movieFile"}]], "Input",
+ CellLabel->"In[93]:=",ExpressionUUID->"7c38375d-afdd-46e3-a03b-a3c475e79bf7"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1014, 911},
+WindowMargins->{{40, Automatic}, {Automatic, 18}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 105, 0, 98, "Title",ExpressionUUID->"981f6590-2ea2-4972-98fd-5f254a3f1c0d"],
+Cell[688, 24, 98, 0, 54, "Subsection",ExpressionUUID->"93daeeab-5bd6-4693-9968-c5cc88f8b2cb"],
+Cell[789, 26, 158, 2, 38, "Subsection",ExpressionUUID->"818f67a1-9523-42b7-9eb3-f3b0a33eb7c3"],
+Cell[950, 30, 93, 0, 38, "Subsection",ExpressionUUID->"1fe1f837-9a71-4a67-a185-3e5e8b7877bf"],
+Cell[1046, 32, 107, 0, 38, "Subsection",ExpressionUUID->"f29323a4-26ae-43db-a1e6-c48a3711b266"],
+Cell[CellGroupData[{
+Cell[1178, 36, 85, 0, 38, "Subsection",ExpressionUUID->"caaf3c8a-4a62-4f22-91c6-2adfe1b6c890"],
+Cell[1266, 38, 172, 3, 35, "Text",ExpressionUUID->"7c6274e8-a9af-4baa-aba4-7388db5e150a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1475, 46, 93, 0, 67, "Section",ExpressionUUID->"ac5eb417-b29a-454c-bda2-46cb348bb9e9"],
+Cell[1571, 48, 445, 8, 104, "Text",ExpressionUUID->"f2b6ee4a-310b-4813-9214-c7dbb5c4261a"],
+Cell[2019, 58, 95, 0, 35, "Text",ExpressionUUID->"8f6e64de-8beb-44ee-bcb6-940fa9d89f94"],
+Cell[2117, 60, 102, 1, 30, "Input",ExpressionUUID->"7ee77dfe-fd3f-4740-ad7b-19eaf133a45a"],
+Cell[2222, 63, 125, 0, 35, "Text",ExpressionUUID->"ea5d6995-7acc-4aa5-be52-4eaa63a71d4f"],
+Cell[2350, 65, 110, 0, 35, "Text",ExpressionUUID->"cc23e1d4-f6bb-4f22-bc37-2164b61da565"],
+Cell[2463, 67, 585, 10, 156, "Input",ExpressionUUID->"c338563c-bf17-4af8-b037-c0e73fd04e67"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3085, 82, 84, 0, 67, "Section",ExpressionUUID->"b275415b-573c-4da5-9cbc-e801be2ff1e4"],
+Cell[3172, 84, 188, 3, 35, "Text",ExpressionUUID->"55d662b3-da61-4146-9556-79a8d1a2c18a"],
+Cell[3363, 89, 169, 4, 48, "Input",ExpressionUUID->"50fa835c-8d25-4a81-ad37-36c1b9b249fb"],
+Cell[3535, 95, 167, 4, 48, "Input",ExpressionUUID->"d55da8d9-3528-4740-a4b8-acb448b7bd36"],
+Cell[3705, 101, 173, 4, 48, "Input",ExpressionUUID->"350a9dae-5c82-485c-bb2f-16755bf262fa"],
+Cell[3881, 107, 391, 7, 104, "Text",ExpressionUUID->"ed16f5f9-ab1c-4046-8a92-870da253069a"],
+Cell[4275, 116, 297, 7, 30, "Input",ExpressionUUID->"adebae4e-ce90-4203-a96e-d4b0d42b8be4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4609, 128, 98, 0, 67, "Section",ExpressionUUID->"56b5187c-0c8c-4393-9a27-bc65d37a0f2c"],
+Cell[4710, 130, 108, 0, 70, "Text",ExpressionUUID->"6869eeca-d73e-46aa-8a98-aaa368619349"],
+Cell[4821, 132, 194, 4, 70, "Input",ExpressionUUID->"dce1ae28-6696-43ac-80ca-04d5986e1163"],
+Cell[5018, 138, 122, 0, 70, "Text",ExpressionUUID->"cdde0de6-b267-4765-9b28-697e5730b0eb"],
+Cell[5143, 140, 259, 5, 70, "Input",ExpressionUUID->"acc8a176-fcb9-4768-b247-f57f162ae74c"],
+Cell[5405, 147, 141, 2, 70, "Text",ExpressionUUID->"8b8e3ed5-034c-4a18-a731-67ce5666136a"],
+Cell[5549, 151, 148, 1, 70, "Input",ExpressionUUID->"33bdeac2-c2e7-4836-b3ee-24f10de8799a"],
+Cell[5700, 154, 139, 1, 70, "Input",ExpressionUUID->"2de346f6-db2b-4cf6-8d1a-a65f46d9dd70"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5876, 160, 85, 0, 53, "Section",ExpressionUUID->"8c1b1d89-37a3-4566-922c-837a3907909f"],
+Cell[5964, 162, 404, 6, 70, "Text",ExpressionUUID->"8d81c0a4-d693-4dad-9689-4b94fe7a1660"],
+Cell[6371, 170, 153, 1, 70, "Input",ExpressionUUID->"e9190afa-da71-4b9f-a98f-7b5c490bb848"],
+Cell[6527, 173, 149, 1, 70, "Input",ExpressionUUID->"18777b9e-e273-44a8-8de2-5a4c76419ac4"],
+Cell[6679, 176, 128, 1, 70, "Input",ExpressionUUID->"01b599c4-9b10-4f95-a35b-0592c920d537"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6844, 182, 83, 0, 53, "Section",ExpressionUUID->"6df9e379-2aa4-4344-97c0-dd6c303cabd8"],
+Cell[6930, 184, 904, 17, 70, "Text",ExpressionUUID->"113a508e-7af2-42da-8365-2217cd46529c"],
+Cell[7837, 203, 141, 1, 70, "Input",ExpressionUUID->"8749639e-857d-49ec-ac8d-66d3fcb58b6c"],
+Cell[CellGroupData[{
+Cell[8003, 208, 102, 0, 70, "Subsection",ExpressionUUID->"ab30122f-3b9a-491a-8be4-9295a311e093"],
+Cell[8108, 210, 172, 4, 70, "Input",ExpressionUUID->"94cedeba-72de-4220-9139-ea48a8673e8a"],
+Cell[8283, 216, 149, 1, 70, "Input",ExpressionUUID->"fb0a71bf-c399-4180-8453-5ddc98165d87"],
+Cell[8435, 219, 143, 1, 70, "Input",ExpressionUUID->"64e4faf7-25a0-46e6-9cf4-26e38ac2fff5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8615, 225, 104, 0, 70, "Subsection",ExpressionUUID->"01759c40-a676-4ad5-aec9-4fbc2ea577e3"],
+Cell[8722, 227, 173, 4, 70, "Input",ExpressionUUID->"038a6b3b-d454-45c1-812c-df80f187879b"],
+Cell[8898, 233, 153, 1, 70, "Input",ExpressionUUID->"129a96f2-4f97-44ff-aa15-5d6b4a747b14"],
+Cell[9054, 236, 147, 1, 70, "Input",ExpressionUUID->"bc088b57-d5df-45b0-84a2-7a685ec177ff"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9250, 243, 86, 0, 53, "Section",ExpressionUUID->"490dc4ea-30d9-438c-990a-14c1aae83330"],
+Cell[9339, 245, 244, 4, 58, "Text",ExpressionUUID->"62ee30ad-9855-4143-a875-d46652797962"],
+Cell[9586, 251, 294, 6, 66, "Input",ExpressionUUID->"f0a9bbc5-5d41-4bbe-9447-c41c46f999a7"],
+Cell[CellGroupData[{
+Cell[9905, 261, 111, 0, 54, "Subsection",ExpressionUUID->"6ad5a462-d1dc-4a35-9ab2-721c0ca62049"],
+Cell[10019, 263, 238, 5, 66, "Input",ExpressionUUID->"831ac574-dc5d-4e8c-bb25-b249dac5a1f9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10294, 273, 119, 0, 54, "Subsection",ExpressionUUID->"9df6ed36-69f3-4c2a-919c-d25befa66b85"],
+Cell[10416, 275, 148, 1, 30, "Input",ExpressionUUID->"e47ba938-c77d-4189-9fa4-7a48c1358a03"],
+Cell[10567, 278, 257, 5, 66, "Input",ExpressionUUID->"9786a11a-7ddf-4d63-a340-033412884de1"],
+Cell[10827, 285, 352, 10, 138, "Input",ExpressionUUID->"68cc353a-c9fd-469c-b240-1c631eb3e2fa"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11228, 301, 105, 0, 67, "Section",ExpressionUUID->"aea84ea5-a291-4201-ba4f-6c08c905e5a9"],
+Cell[11336, 303, 220, 3, 35, "Text",ExpressionUUID->"6f816dfc-9325-44f4-bba0-1208078fa476"],
+Cell[11559, 308, 363, 8, 120, "Input",ExpressionUUID->"76ac875d-e047-4787-a77c-86f9f052868e"],
+Cell[11925, 318, 361, 8, 120, "Input",ExpressionUUID->"86e20da0-8367-40da-b37d-901ec512ba74"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12323, 331, 88, 0, 67, "Section",ExpressionUUID->"2ffa480d-2134-4a3e-b710-174fe85c1f5a"],
+Cell[12414, 333, 238, 4, 58, "Text",ExpressionUUID->"c9c9ff96-7309-44f4-b6b3-7128c2ac8427"],
+Cell[12655, 339, 145, 1, 30, "Input",ExpressionUUID->"ebd4a929-189f-478a-bc1d-c8135e1369fb"],
+Cell[12803, 342, 145, 1, 30, "Input",ExpressionUUID->"0da5f822-f9e3-4a43-a016-5d0cfd660519"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12985, 348, 94, 0, 67, "Section",ExpressionUUID->"49afe006-a83b-4b6b-8416-7252f14052b7"],
+Cell[13082, 350, 142, 2, 35, "Text",ExpressionUUID->"4921a462-c10f-4231-92fb-a9ad40ed429f"],
+Cell[13227, 354, 186, 6, 84, "Input",ExpressionUUID->"e58a63e2-0316-43e1-8561-6631b8a05ab0"],
+Cell[13416, 362, 1534, 39, 157, "Input",ExpressionUUID->"0872021b-eba4-43bf-a058-0ce72d727124"],
+Cell[14953, 403, 642, 17, 94, "Input",ExpressionUUID->"7ee94700-5eb3-4448-8194-1b1453f7b868"],
+Cell[15598, 422, 177, 3, 30, "Input",ExpressionUUID->"38960908-c07c-498a-a19c-7493ab828621"],
+Cell[15778, 427, 325, 8, 30, "Input",ExpressionUUID->"6374fc67-5709-45c1-97ca-9a76b6cc9723"],
+Cell[16106, 437, 115, 0, 35, "Text",ExpressionUUID->"859a129b-1223-4584-a49b-7a0d0cc7dc8c"],
+Cell[16224, 439, 310, 7, 30, "Input",ExpressionUUID->"f7a8d1bf-0e9d-4b6e-b2ad-7ff8c31f6592"],
+Cell[16537, 448, 148, 2, 30, "Input",ExpressionUUID->"7c38375d-afdd-46e3-a03b-a3c475e79bf7"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -16,6 +16,8 @@ Off[DeclarePackage::aldec];
 
 (* VQM.m Master package *)
 
+
+
 (* First, define the context of this package directory. *)
 BeginPackage["VQM`"];
 
@@ -140,3 +142,9 @@ DeclarePackage["VQM`VisualizeVector`", {"QVectorToArrow", "QArrowHead", "QArrowS
 DeclarePackage["VQM`VisualizeFunction1D`", {"QShowComplexPoint", "QShowComplexPointPolar", "QPlotRe", "QPlotIm",
 "QPlotReIm", "QPlotAbs", "QPlotArg", "QPlotAbsArg", "QComplexFunctionGraph", "QBoxSize", "QProjectionAt"}];
 
+(*added 20180621 *)
+DeclarePackage["VQM`VisualizeFourierSum1D`", { "QAmplitudeFactor", "QBorders", "QEpilog", "QFourierSumPlot", 
+ "QFourierSumWaveNumberPlot", "QFourierSumWaveStackPlot", "QHalfPeriod", "QKPlotLabel", 
+ "QKRegion", "QLineSize", "QSeparationLines", "QSPlotLabel", "QStackWavesGraph", 
+ "QVisualizeSuperposition", "QWaveNumberPlot", "QWaveStackPlot", 
+ "QWaveStackWaveNumberPlot", "QXPlotLabel", "QXRegion"}];

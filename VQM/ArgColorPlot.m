@@ -189,8 +189,12 @@ Options[QArgColorPlot] = Sort @ {JoinOptions[
         } ] };
 
 
+Clear[QArgColorPlot];
 SetAttributes[QArgColorPlot, HoldAll];
 
+(*TODO: ASKKUBA why the axis are not in front for 
+	QWaveNumberPlot[{{-1, 4}, {0, 5 + 5 I}, {1, 2 - 2 I}, {2, -1}, {3, 2 I}, {5, -5 I}, {4, 0}}]
+*)
 QArgColorPlot[func_,{x_Symbol, xmin_?NumericQ, xmax_?NumericQ}, opts___?OptionQ] :=
 	Module[{opac, sat, bri, comp, opts1, fnc, colorfun, pStyle, qbottomLine, qshiftPlot, qsquared, dir, flip
 	       },
@@ -417,7 +421,10 @@ QSpinorCombinedPlot[{func1_,func2_}, {x_Symbol,xmin_?NumericQ,xmax_?NumericQ},
 			],
 			Plot[func2, {x,xmin,xmax},
 				Evaluate[FilterRules[auxopts, Options @ Plot] ],
-(* ASKBT *)
+(* ASKBT 
+QWaveNumberPlot[{{-1, 4}, {0, 5 + 5 I}, {1, 2 - 2 I}, {2, -1}, {3, 
+   2 I}, {5, -5 I}, {4, 0}}]
+   *)
 				Evaluate[FilterRules[Flatten[{opts}], Options @ Graphics]]
 			]
 		]

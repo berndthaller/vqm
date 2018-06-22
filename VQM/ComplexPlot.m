@@ -66,7 +66,7 @@ Off[General::"munfl"];
 
 Off[General::spell1,General::spell];
 Off[Arg::"indet" ]; (* RM: just for Arg[ComplexInfinity] showing up in QListComplexDensityPlot exampless*)
-Off[Raster::matrix]; (* RMTODO: where exactly does this show up? *)
+Off[Raster::matrix]; (*TODO:   where exactly does this show up? *)
 
 (*-----------------------------------*)
 BeginPackage[

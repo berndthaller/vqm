@@ -160,7 +160,7 @@ QGetAndSpinorToColorPlotTwo::usage = "QGetAndSpinorToColorPlotTwo[psiUp,psiDown,
 (*-----------------------------------*)
 Begin["`Private`"];
 (*-----------------------------------*)
-
+ 
 
 Options[QPlotCommands] = {QParameters->None};
 
@@ -169,7 +169,7 @@ QPrepareOptions[qparams_]:=
 	Module[{dx,numLeft,numRight,plotLeft,plotRight,skipFac},
 		{dx,numLeft,numRight,plotLeft,plotRight,skipFac}=qparams;
 		Sequence@@{Mesh->False, Background->GrayLevel[0],
-			MeshRange->({plotLeft,plotRight}//Transpose),
+			DataRange->({plotLeft,plotRight}//Transpose),
 			AspectRatio->(plotRight[[2]]-plotLeft[[2]])/(plotRight[[1]]-
                 plotLeft[[1]])}
   ];
@@ -236,7 +236,7 @@ QGetSpinorAndDensityPlot[psi_, T_, opts___] :=
 		psi3 = psi1[[1]]^2 + psi1[[2]]^2 + psi1[[3]]^2 + psi1[[4]]^2;
 		qparams = QParameters/.{opts}/.Options[QPlotCommands];
 		If[qparams=!=None, psi3 = Part[psi3,QExtractPart[qparams]]];
-		Remove[psi1];
+		Remove[psi1]; (* because of memory management efficiently *)
 		ListDensityPlot[psi3, FilterRules[Flatten[{opts}], Options @ ListDensityPlot],
 			QPrepareOptions[qparams],
 			PlotLabel->StringForm["t =``", PaddedForm[T,{3,2}]]

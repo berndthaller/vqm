@@ -1,4 +1,5 @@
 (*
+(*
 SetDirectory @ DirectoryName[System`Private`FindFile[$Input]];
 *)
 If[$FrontEnd, SelectionMove[EvaluationNotebook[], After, Notebook]];
@@ -100,4 +101,5 @@ DeclarePackage["VQM`VisualizeVector`", {"QVectorToArrow", "QArrowHead", "QArrowS
 DeclarePackage["VQM`VisualizeFunction1D`", {"QShowComplexPoint", "QShowComplexPointPolar", "QPlotRe", "QPlotIm",
 "QPlotReIm", "QPlotAbs", "QPlotArg", "QPlotAbsArg", "QComplexFunctionGraph", "QBoxSize", "QProjectionAt"}];
 
+*)
 *)
